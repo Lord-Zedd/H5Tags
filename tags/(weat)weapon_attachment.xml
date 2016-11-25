@@ -1,0 +1,97 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="weapon attachment component" />
+	<_field_custom name="Weapon Attachment" />
+	<_field_string_id name="variant region name" />
+	<_field_string_id name="variant permutation name" />
+	<_field_block_64 name="attachments" max="48">
+		<_field_tag_reference_64 name="type^" validtags="ligh, gldf, ltvl, effe, lsnd, lens, cpem, egfd, decs" />
+		<_field_tag_reference_64 name="override type#this attachment will override the attachment on the object that shares this " validtags="ligh, gldf, ltvl, effe, lsnd, lens, cpem, egfd, decs" />
+		<_field_string_id name="marker" />
+		<_field_char_enum name="change color">
+			<item Name="none" />
+			<item Name="primary" />
+			<item Name="secondary" />
+			<item Name="tertiary" />
+			<item Name="quaternary" />
+		</_field_char_enum>
+		<_field_byte_flags name="flags">
+			<item Name="force always on#when this flag is clear we only create the attachment when the function object function is active or set to empty string" />
+			<item Name="effect size scale from object scale" />
+		</_field_byte_flags>
+		<_field_pad name="DPKP" length="2" />
+		<_field_string_id name="primary scale" />
+		<_field_string_id name="secondary scale" />
+	</_field_block_64>
+	<_field_pad name="attachmentPad" length="4" />
+	<_field_explanation name="Attachment Name">Used for damage reporting - we want to know what attachments something has when it deals damage</_field_explanation>
+	<_field_struct name="attachmentName" />
+	<_field_string_id name="Attachment Name" />
+	<_field_block_64 name="attachment object" max="1">
+		<_field_tag_reference_64 name="object" />
+		<_field_string_id name="weapon marker" />
+		<_field_string_id name="attachment marker" />
+	</_field_block_64>
+	<_field_block_64 name="accuracy modifiers" max="1">
+		<_field_real name="accuracy spread{Accuracy Bloom}:percent" />
+	</_field_block_64>
+	<_field_block_64 name="precision aim modifiers" max="1">
+		<_field_real name="precision transition in time modifier:percent" />
+		<_field_real name="precision transition out time modifier:percent" />
+	</_field_block_64>
+	<_field_block_64 name="unit modifiers" max="1">
+		<_field_real name="move speed scale modifier:percent" />
+		<_field_real name="turn rate scale modifier:percent" />
+		<_field_real name="simulated input scale modifier:percent" />
+	</_field_block_64>
+	<_field_block_64 name="aim assist modifiers" max="1">
+		<_field_real name="autoaim angle:percent#the maximum angle that autoaim works at full strength" />
+		<_field_real name="prioritization angle:percent#angle used to select model targets based on priority" />
+		<_field_real name="autoaim range:percent#autoaim only has an effect along this distance" />
+		<_field_real name="autoaim falloff range:percent#at what point the autoaim starts falling off.  Fully falls off at autoaim range." />
+		<_field_real name="autoaim near falloff range:percent#at what point the autoaim reaches full power" />
+		<_field_real name="magnetism angle:percent#at what point the autoaim reaches full power" />
+		<_field_real name="magnetism range:percent#magnetism only has an effect along this distance" />
+		<_field_real name="magnetism falloff range:percent#at what point magnetism starts falling off.  Fully falls off at magnetism range." />
+		<_field_real name="magnetism near falloff range:percent#at what point magnetism reaches full power" />
+		<_field_real name="deviation angle:percent#the maximum angle that a projectile is allowed to deviate from the gun barrel due to autoaim OR network lead vector reconstruction" />
+	</_field_block_64>
+	<_field_block_64 name="recoil view kick modifiers" max="1">
+		<_field_real name="view kick deceleration modifier:percent" />
+		<_field_real name="view kick return to center modifier:percent" />
+	</_field_block_64>
+	<_field_block_64 name="recoil gunkick modifiers" max="1">
+		<_field_real name="gunkick spring constant modifier:percent" />
+	</_field_block_64>
+	<_field_block_64 name="animation modifiers" max="1">
+		<_field_real name="ready playback speed modifier:percent" />
+		<_field_real name="ready initial playback modifier:percent" />
+		<_field_real name="put away playback speed modifier:percent" />
+		<_field_real name="reload playback speed modifier:percent" />
+		<_field_real name="reload while empty playback speed modifier:percent" />
+	</_field_block_64>
+	<_field_block_64 name="heat modifiers" max="1">
+		<_field_real name="heat loss per second modifier:percent" />
+		<_field_real name="overheated heat loss per second modifier:percent" />
+		<_field_real name="heat generated per round modifier:percent" />
+	</_field_block_64>
+	<_field_block_64 name="UI display info" max="1">
+		<_field_string_id name="name^#short name for the item" />
+		<_field_string_id name="display name#friendly name for the item" />
+		<_field_string_id name="description#general in-universe item description" />
+		<_field_string_id name="help text#verbose usage info for use during gameplay" />
+		<_field_string_id name="icon string id#legacy, from when we embedded the sprites into the font to get streaming behaviour" />
+		<_field_tag_reference_64 name="sprite#bitmap file representing this item" />
+		<_field_long_integer name="sprite index#frame inside the item's image strip which shows this item " />
+		<_field_tag_reference_64 name="alt sprite#secondary bitmap file representing this item. for detail images, overlays etc." />
+		<_field_long_integer name="alt sprite index#alt sprite's frame" />
+		<_field_tag_reference_64 name="ui vehicle screen reference" />
+		<_field_pad name="pad0" length="4" />
+	</_field_block_64>
+	<_field_pad name="endPad" length="4" />
+</plugin>

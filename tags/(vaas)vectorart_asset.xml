@@ -1,0 +1,47 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_char_enum name="runtime flags*!">
+		<item Name="processed*!" />
+		<item Name="available*!" />
+	</_field_char_enum>
+	<_field_pad name="MERP" length="3" />
+	<_field_real name="antialiasing extent size" />
+	<_field_real name="import fudge factor (suggested 0.5)" />
+	<_field_real_point_2d name="bounds*" />
+	<_field_real name="curve smoothness" />
+	<_field_block_64 name="vertices*" max="32768">
+		<_field_short_integer name="half x*" />
+		<_field_short_integer name="half y*" />
+		<_field_short_integer name="half z*" />
+		<_field_short_integer name="half alpha*" />
+		<_field_short_integer name="half u*" />
+		<_field_short_integer name="half v*" />
+	</_field_block_64>
+	<_field_block_64 name="indices*" max="32768">
+		<_field_short_integer name="index*" />
+	</_field_block_64>
+	<_field_block_64 name="pc vertex buffers*" max="1">
+		<_field_byte_integer name="declaration type*" />
+		<_field_byte_integer name="stride*" />
+		<_field_pad name="vertex buffer pad" length="2" />
+		<_field_dword_integer name="count*" />
+		<_field_pad name="wtf" length="48" />
+		<_field_int64_integer name="ptr d3d*" />
+		<_field_int64_integer name="ptr d3d SRV*" />
+		<_field_int64_integer name="ptr d3d cpu copy*" />
+	</_field_block_64>
+	<_field_block_64 name="pc index buffers*" max="1">
+		<_field_byte_integer name="declaration type*" />
+		<_field_byte_integer name="stride*" />
+		<_field_pad name="vertex buffer pad" length="2" />
+		<_field_dword_integer name="count*" />
+		<_field_pad name="wtf" length="48" />
+		<_field_int64_integer name="ptr d3d*" />
+		<_field_int64_integer name="ptr d3d cpu copy*" />
+	</_field_block_64>
+</plugin>

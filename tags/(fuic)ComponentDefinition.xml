@@ -1,0 +1,338 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_string_id name="name#screen name" />
+	<_field_string name="class#class name" />
+	<_field_struct name="resources" />
+	<_field_block_64 name="entries" max="1024">
+		<_field_string_id name="name" />
+		<_field_struct name="handle" />
+		<_field_dword_integer name="resource type" />
+		<_field_long_integer name="resource index" />
+	</_field_block_64>
+	<_field_block_64 name="booleans" max="1024">
+		<_field_byte_flags name="value">
+			<item Name="Enabled" />
+		</_field_byte_flags>
+	</_field_block_64>
+	<_field_block_64 name="ints" max="1024">
+		<_field_long_integer name="value" />
+	</_field_block_64>
+	<_field_block_64 name="floats" max="1024">
+		<_field_real name="value" />
+	</_field_block_64>
+	<_field_block_64 name="colors" max="1024">
+		<_field_struct name="value" />
+		<_field_string_id name="name" />
+		<_field_real_argb_color name="value" />
+		<_field_real_argb_color name="value old {value}" />
+	</_field_block_64>
+	<_field_block_64 name="point2fs" max="1024">
+		<_field_real_point_2d name="value" />
+	</_field_block_64>
+	<_field_block_64 name="string ids" max="1024">
+		<_field_string_id name="value" />
+	</_field_block_64>
+	<_field_block_64 name="bitmaps" max="1024">
+		<_field_tag_reference_64 name="asset reference" />
+		<_field_word_integer name="sprite index#the index of the sprite within the bitmap to use" />
+		<_field_pad name="pad" length="2" />
+	</_field_block_64>
+	<_field_block_64 name="floatanimations" max="1024">
+		<_field_struct name="animation base" />
+		<_field_string_id name="target" />
+		<_field_struct name="repeat behavior" />
+		<_field_dword_integer name="resource type" />
+		<_field_long_integer name="resource index" />
+		<_field_byte_flags name="flags">
+			<item Name="From valid" />
+			<item Name="To valid" />
+		</_field_byte_flags>
+		<_field_pad name="pad0" length="3" />
+		<_field_real name="from" />
+		<_field_real name="to" />
+		<_field_real name="duration" />
+	</_field_block_64>
+	<_field_block_64 name="coloranimations" max="1024">
+		<_field_struct name="animation base" />
+		<_field_string_id name="target" />
+		<_field_struct name="repeat behavior" />
+		<_field_dword_integer name="resource type" />
+		<_field_long_integer name="resource index" />
+		<_field_byte_flags name="flags">
+			<item Name="From valid" />
+			<item Name="To valid" />
+		</_field_byte_flags>
+		<_field_pad name="pad0" length="3" />
+		<_field_struct name="from" />
+		<_field_string_id name="name" />
+		<_field_real_argb_color name="value" />
+		<_field_real_argb_color name="from old {from}" />
+		<_field_struct name="to" />
+		<_field_string_id name="name" />
+		<_field_real_argb_color name="value" />
+		<_field_real_argb_color name="to old {to}" />
+		<_field_real name="duration" />
+	</_field_block_64>
+	<_field_block_64 name="point2fanimations" max="1024">
+		<_field_struct name="animation base" />
+		<_field_string_id name="target" />
+		<_field_struct name="repeat behavior" />
+		<_field_dword_integer name="resource type" />
+		<_field_long_integer name="resource index" />
+		<_field_byte_flags name="flags">
+			<item Name="From valid" />
+			<item Name="To valid" />
+		</_field_byte_flags>
+		<_field_pad name="pad0" length="3" />
+		<_field_real_point_2d name="from" />
+		<_field_real_point_2d name="to" />
+		<_field_real name="duration" />
+	</_field_block_64>
+	<_field_block_64 name="integeranimations" max="1024">
+		<_field_struct name="animation base" />
+		<_field_string_id name="target" />
+		<_field_struct name="repeat behavior" />
+		<_field_dword_integer name="resource type" />
+		<_field_long_integer name="resource index" />
+		<_field_byte_flags name="flags">
+			<item Name="From valid" />
+			<item Name="To valid" />
+		</_field_byte_flags>
+		<_field_pad name="pad0" length="3" />
+		<_field_long_integer name="from" />
+		<_field_long_integer name="to" />
+		<_field_real name="duration" />
+	</_field_block_64>
+	<_field_block_64 name="storyboards" max="1024">
+		<_field_block_64 name="timelines" max="1024">
+			<_field_struct name="handle" />
+			<_field_dword_integer name="resource type" />
+			<_field_long_integer name="resource index" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="numericdisplay" max="1024">
+		<_field_string name="extra characters used in display in addition to 0 to 9#must be in order that they appear in bitmap tag" />
+		<_field_tag_reference_64 name="asset reference" />
+		<_field_struct name="tint color of the numeric display" />
+		<_field_string_id name="name" />
+		<_field_real_argb_color name="value" />
+		<_field_real_argb_color name="tint color old {tint color of the numeric display}" />
+		<_field_real_point_2d name="alignment point on screen#top-left, top-center, or top-right corner depending on text alignment" />
+		<_field_short_enum name="numeric display alignment based on alignment point given">
+			<item Name="left alignment" />
+			<item Name="right alignment" />
+			<item Name="center alignment" />
+		</_field_short_enum>
+		<_field_byte_flags name="flags">
+			<item Name="Use additive blend" />
+		</_field_byte_flags>
+		<_field_pad name="padBase" length="1" />
+	</_field_block_64>
+	<_field_block_64 name="visualstates" max="1024">
+		<_field_string_id name="name" />
+		<_field_struct name="storyboard" />
+		<_field_dword_integer name="resource type" />
+		<_field_long_integer name="resource index" />
+	</_field_block_64>
+	<_field_block_64 name="visualstategroups" max="1024">
+		<_field_block_64 name="visual states" max="1024">
+			<_field_struct name="handle" />
+			<_field_dword_integer name="resource type" />
+			<_field_long_integer name="resource index" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="floatanimationusingkeyframes" max="1024">
+		<_field_struct name="animation base" />
+		<_field_string_id name="target" />
+		<_field_struct name="repeat behavior" />
+		<_field_dword_integer name="resource type" />
+		<_field_long_integer name="resource index" />
+		<_field_block_64 name="key frames" max="1024">
+			<_field_struct name="handle" />
+			<_field_dword_integer name="resource type" />
+			<_field_long_integer name="resource index" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="linearfloatkeyframes" max="1024">
+		<_field_struct name="keyframebase" />
+		<_field_real name="key time" />
+		<_field_real name="key value" />
+	</_field_block_64>
+	<_field_block_64 name="discretefloatkeyframes" max="1024">
+		<_field_struct name="keyframebase" />
+		<_field_real name="key time" />
+		<_field_real name="key value" />
+	</_field_block_64>
+	<_field_block_64 name="coloranimationusingkeyframes" max="1024">
+		<_field_struct name="animation base" />
+		<_field_string_id name="target" />
+		<_field_struct name="repeat behavior" />
+		<_field_dword_integer name="resource type" />
+		<_field_long_integer name="resource index" />
+		<_field_block_64 name="key frames" max="1024">
+			<_field_struct name="handle" />
+			<_field_dword_integer name="resource type" />
+			<_field_long_integer name="resource index" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="linearcolorkeyframes" max="1024">
+		<_field_struct name="keyframebase" />
+		<_field_real name="key time" />
+		<_field_struct name="key value" />
+		<_field_string_id name="name" />
+		<_field_real_argb_color name="value" />
+		<_field_real_argb_color name="key value old {key value}" />
+	</_field_block_64>
+	<_field_block_64 name="discretecolorkeyframes" max="1024">
+		<_field_struct name="keyframebase" />
+		<_field_real name="key time" />
+		<_field_struct name="key value" />
+		<_field_string_id name="name" />
+		<_field_real_argb_color name="value" />
+		<_field_real_argb_color name="key value old {key value}" />
+	</_field_block_64>
+	<_field_block_64 name="booleananimationusingkeyframes" max="1024">
+		<_field_struct name="animation base" />
+		<_field_string_id name="target" />
+		<_field_struct name="repeat behavior" />
+		<_field_dword_integer name="resource type" />
+		<_field_long_integer name="resource index" />
+		<_field_block_64 name="key frames" max="1024">
+			<_field_struct name="handle" />
+			<_field_dword_integer name="resource type" />
+			<_field_long_integer name="resource index" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="discretebooleankeyframes" max="1024">
+		<_field_struct name="keyframebase" />
+		<_field_real name="key time" />
+		<_field_byte_flags name="key value">
+			<item Name="Enabled" />
+		</_field_byte_flags>
+		<_field_pad name="pad" length="3" />
+	</_field_block_64>
+	<_field_block_64 name="point2fanimationusingkeyframes" max="1024">
+		<_field_struct name="animation base" />
+		<_field_string_id name="target" />
+		<_field_struct name="repeat behavior" />
+		<_field_dword_integer name="resource type" />
+		<_field_long_integer name="resource index" />
+		<_field_block_64 name="key frames" max="1024">
+			<_field_struct name="handle" />
+			<_field_dword_integer name="resource type" />
+			<_field_long_integer name="resource index" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="linearpoint2fkeyframes" max="1024">
+		<_field_struct name="keyframebase" />
+		<_field_real name="key time" />
+		<_field_real_point_2d name="key value" />
+	</_field_block_64>
+	<_field_block_64 name="discretepoint2fkeyframes" max="1024">
+		<_field_struct name="keyframebase" />
+		<_field_real name="key time" />
+		<_field_real_point_2d name="key value" />
+	</_field_block_64>
+	<_field_block_64 name="integeranimationusingkeyframes" max="1024">
+		<_field_struct name="animation base" />
+		<_field_string_id name="target" />
+		<_field_struct name="repeat behavior" />
+		<_field_dword_integer name="resource type" />
+		<_field_long_integer name="resource index" />
+		<_field_block_64 name="key frames" max="1024">
+			<_field_struct name="handle" />
+			<_field_dword_integer name="resource type" />
+			<_field_long_integer name="resource index" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="linearintegerkeyframes" max="1024">
+		<_field_struct name="keyframebase" />
+		<_field_real name="key time" />
+		<_field_long_integer name="key value" />
+	</_field_block_64>
+	<_field_block_64 name="discreteintegerkeyframes" max="1024">
+		<_field_struct name="keyframebase" />
+		<_field_real name="key time" />
+		<_field_long_integer name="key value" />
+	</_field_block_64>
+	<_field_block_64 name="repeatbehaviors" max="1024">
+		<_field_byte_flags name="flags">
+			<item Name="Count valid" />
+			<item Name="Duration valid" />
+		</_field_byte_flags>
+		<_field_pad name="pad0" length="3" />
+		<_field_long_integer name="count" />
+		<_field_real name="duration" />
+	</_field_block_64>
+	<_field_block_64 name="sound" max="1024">
+		<_field_tag_reference_64 name="asset reference" />
+	</_field_block_64>
+	<_field_block_64 name="soundloop" max="1024">
+		<_field_tag_reference_64 name="asset reference" />
+	</_field_block_64>
+	<_field_block_64 name="navpointlayouts" max="1024">
+		<_field_tag_reference_64 name="tag reference" />
+	</_field_block_64>
+	<_field_block_64 name="navpointanimations" max="1024">
+		<_field_tag_reference_64 name="tag reference" />
+	</_field_block_64>
+	<_field_block_64 name="stringtables" max="1024">
+		<_field_block_64 name="entires" max="1024">
+			<_field_tag_reference_64 name="data" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="subcomponents" max="1024">
+		<_field_tag_reference_64 name="sub component reference" />
+	</_field_block_64>
+	<_field_block_64 name="hudtwotonegradient" max="1024">
+		<_field_struct name="left color" />
+		<_field_string_id name="name" />
+		<_field_real_argb_color name="value" />
+		<_field_real_argb_color name="left color old {left color}" />
+		<_field_struct name="right color" />
+		<_field_string_id name="name" />
+		<_field_real_argb_color name="value" />
+		<_field_real_argb_color name="right color old {right color}" />
+		<_field_real name="edge filter amount" />
+		<_field_real name="current meter value" />
+		<_field_real name="min meter value" />
+		<_field_real name="max meter value" />
+		<_field_byte_flags name="additive blend toggle">
+			<item Name="Enabled" />
+		</_field_byte_flags>
+		<_field_pad name="pad" length="3" />
+	</_field_block_64>
+	<_field_block_64 name="font" max="1024">
+		<_field_long_string name="font family name" />
+		<_field_struct name="tint color" />
+		<_field_string_id name="name" />
+		<_field_real_argb_color name="value" />
+		<_field_real_argb_color name="tint color old {tint color}" />
+		<_field_real name="font size" />
+	</_field_block_64>
+	<_field_block_64 name="highcontrastadditive" max="1024">
+		<_field_real name="dynamic threshold min" />
+		<_field_real name="dynamic threshold max" />
+		<_field_real name="dynamic threshold clamp" />
+		<_field_byte_flags name="high contrast enable">
+			<item Name="Enabled" />
+		</_field_byte_flags>
+		<_field_pad name="pad" length="3" />
+	</_field_block_64>
+	<_field_block_64 name="vertexwarp" max="1024">
+		<_field_real_point_3d name="ellipsoid scale" />
+		<_field_real_point_3d name="ellipsoid center" />
+		<_field_real_point_3d name="output offset" />
+		<_field_long_integer name="tessellation X" />
+		<_field_long_integer name="tessellation Y" />
+		<_field_byte_flags name="warp enabled">
+			<item Name="Enabled" />
+		</_field_byte_flags>
+		<_field_pad name="pad" length="3" />
+	</_field_block_64>
+</plugin>

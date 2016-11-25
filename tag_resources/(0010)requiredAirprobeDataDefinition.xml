@@ -1,0 +1,62 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_block_64 name="airprobes" max="1048576">
+		<_field_struct name="sh terms" />
+		<_field_array name="red sh terms">
+			<_field_short_integer name="coefficient*" />
+			<_field_short_integer name="coefficient*" />
+			<_field_short_integer name="coefficient*" />
+			<_field_short_integer name="coefficient*" />
+			<_field_short_integer name="coefficient*" />
+			<_field_short_integer name="coefficient*" />
+			<_field_short_integer name="coefficient*" />
+			<_field_short_integer name="coefficient*" />
+			<_field_short_integer name="coefficient*" />
+		</_field_array>
+		<_field_array name="green sh terms">
+			<_field_short_integer name="coefficient*" />
+			<_field_short_integer name="coefficient*" />
+			<_field_short_integer name="coefficient*" />
+			<_field_short_integer name="coefficient*" />
+			<_field_short_integer name="coefficient*" />
+			<_field_short_integer name="coefficient*" />
+			<_field_short_integer name="coefficient*" />
+			<_field_short_integer name="coefficient*" />
+			<_field_short_integer name="coefficient*" />
+		</_field_array>
+		<_field_array name="blue sh terms">
+			<_field_short_integer name="coefficient*" />
+			<_field_short_integer name="coefficient*" />
+			<_field_short_integer name="coefficient*" />
+			<_field_short_integer name="coefficient*" />
+			<_field_short_integer name="coefficient*" />
+			<_field_short_integer name="coefficient*" />
+			<_field_short_integer name="coefficient*" />
+			<_field_short_integer name="coefficient*" />
+			<_field_short_integer name="coefficient*" />
+		</_field_array>
+		<_field_short_integer name="analytical visibility" />
+	</_field_block_64>
+	<_field_block_64 name="analytic data" max="1048576">
+		<_field_short_integer name="analytic index" />
+		<_field_char_integer name="intensity" />
+		<_field_pad name="shoulda_beena_pad" length="1" />
+	</_field_block_64>
+	<_field_block_64 name="Airprobe Regions" max="4">
+		<_field_real_point_3d name="position bounds 0" />
+		<_field_real_point_3d name="position bounds 1" />
+		<_field_block_64 name="airprobe indices*" max="1048576">
+			<_field_long_integer name="probe index*" />
+		</_field_block_64>
+		<_field_block_64 name="airprobe analytic data index and counts*" max="1048576">
+			<_field_short_integer name="analytic data index*" />
+			<_field_short_integer name="analytic data count*" />
+		</_field_block_64>
+		<_field_block_64 name="optional airprobe volume indices*" max="1048576">
+			<_field_long_integer name="probe index*" />
+		</_field_block_64>
+		<_field_long_integer name="num X*" />
+		<_field_long_integer name="num Y*" />
+	</_field_block_64>
+</plugin>

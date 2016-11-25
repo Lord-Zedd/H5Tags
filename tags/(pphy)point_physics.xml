@@ -1,0 +1,48 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_long_flags name="flags">
+		<item Name="UNUSED" />
+		<item Name="collides with structures" />
+		<item Name="collides with water surface" />
+		<item Name="uses simple wind#the wind on this point won't have high-frequency variations" />
+		<item Name="uses damped wind#the wind on this point will be artificially slow" />
+		<item Name="no gravity#the point is not affected by gravity" />
+	</_field_long_flags>
+	<_field_real name="runtime mass over radius cubed!" />
+	<_field_real name="runtime inverse density!" />
+	<_field_long_integer name="IGNORE1!" />
+	<_field_long_integer name="IGNORE2!" />
+	<_field_long_integer name="IGNORE3!" />
+	<_field_long_integer name="IGNORE4!" />
+	<_field_long_integer name="IGNORE5!" />
+	<_field_real name="density:g/mL" />
+	<_field_real name="air friction" />
+	<_field_real name="water friction" />
+	<_field_real name="surface friction#when hitting the ground or interior, percentage of velocity lost in one collision" />
+	<_field_real name="elasticity#0.0 is inelastic collisions (no bounce) 1.0 is perfectly elastic (reflected velocity equals incoming velocity)" />
+	<_field_pad name="DR" length="12" />
+	<_field_explanation name="Densities (g/mL)">air        0.0011 (g/mL)
+snow       0.128
+cork       0.24
+cedar      0.43
+oak        0.866
+ice        0.897
+water      1.0
+soil       1.1
+cotton     1.491
+dry earth  1.52
+sand       1.7
+granite    2.4
+glass      2.5
+iron       7.65
+steel      7.77
+lead       11.37
+uranium    18.74
+gold       19.3
+</_field_explanation>
+</plugin>

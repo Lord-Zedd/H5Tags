@@ -1,0 +1,44 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="Effects markers*" max="1024">
+		<_field_string name="marker name^" />
+		<_field_real_quaternion name="rotation*" />
+		<_field_real_point_3d name="position*" />
+		<_field_tag_reference_64 name="optional attached effect" validtags="effe, lens" />
+	</_field_block_64>
+	<_field_block_64 name="Light Cones*" max="1024">
+		<_field_string name="marker name^" />
+		<_field_real_quaternion name="rotation" />
+		<_field_real_point_3d name="position" />
+		<_field_real name="length" />
+		<_field_real name="width" />
+		<_field_real name="intensity" />
+		<_field_real_argb_color name="light color" />
+		<_field_tag_reference_64 name="light cone tag" />
+	</_field_block_64>
+	<_field_block_64 name="Object Palette*" max="1024">
+		<_field_tag_reference_64 name="definition^" />
+		<_field_tag_reference_64 name="model" />
+		<_field_long_integer name="GVEYN!" />
+	</_field_block_64>
+	<_field_block_64 name="Objects*" max="16384">
+		<_field_string name="name^" />
+		<_field_real_quaternion name="rotation" />
+		<_field_real_point_3d name="translation" />
+		<_field_real name="scale" />
+		<_field_short_block_index name="palette_index" />
+		<_field_byte_flags name="flags">
+			<item Name="scripts always run" />
+		</_field_byte_flags>
+		<_field_pad name="QHUGQ" length="1" />
+		<_field_long_integer name="unique id*" />
+		<_field_tag name="exported object type" />
+		<_field_string_id name="scenario object name" />
+		<_field_string_id name="variant name" />
+	</_field_block_64>
+</plugin>

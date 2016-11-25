@@ -1,0 +1,92 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_string_id name="name^" />
+	<_field_block_64 name="cell templates" max="10">
+		<_field_string_id name="name^" />
+		<_field_struct name="place on" />
+		<_field_word_flags name="difficulty flags">
+			<item Name="easy" />
+			<item Name="normal" />
+			<item Name="heroic" />
+			<item Name="legendary" />
+		</_field_word_flags>
+		<_field_pad name="post-difficulty-flags-padding" length="2" />
+		<_field_short_integer name="normal diff count#initial number of actors on normal difficulty" />
+		<_field_short_enum name="major upgrade">
+			<item Name="normal" />
+			<item Name="few" />
+			<item Name="many" />
+			<item Name="none" />
+			<item Name="all" />
+		</_field_short_enum>
+		<_field_explanation name="Character Build">Specify the distribution of characters and weapons in the following blocks</_field_explanation>
+		<_field_block_64 name="character type" max="8">
+			<_field_struct name="place on" />
+			<_field_word_flags name="difficulty flags">
+				<item Name="easy" />
+				<item Name="normal" />
+				<item Name="heroic" />
+				<item Name="legendary" />
+			</_field_word_flags>
+			<_field_pad name="post-difficulty-flags-padding" length="2" />
+			<_field_tag_reference_64 name="character type^" />
+			<_field_short_integer name="chance" />
+			<_field_pad name="post-chance" length="2" />
+		</_field_block_64>
+		<_field_block_64 name="initial weapon" max="8">
+			<_field_struct name="place on" />
+			<_field_word_flags name="difficulty flags">
+				<item Name="easy" />
+				<item Name="normal" />
+				<item Name="heroic" />
+				<item Name="legendary" />
+			</_field_word_flags>
+			<_field_pad name="post-difficulty-flags-padding" length="2" />
+			<_field_tag_reference_64 name="weapon type^" />
+			<_field_short_integer name="chance" />
+			<_field_pad name="post-chance" length="2" />
+		</_field_block_64>
+		<_field_block_64 name="initial secondary weapon" max="8">
+			<_field_struct name="place on" />
+			<_field_word_flags name="difficulty flags">
+				<item Name="easy" />
+				<item Name="normal" />
+				<item Name="heroic" />
+				<item Name="legendary" />
+			</_field_word_flags>
+			<_field_pad name="post-difficulty-flags-padding" length="2" />
+			<_field_tag_reference_64 name="weapon type^" />
+			<_field_short_integer name="chance" />
+			<_field_pad name="post-chance" length="2" />
+		</_field_block_64>
+		<_field_block_64 name="initial equipment" max="8">
+			<_field_struct name="place on" />
+			<_field_word_flags name="difficulty flags">
+				<item Name="easy" />
+				<item Name="normal" />
+				<item Name="heroic" />
+				<item Name="legendary" />
+			</_field_word_flags>
+			<_field_pad name="post-difficulty-flags-padding" length="2" />
+			<_field_tag_reference_64 name="equipment type^" />
+			<_field_short_integer name="chance" />
+			<_field_pad name="post-chance" length="2" />
+		</_field_block_64>
+		<_field_short_enum name="grenade type">
+			<item Name="NONE" />
+			<item Name="Human grenade" />
+			<item Name="Covenant Plasma" />
+			<item Name="Brute claymore" />
+			<item Name="Firebomb" />
+		</_field_short_enum>
+		<_field_pad name="post-grenade" length="2" />
+		<_field_tag_reference_64 name="vehicle type" />
+		<_field_string_id name="vehicle variant" />
+		<_field_string_id name="activity name" />
+	</_field_block_64>
+</plugin>

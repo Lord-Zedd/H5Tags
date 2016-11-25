@@ -1,0 +1,16 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_char_enum name="distribution#heuristic used to determine where to spawn particles">
+		<item Name="connect the dots#project hull surface locations onto the water and spawn particles along the resulting path." />
+		<item Name="along hull surface only#spawn particles on the hull surface where it intersects with the water." />
+	</_field_char_enum>
+	<_field_pad name="PEBHSP1" length="3" />
+	<_field_block_64 name="markers" max="16">
+		<_field_string_id name="marker group^" />
+	</_field_block_64>
+</plugin>

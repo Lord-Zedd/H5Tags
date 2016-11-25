@@ -1,0 +1,18 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_real_point_2d name="resource subregion AABB min" />
+	<_field_real_vector_2d name="resource subregion block size" />
+	<_field_block_64 name="streaming resource ids" max="4096">
+		<_field_tag_reference_64 name="streaming_reference_tag" />
+	</_field_block_64>
+	<_field_block_64 name="streaming resource subregions" max="65536">
+		<_field_long_integer name="block offset X" />
+		<_field_long_integer name="block offset Y" />
+		<_field_real name="min Z" />
+		<_field_real name="max Z" />
+		<_field_block_64 name="resource levels" max="4096">
+			<_field_short_integer name="requested width" />
+		</_field_block_64>
+	</_field_block_64>
+</plugin>

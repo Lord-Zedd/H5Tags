@@ -1,0 +1,81 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="achievement" max="256">
+		<_field_string_id name="name^" />
+		<_field_char_enum name="type">
+			<item Name="m10_complete" />
+			<item Name="m20_complete" />
+			<item Name="m30_complete" />
+			<item Name="m60_complete" />
+			<item Name="m40_complete" />
+			<item Name="m70_complete" />
+			<item Name="m80_complete" />
+			<item Name="m90_complete" />
+			<item Name="camp_normal_complete" />
+			<item Name="camp_heroic_complete" />
+			<item Name="camp_legendary_complete" />
+			<item Name="camp_legendary_solo_complete" />
+			<item Name="camp_heroic_3skulls_complete" />
+			<item Name="camp_coop_mission_complete" />
+			<item Name="camp_coop_complete" />
+			<item Name="terminal_1" />
+			<item Name="terminal_all" />
+			<item Name="m10_special" />
+			<item Name="m20_special" />
+			<item Name="m30_special" />
+			<item Name="m60_special" />
+			<item Name="m40_special" />
+			<item Name="m70_special" />
+			<item Name="m80_special" />
+			<item Name="m90_special" />
+			<item Name="earn_rank_005" />
+			<item Name="earn_rank_020" />
+			<item Name="wargames_win_5" />
+			<item Name="wargames_win_20" />
+			<item Name="spartan_ops_mission_complete" />
+			<item Name="spartan_ops_episode1_complete" />
+			<item Name="spartan_ops_5episodes_complete" />
+			<item Name="spartan_ops_legendary_solo_mission_complete" />
+			<item Name="spops_1_special" />
+			<item Name="spops_2_special" />
+			<item Name="spops_3_special" />
+			<item Name="spops_4_special" />
+			<item Name="spops_5_special" />
+			<item Name="challenge_complete" />
+			<item Name="25_challenges_complete" />
+			<item Name="change_armor" />
+			<item Name="change_emblem" />
+			<item Name="change_tag" />
+			<item Name="change_pose" />
+			<item Name="save_custom_map" />
+			<item Name="save_custom_gametype" />
+			<item Name="save_screenshot" />
+			<item Name="save_filmclip" />
+			<item Name="upload_to_fileshare" />
+			<item Name="now_they_fly" />
+			<item Name="size_is_everything" />
+			<item Name="odst" />
+			<item Name="bigfoot" />
+			<item Name="david_and_goliath" />
+			<item Name="bad_robot" />
+			<item Name="clay_pigeon" />
+			<item Name="special_delivery" />
+		</_field_char_enum>
+		<_field_byte_flags name="difficulty">
+			<item Name="easy" />
+			<item Name="normal" />
+			<item Name="heroic" />
+			<item Name="legendary" />
+		</_field_byte_flags>
+		<_field_pad name="VJNOSNJER" length="2" />
+		<_field_block_64 name="restricted levels" max="5">
+			<_field_string_id name="level name^#Compared to map name in scenario" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_pad name="pad_gad_0" length="4" />
+</plugin>

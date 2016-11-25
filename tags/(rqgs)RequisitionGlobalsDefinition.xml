@@ -1,0 +1,22 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="levels by xp block" max="100">
+		<_field_short_integer name="level#level achieved when the xp is gained" />
+		<_field_pad name="pad0" length="2" />
+		<_field_long_integer name="xp#xp at which the level is bumped" />
+	</_field_block_64>
+	<_field_tag_reference_64 name="prototype service globals" />
+	<_field_tag_reference_64 name="tag checksum list" />
+	<_field_tag_reference_64 name="user interface required resources" />
+	<_field_tag_reference_64 name="gameplay required resources" />
+	<_field_block_64 name="in game terminal category UI data" max="16">
+		<_field_string_id name="name" />
+		<_field_tag_reference_64 name="icon bitmap" />
+		<_field_long_integer name="icon sprite index" />
+	</_field_block_64>
+</plugin>

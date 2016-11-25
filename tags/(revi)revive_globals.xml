@@ -1,0 +1,49 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_explanation name="Audio" />
+	<_field_tag_reference_64 name="on downed sound#one shot when downed state is entered" validtags="snd!" />
+	<_field_tag_reference_64 name="on stunned sound#one shot when stunned state is entered" validtags="snd!" />
+	<_field_tag_reference_64 name="target revive completed#one shot when downed teammate is revived" validtags="snd!" />
+	<_field_tag_reference_64 name="source revive completed#one shot when player completes reviving a downed teammate" validtags="snd!" />
+	<_field_tag_reference_64 name="entire team is downed#2d one shot when final teammate enters downed state" validtags="snd!" />
+	<_field_tag_reference_64 name="on dead sound#one shot when dead after stunned too many times, or after bleed out" validtags="snd!" />
+	<_field_tag_reference_64 name="on revive requested#confirmation sounds for press X for revive" validtags="snd!" />
+	<_field_tag_reference_64 name="reviving#loop target plays while being revived" />
+	<_field_explanation name="Effects" />
+	<_field_tag_reference_64 name="downed" />
+	<_field_tag_reference_64 name="downed loop" />
+	<_field_tag_reference_64 name="stunned" />
+	<_field_tag_reference_64 name="stunned loop" />
+	<_field_tag_reference_64 name="bleed out" />
+	<_field_tag_reference_64 name="revive#player being revived" />
+	<_field_tag_reference_64 name="revive success#player being revived" />
+	<_field_tag_reference_64 name="revive interrupted#player being revived" />
+	<_field_tag_reference_64 name="reviver#player performing revive" />
+	<_field_tag_reference_64 name="reviver success#player performing revive" />
+	<_field_tag_reference_64 name="reviver interrupted#player performing revive" />
+	<_field_tag_reference_64 name="reward overshield#applied to both players" />
+	<_field_explanation name="Tuning" />
+	<_field_real name="cancel revive damage threshold#amount of damage taken that will cancel revive" />
+	<_field_real name="revive action duration#time the act of reviving takes" />
+	<_field_real name="Revive bleedout Time Normal" />
+	<_field_real name="Revive bleedout Time Heroic" />
+	<_field_real name="Revive bleedout Time Legendary" />
+	<_field_real name="Revive bleedout Time Unreachable" />
+	<_field_real name="Musketeer bleedout scale" />
+	<_field_real name="All humans dead bleedout scale" />
+	<_field_real name="help me audio timer# wait this many seconds between asking for revive help" />
+	<_field_real name="cool down for pulse for help#Wait this many second between pulsing for help" />
+	<_field_real name="Revive Powerup" />
+	<_field_real name="Revive Move Speed Death# move more than this speed after you're downed and you die" />
+	<_field_long_integer name="Respawn Delay Normal" />
+	<_field_long_integer name="Respawn Delay Heroic" />
+	<_field_long_integer name="Respawn Delay Legendary" />
+	<_field_real name="Musketeer Respawn Delay Scale" />
+	<_field_long_integer name="Out of combat respawn timer" />
+	<_field_pad name="endPad" length="4" />
+</plugin>

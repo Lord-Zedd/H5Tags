@@ -1,0 +1,303 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_explanation name="UI Rendering Globals">miscellaneous rendering globals, more below...</_field_explanation>
+	<_field_short_integer name="inc. text update period:milliseconds" />
+	<_field_short_integer name="inc. text block character:ASCII code" />
+	<_field_real name="near clip plane distance:objects closer than this are not drawn" />
+	<_field_real name="projection plane distance:distance at which objects are rendered when z=0 (normal size)" />
+	<_field_real name="far clip plane distance:objects farther than this are not drawn" />
+	<_field_explanation name="Global Text Strings">Global UI Text goes here</_field_explanation>
+	<_field_tag_reference_64 name="unicode string list tag" />
+	<_field_tag_reference_64 name="unicode damage reporting string list tag" />
+	<_field_tag_reference_64 name="unicode fire team member name string list{unicode fire team member string list tag}" />
+	<_field_tag_reference_64 name="unicode fire team member service tag string list" />
+	<_field_explanation name="Main menu music">Looping sound that plays while the main menu is active</_field_explanation>
+	<_field_tag_reference_64 name="main menu music" />
+	<_field_tag_reference_64 name="main menu alternate music" />
+	<_field_long_integer name="music fade time:milliseconds" />
+	<_field_explanation name="Default Text and Shadow Colors">These are the default values used for text glyphs and text shadows</_field_explanation>
+	<_field_real_argb_color name="text color" />
+	<_field_real_argb_color name="shadow color" />
+	<_field_explanation name="Color presets">Colors are defined here and used in text widgets throughout the UI.  Specify a string_id here and the same one in a text widget.  If you don't specify one in a text widget, you'll use the first entry here.</_field_explanation>
+	<_field_block_64 name="color presets" max="1024">
+		<_field_string_id name="name^" />
+		<_field_real_argb_color name="color" />
+	</_field_block_64>
+	<_field_explanation name="Tint colors">These colors are used for tinting widgets by team or player color.</_field_explanation>
+	<_field_block_64 name="tint colors" max="1">
+		<_field_block_64 name="text player" max="63">
+			<_field_real_argb_color name="color" />
+		</_field_block_64>
+		<_field_block_64 name="text team" max="63">
+			<_field_real_argb_color name="color" />
+		</_field_block_64>
+		<_field_block_64 name="bitmap player" max="63">
+			<_field_real_argb_color name="color" />
+		</_field_block_64>
+		<_field_block_64 name="bitmap team" max="63">
+			<_field_real_argb_color name="color" />
+		</_field_block_64>
+		<_field_custom name="Affiliation" />
+		<_field_real_argb_color name="bitmap friend" />
+		<_field_real_argb_color name="bitmap enemy" />
+		<_field_real_argb_color name="bitmap neutral" />
+		<_field_custom name="Affiliation Motion Tracker" />
+		<_field_real_argb_color name="motion tracker bitmap friend" />
+		<_field_real_argb_color name="motion tracker bitmap enemy" />
+		<_field_real_argb_color name="motion tracker bitmap neutral" />
+		<_field_custom name="Flood Team Colors" />
+		<_field_real_argb_color name="bitmap flood" />
+		<_field_real_argb_color name="bitmap spartans" />
+		<_field_custom name="NavPoint Colors" />
+		<_field_real_rgb_color name="Hud blue" />
+		<_field_real_rgb_color name="White" />
+		<_field_real_rgb_color name="Black" />
+		<_field_real_rgb_color name="Red" />
+		<_field_custom name="Controller Button Colors" />
+		<_field_real_argb_color name="A" />
+		<_field_real_argb_color name="B" />
+		<_field_real_argb_color name="X" />
+		<_field_real_argb_color name="Y" />
+		<_field_custom name="Character HUD Colors" />
+		<_field_real_argb_color name="MP" />
+		<_field_real_argb_color name="Warzone" />
+		<_field_real_argb_color name="Chief" />
+		<_field_real_argb_color name="Fred" />
+		<_field_real_argb_color name="Linda" />
+		<_field_real_argb_color name="Kelly" />
+		<_field_real_argb_color name="Locke" />
+		<_field_real_argb_color name="Vale" />
+		<_field_real_argb_color name="Tanaka" />
+		<_field_real_argb_color name="Buck" />
+		<_field_real_argb_color name="Monitor" />
+	</_field_block_64>
+	<_field_explanation name="User interface sounds">Default sound effects for various UI actions</_field_explanation>
+	<_field_tag_reference_64 name="default sounds" />
+	<_field_explanation name="HaloX Alerts">Alerts are triggered by specific events that happen in the game.  The game can require that an error be resolved before the dialog can be dismissed.  Once the error is resolved (or if it doesn't require resolution,) the user can dismiss it.</_field_explanation>
+	<_field_block_64 name="alert descriptions" max="512">
+		<_field_string_id name="error name^" />
+		<_field_byte_flags name="flags">
+			<item Name="allow auto dismissal" />
+			<item Name="show spinner" />
+			<item Name="show close application button" />
+		</_field_byte_flags>
+		<_field_char_enum name="error category">
+			<item Name="default" />
+			<item Name="networking" />
+			<item Name="storage (reading/writing failure)" />
+			<item Name="controller" />
+		</_field_char_enum>
+		<_field_char_enum name="error icon">
+			<item Name="default alert" />
+			<item Name="downloading" />
+			<item Name="paused" />
+			<item Name="uploading" />
+			<item Name="completed" />
+		</_field_char_enum>
+		<_field_pad name="pad0" length="1" />
+		<_field_string_id name="title" />
+		<_field_string_id name="message" />
+	</_field_block_64>
+	<_field_explanation name="HaloX Dialogs">Dialogs are brought up by individual screens or UI systems to ask the user a question, typically of the Ok/Cancel sort such as: 'Are you sure you want to leave the game?'.
+Notes:
+- first item defaults to 'ok', second item defaults to 'cancel.  third and fourth items don't display if they're not set
+- if 'b button action' is set to 'button ignored' then the b button doesn't do anything (such as cancelling)</_field_explanation>
+	<_field_block_64 name="dialog descriptions" max="256">
+		<_field_string_id name="dialog name^" />
+		<_field_word_flags name="flags">
+			<item Name="unused" />
+			<item Name="text_input_24" />
+			<item Name="text_input_120" />
+			<item Name="countdown_timer" />
+			<item Name="text_input_4" />
+		</_field_word_flags>
+		<_field_pad name="pad0" length="2" />
+		<_field_string_id name="title" />
+		<_field_string_id name="message" />
+		<_field_string_id name="first_item" />
+		<_field_string_id name="second_item" />
+		<_field_string_id name="third_item" />
+		<_field_string_id name="fourth_item" />
+		<_field_string_id name="button key" />
+		<_field_short_enum name="default item">
+			<item Name="first item" />
+			<item Name="second item" />
+			<item Name="third item" />
+			<item Name="fourth item" />
+		</_field_short_enum>
+		<_field_short_enum name="b button action">
+			<item Name="dismisses dialog" />
+			<item Name="button ignored" />
+			<item Name="first item activates" />
+			<item Name="second item activates" />
+			<item Name="third item activates" />
+			<item Name="fourth item activates" />
+		</_field_short_enum>
+	</_field_block_64>
+	<_field_explanation name="Lua User Libraries">These lua script files are loaded into every new UI lua state in the order specified to provide suplemental functionality.</_field_explanation>
+	<_field_block_64 name="lua user libraries" max="32">
+		<_field_tag_reference_64 name="lua library" />
+	</_field_block_64>
+	<_field_explanation name="Content Aspect Ratio Scaling">These define the scaling that will get applied to UI content and animations when running at the specified display modes</_field_explanation>
+	<_field_real_vector_2d name="16x9" />
+	<_field_real_vector_2d name="4x3" />
+	<_field_explanation name="Blur Constants">These control the blur kernel used when blurring overlayed UI</_field_explanation>
+	<_field_real name="horizontal blur factor" />
+	<_field_real name="vertical blur factor" />
+	<_field_explanation name="Appearance Model Names">These specify the name of a scenario-placed biped to be used for the Start Menu Appearance model
+If you want to use a scenario-placed biped (non-AI), enter the biped name in the 'biped name' field
+If you want to use an AI-placed biped, enter the squad name string and starting position string_id</_field_explanation>
+	<_field_string_id name="mc biped name" />
+	<_field_string name="mc ai squad name" />
+	<_field_string_id name="mc ai start pos" />
+	<_field_string_id name="elite biped name" />
+	<_field_string name="elite ai squad name" />
+	<_field_string_id name="elite ai start pos" />
+	<_field_explanation name="Player Portrait Model Names">These specify the name of a scenario-placed biped to be used for the Player Portrait Appearance model
+Enter the scenario-placed biped (non-AI) name in the 'spartan biped name' and 'elite biped name' field</_field_explanation>
+	<_field_string_id name="spartan portrait biped name" />
+	<_field_string_id name="elite portrait biped name" />
+	<_field_explanation name="UI Navigation speed">This controls tabbing around the UI.  The tab delay is how fast you move around normally. 
+Tab fast wait is how long the UI waits till using the tab fast delay instead of the tab delay.</_field_explanation>
+	<_field_long_integer name="navigation tab delay msec" />
+	<_field_long_integer name="navigation tab fast wait msec" />
+	<_field_long_integer name="navigation tab fast delay msec" />
+	<_field_explanation name="Spinner tab speed">This is an alternate control for tabbing speed in the spinner.
+The input (x) is the time the stick has been held down.
+The output (y) is the time between tab events.</_field_explanation>
+	<_field_struct name="spinner tab speed function" />
+	<_field_data_64 name="data" />
+	<_field_long_integer name="max input time (x) on the graph (msec)" />
+	<_field_custom name="Motion Tracker Functions" />
+	<_field_explanation name="Distance Scale Function">This controls how sprites scale as they move further away from the center.
+The input (x) is the center (should be 0).
+The output (y) is the distance to the edge (should be 1).</_field_explanation>
+	<_field_struct name="motion tracker distance function" />
+	<_field_data_64 name="data" />
+	<_field_explanation name="Attract Mode Settings">These control behavior of the attract mode movies</_field_explanation>
+	<_field_long_integer name="delay:seconds" />
+	<_field_explanation name="WPF settings">Settings and shared content for WPF</_field_explanation>
+	<_field_tag_reference_64 name="WPF app resources tag" />
+	<_field_block_64 name="WPF widget set" max="512">
+		<_field_string_id name="wpf widget name^" />
+		<_field_tag_reference_64 name="wpf widget tag" />
+	</_field_block_64>
+	<_field_block_64 name="wpf font sets" max="256">
+		<_field_tag_reference_64 name="wpf font set tag" />
+	</_field_block_64>
+	<_field_block_64 name="bitmap dictionaries#allow bitmap tags to be referenced using ampersand notation in HaloTextBlocks" max="256">
+		<_field_tag_reference_64 name="bitmap dictionary" />
+	</_field_block_64>
+	<_field_block_64 name="PGCR per player tracked incidents" max="50">
+		<_field_string_id name="incident name^" />
+		<_field_long_integer name="maximum stat count*#number of times this can happen before the PGCR stops tracking them" />
+	</_field_block_64>
+	<_field_custom name="Loading Screen" />
+	<_field_tag_reference_64 name="Loading screen tag" />
+	<_field_real name="fade from level to loading screen (seconds)" />
+	<_field_real name="fade from level to blocking load (seconds)" />
+	<_field_real name="fade in to loading screen (seconds)" />
+	<_field_real name="fade out from loading screen (seconds)" />
+	<_field_custom name="Matchmade Char Select" />
+	<_field_struct name="Matchmade Character Select Behavior" />
+	<_field_long_flags name="flags">
+		<item Name="initial selection time limit ignored" />
+		<item Name="join in progress time limit ignored" />
+		<item Name="main character replacement time limit ignored" />
+	</_field_long_flags>
+	<_field_long_integer name="initial selection overall time:seconds" />
+	<_field_long_integer name="initial selection lockin time:seconds" />
+	<_field_long_integer name="join in progress overall time:seconds" />
+	<_field_long_integer name="join in progress lockin time:seconds" />
+	<_field_long_integer name="main character replacement overall time:seconds" />
+	<_field_long_integer name="main character replacement lockin time:seconds" />
+	<_field_long_integer name="auto assigned wait time:seconds" />
+	<_field_custom name="Non-MM Char Select" />
+	<_field_struct name="Non-Matchmade Character Select Behavior" />
+	<_field_long_flags name="flags">
+		<item Name="initial selection time limit ignored" />
+		<item Name="join in progress time limit ignored" />
+		<item Name="main character replacement time limit ignored" />
+	</_field_long_flags>
+	<_field_long_integer name="initial selection overall time:seconds" />
+	<_field_long_integer name="initial selection lockin time:seconds" />
+	<_field_long_integer name="join in progress overall time:seconds" />
+	<_field_long_integer name="join in progress lockin time:seconds" />
+	<_field_long_integer name="main character replacement overall time:seconds" />
+	<_field_long_integer name="main character replacement lockin time:seconds" />
+	<_field_long_integer name="auto assigned wait time:seconds" />
+	<_field_custom name="Reticle Over Player Behavior" />
+	<_field_struct name="Reticle Over Player Behavior" />
+	<_field_real name="firstTierAngle: angle in degrees of the inner cone" />
+	<_field_real name="firstTierDistance: distance the inner cone extends (multiplied by zoom level)" />
+	<_field_real name="secondTierAngle: angle in degrees of the outer cone" />
+	<_field_real name="secondTierDistance: distance the outer cone extends (multiplied by zoom level)" />
+	<_field_real name="vehicleDistanceScalar: multiply the normal first and second tier distance when the reticled over player is in a vehicle" />
+	<_field_explanation name="Localized font mappings">What font should be loaded instead of the requested font</_field_explanation>
+	<_field_block_64 name="font mappings" max="32">
+		<_field_long_enum name="language^">
+			<item Name="english" />
+			<item Name="japanese" />
+			<item Name="german" />
+			<item Name="french" />
+			<item Name="spanish" />
+			<item Name="mexican spanish" />
+			<item Name="italian" />
+			<item Name="korean" />
+			<item Name="chinese-traditional" />
+			<item Name="chinese-simplified" />
+			<item Name="portuguese" />
+			<item Name="polish" />
+			<item Name="russian" />
+			<item Name="danish" />
+			<item Name="finnish" />
+			<item Name="dutch" />
+			<item Name="norwegian" />
+		</_field_long_enum>
+		<_field_block_64 name="mappings" max="32">
+			<_field_long_string name="original name^" />
+			<_field_long_string name="remapped name" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_explanation name="FastHud Font Fake Bitmap">used as sentinel when rendering so we can use on the fly font textures</_field_explanation>
+	<_field_tag_reference_64 name="FastHud Font Fake Bitmap" />
+	<_field_explanation name="Campaign Fire Team">The bitmaps and sprite index for fire team in campaign arcade mode.</_field_explanation>
+	<_field_tag_reference_64 name="Fire Team icon" />
+	<_field_short_integer name="Fire Team Osiris sprite index" />
+	<_field_short_integer name="Fire Team Blue sprite index" />
+	<_field_real_argb_color name="Team Osiris icon Color" />
+	<_field_real_argb_color name="Team Blue icon Color" />
+	<_field_explanation name="Emblem and Nameplate Data">Emblem and Nameplate visual data</_field_explanation>
+	<_field_block_64 name="emblem and nameplate data" max="1024">
+		<_field_string_id name="name^" />
+		<_field_tag_reference_64 name="emblem bitmap" />
+		<_field_tag_reference_64 name="nameplate bitmap" />
+		<_field_tag_reference_64 name="symbol bitmap" />
+		<_field_byte_integer name="default primary color index" />
+		<_field_byte_integer name="default secondary color index" />
+		<_field_byte_integer name="default tertiary color index" />
+		<_field_byte_integer name="quaternary color index#only used when type is FourthColor" />
+		<_field_char_enum name="emblem type">
+			<item Name="Normal" />
+			<item Name="FourthColor" />
+			<item Name="TwoTone" />
+			<item Name="TwoToneClamp1" />
+			<item Name="TwoToneClamp2" />
+			<item Name="RawColor" />
+		</_field_char_enum>
+		<_field_pad name="pad0" length="3" />
+	</_field_block_64>
+	<_field_explanation name="4K Resolution Range">Resolution range for using 4K assets</_field_explanation>
+	<_field_real_point_2d name="min resolution for 4K assets" />
+	<_field_real_point_2d name="max resolution for 4K assets" />
+	<_field_tag_reference_64 name="English keyboard bitmap" />
+	<_field_block_64 name="keyboard bitmap list for different languages" max="32">
+		<_field_string_id name="identifier" />
+		<_field_tag_reference_64 name="keyboard bitmap" />
+	</_field_block_64>
+</plugin>

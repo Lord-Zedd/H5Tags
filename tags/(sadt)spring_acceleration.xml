@@ -1,0 +1,24 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="linear acceleartions" max="3">
+		<_field_real name="acceleration range:world units" />
+		<_field_real name="inverse acceleration range:world units*!" />
+		<_field_real name="world acceleration scale#0 defaults to 1, scale the acceleration the object itself applies on this system." />
+		<_field_explanation name="damping">feed velocity into this function and damp by the value that comes out</_field_explanation>
+		<_field_struct name="spring damping" />
+		<_field_data_64 name="data" />
+		<_field_real name="velocity domain" />
+		<_field_struct name="spring acceleration" />
+		<_field_data_64 name="data" />
+	</_field_block_64>
+	<_field_short_block_index name="x-axis" />
+	<_field_short_block_index name="y-axis" />
+	<_field_short_block_index name="z-axis" />
+	<_field_pad name="pad" length="2" />
+	<_field_pad name="pad_tp" length="4" />
+</plugin>

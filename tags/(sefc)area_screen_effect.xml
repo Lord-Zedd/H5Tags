@@ -1,0 +1,92 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_word_flags name="global flags">
+		<item Name="play sequentially - ignore delay settings" />
+		<item Name="debug this screen effect" />
+		<item Name="force delete when attached to dead object" />
+		<item Name="force max one per object" />
+		<item Name="force looping (dangerous; lasts forever)" />
+	</_field_word_flags>
+	<_field_word_flags name="global hidden flags!">
+		<item Name="update thread" />
+		<item Name="render thread" />
+	</_field_word_flags>
+	<_field_block_64 name="screen effects" max="8">
+		<_field_string_id name="name^" />
+		<_field_word_flags name="flags">
+			<item Name="debug disable" />
+			<item Name="allow effect outside radius" />
+			<item Name="unattached" />
+			<item Name="first person{first person only}" />
+			<item Name="third person{third person only}" />
+			<item Name="disable camera falloffs{cinematic}#disables distance and angle falloffs" />
+			<item Name="only affects attached object" />
+			<item Name="draw precisely one (ask Bill before you check this)" />
+			<item Name="use player travel direction" />
+		</_field_word_flags>
+		<_field_word_flags name="hidden flags!">
+			<item Name="update thread" />
+			<item Name="render thread" />
+		</_field_word_flags>
+		<_field_explanation name="DISTANCE FALLOFF">controls the maximum distance and the distance falloff of this effect
+NOTE: not used for scenario global effects</_field_explanation>
+		<_field_real name="maximum distance:world units#the maximum distance this screen effect will affect" />
+		<_field_struct name="distance falloff" />
+		<_field_struct name="Mapping" />
+		<_field_data_64 name="data" />
+		<_field_explanation name="TIME EVOLUTION">controls the lifetime and time falloff of this effect
+NOTE: not used for scenario global effects</_field_explanation>
+		<_field_real name="delay:seconds#the effect will start after this many seconds (ignored if the play sequentially flag is set)" />
+		<_field_real name="lifetime:seconds#the effect is destroyed after this many seconds (0 = never dies)" />
+		<_field_struct name="time falloff" />
+		<_field_struct name="Mapping" />
+		<_field_data_64 name="data" />
+		<_field_explanation name="ANGLE FALLOFF">controls the falloff of this effect based on how close you are to looking directly at it
+NOTE: not used for scenario global effects</_field_explanation>
+		<_field_struct name="angle falloff" />
+		<_field_struct name="Mapping" />
+		<_field_data_64 name="data" />
+		<_field_explanation name="OBJECT FALLOFF">applies a falloff based on an object function - ignored if the effect is not attached to an object</_field_explanation>
+		<_field_struct name="object falloff" />
+		<_field_string_id name="Input Variable!" />
+		<_field_string_id name="Range Variable!" />
+		<_field_struct name="Mapping" />
+		<_field_data_64 name="data" />
+		<_field_explanation name="EFFECTS">a selection of effects to choose from
+in the case of overlapping effects, the maximum will be taken</_field_explanation>
+		<_field_tag_reference_64 name="color grading look-up-texture" />
+		<_field_real name="runtime color grading strength!:[do not edit]#do not edit" />
+		<_field_real name="exposure boost:stops#increase in exposure" />
+		<_field_real name="exposure deboost:stops#decrease in exposure" />
+		<_field_real name="hue left:degrees [0-360]#shifts hue R-&gt;G-&gt;B" />
+		<_field_real name="hue right:degrees [0-360]#shifts hue B-&gt;G-&gt;R" />
+		<_field_real name="saturation:[0-1]#increases saturation" />
+		<_field_real name="desaturation:[0-1]#decreases saturation" />
+		<_field_real name="contrast enhance:[0-1]#contrast increase" />
+		<_field_real name="gamma enhance:[0-10]#gamma increase" />
+		<_field_real name="gamma reduce:[0-10]#gamma increase" />
+		<_field_real name="bright noise:[0-1]#add bright noise contribution, 0 turns it off, 1: full on" />
+		<_field_real name="dark noise:[0-1]#add dark noise contribution, 0 turns it off, 1: full on" />
+		<_field_real_rgb_color name="color filter#this color is multiplied on top" />
+		<_field_real_rgb_color name="color floor#this color is subtracted" />
+		<_field_real_fraction name="color replace strength:[0-1]#used to blend in the color replace below" />
+		<_field_real_rgb_color name="color replace#this color is blended in place of the screen's color" />
+		<_field_real name="tron:[0-1]#adds a full-screen tron effect" />
+		<_field_real name="radial blur{motion suck}:[-2, 2]#adds motion-blur towards or away from this screen effect" />
+		<_field_real name="bloom buffer radial blur{bloom buffer motion suck}:[-2, 2]#adds cheap bloom buffer motion-blur towards or away from this screen effect" />
+		<_field_real_vector_3d name="radial blur direction{motion suck direction}!:[do not edit]#do not edit" />
+		<_field_real name="horizontal blur:[0-10] expensive#blurs the entire screen" />
+		<_field_real name="vertical blur:[0-10] expensive#blurs the entire screen" />
+		<_field_real name="vision mode:[0-1]#turns on the global vision mode" />
+		<_field_real name="hud fade:[0-1]#fades the chud" />
+		<_field_real name="fov in:[0-1]#zooms in the field of view" />
+		<_field_real name="fov out:[0-1]#zooms out the field of view" />
+		<_field_real name="screen shake:[0-1]#shakes the entire screen" />
+		<_field_tag_reference_64 name="shader effect#applies this shader to the entire screen" />
+	</_field_block_64>
+</plugin>

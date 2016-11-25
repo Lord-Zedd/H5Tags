@@ -1,0 +1,38 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_explanation name="WIND DIRECTION">Speed is in MPH, direction is in degrees:
+   0°  North
+  90°  East
+ 180°  South
+ 270°  West
+</_field_explanation>
+	<_field_struct name="direction" />
+	<_field_struct name="Mapping" />
+	<_field_data_64 name="data" />
+	<_field_struct name="speed" />
+	<_field_struct name="Mapping" />
+	<_field_data_64 name="data" />
+	<_field_explanation name="DECORATOR WIND MOTION">These are all a function of the wind speed (between 0 MPH on the left and 200 MPH on the right)
+
+bend: how much the decorators bend - 0.0 is standing straight up, 10.0 is super-flattened
+oscillation: how much the decorators 'oscillate' at a given speed
+frequency: how fast the oscillation waves each decorator
+gust size: big gusts move large areas of decorators in sync.  small gusts give more variation
+</_field_explanation>
+	<_field_struct name="bend" />
+	<_field_struct name="Mapping" />
+	<_field_data_64 name="data" />
+	<_field_struct name="oscillation" />
+	<_field_struct name="Mapping" />
+	<_field_data_64 name="data" />
+	<_field_struct name="frequency" />
+	<_field_struct name="Mapping" />
+	<_field_data_64 name="data" />
+	<_field_real name="gust size:world units" />
+	<_field_tag_reference_64 name="gust noise bitmap" />
+</plugin>

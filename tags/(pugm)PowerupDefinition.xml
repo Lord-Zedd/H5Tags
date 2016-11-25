@@ -1,0 +1,16 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_real_rgb_color name="color" />
+	<_field_real_rgb_color name="UI fill meter color" />
+	<_field_real_rgb_color name="UI backer bitmap color" />
+	<_field_block_64 name="properties" max="32">
+		<_field_string_id name="malleable property name" />
+		<_field_real name="scalar#scales the movement speed" />
+		<_field_real name="duration#how long the scale is applied" />
+	</_field_block_64>
+</plugin>

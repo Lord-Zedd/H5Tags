@@ -1,0 +1,26 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="asset specs" max="4096">
+		<_field_tag_reference_64 name="object" />
+		<_field_string_id name="variant" />
+		<_field_tag_reference_64 name="object configuration" />
+		<_field_long_flags name="flags">
+			<item Name="override transform" />
+		</_field_long_flags>
+		<_field_real_point_3d name="position override#only used if 'override transform' is checked" />
+		<_field_real_euler_angles_3d name="orientation override#only used if 'override transform' is checked" />
+		<_field_string_id name="animation name" />
+		<_field_real name="end animation frame" />
+		<_field_long_flags name="animation flags">
+			<item Name="interpolate" />
+			<item Name="alignment and position is valid" />
+		</_field_long_flags>
+		<_field_real name="scale#if greater than 0.0, the tool will use this scale, otherwise the tool will use 1.0" />
+	</_field_block_64>
+	<_field_pad name="pad0" length="4" />
+</plugin>

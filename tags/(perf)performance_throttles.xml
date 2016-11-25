@@ -1,0 +1,62 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_explanation name="Performance Throttles">Split-screen throttle settings should be more aggressive than non-local co-op settings
+block index 0:	default non split screen
+block index 1: two way split screen
+block index 2: three way split screen
+block index 3: four way split screen
+block index 4: one additional non-local player
+block index 5: two additional non-local players
+block index 6: three additional non-local players
+
+</_field_explanation>
+	<_field_block_64 name="Performance Throttles" max="7">
+		<_field_long_flags name="flags">
+			<item Name="disable object attachment lights" />
+			<item Name="disable first person shadow" />
+			<item Name="disable cheap particles" />
+			<item Name="disable blob shadows" />
+			<item Name="disable patchy fog" />
+			<item Name="disable screen distortion" />
+			<item Name="disable light shafts" />
+			<item Name="disable first person depth of field" />
+			<item Name="disable motion blur" />
+			<item Name="disable particles continue offscreen" />
+			<item Name="disable light cones" />
+			<item Name="disable water interraction" />
+			<item Name="disable water refraction" />
+			<item Name="disable decorators" />
+			<item Name="disable instance occlusion queries#WARNING Will likely hurt perf on most maps" />
+			<item Name="disable structure decals" />
+			<item Name="disable object decals" />
+		</_field_long_flags>
+		<_field_real name="water tessellation scale" />
+		<_field_real name="decorator fade dist scale:0 = off" />
+		<_field_real name="effect lod distance scale{effect lod limit}" />
+		<_field_custom name="Object settings" />
+		<_field_real name="instance fade modifier!" />
+		<_field_real name="object fade modifier#scales down the distances at which objects first LOD and then fade out" />
+		<_field_real name="object detail fade modifier" />
+		<_field_real name="object lighting time limit:s 0=0.001s#per frame time limit to spend sampling new lighting radiosity" />
+		<_field_custom name="LOD settings" />
+		<_field_real name="LOD modifier{IO fade modifier}:[0..1]#scales the distances for LOD" />
+		<_field_real name="LOD vertical modifier{IO fade vertical modifier}:[0..1]#scales vertical LOD calculations (flying)" />
+		<_field_long_integer name="Maximum Instance Group LOD draw bundles:[0..16]#Increases LOD on instances to reduce total number of draw bundles used to render groups" />
+		<_field_custom name="Dynamic light settings" />
+		<_field_long_integer name="max forward dynamic lights{max gpu dynamic lights}#will quickly fade gpu lights when we try to render more than this many:0 = off" />
+		<_field_real name="forward dynamic light fade distance scale{gpu light fade distance scale}#scales the size used for distance-fade (set smaller to make it fade earlier)" />
+		<_field_long_integer name="max screenspace dynamic lights#will quickly fade screenspace lights when we try to render more than this many:0 = off" />
+		<_field_real name="screenspace light fade distance scale#scales the size used for distance-fade (set smaller to make it fade earlier)" />
+		<_field_long_integer name="max effect lights (screenspace)#limits the number of effect lights we allow to be active at a time (eg. needler needles lighting up objects):0 = off" />
+		<_field_custom name="Shadow settings" />
+		<_field_long_integer name="max shadow casting objects:0 = off" />
+		<_field_real name="shadow quality lod#scales resolution of object shadows:[0.0 to 1.0]" />
+		<_field_real name="floating shadow quality lod#scales resolution of floating shadow:[0.0 to 1.0], 0 = off" />
+	</_field_block_64>
+	<_field_pad name="pad_tp" length="4" />
+</plugin>

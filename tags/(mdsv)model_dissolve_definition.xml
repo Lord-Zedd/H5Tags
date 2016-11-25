@@ -1,0 +1,329 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_byte_flags name="flags">
+		<item Name="draw backfaces on overlay" />
+		<item Name="reverse dissolve" />
+		<item Name="pin to animation" />
+		<item Name="time particles to die when arriving" />
+		<item Name="needs transmission over network" />
+		<item Name="can be restarted" />
+		<item Name="bounding center effect is taint spawn" />
+	</_field_byte_flags>
+	<_field_char_enum name="particle spawn position">
+		<item Name="dissolve surface" />
+		<item Name="dissolve point" />
+		<item Name="opposite from dissolve point" />
+	</_field_char_enum>
+	<_field_pad name="graaag" length="2" />
+	<_field_real name="particle spawn random radius" />
+	<_field_tag_reference_64 name="cheap particle emitter" />
+	<_field_real name="cheap particle spawn distance threshold" />
+	<_field_custom name="particle velocity factors" />
+	<_field_real name="velocity up" />
+	<_field_real name="velocity toward dissolve point" />
+	<_field_real name="velocity toward dissolve surface" />
+	<_field_real name="velocity along dissolve surface" />
+	<_field_real name="velocity random" />
+	<_field_real name="particle forced speed#if non-zero, we normalize the speed to this value" />
+	<_field_real name="delay" />
+	<_field_real name="duration" />
+	<_field_real name="extra duration#particularly for reverse dissolves, to prevent popping" />
+	<_field_real name="particle spawn time offset#particularly for reverse dissolves, to cause particles to arrive at the leading edge" />
+	<_field_block_64 name="per-region time offset" max="32">
+		<_field_string_id name="region name^" />
+		<_field_real name="region time offset" />
+	</_field_block_64>
+	<_field_custom name="effects" />
+	<_field_tag_reference_64 name="dissolve point" />
+	<_field_tag_reference_64 name="opposite dissolve point" />
+	<_field_tag_reference_64 name="dissolve surface" />
+	<_field_tag_reference_64 name="bounding sphere center" />
+	<_field_tag_reference_64 name="finish effect" />
+	<_field_custom name="material" />
+	<_field_struct name="actual material?" />
+	<_field_tag_reference_64 name="material shader" />
+	<_field_block_64 name="material parameters" max="267">
+		<_field_string_id name="parameter name^*" />
+		<_field_long_enum name="parameter type*">
+			<item Name="bitmap" />
+			<item Name="real" />
+			<item Name="int" />
+			<item Name="bool" />
+			<item Name="color" />
+		</_field_long_enum>
+		<_field_long_integer name="parameter index*!" />
+		<_field_tag_reference_64 name="bitmap" />
+		<_field_string_id name="bitmap path" />
+		<_field_real_argb_color name="color" />
+		<_field_real name="real" />
+		<_field_real_vector_3d name="vector" />
+		<_field_long_integer name="int/bool" />
+		<_field_word_integer name="bitmap flags" />
+		<_field_word_integer name="bitmap filter mode" />
+		<_field_word_integer name="bitmap address mode" />
+		<_field_word_integer name="bitmap address mode x" />
+		<_field_word_integer name="bitmap address mode y" />
+		<_field_word_integer name="bitmap sharpen mode" />
+		<_field_byte_integer name="bitmap extern mode" />
+		<_field_byte_integer name="bitmap min mipmap" />
+		<_field_byte_integer name="bitmap max mipmap" />
+		<_field_byte_integer name="parameter flags!" />
+		<_field_dword_integer name="render phases used" />
+		<_field_dword_integer name="shader types used" />
+		<_field_block_64 name="function parameters" max="267">
+			<_field_long_enum name="type^">
+				<item Name="value" />
+				<item Name="color" />
+				<item Name="scale uniform" />
+				<item Name="scale u" />
+				<item Name="scale v" />
+				<item Name="offset u" />
+				<item Name="offset v" />
+				<item Name="frame index" />
+				<item Name="alpha" />
+			</_field_long_enum>
+			<_field_string_id name="input name" />
+			<_field_string_id name="range name" />
+			<_field_char_enum name="Output Modifier!">
+				<item Name=" " />
+				<item Name="Add" />
+				<item Name="Multiply" />
+			</_field_char_enum>
+			<_field_pad name="BVCG" length="3" />
+			<_field_string_id name="Output Modifier Input!" />
+			<_field_real name="time period:seconds" />
+			<_field_explanation name="FUNCTION" />
+			<_field_data_64 name="data" />
+		</_field_block_64>
+		<_field_data_64 name="display name*" />
+		<_field_data_64 name="display group*" />
+		<_field_data_64 name="display help text*" />
+		<_field_real name="display minimum" />
+		<_field_real name="display maximum" />
+		<_field_word_integer name="register offset*!" />
+		<_field_word_integer name="register size*!" />
+	</_field_block_64>
+	<_field_block_64 name="postprocess definition!" max="1">
+		<_field_block_64 name="textures" max="32">
+			<_field_tag_reference_64 name="bitmap reference" />
+			<_field_dword_integer name="render phase mask" />
+			<_field_dword_integer name="shader stage mask" />
+			<_field_word_integer name="frame index parameter" />
+			<_field_word_integer name="sampler index" />
+			<_field_word_integer name="transform register index" />
+			<_field_byte_integer name="extern texture mode" />
+			<_field_pad name="lkasdfhbahsdf" length="1" />
+			<_field_int64_integer name="SamplerState!~" />
+		</_field_block_64>
+		<_field_long_integer name="textures to clear" />
+		<_field_block_64 name="functions" max="267">
+			<_field_long_enum name="type^">
+				<item Name="value" />
+				<item Name="color" />
+				<item Name="scale uniform" />
+				<item Name="scale u" />
+				<item Name="scale v" />
+				<item Name="offset u" />
+				<item Name="offset v" />
+				<item Name="frame index" />
+				<item Name="alpha" />
+			</_field_long_enum>
+			<_field_string_id name="input name" />
+			<_field_string_id name="range name" />
+			<_field_char_enum name="Output Modifier!">
+				<item Name=" " />
+				<item Name="Add" />
+				<item Name="Multiply" />
+			</_field_char_enum>
+			<_field_pad name="BVCG" length="3" />
+			<_field_string_id name="Output Modifier Input!" />
+			<_field_real name="time period:seconds" />
+			<_field_explanation name="FUNCTION" />
+			<_field_data_64 name="data" />
+		</_field_block_64>
+		<_field_block_64 name="function parameters" max="255">
+			<_field_byte_integer name="function index" />
+			<_field_byte_integer name="register offset" />
+			<_field_byte_integer name="parameter group" />
+			<_field_pad name="DHaFS" length="1" />
+			<_field_dword_integer name="render phase mask" />
+		</_field_block_64>
+		<_field_block_64 name="extern parameters" max="255">
+			<_field_byte_integer name="extern index" />
+			<_field_byte_integer name="extern offset" />
+			<_field_byte_integer name="parameter group" />
+			<_field_pad name="DHaFS" length="1" />
+			<_field_dword_integer name="render phase mask" />
+		</_field_block_64>
+		<_field_char_enum name="alpha blend mode">
+			<item Name="opaque" />
+			<item Name="additive" />
+			<item Name="multiply" />
+			<item Name="alpha_blend" />
+			<item Name="double_multiply" />
+			<item Name="pre_multiplied_alpha" />
+			<item Name="maximum" />
+			<item Name="multiply_add" />
+			<item Name="add_src_times_dstalpha" />
+			<item Name="add_src_times_srcalpha" />
+			<item Name="inv_alpha_blend" />
+			<item Name="motion_blur_static" />
+			<item Name="motion_blur_inhibit" />
+			<item Name="alpha_blend_constant" />
+			<item Name="overdraw_apply" />
+			<item Name="wet_screen_effect" />
+			<item Name="minimum" />
+			<item Name="revsubtract" />
+			<item Name="forge_lightmap" />
+			<item Name="forge_lightmap_inv" />
+			<item Name="replace_all_channels" />
+			<item Name="alpha_blend_max" />
+			<item Name="opaque_alpha_blend" />
+			<item Name="alpha_blend_additive_transparent" />
+			<item Name="floating shadow" />
+			<item Name="decal_alpha_blend" />
+			<item Name="decal_add_src_times_src_alpha" />
+			<item Name="decal_multiply_add" />
+			<item Name="wpf_blend_mode" />
+			<item Name="wpf_no_color_blend_mode" />
+			<item Name="blend forge analytic red" />
+			<item Name="blend factor green only" />
+			<item Name="blend forge analytic blue" />
+			<item Name="blend factor alpha only" />
+			<item Name="multiply red green only" />
+			<item Name="multiply blue alpha only" />
+			<item Name="decal opaque" />
+			<item Name="accumulate_pre_multiplied_alpha" />
+			<item Name="accumulate_multiply_add" />
+			<item Name="accumulate_alpha_blend" />
+			<item Name="accumulate_inverse_alpha_blend" />
+			<item Name="accumulate_additive" />
+			<item Name="accumulate_additive_transparent" />
+			<item Name="accumulate_add_src_times_srcalpha" />
+			<item Name="accumulate_multiply" />
+			<item Name="ssao_multiply" />
+			<item Name="ssao_alpha_channel_only" />
+			<item Name="depth_peeling_blend_mode" />
+			<item Name="depth_peeling_Z_pass" />
+			<item Name="wpf_additive_blend_mode" />
+			<item Name="unused" />
+			<item Name="depth_peeling_accumulate_alpha" />
+			<item Name="alpha_blend_for_display_planes" />
+			<item Name="forge_light" />
+			<item Name="forge_light_inverse" />
+		</_field_char_enum>
+		<_field_char_enum name="layer blend mode">
+			<item Name="none" />
+			<item Name="blended" />
+			<item Name="layered" />
+		</_field_char_enum>
+		<_field_word_flags name="flags">
+			<item Name="has material constant functions" />
+			<item Name="has texture frame functions" />
+			<item Name="disable atmosphere fog" />
+			<item Name="uses depth camera" />
+			<item Name="material is variable" />
+			<item Name="has variable material constant functions" />
+			<item Name="has at least one extern texture used" />
+		</_field_word_flags>
+		<_field_block_64 name="material constants!~" max="255">
+			<_field_real_quaternion name="register" />
+		</_field_block_64>
+		<_field_block_64 name="alternate constants!~" max="255">
+			<_field_real_quaternion name="register" />
+		</_field_block_64>
+		<_field_int64_integer name="materialConstantBuffer!~" />
+		<_field_int64_integer name="alternateConstantBuffer!~" />
+		<_field_dword_integer name="material constant shader stage mask" />
+		<_field_array name="runtime queryable properties table">
+			<_field_char_block_index name="index" />
+			<_field_char_block_index name="index" />
+			<_field_char_block_index name="index" />
+			<_field_char_block_index name="index" />
+		</_field_array>
+	</_field_block_64>
+	<_field_string_id name="physics material name" />
+	<_field_string_id name="physics material name 2" />
+	<_field_string_id name="physics material name 3" />
+	<_field_string_id name="physics material name 4" />
+	<_field_real name="sort offset" />
+	<_field_char_enum name="alpha blend mode">
+		<item Name="opaque" />
+		<item Name="additive" />
+		<item Name="multiply" />
+		<item Name="alpha_blend" />
+		<item Name="double_multiply" />
+		<item Name="pre_multiplied_alpha" />
+		<item Name="maximum" />
+		<item Name="multiply_add" />
+		<item Name="add_src_times_dstalpha" />
+		<item Name="add_src_times_srcalpha" />
+		<item Name="inv_alpha_blend" />
+		<item Name="motion_blur_static" />
+		<item Name="motion_blur_inhibit" />
+		<item Name="alpha_blend_constant" />
+		<item Name="overdraw_apply" />
+		<item Name="wet_screen_effect" />
+		<item Name="minimum" />
+		<item Name="revsubtract" />
+		<item Name="forge_lightmap" />
+		<item Name="forge_lightmap_inv" />
+		<item Name="replace_all_channels" />
+		<item Name="alpha_blend_max" />
+		<item Name="opaque_alpha_blend" />
+		<item Name="alpha_blend_additive_transparent" />
+		<item Name="floating shadow" />
+		<item Name="decal_alpha_blend" />
+		<item Name="decal_add_src_times_src_alpha" />
+		<item Name="decal_multiply_add" />
+		<item Name="wpf_blend_mode" />
+		<item Name="wpf_no_color_blend_mode" />
+		<item Name="blend forge analytic red" />
+		<item Name="blend factor green only" />
+		<item Name="blend forge analytic blue" />
+		<item Name="blend factor alpha only" />
+		<item Name="multiply red green only" />
+		<item Name="multiply blue alpha only" />
+		<item Name="decal opaque" />
+		<item Name="accumulate_pre_multiplied_alpha" />
+		<item Name="accumulate_multiply_add" />
+		<item Name="accumulate_alpha_blend" />
+		<item Name="accumulate_inverse_alpha_blend" />
+		<item Name="accumulate_additive" />
+		<item Name="accumulate_additive_transparent" />
+		<item Name="accumulate_add_src_times_srcalpha" />
+		<item Name="accumulate_multiply" />
+		<item Name="ssao_multiply" />
+		<item Name="ssao_alpha_channel_only" />
+		<item Name="depth_peeling_blend_mode" />
+		<item Name="depth_peeling_Z_pass" />
+		<item Name="wpf_additive_blend_mode" />
+		<item Name="unused" />
+		<item Name="depth_peeling_accumulate_alpha" />
+		<item Name="alpha_blend_for_display_planes" />
+		<item Name="forge_light" />
+		<item Name="forge_light_inverse" />
+	</_field_char_enum>
+	<_field_char_enum name="sort layer*">
+		<item Name="invalid" />
+		<item Name="pre-pass" />
+		<item Name="normal" />
+		<item Name="post-pass" />
+	</_field_char_enum>
+	<_field_byte_flags name="flags!">
+		<item Name="converted from shader" />
+		<item Name="decal post lighting" />
+	</_field_byte_flags>
+	<_field_byte_flags name="render flags!">
+		<item Name="no atmosphere fog" />
+		<item Name="cull shields" />
+		<item Name="cull active camo" />
+	</_field_byte_flags>
+	<_field_string_id name="time offset override function" />
+	<_field_string_id name="marker name for dissolve center" />
+</plugin>

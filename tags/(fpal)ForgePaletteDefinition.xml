@@ -1,0 +1,17 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_tag_reference_64 name="Parent Palette" />
+	<_field_string_id name="Name" />
+	<_field_string_id name="Description" />
+	<_field_real name="Placement Priority" />
+	<_field_word_flags name="Flags">
+		<item Name="is inline#If true, we insert the elements of this palette directly into its parent palette with a header" />
+		<item Name="is internal only#If true, we only get access to this palette (and its children) in non-release builds" />
+	</_field_word_flags>
+	<_field_pad name="pad" length="2" />
+</plugin>

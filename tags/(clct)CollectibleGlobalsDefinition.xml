@@ -1,0 +1,70 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="skulls" max="128">
+		<_field_char_enum name="collectible race">
+			<item Name="Forerunner" />
+			<item Name="Human" />
+			<item Name="Covenant" />
+		</_field_char_enum>
+		<_field_pad name="pad" length="1" />
+		<_field_short_enum name="collectible mission">
+			<item Name="Halsey" />
+			<item Name="Assault" />
+			<item Name="Meridian" />
+			<item Name="MeridianHub" />
+			<item Name="UnconfirmedReports" />
+			<item Name="Evacuation" />
+			<item Name="Builder" />
+			<item Name="Grotto" />
+			<item Name="SangheliosHub1" />
+			<item Name="Plateau" />
+			<item Name="SangheliosHub2" />
+			<item Name="TsunamiStation" />
+			<item Name="Arrival" />
+			<item Name="Trials" />
+			<item Name="Sentinels" />
+		</_field_short_enum>
+		<_field_string_id name="name#used by scripts and code to reference this" />
+		<_field_string_id name="title#localized title in the UI" />
+		<_field_string_id name="description#localized description in the UI" />
+		<_field_tag_reference_64 name="audio#audio associated with the collectible e.g. audio log" validtags="snd!" />
+		<_field_char_integer name="game variant index#the index for this collectible in GameOptions" />
+		<_field_pad name="pad[3]" length="3" />
+	</_field_block_64>
+	<_field_block_64 name="audio logs" max="128">
+		<_field_char_enum name="collectible race">
+			<item Name="Forerunner" />
+			<item Name="Human" />
+			<item Name="Covenant" />
+		</_field_char_enum>
+		<_field_pad name="pad" length="1" />
+		<_field_short_enum name="collectible mission">
+			<item Name="Halsey" />
+			<item Name="Assault" />
+			<item Name="Meridian" />
+			<item Name="MeridianHub" />
+			<item Name="UnconfirmedReports" />
+			<item Name="Evacuation" />
+			<item Name="Builder" />
+			<item Name="Grotto" />
+			<item Name="SangheliosHub1" />
+			<item Name="Plateau" />
+			<item Name="SangheliosHub2" />
+			<item Name="TsunamiStation" />
+			<item Name="Arrival" />
+			<item Name="Trials" />
+			<item Name="Sentinels" />
+		</_field_short_enum>
+		<_field_string_id name="name#used by scripts and code to reference this" />
+		<_field_string_id name="title#localized title in the UI" />
+		<_field_string_id name="description#localized description in the UI" />
+		<_field_tag_reference_64 name="audio#audio associated with the collectible e.g. audio log" validtags="snd!" />
+		<_field_char_integer name="game variant index#the index for this collectible in GameOptions" />
+		<_field_pad name="pad[3]" length="3" />
+	</_field_block_64>
+</plugin>

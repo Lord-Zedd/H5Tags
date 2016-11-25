@@ -1,0 +1,39 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="flinch impulse" />
+	<_field_custom name="Gun Flinch" />
+	<_field_struct name="gun flinch" />
+	<_field_char_enum name="flinch direction">
+		<item Name="hit direction" />
+		<item Name="inverse hit direction" />
+		<item Name="attacker to victim" />
+		<item Name="victim to attacker" />
+	</_field_char_enum>
+	<_field_char_enum name="flinch mapping">
+		<item Name="top down" />
+		<item Name="camera" />
+	</_field_char_enum>
+	<_field_pad name="pad0" length="2" />
+	<_field_angle_bounds name="magnitude range:degrees#scales the direction by a random value defined by the range" />
+	<_field_angle name="random rotation:degrees#rotates the direction by a random value defined by the range of this value positive and negative" />
+	<_field_custom name="View Flinch" />
+	<_field_struct name="view flinch" />
+	<_field_char_enum name="flinch direction">
+		<item Name="hit direction" />
+		<item Name="inverse hit direction" />
+		<item Name="attacker to victim" />
+		<item Name="victim to attacker" />
+	</_field_char_enum>
+	<_field_char_enum name="flinch mapping">
+		<item Name="top down" />
+		<item Name="camera" />
+	</_field_char_enum>
+	<_field_pad name="pad0" length="2" />
+	<_field_angle_bounds name="magnitude range:degrees#scales the direction by a random value defined by the range" />
+	<_field_angle name="random rotation:degrees#rotates the direction by a random value defined by the range of this value positive and negative" />
+</plugin>

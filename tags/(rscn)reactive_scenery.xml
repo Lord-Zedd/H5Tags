@@ -1,0 +1,33 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_explanation name="Reactive Scenery">Scenery object that plays client-side animations in reaction to simple events.</_field_explanation>
+	<_field_block_64 name="Animations#The animations this object will play in reaction to events." max="8">
+		<_field_string_id name="animation name^" />
+		<_field_real name="blend time:seconds" />
+		<_field_real name="wait time:seconds" />
+		<_field_real name="random start percent#0 to 1.0. Set to prevent objects animating in sync. The animation will start at a random point between 0 and the given value." />
+		<_field_short_integer name="framerate:frames per second#0 defaults to 30 fps." />
+		<_field_char_enum name="behavior">
+			<item Name="Stopping" />
+			<item Name="Looping" />
+			<item Name="Bouncing" />
+		</_field_char_enum>
+		<_field_char_enum name="type#Animation type. Ambient plays on top of other animations.">
+			<item Name="Idle" />
+			<item Name="Proximity" />
+			<item Name="Damage" />
+			<item Name="Recover" />
+			<item Name="Ambient" />
+		</_field_char_enum>
+	</_field_block_64>
+	<_field_real name="proximity distance:world units#How close a player must be to trigger a Proximity animation." />
+	<_field_long_flags name="flags">
+		<item Name="halt Ambient animation during Damage animation" />
+	</_field_long_flags>
+	<_field_pad name="pad" length="4" />
+</plugin>

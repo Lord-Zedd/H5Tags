@@ -1,0 +1,18 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_custom name="bytecode" />
+	<_field_pageable_resource_64 name="shader bytecode resources" />
+	<_field_int64_integer name="runtime shader bank" />
+	<_field_word_integer name="vertex shader count*" />
+	<_field_word_integer name="pixel shader count*" />
+	<_field_word_integer name="geometry shader count*" />
+	<_field_word_integer name="compute shader count*" />
+	<_field_word_integer name="hull shader count*" />
+	<_field_word_integer name="domain shader count*" />
+	<_field_pad name="pad0" length="4" />
+</plugin>

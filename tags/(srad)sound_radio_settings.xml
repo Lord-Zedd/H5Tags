@@ -1,0 +1,15 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_explanation name="mix settings" />
+	<_field_long_enum name="mix">
+		<item Name="full#full unspatialized radio effect" />
+		<item Name="3d#mixes in the unspatialized radio effect with distance" />
+		<item Name="none#essentially turns off the radio effect!" />
+	</_field_long_enum>
+	<_field_pad name="pad_tp" length="4" />
+</plugin>

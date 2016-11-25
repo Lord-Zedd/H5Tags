@@ -1,0 +1,38 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="interface tags" max="1">
+		<_field_tag_reference_64 name="spinner bitmap" />
+		<_field_tag_reference_64 name="obsolete2" />
+		<_field_tag_reference_64 name="screen color table" />
+		<_field_tag_reference_64 name="hud color table" />
+		<_field_tag_reference_64 name="editor color table" />
+		<_field_tag_reference_64 name="dialog color table" />
+		<_field_tag_reference_64 name="motion sensor sweep bitmap" />
+		<_field_tag_reference_64 name="motion sensor sweep bitmap mask" />
+		<_field_tag_reference_64 name="multiplayer hud bitmap" />
+		<_field_tag_reference_64 name="unused!" />
+		<_field_tag_reference_64 name="motion sensor blip bitmap" />
+		<_field_tag_reference_64 name="interface goo map1" />
+		<_field_tag_reference_64 name="interface goo map2" />
+		<_field_tag_reference_64 name="interface goo map3" />
+		<_field_tag_reference_64 name="revive damage response" />
+		<_field_custom name="mainmenu" />
+		<_field_tag_reference_64 name="mainmenu ui globals" />
+		<_field_custom name="singleplayer" />
+		<_field_tag_reference_64 name="singleplayer ui globals" />
+		<_field_custom name="multiplayer" />
+		<_field_tag_reference_64 name="multiplayer ui globals" />
+		<_field_custom name="firefight" />
+		<_field_tag_reference_64 name="firefight ui globals" />
+		<_field_tag_reference_64 name="style sheet globals" />
+		<_field_tag_reference_64 name="spartan rendering scenario" />
+		<_field_tag_reference_64 name="damage reporting display globals#tag that defines content for display damage stats" />
+		<_field_tag_reference_64 name="level display globals" />
+	</_field_block_64>
+	<_field_pad name="pad" length="4" />
+</plugin>

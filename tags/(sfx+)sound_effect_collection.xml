@@ -1,0 +1,40 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="sound effects" max="128">
+		<_field_string_id name="name^" />
+		<_field_struct name="playback" />
+		<_field_long_flags name="flags">
+			<item Name="turn off in splitscreen" />
+			<item Name="only turn on in first person" />
+		</_field_long_flags>
+		<_field_tag_reference_64 name="radio effect" />
+		<_field_tag_reference_64 name="Start event" validtags="snd!" />
+		<_field_tag_reference_64 name="End event" validtags="snd!" />
+		<_field_tag_reference_64 name="Immediate stop event#Must clear the effect without any transition - used for exiting levels, etc" validtags="snd!" />
+		<_field_block_64 name="lowpass effect" max="1">
+			<_field_real name="attack:seconds" />
+			<_field_real name="release:seconds" />
+			<_field_struct name="settings" />
+			<_field_custom name="cutoff frequency:Hz" />
+			<_field_real name="cutoff frequency:Hz" />
+			<_field_custom name="output gain:dB" />
+			<_field_real name="output gain:dB" />
+		</_field_block_64>
+		<_field_block_64 name="sound components" max="16">
+			<_field_tag_reference_64 name="sound^" validtags="lsnd, snd!" />
+			<_field_real name="gain:dB#additional attenuation to sound" />
+			<_field_long_flags name="flags">
+				<item Name="don't play at start" />
+				<item Name="play on stop" />
+				<item Name="play alternate" />
+				<item Name="sync with origin looping sound" />
+			</_field_long_flags>
+		</_field_block_64>
+	</_field_block_64>
+	<_field_pad name="pad_tp" length="4" />
+</plugin>

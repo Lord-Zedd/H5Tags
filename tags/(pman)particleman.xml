@@ -1,0 +1,30 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_explanation name="Particleize Settings">Defines a particular particleize effect
+
+Density modifies how many particles are made
+Size indicates how large the effect can be in world units
+Shape indicates the shape of the effect
+Curve defines how the shape evolves over time
+</_field_explanation>
+	<_field_short_enum name="Shape">
+		<item Name="cloud" />
+	</_field_short_enum>
+	<_field_word_flags name="Flags">
+		<item Name="hide object when effect completes" />
+		<item Name="move particles towards current set target location" />
+		<item Name="override any currently running particleization" />
+	</_field_word_flags>
+	<_field_real name="Duration:sec" />
+	<_field_real name="Density" />
+	<_field_real name="Size:world units" />
+	<_field_struct name="Curve" />
+	<_field_struct name="Mapping" />
+	<_field_data_64 name="data" />
+	<_field_pad name="pad_tp" length="4" />
+</plugin>

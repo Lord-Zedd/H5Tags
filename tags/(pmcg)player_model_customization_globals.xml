@@ -1,0 +1,166 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_tag_reference_64 name="spartan render model#used for string list generation" />
+	<_field_tag_reference_64 name="elite render model!" />
+	<_field_block_64 name="helmet selections" max="96">
+		<_field_string_id name="selection name^" />
+		<_field_block_64 name="customized bits" max="32">
+			<_field_string_id name="region name^" />
+			<_field_string_id name="permutation name" />
+			<_field_byte_flags name="flags">
+				<item Name="male_only#this permutation only applies to male players" />
+				<item Name="female_only#this permutation only applies to female players" />
+			</_field_byte_flags>
+			<_field_pad name="pad1" length="3" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="chest selections" max="96">
+		<_field_string_id name="selection name^" />
+		<_field_block_64 name="customized bits" max="32">
+			<_field_string_id name="region name^" />
+			<_field_string_id name="permutation name" />
+			<_field_byte_flags name="flags">
+				<item Name="male_only#this permutation only applies to male players" />
+				<item Name="female_only#this permutation only applies to female players" />
+			</_field_byte_flags>
+			<_field_pad name="pad1" length="3" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="elite selections!" max="96">
+		<_field_string_id name="selection name^" />
+		<_field_block_64 name="customized bits" max="32">
+			<_field_string_id name="region name^" />
+			<_field_string_id name="permutation name" />
+			<_field_byte_flags name="flags">
+				<item Name="male_only#this permutation only applies to male players" />
+				<item Name="female_only#this permutation only applies to female players" />
+			</_field_byte_flags>
+			<_field_pad name="pad1" length="3" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="left shoulder" max="96">
+		<_field_string_id name="selection name^" />
+		<_field_block_64 name="customized bits" max="32">
+			<_field_string_id name="region name^" />
+			<_field_string_id name="permutation name" />
+			<_field_byte_flags name="flags">
+				<item Name="male_only#this permutation only applies to male players" />
+				<item Name="female_only#this permutation only applies to female players" />
+			</_field_byte_flags>
+			<_field_pad name="pad1" length="3" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="right shoulder" max="96">
+		<_field_string_id name="selection name^" />
+		<_field_block_64 name="customized bits" max="32">
+			<_field_string_id name="region name^" />
+			<_field_string_id name="permutation name" />
+			<_field_byte_flags name="flags">
+				<item Name="male_only#this permutation only applies to male players" />
+				<item Name="female_only#this permutation only applies to female players" />
+			</_field_byte_flags>
+			<_field_pad name="pad1" length="3" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="arms" max="96">
+		<_field_string_id name="selection name^" />
+		<_field_block_64 name="customized bits" max="32">
+			<_field_string_id name="region name^" />
+			<_field_string_id name="permutation name" />
+			<_field_byte_flags name="flags">
+				<item Name="male_only#this permutation only applies to male players" />
+				<item Name="female_only#this permutation only applies to female players" />
+			</_field_byte_flags>
+			<_field_pad name="pad1" length="3" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="legs" max="96">
+		<_field_string_id name="selection name^" />
+		<_field_block_64 name="customized bits" max="32">
+			<_field_string_id name="region name^" />
+			<_field_string_id name="permutation name" />
+			<_field_byte_flags name="flags">
+				<item Name="male_only#this permutation only applies to male players" />
+				<item Name="female_only#this permutation only applies to female players" />
+			</_field_byte_flags>
+			<_field_pad name="pad1" length="3" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="unused 5!" max="96">
+		<_field_string_id name="selection name^" />
+		<_field_block_64 name="customized bits" max="32">
+			<_field_string_id name="region name^" />
+			<_field_string_id name="permutation name" />
+			<_field_byte_flags name="flags">
+				<item Name="male_only#this permutation only applies to male players" />
+				<item Name="female_only#this permutation only applies to female players" />
+			</_field_byte_flags>
+			<_field_pad name="pad1" length="3" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="spartan armor effect selections" max="96">
+		<_field_string_id name="selection name^" />
+		<_field_block_64 name="customized bits" max="32">
+			<_field_string_id name="region name^" />
+			<_field_string_id name="permutation name" />
+			<_field_byte_flags name="flags">
+				<item Name="male_only#this permutation only applies to male players" />
+				<item Name="female_only#this permutation only applies to female players" />
+			</_field_byte_flags>
+			<_field_pad name="pad1" length="3" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="elite armor effect selections!" max="96">
+		<_field_string_id name="selection name^" />
+		<_field_block_64 name="customized bits" max="32">
+			<_field_string_id name="region name^" />
+			<_field_string_id name="permutation name" />
+			<_field_byte_flags name="flags">
+				<item Name="male_only#this permutation only applies to male players" />
+				<item Name="female_only#this permutation only applies to female players" />
+			</_field_byte_flags>
+			<_field_pad name="pad1" length="3" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="male spartan selections" max="32">
+		<_field_string_id name="region name^" />
+		<_field_string_id name="permutation name" />
+		<_field_byte_flags name="flags">
+			<item Name="male_only#this permutation only applies to male players" />
+			<item Name="female_only#this permutation only applies to female players" />
+		</_field_byte_flags>
+		<_field_pad name="pad1" length="3" />
+	</_field_block_64>
+	<_field_block_64 name="female spartan selections" max="32">
+		<_field_string_id name="region name^" />
+		<_field_string_id name="permutation name" />
+		<_field_byte_flags name="flags">
+			<item Name="male_only#this permutation only applies to male players" />
+			<item Name="female_only#this permutation only applies to female players" />
+		</_field_byte_flags>
+		<_field_pad name="pad1" length="3" />
+	</_field_block_64>
+	<_field_block_64 name="spartan model defaults" max="32">
+		<_field_string_id name="region name^" />
+		<_field_string_id name="permutation name" />
+		<_field_byte_flags name="flags">
+			<item Name="male_only#this permutation only applies to male players" />
+			<item Name="female_only#this permutation only applies to female players" />
+		</_field_byte_flags>
+		<_field_pad name="pad1" length="3" />
+	</_field_block_64>
+	<_field_block_64 name="elite model defaults!" max="32">
+		<_field_string_id name="region name^" />
+		<_field_string_id name="permutation name" />
+		<_field_byte_flags name="flags">
+			<item Name="male_only#this permutation only applies to male players" />
+			<item Name="female_only#this permutation only applies to female players" />
+		</_field_byte_flags>
+		<_field_pad name="pad1" length="3" />
+	</_field_block_64>
+</plugin>

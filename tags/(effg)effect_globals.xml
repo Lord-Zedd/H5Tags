@@ -1,0 +1,108 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_explanation name="EFFECT HOLDBACKS">ALLOCATIONS ON THE MAIN THREAD
+type_effect:                     Number of effect slots
+type_event:                      Number of event slots
+type_location:                   Number of location slots
+type_lightprobe:                 Number of lightprobe slots
+
+THREAD MESSAGES
+type_effect_message:             Number of main--&gt;render messages
+                                 Most effect components require 2 messages + 1 x number of locations
+type_effect_reverse_message:     Number of render--&gt;main messages (attached effects to particles)
+                                 Holdback not implemented due to complexity.
+
+ALLOCATIONS ON THE RENDER THREAD
+tracer system		              Number of instances
+tracer location		          Number of instances * markers
+tracer			                  Number of instances * markers * tag-block-entries
+tracer profile row			      x16 = Number of tracer profiles
+
+type_decal_system                Number of instances
+type_decal                       Number of instances * tag-block-entries
+type_decal_vertex                Number of decal vertices
+type_decal_index                 Number of decal indices
+
+type_light_volume_system         Number of instances
+type_light_volume_location       Number of instances * markers
+type_light_volume                Number of instances * markers * tag-block-entries
+type_light_volume_profile_row    x16 =Number of light_volume profiles
+
+type_particle_system             Number of instances
+type_particle_location           Number of instances * markers
+type_particle_emitter            Number of instances * markers * tag-block-entries
+type_cpu_particle                Number of cpu particles
+type_gpu_particle_row            x16 =Number of gpu particles (includes cpu particles)
+
+SPAWNS TO THE GPU
+type_particle_queue              Number of particles created in a frame (includes cpu particles)
+tracer queue		              Number of tracer profiles created in a frame
+</_field_explanation>
+	<_field_block_64 name="holdbacks" max="27">
+		<_field_long_enum name="holdback type^*">
+			<item Name="type_effect" />
+			<item Name="type_event" />
+			<item Name="type_location" />
+			<item Name="type_lightprobe" />
+			<item Name="type_effect_message" />
+			<item Name="tracer system" />
+			<item Name="tracer location" />
+			<item Name="tracer spawned" />
+			<item Name="tracer stateless" />
+			<item Name="tracer spawned profile row" />
+			<item Name="tracer stateless profile row" />
+			<item Name="type_decal_system" />
+			<item Name="type_decal" />
+			<item Name="type_decal_vertex" />
+			<item Name="type_decal_index" />
+			<item Name="type_light_volume_system" />
+			<item Name="type_light_volume_location" />
+			<item Name="type_light_volume" />
+			<item Name="type_light_volume_profile_row" />
+			<item Name="type_particle_system" />
+			<item Name="type_particle_location" />
+			<item Name="type_particle_emitter" />
+			<item Name="type_cpu_particle" />
+			<item Name="type_gpu_particle_row" />
+			<item Name="type_particle_queue" />
+			<item Name="tracer queue" />
+			<item Name="track decal system" />
+		</_field_long_enum>
+		<_field_dword_integer name="overall budget*#from code" />
+		<_field_block_64 name="priorities" max="6">
+			<_field_long_enum name="priority type^*">
+				<item Name="low" />
+				<item Name="normal" />
+				<item Name="above normal" />
+				<item Name="high" />
+				<item Name="very high" />
+				<item Name="essential" />
+			</_field_long_enum>
+			<_field_explanation name="SET ONE OF THE FOLLOWING">Whichever is larger will be used</_field_explanation>
+			<_field_dword_integer name="absolute count" />
+			<_field_real name="relative percentage:/ 100" />
+			<_field_dword_integer name="How many available at this priority*!" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_tag_reference_64 name="grunt birthday effect" />
+	<_field_explanation name="Spawn Effects">Effect played when an object of this type spawns in during each game mode.
+Can be overridden per-object in the object definition tag</_field_explanation>
+	<_field_block_64 name="multiplayer" max="1">
+		<_field_tag_reference_64 name="biped spawn effect" />
+		<_field_tag_reference_64 name="vehicle spawn effect" />
+		<_field_tag_reference_64 name="weapon spawn effect" />
+		<_field_tag_reference_64 name="first person player spawn effect" />
+	</_field_block_64>
+	<_field_block_64 name="campaign" max="1">
+		<_field_tag_reference_64 name="biped spawn effect" />
+		<_field_tag_reference_64 name="vehicle spawn effect" />
+		<_field_tag_reference_64 name="weapon spawn effect" />
+		<_field_tag_reference_64 name="first person player spawn effect" />
+	</_field_block_64>
+	<_field_pad name="pad_tp" length="4" />
+</plugin>

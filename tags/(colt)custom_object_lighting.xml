@@ -1,0 +1,120 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="Probe" />
+	<_field_explanation name="Character Lighting">
+</_field_explanation>
+	<_field_block_64 name="Authored Light Probes" max="4">
+		<_field_block_64 name="Lights*" max="1">
+			<_field_custom name="Authored Light Probe" />
+			<_field_custom name="Direction 1&amp;Direction(D)" />
+			<_field_real name="Direction 1&amp;Direction(D)" />
+			<_field_custom name="Front-Back 1&amp;Front-Back(D)" />
+			<_field_real name="Front-Back 1&amp;Front-Back(D)" />
+			<_field_real_rgb_color name="Direct color 1" />
+			<_field_custom name="Direct intensity 1" />
+			<_field_real name="Direct intensity 1" />
+			<_field_custom name="Direction 2&amp;Direction(D)" />
+			<_field_real name="Direction 2&amp;Direction(D)" />
+			<_field_custom name="Front-Back 2&amp;Front-Back(D)" />
+			<_field_real name="Front-Back 2&amp;Front-Back(D)" />
+			<_field_real_rgb_color name="Direct color 2" />
+			<_field_custom name="Direct intensity 2" />
+			<_field_real name="Direct intensity 2" />
+			<_field_real_rgb_color name="Ambient Color" />
+			<_field_custom name="Ambient intensity" />
+			<_field_real name="Ambient intensity" />
+			<_field_real_rgb_color name="Sun Color" />
+			<_field_custom name="Sun intensity" />
+			<_field_real name="Sun intensity" />
+			<_field_real_rgb_color name="Cubemap Scale Color" />
+			<_field_custom name="Cubemap Scale intensity" />
+			<_field_real name="Cubemap Scale intensity" />
+			<_field_custom name="Authored Light Probe Intensity Scale" />
+			<_field_real name="Authored Light Probe Intensity Scale" />
+			<_field_custom name="Generated Air Probe Intensity Scale" />
+			<_field_real name="Generated Air Probe Intensity Scale" />
+		</_field_block_64>
+		<_field_custom name="Generated Air Probe Intensity Scale!" />
+		<_field_real name="Generated Air Probe Intensity Scale!" />
+		<_field_array name="raw sh data!">
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+		</_field_array>
+		<_field_array name="per frame sh data*!~">
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+		</_field_array>
+		<_field_real_point_3d name="Sun Color!" />
+		<_field_real_point_3d name="Cubemap Scale!" />
+		<_field_word_flags name="Flags">
+			<item Name="Characters" />
+			<item Name="First Person Geometry" />
+			<item Name="Vehicles" />
+		</_field_word_flags>
+		<_field_pad name="fapply" length="2" />
+	</_field_block_64>
+	<_field_char_enum name="Is Camera-space">
+		<item Name="Off" />
+		<item Name="On" />
+	</_field_char_enum>
+	<_field_byte_flags name="Flags">
+		<item Name="Force Always Sun#Will still get dynamic shadows" />
+	</_field_byte_flags>
+	<_field_pad name="pdd" length="2" />
+	<_field_tag_reference_64 name="cubemap override" />
+</plugin>

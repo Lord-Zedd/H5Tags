@@ -1,0 +1,30 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="DamageStruct" />
+	<_field_long_flags name="Flags">
+		<item Name="Don't scale damage#typically, we scale the damage to make only &quot;lethal&quot; collision damage kill people; this flag overrides that behavior" />
+		<item Name="Object may choose not to deal damage#in some cases (notably, the thruster pack) we should ask an object if it wants to opt out of dealing damage for one reason or another" />
+	</_field_long_flags>
+	<_field_real name="minimum velocity for lethal collision#If your velocity is above this value the collision is potentially lethal, 0 retains old functionality where the lethality is decided by the damage modifier" />
+	<_field_explanation name="Game collision damage parameters">0 - means take default value from globals.globals</_field_explanation>
+	<_field_struct name="game collision damage" />
+	<_field_data_64 name="data" />
+	<_field_real_bounds name="game acceleration#0-Infinity" />
+	<_field_real name="minimum velocity for game damage#if you are going below this velocity we stop all game damage" />
+	<_field_real name="Apply collision damage scale#0 means 1.  1 is standard scale.  Some things may want to apply more damage" />
+	<_field_real name="Friendly apply collision damage scale#0 means 1.  1 is standard scale.  Some things may want to apply more damage, yet go soft on their friends" />
+	<_field_explanation name="Absolute collision damage parameters">0 - means take default value from globals.globals</_field_explanation>
+	<_field_struct name="absolute collision damage" />
+	<_field_data_64 name="data" />
+	<_field_real_bounds name="absolute acceleration#0-Infinity" />
+	<_field_real name="minimum velocity for absolute damage#if you are going below this velocity we stop all absolute damage" />
+	<_field_real name="Apply absolute collision damage scale#0 means 1.  1 is standard scale.  Some things may want to apply more damage" />
+	<_field_real name="Friendly apply absolute collision damage scale#0 means 1.  1 is standard scale.  Some things may want to apply more damage, yet go soft on their friends" />
+	<_field_explanation name="Alternative damage effect">Overrides the damage effect from globals.globals</_field_explanation>
+	<_field_tag_reference_64 name="alternative damage effect" />
+</plugin>

@@ -1,0 +1,29 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="rumble" />
+	<_field_explanation name="low frequency rumble" />
+	<_field_struct name="low frequency rumble" />
+	<_field_real name="duration:seconds" />
+	<_field_struct name="dirty whore" />
+	<_field_data_64 name="data" />
+	<_field_explanation name="high frequency rumble" />
+	<_field_struct name="high frequency rumble" />
+	<_field_real name="duration:seconds" />
+	<_field_struct name="dirty whore" />
+	<_field_data_64 name="data" />
+	<_field_explanation name="primary trigger rumble">For actions on the 'primary' trigger like weapon fire (maps to the appropriate left or right trigger depending on controller preferences)</_field_explanation>
+	<_field_struct name="primary trigger rumble" />
+	<_field_real name="duration:seconds" />
+	<_field_struct name="dirty whore" />
+	<_field_data_64 name="data" />
+	<_field_explanation name="secondary trigger rumble">For actions on the 'secondary' trigger like boosting (maps to the appropriate left or right trigger depending on controller preferences)</_field_explanation>
+	<_field_struct name="secondary trigger rumble" />
+	<_field_real name="duration:seconds" />
+	<_field_struct name="dirty whore" />
+	<_field_data_64 name="data" />
+</plugin>

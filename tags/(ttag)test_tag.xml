@@ -1,0 +1,508 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_string name="string" />
+	<_field_long_string name="long string" />
+	<_field_string_id name="hashstring global namespace" />
+	<_field_old_string_id name="old string id" />
+	<_field_string_id name="hashstring test namespace" />
+	<_field_string_id name="hashstring multi namespace" />
+	<_field_char_integer name="char" />
+	<_field_pad name="pad char" length="1" />
+	<_field_short_integer name="short" />
+	<_field_long_integer name="long" />
+	<_field_int64_integer name="int64" />
+	<_field_byte_integer name="byte" />
+	<_field_pad name="pad byte" length="1" />
+	<_field_word_integer name="word" />
+	<_field_dword_integer name="dword" />
+	<_field_qword_integer name="qword" />
+	<_field_angle name="angle" />
+	<_field_tag name="tag" />
+	<_field_char_enum name="char enum">
+		<item Name="CharEnumOne" />
+		<item Name="CharEnumTwo" />
+		<item Name="CharEnumThree" />
+	</_field_char_enum>
+	<_field_pad name="pad char enum" length="1" />
+	<_field_short_enum name="short enum">
+		<item Name="ShortEnumOne" />
+		<item Name="ShortEnumTwo" />
+		<item Name="ShortEnumThree" />
+	</_field_short_enum>
+	<_field_long_enum name="long enum">
+		<item Name="LongEnumOne" />
+		<item Name="LongEnumTwo" />
+		<item Name="LongEnumThree" />
+	</_field_long_enum>
+	<_field_byte_flags name="byte flags">
+		<item Name="first byte flag" />
+		<item Name="second byte flag" />
+		<item Name="third byte flag" />
+	</_field_byte_flags>
+	<_field_pad name="pad byte flags" length="1" />
+	<_field_word_flags name="word flags">
+		<item Name="first word flag" />
+		<item Name="second word flag" />
+		<item Name="third word flag" />
+	</_field_word_flags>
+	<_field_long_flags name="long flags">
+		<item Name="first long flag" />
+		<item Name="second long flag" />
+		<item Name="third long flag" />
+	</_field_long_flags>
+	<_field_point_2d name="short point 2d" />
+	<_field_rectangle_2d name="short rectangle 2d" />
+	<_field_rgb_color name="rgb pixel 32" />
+	<_field_argb_color name="argb pixel 32" />
+	<_field_real name="real" />
+	<_field_real_fraction name="fraction" />
+	<_field_real_point_2d name="real point 2d" />
+	<_field_real_point_3d name="real point 3d" />
+	<_field_real_vector_2d name="real vector 2d" />
+	<_field_real_vector_3d name="real vector 3d" />
+	<_field_real_quaternion name="real quaternion" />
+	<_field_real_euler_angles_2d name="real euler angles 2d" />
+	<_field_real_euler_angles_3d name="real euler angles 3d" />
+	<_field_real_plane_2d name="plane 2d" />
+	<_field_real_plane_3d name="plane 3d" />
+	<_field_real_rgb_color name="real rgb color" />
+	<_field_real_argb_color name="real argb color" />
+	<_field_real_hsv_color name="real hsv color" />
+	<_field_real_ahsv_color name="real ahsv color" />
+	<_field_short_integer_bounds name="short bounds" />
+	<_field_angle_bounds name="angle bounds" />
+	<_field_real_bounds name="real bounds" />
+	<_field_fraction_bounds name="fraction bounds" />
+	<_field_tag_reference_64 name="tag reference" />
+	<_field_block_64 name="basic block" max="8">
+		<_field_long_string name="name^" />
+	</_field_block_64>
+	<_field_byte_block_flags name="byte block flags" />
+	<_field_pad name="pad byte block flags" length="1" />
+	<_field_word_block_flags name="word block flags" />
+	<_field_long_block_flags name="dword block flags" />
+	<_field_char_block_index name="char block index" />
+	<_field_pad name="pad char block index" length="1" />
+	<_field_short_block_index name="short block index" />
+	<_field_long_block_index name="long block index" />
+	<_field_data_64 name="data" />
+	<_field_explanation name="explanation">explanation info text
+info text line 2
+info text line 3</_field_explanation>
+	<_field_struct name="basic struct" />
+	<_field_long_integer name="long in struct" />
+	<_field_array name="basic array">
+		<_field_long_integer name="long in array" />
+		<_field_long_integer name="long in array" />
+		<_field_long_integer name="long in array" />
+		<_field_long_integer name="long in array" />
+		<_field_long_integer name="long in array" />
+		<_field_long_integer name="long in array" />
+		<_field_long_integer name="long in array" />
+		<_field_long_integer name="long in array" />
+	</_field_array>
+	<_field_block_64 name="block with struct" max="8">
+		<_field_struct name="struct in block" />
+		<_field_long_integer name="long in struct" />
+	</_field_block_64>
+	<_field_block_64 name="complex block" max="1024">
+		<_field_block_64 name="foo" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_block_64 name="bar" max="8">
+			<_field_tag_reference_64 name="reference" />
+			<_field_block_64 name="raz" max="8">
+				<_field_long_string name="name^" />
+			</_field_block_64>
+		</_field_block_64>
+	</_field_block_64>
+	<_field_struct name="complex struct" />
+	<_field_block_64 name="basic block" max="8">
+		<_field_long_string name="name^" />
+	</_field_block_64>
+	<_field_real_argb_color name="color" />
+	<_field_block_64 name="complex block" max="1024">
+		<_field_block_64 name="foo" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_block_64 name="bar" max="8">
+			<_field_tag_reference_64 name="reference" />
+			<_field_block_64 name="raz" max="8">
+				<_field_long_string name="name^" />
+			</_field_block_64>
+		</_field_block_64>
+	</_field_block_64>
+	<_field_array name="complex array">
+		<_field_string name="string in array" />
+		<_field_block_64 name="basic block in array" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_point_2d name="point 2d in array" />
+		<_field_struct name="complex struct in array" />
+		<_field_block_64 name="basic block" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_real_argb_color name="color" />
+		<_field_block_64 name="complex block" max="1024">
+			<_field_block_64 name="foo" max="8">
+				<_field_long_string name="name^" />
+			</_field_block_64>
+			<_field_block_64 name="bar" max="8">
+				<_field_tag_reference_64 name="reference" />
+				<_field_block_64 name="raz" max="8">
+					<_field_long_string name="name^" />
+				</_field_block_64>
+			</_field_block_64>
+		</_field_block_64>
+		<_field_string name="string in array" />
+		<_field_block_64 name="basic block in array" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_point_2d name="point 2d in array" />
+		<_field_struct name="complex struct in array" />
+		<_field_block_64 name="basic block" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_real_argb_color name="color" />
+		<_field_block_64 name="complex block" max="1024">
+			<_field_block_64 name="foo" max="8">
+				<_field_long_string name="name^" />
+			</_field_block_64>
+			<_field_block_64 name="bar" max="8">
+				<_field_tag_reference_64 name="reference" />
+				<_field_block_64 name="raz" max="8">
+					<_field_long_string name="name^" />
+				</_field_block_64>
+			</_field_block_64>
+		</_field_block_64>
+		<_field_string name="string in array" />
+		<_field_block_64 name="basic block in array" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_point_2d name="point 2d in array" />
+		<_field_struct name="complex struct in array" />
+		<_field_block_64 name="basic block" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_real_argb_color name="color" />
+		<_field_block_64 name="complex block" max="1024">
+			<_field_block_64 name="foo" max="8">
+				<_field_long_string name="name^" />
+			</_field_block_64>
+			<_field_block_64 name="bar" max="8">
+				<_field_tag_reference_64 name="reference" />
+				<_field_block_64 name="raz" max="8">
+					<_field_long_string name="name^" />
+				</_field_block_64>
+			</_field_block_64>
+		</_field_block_64>
+		<_field_string name="string in array" />
+		<_field_block_64 name="basic block in array" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_point_2d name="point 2d in array" />
+		<_field_struct name="complex struct in array" />
+		<_field_block_64 name="basic block" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_real_argb_color name="color" />
+		<_field_block_64 name="complex block" max="1024">
+			<_field_block_64 name="foo" max="8">
+				<_field_long_string name="name^" />
+			</_field_block_64>
+			<_field_block_64 name="bar" max="8">
+				<_field_tag_reference_64 name="reference" />
+				<_field_block_64 name="raz" max="8">
+					<_field_long_string name="name^" />
+				</_field_block_64>
+			</_field_block_64>
+		</_field_block_64>
+		<_field_string name="string in array" />
+		<_field_block_64 name="basic block in array" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_point_2d name="point 2d in array" />
+		<_field_struct name="complex struct in array" />
+		<_field_block_64 name="basic block" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_real_argb_color name="color" />
+		<_field_block_64 name="complex block" max="1024">
+			<_field_block_64 name="foo" max="8">
+				<_field_long_string name="name^" />
+			</_field_block_64>
+			<_field_block_64 name="bar" max="8">
+				<_field_tag_reference_64 name="reference" />
+				<_field_block_64 name="raz" max="8">
+					<_field_long_string name="name^" />
+				</_field_block_64>
+			</_field_block_64>
+		</_field_block_64>
+		<_field_string name="string in array" />
+		<_field_block_64 name="basic block in array" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_point_2d name="point 2d in array" />
+		<_field_struct name="complex struct in array" />
+		<_field_block_64 name="basic block" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_real_argb_color name="color" />
+		<_field_block_64 name="complex block" max="1024">
+			<_field_block_64 name="foo" max="8">
+				<_field_long_string name="name^" />
+			</_field_block_64>
+			<_field_block_64 name="bar" max="8">
+				<_field_tag_reference_64 name="reference" />
+				<_field_block_64 name="raz" max="8">
+					<_field_long_string name="name^" />
+				</_field_block_64>
+			</_field_block_64>
+		</_field_block_64>
+		<_field_string name="string in array" />
+		<_field_block_64 name="basic block in array" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_point_2d name="point 2d in array" />
+		<_field_struct name="complex struct in array" />
+		<_field_block_64 name="basic block" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_real_argb_color name="color" />
+		<_field_block_64 name="complex block" max="1024">
+			<_field_block_64 name="foo" max="8">
+				<_field_long_string name="name^" />
+			</_field_block_64>
+			<_field_block_64 name="bar" max="8">
+				<_field_tag_reference_64 name="reference" />
+				<_field_block_64 name="raz" max="8">
+					<_field_long_string name="name^" />
+				</_field_block_64>
+			</_field_block_64>
+		</_field_block_64>
+		<_field_string name="string in array" />
+		<_field_block_64 name="basic block in array" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_point_2d name="point 2d in array" />
+		<_field_struct name="complex struct in array" />
+		<_field_block_64 name="basic block" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_real_argb_color name="color" />
+		<_field_block_64 name="complex block" max="1024">
+			<_field_block_64 name="foo" max="8">
+				<_field_long_string name="name^" />
+			</_field_block_64>
+			<_field_block_64 name="bar" max="8">
+				<_field_tag_reference_64 name="reference" />
+				<_field_block_64 name="raz" max="8">
+					<_field_long_string name="name^" />
+				</_field_block_64>
+			</_field_block_64>
+		</_field_block_64>
+	</_field_array>
+	<_field_struct name="motherload struct" />
+	<_field_struct name="struct" />
+	<_field_block_64 name="basic block" max="8">
+		<_field_long_string name="name^" />
+	</_field_block_64>
+	<_field_real_argb_color name="color" />
+	<_field_block_64 name="complex block" max="1024">
+		<_field_block_64 name="foo" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_block_64 name="bar" max="8">
+			<_field_tag_reference_64 name="reference" />
+			<_field_block_64 name="raz" max="8">
+				<_field_long_string name="name^" />
+			</_field_block_64>
+		</_field_block_64>
+	</_field_block_64>
+	<_field_array name="array">
+		<_field_string name="string in array" />
+		<_field_block_64 name="basic block in array" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_point_2d name="point 2d in array" />
+		<_field_struct name="complex struct in array" />
+		<_field_block_64 name="basic block" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_real_argb_color name="color" />
+		<_field_block_64 name="complex block" max="1024">
+			<_field_block_64 name="foo" max="8">
+				<_field_long_string name="name^" />
+			</_field_block_64>
+			<_field_block_64 name="bar" max="8">
+				<_field_tag_reference_64 name="reference" />
+				<_field_block_64 name="raz" max="8">
+					<_field_long_string name="name^" />
+				</_field_block_64>
+			</_field_block_64>
+		</_field_block_64>
+		<_field_string name="string in array" />
+		<_field_block_64 name="basic block in array" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_point_2d name="point 2d in array" />
+		<_field_struct name="complex struct in array" />
+		<_field_block_64 name="basic block" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_real_argb_color name="color" />
+		<_field_block_64 name="complex block" max="1024">
+			<_field_block_64 name="foo" max="8">
+				<_field_long_string name="name^" />
+			</_field_block_64>
+			<_field_block_64 name="bar" max="8">
+				<_field_tag_reference_64 name="reference" />
+				<_field_block_64 name="raz" max="8">
+					<_field_long_string name="name^" />
+				</_field_block_64>
+			</_field_block_64>
+		</_field_block_64>
+		<_field_string name="string in array" />
+		<_field_block_64 name="basic block in array" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_point_2d name="point 2d in array" />
+		<_field_struct name="complex struct in array" />
+		<_field_block_64 name="basic block" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_real_argb_color name="color" />
+		<_field_block_64 name="complex block" max="1024">
+			<_field_block_64 name="foo" max="8">
+				<_field_long_string name="name^" />
+			</_field_block_64>
+			<_field_block_64 name="bar" max="8">
+				<_field_tag_reference_64 name="reference" />
+				<_field_block_64 name="raz" max="8">
+					<_field_long_string name="name^" />
+				</_field_block_64>
+			</_field_block_64>
+		</_field_block_64>
+		<_field_string name="string in array" />
+		<_field_block_64 name="basic block in array" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_point_2d name="point 2d in array" />
+		<_field_struct name="complex struct in array" />
+		<_field_block_64 name="basic block" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_real_argb_color name="color" />
+		<_field_block_64 name="complex block" max="1024">
+			<_field_block_64 name="foo" max="8">
+				<_field_long_string name="name^" />
+			</_field_block_64>
+			<_field_block_64 name="bar" max="8">
+				<_field_tag_reference_64 name="reference" />
+				<_field_block_64 name="raz" max="8">
+					<_field_long_string name="name^" />
+				</_field_block_64>
+			</_field_block_64>
+		</_field_block_64>
+		<_field_string name="string in array" />
+		<_field_block_64 name="basic block in array" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_point_2d name="point 2d in array" />
+		<_field_struct name="complex struct in array" />
+		<_field_block_64 name="basic block" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_real_argb_color name="color" />
+		<_field_block_64 name="complex block" max="1024">
+			<_field_block_64 name="foo" max="8">
+				<_field_long_string name="name^" />
+			</_field_block_64>
+			<_field_block_64 name="bar" max="8">
+				<_field_tag_reference_64 name="reference" />
+				<_field_block_64 name="raz" max="8">
+					<_field_long_string name="name^" />
+				</_field_block_64>
+			</_field_block_64>
+		</_field_block_64>
+		<_field_string name="string in array" />
+		<_field_block_64 name="basic block in array" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_point_2d name="point 2d in array" />
+		<_field_struct name="complex struct in array" />
+		<_field_block_64 name="basic block" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_real_argb_color name="color" />
+		<_field_block_64 name="complex block" max="1024">
+			<_field_block_64 name="foo" max="8">
+				<_field_long_string name="name^" />
+			</_field_block_64>
+			<_field_block_64 name="bar" max="8">
+				<_field_tag_reference_64 name="reference" />
+				<_field_block_64 name="raz" max="8">
+					<_field_long_string name="name^" />
+				</_field_block_64>
+			</_field_block_64>
+		</_field_block_64>
+		<_field_string name="string in array" />
+		<_field_block_64 name="basic block in array" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_point_2d name="point 2d in array" />
+		<_field_struct name="complex struct in array" />
+		<_field_block_64 name="basic block" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_real_argb_color name="color" />
+		<_field_block_64 name="complex block" max="1024">
+			<_field_block_64 name="foo" max="8">
+				<_field_long_string name="name^" />
+			</_field_block_64>
+			<_field_block_64 name="bar" max="8">
+				<_field_tag_reference_64 name="reference" />
+				<_field_block_64 name="raz" max="8">
+					<_field_long_string name="name^" />
+				</_field_block_64>
+			</_field_block_64>
+		</_field_block_64>
+		<_field_string name="string in array" />
+		<_field_block_64 name="basic block in array" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_point_2d name="point 2d in array" />
+		<_field_struct name="complex struct in array" />
+		<_field_block_64 name="basic block" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_real_argb_color name="color" />
+		<_field_block_64 name="complex block" max="1024">
+			<_field_block_64 name="foo" max="8">
+				<_field_long_string name="name^" />
+			</_field_block_64>
+			<_field_block_64 name="bar" max="8">
+				<_field_tag_reference_64 name="reference" />
+				<_field_block_64 name="raz" max="8">
+					<_field_long_string name="name^" />
+				</_field_block_64>
+			</_field_block_64>
+		</_field_block_64>
+	</_field_array>
+	<_field_block_64 name="block" max="1024">
+		<_field_block_64 name="foo" max="8">
+			<_field_long_string name="name^" />
+		</_field_block_64>
+		<_field_block_64 name="bar" max="8">
+			<_field_tag_reference_64 name="reference" />
+			<_field_block_64 name="raz" max="8">
+				<_field_long_string name="name^" />
+			</_field_block_64>
+		</_field_block_64>
+	</_field_block_64>
+</plugin>

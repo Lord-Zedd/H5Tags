@@ -1,0 +1,27 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="default custom loadouts" max="5">
+		<_field_string_id name="loadout name^" />
+		<_field_string_id name="initial primary weapon#name of an element from global starting weapons block. Other values:
+(empty) - unchanged
+unchanged - unchanged
+default - take from starting profiles in scenario
+none - no weapon
+random - use random item from valid starting weapons" />
+		<_field_string_id name="initial primary weapon variant name" />
+		<_field_string_id name="initial secondary weapon#see above" />
+		<_field_string_id name="initial secondary weapon variant name" />
+		<_field_string_id name="initial equipment#see above" />
+		<_field_block_64 name="initial grenade count" max="16">
+			<_field_tag_reference_64 name="grenade reference" />
+			<_field_char_integer name="count" />
+			<_field_pad name="pad0" length="3" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_pad name="pad1" length="4" />
+</plugin>

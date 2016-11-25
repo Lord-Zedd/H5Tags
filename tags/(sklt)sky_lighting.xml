@@ -1,0 +1,31 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_custom name="Sky Lighting" />
+	<_field_real_rgb_color name="Sky Color{Uniform Color}" />
+	<_field_real name="Sky Color Intensity{Uniform Intensity}" />
+	<_field_real_rgb_color name="Ground Color" />
+	<_field_real name="Ground Color Intensity" />
+	<_field_real name="Horizon Angle" />
+	<_field_real name="Horizon Width" />
+	<_field_real name="Direction 1" />
+	<_field_real name="Front-Back 1" />
+	<_field_real_rgb_color name="Color 1" />
+	<_field_real name="Intensity 1" />
+	<_field_real name="Width 1" />
+	<_field_real name="Direction 2" />
+	<_field_real name="Front-Back 2" />
+	<_field_real_rgb_color name="Color 2" />
+	<_field_real name="Intensity 2" />
+	<_field_real name="Width 2" />
+	<_field_real name="Direction 3" />
+	<_field_real name="Front-Back 3" />
+	<_field_real_rgb_color name="Color 3" />
+	<_field_real name="Intensity 3" />
+	<_field_real name="Width 3" />
+	<_field_pad name="pad_sky_lighting_0" length="4" />
+</plugin>

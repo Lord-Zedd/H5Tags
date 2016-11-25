@@ -1,0 +1,23 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_data_64 name="pixels*" />
+	<_field_long_integer name="hardware format*!" />
+	<_field_char_integer name="tileMode" />
+	<_field_byte_flags name="bitmap data resource flags*">
+		<item Name="Indicates that the bitmap data resource contains a 3D texture" />
+		<item Name="This bitmap has been tiled for use on Durango" />
+	</_field_byte_flags>
+	<_field_char_integer name="alignmentBits*" />
+	<_field_pad name="pad" length="1" />
+	<_field_real name="mipMapLOD" />
+	<_field_int64_integer name="bitmap data*" />
+	<_field_int64_integer name="virtual address*" />
+	<_field_block_64 name="streamingData*" max="7">
+		<_field_long_integer name="memory handle*" />
+		<_field_long_integer name="gpu memory handle*" />
+		<_field_short_integer name="num pages*" />
+		<_field_short_integer name="loaded*" />
+	</_field_block_64>
+	<_field_real name="mipMapClamp" />
+</plugin>

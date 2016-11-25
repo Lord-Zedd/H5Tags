@@ -1,0 +1,28 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_long_flags name="flags">
+		<item Name="Don't use FP bank in split-screen#don't use the high quality first person bank in split-screen" />
+		<item Name="Deterministic#Bank contains deterministic sounds (voices)" />
+		<item Name="Stream off DVD only#Files will not be played off HD, only DVD (for music, etc)" />
+		<item Name="Can delay start#Can delay start time for a short period waiting for bank to load" />
+		<item Name="Don't load for player#Use this if there's a special player bank that's loaded by other means (ie weapon, vehicle)." />
+		<item Name="Ground forces sound bank#Don't load this bank if player is in a vehicle (ie bipeds, footsteps)" />
+	</_field_long_flags>
+	<_field_long_enum name="sound bank class">
+		<item Name="Default#Default main pool" />
+		<item Name="Weapon" />
+		<item Name="Character" />
+		<item Name="Vehicle" />
+	</_field_long_enum>
+	<_field_block_64 name="Sound bank list#List of names of soundbanks. If more than one, one will be randomly chosen at load" max="8">
+		<_field_string_id name="Sound bank name#Name of the main sound bank." />
+	</_field_block_64>
+	<_field_long_integer name="Bank priority#the importance of this bank over others. 1 is highest priority (ie will bump all others)" />
+	<_field_long_integer name="Bank unique ID" />
+	<_field_pad name="VBEZIIDOF" length="4" />
+</plugin>

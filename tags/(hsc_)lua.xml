@@ -1,0 +1,18 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="source file" />
+	<_field_data_64 name="source*" />
+	<_field_block_64 name="references*" max="1024">
+		<_field_tag_reference_64 name="reference*^" />
+	</_field_block_64>
+	<_field_block_64 name="name hashes*" max="1024">
+		<_field_int64_integer name="hash*" />
+	</_field_block_64>
+	<_field_tag_reference_64 name="prototype script*" />
+	<_field_pad name="pad" length="4" />
+</plugin>

@@ -1,0 +1,56 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="font references" max="512">
+		<_field_tag_reference_64 name="font" />
+		<_field_long_flags name="WPF All Languages">
+			<item Name="All" />
+		</_field_long_flags>
+		<_field_long_flags name="WPF Flags">
+			<item Name="English" />
+			<item Name="Japanese" />
+			<item Name="German" />
+			<item Name="French" />
+			<item Name="Spanish" />
+			<item Name="Mexican-Spanish" />
+			<item Name="Italian" />
+			<item Name="Korean" />
+			<item Name="Traditional-Chinese" />
+			<item Name="Simplified-Chinese" />
+			<item Name="Portuguese" />
+			<item Name="Polish" />
+			<item Name="Russian" />
+			<item Name="Danish" />
+			<item Name="Finnish" />
+			<item Name="Dutch" />
+			<item Name="Norwegian" />
+		</_field_long_flags>
+		<_field_long_flags name="FastHud All Languages">
+			<item Name="All" />
+		</_field_long_flags>
+		<_field_long_flags name="FastHud Flags">
+			<item Name="English" />
+			<item Name="Japanese" />
+			<item Name="German" />
+			<item Name="French" />
+			<item Name="Spanish" />
+			<item Name="Mexican-Spanish" />
+			<item Name="Italian" />
+			<item Name="Korean" />
+			<item Name="Traditional-Chinese" />
+			<item Name="Simplified-Chinese" />
+			<item Name="Portuguese" />
+			<item Name="Polish" />
+			<item Name="Russian" />
+			<item Name="Danish" />
+			<item Name="Finnish" />
+			<item Name="Dutch" />
+			<item Name="Norwegian" />
+		</_field_long_flags>
+	</_field_block_64>
+	<_field_pad name="pad0" length="4" />
+</plugin>

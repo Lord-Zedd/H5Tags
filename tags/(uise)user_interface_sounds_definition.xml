@@ -1,0 +1,100 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_custom name="Controller Input Events" />
+	<_field_tag_reference_64 name="tab up" validtags="snd!" />
+	<_field_tag_reference_64 name="tab left" validtags="snd!" />
+	<_field_tag_reference_64 name="tab right" validtags="snd!" />
+	<_field_tag_reference_64 name="tab down" validtags="snd!" />
+	<_field_tag_reference_64 name="alt stick up" validtags="snd!" />
+	<_field_tag_reference_64 name="alt stick left" validtags="snd!" />
+	<_field_tag_reference_64 name="alt stick right" validtags="snd!" />
+	<_field_tag_reference_64 name="alt stick down" validtags="snd!" />
+	<_field_tag_reference_64 name="alt tab up" validtags="snd!" />
+	<_field_tag_reference_64 name="alt tab left" validtags="snd!" />
+	<_field_tag_reference_64 name="alt tab right" validtags="snd!" />
+	<_field_tag_reference_64 name="alt tab down" validtags="snd!" />
+	<_field_tag_reference_64 name="A button pressed" validtags="snd!" />
+	<_field_tag_reference_64 name="B button pressed" validtags="snd!" />
+	<_field_tag_reference_64 name="X button pressed" validtags="snd!" />
+	<_field_tag_reference_64 name="Y button pressed" validtags="snd!" />
+	<_field_tag_reference_64 name="left trigger pressed" validtags="snd!" />
+	<_field_tag_reference_64 name="right trigger pressed" validtags="snd!" />
+	<_field_tag_reference_64 name="D-pad up pressed" validtags="snd!" />
+	<_field_tag_reference_64 name="D-pad left pressed" validtags="snd!" />
+	<_field_tag_reference_64 name="D-pad right pressed" validtags="snd!" />
+	<_field_tag_reference_64 name="D-pad down pressed" validtags="snd!" />
+	<_field_tag_reference_64 name="start button pressed" validtags="snd!" />
+	<_field_tag_reference_64 name="back button pressed" validtags="snd!" />
+	<_field_tag_reference_64 name="left stick pressed" validtags="snd!" />
+	<_field_tag_reference_64 name="right stick pressed" validtags="snd!" />
+	<_field_tag_reference_64 name="left bumper pressed" validtags="snd!" />
+	<_field_tag_reference_64 name="right bumper pressed" validtags="snd!" />
+	<_field_tag_reference_64 name="left thumbstick pressed" validtags="snd!" />
+	<_field_tag_reference_64 name="right thumbstick pressed" validtags="snd!" />
+	<_field_tag_reference_64 name="left stick pressed left" validtags="snd!" />
+	<_field_tag_reference_64 name="left stick pressed right" validtags="snd!" />
+	<_field_tag_reference_64 name="left stick pressed up" validtags="snd!" />
+	<_field_tag_reference_64 name="left stick pressed down" validtags="snd!" />
+	<_field_tag_reference_64 name="right stick pressed left" validtags="snd!" />
+	<_field_tag_reference_64 name="right stick pressed right" validtags="snd!" />
+	<_field_tag_reference_64 name="right stick pressed up" validtags="snd!" />
+	<_field_tag_reference_64 name="right stick pressed down" validtags="snd!" />
+	<_field_tag_reference_64 name="A button released" validtags="snd!" />
+	<_field_tag_reference_64 name="B button released" validtags="snd!" />
+	<_field_tag_reference_64 name="X button released" validtags="snd!" />
+	<_field_tag_reference_64 name="Y button released" validtags="snd!" />
+	<_field_tag_reference_64 name="left trigger released" validtags="snd!" />
+	<_field_tag_reference_64 name="right trigger released" validtags="snd!" />
+	<_field_tag_reference_64 name="D-pad up released" validtags="snd!" />
+	<_field_tag_reference_64 name="D-pad left released" validtags="snd!" />
+	<_field_tag_reference_64 name="D-pad right released" validtags="snd!" />
+	<_field_tag_reference_64 name="D-pad down released" validtags="snd!" />
+	<_field_tag_reference_64 name="start button released" validtags="snd!" />
+	<_field_tag_reference_64 name="back button released" validtags="snd!" />
+	<_field_tag_reference_64 name="left stick released" validtags="snd!" />
+	<_field_tag_reference_64 name="right stick released" validtags="snd!" />
+	<_field_tag_reference_64 name="left bumper released" validtags="snd!" />
+	<_field_tag_reference_64 name="right bumper released" validtags="snd!" />
+	<_field_tag_reference_64 name="left thumbstick released" validtags="snd!" />
+	<_field_tag_reference_64 name="right thumbstick released" validtags="snd!" />
+	<_field_tag_reference_64 name="left stick released left" validtags="snd!" />
+	<_field_tag_reference_64 name="left stick released right" validtags="snd!" />
+	<_field_tag_reference_64 name="left stick released up" validtags="snd!" />
+	<_field_tag_reference_64 name="left stick released down" validtags="snd!" />
+	<_field_tag_reference_64 name="right stick released left" validtags="snd!" />
+	<_field_tag_reference_64 name="right stick released right" validtags="snd!" />
+	<_field_tag_reference_64 name="right stick released up" validtags="snd!" />
+	<_field_tag_reference_64 name="right stick released down" validtags="snd!" />
+	<_field_custom name="General" />
+	<_field_tag_reference_64 name="error" validtags="snd!" />
+	<_field_custom name="Screen" />
+	<_field_tag_reference_64 name="screen transition in" validtags="snd!" />
+	<_field_tag_reference_64 name="screen transition out" validtags="snd!" />
+	<_field_custom name="Timers" />
+	<_field_tag_reference_64 name="game start countdown timer first tick" validtags="snd!" />
+	<_field_tag_reference_64 name="game start countdown timer tick" validtags="snd!" />
+	<_field_tag_reference_64 name="game start countdown timer final tick" validtags="snd!" />
+	<_field_tag_reference_64 name="alternate countdown timer first tick" validtags="snd!" />
+	<_field_tag_reference_64 name="alternate countdown timer tick" validtags="snd!" />
+	<_field_tag_reference_64 name="alternate countdown timer final tick" validtags="snd!" />
+	<_field_custom name="Misc" />
+	<_field_tag_reference_64 name="matchmaking reveal" validtags="snd!" />
+	<_field_custom name="Exit Experience" />
+	<_field_tag_reference_64 name="game completion" validtags="snd!" />
+	<_field_tag_reference_64 name="winning bonus" validtags="snd!" />
+	<_field_tag_reference_64 name="hopper bonus" validtags="snd!" />
+	<_field_tag_reference_64 name="boost bonus" validtags="snd!" />
+	<_field_tag_reference_64 name="fasttrack bonus" validtags="snd!" />
+	<_field_tag_reference_64 name="totals" validtags="snd!" />
+	<_field_tag_reference_64 name="subrank up" validtags="snd!" />
+	<_field_tag_reference_64 name="rank up" validtags="snd!" />
+	<_field_tag_reference_64 name="completed" validtags="snd!" />
+	<_field_tag_reference_64 name="counter loop" />
+	<_field_tag_reference_64 name="score bonus" validtags="snd!" />
+	<_field_tag_reference_64 name="rewards" validtags="snd!" />
+</plugin>

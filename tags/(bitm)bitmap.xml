@@ -1,0 +1,638 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_custom name="show bitmap" />
+	<_field_explanation name="IMPORT SETTINGS">The settings here affect how the bitmap is imported.
+Any changes you make will not take effect until you reimport the bitmap.
+</_field_explanation>
+	<_field_long_enum name="Usage#choose how you are using this bitmap">
+		<item Name="Diffuse Map" />
+		<item Name="Linear Control Map" />
+		<item Name="Specular Map" />
+		<item Name="Bump Map (from Height Map)" />
+		<item Name="Detail Bump Map (from Height Map - fades out)" />
+		<item Name="Detail Map" />
+		<item Name="Self-Illum Map" />
+		<item Name="Change Color Map" />
+		<item Name="Cube Map (Reflection Map)" />
+		<item Name="HDR Cube Map" />
+		<item Name="Sprite (Additive, Black Background)" />
+		<item Name="Sprite (Blend, White Background)" />
+		<item Name="Sprite (Double Multiply, Gray Background)" />
+		<item Name="Interface Bitmap" />
+		<item Name="Warp Map (EMBM)" />
+		<item Name="Vector Map" />
+		<item Name="3D Texture" />
+		<item Name="Float Map (WARNING: HUGE)" />
+		<item Name="Half float Map (HALF HUGE)" />
+		<item Name="Height Map (for Parallax)" />
+		<item Name="ZBrush Bump Map (from Bump Map)" />
+		<item Name="Normal Map (aka zbump)" />
+		<item Name="Detail ZBrush Bump Map" />
+		<item Name="Detail Normal Map" />
+		<item Name="Blend Map (linear for terrains)" />
+		<item Name="Palettized --- effects only" />
+		<item Name="CHUD related bitmap" />
+		<item Name="Lightmap Array" />
+		<item Name="Water Array" />
+		<item Name="Interface Sprite" />
+		<item Name="Interface Gradient" />
+		<item Name="Material Map" />
+		<item Name="Smoke Warp" />
+		<item Name="Mux Material Blend Map" />
+		<item Name="Cubemap Gel" />
+		<item Name="Lens Flare gamma 2.2 -- effects only" />
+		<item Name="Signed Noise" />
+		<item Name="Roughness Map (auto)" />
+		<item Name="Normal Map (from Standard Orientation of Maya, Modo, Zbrush)" />
+		<item Name="Color Grading" />
+		<item Name="Detail Normal Map (from Standard Orientation with distance fade)" />
+		<item Name="Diffuse Texture Array" />
+		<item Name="Palettized Texture Array" />
+		<item Name="Uncompressed palette (no MIPs)" />
+		<item Name="Gobo" />
+		<item Name="Flow Map" />
+		<item Name="Linear Control Map Texture Array" />
+		<item Name="Bump Map (from Height Map) Texture Array" />
+		<item Name="Detail Map Texture Array" />
+		<item Name="Self-Illum Map Texture Array" />
+		<item Name="Sprite (Additive, Black Background) Texture Array" />
+		<item Name="Sprite (Blend, White Background) Texture Array" />
+		<item Name="Sprite (Double Multiply, Gray Background) Texture Array" />
+		<item Name="Warp Map (EMBM) Texture Array" />
+		<item Name="Normal Map (aka zbump) Texture Array" />
+		<item Name="Detail Normal Map Texture Array" />
+		<item Name="Lens Flare gamma 2.2 -- effects only Texture Array" />
+		<item Name="Normal Map (from Standard Orientation of Maya, Modo, Zbrush) Texture Array" />
+		<item Name="Detail Normal Map (from Standard Orientation with distance fade) Texture Array" />
+		<item Name="Flow Map Texture Array" />
+		<item Name="Sprite Normal Map" />
+	</_field_long_enum>
+	<_field_long_flags name="Flags">
+		<item Name="bitmap is TILED#affects how height maps are converted to bump maps" />
+		<item Name="use less blurry bump map#uses a sharper (and noisier) method of calculating bump maps from height maps" />
+		<item Name="dither when compressing#lets the compressor use dithering" />
+		<item Name="generate random sprites#repopulates the manual sequences with random sprites upon reimport" />
+		<item Name="using tag_interop and tag_resource!*#FOR INTERNAL USE ONLY - DO NOT MODIFY" />
+		<item Name="ignore alpha channel#if you have an alpha channel but do not care about it, set this flag" />
+		<item Name="alpha channel stores TRANSPARENCY#if your alpha channel represents transparency (alpha blend or alpha-test only), set this bit to stop color bleeding on edges" />
+		<item Name="preserve alpha channel in mipmaps for ALPHA TEST{prefer to use alpha value as a weight to build mipmap}#this will artificially thicken the alpha channel in mip maps, which can keep your bitmap from disappearing in the distance when you are using alpha test" />
+		<item Name="only use on demand&amp;UI on demand bitmap#this bitmap will always be demand loaded, only supported by UI" />
+		<item Name="generate tight bounds#generate a polygonal bounding box around the non-empty pixels to save fill rate cost" />
+		<item Name="tight bounds from alpha channel#unchecked, tight bounds are generated from the color channel" />
+		<item Name="do not generate required section#bitmap will have data split between medium and low optional sections" />
+		<item Name="unused" />
+		<item Name="apply max resolution after slicing#allows use of &quot;max resolution&quot; on bitmaps that have multiple frames, but may be buggy...?" />
+		<item Name="generate black-point tight bounds#generate a set of polygonal bounding boxes for various alpha black points" />
+		<item Name="Pre-filter cubemaps#Apply cosine power-weighted cone filter to entire cubemap instead of filtering each face as separate 2D image" />
+	</_field_long_flags>
+	<_field_short_integer name="sprite spacing#number of pixels between adjacent sprites (0 uses default, negative numbers set no spacing)" />
+	<_field_pad name="pad_spsp" length="2" />
+	<_field_real name="bump map height:repeats#the apparent height of the bump map above the triangle it is textured onto, in texture repeats (i.e., 1.0 would be as high as the texture is wide)" />
+	<_field_real_fraction name="fade factor:[0,1]#used by detail maps and illum maps.  0 means fade by last mipmap, 1 means fade by first mipmap" />
+	<_field_real name="blur:pixels#how much to blur the input image" />
+	<_field_real name="mip map blur:pixels#how much to blur as each mip level is being downsampled" />
+	<_field_real name="specular power bias#Adjusts sharpness of resulting cubemap" />
+	<_field_real name="base MIP bias:degrees#Zero indicates that 512x512 is our infinite-detail MIP" />
+	<_field_char_enum name="curve mode#automatic chooses FAST if your bitmap is bright, and PRETTY if your bitmap has dark bits">
+		<item Name="choose best#will choose FAST if your bitmap is bright" />
+		<item Name="force FAST#forces FAST mode, but causes banding in dark areas" />
+		<item Name="force PRETTY#chooses the best looking curve, probably slower" />
+	</_field_char_enum>
+	<_field_char_integer name="max mipmap level#0 = use default defined by usage" />
+	<_field_short_integer name="max resolution#0 = do not downsample source image" />
+	<_field_short_integer name="atlas#index into global atlas if the texture is missing its required resources and has been atlased" />
+	<_field_short_enum name="force bitmap format#overrides the format defined by usage">
+		<item Name="Use Default (defined by usage)" />
+		<item Name="Best Compressed Color Format" />
+		<item Name="Best Uncompressed Color Format" />
+		<item Name="Best Compressed Bump Format" />
+		<item Name="Best Uncompressed Bump Format" />
+		<item Name="Best Compressed Monochrome Format" />
+		<item Name="Best Uncompressed Monochrome Format" />
+		<item Name="Best Compressed Monochrome Format without alpha" />
+		<item Name="unused2!" />
+		<item Name="unused3!" />
+		<item Name="unused4!" />
+		<item Name="unused5!" />
+		<item Name="unused6!" />
+		<item Name="--- Color and Alpha formats ---" />
+		<item Name="bc1_unorm [a.k.a. DXT1] (Compressed Color + Color-Key Alpha){DXT1 (Compressed Color + Color-Key Alpha)}" />
+		<item Name="bc2_unorm [a.k.a. DXT3] (Compressed Color + 4-bit Alpha){DXT3 (Compressed Color + 4-bit Alpha)}" />
+		<item Name="bc3_unorm [a.k.a. DXT5] (Compressed Color + Compressed 8-bit Alpha){DXT5 (Compressed Color + Compressed 8-bit Alpha)}" />
+		<item Name="24-bit Color + 8-bit Alpha" />
+		<item Name="8-bit Monochrome + 8-bit Alpha" />
+		<item Name="   Channel Mask (3-bit Color + 1-bit Alpha)" />
+		<item Name="   30-bit Color + 2-bit Alpha" />
+		<item Name="   48-bit Color + 16-bit Alpha" />
+		<item Name="   HALF Color + Alpha" />
+		<item Name="   FLOAT Color + Alpha" />
+		<item Name="r8_unorm (8-bit Intensity replicated to RGBA){AY8 (8-bit Intensity replicated to ARGB)}" />
+		<item Name="DEPRECATED DXT3A (4-bit Intensity replicated to ARGB){DXT3A (4-bit Intensity replicated to ARGB)}" />
+		<item Name="bc4_unorm_rrrr [a.k.a. DXT5A] (Compressed Intensity replicated to ARGB){bc4_unorm_000r [a.k.a. DXT5A] (Compressed Intensity replicated to ARGB)}" />
+		<item Name="Compressed Monochrome + Alpha" />
+		<item Name="b4g4r4a4 (12-bit color + 4-bit alpha){A4R4G4B4 (12-bit color + 4-bit alpha)}" />
+		<item Name="--- Color only formats ---" />
+		<item Name="8-bit Monochrome" />
+		<item Name="   Compressed 24-bit Color" />
+		<item Name="   32-bit Color (R11G11B10)" />
+		<item Name="   16-bit Monochrome" />
+		<item Name="   16-bit Red + Green Only" />
+		<item Name="   16 bit signed RGBA{   16 bit signed ARGB}" />
+		<item Name="   HALF Red Only" />
+		<item Name="   FLOAT Red Only" />
+		<item Name="   HALF Red + Green Only" />
+		<item Name="   FLOAT Red + Green Only" />
+		<item Name="   HALF Monochrome" />
+		<item Name="DEPRECATED Compressed 4-bit Monochrome{Compressed 4-bit Monochrome}" />
+		<item Name="Compressed Interpolated Monochrome" />
+		<item Name="bc6h_uf16 (HDR RGB unsigned half-float){DXT5 red}" />
+		<item Name="bc6h_sf16 (HDR RGB signed half-float){DXT5 green}" />
+		<item Name="bc7_unorm (High quality bc3){DXT5 blue}" />
+		<item Name="--- Alpha only formats ---" />
+		<item Name="DEPRECATED DXT3A (4-bit Alpha){DXT3A (4-bit Alpha)}" />
+		<item Name="bc4_unorm_000r [a.k.a. DXT5A] (8-bit Compressed Alpha){DXT5A (8-bit Compressed Alpha)}" />
+		<item Name="8-bit Alpha" />
+		<item Name="unused13!" />
+		<item Name="unused14!" />
+		<item Name="unused15!" />
+		<item Name="--- Normal map formats ---" />
+		<item Name="bc5_snorm [a.k.a. DXN] Compressed Normals (better){DXN Compressed Normals (better)}" />
+		<item Name="DEPRECATED CTX1 Compressed Normals (smaller){CTX1 Compressed Normals (smaller)}" />
+		<item Name="16-bit Normals" />
+		<item Name="32-bit Normals" />
+		<item Name="8-bit 4-channel Vector" />
+	</_field_short_enum>
+	<_field_real name="tight bounds threshold:[0.0 - 1.0]#This is the level cutoff for tight bounds.  0.0 is monochrome black, 1.0 is monochrome white" />
+	<_field_block_64 name="usage override" max="1">
+		<_field_real name="source gamma:0.0 to use xenon curve (default)" />
+		<_field_long_enum name="bitmap curve">
+			<item Name="unknown" />
+			<item Name="xRGB (gamma about 2.0){SRGB (gamma 2.2)}" />
+			<item Name="gamma 2.0" />
+			<item Name="linear" />
+			<item Name="offset log" />
+			<item Name="sRGB (gamma 2.2)" />
+			<item Name="Rec709 (gamma 2.2)" />
+		</_field_long_enum>
+		<_field_byte_flags name="flags">
+			<item Name="Ignore Curve Override" />
+			<item Name="Dont Allow Size Optimization" />
+			<item Name="Swap Axes" />
+			<item Name="Pre-filter cubemaps" />
+		</_field_byte_flags>
+		<_field_char_enum name="slicer">
+			<item Name="Automatically Determine Slicer" />
+			<item Name="No Slicing (each source bitmap generates one element)" />
+			<item Name="Color Plate Slicer" />
+			<item Name="Cube Map Slicer" />
+			<item Name="Color Grading Slicer" />
+		</_field_char_enum>
+		<_field_byte_flags name="dicer flags">
+			<item Name="Convert Plate Color Key to Alpha Channel" />
+			<item Name="Rotate Cube Map to Match DirectX Format" />
+			<item Name="Sprites- Shrink Elements to Smallest Non-Zero Alpha Region" />
+			<item Name="Sprites- Shrink Elements to Smallest Non-Zero Color And Alpha Region" />
+			<item Name="Unsigned -&gt; Signed Scale and Bias" />
+			<item Name="Color Grading sRGB Correction" />
+			<item Name="Color Grading Rec709 Correction" />
+		</_field_byte_flags>
+		<_field_char_enum name="packer">
+			<item Name="No packing" />
+			<item Name="Sprite Pack (packs elements into as few bitmaps as possible)" />
+			<item Name="Sprite Pack if needed (packs elements into as few bitmaps as possible)" />
+			<item Name="3D Pack (packs elements into a 3D bitmap)" />
+		</_field_char_enum>
+		<_field_byte_flags name="packer flags">
+			<item Name="Shrink Sprite Texture Pages Tightly to Content" />
+		</_field_byte_flags>
+		<_field_char_enum name="type">
+			<item Name="2D texture" />
+			<item Name="3D texture" />
+			<item Name="cube map" />
+			<item Name="array" />
+		</_field_char_enum>
+		<_field_char_integer name="mipmap limit" />
+		<_field_char_enum name="smallest mip">
+			<item Name="1 pixel" />
+			<item Name="2 pixel" />
+			<item Name="4 pixel" />
+			<item Name="8 pixel" />
+			<item Name="16 pixel" />
+			<item Name="32 pixel" />
+			<item Name="64 pixel" />
+			<item Name="128 pixel" />
+			<item Name="256 pixel" />
+			<item Name="512 pixel" />
+			<item Name="1024 pixel" />
+		</_field_char_enum>
+		<_field_char_enum name="downsample filter">
+			<item Name="Point Sampled" />
+			<item Name="Box Filter" />
+			<item Name="Blackman Filter" />
+			<item Name="Lanczos Filter" />
+			<item Name="Nuttall Filter" />
+			<item Name="Blackman-Harris Filter" />
+			<item Name="Blackman-Nuttall Filter" />
+			<item Name="Flat Top Filter" />
+			<item Name="Extreme Filter" />
+		</_field_char_enum>
+		<_field_char_integer name="filter radius bias" />
+		<_field_word_flags name="downsample flags">
+			<item Name="Sprites - Color Bleed in Zero Alpha Regions" />
+			<item Name="Pre-Multiply Alpha (before downsampling)" />
+			<item Name="Post-Divide Alpha (after downsampling)" />
+			<item Name="Height Map - Convert to Bump Map" />
+			<item Name="Detail Map - Fade to Gray" />
+			<item Name="Signed -&gt; Unsigned Scale and Bias" />
+			<item Name="Illum Map - Fade to Black" />
+			<item Name="ZBump - Scale by height and renormalize" />
+			<item Name="Cubemap - Fix seams" />
+			<item Name="Calculate specular power" />
+			<item Name="Downsample Bumps in Angular Space" />
+			<item Name="Standard Orientation of Normals in Angular Space and Renormalize" />
+			<item Name="Generate RGB luminance into alpha channel" />
+		</_field_word_flags>
+		<_field_real_rgb_color name="sprite background color" />
+		<_field_char_enum name="swizzle red">
+			<item Name="Default" />
+			<item Name="Source Red Channel" />
+			<item Name="Source Green Channel" />
+			<item Name="Source Blue Channel" />
+			<item Name="Source Alpha Channel" />
+			<item Name="Set to 1.0" />
+			<item Name="Set to 0.0" />
+			<item Name="Set to 0.5" />
+			<item Name="Random" />
+		</_field_char_enum>
+		<_field_char_enum name="swizzle green">
+			<item Name="Default" />
+			<item Name="Source Red Channel" />
+			<item Name="Source Green Channel" />
+			<item Name="Source Blue Channel" />
+			<item Name="Source Alpha Channel" />
+			<item Name="Set to 1.0" />
+			<item Name="Set to 0.0" />
+			<item Name="Set to 0.5" />
+			<item Name="Random" />
+		</_field_char_enum>
+		<_field_char_enum name="swizzle blue">
+			<item Name="Default" />
+			<item Name="Source Red Channel" />
+			<item Name="Source Green Channel" />
+			<item Name="Source Blue Channel" />
+			<item Name="Source Alpha Channel" />
+			<item Name="Set to 1.0" />
+			<item Name="Set to 0.0" />
+			<item Name="Set to 0.5" />
+			<item Name="Random" />
+		</_field_char_enum>
+		<_field_char_enum name="swizzle alpha">
+			<item Name="Default" />
+			<item Name="Source Red Channel" />
+			<item Name="Source Green Channel" />
+			<item Name="Source Blue Channel" />
+			<item Name="Source Alpha Channel" />
+			<item Name="Set to 1.0" />
+			<item Name="Set to 0.0" />
+			<item Name="Set to 0.5" />
+			<item Name="Random" />
+		</_field_char_enum>
+		<_field_long_enum name="bitmap format">
+			<item Name="Use Default (defined by usage)" />
+			<item Name="Best Compressed Color Format" />
+			<item Name="Best Uncompressed Color Format" />
+			<item Name="Best Compressed Bump Format" />
+			<item Name="Best Uncompressed Bump Format" />
+			<item Name="Best Compressed Monochrome Format" />
+			<item Name="Best Uncompressed Monochrome Format" />
+			<item Name="Best Compressed Monochrome Format without alpha" />
+			<item Name="unused2!" />
+			<item Name="unused3!" />
+			<item Name="unused4!" />
+			<item Name="unused5!" />
+			<item Name="unused6!" />
+			<item Name="--- Color and Alpha formats ---" />
+			<item Name="bc1_unorm [a.k.a. DXT1] (Compressed Color + Color-Key Alpha){DXT1 (Compressed Color + Color-Key Alpha)}" />
+			<item Name="bc2_unorm [a.k.a. DXT3] (Compressed Color + 4-bit Alpha){DXT3 (Compressed Color + 4-bit Alpha)}" />
+			<item Name="bc3_unorm [a.k.a. DXT5] (Compressed Color + Compressed 8-bit Alpha){DXT5 (Compressed Color + Compressed 8-bit Alpha)}" />
+			<item Name="24-bit Color + 8-bit Alpha" />
+			<item Name="8-bit Monochrome + 8-bit Alpha" />
+			<item Name="   Channel Mask (3-bit Color + 1-bit Alpha)" />
+			<item Name="   30-bit Color + 2-bit Alpha" />
+			<item Name="   48-bit Color + 16-bit Alpha" />
+			<item Name="   HALF Color + Alpha" />
+			<item Name="   FLOAT Color + Alpha" />
+			<item Name="r8_unorm (8-bit Intensity replicated to RGBA){AY8 (8-bit Intensity replicated to ARGB)}" />
+			<item Name="DEPRECATED DXT3A (4-bit Intensity replicated to ARGB){DXT3A (4-bit Intensity replicated to ARGB)}" />
+			<item Name="bc4_unorm_rrrr [a.k.a. DXT5A] (Compressed Intensity replicated to ARGB){bc4_unorm_000r [a.k.a. DXT5A] (Compressed Intensity replicated to ARGB)}" />
+			<item Name="Compressed Monochrome + Alpha" />
+			<item Name="b4g4r4a4 (12-bit color + 4-bit alpha){A4R4G4B4 (12-bit color + 4-bit alpha)}" />
+			<item Name="--- Color only formats ---" />
+			<item Name="8-bit Monochrome" />
+			<item Name="   Compressed 24-bit Color" />
+			<item Name="   32-bit Color (R11G11B10)" />
+			<item Name="   16-bit Monochrome" />
+			<item Name="   16-bit Red + Green Only" />
+			<item Name="   16 bit signed RGBA{   16 bit signed ARGB}" />
+			<item Name="   HALF Red Only" />
+			<item Name="   FLOAT Red Only" />
+			<item Name="   HALF Red + Green Only" />
+			<item Name="   FLOAT Red + Green Only" />
+			<item Name="   HALF Monochrome" />
+			<item Name="DEPRECATED Compressed 4-bit Monochrome{Compressed 4-bit Monochrome}" />
+			<item Name="Compressed Interpolated Monochrome" />
+			<item Name="bc6h_uf16 (HDR RGB unsigned half-float){DXT5 red}" />
+			<item Name="bc6h_sf16 (HDR RGB signed half-float){DXT5 green}" />
+			<item Name="bc7_unorm (High quality bc3){DXT5 blue}" />
+			<item Name="--- Alpha only formats ---" />
+			<item Name="DEPRECATED DXT3A (4-bit Alpha){DXT3A (4-bit Alpha)}" />
+			<item Name="bc4_unorm_000r [a.k.a. DXT5A] (8-bit Compressed Alpha){DXT5A (8-bit Compressed Alpha)}" />
+			<item Name="8-bit Alpha" />
+			<item Name="unused13!" />
+			<item Name="unused14!" />
+			<item Name="unused15!" />
+			<item Name="--- Normal map formats ---" />
+			<item Name="bc5_snorm [a.k.a. DXN] Compressed Normals (better){DXN Compressed Normals (better)}" />
+			<item Name="DEPRECATED CTX1 Compressed Normals (smaller){CTX1 Compressed Normals (smaller)}" />
+			<item Name="16-bit Normals" />
+			<item Name="32-bit Normals" />
+			<item Name="8-bit 4-channel Vector" />
+		</_field_long_enum>
+	</_field_block_64>
+	<_field_block_64 name="manual_sequences*" max="256">
+		<_field_string name="name^" />
+		<_field_short_integer name="first bitmap index*" />
+		<_field_short_integer name="bitmap count*" />
+		<_field_pad name="OTXYKQ" length="16" />
+		<_field_block_64 name="sprites*" max="512">
+			<_field_short_integer name="bitmap index*" />
+			<_field_pad name="D" length="2" />
+			<_field_pad name="GMLJPJIMC" length="4" />
+			<_field_real name="left*" />
+			<_field_real name="right*" />
+			<_field_real name="top*" />
+			<_field_real name="bottom*" />
+			<_field_real_point_2d name="registration point*" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_explanation name="IMPORT DATA">
+
+
+
+
+
+
+
+
+
+
+
+
+***************************************************************************************************************************
+
+Everything below this line is bitmap data.  It is updated when you reimport the bitmap.
+
+Any changes you make below will be lost in the next reimport, and may even cause 'bad things' to happen.
+
+***************************************************************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</_field_explanation>
+	<_field_block_64 name="tight bounds" max="20">
+		<_field_real_point_2d name="uv" />
+	</_field_block_64>
+	<_field_data_64 name="source data*" />
+	<_field_qword_integer name="source checksum*" />
+	<_field_data_64 name="processed pixel data*" />
+	<_field_block_64 name="sequences*" max="256">
+		<_field_string name="name^" />
+		<_field_short_integer name="first bitmap index*" />
+		<_field_short_integer name="bitmap count*" />
+		<_field_pad name="OTXYKQ" length="16" />
+		<_field_block_64 name="sprites*" max="512">
+			<_field_short_integer name="bitmap index*" />
+			<_field_pad name="D" length="2" />
+			<_field_pad name="GMLJPJIMC" length="4" />
+			<_field_real name="left*" />
+			<_field_real name="right*" />
+			<_field_real name="top*" />
+			<_field_real name="bottom*" />
+			<_field_real_point_2d name="registration point*" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="bitmaps*" max="65536">
+		<_field_short_integer name="width*:pixels#DO NOT CHANGE" />
+		<_field_short_integer name="height*:pixels#DO NOT CHANGE" />
+		<_field_char_integer name="depth*:pixels#DO NOT CHANGE" />
+		<_field_byte_flags name="more flags!">
+			<item Name="xbox360 medium resolution offset is valid!*#DO NOT CHANGE" />
+			<item Name="xbox360 pitch (memory spacing)!*#DO NOT CHANGE" />
+			<item Name="xbox360 byte order!*#DO NOT CHANGE" />
+			<item Name="xbox360 tiled texture!*#DO NOT CHANGE" />
+			<item Name="xbox360 created correctly (hack for bumpmaps)!*#DO NOT CHANGE" />
+			<item Name="xbox360 high resolution offset is valid!*#DO NOT CHANGE" />
+			<item Name="xbox360 use interleaved textures!*#DO NOT CHANGE" />
+			<item Name="xbox360 use on demand only!*#DO NOT CHANGE" />
+		</_field_byte_flags>
+		<_field_char_enum name="type*#DO NOT CHANGE">
+			<item Name="2D texture" />
+			<item Name="3D texture" />
+			<item Name="cube map" />
+			<item Name="array" />
+		</_field_char_enum>
+		<_field_char_integer name="four times log2 size*#DO NOT CHANGE" />
+		<_field_short_enum name="format*#DO NOT CHANGE">
+			<item Name="a8_unorm (000A){a8}" />
+			<item Name="r8_unorm_rrr1 (RRR1){y8}" />
+			<item Name="r8_unorm_rrrr (RRRR){ay8}" />
+			<item Name="r8g8_unorm_rrrg (RRRG){r8g8_unorm_gggr (GGGR)}" />
+			<item Name="unused1" />
+			<item Name="unused2" />
+			<item Name="b5g6r5_unorm{r5g6b5}" />
+			<item Name="unused3" />
+			<item Name="b5g6r5a1_unorm{a1r5g5b5}" />
+			<item Name="b4g4r4a4_unorm{a4r4g4b4}" />
+			<item Name="b8g8r8x8_unorm{x8r8g8b8}" />
+			<item Name="b8g8r8a8_unorm{a8r8g8b8}" />
+			<item Name="unused4" />
+			<item Name="DEPRECATED_dxt5_bias_alpha{dxt5_bias_alpha}" />
+			<item Name="bc1_unorm (dxt1){dxt1}" />
+			<item Name="bc2_unorm (dxt3){dxt3}" />
+			<item Name="bc3_unorm (dxt5){dxt5}" />
+			<item Name="DEPRECATED_a4r4g4b4_font{a4r4g4b4 font}" />
+			<item Name="unused7" />
+			<item Name="unused8" />
+			<item Name="DEPRECATED_SOFTWARE_rgbfp32{software rgbfp32}" />
+			<item Name="unused9" />
+			<item Name="r8g8_snorm (v8u8){v8u8}" />
+			<item Name="DEPRECATED_g8b8{g8b8}" />
+			<item Name="r32g32b32a32_float (abgrfp32){abgrfp32}" />
+			<item Name="r16g16b16a16_float (abgrfp16){abgrfp16}" />
+			<item Name="r16_float_rrr1 (16f_mono){16f_mono}" />
+			<item Name="r16_float_r000 (16f_red){16f_red}" />
+			<item Name="r8g8b8a8_snorm (q8w8v8u8){q8w8v8u8}" />
+			<item Name="r10g10b10a2_unorm (a2r10g10b10){a2r10g10b10}" />
+			<item Name="r16g16b16a16_unorm (a16b16g16r16){a16b16g16r16}" />
+			<item Name="r16g16_snorm (v16u16){v16u16}" />
+			<item Name="r16_unorm_rrr0 (L16){l16}" />
+			<item Name="r16g16_unorm (r16g16){r16g16}" />
+			<item Name="r16g16b16a16_snorm (signedr16g16b16a16){signedr16g16b16a16}" />
+			<item Name="DEPRECATED_dxt3a{dxt3a}" />
+			<item Name="bc4_unorm_rrrr (dxt5a){bc4_unorm (dxt5a)}" />
+			<item Name="bc4_snorm_rrrr" />
+			<item Name="DEPRECATED_dxt3a_1111{dxt3a_1111}" />
+			<item Name="bc5_snorm (dxn){dxn}" />
+			<item Name="DEPRECATED_ctx1{ctx1}" />
+			<item Name="DEPRECATED_dxt3a_alpha_only{dxt3a_alpha}" />
+			<item Name="DEPRECATED_dxt3a_monochrome_only{dxt3a_mono}" />
+			<item Name="bc4_unorm_000r (dxt5a_alpha){dxt5a_alpha}" />
+			<item Name="bc4_unorm_rrr1 (dxt5a_mono){dxt5a_mono}" />
+			<item Name="bc5_unorm_rrrg (dxn_mono_alpha){dxn_mono_alpha}" />
+			<item Name="bc5_snorm_rrrg (dxn_mono_alpha signed)" />
+			<item Name="bc6h_uf16 {dxt5_red}" />
+			<item Name="bc6h_sf16 {dxt5_green}" />
+			<item Name="bc7_unorm {dxt5_blue}" />
+			<item Name="d24_unorm_s8_uint (depth 24){depth 24}" />
+			<item Name="r11g11b10_float" />
+		</_field_short_enum>
+		<_field_byte_flags name="flags*">
+			<item Name="power of two dimensions*#DO NOT CHANGE" />
+			<item Name="compressed*#DO NOT CHANGE" />
+			<item Name="swap axes*#DO NOT CHANGE" />
+			<item Name="mutable at runtime#eg for forge lightmapper or other runtime processes that edit bitmaps" />
+		</_field_byte_flags>
+		<_field_char_integer name="exponent bias" />
+		<_field_point_2d name="registration point#the 'center' of the bitmap - i.e. for particles" />
+		<_field_char_integer name="mipmap count*#DO NOT CHANGE (not counting the highest resolution)" />
+		<_field_char_enum name="curve#how to convert from pixel value to linear">
+			<item Name="unknown" />
+			<item Name="xRGB (gamma about 2.0){SRGB (gamma 2.2)}" />
+			<item Name="gamma 2.0" />
+			<item Name="linear" />
+			<item Name="offset log" />
+			<item Name="sRGB (gamma 2.2)" />
+			<item Name="Rec709 (gamma 2.2)" />
+		</_field_char_enum>
+		<_field_pad name="unused" length="1" />
+		<_field_char_integer name="interleaved texture index" />
+		<_field_real name="streaming scale" />
+		<_field_pageable_resource_64 name="bitmap resource handle*" />
+	</_field_block_64>
+	<_field_data_64 name="xenon processed pixel data*" />
+	<_field_block_64 name="xenon bitmaps*" max="65536">
+		<_field_short_integer name="width*:pixels#DO NOT CHANGE" />
+		<_field_short_integer name="height*:pixels#DO NOT CHANGE" />
+		<_field_char_integer name="depth*:pixels#DO NOT CHANGE" />
+		<_field_byte_flags name="more flags!">
+			<item Name="xbox360 medium resolution offset is valid!*#DO NOT CHANGE" />
+			<item Name="xbox360 pitch (memory spacing)!*#DO NOT CHANGE" />
+			<item Name="xbox360 byte order!*#DO NOT CHANGE" />
+			<item Name="xbox360 tiled texture!*#DO NOT CHANGE" />
+			<item Name="xbox360 created correctly (hack for bumpmaps)!*#DO NOT CHANGE" />
+			<item Name="xbox360 high resolution offset is valid!*#DO NOT CHANGE" />
+			<item Name="xbox360 use interleaved textures!*#DO NOT CHANGE" />
+			<item Name="xbox360 use on demand only!*#DO NOT CHANGE" />
+		</_field_byte_flags>
+		<_field_char_enum name="type*#DO NOT CHANGE">
+			<item Name="2D texture" />
+			<item Name="3D texture" />
+			<item Name="cube map" />
+			<item Name="array" />
+		</_field_char_enum>
+		<_field_char_integer name="four times log2 size*#DO NOT CHANGE" />
+		<_field_short_enum name="format*#DO NOT CHANGE">
+			<item Name="a8_unorm (000A){a8}" />
+			<item Name="r8_unorm_rrr1 (RRR1){y8}" />
+			<item Name="r8_unorm_rrrr (RRRR){ay8}" />
+			<item Name="r8g8_unorm_rrrg (RRRG){r8g8_unorm_gggr (GGGR)}" />
+			<item Name="unused1" />
+			<item Name="unused2" />
+			<item Name="b5g6r5_unorm{r5g6b5}" />
+			<item Name="unused3" />
+			<item Name="b5g6r5a1_unorm{a1r5g5b5}" />
+			<item Name="b4g4r4a4_unorm{a4r4g4b4}" />
+			<item Name="b8g8r8x8_unorm{x8r8g8b8}" />
+			<item Name="b8g8r8a8_unorm{a8r8g8b8}" />
+			<item Name="unused4" />
+			<item Name="DEPRECATED_dxt5_bias_alpha{dxt5_bias_alpha}" />
+			<item Name="bc1_unorm (dxt1){dxt1}" />
+			<item Name="bc2_unorm (dxt3){dxt3}" />
+			<item Name="bc3_unorm (dxt5){dxt5}" />
+			<item Name="DEPRECATED_a4r4g4b4_font{a4r4g4b4 font}" />
+			<item Name="unused7" />
+			<item Name="unused8" />
+			<item Name="DEPRECATED_SOFTWARE_rgbfp32{software rgbfp32}" />
+			<item Name="unused9" />
+			<item Name="r8g8_snorm (v8u8){v8u8}" />
+			<item Name="DEPRECATED_g8b8{g8b8}" />
+			<item Name="r32g32b32a32_float (abgrfp32){abgrfp32}" />
+			<item Name="r16g16b16a16_float (abgrfp16){abgrfp16}" />
+			<item Name="r16_float_rrr1 (16f_mono){16f_mono}" />
+			<item Name="r16_float_r000 (16f_red){16f_red}" />
+			<item Name="r8g8b8a8_snorm (q8w8v8u8){q8w8v8u8}" />
+			<item Name="r10g10b10a2_unorm (a2r10g10b10){a2r10g10b10}" />
+			<item Name="r16g16b16a16_unorm (a16b16g16r16){a16b16g16r16}" />
+			<item Name="r16g16_snorm (v16u16){v16u16}" />
+			<item Name="r16_unorm_rrr0 (L16){l16}" />
+			<item Name="r16g16_unorm (r16g16){r16g16}" />
+			<item Name="r16g16b16a16_snorm (signedr16g16b16a16){signedr16g16b16a16}" />
+			<item Name="DEPRECATED_dxt3a{dxt3a}" />
+			<item Name="bc4_unorm_rrrr (dxt5a){bc4_unorm (dxt5a)}" />
+			<item Name="bc4_snorm_rrrr" />
+			<item Name="DEPRECATED_dxt3a_1111{dxt3a_1111}" />
+			<item Name="bc5_snorm (dxn){dxn}" />
+			<item Name="DEPRECATED_ctx1{ctx1}" />
+			<item Name="DEPRECATED_dxt3a_alpha_only{dxt3a_alpha}" />
+			<item Name="DEPRECATED_dxt3a_monochrome_only{dxt3a_mono}" />
+			<item Name="bc4_unorm_000r (dxt5a_alpha){dxt5a_alpha}" />
+			<item Name="bc4_unorm_rrr1 (dxt5a_mono){dxt5a_mono}" />
+			<item Name="bc5_unorm_rrrg (dxn_mono_alpha){dxn_mono_alpha}" />
+			<item Name="bc5_snorm_rrrg (dxn_mono_alpha signed)" />
+			<item Name="bc6h_uf16 {dxt5_red}" />
+			<item Name="bc6h_sf16 {dxt5_green}" />
+			<item Name="bc7_unorm {dxt5_blue}" />
+			<item Name="d24_unorm_s8_uint (depth 24){depth 24}" />
+			<item Name="r11g11b10_float" />
+		</_field_short_enum>
+		<_field_byte_flags name="flags*">
+			<item Name="power of two dimensions*#DO NOT CHANGE" />
+			<item Name="compressed*#DO NOT CHANGE" />
+			<item Name="swap axes*#DO NOT CHANGE" />
+			<item Name="mutable at runtime#eg for forge lightmapper or other runtime processes that edit bitmaps" />
+		</_field_byte_flags>
+		<_field_char_integer name="exponent bias" />
+		<_field_point_2d name="registration point#the 'center' of the bitmap - i.e. for particles" />
+		<_field_char_integer name="mipmap count*#DO NOT CHANGE (not counting the highest resolution)" />
+		<_field_char_enum name="curve#how to convert from pixel value to linear">
+			<item Name="unknown" />
+			<item Name="xRGB (gamma about 2.0){SRGB (gamma 2.2)}" />
+			<item Name="gamma 2.0" />
+			<item Name="linear" />
+			<item Name="offset log" />
+			<item Name="sRGB (gamma 2.2)" />
+			<item Name="Rec709 (gamma 2.2)" />
+		</_field_char_enum>
+		<_field_pad name="unused" length="1" />
+		<_field_char_integer name="interleaved texture index" />
+		<_field_real name="streaming scale" />
+		<_field_pageable_resource_64 name="bitmap resource handle*" />
+	</_field_block_64>
+	<_field_pad name="alignment" length="4" />
+</plugin>

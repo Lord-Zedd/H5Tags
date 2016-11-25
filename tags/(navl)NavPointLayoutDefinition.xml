@@ -1,0 +1,57 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_real name="morph fraction" />
+	<_field_real_point_2d name="anchor offset" />
+	<_field_real_point_2d name="center box width height" />
+	<_field_explanation name="center sprite bg" />
+	<_field_struct name="center sprite bg" />
+	<_field_real_point_2d name="width and height" />
+	<_field_real name="alpha" />
+	<_field_explanation name="center sprite fg" />
+	<_field_struct name="center sprite fg" />
+	<_field_real_point_2d name="width and height" />
+	<_field_real name="alpha" />
+	<_field_explanation name="center radial progress bar" />
+	<_field_struct name="center radial progress bar" />
+	<_field_real_point_2d name="width and height" />
+	<_field_real name="alpha" />
+	<_field_explanation name="top sprite" />
+	<_field_struct name="top sprite" />
+	<_field_real_point_2d name="width and height" />
+	<_field_real name="alpha" />
+	<_field_explanation name="top label" />
+	<_field_struct name="top label" />
+	<_field_real_point_2d name="width and height" />
+	<_field_real name="alpha" />
+	<_field_explanation name="right progress bar" />
+	<_field_struct name="right progress bar" />
+	<_field_real_point_2d name="width and height" />
+	<_field_real name="alpha" />
+	<_field_explanation name="right progress bar 2" />
+	<_field_struct name="right progress bar 2" />
+	<_field_real_point_2d name="width and height" />
+	<_field_real name="alpha" />
+	<_field_explanation name="right label" />
+	<_field_struct name="right label" />
+	<_field_real_point_2d name="width and height" />
+	<_field_real name="alpha" />
+	<_field_explanation name="right timer" />
+	<_field_struct name="right timer" />
+	<_field_real_point_2d name="width and height" />
+	<_field_real name="alpha" />
+	<_field_explanation name="left timer" />
+	<_field_struct name="left timer" />
+	<_field_real_point_2d name="width and height" />
+	<_field_real name="alpha" />
+	<_field_explanation name="yaw sprite" />
+	<_field_struct name="yaw sprite" />
+	<_field_real_point_2d name="width and height" />
+	<_field_real name="alpha" />
+	<_field_real name="pivot offset" />
+	<_field_pad name="pad0" length="4" />
+</plugin>

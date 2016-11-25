@@ -1,0 +1,16 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="texture maps" max="1024">
+		<_field_tag_reference_64 name="default texture" />
+		<_field_block_64 name="sprite index to 4k texture mapping" max="512">
+			<_field_tag_reference_64 name="4k texture" />
+			<_field_long_integer name="default texture sprite index" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_pad name="pad0" length="4" />
+</plugin>

@@ -1,0 +1,23 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_pad name="pad" length="8" />
+	<_field_struct name="weapon" />
+	<_field_string_id name="variant name#variant name will get propagated to all attachments" />
+	<_field_block_64 name="generic attachments" max="2">
+		<_field_tag_reference_64 name="attachment" />
+	</_field_block_64>
+	<_field_tag_reference_64 name="barrel attachment" />
+	<_field_tag_reference_64 name="magazine attachment" />
+	<_field_tag_reference_64 name="melee attachment" />
+	<_field_tag_reference_64 name="sight attachment" />
+	<_field_tag_reference_64 name="target tracking attachment" />
+	<_field_tag_reference_64 name="trigger attachment" />
+	<_field_explanation name="WARNING">&quot;unit modifier set&quot; This has unresponsive networking.  Only exposed for special/rare weapons.  Do not use in standard tuning of a weapon</_field_explanation>
+	<_field_tag_reference_64 name="unit modifier set" />
+	<_field_tag_reference_64 name="UI Display Info" />
+</plugin>

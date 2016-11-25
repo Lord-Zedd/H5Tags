@@ -1,0 +1,53 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_custom name="FADE OUT FROM GAME" />
+	<_field_struct name="Fade Out From Game" />
+	<_field_byte_flags name="Flags">
+		<item Name="Active" />
+	</_field_byte_flags>
+	<_field_pad name="PAD1!" length="3" />
+	<_field_long_integer name="Fade Time:ticks" />
+	<_field_real_rgb_color name="Fade Color^" />
+	<_field_long_integer name="Sleep Time:ticks" />
+	<_field_custom name="FADE IN" />
+	<_field_struct name="Fade In" />
+	<_field_byte_flags name="Flags">
+		<item Name="Active" />
+	</_field_byte_flags>
+	<_field_pad name="PAD1!" length="3" />
+	<_field_long_integer name="Fade Time:ticks" />
+	<_field_real_rgb_color name="Fade Color^" />
+	<_field_long_integer name="Sleep Time:ticks" />
+	<_field_custom name="FADE OUT" />
+	<_field_struct name="Fade Out" />
+	<_field_byte_flags name="Flags">
+		<item Name="Active" />
+	</_field_byte_flags>
+	<_field_pad name="PAD1!" length="3" />
+	<_field_long_integer name="Fade Time:ticks" />
+	<_field_real_rgb_color name="Fade Color^" />
+	<_field_long_integer name="Sleep Time:ticks" />
+	<_field_custom name="FADE POST CORE LOAD" />
+	<_field_struct name="Fade Post Core Load" />
+	<_field_byte_flags name="Flags">
+		<item Name="Active" />
+	</_field_byte_flags>
+	<_field_pad name="PAD1!" length="3" />
+	<_field_long_integer name="Fade Time:ticks" />
+	<_field_real_rgb_color name="Fade Color^" />
+	<_field_long_integer name="Sleep Time:ticks" />
+	<_field_custom name="FADE IN TO GAME" />
+	<_field_struct name="Fade In To Game " />
+	<_field_byte_flags name="Flags">
+		<item Name="Active" />
+	</_field_byte_flags>
+	<_field_pad name="PAD1!" length="3" />
+	<_field_long_integer name="Fade Time:ticks" />
+	<_field_real_rgb_color name="Fade Color^" />
+	<_field_long_integer name="Sleep Time:ticks" />
+</plugin>

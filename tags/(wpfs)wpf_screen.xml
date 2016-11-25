@@ -1,0 +1,31 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_custom name="import - directory" />
+	<_field_custom name="import - single file" />
+	<_field_string_id name="xamlName" />
+	<_field_block_64 name="xamlReferences" max="512">
+		<_field_tag_reference_64 name="xaml reference" />
+	</_field_block_64>
+	<_field_block_64 name="imageListReferences" max="512">
+		<_field_tag_reference_64 name="asset reference" />
+	</_field_block_64>
+	<_field_block_64 name="string references" max="64">
+		<_field_tag_reference_64 name="string list" />
+	</_field_block_64>
+	<_field_block_64 name="sound references" max="512">
+		<_field_tag_reference_64 name="asset reference" validtags="snd!, lsnd, musc" />
+	</_field_block_64>
+	<_field_block_64 name="obj references" max="512">
+		<_field_tag_reference_64 name="asset reference" />
+	</_field_block_64>
+	<_field_data_64 name="xamlfiledata*" />
+	<_field_tag_reference_64 name="LuaScriptReference" />
+	<_field_long_flags name="flags">
+		<item Name="converted to 1080p" />
+	</_field_long_flags>
+</plugin>

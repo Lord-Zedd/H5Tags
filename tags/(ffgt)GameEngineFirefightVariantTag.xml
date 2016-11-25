@@ -1,0 +1,455 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="variant" />
+	<_field_string_id name="localizable name^" />
+	<_field_string_id name="localizable description" />
+	<_field_block_64 name="miscellaneous options" max="1">
+		<_field_word_flags name="flags">
+			<item Name="teams enabled" />
+			<item Name="__deprecated__perfection enabled" />
+			<item Name="__deprecated__mosh" />
+			<item Name="__deprecated__drop weapons on death" />
+			<item Name="killcam enabled" />
+			<item Name="final killcam enabled" />
+			<item Name="__deprecated__asymmetric round scoring" />
+			<item Name="__deprecated__silent assist" />
+			<item Name="medal score accumulator enabled" />
+			<item Name="requisition enabled" />
+			<item Name="active spartan tracking enabled" />
+			<item Name="passive spartan tracking enabled" />
+			<item Name="machinima controls enabled" />
+		</_field_word_flags>
+		<_field_char_integer name="early victory win count" />
+		<_field_char_integer name="round time limit:minutes" />
+		<_field_char_integer name="number of rounds" />
+		<_field_byte_integer name="overshield deplete time" />
+		<_field_pad name="RXXH" length="2" />
+	</_field_block_64>
+	<_field_block_64 name="prototype options" max="1">
+		<_field_char_integer name="prototype mode" />
+		<_field_char_integer name="promethean energy kill percent" />
+		<_field_char_integer name="promethean energy time percent" />
+		<_field_char_integer name="promethean energy medal percent" />
+		<_field_char_integer name="promethean duration" />
+		<_field_char_integer name="class color override" />
+		<_field_char_integer name="disable warzone initial assault" />
+	</_field_block_64>
+	<_field_block_64 name="respawn options" max="1">
+		<_field_word_flags name="flags">
+			<item Name="inherit respawn time" />
+			<item Name="__deprecated__respawn with teammate" />
+			<item Name="__deprecated__respawn at location" />
+			<item Name="respawn on kills" />
+			<item Name="early respawn allowed" />
+			<item Name="join in progress wait for next round to spawn" />
+			<item Name="bypass line of sight check for allowing player spawn" />
+		</_field_word_flags>
+		<_field_char_integer name="lives per round" />
+		<_field_char_integer name="team lives per round" />
+		<_field_char_integer name="min respawn time:seconds" />
+		<_field_char_integer name="respawn time:seconds" />
+		<_field_char_integer name="suicide penalty:seconds" />
+		<_field_char_integer name="betrayal penalty:seconds" />
+		<_field_char_integer name="respawn growth:seconds" />
+		<_field_pad name="EOTOTRXV" length="3" />
+		<_field_string_id name="respawn player traits name" />
+		<_field_char_integer name="respawn player traits duration:seconds" />
+		<_field_pad name="woman bound for glory, why you leaving me again?" length="3" />
+	</_field_block_64>
+	<_field_block_64 name="social options" max="1">
+		<_field_word_flags name="flags">
+			<item Name="observers enabled" />
+			<item Name="team changing enabled" />
+			<item Name="team changing balancing only" />
+			<item Name="friendly fire enabled" />
+			<item Name="betrayal booting enabled" />
+			<item Name="enemy voice enabled" />
+			<item Name="open channel voice enabled" />
+			<item Name="dead player voice enabled" />
+			<item Name="suiciding booting enabled" />
+			<item Name="idle booting enabled" />
+		</_field_word_flags>
+	</_field_block_64>
+	<_field_block_64 name="map override options" max="1">
+		<_field_string_id name="player traits name" />
+		<_field_string_id name="weapon set name" />
+		<_field_string_id name="vehicle set name" />
+		<_field_string_id name="equipment set name" />
+		<_field_string_id name="red powerup traits name" />
+		<_field_string_id name="blue powerup traits name" />
+		<_field_string_id name="yellow powerup traits name" />
+		<_field_string_id name="custom powerup traits name" />
+		<_field_char_integer name="red powerup duration:seconds" />
+		<_field_char_integer name="blue powerup duration:seconds" />
+		<_field_char_integer name="yellow powerup duration:seconds" />
+		<_field_char_integer name="custom powerup duration:seconds" />
+		<_field_string_id name="red powerup secondary traits name" />
+		<_field_string_id name="blue powerup secondary traits name" />
+		<_field_string_id name="yellow powerup secondary traits name" />
+		<_field_string_id name="custom powerup secondary traits name" />
+		<_field_char_integer name="red powerup secondary duration:seconds" />
+		<_field_char_integer name="blue powerup secondary duration:seconds" />
+		<_field_char_integer name="yellow powerup secondary duration:seconds" />
+		<_field_char_integer name="custom powerup secondary duration:seconds" />
+	</_field_block_64>
+	<_field_block_64 name="team options" max="1">
+		<_field_char_enum name="model override type">
+			<item Name="none (player choice)" />
+			<item Name="force spartan" />
+			<item Name="set by team" />
+			<item Name="set by designator" />
+		</_field_char_enum>
+		<_field_char_enum name="designator switch type">
+			<item Name="none" />
+			<item Name="random" />
+			<item Name="rotate" />
+		</_field_char_enum>
+		<_field_pad name="pad" length="2" />
+		<_field_array name="teams">
+			<_field_byte_flags name="flags">
+				<item Name="enabled" />
+				<item Name="primary override color" />
+				<item Name="secondary override color" />
+				<item Name="override ui text tint color" />
+				<item Name="override ui bitmap tint color" />
+				<item Name="override emblem" />
+			</_field_byte_flags>
+			<_field_char_enum name="initial team designator">
+				<item Name="defender" />
+				<item Name="attacker" />
+				<item Name="third party" />
+				<item Name="fourth party" />
+				<item Name="fifth party" />
+				<item Name="sixth party" />
+				<item Name="seventh party" />
+				<item Name="eighth party{eigth party}" />
+				<item Name="neutral" />
+			</_field_char_enum>
+			<_field_char_enum name="model override">
+				<item Name="spartan" />
+			</_field_char_enum>
+			<_field_byte_integer name="number of fireteams" />
+			<_field_string_id name="description" />
+			<_field_rgb_color name="primary color override{color override}" />
+			<_field_rgb_color name="secondary color override" />
+			<_field_argb_color name="ui text tint color override" />
+			<_field_argb_color name="ui bitmap tint color override" />
+			<_field_byte_flags name="flags">
+				<item Name="enabled" />
+				<item Name="primary override color" />
+				<item Name="secondary override color" />
+				<item Name="override ui text tint color" />
+				<item Name="override ui bitmap tint color" />
+				<item Name="override emblem" />
+			</_field_byte_flags>
+			<_field_char_enum name="initial team designator">
+				<item Name="defender" />
+				<item Name="attacker" />
+				<item Name="third party" />
+				<item Name="fourth party" />
+				<item Name="fifth party" />
+				<item Name="sixth party" />
+				<item Name="seventh party" />
+				<item Name="eighth party{eigth party}" />
+				<item Name="neutral" />
+			</_field_char_enum>
+			<_field_char_enum name="model override">
+				<item Name="spartan" />
+			</_field_char_enum>
+			<_field_byte_integer name="number of fireteams" />
+			<_field_string_id name="description" />
+			<_field_rgb_color name="primary color override{color override}" />
+			<_field_rgb_color name="secondary color override" />
+			<_field_argb_color name="ui text tint color override" />
+			<_field_argb_color name="ui bitmap tint color override" />
+			<_field_byte_flags name="flags">
+				<item Name="enabled" />
+				<item Name="primary override color" />
+				<item Name="secondary override color" />
+				<item Name="override ui text tint color" />
+				<item Name="override ui bitmap tint color" />
+				<item Name="override emblem" />
+			</_field_byte_flags>
+			<_field_char_enum name="initial team designator">
+				<item Name="defender" />
+				<item Name="attacker" />
+				<item Name="third party" />
+				<item Name="fourth party" />
+				<item Name="fifth party" />
+				<item Name="sixth party" />
+				<item Name="seventh party" />
+				<item Name="eighth party{eigth party}" />
+				<item Name="neutral" />
+			</_field_char_enum>
+			<_field_char_enum name="model override">
+				<item Name="spartan" />
+			</_field_char_enum>
+			<_field_byte_integer name="number of fireteams" />
+			<_field_string_id name="description" />
+			<_field_rgb_color name="primary color override{color override}" />
+			<_field_rgb_color name="secondary color override" />
+			<_field_argb_color name="ui text tint color override" />
+			<_field_argb_color name="ui bitmap tint color override" />
+			<_field_byte_flags name="flags">
+				<item Name="enabled" />
+				<item Name="primary override color" />
+				<item Name="secondary override color" />
+				<item Name="override ui text tint color" />
+				<item Name="override ui bitmap tint color" />
+				<item Name="override emblem" />
+			</_field_byte_flags>
+			<_field_char_enum name="initial team designator">
+				<item Name="defender" />
+				<item Name="attacker" />
+				<item Name="third party" />
+				<item Name="fourth party" />
+				<item Name="fifth party" />
+				<item Name="sixth party" />
+				<item Name="seventh party" />
+				<item Name="eighth party{eigth party}" />
+				<item Name="neutral" />
+			</_field_char_enum>
+			<_field_char_enum name="model override">
+				<item Name="spartan" />
+			</_field_char_enum>
+			<_field_byte_integer name="number of fireteams" />
+			<_field_string_id name="description" />
+			<_field_rgb_color name="primary color override{color override}" />
+			<_field_rgb_color name="secondary color override" />
+			<_field_argb_color name="ui text tint color override" />
+			<_field_argb_color name="ui bitmap tint color override" />
+			<_field_byte_flags name="flags">
+				<item Name="enabled" />
+				<item Name="primary override color" />
+				<item Name="secondary override color" />
+				<item Name="override ui text tint color" />
+				<item Name="override ui bitmap tint color" />
+				<item Name="override emblem" />
+			</_field_byte_flags>
+			<_field_char_enum name="initial team designator">
+				<item Name="defender" />
+				<item Name="attacker" />
+				<item Name="third party" />
+				<item Name="fourth party" />
+				<item Name="fifth party" />
+				<item Name="sixth party" />
+				<item Name="seventh party" />
+				<item Name="eighth party{eigth party}" />
+				<item Name="neutral" />
+			</_field_char_enum>
+			<_field_char_enum name="model override">
+				<item Name="spartan" />
+			</_field_char_enum>
+			<_field_byte_integer name="number of fireteams" />
+			<_field_string_id name="description" />
+			<_field_rgb_color name="primary color override{color override}" />
+			<_field_rgb_color name="secondary color override" />
+			<_field_argb_color name="ui text tint color override" />
+			<_field_argb_color name="ui bitmap tint color override" />
+			<_field_byte_flags name="flags">
+				<item Name="enabled" />
+				<item Name="primary override color" />
+				<item Name="secondary override color" />
+				<item Name="override ui text tint color" />
+				<item Name="override ui bitmap tint color" />
+				<item Name="override emblem" />
+			</_field_byte_flags>
+			<_field_char_enum name="initial team designator">
+				<item Name="defender" />
+				<item Name="attacker" />
+				<item Name="third party" />
+				<item Name="fourth party" />
+				<item Name="fifth party" />
+				<item Name="sixth party" />
+				<item Name="seventh party" />
+				<item Name="eighth party{eigth party}" />
+				<item Name="neutral" />
+			</_field_char_enum>
+			<_field_char_enum name="model override">
+				<item Name="spartan" />
+			</_field_char_enum>
+			<_field_byte_integer name="number of fireteams" />
+			<_field_string_id name="description" />
+			<_field_rgb_color name="primary color override{color override}" />
+			<_field_rgb_color name="secondary color override" />
+			<_field_argb_color name="ui text tint color override" />
+			<_field_argb_color name="ui bitmap tint color override" />
+			<_field_byte_flags name="flags">
+				<item Name="enabled" />
+				<item Name="primary override color" />
+				<item Name="secondary override color" />
+				<item Name="override ui text tint color" />
+				<item Name="override ui bitmap tint color" />
+				<item Name="override emblem" />
+			</_field_byte_flags>
+			<_field_char_enum name="initial team designator">
+				<item Name="defender" />
+				<item Name="attacker" />
+				<item Name="third party" />
+				<item Name="fourth party" />
+				<item Name="fifth party" />
+				<item Name="sixth party" />
+				<item Name="seventh party" />
+				<item Name="eighth party{eigth party}" />
+				<item Name="neutral" />
+			</_field_char_enum>
+			<_field_char_enum name="model override">
+				<item Name="spartan" />
+			</_field_char_enum>
+			<_field_byte_integer name="number of fireteams" />
+			<_field_string_id name="description" />
+			<_field_rgb_color name="primary color override{color override}" />
+			<_field_rgb_color name="secondary color override" />
+			<_field_argb_color name="ui text tint color override" />
+			<_field_argb_color name="ui bitmap tint color override" />
+			<_field_byte_flags name="flags">
+				<item Name="enabled" />
+				<item Name="primary override color" />
+				<item Name="secondary override color" />
+				<item Name="override ui text tint color" />
+				<item Name="override ui bitmap tint color" />
+				<item Name="override emblem" />
+			</_field_byte_flags>
+			<_field_char_enum name="initial team designator">
+				<item Name="defender" />
+				<item Name="attacker" />
+				<item Name="third party" />
+				<item Name="fourth party" />
+				<item Name="fifth party" />
+				<item Name="sixth party" />
+				<item Name="seventh party" />
+				<item Name="eighth party{eigth party}" />
+				<item Name="neutral" />
+			</_field_char_enum>
+			<_field_char_enum name="model override">
+				<item Name="spartan" />
+			</_field_char_enum>
+			<_field_byte_integer name="number of fireteams" />
+			<_field_string_id name="description" />
+			<_field_rgb_color name="primary color override{color override}" />
+			<_field_rgb_color name="secondary color override" />
+			<_field_argb_color name="ui text tint color override" />
+			<_field_argb_color name="ui bitmap tint color override" />
+		</_field_array>
+	</_field_block_64>
+	<_field_block_64 name="loadout options" max="1">
+		<_field_byte_flags name="flags">
+			<item Name="custom loadouts enabled" />
+		</_field_byte_flags>
+		<_field_pad name="DLVKJSER" length="3" />
+	</_field_block_64>
+	<_field_block_64 name="event scripts" max="32">
+		<_field_tag_reference_64 name="script file^" />
+		<_field_byte_flags name="flags">
+			<item Name="RunForVariant" />
+			<item Name="RunForGame" />
+		</_field_byte_flags>
+		<_field_pad name="pad" length="3" />
+	</_field_block_64>
+	<_field_long_integer name="mission_id" />
+	<_field_long_enum name="game difficulty">
+		<item Name="easy" />
+		<item Name="normal" />
+		<item Name="heroic" />
+		<item Name="legendary" />
+	</_field_long_enum>
+	<_field_byte_flags name="firefight variant flags">
+		<item Name="Use Ammo Crates" />
+		<item Name="Players Respawn on Wave" />
+	</_field_byte_flags>
+	<_field_pad name="pad1" length="1" />
+	<_field_short_integer name="shared team life count" />
+	<_field_short_integer name="maximum lives" />
+	<_field_char_integer name="Starting Crate 1" />
+	<_field_char_integer name="Starting Crate 2" />
+	<_field_char_integer name="Starting Crate 3" />
+	<_field_char_integer name="Starting Crate 4" />
+	<_field_char_integer name="Starting Crate 5" />
+	<_field_char_integer name="Starting Crate 6" />
+	<_field_char_integer name="Starting Crate 7" />
+	<_field_char_integer name="Starting Crate 8" />
+	<_field_char_integer name="Starting Crate 9" />
+	<_field_char_integer name="Starting Crate 10" />
+	<_field_char_integer name="Starting Crate 11" />
+	<_field_char_integer name="Starting Crate 12" />
+	<_field_char_integer name="Starting Crate 13" />
+	<_field_char_integer name="Starting Crate 14" />
+	<_field_string name="Variant Event#This event is always set for script" />
+	<_field_block_64 name="Midnight Player Goal Properties" max="15">
+		<_field_char_enum name="Player Goal">
+			<item Name="Object Destruction" />
+			<item Name="Object Delivery" />
+			<item Name="Location Arrival" />
+			<item Name="Time Passed" />
+			<item Name="No More Waves" />
+			<item Name="Kill Boss" />
+			<item Name="Defense" />
+			<item Name="Other" />
+		</_field_char_enum>
+		<_field_char_integer name="Lives" />
+		<_field_char_integer name="Time Limit#minutes" />
+		<_field_byte_flags name="Wave Difficulty">
+			<item Name="Easy" />
+			<item Name="Medium" />
+			<item Name="Hard" />
+		</_field_byte_flags>
+		<_field_block_64 name="Firefight Waves" max="30">
+			<_field_string_id name="squad type^#survival_mode_get_wave_squad" />
+			<_field_char_enum name="Delivery type">
+				<item Name="Dropship" />
+				<item Name="Monster Closet" />
+				<item Name="Drop Pod" />
+				<item Name="Test Spawn" />
+			</_field_char_enum>
+			<_field_char_integer name="AI allowed before next wave spawns" />
+			<_field_char_integer name="Enemies Left Before HUD Marking" />
+			<_field_char_integer name="Wave Type" />
+			<_field_char_integer name="Weapon to drop" />
+			<_field_char_integer name="Vehicle to drop" />
+			<_field_char_integer name="Squad 1" />
+			<_field_char_integer name="Squad 2" />
+			<_field_string name="Start Event" />
+			<_field_string name="End Event" />
+		</_field_block_64>
+		<_field_long_flags name="Player Goal Flags">
+			<item Name="Looping" />
+			<item Name="Random Waves" />
+		</_field_long_flags>
+		<_field_string_id name="spartan player traits" />
+		<_field_string_id name="ai traits" />
+		<_field_string name="Start Event" />
+		<_field_string name="End Event" />
+		<_field_long_flags name="skulls^{primary skulls}">
+			<item Name="skull_iron" />
+			<item Name="skull_black_eye" />
+			<item Name="skull_tough_luck" />
+			<item Name="skull_catch" />
+			<item Name="skull_fog" />
+			<item Name="skull_famine" />
+			<item Name="skull_thunderstorm" />
+			<item Name="skull_tilt" />
+			<item Name="skull_mythic" />
+			<item Name="skull_blind" />
+			<item Name="skull_superman" />
+			<item Name="skull_birthday_party" />
+			<item Name="skull_daddy" />
+			<item Name="skull_red" />
+			<item Name="skull_yellow" />
+			<item Name="skull_blue" />
+		</_field_long_flags>
+		<_field_char_integer name="objective 1" />
+		<_field_char_integer name="objective 2" />
+		<_field_char_integer name="objective 3" />
+		<_field_char_integer name="objective 4" />
+		<_field_char_integer name="User Data" />
+		<_field_char_integer name="start location folder" />
+		<_field_pad name="BLAH" length="2" />
+	</_field_block_64>
+	<_field_pad name="pad2" length="4" />
+	<_field_pad name="padding" length="4" />
+</plugin>

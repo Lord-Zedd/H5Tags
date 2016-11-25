@@ -1,0 +1,27 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_angle_bounds name="gunkick yaw mapping bounds:degrees#applies the curve during the range.  Values outside the range get moved to the closest side of the curve" />
+	<_field_struct name="gunkick yaw to roll" />
+	<_field_data_64 name="data" />
+	<_field_angle_bounds name="viewkick yaw mapping bounds{gunkick pitch mapping bounds}:degrees#applies the curve during the range.  Values outside the range get moved to the closest side of the curve" />
+	<_field_struct name="viewkick yaw to roll" />
+	<_field_data_64 name="data" />
+	<_field_real name="max player additive velocity for flag throw#This is used to scale the players velocity between 0 and 1 to apply to the throw velocity curve." />
+	<_field_struct name="flag throw forward additive velocity " />
+	<_field_data_64 name="data" />
+	<_field_struct name="flag throw backward additive velocity " />
+	<_field_data_64 name="data" />
+	<_field_struct name="flag throw pitch#The z axis additive value depending on the players aim vector z value" />
+	<_field_data_64 name="data" />
+	<_field_block_64 name="ads reticle movement thresholds" max="8">
+		<_field_string name="ads reticle movement threshold name^" />
+		<_field_angle name="ads reticle movement threshold angle:degrees" />
+		<_field_real_rgb_color name="ads reticle movement threshold color" />
+	</_field_block_64>
+	<_field_pad name="endPad" length="4" />
+</plugin>

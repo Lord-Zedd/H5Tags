@@ -1,0 +1,75 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="default transmission settings" />
+	<_field_explanation name="default obstruction settings" />
+	<_field_struct name="obstruction settings" />
+	<_field_custom name="cutoff frequency:Hz" />
+	<_field_real name="cutoff frequency:Hz" />
+	<_field_custom name="output gain:dB" />
+	<_field_real name="output gain:dB" />
+	<_field_explanation name="default occlusion settings" />
+	<_field_struct name="occlusion settings" />
+	<_field_custom name="cutoff frequency:Hz" />
+	<_field_real name="cutoff frequency:Hz" />
+	<_field_custom name="output gain:dB" />
+	<_field_real name="output gain:dB" />
+	<_field_explanation name="first person left side mix">for first person sounds to the left of you</_field_explanation>
+	<_field_struct name="first person left side mix" />
+	<_field_real name="left stereo gain:dB" />
+	<_field_real name="right stereo gain:dB" />
+	<_field_explanation name="first person middle mix">for first person sounds between your ears</_field_explanation>
+	<_field_struct name="first person middle mix" />
+	<_field_real name="left stereo gain:dB" />
+	<_field_real name="right stereo gain:dB" />
+	<_field_explanation name="first person right side mix">for first person sounds to the right of you</_field_explanation>
+	<_field_struct name="first person right side mix" />
+	<_field_real name="left stereo gain:dB" />
+	<_field_real name="right stereo gain:dB" />
+	<_field_explanation name="first person surround mix" />
+	<_field_struct name="first person surround mix" />
+	<_field_real name="front speaker gain:dB" />
+	<_field_real name="rear speaker gain:dB" />
+	<_field_explanation name="ambient surround mix" />
+	<_field_struct name="ambient surround mix" />
+	<_field_real name="front speaker gain:dB" />
+	<_field_real name="rear speaker gain:dB" />
+	<_field_explanation name="global mix" />
+	<_field_struct name="global mix" />
+	<_field_real name="mono unspatialized gain:dB" />
+	<_field_real name="stereo to 3d gain:dB" />
+	<_field_real name="rear surround to front stereo gain:dB" />
+	<_field_explanation name="surround center mix">for sounds that have &quot;use center speaker unspatialized&quot; checked when outputting in surround</_field_explanation>
+	<_field_struct name="surround center mix" />
+	<_field_real name="front speaker gain:dB" />
+	<_field_real name="center speaker gain:dB" />
+	<_field_explanation name="stereo center mix">for sounds that have &quot;use center speaker unspatialized&quot; checked when outputting in stereo</_field_explanation>
+	<_field_struct name="stereo center mix" />
+	<_field_real name="front speaker gain:dB" />
+	<_field_real name="center speaker gain:dB" />
+	<_field_explanation name="radio surround center mix">for the radio effect when outputting in surround</_field_explanation>
+	<_field_struct name="radio surround center mix" />
+	<_field_real name="front speaker gain:dB" />
+	<_field_real name="center speaker gain:dB" />
+	<_field_explanation name="radio stereo center mix">for the radio effect when outputting in stereo</_field_explanation>
+	<_field_struct name="radio stereo center mix" />
+	<_field_real name="front speaker gain:dB" />
+	<_field_real name="center speaker gain:dB" />
+	<_field_explanation name="more sound lovin'" />
+	<_field_real name="stereo unspatialized gain:dB" />
+	<_field_real name="quad route to lfe gain:dB" />
+	<_field_explanation name="last minute values" />
+	<_field_real name="solo player fade out delay: seconds" />
+	<_field_real name="solo player fade out time: seconds" />
+	<_field_real name="solo player fade in time: seconds" />
+	<_field_real name="game music fade out time: seconds" />
+	<_field_explanation name="debugging stuff" />
+	<_field_tag_reference_64 name="play on unplayable sound" validtags="snd!" />
+	<_field_real name="left/right bleed:[0 = no bleed, 1 = swap left/right, 0.5 = mono" />
+	<_field_real name="remote voice boost: output= (1 + boost)*input" />
+	<_field_pad name="pad_tp" length="4" />
+</plugin>

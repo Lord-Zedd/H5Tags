@@ -1,0 +1,545 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_custom name="OBJECT" />
+	<_field_short_integer name="runtime object type!" />
+	<_field_char_enum name="Nav Mesh Cutting">
+		<item Name="Default" />
+		<item Name="Cut" />
+		<item Name="NotCut" />
+	</_field_char_enum>
+	<_field_char_enum name="Nav Mesh Obstacle">
+		<item Name="Default" />
+		<item Name="Yes" />
+		<item Name="No" />
+	</_field_char_enum>
+	<_field_real_vector_3d name="Nav Mesh Cutting OBB Offset" />
+	<_field_real_vector_3d name="Nav Mesh Cutting OBB Scale" />
+	<_field_long_flags name="flags">
+		<item Name="always render in floating shadow#will not work on child objects" />
+		<item Name="preserves initial damage owner" />
+		<item Name="not a pathfinding obstacle" />
+		<item Name="extension of parent#object uses parent's markers" />
+		<item Name="does not cause collision damage" />
+		<item Name="early mover" />
+		<item Name="early mover localized physics" />
+		<item Name="object scales attachments" />
+		<item Name="non physical in map editor" />
+		<item Name="effects created by this object do not spawn objects in multiplayer" />
+		<item Name="does not collide with camera#force camera not to collide with object.  By default small sweetener objects do not collide" />
+		<item Name="force collide with camera#force the camera to collide with this object,  By default small sweetener objects do not collide" />
+		<item Name="damage not blocked by obstructions#AOE damage being applied to this object does not test for obstrutions." />
+		<item Name="early mover localize projectiles" />
+		<item Name="requires shadow bounds visibility test" />
+		<item Name="grab parent object in forge editing" />
+		<item Name="Hoistable from stand" />
+		<item Name="Hoistable from crouch" />
+		<item Name="vaultable" />
+		<item Name="collides with own projectiles" />
+		<item Name="object rejects dynamic decals" />
+		<item Name="Do not network" />
+		<item Name="Renderer should send visibility up to game thread" />
+		<item Name="Play effect when spotted" />
+		<item Name="Wake when visible to player" />
+		<item Name="Sleep when not visible to player" />
+		<item Name="Does not accept active camouflage" />
+		<item Name="Killed on first contact or damage#the object is killed instantly the first time it is contacted or damaged (optional grace period below)" />
+		<item Name="Self-destruct timer kills instead of destroying#object is killed instantly, not destroyed (deleted) when the self-destruct timer expires" />
+	</_field_long_flags>
+	<_field_real name="bounding radius#If you edit this field manually, beware that the render model is no longer respected for radius calculation and that you need to set the bounding offset as well." />
+	<_field_real_point_3d name="bounding offset" />
+	<_field_real name="horizontal acceleration scale{acceleration scale}:[0,+inf]" />
+	<_field_real name="vertical acceleration scale" />
+	<_field_real name="angular acceleration scale" />
+	<_field_char_enum name="lightmap shadow mode">
+		<item Name="default" />
+		<item Name="never" />
+		<item Name="always" />
+		<item Name="blur" />
+	</_field_char_enum>
+	<_field_char_enum name="multiple airprobe mode">
+		<item Name="default" />
+		<item Name="always" />
+	</_field_char_enum>
+	<_field_pad name="pad1" length="2" />
+	<_field_struct name="impact audio" />
+	<_field_custom name="IMPACT AUDIO" />
+	<_field_real name="small impact minimum speed" />
+	<_field_real name="medium impact minimum speed" />
+	<_field_real name="large impact minimum speed" />
+	<_field_real name="large impact maximum speed" />
+	<_field_real name="rolling angular speed minimum" />
+	<_field_real name="rolling angular speed maximum" />
+	<_field_real name="rolling ramp up time:seconds#how long it takes to set the rolling ramp RTPC from 0-1" />
+	<_field_real name="grinding angular speed minimum" />
+	<_field_real name="grinding angular speed maximum" />
+	<_field_real name="grinding ramp up time:seconds#how long it takes to set the grinding ramp RTPC from 0-1" />
+	<_field_char_enum name="water density">
+		<item Name="default" />
+		<item Name="super_floater" />
+		<item Name="floater" />
+		<item Name="neutral" />
+		<item Name="sinker" />
+		<item Name="super_sinker" />
+		<item Name="none" />
+	</_field_char_enum>
+	<_field_pad name="pad2" length="3" />
+	<_field_long_integer name="runtime flags!*" />
+	<_field_block_64 name="source sidecar" max="1">
+		<_field_long_string name="sidecar path*" />
+	</_field_block_64>
+	<_field_string_id name="default model variant" />
+	<_field_tag_reference_64 name="model" />
+	<_field_tag_reference_64 name="crate object" />
+	<_field_explanation name="Damage Source">Damage source name for all damage caused by this object. This includes:
+   - collision damage caused by this object
+   - melee damage caused by this object (including melee-like special abilities)
+   - damage caused by projectiles created by this object
+   - damage caused by damage effects created by this object (such as weapon backfiring)
+</_field_explanation>
+	<_field_struct name="damageSource" />
+	<_field_string_id name="Damage Source Name" />
+	<_field_real name="navpoint vertical offset" />
+	<_field_explanation name="only set this tag if you want to override the default collision damage values in globals.globals" />
+	<_field_tag_reference_64 name="collision damage" />
+	<_field_block_64 name="early mover OBB" max="1">
+		<_field_string_id name="node name#empty mean object space" />
+		<_field_long_integer name="runtime node index*!" />
+		<_field_real name="x0" />
+		<_field_real name="x1" />
+		<_field_real name="y0" />
+		<_field_real name="y1" />
+		<_field_real name="z0" />
+		<_field_real name="z1" />
+		<_field_real_euler_angles_3d name="angles" />
+	</_field_block_64>
+	<_field_tag_reference_64 name="creation effect" />
+	<_field_tag_reference_64 name="material effects" />
+	<_field_tag_reference_64 name="melee sound#this is the sound that is made when I am meleed.  This overrides the sweetener sound of my material." validtags="snd!" />
+	<_field_real name="kill on first contact or damage after time:seconds#grace period before object can be instantly killed by kill on first contact or damage flag" />
+	<_field_real name="self-destruct time:seconds#if non-zero, any instances of this object will destroy themselves after this many seconds." />
+	<_field_real name="self-destruct time max:seconds#if non-zero, defines range from which self-destruct time is chosen randomly" />
+	<_field_block_64 name="ai properties" max="1">
+		<_field_long_flags name="ai flags">
+			<item Name="detroyable cover" />
+			<item Name="pathfinding ignore when dead" />
+			<item Name="dynamic cover" />
+			<item Name="non flight-blocking" />
+			<item Name="dynamic cover from centre" />
+			<item Name="has corner markers!" />
+			<item Name="idle when flying" />
+			<item Name="consider for interaction" />
+			<item Name="leap on cover target" />
+		</_field_long_flags>
+		<_field_string_id name="ai type name#used for combat dialogue, etc." />
+		<_field_string_id name="interaction name#if you checked the consider for interaction flag, type what interaction the AI should do with this object (NYI - you can use any)" />
+		<_field_short_enum name="ai size">
+			<item Name="default" />
+			<item Name="tiny" />
+			<item Name="small" />
+			<item Name="medium" />
+			<item Name="large" />
+			<item Name="huge" />
+			<item Name="immobile" />
+		</_field_short_enum>
+		<_field_short_enum name="leap jump speed">
+			<item Name="NONE" />
+			<item Name="down" />
+			<item Name="step" />
+			<item Name="crouch" />
+			<item Name="stand" />
+			<item Name="storey" />
+			<item Name="tower" />
+			<item Name="infinite" />
+		</_field_short_enum>
+	</_field_block_64>
+	<_field_block_64 name="functions" max="256">
+		<_field_long_flags name="flags">
+			<item Name="invert#result of function is one minus actual result" />
+			<item Name="mapping does not controls active#the curve mapping can make the function active/inactive" />
+			<item Name="always active#function does not deactivate when at or below lower bound" />
+			<item Name="random time offset#function offsets periodic function input by random value between 0 and 1" />
+			<item Name="always exports value#when this function is deactivated, it still exports its value" />
+			<item Name="turn off with uses magnitude#the function will be turned off if the value of the turns_off_with function is 0" />
+		</_field_long_flags>
+		<_field_string_id name="import name#if you leave this field blank then you can set this function's input value with the hs_function object_set_function_variable" />
+		<_field_string_id name="export name" />
+		<_field_string_id name="turn off with#if the specified function is off, so is this function" />
+		<_field_string_id name="ranged interpolation name#if you have the ranged button checked" />
+		<_field_real name="min value#function must exceed this value (after mapping) to be active 0. means do nothing" />
+		<_field_struct name="default function" />
+		<_field_data_64 name="data" />
+		<_field_string_id name="scale by" />
+		<_field_block_64 name="interpolation" max="2">
+			<_field_long_enum name="interpolation mode">
+				<item Name="constant velocity" />
+				<item Name="linear acceleration" />
+				<item Name="damped spring" />
+				<item Name="fractional#covers a fixed fraction of the distance to the target on each update" />
+			</_field_long_enum>
+			<_field_real name="linear travel time:s#used by constant velocity" />
+			<_field_real name="acceleration:1/s/s#used by linear acceleration" />
+			<_field_explanation name="springs">the damping ratio is c/(2*sqrt(k)). if this ratio is:
+= 0 : oscillates forever
+&lt; 1 : oscillates with decreasing amplitude
+= 1 : reaches the target precisely and quickly (no oscillation)
+&gt; 1 : reaches the target slowly
+the higher the value of k, the quicker the system will reach the target value</_field_explanation>
+			<_field_real name="spring k#used by damped spring
+determines acceleration by displacement" />
+			<_field_real name="spring c#used by damped spring
+determines damping based on velocity" />
+			<_field_real name="fraction:0-1#used by fractional
+how mush of the distance to the target to cover each update" />
+		</_field_block_64>
+		<_field_long_block_index name="runtime interpolator index*!" />
+	</_field_block_64>
+	<_field_block_64 name="runtime interpolator functions*!" max="256">
+		<_field_long_integer name="runtime interpolator to object function mapping*!" />
+	</_field_block_64>
+	<_field_block_64 name="function switches" max="32">
+		<_field_string_id name="switch function name" />
+		<_field_string_id name="export name" />
+		<_field_block_64 name="switched functions" max="8">
+			<_field_real_bounds name="selection bounds#if the switch function is between these values, this function will be picked" />
+			<_field_string_id name="function name^" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_word_flags name="Ammo Refill Flags">
+		<item Name="None!" />
+		<item Name="UNSC" />
+		<item Name="Covenant" />
+		<item Name="Forerunner" />
+	</_field_word_flags>
+	<_field_word_flags name="secondary flags">
+		<item Name="does not affect projectile aiming" />
+		<item Name="never delete on bsp transition#This object and any objects in its parent-child chain will never be deleted when transitioning between BSPs" />
+		<item Name="Aim assist raycast does not ignore parents" />
+		<item Name="No shoulder bash rebound" />
+		<item Name="Combine child shapes into convext hull when cutting navmesh" />
+	</_field_word_flags>
+	<_field_block_64 name="attachments" max="48">
+		<_field_tag_reference_64 name="type^" validtags="ligh, gldf, ltvl, effe, lsnd, lens, cpem, egfd, decs" />
+		<_field_tag_reference_64 name="override type#this attachment will override the attachment on the object that shares this " validtags="ligh, gldf, ltvl, effe, lsnd, lens, cpem, egfd, decs" />
+		<_field_string_id name="marker" />
+		<_field_char_enum name="change color">
+			<item Name="none" />
+			<item Name="primary" />
+			<item Name="secondary" />
+			<item Name="tertiary" />
+			<item Name="quaternary" />
+		</_field_char_enum>
+		<_field_byte_flags name="flags">
+			<item Name="force always on#when this flag is clear we only create the attachment when the function object function is active or set to empty string" />
+			<item Name="effect size scale from object scale" />
+		</_field_byte_flags>
+		<_field_pad name="DPKP" length="2" />
+		<_field_string_id name="primary scale" />
+		<_field_string_id name="secondary scale" />
+	</_field_block_64>
+	<_field_block_64 name="hull surfaces" max="64">
+		<_field_word_flags name="flags">
+			<item Name="works on land#drives on an extruded version of everything physical in your level" />
+			<item Name="effects only" />
+		</_field_word_flags>
+		<_field_pad name="pad0" length="2" />
+		<_field_string_id name="marker name^" />
+		<_field_real name="radius" />
+		<_field_block_64 name="drag" max="512">
+			<_field_string_id name="material^" />
+			<_field_struct name="drag" />
+			<_field_custom name="Pressure" />
+			<_field_struct name="pressure" />
+			<_field_struct name="velocity to pressure" />
+			<_field_data_64 name="data" />
+			<_field_real name="max velocity:wu/s" />
+			<_field_custom name="Suction" />
+			<_field_struct name="suction" />
+			<_field_struct name="velocity to pressure" />
+			<_field_data_64 name="data" />
+			<_field_real name="max velocity:wu/s" />
+			<_field_real name="linear damping" />
+			<_field_real name="angular damping" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="jetwash" max="4">
+		<_field_string_id name="marker name^" />
+		<_field_real name="radius" />
+		<_field_long_integer name="maximum traces!:traces per second" />
+		<_field_real name="maximum emission length:world units" />
+		<_field_angle_bounds name="trace yaw angle: degrees" />
+		<_field_angle_bounds name="trace pitch angle: degrees" />
+		<_field_real name="particle offset:world units" />
+	</_field_block_64>
+	<_field_block_64 name="widgets" max="4">
+		<_field_tag_reference_64 name="type" validtags="ant!, clwd" />
+	</_field_block_64>
+	<_field_block_64 name="change colors" max="4">
+		<_field_block_64 name="initial permutations" max="32">
+			<_field_real name="weight" />
+			<_field_real_rgb_color name="color lower bound" />
+			<_field_real_rgb_color name="color upper bound" />
+			<_field_string_id name="variant name#if empty, may be used by any model variant" />
+		</_field_block_64>
+		<_field_block_64 name="functions" max="4">
+			<_field_pad name="TJJWBYNU" length="4" />
+			<_field_long_flags name="scale flags">
+				<item Name="blend in hsv#blends colors in hsv rather than rgb space" />
+				<item Name="...more colors#blends colors through more hues (goes the long way around the color wheel)" />
+			</_field_long_flags>
+			<_field_real_rgb_color name="color lower bound" />
+			<_field_real_rgb_color name="color upper bound" />
+			<_field_string_id name="darken by" />
+			<_field_string_id name="scale by" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="multiplayer object" max="1">
+		<_field_explanation name="TYPE AND FLAGS">Type pertains to how you want the game engine to handle this object
+Certain flags applicable only to certain object types, should be self evident</_field_explanation>
+		<_field_char_enum name="type">
+			<item Name="ordinary" />
+			<item Name="weapon" />
+			<item Name="grenade" />
+			<item Name="projectile" />
+			<item Name="powerup" />
+			<item Name="equipment" />
+			<item Name="ammo pack" />
+			<item Name="light land vehicle" />
+			<item Name="heavy land vehicle" />
+			<item Name="flying vehicle" />
+			<item Name="turret" />
+			<item Name="device" />
+			<item Name="dispenser" />
+			<item Name="teleporter 2way" />
+			<item Name="teleporter sender" />
+			<item Name="teleporter receiver" />
+			<item Name="player spawn location" />
+			<item Name="player respawn zone" />
+			<item Name="named location area" />
+			<item Name="danger zone" />
+			<item Name="safe volume" />
+			<item Name="kill volume" />
+			<item Name="cinematic camera{camera}" />
+			<item Name="trait zone" />
+			<item Name="powerup pad - deprecated" />
+			<item Name="weapon pad" />
+			<item Name="light" />
+			<item Name="jumbotron" />
+			<item Name="man cannon" />
+			<item Name="cinematic marker" />
+		</_field_char_enum>
+		<_field_byte_flags name="teleporter passability:used only for teleporters">
+			<item Name="disallow players" />
+			<item Name="allow light land vehicles" />
+			<item Name="allow heavy land vehicles" />
+			<item Name="allow flying vehicles" />
+			<item Name="allow projectiles" />
+		</_field_byte_flags>
+		<_field_char_enum name="spawn timer type">
+			<item Name="starts on death" />
+			<item Name="starts on disturbance" />
+		</_field_char_enum>
+		<_field_pad name="pad1" length="1" />
+		<_field_explanation name="GOAL &amp; RESPAWN ZONE OBJECT BOUNDARY">These fields are only used for goal area objects with boundaries, and for respawn zones</_field_explanation>
+		<_field_real name="boundary width/radius" />
+		<_field_real name="boundary box length" />
+		<_field_real name="boundary +height" />
+		<_field_real name="boundary -height" />
+		<_field_char_enum name="boundary shape">
+			<item Name="unused" />
+			<item Name="sphere" />
+			<item Name="cylinder" />
+			<item Name="box" />
+		</_field_char_enum>
+		<_field_pad name="pad_shape" length="3" />
+		<_field_explanation name="SPAWNING DATA">These fields are used for default spawning times and remapping</_field_explanation>
+		<_field_short_integer name="default spawn time:seconds" />
+		<_field_short_integer name="default abandonment time:seconds" />
+		<_field_long_flags name="flags">
+			<item Name="Only render if editable{only render in editor}{only visible in editor}#This object will only render if you're in editor, or in a Forge game where the instance of the object is Forge-able" />
+			<item Name="DEPRECATED phased physics in forge{phased physics in forge}" />
+			<item Name="valid initial player spawn" />
+			<item Name="fixed boundary orientation" />
+			<item Name="candy monitor should ignore" />
+			<item Name="inherit owning team color" />
+			<item Name="boundary volume doesn't kill immediately" />
+			<item Name="Only collision if editable{only collision in editor}#This object will only have collision if you're in editor, or in a Forge game and the instance of the object is Forge-able" />
+			<item Name="Only physics if editable{only physics in editor}#This object will only have physics if you're in editor, or in a Forge game and the instance of the object is Forge-able" />
+			<item Name="Force render in Forge#Regardless of 'do not render if can't be edited' or other flags, we will try to render this object in Forge games" />
+			<item Name="respawn player spawn" />
+			<item Name="fallback player spawn" />
+		</_field_long_flags>
+		<_field_explanation name="RESPAWN ZONE DATA">These are respawn zone weights, used only for respawn zones</_field_explanation>
+		<_field_real name="normal weight:aka natural weight" />
+		<_field_block_64 name="falloff function#Multiplier applied to weight (domain is center to radius, range should be 0 to 1)." max="1">
+			<_field_data_64 name="data" />
+		</_field_block_64>
+		<_field_explanation name="MARKER DATA">These fields are only used for defining certain, special markers to use for positional locations if the default position (object origin) is not sufficient</_field_explanation>
+		<_field_string_id name="boundary center marker" />
+		<_field_string_id name="spawned object marker name" />
+		<_field_explanation name="SPAWNED OBJECT">If this object is intended to spawn something, the object it spawns should be specified here</_field_explanation>
+		<_field_tag_reference_64 name="spawned object" />
+		<_field_string_id name="NYI boundary material" />
+		<_field_explanation name="BOUNDARY SHADER - DEFAULT">These are default shaders used for boundary geometry</_field_explanation>
+		<_field_tag_reference_64 name="boundary standard shader" validtags="mat " />
+		<_field_tag_reference_64 name="boundary opaque shader" validtags="mat " />
+		<_field_explanation name="BOUNDARY SHADER - SPHERE">These are custom shaders used for spherical boundary geometry</_field_explanation>
+		<_field_tag_reference_64 name="sphere standard shader" validtags="mat " />
+		<_field_tag_reference_64 name="sphere opaque shader" validtags="mat " />
+		<_field_explanation name="BOUNDARY SHADER - CYLINDER">These are custom shaders used for cylindrical boundary geometry</_field_explanation>
+		<_field_tag_reference_64 name="cylinder standard shader" validtags="mat " />
+		<_field_tag_reference_64 name="cylinder opaque shader" validtags="mat " />
+		<_field_explanation name="BOUNDARY SHADER - BOX">These are custom shaders used for box boundary geometry</_field_explanation>
+		<_field_tag_reference_64 name="box standard shader" validtags="mat " />
+		<_field_tag_reference_64 name="box opaque shader" validtags="mat " />
+		<_field_explanation name="FORGE DATA">These fields are used for default behaviors in Forge mode</_field_explanation>
+		<_field_word_flags name="Forge Property Flags">
+			<item Name="Disable yaw" />
+			<item Name="Disable pitch" />
+			<item Name="Disable roll" />
+			<item Name="Disable primary color change" />
+			<item Name="Disable secondary color change" />
+			<item Name="Disable tertiary color change" />
+			<item Name="Disable normal physics" />
+			<item Name="Disable fixed physics" />
+			<item Name="Disable phased physics" />
+		</_field_word_flags>
+		<_field_char_enum name="Default Physics Type">
+			<item Name="Normal" />
+			<item Name="Fixed" />
+			<item Name="Phased" />
+		</_field_char_enum>
+		<_field_pad name="pad2" length="1" />
+		<_field_string_id name="Default Primary Color#Name reference into the Forge colors + Forge color references block in forge.forge_globals. If empty we use global default." />
+		<_field_string_id name="Default Secondary Color#Name reference into the Forge colors + Forge color references block in forge.forge_globals. If empty we use global default." />
+		<_field_string_id name="Default Tertiary Color#Name reference into the Forge colors + Forge color references block in forge.forge_globals. If empty we use global default." />
+		<_field_char_integer name="Default Primary Glossiness#If 0 we use global default." />
+		<_field_char_integer name="Default Secondary Glossiness#If 0 we use global default." />
+		<_field_char_integer name="Default Tertiary Glossiness#If 0 we use global default." />
+		<_field_pad name="pad3" length="1" />
+		<_field_string_id name="Default Label [1]#Label reference into the Forge labels block in forge.forge_globals" />
+		<_field_string_id name="Default Label [2]#Label reference into the Forge labels block in forge.forge_globals" />
+		<_field_string_id name="Default Label [3]#Label reference into the Forge labels block in forge.forge_globals" />
+		<_field_string_id name="Default Label [4]#Label reference into the Forge labels block in forge.forge_globals" />
+	</_field_block_64>
+	<_field_block_64 name="Forge data" max="36">
+		<_field_tag_reference_64 name="Palette" />
+		<_field_string_id name="Name" />
+		<_field_string_id name="Description" />
+		<_field_real name="Placement Priority" />
+		<_field_string_id name="Variant Name#Only use this if your object has multiple variants" />
+		<_field_tag_reference_64 name="Configuration" validtags="vcdd, wcfg" />
+		<_field_real_vector_3d name="Starting yaw/pitch/roll" />
+	</_field_block_64>
+	<_field_tag_reference_64 name="simulation_interpolation#Set to a specific interpolation definition, or leave blank to inherit the default for the object type (there are defaults for bipeds, vehicles, and crates in multiplayer_globals).  To disable interpolation on a particular object whose type has interpolation by default, set this reference to the special disable_interpolation.simulation_interpolation tag." />
+	<_field_block_64 name="spawn effects" max="1">
+		<_field_explanation name="Spawn Effects">Effect played when an object of this type spawns in during each game mode.
+Unlike creation effect, it is only played when the object spawns in through certain methods, not whenever one is created.</_field_explanation>
+		<_field_tag_reference_64 name="multiplayer spawn effect#effect played when this object spawns in MP games" />
+		<_field_tag_reference_64 name="campaign spawn effect#effect played when this object spawns in Campaign games" />
+	</_field_block_64>
+	<_field_block_64 name="model dissolve data" max="13">
+		<_field_tag_reference_64 name="model dissolve data" />
+	</_field_block_64>
+	<_field_long_string name="class name" />
+	<_field_block_64 name="script tagalongs" max="1024">
+		<_field_tag_reference_64 name="reference*^" />
+	</_field_block_64>
+	<_field_tag_reference_64 name="prototype script!" />
+	<_field_explanation name="Object Abandoment" />
+	<_field_struct name="object abandonment" />
+	<_field_real name="Vitality Limit To Start Countdown" />
+	<_field_real name="Countdown Time In Seconds" />
+	<_field_byte_flags name="flags">
+		<item Name="Enable In Multiplayer" />
+		<item Name="Enable In Single Player" />
+	</_field_byte_flags>
+	<_field_pad name="DPKP" length="3" />
+	<_field_block_64 name="Designer Metadata" max="32">
+		<_field_string_id name="meta label^" />
+	</_field_block_64>
+	<_field_explanation name="Object Function Smoothing" />
+	<_field_block_64 name="Object function smoothing" max="64">
+		<_field_string_id name="id" />
+		<_field_string_id name="alias of#(Optional) If set will internally read this instead of 'id' to generate the smoothed value. Can be used to create smoothed aliases of existing functions." />
+		<_field_real_fraction name="smoothing factor" />
+	</_field_block_64>
+	<_field_char_enum name="Animated mesh animation type">
+		<item Name="None" />
+		<item Name="One Time" />
+		<item Name="Looping" />
+	</_field_char_enum>
+	<_field_pad name="pad_anmesh" length="3" />
+	<_field_tag_reference_64 name="Core" validtags="spry, rscn" />
+	<_field_tag_reference_64 name="Trigger volume component info" />
+	<_field_block_64 name="Tracking Info&amp;Spartan Tracking" max="2">
+		<_field_explanation name="Map these settings to a ping type">Active - This is generated manually by the player, by pressing a button on their controller.  This behavior will override passive behavior.  
+
+Passive - This is a constant ping, automatically generated by the tracking system.  Use this to mark things automatically as the player comes into range.  
+
+You should create at most one block of Spartan Tracking data for each ping type.  If you have more, only the first will be used.</_field_explanation>
+		<_field_char_enum name="ping type^#ping type to which these settings apply">
+			<item Name="active" />
+			<item Name="passive" />
+		</_field_char_enum>
+		<_field_custom name="Misc" />
+		<_field_byte_flags name="flags">
+			<item Name="trackable#this object may respond to the ping of a Spartan tracking device" />
+			<item Name="enabled by default#this object is trackable by default, i.e. tracking does not need to be enabled via script" />
+			<item Name="outline#render an outline around the object when pinged" />
+			<item Name="immediate response#ping affects this object immediately, only applicable to active ping type" />
+			<item Name="follow offscreen#nav marker will follow this object while offscreen" />
+			<item Name="do not track children#prevent tracking of child objects" />
+			<item Name="do not outline children#prevent outlining of child objects" />
+		</_field_byte_flags>
+		<_field_char_enum name="priority#category used to limit the number of simultaneously marked targets">
+			<item Name="critical" />
+			<item Name="high" />
+			<item Name="normal" />
+			<item Name="low" />
+		</_field_char_enum>
+		<_field_custom name="Outlining" />
+		<_field_char_enum name="outline color index#index into outline material's 4-color 'outline_color' parameter">
+			<item Name="color index 0" />
+			<item Name="color index 1" />
+			<item Name="color index 2" />
+			<item Name="color index 3" />
+		</_field_char_enum>
+		<_field_real_fraction name="outline intensity:(0,1] - if 0, default from tracking globals tag will be used" />
+		<_field_real_fraction name="outline thickness:(0,1] - if 0, default from tracking globals tag will be used" />
+		<_field_custom name="Nav Point" />
+		<_field_string_id name="nav point screen#name of the screen used to mark this object when hit by a ping" />
+		<_field_string_id name="nav point label#label displayed via the nav point screen" />
+		<_field_real name="nav point vertical offset:world units#offset used when displaying the nav point screen and label" />
+		<_field_explanation name="Range Override">Leave the override set to 0 if you'd like to use the default range.  A set of default ranges, for each ping type, is stored under the Spartan Tracking section of globals.globals.  Each set specifies a default range for each target priority.</_field_explanation>
+		<_field_real name="range&amp;range override#maximum distance at which this object can be hit by a ping" />
+		<_field_explanation name="Hide from these teams." />
+		<_field_long_flags name="team filter#character teams that can't ping this object">
+			<item Name="blue team#The Chief and his crew" />
+			<item Name="osiris team#Locke and his mates" />
+			<item Name="blue team cracked#The Chief and his crew, but Chief has a cracked visor" />
+		</_field_long_flags>
+		<_field_custom name="Effects" />
+		<_field_tag_reference_64 name="ping hit instigator effect 0&amp;team Chief ping hit instigator effect#effect on the spartan when this object is hit by ping" />
+		<_field_tag_reference_64 name="ping hit instigator effect 1{ping hit instigator effect}&amp;team Locke ping hit instigator effect#effect on the spartan when this object is hit by ping" />
+		<_field_tag_reference_64 name="ping hit instigator effect 2&amp;team Chief (cracked visor) ping hit instigator effect#effect on the spartan when this object is hit by ping" />
+		<_field_tag_reference_64 name="ping hit effect 0&amp;team Chief ping hit effect#effect on this object when hit by ping" />
+		<_field_tag_reference_64 name="ping hit effect 1{ping hit effect}&amp;team Locke ping hit effect#effect on this object when hit by ping" />
+		<_field_tag_reference_64 name="ping hit effect 2&amp;team Chief (cracked visor) ping hit effect#effect on this object when hit by ping" />
+	</_field_block_64>
+	<_field_explanation name="Pathfinding">Indicate whether, by default, we should create pathfinding data for this type of scenery</_field_explanation>
+	<_field_short_enum name="pathfinding policy">
+		<item Name="default" />
+		<item Name="yes" />
+		<item Name="no" />
+	</_field_short_enum>
+	<_field_word_flags name="flags">
+		<item Name="not physical#has no havok representation; will not build physics from collision" />
+		<item Name="use complex activation#tests all clusters for activation instead of just the origin" />
+	</_field_word_flags>
+	<_field_pad name="pad_tp" length="4" />
+</plugin>

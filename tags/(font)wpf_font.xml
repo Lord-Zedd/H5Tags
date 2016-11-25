@@ -1,0 +1,24 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_custom name="import" />
+	<_field_string name="font name" />
+	<_field_long_enum name="render mode*">
+		<item Name="Bitmap" />
+		<item Name="Vector" />
+	</_field_long_enum>
+	<_field_explanation name="Vector Font Antialiasing Tweakables">These values tweak the anti-aliasing settings for vector font rendering.
+No effect if render mode is not vector.</_field_explanation>
+	<_field_array name="anti alias data">
+		<_field_real name="antiAliasData" />
+		<_field_real name="antiAliasData" />
+		<_field_real name="antiAliasData" />
+		<_field_real name="antiAliasData" />
+	</_field_array>
+	<_field_pageable_resource_64 name="font file resource" />
+	<_field_pad name="pad_tp" length="4" />
+</plugin>

@@ -1,0 +1,78 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_explanation name="Simulated Input (SI)">Adds accelerations into unit's movement (by simulating movement stick change) and/or view angle (by simulating camera stick change)</_field_explanation>
+	<_field_explanation name="Impulse">At SI spawn time the SI's angle is determined by adding the result of 'response type' &amp; 'mapping type' to a random angle in given angle range.
+Each tick, this acceleration angle is multiplied by the final scaler resulting from logic below. That scaled impulse is then applied as stick input.</_field_explanation>
+	<_field_explanation name="Scalers">Starting scaler value comes from damage multiplier or is set to 1.0 if SI not directly related to damage.
+That is then scaled by the following:
+ * area control falloff
+ * function output y: func(SI_elapsed_time/duration) --&gt; y)
+ * 1 / zoom magnification
+ * tick_delta_secs / tick_length
+result of this is final scaler value</_field_explanation>
+	<_field_explanation name="Screen Space angles">0 - pitch up, +/-180 - pitch down
+-90 - yaw left, +90 - yaw right</_field_explanation>
+	<_field_explanation name="Move" />
+	<_field_struct name="move" />
+	<_field_long_flags name="flags">
+		<item Name="ignore base scaler#Always start with 1.0 instead of any value from damage multiplier value" />
+		<item Name="ignore area control falloff#Skip this scaler" />
+		<item Name="ignore elapsed time function scaler#Skip this scaler" />
+		<item Name="ignore zoom scaler#Skip this scaler" />
+		<item Name="ignore tick_delta_secs scaler#Skip this scaler" />
+	</_field_long_flags>
+	<_field_short_enum name="response type">
+		<item Name="aim vector" />
+		<item Name="hit vector" />
+		<item Name="inverse hit vector" />
+		<item Name="attacker origin to victim origin" />
+		<item Name="victim origin to attacker origin" />
+	</_field_short_enum>
+	<_field_short_enum name="mapping type">
+		<item Name="top down" />
+		<item Name="screen space" />
+	</_field_short_enum>
+	<_field_real_bounds name="angle:degrees" />
+	<_field_struct name="Mapping" />
+	<_field_data_64 name="data" />
+	<_field_real name="duration:seconds" />
+	<_field_real name="inverse duration:seconds#if &gt;0.f, accumulated inpulse will be 'undone' over the give time span" />
+	<_field_real name="inverse random length:percent#15.0 would randomly adjust length of accumulated impulse +/-15%" />
+	<_field_real_bounds name="inverse random angle:degrees#apply random adjustment to direction of accumulated impulse" />
+	<_field_real name="linear zoom penalty#linear multiplier of zoom that increases effect; computed for no change at zoom 1" />
+	<_field_real name="square root zoom penalty#multiplier to increase effect proportional to square root of zoom; computed for no change at zoom 1" />
+	<_field_explanation name="Look" />
+	<_field_struct name="look" />
+	<_field_long_flags name="flags">
+		<item Name="ignore base scaler#Always start with 1.0 instead of any value from damage multiplier value" />
+		<item Name="ignore area control falloff#Skip this scaler" />
+		<item Name="ignore elapsed time function scaler#Skip this scaler" />
+		<item Name="ignore zoom scaler#Skip this scaler" />
+		<item Name="ignore tick_delta_secs scaler#Skip this scaler" />
+	</_field_long_flags>
+	<_field_short_enum name="response type">
+		<item Name="aim vector" />
+		<item Name="hit vector" />
+		<item Name="inverse hit vector" />
+		<item Name="attacker origin to victim origin" />
+		<item Name="victim origin to attacker origin" />
+	</_field_short_enum>
+	<_field_short_enum name="mapping type">
+		<item Name="top down" />
+		<item Name="screen space" />
+	</_field_short_enum>
+	<_field_real_bounds name="angle:degrees" />
+	<_field_struct name="Mapping" />
+	<_field_data_64 name="data" />
+	<_field_real name="duration:seconds" />
+	<_field_real name="inverse duration:seconds#if &gt;0.f, accumulated inpulse will be 'undone' over the give time span" />
+	<_field_real name="inverse random length:percent#15.0 would randomly adjust length of accumulated impulse +/-15%" />
+	<_field_real_bounds name="inverse random angle:degrees#apply random adjustment to direction of accumulated impulse" />
+	<_field_real name="linear zoom penalty#linear multiplier of zoom that increases effect; computed for no change at zoom 1" />
+	<_field_real name="square root zoom penalty#multiplier to increase effect proportional to square root of zoom; computed for no change at zoom 1" />
+</plugin>

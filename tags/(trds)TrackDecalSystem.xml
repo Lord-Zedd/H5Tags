@@ -1,0 +1,20 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_tag_reference_64 name="Decal system" />
+	<_field_custom name="Distance Between Vertices" />
+	<_field_real name="Min distance:world units#the minimum distance before a decal is generated." />
+	<_field_real name="Max distance:world units#the maximum distance before a decal is generated." />
+	<_field_real name="Distance velocity scale#the amount to scale the velocity while calculating the distance between verts" />
+	<_field_custom name="Velocity-based Offset" />
+	<_field_real name="Max offset:world units#the maximum distance from the contact point to generate quads. This can be used to hide some of the poping" />
+	<_field_real name="Offset velocity scale#the amount to scale the velocity while calculating the velocity-based offset" />
+	<_field_custom name="Contact Patch" />
+	<_field_real name="Contact patch width:world units#the width of the tire" />
+	<_field_real name="Contact patch length:world units#the amount of the tire that contacts the surface from front to back. This length is used when the tire is sliding sideways instead of the width" />
+	<_field_real name="Texture U repeat length:world units#the length of tire track before the texture repeats in the U direction" />
+</plugin>

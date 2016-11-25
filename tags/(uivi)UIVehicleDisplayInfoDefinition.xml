@@ -1,0 +1,32 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_string_id name="name^#short name for the item" />
+	<_field_string_id name="Vehicle Flip String" />
+	<_field_string_id name="Tint Color" />
+	<_field_block_64 name="UI Info" max="1">
+		<_field_string_id name="name^#short name for the item" />
+		<_field_string_id name="display name#friendly name for the item" />
+		<_field_string_id name="description#general in-universe item description" />
+		<_field_string_id name="help text#verbose usage info for use during gameplay" />
+		<_field_string_id name="icon string id#legacy, from when we embedded the sprites into the font to get streaming behaviour" />
+		<_field_tag_reference_64 name="sprite#bitmap file representing this item" />
+		<_field_long_integer name="sprite index#frame inside the item's image strip which shows this item " />
+		<_field_tag_reference_64 name="alt sprite#secondary bitmap file representing this item. for detail images, overlays etc." />
+		<_field_long_integer name="alt sprite index#alt sprite's frame" />
+		<_field_tag_reference_64 name="ui vehicle screen reference" />
+		<_field_pad name="pad0" length="4" />
+	</_field_block_64>
+	<_field_block_64 name="Seats" max="8">
+		<_field_string_id name="label" />
+		<_field_string_id name="Boarding Grenade String" />
+		<_field_string_id name="Boarding Melee String" />
+		<_field_string_id name="In Seat String" />
+		<_field_string_id name="Enter Seat String" />
+	</_field_block_64>
+	<_field_pad name="pad0" length="4" />
+</plugin>

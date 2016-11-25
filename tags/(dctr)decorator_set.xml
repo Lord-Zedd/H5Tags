@@ -1,0 +1,123 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_custom name="link to render model" />
+	<_field_explanation name="Render models:" />
+	<_field_tag_reference_64 name="Base{render model}*" />
+	<_field_tag_reference_64 name="Lod2{render model_lod1}*" />
+	<_field_tag_reference_64 name="Lod3{render model_lod2}*" />
+	<_field_tag_reference_64 name="Lod4{render model_lod3}*" />
+	<_field_block_64 name="render model instance names!" max="32767">
+		<_field_string_id name="name^" />
+	</_field_block_64>
+	<_field_long_integer name="render model instance name valid count!" />
+	<_field_tag_reference_64 name="texture" />
+	<_field_tag_reference_64 name="normal map" />
+	<_field_explanation name="RENDERING">
+</_field_explanation>
+	<_field_byte_flags name="render flags">
+		<item Name="render two sided" />
+		<item Name="dont sample light through geometry#takes twice as long to light" />
+		<item Name="Use decimation method for random structured decorators" />
+		<item Name="more strictly respect block size#or there could only be 10x10 blocks per cluster" />
+	</_field_byte_flags>
+	<_field_char_enum name="render shader!">
+		<item Name="billboard + wind + dynamic lights{wind + dynamic lights}" />
+		<item Name="billboard + dynamic lights{still + dynamic lights}" />
+		<item Name="solid mesh + dynamic lights{still + no lights}" />
+		<item Name="solid mesh{still + sun light only}" />
+		<item Name="underwater + dynamic lights{wavy + dynamic lights}" />
+		<item Name="volumetric billboard + dynamic lights{shaded + dynamic lights}" />
+		<item Name="volumetric billboard + wind + dynamic lights" />
+		<item Name="normal map" />
+	</_field_char_enum>
+	<_field_char_enum name="light sampling pattern">
+		<item Name="ground default" />
+		<item Name="hanging" />
+	</_field_char_enum>
+	<_field_byte_integer name="version!" />
+	<_field_tag_reference_64 name="Base Shader{Shader}" />
+	<_field_tag_reference_64 name="Lod2 Shader" />
+	<_field_tag_reference_64 name="Lod3 Shader" />
+	<_field_tag_reference_64 name="Lod4 Shader" />
+	<_field_real name="decorator user parameter 0x{wavelength X}" />
+	<_field_real name="decorator user parameter 0y{wavelength Y}" />
+	<_field_real name="decorator user parameter 0z{wave speed}" />
+	<_field_real name="decorator user parameter 0w{wave frequency}" />
+	<_field_real name="decorator user parameter 1x" />
+	<_field_real name="decorator user parameter 1y" />
+	<_field_real name="decorator user parameter 1z" />
+	<_field_real name="decorator user parameter 1w" />
+	<_field_real name="decorator aux vertex parameter x" />
+	<_field_real name="decorator aux vertex parameter y" />
+	<_field_explanation name="LOD FADE + CULL">
+</_field_explanation>
+	<_field_real name="early cull:[0 - 1]#cull vertices this percentage sooner than LOD3-nothing transition" />
+	<_field_real name="cull block size:[0.5-100]world units#decorators are grouped into blocks to be culled in large batches, this determines how much ground each batch covers.  Should be small if you expect to have very dense decorators, and large if you expect them to be sparse" />
+	<_field_real name="decimation speed!:[0 - infinite]#1 is default" />
+	<_field_real name="decimation start distance!#[block size by default] decimation offset of the starting point" />
+	<_field_real name="decimate to!{max decimation percentage}#0 means all the way removed. 100 means nothing" />
+	<_field_real name="decimation start:world units" />
+	<_field_real name="decimation end:world units" />
+	<_field_long_integer name="max valid lod!" />
+	<_field_explanation name="Lod transitions:" />
+	<_field_explanation name="Base to LOD2:" />
+	<_field_real name="start point0{Base to LOD1 cross fading start point}" />
+	<_field_real name="end point0{Base to LOD1 cross fading end point}" />
+	<_field_explanation name="LOD2 to LOD3:" />
+	<_field_real name="start point1{LOD1 to LOD2 cross fading start point}" />
+	<_field_real name="end point1{LOD1 to LOD2 cross fading end point}" />
+	<_field_explanation name="LOD3 to LOD4:" />
+	<_field_real name="start point2{LOD2 to LOD3 cross fading start point}" />
+	<_field_real name="end point2{LOD2 to LOD3 cross fading end point}" />
+	<_field_explanation name="LOD4 to nothing:" />
+	<_field_real name="start point3{LOD3 to nothing cross fading start point}" />
+	<_field_real name="end point3{LOD3 to nothing cross fading end point}" />
+	<_field_explanation name="DECORATOR TYPES">These describe the randomized settings for your decorator meshes.
+
+THIS ONLY AFFECTS DECORATORS WHEN YOU PLACE THEM DOWN INITIALLY
+Changing these settings will not affect already placed decorators unless you use the 'reapply-type-settings' brush
+
+WARNING: Re-arranging the order of these types after placing decorators
+in your level will cause the placed decorators to change types.
+
+DO NOT DELETE!  DO NOT INSERT!  OR YOUR PLACED DECORATORS WILL BE CHANGED!
+</_field_explanation>
+	<_field_block_64 name="decorator types" max="254">
+		<_field_long_integer name="index!" />
+		<_field_long_block_index name="mesh^" />
+		<_field_long_flags name="flags">
+			<item Name="only on ground" />
+			<item Name="random rotation" />
+			<item Name="rotate x axis down" />
+			<item Name="align to normal" />
+			<item Name="align random" />
+		</_field_long_flags>
+		<_field_real name="scale min:[0.0 - 5.0]" />
+		<_field_real name="scale max:[0.0 - 5.0]" />
+		<_field_real name="tilt min:degrees" />
+		<_field_real name="tilt max:degrees" />
+		<_field_real name="wind min:[0.0 - 1.0]" />
+		<_field_real name="wind max:[0.0 - 1.0]" />
+		<_field_real_rgb_color name="color 0" />
+		<_field_real_rgb_color name="color 1" />
+		<_field_real_rgb_color name="color 2" />
+		<_field_real name="ground tint min:[0.0 - 1.0]" />
+		<_field_real name="ground tint max:[0.0 - 1.0]" />
+		<_field_real name="hover min:[-1.0 - 1.0]" />
+		<_field_real name="hover max:[-1.0 - 1.0]" />
+		<_field_real name="glossiness min:[0.0 - 1.0]" />
+		<_field_real name="glossiness max:[0.0 - 1.0]" />
+		<_field_real name="minimum distance between decorators:world units" />
+		<_field_real name="placement weight:[0.0 - 1.0]" />
+		<_field_real name="postprocessed weight!" />
+	</_field_block_64>
+	<_field_int64_integer name="decoratorConstantsLOD1!~" />
+	<_field_int64_integer name="decoratorConstantsLOD2!~" />
+	<_field_int64_integer name="decoratorConstantsLOD3!~" />
+	<_field_int64_integer name="decoratorConstantsLOD4!~" />
+</plugin>

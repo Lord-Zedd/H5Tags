@@ -1,0 +1,15 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="wave templates" max="128">
+		<_field_string_id name="name^" />
+		<_field_tag_reference_64 name="wave template" />
+	</_field_block_64>
+	<_field_explanation name="PLAYER SPAWN INFLUENCERS">These are the default spawn influencer settings which can be overridden by scenario tags</_field_explanation>
+	<_field_tag_reference_64 name="Influencer default spawn settings" />
+	<_field_pad name="tag_tp" length="4" />
+</plugin>

@@ -1,0 +1,24 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_long_flags name="flags">
+		<item Name="Use Environment Acoustics" />
+	</_field_long_flags>
+	<_field_block_64 name="Scenario sound bank list" max="52">
+		<_field_tag_reference_64 name="Sound bank" />
+	</_field_block_64>
+	<_field_string_id name="Inside reverb name#This reverb will be used for inside areas when the listener is outside." />
+	<_field_long_integer name="Inside reverb hash ID!" />
+	<_field_long_integer name="sound permutation mission id" />
+	<_field_real name="attenuation adjustment factor#1 is no change, 0.5 is half, etc" />
+	<_field_real name="enemy rtpc distance#max distance an enemy can be to be counted in our enemy-related rtpcs" />
+	<_field_real name="kill count frequency time period:seconds#the amount of time to consider a kill relevant for the kill count frequency" />
+	<_field_real name="combat intensity RTPCs timer#number of seconds between each time the combat intensity RTPCs are set" />
+	<_field_block_64 name="State Groups#State groups we care enough about to have saved and loaded, as well as inherited during campaign player-teleportation" max="256">
+		<_field_tag_reference_64 name="State-group reference" />
+	</_field_block_64>
+</plugin>

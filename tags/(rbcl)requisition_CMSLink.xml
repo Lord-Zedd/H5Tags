@@ -1,0 +1,26 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_string_id name="CMS identifier*" />
+	<_field_string_id name="CMS type*" />
+	<_field_custom name="Automated Photo Data" />
+	<_field_tag_reference_64 name="Asset Spec Block" />
+	<_field_tag_reference_64 name="Lighting Spec Block" />
+	<_field_tag_reference_64 name="Photo Spec" />
+	<_field_block_64 name="Override Image Data" max="1">
+		<_field_tag_reference_64 name="icon bitmap" />
+		<_field_long_integer name="icon sprite index" />
+		<_field_tag_reference_64 name="small icon bitmap" />
+		<_field_long_integer name="small icon sprite index" />
+	</_field_block_64>
+	<_field_custom name="Generated Icons" />
+	<_field_tag_reference_64 name="icon bitmap*" />
+	<_field_long_integer name="icon sprite index*" />
+	<_field_long_integer name="icon hash*" />
+	<_field_tag_reference_64 name="small icon bitmap*" />
+	<_field_long_integer name="small icon sprite index*" />
+</plugin>

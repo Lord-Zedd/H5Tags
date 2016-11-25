@@ -1,0 +1,61 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_tag_reference_64 name="sound globals" />
+	<_field_explanation name="AI globals">I have moved the ai globals out of this tag, and into its own tag which is referenced here.</_field_explanation>
+	<_field_tag_reference_64 name="ai globals ref" />
+	<_field_tag_reference_64 name="forge globals" />
+	<_field_tag_reference_64 name="game engine globals" />
+	<_field_tag_reference_64 name="multiplayer globals" />
+	<_field_tag_reference_64 name="firefight globals" />
+	<_field_tag_reference_64 name="global multiplayer object type list" />
+	<_field_tag_reference_64 name="grenades" />
+	<_field_tag_reference_64 name="weapon globals" />
+	<_field_tag_reference_64 name="melee globals" />
+	<_field_tag_reference_64 name="game medal globals" />
+	<_field_explanation name="Rasterizer globals" />
+	<_field_tag_reference_64 name="rasterizer_globals_ref" />
+	<_field_explanation name="Default camera fx settings" />
+	<_field_tag_reference_64 name="default camera fx settings" />
+	<_field_tag_reference_64 name="default atmosphere definition" />
+	<_field_explanation name="Default wind settings" />
+	<_field_tag_reference_64 name="default wind settings" />
+	<_field_explanation name="Default collision damage" />
+	<_field_tag_reference_64 name="collision damage effect" />
+	<_field_tag_reference_64 name="collision damage" />
+	<_field_tag_reference_64 name="effect globals" />
+	<_field_tag_reference_64 name="collision filter" />
+	<_field_tag_reference_64 name="default item grounded friction" />
+	<_field_tag_reference_64 name="incident global properties" />
+	<_field_tag_reference_64 name="player model customization globals" />
+	<_field_tag_reference_64 name="loadout globals" />
+	<_field_tag_reference_64 name="game achievements" />
+	<_field_tag_reference_64 name="game performance thortles default" />
+	<_field_tag_reference_64 name="Speech Globals" />
+	<_field_tag_reference_64 name="Narrative globals" />
+	<_field_tag_reference_64 name="Revive Globals" />
+	<_field_tag_reference_64 name="Control Globals" />
+	<_field_tag_reference_64 name="Player Globals" />
+	<_field_tag_reference_64 name="Damage Globals" />
+	<_field_tag_reference_64 name="LOC Globals" />
+	<_field_tag_reference_64 name="Material Globals" />
+	<_field_tag_reference_64 name="Camera Globals" />
+	<_field_tag_reference_64 name="Difficulty Globals" />
+	<_field_tag_reference_64 name="Gameplay Object Globals" />
+	<_field_tag_reference_64 name="Composer Globals" />
+	<_field_tag_reference_64 name="Garbage Collection Globals" />
+	<_field_tag_reference_64 name="Soft Ceiling Globals" />
+	<_field_tag_reference_64 name="Collectible Globals" />
+	<_field_tag_reference_64 name="Color Globals" />
+	<_field_tag_reference_64 name="Skull Globals" />
+	<_field_tag_reference_64 name="Cheat Globals" />
+	<_field_tag_reference_64 name="Interface Globals" />
+	<_field_tag_reference_64 name="Skill Rank Globals" />
+	<_field_tag_reference_64 name="Campaign Globals" />
+	<_field_tag_reference_64 name="Requisition Globals" />
+	<_field_tag_reference_64 name="Spartan Tracking Globals" />
+</plugin>

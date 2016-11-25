@@ -1,0 +1,208 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_tag_reference_64 name="area of effect behavior equipment#if a reference is here, area of effect damage will attach the equipment to the target" />
+	<_field_real_bounds name="radius:world units" />
+	<_field_real_fraction name="cutoff scale:[0,1]" />
+	<_field_long_flags name="effect flags">
+		<item Name="don't scale damage by distance" />
+		<item Name="area damage players only#area of effect damage only affects players" />
+		<item Name="affects model targets#distribute the damage amongst the model targets. this is the default behavior for aoe damage, but can be set here for direct damage." />
+		<item Name="explosive area of effect" />
+	</_field_long_flags>
+	<_field_explanation name="damage" />
+	<_field_explanation name="Damage Type">Type of damage caused by this damage effect.</_field_explanation>
+	<_field_struct name="damageType" />
+	<_field_string_id name="Damage Type Name" />
+	<_field_short_enum name="side effect">
+		<item Name="none" />
+		<item Name="harmless" />
+		<item Name="lethal to the unsuspecting" />
+		<item Name="emp" />
+	</_field_short_enum>
+	<_field_short_enum name="category#NOTE: this is used ONLY to select AI dialogue">
+		<item Name="none" />
+		<item Name="falling" />
+		<item Name="bullet" />
+		<item Name="grenade" />
+		<item Name="high explosive" />
+		<item Name="sniper" />
+		<item Name="melee" />
+		<item Name="flame" />
+		<item Name="mounted weapon" />
+		<item Name="vehicle" />
+		<item Name="plasma" />
+		<item Name="needle" />
+		<item Name="shotgun" />
+		<item Name="assassinated" />
+	</_field_short_enum>
+	<_field_long_enum name="death vocalization">
+		<item Name="default#uses code to figure out what vocalization to use" />
+		<item Name="dth" />
+		<item Name="dth_fall" />
+		<item Name="dth_mjr" />
+		<item Name="dth_slw" />
+		<item Name="dth_hdsht" />
+		<item Name="dth_slnt" />
+		<item Name="dth_drama" />
+		<item Name="dth_reanimated" />
+		<item Name="thrwn" />
+		<item Name="die_space" />
+		<item Name="die_ass" />
+	</_field_long_enum>
+	<_field_long_flags name="flags">
+		<item Name="does not hurt owner" />
+		<item Name="can cause headshots" />
+		<item Name="ignores headshot obstructions#arms, held weapons, attachments" />
+		<item Name="pings resistant units" />
+		<item Name="does not hurt friends#affects aoe only" />
+		<item Name="does not ping units" />
+		<item Name="detonates explosives" />
+		<item Name="only hurts shields" />
+		<item Name="causes flaming death" />
+		<item Name="skips shields" />
+		<item Name="DEPRECATED DO NOT USE 0!" />
+		<item Name="ignore seat scale for dir. dmg" />
+		<item Name="forces hard ping if body dmg{forces hard ping}" />
+		<item Name="forces hard ping always" />
+		<item Name="does not hurt players" />
+		<item Name="enables special death" />
+		<item Name="cannot cause betrayals" />
+		<item Name="uses old EMP behavior" />
+		<item Name="ignores damage resistance" />
+		<item Name="force s_kill on death" />
+		<item Name="cause magic deceleration" />
+		<item Name="aoe skip obstruction test" />
+		<item Name="does not spill over" />
+		<item Name="does not hurt boarders" />
+		<item Name="does not cause biped aoe effect" />
+		<item Name="DEPRECATED apply tree of life#DEPRECATED" />
+		<item Name="hurt only friends#affects aoe only" />
+		<item Name="causes incineration dissolve" />
+		<item Name="causes incineration dissolve on headshot" />
+		<item Name="does not hurt damage source" />
+		<item Name="damage vehicles only" />
+		<item Name="triggers interact logic#triggers interact logic on any object that is damaged by this damage effect" />
+	</_field_long_flags>
+	<_field_long_flags name="secondary flags">
+		<item Name="causes incineration dissolve to dead units" />
+		<item Name="force hard ping as attachment feedback#force a hard ping as a notification to the player that the sticky grenade has attached" />
+		<item Name="detaches object dispenser items#like weapon pad items" />
+		<item Name="hard pings from this damage stun AI#if this damage causes an AI to hard ping and the character has a stun ping animation, it will be used" />
+		<item Name="deaths are non revivable#If this damage effect kills you, you cannot revive" />
+		<item Name="forces hard ping when available#Will not force hard ping if the target is currently in cooldown" />
+	</_field_long_flags>
+	<_field_real name="headshot damage multiplier#ignored if zero or if headshot flag is not set above; 
+otherwise, makes headshot not instantly lethal, but multiplies damage done to head by this much.  
+2 does 2x damage to head for headshot.  note that head still has different health than body." />
+	<_field_real name="headshot shielded damage multiplier#ignored if zero or if headshot flag is not set above; 
+otherwise, makes headshot not instantly lethal, but multiplies damage done to head by this much.  
+2 does 2x damage to head for headshot.  note that head still has different health than body." />
+	<_field_real name="AOE core radius:world units#if &gt;0 then higher fidelity obstruction collision checks are preformed. This field has no other ramifications." />
+	<_field_real name="damage lower bound" />
+	<_field_real_bounds name="damage upper bound" />
+	<_field_struct name="damage falloff function" />
+	<_field_data_64 name="data" />
+	<_field_angle name="dmg inner cone angle" />
+	<_field_struct name="blah" />
+	<_field_angle name="dmg outer cone angle" />
+	<_field_real name="active camouflage damage:[0,1]#how much more visible this damage makes a player who is active camouflaged" />
+	<_field_real name="stun:[0,1]#amount of stun added to damaged unit" />
+	<_field_real name="maximum stun:[0,1]#damaged unit's stun will never exceed this amount" />
+	<_field_real name="stun time:seconds#duration of stun due to this damage" />
+	<_field_long_integer name="damage stun:ticks#how long we stun recovering current body damage" />
+	<_field_real name="instantaneous acceleration:[0,+inf]" />
+	<_field_real name="alt instantaneous acceleration:[0,+inf]#This field can be used for an alternative acceleration if the corresponding flags are set, e.g. check vehicle-&gt;flags.vehicle wants reduced weapon impulse when airborne" />
+	<_field_real name="acceleration cap#set to zero to disable cap" />
+	<_field_explanation name="DEPRECATED - rider damage scales" />
+	<_field_real name="rider direct damage scale" />
+	<_field_real name="rider maximum transfer damage scale" />
+	<_field_real name="rider minimum transfer damage scale" />
+	<_field_real name="vehicle damage multiplier" />
+	<_field_real_fraction name="soft ping pain screen scale:[0,1]#The maximum amount to apply the pain screen pose overlay" />
+	<_field_string_id name="general_damage" />
+	<_field_string_id name="specific_damage" />
+	<_field_block_64 name="custom response labels" max="8">
+		<_field_string_id name="custom label#label used to control what damage response will fire.^" />
+	</_field_block_64>
+	<_field_real name="AI stun radius:world units" />
+	<_field_real_bounds name="AI stun bounds:(0-1)" />
+	<_field_real name="shake radius" />
+	<_field_real name="EMP radius" />
+	<_field_real name="aoe spike radius" />
+	<_field_real name="aoe spike damage bump" />
+	<_field_real name="shield render effects scale" />
+	<_field_real name="equipment hack time:seconds" />
+	<_field_explanation name="damage response" />
+	<_field_tag_reference_64 name="damage response" />
+	<_field_explanation name="sound" />
+	<_field_tag_reference_64 name="old melee sound{sound}" validtags="snd!" />
+	<_field_block_64 name="damage sounds" max="4">
+		<_field_tag_reference_64 name="sound" validtags="snd!" />
+		<_field_word_flags name="damage types">
+			<item Name="none!" />
+			<item Name="lethal instantaneous#headshots and assassinations" />
+			<item Name="lethal#excludes headshots and assassinations" />
+			<item Name="non lethal" />
+		</_field_word_flags>
+		<_field_word_flags name="object types">
+			<item Name="biped" />
+			<item Name="vehicle" />
+			<item Name="weapon" />
+			<item Name="equipment" />
+			<item Name="terminal" />
+			<item Name="projectile" />
+			<item Name="scenery" />
+			<item Name="machine" />
+			<item Name="control" />
+			<item Name="dispenser" />
+			<item Name="sound_scenery" />
+			<item Name="crate" />
+			<item Name="creature" />
+			<item Name="giant" />
+			<item Name="effect_scenery" />
+			<item Name="entity" />
+		</_field_word_flags>
+	</_field_block_64>
+	<_field_explanation name="breaking effect">Controls particle velocities when a damage effect shatters a materal.
+
+All particles created within 'forward radius' will be kicked along the
+damage direction with a speed equivalent to 'forward velocity' at the
+epicenter of the damage and 0 at the outer radius.  'Forward exponent'
+is used to modify the velocity scale.  A low exponent (like 0.5) means that
+particles between the epicenter and the radius will be kicked out with a speed
+closer to 'forward velocity' than if a higher exponent (like 2.0) was used
+
+The outward fields work in a similar way, except instead of kicking along the
+damage direction, they get kick away from the damage epicenter.</_field_explanation>
+	<_field_real name="forward velocity:world units per second" />
+	<_field_real name="forward radius:world units" />
+	<_field_real name="forward exponent" />
+	<_field_real name="outward velocity:world units per second" />
+	<_field_real name="outward radius:world units" />
+	<_field_real name="outward exponent" />
+	<_field_real name="Damage dealt SFX cooldown time#Time between dealing attacks before we reset the timer" />
+	<_field_real name="Damage received SFX cooldown time#Time between receiving attacks before we reset the timer" />
+	<_field_custom name="player damage additive sounds" />
+	<_field_tag_reference_64 name="deprecated player dealt damage additive sound{player dealt damage additive sound}*!#sound played when a local player deals damage to another player or an AI" />
+	<_field_tag_reference_64 name="deprecated player dealt AOE damage additive sound{player dealt AOE damage additive sound}*!#sound played when a local player deals AoE damage to another player or an AI" />
+	<_field_tag_reference_64 name="deprecated player dealt friendly fire additive sound{player dealt friendly fire additive sound}*!#sound played when a local player deals friendly fire to another player or an AI" />
+	<_field_struct name="player additive sound deal damage" />
+	<_field_tag_reference_64 name="player additive sound deal damage regular#sound played when a local player deals damage to another player or an AI" />
+	<_field_tag_reference_64 name="player additive sound deal damage aoe#sound played when a local player deals AoE damage to another player or an AI" />
+	<_field_tag_reference_64 name="player additive sound deal damage friendly fire#sound played when a local player deals friendly fire to another player or an AI" />
+	<_field_tag_reference_64 name="player additive sound deal damage weak spot" />
+	<_field_tag_reference_64 name="player additive sound deal damage headshot" />
+	<_field_tag_reference_64 name="player additive sound deal damage kill" />
+	<_field_tag_reference_64 name="player additive sound deal damage headshot kill" />
+	<_field_tag_reference_64 name="player received damage additive sound (default)#sound played when a local player receives damage and is in normal first-person view" />
+	<_field_tag_reference_64 name="player received damage additive sound (third person)#sound played when a local player receives damage and is in third-person view" />
+	<_field_tag_reference_64 name="player received damage additive sound (in vehicle)#sound played when the vehicle that a local player is riding in receives damage" />
+	<_field_tag_reference_64 name="player received AOE damage additive sound (default)#sound played when a local player receives AOE damage and is in normal first-person view" />
+	<_field_tag_reference_64 name="player received AOE damage additive sound (third person)#sound played when a local player receives AOE damage and is in third-person view" />
+	<_field_tag_reference_64 name="player received AOE damage additive sound (in vehicle)#sound played when the vehicle that a local player is riding in receives AOE damage" />
+</plugin>

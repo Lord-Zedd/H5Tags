@@ -1,0 +1,29 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="tiers" max="10">
+		<_field_string_id name="name^" />
+		<_field_string_id name="description" />
+		<_field_short_integer name="sequence index" />
+		<_field_pad name="pad" length="2" />
+	</_field_block_64>
+	<_field_block_64 name="medals" max="512">
+		<_field_string_id name="name^" />
+		<_field_string_id name="description" />
+		<_field_short_integer name="sequence index" />
+		<_field_char_enum name="medal class">
+			<item Name="special" />
+			<item Name="role spree" />
+			<item Name="spree" />
+			<item Name="multikill" />
+			<item Name="objectives" />
+			<item Name="circumstance" />
+			<item Name="finesse" />
+		</_field_char_enum>
+		<_field_byte_integer name="tier index#the tier that this medal belongs to" />
+	</_field_block_64>
+</plugin>

@@ -1,0 +1,62 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_string_id name="name" />
+	<_field_byte_flags name="flags">
+		<item Name="starts active" />
+		<item Name="starts when object spotted" />
+		<item Name="disabled when weapon down" />
+		<item Name="temporarily disable" />
+		<item Name="grammar disabled in campaign" />
+		<item Name="grammar disabled in multiplayer" />
+		<item Name="grammar disabled in ui shell" />
+	</_field_byte_flags>
+	<_field_pad name="pad_tp1" length="3" />
+	<_field_block_64 name="spotted objects load#Only load if one of these objects are found (when flag above checked)" max="8">
+		<_field_tag_reference_64 name="Spotted Object" />
+	</_field_block_64>
+	<_field_explanation name="load grammar condition: this condition can force of the grammar if it is defined" />
+	<_field_struct name="script condition" />
+	<_field_long_integer name="script name!~" />
+	<_field_long_string name="script source" />
+	<_field_byte_flags name="run time flags!">
+		<item Name="runtime load" />
+		<item Name="callBack script contion result" />
+		<item Name="forced off by flags" />
+	</_field_byte_flags>
+	<_field_pad name="pad_tp3" length="1" />
+	<_field_short_integer name="absolute dynamic grammar index!" />
+	<_field_block_64 name="lync'ed grammars#when this grammar is loaded load these grammars too" max="256">
+		<_field_tag_reference_64 name="Speech Grammar" />
+	</_field_block_64>
+	<_field_block_64 name="Speech Phrases" max="256">
+		<_field_string_id name="VUI ID# this is a string ID it is used to reference the localized display name in said list.  It is also used to reference the phrases that link to this VUI element in the phrases list" />
+		<_field_explanation name="Script Action" />
+		<_field_struct name="Script Action" />
+		<_field_long_integer name="script name!~" />
+		<_field_long_string name="script source" />
+		<_field_explanation name="Script Condition" />
+		<_field_struct name="Script Condition" />
+		<_field_long_integer name="script name!~" />
+		<_field_long_string name="script source" />
+		<_field_data_64 name="Command{ }" />
+		<_field_real name="weight" />
+		<_field_byte_flags name="flags">
+			<item Name="starts inactive" />
+		</_field_byte_flags>
+		<_field_pad name="pad_tp1" length="3" />
+		<_field_short_integer name="user level" />
+		<_field_pad name="pad_tp2" length="2" />
+	</_field_block_64>
+	<_field_block_64 name="Speech Nodes" max="256">
+		<_field_data_64 name="Command{ }" />
+		<_field_explanation name="Script Condition~" />
+		<_field_struct name="Script Condition" />
+		<_field_long_integer name="script name!~" />
+		<_field_long_string name="script source" />
+	</_field_block_64>
+</plugin>

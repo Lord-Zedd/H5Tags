@@ -1,0 +1,37 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="effects" max="30">
+		<_field_block_64 name="sounds" max="500">
+			<_field_tag_reference_64 name="tag (effect or sound)" validtags="lsnd, snd!, effe" />
+			<_field_tag_reference_64 name="secondary tag (effect or sound)" validtags="lsnd, snd!, effe" />
+			<_field_string_id name="material name^" />
+			<_field_short_integer name="runtime material index!" />
+			<_field_char_enum name="sweetener mode">
+				<item Name="sweetener default" />
+				<item Name="sweetener enabled" />
+				<item Name="sweetener disabled" />
+			</_field_char_enum>
+			<_field_pad name="L" length="1" />
+			<_field_real name="max_visibility_distance#manual override for the max distance this effect can be from the camera and still be rendered (not valid for sounds)." />
+		</_field_block_64>
+		<_field_block_64 name="effects" max="500">
+			<_field_tag_reference_64 name="tag (effect or sound)" validtags="lsnd, snd!, effe" />
+			<_field_tag_reference_64 name="secondary tag (effect or sound)" validtags="lsnd, snd!, effe" />
+			<_field_string_id name="material name^" />
+			<_field_short_integer name="runtime material index!" />
+			<_field_char_enum name="sweetener mode">
+				<item Name="sweetener default" />
+				<item Name="sweetener enabled" />
+				<item Name="sweetener disabled" />
+			</_field_char_enum>
+			<_field_pad name="L" length="1" />
+			<_field_real name="max_visibility_distance#manual override for the max distance this effect can be from the camera and still be rendered (not valid for sounds)." />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_pad name="pad_tp" length="4" />
+</plugin>

@@ -1,0 +1,173 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_array name="array test!">
+		<_field_string_id name="test array string" />
+		<_field_string_id name="test array string" />
+		<_field_string_id name="test array string" />
+		<_field_string_id name="test array string" />
+		<_field_string_id name="test array string" />
+		<_field_string_id name="test array string" />
+		<_field_string_id name="test array string" />
+	</_field_array>
+	<_field_string_id name="material" />
+	<_field_explanation name="test|FF0080" />
+	<_field_block_64 name="all fields|pink" max="7">
+		<_field_pageable_resource_64 name="test resource^" />
+		<_field_pageable_resource_64 name="test resource2" />
+		<_field_array name="blah">
+			<_field_pageable_resource_64 name="test resource2" />
+			<_field_pageable_resource_64 name="test resource2" />
+		</_field_array>
+		<_field_string name="_field_string" />
+		<_field_string_id name="_field_string_id" />
+		<_field_char_integer name="_field_char_integer" />
+		<_field_short_integer name="_field_short_integer" />
+		<_field_long_integer name="_field_long_integer" />
+		<_field_angle name="_field_angle" />
+		<_field_tag name="_field_tag" />
+		<_field_short_enum name="_field_enum">
+			<item Name="alpha_blah{alpha}" />
+			<item Name="beta" />
+			<item Name="gamma" />
+			<item Name="delta" />
+			<item Name="epsilon" />
+			<item Name="zeta" />
+			<item Name="eta" />
+		</_field_short_enum>
+		<_field_long_flags name="_field_flags">
+			<item Name="alpha" />
+			<item Name="beta" />
+			<item Name="gamma" />
+			<item Name="fixup_flag_test{delta}" />
+			<item Name="epsilon" />
+			<item Name="zeta" />
+			<item Name="eta" />
+		</_field_long_flags>
+		<_field_word_flags name="_field_word_flags">
+			<item Name="alpha" />
+			<item Name="beta" />
+			<item Name="gamma" />
+			<item Name="fixup_flag_test{delta}" />
+			<item Name="epsilon" />
+			<item Name="zeta" />
+			<item Name="eta" />
+		</_field_word_flags>
+		<_field_byte_flags name="_field_byte_flags">
+			<item Name="alpha" />
+			<item Name="beta" />
+			<item Name="gamma" />
+			<item Name="fixup_flag_test{delta}" />
+			<item Name="epsilon" />
+			<item Name="zeta" />
+			<item Name="eta" />
+		</_field_byte_flags>
+		<_field_point_2d name="_field_short_point2d" />
+		<_field_rectangle_2d name="_field_short_rectangle2d" />
+		<_field_rgb_color name="_field_rgb_pixel32" />
+		<_field_argb_color name="_field_argb_pixel32" />
+		<_field_real name="_field_real" />
+		<_field_real_fraction name="_field_real_fraction" />
+		<_field_real_point_2d name="_field_real_point2d" />
+		<_field_real_point_3d name="_field_real_point3d" />
+		<_field_real_vector_2d name="_field_real_vector2d" />
+		<_field_real_vector_3d name="_field_real_vector3d" />
+		<_field_real_quaternion name="_field_real_quaternion" />
+		<_field_real_euler_angles_2d name="_field_real_euler_angles2d" />
+		<_field_real_euler_angles_3d name="_field_real_euler_angles3d" />
+		<_field_real_plane_2d name="_field_real_plane2d" />
+		<_field_real_plane_3d name="_field_real_plane3d" />
+		<_field_real_rgb_color name="_field_real_rgb_color" />
+		<_field_real_argb_color name="_field_real_argb_color" />
+		<_field_real_hsv_color name="_field_real_hsv_color" />
+		<_field_real_ahsv_color name="_field_real_ahsv_color" />
+		<_field_short_integer_bounds name="_field_short_integer_bounds" />
+		<_field_angle_bounds name="_field_angle_bounds" />
+		<_field_real_bounds name="_field_real_bounds" />
+		<_field_fraction_bounds name="_field_real_fraction_bounds" />
+		<_field_tag_reference_64 name="_field_tag_reference" />
+		<_field_block_64 name="_field_block" max="7">
+			<_field_char_block_index name="_field_char_block_index" />
+			<_field_short_block_index name="_field_short_block_index" />
+			<_field_long_block_index name="_field_long_block_index" />
+		</_field_block_64>
+		<_field_long_integer name="look at me!" />
+		<_field_struct name="ugh foo ugh" />
+		<_field_string name="e" />
+		<_field_string name="sentinel" />
+		<_field_string_id name="bleh" />
+		<_field_struct name="function crap" />
+		<_field_short_enum name="Input Variable">
+			<item Name="alpha_blah{alpha}" />
+			<item Name="beta" />
+			<item Name="gamma" />
+			<item Name="delta" />
+			<item Name="epsilon" />
+			<item Name="zeta" />
+			<item Name="eta" />
+		</_field_short_enum>
+		<_field_short_enum name="Range Variable">
+			<item Name="alpha_blah{alpha}" />
+			<item Name="beta" />
+			<item Name="gamma" />
+			<item Name="delta" />
+			<item Name="epsilon" />
+			<item Name="zeta" />
+			<item Name="eta" />
+		</_field_short_enum>
+		<_field_struct name="Mapping" />
+		<_field_data_64 name="data" />
+		<_field_block_64 name="block2" max="7">
+			<_field_char_block_index name="_field_char_block_index" />
+			<_field_short_block_index name="_field_short_block_index" />
+			<_field_long_block_index name="_field_long_block_index" />
+		</_field_block_64>
+		<_field_long_enum name="ugh">
+			<item Name="alpha_blah{alpha}" />
+			<item Name="beta" />
+			<item Name="gamma" />
+			<item Name="delta" />
+			<item Name="epsilon" />
+			<item Name="zeta" />
+			<item Name="eta" />
+		</_field_long_enum>
+		<_field_block_64 name="block3" max="1">
+			<_field_long_integer name="can you see me???^" />
+		</_field_block_64>
+		<_field_block_64 name="block4" max="3">
+			<_field_long_integer name="can you see me???^" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="custom fields" max="4">
+		<_field_long_integer name="more blah" />
+		<_field_char_enum name="_field_char_enum">
+			<item Name="alpha_blah{alpha}" />
+			<item Name="beta" />
+			<item Name="gamma" />
+			<item Name="delta" />
+			<item Name="epsilon" />
+			<item Name="zeta" />
+			<item Name="eta" />
+		</_field_char_enum>
+		<_field_pad name="ARBP" length="3" />
+		<_field_long_enum name="_field_long_enum">
+			<item Name="alpha_blah{alpha}" />
+			<item Name="beta" />
+			<item Name="gamma" />
+			<item Name="delta" />
+			<item Name="epsilon" />
+			<item Name="zeta" />
+			<item Name="eta" />
+		</_field_long_enum>
+	</_field_block_64>
+	<_field_custom name="Sliders" />
+	<_field_custom name="slider1" />
+	<_field_real name="slider1" />
+	<_field_custom name="slider2" />
+	<_field_real name="slider2" />
+	<_field_custom name="export tag to xml" />
+</plugin>

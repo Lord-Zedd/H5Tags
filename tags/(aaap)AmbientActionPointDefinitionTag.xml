@@ -1,0 +1,19 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="Ambient Info# The ambient info for this ambient action" max="512">
+		<_field_real name="Time playing animation:seconds" />
+		<_field_real name="Cooldown time:seconds" />
+		<_field_string_id name="composition name" />
+		<_field_tag_reference_64 name="composition definition" />
+		<_field_real name="Max distance agents will consider this opp from:wu" />
+		<_field_block_64 name="Ambient meta labels" max="32">
+			<_field_string_id name="meta label^" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_pad name="pad0" length="4" />
+</plugin>

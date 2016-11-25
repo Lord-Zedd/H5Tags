@@ -1,0 +1,17 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="perIOLODConstants!~" />
+	<_field_int64_integer name="perPartLODConstants!~" />
+	<_field_int64_integer name="singleProbeConstants!~" />
+	<_field_block_64 name="perIOLODParameters!~" max="33423360">
+		<_field_real_quaternion name="register" />
+	</_field_block_64>
+	<_field_block_64 name="perPartLODParameters!~" max="33423360">
+		<_field_real_quaternion name="register" />
+	</_field_block_64>
+	<_field_block_64 name="singleProbeParameters!~" max="33423360">
+		<_field_real_quaternion name="register" />
+	</_field_block_64>
+	<_field_pad name="lcdd_pad" length="4" />
+</plugin>

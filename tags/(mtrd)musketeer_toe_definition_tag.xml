@@ -1,0 +1,130 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="Musketeer Teams" max="32">
+		<_field_block_64 name="Musketeer" max="32">
+			<_field_tag_reference_64 name="character" />
+			<_field_char_enum name="avatar name">
+				<item Name="None" />
+				<item Name="Masterchief" />
+				<item Name="Fred" />
+				<item Name="Kelly" />
+				<item Name="Linda" />
+				<item Name="Locke" />
+				<item Name="Thorne" />
+				<item Name="Tanaka" />
+				<item Name="Vale" />
+			</_field_char_enum>
+			<_field_pad name="pad" length="3" />
+		</_field_block_64>
+		<_field_block_64 name="Difficulty Tunings" max="1">
+			<_field_block_64 name="Tuning Sets" max="10">
+				<_field_long_enum name="Type">
+					<item Name="Target visible to any player" />
+					<item Name="Actor gunning for any player" />
+					<item Name="Actor following order" />
+					<item Name="Musketeer" />
+					<item Name="Actor visible to any player" />
+					<item Name="Actor not visible to any player" />
+					<item Name="Moving to revive Player" />
+					<item Name="Moving to revive Ai" />
+					<item Name="Reviving Player" />
+					<item Name="Reviving Ai" />
+				</_field_long_enum>
+				<_field_explanation name="health">scale values for enemy health and damage settings</_field_explanation>
+				<_field_real name="SCALE enemy damage#enemy damage multiplier" />
+				<_field_real name="MIN enemy damage#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE enemy vitality#enemy maximum body vitality scale" />
+				<_field_real name="MIN enemy vitality#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE enemy shield#enemy maximum shield vitality scale" />
+				<_field_real name="MIN enemy shield#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE enemy recharge#enemy shield recharge scale" />
+				<_field_real name="MIN enemy recharge#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE friend damage#friend damage multiplier" />
+				<_field_real name="MIN friend damage#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE friend vitality#friend maximum body vitality scale" />
+				<_field_real name="MIN friend vitality#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE friend shield#friend maximum shield vitality scale" />
+				<_field_real name="MIN friend shield#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE friend recharge#friend shield recharge scale" />
+				<_field_real name="MIN friend recharge#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_pad name="$" length="8" />
+				<_field_pad name="$$" length="8" />
+				<_field_explanation name="ranged fire">difficulty-affecting values for enemy ranged combat settings</_field_explanation>
+				<_field_real name="SCALE rate of fire#enemy rate of fire scale" />
+				<_field_real name="MIN rate of fire#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE projectile error#enemy projectile error scale, as a fraction of their base firing error." />
+				<_field_real name="MIN projectile error#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE burst error#enemy burst error scale; reduces intra-burst shot distance." />
+				<_field_real name="MIN burst error#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE new target delay#enemy new-target delay scale factor." />
+				<_field_real name="MIN new target delay#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE burst separation#delay time between bursts scale factor for enemies." />
+				<_field_real name="MIN burst separation#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE target tracking#additional target tracking fraction for enemies." />
+				<_field_real name="MIN target tracking#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE target leading#additional target leading fraction for enemies." />
+				<_field_real name="MIN target leading#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE overcharge chance#overcharge chance scale factor for enemies." />
+				<_field_real name="MIN overcharge chance#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE special fire delay#delay between special-fire shots (overcharge, banshee bombs) scale factor for enemies." />
+				<_field_real name="MIN special fire delay#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE guidance vs player#guidance velocity scale factor for all projectiles targeted on a player." />
+				<_field_real name="MIN guidance vs player#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE melee delay base#delay period added to all melee attacks, even when berserk." />
+				<_field_real name="MIN melee delay base#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE melee delay scale#multiplier for all existing non-berserk melee delay times." />
+				<_field_real name="MIN melee delay scale#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_pad name="$$$" length="8" />
+				<_field_explanation name="grenades">difficulty-affecting values for enemy grenade behavior</_field_explanation>
+				<_field_real name="SCALE grenade chance scale#scale factor affecting the desicions to throw a grenade." />
+				<_field_real name="MIN grenade chance scale#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE grenade timer scale#scale factor affecting the delay period between grenades thrown from the same encounter (lower is more often)." />
+				<_field_real name="MIN grenade timer scale#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE grenade detonation timer scale#scale factor affecting how long grenades will take before exploding" />
+				<_field_real name="MIN grenade detonation timer scale#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE grenade arming timer scale#scale factor affecting the minimum possible time before grenades explode" />
+				<_field_real name="MIN grenade arming timer scale#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE grenade velocity scale#scale factor affecting how fast grenades are initially thrown" />
+				<_field_real name="MIN grenade velocity scale#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_explanation name="placement">difficulty-affecting values for enemy placement</_field_explanation>
+				<_field_real name="SCALE major upgrade (normal)#fraction of actors upgraded to their major variant." />
+				<_field_real name="MIN major upgrade (normal)#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE major upgrade (few)#fraction of actors upgraded to their major variant when mix = normal." />
+				<_field_real name="MIN major upgrade (few)#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE major upgrade (many)#fraction of actors upgraded to their major variant when mix = many." />
+				<_field_real name="MIN major upgrade (many)#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_explanation name="vehicles">difficulty-affecting values for vehicle driving/combat</_field_explanation>
+				<_field_real name="SCALE player vehicle ram chance#Chance of deciding to ram the player in a vehicle" />
+				<_field_real name="MIN player vehicle ram chance#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE trick dodge chance scale#Multiplies the chance that a flying vehicle will trick to dodge danger" />
+				<_field_real name="MIN trick dodge chance scale#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE vehicle boarding chance#Enables a ranom dice roll for vehicle boarding (1.0 is the default behavior of no dice roll as long as all other conditions are met)" />
+				<_field_real name="MIN vehicle boarding chance#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_explanation name="cover">difficulty-affecting values for cover and bunkering</_field_explanation>
+				<_field_real name="SCALE hide time#scalar for time spent in cover behavior" />
+				<_field_real name="MIN hide time#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE shield fraction hide#scalar for what percentage shield left before entering cover behavior" />
+				<_field_real name="MIN shield fraction hide#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE cover vitality threshold#scalar for what percentage vitality left before entering cover behavior" />
+				<_field_real name="MIN cover vitality threshold#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE bunker open duration#scalar for how long to stay open while bunkering" />
+				<_field_real name="MIN bunker open duration#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_real name="SCALE bunker closed duration#scalar for how long to stay closed while bunkering" />
+				<_field_real name="MIN bunker closed duration#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+				<_field_pad name="$$$$$$$$$" length="8" />
+				<_field_explanation name="Damage Scaling">scale damage</_field_explanation>
+				<_field_real name="SCALE Damage received from enemy AI#scale damage received from enemy AI" />
+				<_field_real name="MIN Damage received from enemy AI#min incomming value (set to 0 to keep unchanged, used to override any multipliers that has set the value to 0)" />
+			</_field_block_64>
+			<_field_explanation name="clamps">clamps for musketeer data</_field_explanation>
+			<_field_real name="minimum value for starting accuracy" />
+			<_field_real name="minimum value for ending accuracy" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_pad name="post teams" length="4" />
+</plugin>

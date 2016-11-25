@@ -1,0 +1,172 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_explanation name="global material types" />
+	<_field_string_id name="global water material#the default value for what material type water is" />
+	<_field_string_id name="global air material#the default value for what material type air is" />
+	<_field_short_integer name="global water material type!" />
+	<_field_short_integer name="global air material type!" />
+	<_field_block_64 name="runtime materials*!" max="512">
+		<_field_string_id name="name^" />
+		<_field_string_id name="parent name" />
+		<_field_short_integer name="runtime material index!" />
+		<_field_word_flags name="flags">
+			<item Name="flammable" />
+			<item Name="biomass" />
+			<item Name="rad xfer interior" />
+		</_field_word_flags>
+		<_field_string_id name="general armor" />
+		<_field_string_id name="specific armor" />
+		<_field_short_integer name="runtime dry base material index!" />
+		<_field_pad name="RMBP1" length="2" />
+		<_field_struct name="physics properties" />
+		<_field_long_integer name="flags!" />
+		<_field_real name="friction" />
+		<_field_real_fraction name="restitution" />
+		<_field_real name="density:kg/m^3" />
+		<_field_explanation name="Drag" />
+		<_field_tag_reference_64 name="water physics drag properties" />
+		<_field_block_64 name="drag overrides" max="16">
+			<_field_tag_reference_64 name="drag properties" />
+		</_field_block_64>
+		<_field_explanation name="Floatation">objects of this flotation category have this density relative to being in this material (1.0f==neutral)</_field_explanation>
+		<_field_pad name="default" length="4" />
+		<_field_real name="super floater" />
+		<_field_real name="floater" />
+		<_field_real name="neutral" />
+		<_field_real name="sinker" />
+		<_field_real name="super sinker" />
+		<_field_pad name="none" length="4" />
+		<_field_struct name="sweeteners" />
+		<_field_tag_reference_64 name="sound sweetener (small)" validtags="snd!" />
+		<_field_tag_reference_64 name="sound sweetener (medium)" validtags="snd!" />
+		<_field_tag_reference_64 name="sound sweetener (large)" validtags="snd!" />
+		<_field_tag_reference_64 name="sound sweetener rolling" />
+		<_field_tag_reference_64 name="sound sweetener grinding" />
+		<_field_tag_reference_64 name="sound sweetener (melee small)" validtags="snd!" />
+		<_field_tag_reference_64 name="sound sweetener (melee)#this is a medium sweetener and was the old default" validtags="snd!" />
+		<_field_tag_reference_64 name="sound sweetener (melee large)" validtags="snd!" />
+		<_field_tag_reference_64 name="effect sweetener (small)" />
+		<_field_tag_reference_64 name="effect sweetener (medium)" />
+		<_field_tag_reference_64 name="effect sweetener (large)" />
+		<_field_tag_reference_64 name="effect sweetener rolling" />
+		<_field_tag_reference_64 name="effect sweetener grinding" />
+		<_field_tag_reference_64 name="effect sweetener (melee)" />
+		<_field_tag_reference_64 name="water ripple (small)" />
+		<_field_tag_reference_64 name="water ripple (medium)" />
+		<_field_tag_reference_64 name="water ripple (large)" />
+		<_field_explanation name="sweetener inheritance flags">when a sweetener inheritance flag is set the sound\effect is not inherited from the parent material.  If you leave the sweetener blank and set the flag than no effect\sound will play</_field_explanation>
+		<_field_long_flags name="sweetener inheritance flags">
+			<item Name="sound_small" />
+			<item Name="sound_medium" />
+			<item Name="sound_large" />
+			<item Name="sound_rolling" />
+			<item Name="sound_grinding" />
+			<item Name="sound_melee_small" />
+			<item Name="sound_melee" />
+			<item Name="sound_melee_large" />
+			<item Name="effect_small" />
+			<item Name="effect_medium" />
+			<item Name="effect_large" />
+			<item Name="effect_rolling" />
+			<item Name="effect_grinding" />
+			<item Name="effect_melee" />
+			<item Name="water_ripple_small" />
+			<item Name="water_ripple_medium" />
+			<item Name="water_ripple_large" />
+		</_field_long_flags>
+		<_field_tag_reference_64 name="material effects" />
+		<_field_block_64 name="underwater proxies" max="512">
+			<_field_explanation name="when this material is encounted under a material of this type ..." />
+			<_field_string_id name="underwater material" />
+			<_field_explanation name="... we report it as this material" />
+			<_field_string_id name="proxy material" />
+			<_field_short_integer name="underwater material type*!" />
+			<_field_short_integer name="proxy material type*!" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="materials" max="256">
+		<_field_string_id name="name^" />
+		<_field_string_id name="parent name" />
+		<_field_short_integer name="runtime material index!" />
+		<_field_word_flags name="flags">
+			<item Name="flammable" />
+			<item Name="biomass" />
+			<item Name="rad xfer interior" />
+		</_field_word_flags>
+		<_field_string_id name="general armor" />
+		<_field_string_id name="specific armor" />
+		<_field_short_integer name="runtime dry base material index!" />
+		<_field_pad name="RMBP1" length="2" />
+		<_field_struct name="physics properties" />
+		<_field_long_integer name="flags!" />
+		<_field_real name="friction" />
+		<_field_real_fraction name="restitution" />
+		<_field_real name="density:kg/m^3" />
+		<_field_explanation name="Drag" />
+		<_field_tag_reference_64 name="water physics drag properties" />
+		<_field_block_64 name="drag overrides" max="16">
+			<_field_tag_reference_64 name="drag properties" />
+		</_field_block_64>
+		<_field_explanation name="Floatation">objects of this flotation category have this density relative to being in this material (1.0f==neutral)</_field_explanation>
+		<_field_pad name="default" length="4" />
+		<_field_real name="super floater" />
+		<_field_real name="floater" />
+		<_field_real name="neutral" />
+		<_field_real name="sinker" />
+		<_field_real name="super sinker" />
+		<_field_pad name="none" length="4" />
+		<_field_struct name="sweeteners" />
+		<_field_tag_reference_64 name="sound sweetener (small)" validtags="snd!" />
+		<_field_tag_reference_64 name="sound sweetener (medium)" validtags="snd!" />
+		<_field_tag_reference_64 name="sound sweetener (large)" validtags="snd!" />
+		<_field_tag_reference_64 name="sound sweetener rolling" />
+		<_field_tag_reference_64 name="sound sweetener grinding" />
+		<_field_tag_reference_64 name="sound sweetener (melee small)" validtags="snd!" />
+		<_field_tag_reference_64 name="sound sweetener (melee)#this is a medium sweetener and was the old default" validtags="snd!" />
+		<_field_tag_reference_64 name="sound sweetener (melee large)" validtags="snd!" />
+		<_field_tag_reference_64 name="effect sweetener (small)" />
+		<_field_tag_reference_64 name="effect sweetener (medium)" />
+		<_field_tag_reference_64 name="effect sweetener (large)" />
+		<_field_tag_reference_64 name="effect sweetener rolling" />
+		<_field_tag_reference_64 name="effect sweetener grinding" />
+		<_field_tag_reference_64 name="effect sweetener (melee)" />
+		<_field_tag_reference_64 name="water ripple (small)" />
+		<_field_tag_reference_64 name="water ripple (medium)" />
+		<_field_tag_reference_64 name="water ripple (large)" />
+		<_field_explanation name="sweetener inheritance flags">when a sweetener inheritance flag is set the sound\effect is not inherited from the parent material.  If you leave the sweetener blank and set the flag than no effect\sound will play</_field_explanation>
+		<_field_long_flags name="sweetener inheritance flags">
+			<item Name="sound_small" />
+			<item Name="sound_medium" />
+			<item Name="sound_large" />
+			<item Name="sound_rolling" />
+			<item Name="sound_grinding" />
+			<item Name="sound_melee_small" />
+			<item Name="sound_melee" />
+			<item Name="sound_melee_large" />
+			<item Name="effect_small" />
+			<item Name="effect_medium" />
+			<item Name="effect_large" />
+			<item Name="effect_rolling" />
+			<item Name="effect_grinding" />
+			<item Name="effect_melee" />
+			<item Name="water_ripple_small" />
+			<item Name="water_ripple_medium" />
+			<item Name="water_ripple_large" />
+		</_field_long_flags>
+		<_field_tag_reference_64 name="material effects" />
+		<_field_block_64 name="underwater proxies" max="512">
+			<_field_explanation name="when this material is encounted under a material of this type ..." />
+			<_field_string_id name="underwater material" />
+			<_field_explanation name="... we report it as this material" />
+			<_field_string_id name="proxy material" />
+			<_field_short_integer name="underwater material type*!" />
+			<_field_short_integer name="proxy material type*!" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_pad name="pad" length="4" />
+</plugin>

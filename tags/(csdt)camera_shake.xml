@@ -1,0 +1,52 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_explanation name="camera impulse" />
+	<_field_struct name="camera impulse" />
+	<_field_real name="impulse duration:seconds" />
+	<_field_data_64 name="data" />
+	<_field_angle name="rotation:degrees" />
+	<_field_real name="pushback:world units" />
+	<_field_real_bounds name="jitter:world units" />
+	<_field_explanation name="camera shake" />
+	<_field_struct name="camera shake" />
+	<_field_real name="shake duration:seconds#the effect will last for this duration." />
+	<_field_explanation name="procedural camera shake" />
+	<_field_data_64 name="data" />
+	<_field_real name="random translation:world units#random translation in all directions" />
+	<_field_angle name="random rotation:degrees#random rotation in all directions" />
+	<_field_real name="wobble function period:seconds" />
+	<_field_real_fraction name="wobble weight#a value of 0.0 signifies that the wobble function has no effect; a value of 1.0 the wobble function completely scales the translational
+ and rotational magnitudes.  The less the weight, the less the effect wobble has." />
+	<_field_short_enum name="wobble function#a function to perturb the effect's behavior over time">
+		<item Name="one" />
+		<item Name="zero" />
+		<item Name="cosine" />
+		<item Name="cosine (variable period)" />
+		<item Name="diagonal wave" />
+		<item Name="diagonal wave (variable period)" />
+		<item Name="slide" />
+		<item Name="slide (variable period)" />
+		<item Name="noise" />
+		<item Name="jitter" />
+		<item Name="wander" />
+		<item Name="spark" />
+	</_field_short_enum>
+	<_field_explanation name="animated camera shake" />
+	<_field_char_enum name="animated shake playback">
+		<item Name="looping" />
+		<item Name="frame ratio" />
+	</_field_char_enum>
+	<_field_char_enum name="animated shake weight">
+		<item Name="effect scale" />
+		<item Name="full" />
+	</_field_char_enum>
+	<_field_tag_reference_64 name="animation graph" />
+	<_field_string_id name="animation name" />
+	<_field_real name="zoom penalty linear #multiplier penalty that increases linearly with zoom over 1" />
+	<_field_real name="zoom penalty squareroot #multiplier penalty that increases with square root of zoom over 1" />
+</plugin>

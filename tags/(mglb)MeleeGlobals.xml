@@ -1,0 +1,68 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_long_flags name="flags">
+		<item Name="clang save both if both died" />
+	</_field_long_flags>
+	<_field_real name="melee death acceleration#acceleration applied to a biped when killed by a melee.  0 defaults to 1.6" />
+	<_field_real name="uber melee death acceleration#acceleration applied to a biped when killed by an uber melee.  0 defaults to 4" />
+	<_field_custom name="clang" />
+	<_field_explanation name="clang">This occurs when one person does melee damage to another unit performing a melee that could hit the other unit
+and either unit has no vitality remaining
+
+case both units have no vitality remaining:
+if the abolute value of the difference between the units vitality is less than &quot;simultaneous death vitality threshold&quot;, then both will die
+otherwise whoever has more health will be saved (brought down to near 0 vitality) and the other will get killed
+
+case only 1 unit has no vitality remaining:
+the unit with no vitality is killed, and the other unit's vitality isn't modified from the clang</_field_explanation>
+	<_field_explanation name="Network sensitive fields">WARNING these affects how melees over network.
+Don't modify without consulting weapon or network engineer.
+These are hidden by default and must be modified in expert mode.</_field_explanation>
+	<_field_real name="clang simultaneous death vitality threshold!#Defaults to 0.59.  Halo 3 had a value of 0.59 (the average of damage caused by 4 BR and 4 AR bullets worth of damage which is roughly 26.5 damage out of a body health of 45).  Reach had 1.1 so they both would die if both had no shields since there was no bleed through." />
+	<_field_real name="input hold time#length of time that separates early release melee actions, e.g. melee vs ground pound when in the air (defaults to 0.25)" />
+	<_field_struct name="targeting" />
+	<_field_custom name="targeting" />
+	<_field_angle_bounds name="yaw angles:degrees#default[20, 50]  Interpolates from low to high as you get closer to the target.  Low is used at maximum distance away" />
+	<_field_angle_bounds name="yaw angles lunging:degrees#default[60, 60]  Interpolates from low to high as you get closer to the target.  Low is used at maximum distance away" />
+	<_field_angle_bounds name="pitch angles:degrees#default[40, 40]  Interpolates from low to high as you get closer to the target.  Low is used at maximum distance away" />
+	<_field_angle_bounds name="pitch angles lunging:degrees#default[80, 80] Interpolates from low to high as you get closer to the target.  Low is used at maximum distance away" />
+	<_field_angle name="ground pitch down max:degrees/s#default[30]  How far your target can be below you when on the ground" />
+	<_field_explanation name="aim bending">This allows your aim to snap to the melee target.</_field_explanation>
+	<_field_angle name="aim bend yaw max speed:degrees#default[540]" />
+	<_field_angle name="aim bend yaw max:degrees#default[50]" />
+	<_field_angle name="aim bend yaw pitch speed:degrees/s#default[540]" />
+	<_field_angle name="aim bend yaw pitch up max:degrees#default[25]" />
+	<_field_angle name="aim bend yaw pitch down max:degrees#default[15]" />
+	<_field_struct name="physics" />
+	<_field_custom name="physics" />
+	<_field_real name="lunge maximum speed:wu/s#default[12]" />
+	<_field_real name="uber lunge maximum speed:wu/s#default[12]" />
+	<_field_real name="lunge acceleration time:seconds#default[0.1]" />
+	<_field_real name="lunge deceleration time:seconds#default[0.1]" />
+	<_field_custom name="default melee damage" />
+	<_field_block_64 name="default damage" max="2">
+		<_field_explanation name="melee damage parameters">damage pyramid angles: defines the frustum from the camera that the melee-attack uses to find targets
+damage pyramid depth: how far the melee attack searches for a target</_field_explanation>
+		<_field_real_euler_angles_2d name="damage pyramid angles" />
+		<_field_real name="damage pyramid depth:wu#0 defaults to k_default_player_melee_distance" />
+		<_field_real name="maximum lunge range:wu#0 defaults to k_default_player_melee_lunge_distance" />
+		<_field_real name="damage lunge explosive depth:wu#the distance out from the pyramid center to spawn explosive effects.  This value will be clamped to the damage pyramid depth. 0 defaults to the damage pyramid depth" />
+		<_field_real name="runtime damage lunge explosive fraction*!" />
+		<_field_tag_reference_64 name="melee damage" />
+		<_field_tag_reference_64 name="melee response" validtags="jpt!, drdf" />
+		<_field_tag_reference_64 name="lunge melee damage#this is only important for the energy sword" />
+		<_field_tag_reference_64 name="lunge melee response#this is only important for the energy sword" validtags="jpt!, drdf" />
+		<_field_tag_reference_64 name="empty melee damage#this is only important for the energy sword" />
+		<_field_tag_reference_64 name="empty melee response#this is only important for the energy sword" validtags="jpt!, drdf" />
+		<_field_tag_reference_64 name="clang melee damage#this is only important for the energy sword" />
+		<_field_tag_reference_64 name="clang melee response#this is only important for the energy sword" validtags="jpt!, drdf" />
+		<_field_tag_reference_64 name="clang melee against melee weapon damage#e.g. used by AR to damage sword guy when clanging sword attack" />
+		<_field_tag_reference_64 name="clang melee against melee weapon damage response#e.g. used by AR to damage sword guy when clanging sword attack" validtags="jpt!, drdf" />
+		<_field_tag_reference_64 name="lunge melee explosive damage" />
+	</_field_block_64>
+</plugin>

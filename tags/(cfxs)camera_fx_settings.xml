@@ -1,0 +1,339 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="exposure!" />
+	<_field_explanation name="EXPOSURE">Controls the brightness of the scene, like exposure time on your camera.
+The actual exposure always blends towards the target exposure.
+With auto-exposure on, the target exposure is calculated relative to the brightness of what is on screen.
+</_field_explanation>
+	<_field_word_flags name="flags">
+		<item Name="use default (ignore these values)" />
+		<item Name="maximum change is relative" />
+		<item Name="auto-adjust target" />
+		<item Name="bit3!" />
+		<item Name="fixed!" />
+		<item Name="(unused2)!" />
+		<item Name="fixed2!" />
+	</_field_word_flags>
+	<_field_pad name="MKRGRF" length="2" />
+	<_field_real name="exposure:stops#the target exposure (ONLY USED WHEN AUTO-EXPOSURE IS OFF)" />
+	<_field_real name="maximum change:stops#the maximum allowed change in exposure between frames" />
+	<_field_real name="blend speed (0-1):percent per frame#1 is instantaneous, 0.01 is a good speed, 0.001 is slower" />
+	<_field_real name="minimum:stops#the absolute target exposure is clamped to this range" />
+	<_field_real name="maximum:stops#the absolute target exposure is clamped to this range" />
+	<_field_real name="auto-exposure screen brightness:[0.0001-1]#how bright you want the screen to be - auto-exposure will make it happen" />
+	<_field_real name="auto-exposure delay:[0.1-1]seconds#how long to wait before auto-exposure kicks in to adjust the exposure" />
+	<_field_struct name="auto_exposure_sensitivity" />
+	<_field_explanation name="AUTO EXPOSURE SENSITIVITY">How sensitive auto exposure is to small bright patches on the screen (like the sun)</_field_explanation>
+	<_field_word_flags name="flags">
+		<item Name="use default (ignore these values)" />
+		<item Name="maximum change is relative" />
+		<item Name="(unused)!" />
+		<item Name="bit3!" />
+		<item Name="fixed!" />
+		<item Name="(unused2)!" />
+		<item Name="fixed2!" />
+	</_field_word_flags>
+	<_field_pad name="MAKAMAKAHEY" length="2" />
+	<_field_real name="sensitivity (0-1)" />
+	<_field_struct name="exposure pitch influence" />
+	<_field_explanation name="EXPOSURE PITCH INFLUENCE">Influence of ground/horizon/sky in exposure intensity</_field_explanation>
+	<_field_word_flags name="flags">
+		<item Name="use default (ignore these values)" />
+		<item Name="maximum change is relative" />
+		<item Name="(unused)!" />
+		<item Name="bit3!" />
+		<item Name="fixed!" />
+		<item Name="(unused2)!" />
+		<item Name="fixed2!" />
+	</_field_word_flags>
+	<_field_pad name="MAKAMAKAHEY" length="2" />
+	<_field_explanation name="INFLUENCE FUNCTION (GROUND -&gt; HORIZON -&gt; SKY)" />
+	<_field_data_64 name="data" />
+	<_field_struct name="exposure compensation" />
+	<_field_explanation name="EXPOSURE COMPENSATION">Exposure compensation across exposure range</_field_explanation>
+	<_field_word_flags name="flags">
+		<item Name="use default (ignore these values)" />
+		<item Name="maximum change is relative" />
+		<item Name="(unused)!" />
+		<item Name="bit3!" />
+		<item Name="fixed!" />
+		<item Name="(unused2)!" />
+		<item Name="fixed2!" />
+	</_field_word_flags>
+	<_field_pad name="MAKAMAKAHEY" length="2" />
+	<_field_explanation name="COMPENSATION FUNCTION (EXPOSURE MIN -&gt; EXPOSURE MAX)" />
+	<_field_data_64 name="data" />
+	<_field_struct name="bloom_highlight{bloom_point}" />
+	<_field_explanation name="HIGHLIGHT BLOOM">These parameters control bloom off the highlights (really bright stuff)</_field_explanation>
+	<_field_word_flags name="flags">
+		<item Name="use default (ignore these values)" />
+		<item Name="maximum change is relative" />
+		<item Name="(unused)!" />
+		<item Name="bit3!" />
+		<item Name="fixed!" />
+		<item Name="(unused2)!" />
+		<item Name="fixed2!" />
+	</_field_word_flags>
+	<_field_pad name="LOTPRER" length="2" />
+	<_field_real name="highlight bloom{bloom point}" />
+	<_field_real name="maximum change" />
+	<_field_real name="blend speed (0-1)" />
+	<_field_struct name="bloom_inherent" />
+	<_field_explanation name="AMBIENT BLOOM{INHERENT BLOOM}">These parameters control bloom off everything (bright and dark)</_field_explanation>
+	<_field_word_flags name="flags">
+		<item Name="use default (ignore these values)" />
+		<item Name="maximum change is relative" />
+		<item Name="(unused)!" />
+		<item Name="bit3!" />
+		<item Name="fixed!" />
+		<item Name="(unused2)!" />
+		<item Name="fixed2!" />
+	</_field_word_flags>
+	<_field_pad name="ERIRLE" length="2" />
+	<_field_real name="ambient bloom{inherent bloom}" />
+	<_field_real name="maximum change" />
+	<_field_real name="blend speed (0-1)" />
+	<_field_struct name="bloom_intensity" />
+	<_field_explanation name="BLOOM INTENSITY">These parameters control how bright the bloom is, relative to the underlying scene</_field_explanation>
+	<_field_word_flags name="flags">
+		<item Name="use default (ignore these values)" />
+		<item Name="maximum change is relative" />
+		<item Name="(unused)!" />
+		<item Name="bit3!" />
+		<item Name="fixed!" />
+		<item Name="(unused2)!" />
+		<item Name="fixed2!" />
+	</_field_word_flags>
+	<_field_pad name="SEMIFMD" length="2" />
+	<_field_real name="bloom intensity" />
+	<_field_real name="maximum change" />
+	<_field_real name="blend speed (0-1)" />
+	<_field_struct name="bloom_layer_intensity!" />
+	<_field_word_flags name="flags!">
+		<item Name="use default (ignore these values)" />
+		<item Name="maximum change is relative" />
+		<item Name="(unused)!" />
+		<item Name="bit3!" />
+		<item Name="fixed!" />
+		<item Name="(unused2)!" />
+		<item Name="fixed2!" />
+	</_field_word_flags>
+	<_field_pad name="SEMIFMD" length="2" />
+	<_field_real name="large layer intensity!#affects largest layer (least color bleed when applied)" />
+	<_field_real name="medium layer intensity!" />
+	<_field_real name="small layer intensity!#affects smallest layer (most color bleed when applied)" />
+	<_field_real name="maximum change!" />
+	<_field_real name="blend speed (0-1)!" />
+	<_field_struct name="bloom_tint_color" />
+	<_field_explanation name="BLOOM TINT COLOR{BLOOM LARGE COLOR}">These parameters control the color of the overall bloom tint</_field_explanation>
+	<_field_word_flags name="flags">
+		<item Name="use default (ignore these values)" />
+		<item Name="maximum change is relative" />
+		<item Name="(unused)!" />
+		<item Name="bit3!" />
+		<item Name="fixed!" />
+		<item Name="(unused2)!" />
+		<item Name="fixed2!" />
+	</_field_word_flags>
+	<_field_pad name="KKROFI" length="2" />
+	<_field_real_rgb_color name="tint color{large color}" />
+	<_field_struct name="self_illum_exposure_settings" />
+	<_field_explanation name="SELF ILLUM EXPOSURE">These parameters control the self-illumination exposure
+preferred is the preferred exposure, and scale controls
+how much it varies from the preferred exposure</_field_explanation>
+	<_field_word_flags name="flags">
+		<item Name="use default (ignore these values)" />
+		<item Name="maximum change is relative" />
+		<item Name="(unused)!" />
+		<item Name="bit3!" />
+		<item Name="fixed!" />
+		<item Name="(unused2)!" />
+		<item Name="fixed2!" />
+	</_field_word_flags>
+	<_field_pad name="JJFJFJKE" length="2" />
+	<_field_real name="preferred exposure:stops#the preferred exposure for self illum" />
+	<_field_real name="maximum change" />
+	<_field_real name="blend speed (0-1)" />
+	<_field_struct name="self_illum_scale" />
+	<_field_explanation name="SELF ILLUM CHANGE">How much self illum exposure is allowed to change
+0 means no change at all, 1 means it will
+equal the normal exposure</_field_explanation>
+	<_field_word_flags name="flags">
+		<item Name="use default (ignore these values)" />
+		<item Name="maximum change is relative" />
+		<item Name="(unused)!" />
+		<item Name="bit3!" />
+		<item Name="fixed!" />
+		<item Name="(unused2)!" />
+		<item Name="fixed2!" />
+	</_field_word_flags>
+	<_field_pad name="WOOGATCHOU" length="2" />
+	<_field_real name="exposure change:[0-1]#how much the self illum is allowed to change, as a percentage of the normal exposure change" />
+	<_field_real name="maximum change" />
+	<_field_real name="blend speed (0-1)" />
+	<_field_explanation name="SELF ILLUM MATERIAL SHADER FUNCTION PARAMETER - (UNSC)">A value that can be used as an input to the material
+si_intensity function to compensate for scene brightness
+</_field_explanation>
+	<_field_struct name="self_illum_scale_unsc" />
+	<_field_word_flags name="flags">
+		<item Name="use default (ignore these values)" />
+		<item Name="maximum change is relative" />
+		<item Name="(unused)!" />
+		<item Name="bit3!" />
+		<item Name="fixed!" />
+		<item Name="(unused2)!" />
+		<item Name="fixed2!" />
+	</_field_word_flags>
+	<_field_pad name="WOOGATCHOU" length="2" />
+	<_field_real name="parameter value:#value of the self illum emissive parameter that can be used as an input for the material si_intensity to compensate for scene brightness" />
+	<_field_real name="maximum change" />
+	<_field_real name="blend speed (0-1)" />
+	<_field_explanation name="SELF ILLUM MATERIAL SHADER FUNCTION PARAMETER - (Covenant)">A value that can be used as an input to the material
+si_intensity function to compensate for scene brightness
+</_field_explanation>
+	<_field_struct name="self_illum_scale_covenant" />
+	<_field_word_flags name="flags">
+		<item Name="use default (ignore these values)" />
+		<item Name="maximum change is relative" />
+		<item Name="(unused)!" />
+		<item Name="bit3!" />
+		<item Name="fixed!" />
+		<item Name="(unused2)!" />
+		<item Name="fixed2!" />
+	</_field_word_flags>
+	<_field_pad name="WOOGATCHOU" length="2" />
+	<_field_real name="parameter value:#value of the self illum emissive parameter that can be used as an input for the material si_intensity to compensate for scene brightness" />
+	<_field_real name="maximum change" />
+	<_field_real name="blend speed (0-1)" />
+	<_field_explanation name="SELF ILLUM MATERIAL SHADER FUNCTION PARAMETER - (Forerunner)">A value that can be used as an input to the material
+si_intensity function to compensate for scene brightness
+</_field_explanation>
+	<_field_struct name="self_illum_scale_forerunner" />
+	<_field_word_flags name="flags">
+		<item Name="use default (ignore these values)" />
+		<item Name="maximum change is relative" />
+		<item Name="(unused)!" />
+		<item Name="bit3!" />
+		<item Name="fixed!" />
+		<item Name="(unused2)!" />
+		<item Name="fixed2!" />
+	</_field_word_flags>
+	<_field_pad name="WOOGATCHOU" length="2" />
+	<_field_real name="parameter value:#value of the self illum emissive parameter that can be used as an input for the material si_intensity to compensate for scene brightness" />
+	<_field_real name="maximum change" />
+	<_field_real name="blend speed (0-1)" />
+	<_field_struct name="deferred_reflection_intensity" />
+	<_field_explanation name="DEFERRED REFLECTION INTENSITY">These parameters scale the global intensity of deferred reflections</_field_explanation>
+	<_field_word_flags name="flags">
+		<item Name="use default (ignore these values)" />
+		<item Name="maximum change is relative" />
+		<item Name="(unused)!" />
+		<item Name="bit3!" />
+		<item Name="fixed!" />
+		<item Name="(unused2)!" />
+		<item Name="fixed2!" />
+	</_field_word_flags>
+	<_field_pad name="ERIRLE" length="2" />
+	<_field_real name="deferred reflection intensity" />
+	<_field_real name="maximum change" />
+	<_field_real name="blend speed (0-1)" />
+	<_field_struct name="deferred_reflection_min_sort_distance" />
+	<_field_explanation name="DEFERRED REFLECTION MINIMUM SORT DISTANCE">These parameters set the minimum &quot;apply distance&quot; of deferred reflections</_field_explanation>
+	<_field_word_flags name="flags">
+		<item Name="use default (ignore these values)" />
+		<item Name="maximum change is relative" />
+		<item Name="(unused)!" />
+		<item Name="bit3!" />
+		<item Name="fixed!" />
+		<item Name="(unused2)!" />
+		<item Name="fixed2!" />
+	</_field_word_flags>
+	<_field_pad name="ERIRLE" length="2" />
+	<_field_real name="deferred reflection minimum sort distance" />
+	<_field_real name="maximum change" />
+	<_field_real name="blend speed (0-1)" />
+	<_field_explanation name="EFFECT EXPOSURE OVERRIDE">Optional reference to a .effect_exposure override that only applies to effects</_field_explanation>
+	<_field_tag_reference_64 name="effect exposure override" />
+	<_field_struct name="color_grading" />
+	<_field_explanation name="Color Grading">set the color grading texture</_field_explanation>
+	<_field_word_flags name="flags">
+		<item Name="use default (ignore these values)" />
+		<item Name="maximum change is relative" />
+		<item Name="(unused)!" />
+		<item Name="bit3!" />
+		<item Name="fixed!" />
+		<item Name="(unused2)!" />
+		<item Name="fixed2!" />
+	</_field_word_flags>
+	<_field_pad name="SKHFDNV" length="2" />
+	<_field_tag_reference_64 name="color grading texture" />
+	<_field_real name="blend time:seconds" />
+	<_field_struct name="filmic_tone_curve" />
+	<_field_explanation name="Filmic Tone Curve">set the values for the filmic tone curve</_field_explanation>
+	<_field_word_flags name="flags">
+		<item Name="use default (ignore these values)" />
+		<item Name="maximum change is relative" />
+		<item Name="(unused)!" />
+		<item Name="bit3!" />
+		<item Name="fixed!" />
+		<item Name="enabled" />
+		<item Name="fixed2!" />
+	</_field_word_flags>
+	<_field_pad name="MKRGRF" length="2" />
+	<_field_real_vector_3d name="shoulder strength!#How intense the shoulder is" />
+	<_field_real_vector_3d name="linear strength!#How intense the linear portion is" />
+	<_field_real_vector_3d name="linear angle!#Angle of linear portion of curve" />
+	<_field_real_vector_3d name="toe strength!#How intense the toe is" />
+	<_field_real_vector_3d name="toe numerator!#Numerator of toe slope" />
+	<_field_real_vector_3d name="toe denominator!#Denominator of toe slope" />
+	<_field_real_vector_3d name="linear white point!#The white point in linear space" />
+	<_field_struct name="ssao_settings" />
+	<_field_explanation name="SSAO settings">set the values for SSAO</_field_explanation>
+	<_field_word_flags name="flags">
+		<item Name="use default (ignore these values)" />
+		<item Name="maximum change is relative" />
+		<item Name="(unused)!" />
+		<item Name="bit3!" />
+		<item Name="fixed!" />
+		<item Name="enabled" />
+		<item Name="fixed2!" />
+	</_field_word_flags>
+	<_field_pad name="agfth" length="2" />
+	<_field_word_flags name="ssao flags">
+		<item Name="SSAO enabled" />
+	</_field_word_flags>
+	<_field_pad name="dsadfgs" length="2" />
+	<_field_real name="Radius" />
+	<_field_dword_integer name="Step size" />
+	<_field_real name="Angle bias" />
+	<_field_real name="Strength" />
+	<_field_real name="Power exponent" />
+	<_field_dword_integer name="Blur radius" />
+	<_field_real name="Blur sharpness" />
+	<_field_real name="Decorator apply darkening scaler#zero is no darkening" />
+	<_field_real name="Hemi rejection falloff" />
+	<_field_struct name="camera lens dirt" />
+	<_field_explanation name="Camera Lens Dirt Settings">set the values for camera lens dirt</_field_explanation>
+	<_field_word_flags name="flags">
+		<item Name="use default (ignore these values)" />
+		<item Name="maximum change is relative" />
+		<item Name="(unused)!" />
+		<item Name="bit3!" />
+		<item Name="fixed!" />
+		<item Name="enabled" />
+		<item Name="fixed2!" />
+	</_field_word_flags>
+	<_field_pad name="agfth" length="2" />
+	<_field_real name="Intensity" />
+	<_field_tag_reference_64 name="dirt texture" />
+	<_field_char_enum name="Dirt Type">
+		<item Name="Apply at bloom res" />
+		<item Name="Apply at full res" />
+	</_field_char_enum>
+	<_field_pad name="clds_pad_1" length="3" />
+</plugin>

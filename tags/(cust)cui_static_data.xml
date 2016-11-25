@@ -1,0 +1,58 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="static data" />
+	<_field_block_64 name="columns" max="128">
+		<_field_string_id name="name^" />
+		<_field_short_enum name="type">
+			<item Name="boolean" />
+			<item Name="long" />
+			<item Name="real" />
+			<item Name="string" />
+			<item Name="component" />
+			<item Name="tag reference" />
+			<item Name="string id" />
+			<item Name="argb color" />
+			<item Name="emblem info" />
+		</_field_short_enum>
+		<_field_pad name="pad0" length="2" />
+	</_field_block_64>
+	<_field_block_64 name="rows" max="256">
+		<_field_block_64 name="long properties" max="8192">
+			<_field_string_id name="name^" />
+			<_field_long_integer name="value" />
+		</_field_block_64>
+		<_field_block_64 name="real properties" max="8192">
+			<_field_string_id name="name^" />
+			<_field_real name="value" />
+		</_field_block_64>
+		<_field_block_64 name="string_id properties" max="8192">
+			<_field_string_id name="name^" />
+			<_field_string_id name="value" />
+		</_field_block_64>
+		<_field_block_64 name="component ptr properties" max="8192">
+			<_field_string_id name="name^" />
+			<_field_string_id name="value" />
+			<_field_byte_flags name="flags">
+				<item Name="source is in external system" />
+			</_field_byte_flags>
+			<_field_pad name="pad0" length="3" />
+		</_field_block_64>
+		<_field_block_64 name="tag reference properties" max="8192">
+			<_field_string_id name="name^" />
+			<_field_tag_reference_64 name="value" />
+		</_field_block_64>
+		<_field_block_64 name="string properties" max="8192">
+			<_field_string_id name="name^" />
+			<_field_long_string name="value" />
+		</_field_block_64>
+		<_field_block_64 name="argb color properties" max="8192">
+			<_field_string_id name="name^" />
+			<_field_real_argb_color name="value" />
+		</_field_block_64>
+	</_field_block_64>
+</plugin>

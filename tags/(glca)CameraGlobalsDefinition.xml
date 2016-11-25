@@ -1,0 +1,94 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="camera" max="1">
+		<_field_tag_reference_64 name="default unit camera track" />
+		<_field_explanation name="SANDBOX" />
+		<_field_struct name="pitch to vertical offset" />
+		<_field_data_64 name="data" />
+		<_field_explanation name="CAMERA UNIVERSALS" />
+		<_field_real name="field of view:degrees" />
+		<_field_real name="yaw scale" />
+		<_field_real name="pitch scale" />
+		<_field_real name="forward scale" />
+		<_field_real name="side scale" />
+		<_field_real name="up scale" />
+		<_field_explanation name="DEAD CAMERA" />
+		<_field_real name="minimum distance to player# closest distance camera can get to player" />
+		<_field_real name="transition time:seconds#time it takes for the camera to move from the initial distance to the final distance" />
+		<_field_real name="falling death transition time:seconds#time it takes for the camera to move to its final position during a falling death" />
+		<_field_real name="initial distance:wu#on the first frame after death, this is how far out of the body the camera will be" />
+		<_field_real name="final distance:wu#how far from the body the camera will settle" />
+		<_field_real name="dead cam z offset:wu#how far above the body the camera focuses on" />
+		<_field_real name="dead cam maximum elevation:radians#the highest angle the camera can raise to (prevents it from flipping over the vertical axis)" />
+		<_field_real name="dead cam movement delay:seconds#delay in tracking the killer" />
+		<_field_real name="time_to_auto_switch_to_orbiting:seconds#how long the death camera lasts before auto-switching to orbiting camera" />
+		<_field_real name="ignore_stick_time:seconds#how long the death camera ignores stick inputs and keeps turning towards the killer (should be non-zero because user could have died while running or looking around)" />
+		<_field_real name="ignore_button_time:seconds#how long the death camera ignores shoulder button inputs and keeps turning towards the killer" />
+		<_field_real name="dead camera minimum falling velocity#minimum velocity to switch to fell to death behavior (when biped is not actually falling to death)" />
+		<_field_explanation name="FLYING CAMERA" />
+		<_field_real name="maximum boost speed#the scaling factor for the left stick when the left trigger is fully depressed" />
+		<_field_real name="time to maximum_boost#seconds. while pegging boost, time to reach maximum speed" />
+		<_field_short_enum name="boost function">
+			<item Name="linear" />
+			<item Name="early" />
+			<item Name="very early" />
+			<item Name="late" />
+			<item Name="very late" />
+			<item Name="cosine" />
+			<item Name="one" />
+			<item Name="zero" />
+		</_field_short_enum>
+		<_field_pad name="hoist" length="2" />
+		<_field_real name="zoomed field of view:degrees#field of view when zoomed" />
+		<_field_real name="zoomed look speed#scaling factor for look speed when zoomed" />
+		<_field_real name="bounding sphere radius:wu#radius of sphere for collision" />
+		<_field_real name="flying cam movement delay:seconds#how quickly the camera responds to the user's input" />
+		<_field_real name="zoom transition time:seconds#how long it takes to zoom in or out" />
+		<_field_real name="vertical movement time to max speed" />
+		<_field_short_enum name="vertical movement function">
+			<item Name="linear" />
+			<item Name="early" />
+			<item Name="very early" />
+			<item Name="late" />
+			<item Name="very late" />
+			<item Name="cosine" />
+			<item Name="one" />
+			<item Name="zero" />
+		</_field_short_enum>
+		<_field_pad name="moist" length="2" />
+		<_field_explanation name="ORBITING CAMERA" />
+		<_field_real name="minimum distance:wu" />
+		<_field_real name="maximum distance:wu" />
+		<_field_real name="initial distance on focus:wu#on the first frame after a focus change, this is how far out of the body the camera will be" />
+		<_field_real name="orbit cam movement delay:seconds#how quickly the camera responds to the user's input" />
+		<_field_real name="orbit cam z offset:wu#how far above the object's root node to position the camera's focus point" />
+		<_field_real name="orbit cam minimum elevation:radians#lowest angle the camera can be moved to" />
+		<_field_real name="orbit cam maximum elevation:radians#highest angle the camera can be moved to" />
+		<_field_real name="orbit cam use targets facing direction after :seconds of no player input" />
+		<_field_real name="film specific tuning orbit cam use targets facing direction after :seconds of no player input" />
+		<_field_real name="orbit cam transition to targets facing direction delay" />
+		<_field_explanation name="SAVED FILMS" />
+		<_field_real name="max playback speed#how fast the film plays when the trigger is fully depressed" />
+		<_field_real name="fade out time:seconds#how long it takes for the screen to fade out when rewinding" />
+		<_field_real name="fade in time:seconds#see above" />
+		<_field_explanation name="IN GAME" />
+		<_field_real name="enter vehicle transition time:seconds#how long it takes the camera to move from first to third person when entering a vehicle" />
+		<_field_real name="exit vehicle transition time:seconds#see above" />
+		<_field_explanation name="CAMERA OBSTRUCTION" />
+		<_field_struct name="obstruction" />
+		<_field_real_fraction name="cylinder fraction#controls how far from the focus point the outer raycasts start.  0 == cone, 1 == cylinder" />
+		<_field_angle name="obstruction test angle:degrees#how wide of a cone to test" />
+		<_field_real name="obstruction max inward accel:1.0/s/s#how quickly the camera moves inward when it anticipates a collision" />
+		<_field_real name="obstruction max outward accel:1.0/s/s#how quickly the camera returns to a normal position when its anticipated distance is further than its current" />
+		<_field_real name="obstruction max velocity:1.0/s#maximum speed the camera can move" />
+		<_field_real name="obstruction return delay:s#when the camera wants to start moving back out, wait this long before doing so" />
+	</_field_block_64>
+	<_field_block_64 name="camera impulse" max="1">
+		<_field_data_64 name="data" />
+	</_field_block_64>
+</plugin>

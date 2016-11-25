@@ -1,0 +1,393 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_long_integer name="Version!" />
+	<_field_custom name="GLOBAL QUALITY SETTINGS" />
+	<_field_struct name="Global lightmapper settings" />
+	<_field_long_flags name="Global flags">
+		<item Name="Use high resolution point shadows!" />
+		<item Name="Include Adjacent BSPs" />
+		<item Name="Use 32-bit precision for direct pass!" />
+		<item Name="Enable subsampling indirect acceleration!" />
+		<item Name="Perform Repack!" />
+		<item Name="Is Farm Burn!" />
+		<item Name="Skip Optional Airprobes" />
+		<item Name="Debug Bounce Reflection" />
+		<item Name="Opt out of OPTIX!" />
+	</_field_long_flags>
+	<_field_long_enum name="Mode">
+		<item Name="Direct only" />
+		<item Name="One bounce&amp;Bounce Lighting" />
+	</_field_long_enum>
+	<_field_short_enum name="Lightmap quality">
+		<item Name="Draft" />
+		<item Name="High" />
+	</_field_short_enum>
+	<_field_short_enum name="Indirect quality">
+		<item Name="Low" />
+		<item Name="Medium" />
+		<item Name="High" />
+	</_field_short_enum>
+	<_field_custom name="LOCAL SETTINGS" />
+	<_field_struct name="Local lightmapper settings" />
+	<_field_long_enum name="size class&amp;Analytic Lightmap Size">
+		<item Name="32x32" />
+		<item Name="64x64" />
+		<item Name="128x128" />
+		<item Name="256x256" />
+		<item Name="512x512" />
+		<item Name="768x768" />
+		<item Name="1024x1024" />
+		<item Name="1280x1280" />
+		<item Name="1536x1536" />
+		<item Name="1792x1792" />
+		<item Name="2048x2048" />
+		<item Name="3072x3072" />
+		<item Name="4096x4096" />
+		<item Name="6144x6144" />
+		<item Name="8192x8192" />
+	</_field_long_enum>
+	<_field_long_enum name="static size class&amp;Static Lightmap Size">
+		<item Name="32x32" />
+		<item Name="64x64" />
+		<item Name="128x128" />
+		<item Name="256x256" />
+		<item Name="512x512" />
+		<item Name="768x768" />
+		<item Name="1024x1024" />
+		<item Name="1280x1280" />
+		<item Name="1536x1536" />
+		<item Name="1792x1792" />
+		<item Name="2048x2048" />
+		<item Name="3072x3072" />
+		<item Name="4096x4096" />
+		<item Name="6144x6144" />
+		<item Name="8192x8192" />
+	</_field_long_enum>
+	<_field_long_enum name="supersample factor class&amp;Supersample Factor">
+		<item Name="Disabled" />
+		<item Name="2X" />
+		<item Name="3X" />
+		<item Name="4X" />
+	</_field_long_enum>
+	<_field_long_enum name="optix job size class&amp;Optix Job Size!">
+		<item Name="1024 (Default)" />
+		<item Name="768" />
+		<item Name="512" />
+		<item Name="256" />
+	</_field_long_enum>
+	<_field_long_enum name="adjacent BSP LOD clamp level&amp;Adjacent BSP LOD Clamp">
+		<item Name="No clamping (Default)" />
+		<item Name="Clamp on LOD 1" />
+		<item Name="Clamp on LOD 2" />
+		<item Name="Clamp on LOD 3" />
+	</_field_long_enum>
+	<_field_long_flags name="Local flags">
+		<item Name="Enable floating shadows" />
+		<item Name="Generate AO" />
+		<item Name="Build packing lightmaps (for lighting forge objects)" />
+		<item Name="Attempt to Use Diffuse UVs!" />
+		<item Name="Disable Hybrid Refinement!" />
+		<item Name="Allow Spot Suns!" />
+		<item Name="Probes Ignore Shadow Linking!" />
+		<item Name="Setup for Forge" />
+		<item Name="Enable adjacent BSP bounce lighting" />
+		<item Name="Render Split Lighting As Opaque" />
+	</_field_long_flags>
+	<_field_real name="Skydome amplification factor!" />
+	<_field_real name="Indirect amplification factor" />
+	<_field_real name="Per Vertex AO Auto Threshold!" />
+	<_field_custom name="Per-LOD level light map texel scale settings!" />
+	<_field_struct name="Per-LOD texel scale settings!" />
+	<_field_long_flags name="Flags">
+		<item Name="Enabled" />
+	</_field_long_flags>
+	<_field_real name="Scale LOD 1" />
+	<_field_real name="Scale LOD 2" />
+	<_field_real name="Scale LOD 3" />
+	<_field_real name="Scale LOD 4" />
+	<_field_real name="Scale LOD 5 and above" />
+	<_field_custom name="Ambient occlusion settings!" />
+	<_field_struct name="AO settings!" />
+	<_field_real name="Radius{Offset}" />
+	<_field_real name="Falloff Power" />
+	<_field_real name="Multiplier" />
+	<_field_real name="MaxThreadCount!" />
+	<_field_custom name="Quality Overrides!" />
+	<_field_struct name="Local lightmapper override settings!" />
+	<_field_long_integer name="High Quality Average Jitter Samples" />
+	<_field_long_integer name="Per Vertex Supersample Count" />
+	<_field_long_integer name="Indirect Quality Offset" />
+	<_field_long_enum name="Required Aiprobe Density#Required airprobes are always guaranteed to be in memory">
+		<item Name="human scale (1.5 wu)" />
+		<item Name="vehicle scale (4.0 wu)" />
+		<item Name="space scale (10.0 wu)" />
+	</_field_long_enum>
+	<_field_real name="Airprobe Compression Threshold#Maximum metric distance between two airprobes before they will be combined into one. Increase this to save memory at the expense of detail." />
+	<_field_tag_reference_64 name="Sky Lighting" />
+	<_field_long_enum name="forge lightmap size class">
+		<item Name="32x32" />
+		<item Name="64x64" />
+		<item Name="128x128" />
+		<item Name="256x256" />
+		<item Name="512x512" />
+		<item Name="768x768" />
+		<item Name="1024x1024" />
+		<item Name="1280x1280" />
+		<item Name="1536x1536" />
+		<item Name="1792x1792" />
+		<item Name="2048x2048" />
+		<item Name="3072x3072" />
+		<item Name="4096x4096" />
+		<item Name="6144x6144" />
+		<item Name="8192x8192" />
+	</_field_long_enum>
+	<_field_block_64 name="Adjacent BSPs" max="1024">
+		<_field_string_id name="name" />
+		<_field_string_id name="lighting variant name" />
+	</_field_block_64>
+	<_field_custom name="RUNTIME SETTINGS" />
+	<_field_struct name="Runtime settings" />
+	<_field_struct name="visual environment" />
+	<_field_tag_reference_64 name="Camera Settings" />
+	<_field_tag_reference_64 name="Fog Settings" />
+	<_field_struct name="Custom Object Lighting" />
+	<_field_explanation name="Character Lighting">
+</_field_explanation>
+	<_field_block_64 name="Authored Light Probes" max="4">
+		<_field_block_64 name="Lights*" max="1">
+			<_field_custom name="Authored Light Probe" />
+			<_field_custom name="Direction 1&amp;Direction(D)" />
+			<_field_real name="Direction 1&amp;Direction(D)" />
+			<_field_custom name="Front-Back 1&amp;Front-Back(D)" />
+			<_field_real name="Front-Back 1&amp;Front-Back(D)" />
+			<_field_real_rgb_color name="Direct color 1" />
+			<_field_custom name="Direct intensity 1" />
+			<_field_real name="Direct intensity 1" />
+			<_field_custom name="Direction 2&amp;Direction(D)" />
+			<_field_real name="Direction 2&amp;Direction(D)" />
+			<_field_custom name="Front-Back 2&amp;Front-Back(D)" />
+			<_field_real name="Front-Back 2&amp;Front-Back(D)" />
+			<_field_real_rgb_color name="Direct color 2" />
+			<_field_custom name="Direct intensity 2" />
+			<_field_real name="Direct intensity 2" />
+			<_field_real_rgb_color name="Ambient Color" />
+			<_field_custom name="Ambient intensity" />
+			<_field_real name="Ambient intensity" />
+			<_field_real_rgb_color name="Sun Color" />
+			<_field_custom name="Sun intensity" />
+			<_field_real name="Sun intensity" />
+			<_field_real_rgb_color name="Cubemap Scale Color" />
+			<_field_custom name="Cubemap Scale intensity" />
+			<_field_real name="Cubemap Scale intensity" />
+			<_field_custom name="Authored Light Probe Intensity Scale" />
+			<_field_real name="Authored Light Probe Intensity Scale" />
+			<_field_custom name="Generated Air Probe Intensity Scale" />
+			<_field_real name="Generated Air Probe Intensity Scale" />
+		</_field_block_64>
+		<_field_custom name="Generated Air Probe Intensity Scale!" />
+		<_field_real name="Generated Air Probe Intensity Scale!" />
+		<_field_array name="raw sh data!">
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+		</_field_array>
+		<_field_array name="per frame sh data*!~">
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+			<_field_real name="sh data" />
+		</_field_array>
+		<_field_real_point_3d name="Sun Color!" />
+		<_field_real_point_3d name="Cubemap Scale!" />
+		<_field_word_flags name="Flags">
+			<item Name="Characters" />
+			<item Name="First Person Geometry" />
+			<item Name="Vehicles" />
+		</_field_word_flags>
+		<_field_pad name="fapply" length="2" />
+	</_field_block_64>
+	<_field_char_enum name="Is Camera-space">
+		<item Name="Off" />
+		<item Name="On" />
+	</_field_char_enum>
+	<_field_byte_flags name="Flags">
+		<item Name="Force Always Sun#Will still get dynamic shadows" />
+	</_field_byte_flags>
+	<_field_pad name="pdd" length="2" />
+	<_field_tag_reference_64 name="cubemap override" />
+	<_field_tag_reference_64 name="Cubemap Bitmap DEPRECATED{Cubemap Bitmap}" />
+	<_field_tag_reference_64 name="Custom Fallback Airprobe" />
+	<_field_array name="raw sh data!">
+		<_field_real name="sh data" />
+		<_field_real name="sh data" />
+		<_field_real name="sh data" />
+		<_field_real name="sh data" />
+		<_field_real name="sh data" />
+		<_field_real name="sh data" />
+		<_field_real name="sh data" />
+		<_field_real name="sh data" />
+		<_field_real name="sh data" />
+		<_field_real name="sh data" />
+		<_field_real name="sh data" />
+		<_field_real name="sh data" />
+		<_field_real name="sh data" />
+		<_field_real name="sh data" />
+		<_field_real name="sh data" />
+		<_field_real name="sh data" />
+		<_field_real name="sh data" />
+		<_field_real name="sh data" />
+		<_field_real name="sh data" />
+		<_field_real name="sh data" />
+		<_field_real name="sh data" />
+		<_field_real name="sh data" />
+		<_field_real name="sh data" />
+		<_field_real name="sh data" />
+		<_field_real name="sh data" />
+		<_field_real name="sh data" />
+		<_field_real name="sh data" />
+	</_field_array>
+	<_field_long_flags name="custom fallback airprobe flags!">
+		<item Name="Has Sun" />
+	</_field_long_flags>
+	<_field_custom name="Cubemaps" />
+	<_field_tag_reference_64 name="Cubemap Texture" />
+	<_field_long_flags name="Cubemap Flags">
+		<item Name="Enable Intensity Correction" />
+		<item Name="Capture With Effects" />
+		<item Name="Affects Adjacent Bsps" />
+	</_field_long_flags>
+	<_field_real_point_3d name="Cubemap Sample Position" />
+	<_field_real_point_3d name="Cubemap Intensity" />
+	<_field_real name="Self-illum Scale Down" />
+	<_field_real name="max shadow count scale#scale up or down the max number of shadows as set in the throttle tag per bsp" />
+	<_field_custom name="volumetric light shafts" />
+	<_field_struct name="volumetric light shaft settings" />
+	<_field_byte_flags name="flags">
+		<item Name="enable volumetric light shafts for this BSP" />
+	</_field_byte_flags>
+	<_field_pad name="pad the byte flag" length="3" />
+	<_field_real_vector_3d name="source direction" />
+	<_field_real_rgb_color name="shaft color tint" />
+	<_field_real name="exposure level" />
+	<_field_real name="decay" />
+	<_field_custom name="floating shadows" />
+	<_field_struct name="floating shadow settings" />
+	<_field_byte_integer name="number of cascades" />
+	<_field_char_enum name="quality">
+		<item Name="8 tap" />
+		<item Name="12 tap" />
+		<item Name="6 tap" />
+	</_field_char_enum>
+	<_field_char_enum name="First Person Floating Shadow Mode">
+		<item Name="No Shadow" />
+		<item Name="Apply Everywhere" />
+	</_field_char_enum>
+	<_field_pad name="pad_fsbrxx" length="1" />
+	<_field_real name="cascade length" />
+	<_field_real name="sun direction offset#if we want to slide the frustum up closer to the sun so that not as much of the frustum is below the ground" />
+	<_field_real name="static shadow sharpening" />
+	<_field_real name="min shadow caster pixel radius" />
+	<_field_real_vector_3d name="Rotating Sun Axis" />
+	<_field_string_id name="Rotating Sun Device Machine Driver Name" />
+	<_field_array name="frustums*">
+		<_field_custom name="CASCADE" />
+		<_field_real name="cascade half-width" />
+		<_field_real name="cascade offset" />
+		<_field_real name="bias" />
+		<_field_real name="filter width" />
+		<_field_short_integer name="resolution" />
+		<_field_pad name="pad_eruerybgh" length="2" />
+		<_field_custom name="CASCADE" />
+		<_field_real name="cascade half-width" />
+		<_field_real name="cascade offset" />
+		<_field_real name="bias" />
+		<_field_real name="filter width" />
+		<_field_short_integer name="resolution" />
+		<_field_pad name="pad_eruerybgh" length="2" />
+		<_field_custom name="CASCADE" />
+		<_field_real name="cascade half-width" />
+		<_field_real name="cascade offset" />
+		<_field_real name="bias" />
+		<_field_real name="filter width" />
+		<_field_short_integer name="resolution" />
+		<_field_pad name="pad_eruerybgh" length="2" />
+		<_field_custom name="CASCADE" />
+		<_field_real name="cascade half-width" />
+		<_field_real name="cascade offset" />
+		<_field_real name="bias" />
+		<_field_real name="filter width" />
+		<_field_short_integer name="resolution" />
+		<_field_pad name="pad_eruerybgh" length="2" />
+	</_field_array>
+	<_field_custom name="panning clouds" />
+	<_field_block_64 name="Cloud settings" max="32">
+		<_field_real name="cloud scale#mapping to the world unit" />
+		<_field_real name="cloud speed#cloud movement speed" />
+		<_field_real name="cloud direction#cloud movement direction, 0-360 degree" />
+		<_field_real name="cloud texture offset X#cloud texture offset in the X direction" />
+		<_field_real name="cloud texture offset Y#cloud texture offset in the Y direction" />
+		<_field_real name="cloud texture WS X#cloud texture world-space origin X" />
+		<_field_real name="cloud texture WS Y#cloud texture world-space origin Y" />
+		<_field_real name="cloud texture WS Z#cloud texture world-space origin Z" />
+		<_field_real name="cloud border color#only applies if texture is clamped" />
+		<_field_long_flags name="Flags">
+			<item Name="Use texture clamping" />
+			<item Name="Apply to light map" />
+		</_field_long_flags>
+		<_field_tag_reference_64 name="cloud texture#red channel is used" />
+	</_field_block_64>
+	<_field_real name="Forge indoor lighting intensity" />
+	<_field_pad name="LS_PAD_0" length="4" />
+</plugin>

@@ -1,0 +1,59 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_explanation name="Cheap Lights">These are the cheapest light possible. They are spherical, have a color with an intensity and a radius - and that's it. They should be small: 0.5 or smaller if you can get close to them. That's why they are so cheap.</_field_explanation>
+	<_field_char_enum name="function input">
+		<item Name="time/age" />
+		<item Name="scale A" />
+		<item Name="scale B" />
+	</_field_char_enum>
+	<_field_pad name="clblah" length="3" />
+	<_field_explanation name="COLOR">color and intensity of the light</_field_explanation>
+	<_field_struct name="color" />
+	<_field_string_id name="Input Variable!" />
+	<_field_string_id name="Range Variable!" />
+	<_field_short_enum name="Output Modifier!">
+		<item Name=" " />
+		<item Name="Plus" />
+		<item Name="Times" />
+	</_field_short_enum>
+	<_field_pad name="BVCG" length="2" />
+	<_field_string_id name="Output Modifier Input!" />
+	<_field_struct name="Mapping" />
+	<_field_data_64 name="data" />
+	<_field_struct name="intensity" />
+	<_field_string_id name="Input Variable!" />
+	<_field_string_id name="Range Variable!" />
+	<_field_short_enum name="Output Modifier!">
+		<item Name=" " />
+		<item Name="Plus" />
+		<item Name="Times" />
+	</_field_short_enum>
+	<_field_pad name="BVCG" length="2" />
+	<_field_string_id name="Output Modifier Input!" />
+	<_field_struct name="Mapping" />
+	<_field_data_64 name="data" />
+	<_field_explanation name="SIZE">radius of the spherical light</_field_explanation>
+	<_field_struct name="Falloff End{radius}" />
+	<_field_string_id name="Input Variable!" />
+	<_field_string_id name="Range Variable!" />
+	<_field_short_enum name="Output Modifier!">
+		<item Name=" " />
+		<item Name="Plus" />
+		<item Name="Times" />
+	</_field_short_enum>
+	<_field_pad name="BVCG" length="2" />
+	<_field_string_id name="Output Modifier Input!" />
+	<_field_struct name="Mapping" />
+	<_field_data_64 name="data" />
+	<_field_real name="Falloff Begin Ratio:[0-1]#Ratio of falloff start to falloff end" />
+	<_field_real name="near fade distance{closeup fading distance}:world units" />
+	<_field_real name="far fade begin:world units" />
+	<_field_real name="far fade cutoff:world units" />
+	<_field_real name="diffuse scalar:[0-1]#Controls amount of diffuse lighting" />
+	<_field_real name="specular scalar:[0-1]#Controls amount of specular lighting" />
+</plugin>

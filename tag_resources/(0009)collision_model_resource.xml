@@ -1,0 +1,94 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_block_64 name="bsps" max="2095104">
+		<_field_short_integer name="node index*" />
+		<_field_pad name="KXGCEIEI" length="2" />
+		<_field_struct name="bsp*" />
+		<_field_block_64 name="bsp3d nodes*" max="8388608">
+			<_field_int64_integer name="node data designator!" />
+		</_field_block_64>
+		<_field_block_64 name="bsp3d supernodes*" max="2048">
+			<_field_real name="plane 0*!" />
+			<_field_real name="plane 1*!" />
+			<_field_real name="plane 2*!" />
+			<_field_real name="plane 3*!" />
+			<_field_real name="plane 4*!" />
+			<_field_real name="plane 5*!" />
+			<_field_real name="plane 6*!" />
+			<_field_real name="plane 7*!" />
+			<_field_real name="plane 8*!" />
+			<_field_real name="plane 9*!" />
+			<_field_real name="plane10*!" />
+			<_field_real name="plane11*!" />
+			<_field_real name="plane12*!" />
+			<_field_real name="plane13*!" />
+			<_field_real name="plane14*!" />
+			<_field_long_integer name="plane dimensions*!" />
+			<_field_long_integer name="child index 0*!" />
+			<_field_long_integer name="child index 1*!" />
+			<_field_long_integer name="child index 2*!" />
+			<_field_long_integer name="child index 3*!" />
+			<_field_long_integer name="child index 4*!" />
+			<_field_long_integer name="child index 5*!" />
+			<_field_long_integer name="child index 6*!" />
+			<_field_long_integer name="child index 7*!" />
+			<_field_long_integer name="child index 8*!" />
+			<_field_long_integer name="child index 9*!" />
+			<_field_long_integer name="child index10*!" />
+			<_field_long_integer name="child index11*!" />
+			<_field_long_integer name="child index12*!" />
+			<_field_long_integer name="child index13*!" />
+			<_field_long_integer name="child index14*!" />
+			<_field_long_integer name="child index15*!" />
+		</_field_block_64>
+		<_field_block_64 name="planes*" max="536870911">
+			<_field_real_plane_3d name="plane*" />
+		</_field_block_64>
+		<_field_block_64 name="leaves*" max="8388608">
+			<_field_byte_flags name="flags*">
+				<item Name="contains double-sided surfaces" />
+			</_field_byte_flags>
+			<_field_pad name="pad" length="1" />
+			<_field_word_integer name="bsp2d reference count*" />
+			<_field_dword_integer name="first bsp2d reference*" />
+		</_field_block_64>
+		<_field_block_64 name="bsp2d references*" max="196608">
+			<_field_short_integer name="plane*" />
+			<_field_short_integer name="bsp2d node*" />
+		</_field_block_64>
+		<_field_block_64 name="bsp2d nodes*" max="32767">
+			<_field_real_plane_2d name="plane*" />
+			<_field_short_integer name="left child*" />
+			<_field_short_integer name="right child*" />
+		</_field_block_64>
+		<_field_block_64 name="surfaces*" max="32767">
+			<_field_word_integer name="plane index*" />
+			<_field_word_integer name="first edge*" />
+			<_field_short_integer name="material*" />
+			<_field_byte_flags name="flags*">
+				<item Name="two sided" />
+				<item Name="invisible" />
+				<item Name="climbable" />
+				<item Name="invalid" />
+				<item Name="conveyor" />
+				<item Name="slip" />
+				<item Name="plane negated" />
+			</_field_byte_flags>
+			<_field_byte_integer name="best plane calculation vertex index *!" />
+		</_field_block_64>
+		<_field_block_64 name="edges*" max="65535">
+			<_field_word_integer name="start vertex*" />
+			<_field_word_integer name="end vertex*" />
+			<_field_word_integer name="forward edge*" />
+			<_field_word_integer name="reverse edge*" />
+			<_field_word_integer name="left surface*" />
+			<_field_word_integer name="right surface*" />
+		</_field_block_64>
+		<_field_block_64 name="vertices*" max="131072">
+			<_field_real_point_3d name="point*" />
+			<_field_word_integer name="first edge*" />
+			<_field_short_integer name="sink*!" />
+		</_field_block_64>
+	</_field_block_64>
+</plugin>

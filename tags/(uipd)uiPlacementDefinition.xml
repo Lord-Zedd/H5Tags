@@ -1,0 +1,44 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="static data" />
+	<_field_string_id name="name^" />
+	<_field_tag_reference_64 name="nodegraph stack reference" />
+	<_field_long_flags name="flags">
+		<item Name="instantiate automatically" />
+	</_field_long_flags>
+	<_field_explanation name="Transform settings">Settings for the position of the nodegraph</_field_explanation>
+	<_field_real_point_3d name="translation" />
+	<_field_real_quaternion name="rotation" />
+	<_field_real name="scale" />
+	<_field_real_point_3d name="worldPosition" />
+	<_field_real_quaternion name="worldRotation" />
+	<_field_block_64 name="default2d" max="1">
+		<_field_pad name="pad0" length="1" />
+	</_field_block_64>
+	<_field_block_64 name="objectMarker3d" max="1">
+		<_field_string_id name="object name" />
+		<_field_string_id name="marker name" />
+	</_field_block_64>
+	<_field_block_64 name="structureBSPMarker" max="1">
+		<_field_string name="marker name" />
+	</_field_block_64>
+	<_field_block_64 name="cameraOrientedStructureBSPMarker" max="1">
+		<_field_string name="marker name" />
+	</_field_block_64>
+	<_field_explanation name="Projection settings">Settings for the projection and camera used to see the nodegraph</_field_explanation>
+	<_field_block_64 name="default 2d" max="1">
+		<_field_pad name="pad0" length="1" />
+	</_field_block_64>
+	<_field_block_64 name="playerView" max="1">
+		<_field_pad name="pad0" length="1" />
+	</_field_block_64>
+	<_field_explanation name="Interaction settings">Settings for interacting with the nodegraph</_field_explanation>
+	<_field_block_64 name="Infinity console" max="1">
+		<_field_real name="distance (metres)" />
+	</_field_block_64>
+</plugin>

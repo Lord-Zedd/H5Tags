@@ -1,0 +1,57 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="Baked PVS Volumes" max="128">
+		<_field_string_id name="Name" />
+		<_field_custom name="Volume settings" />
+		<_field_struct name="Volume" />
+		<_field_block_64 name="Points" max="32">
+			<_field_real_point_3d name="position" />
+			<_field_real_euler_angles_2d name="normal" />
+		</_field_block_64>
+		<_field_real name="height" />
+		<_field_real name="sink" />
+		<_field_real_point_3d name="center point!" />
+		<_field_real name="trivial cull radius squared!" />
+		<_field_pad name="gvolpad" length="4" />
+		<_field_short_enum name="Use vertical beam count override">
+			<item Name="No" />
+			<item Name="Yes" />
+		</_field_short_enum>
+		<_field_short_enum name="Use beam height overrides">
+			<item Name="No" />
+			<item Name="Yes" />
+		</_field_short_enum>
+		<_field_short_enum name="Pin the beams to the top of the volume">
+			<item Name="No" />
+			<item Name="Yes" />
+		</_field_short_enum>
+		<_field_short_enum name="Add beams even if there is no collision">
+			<item Name="No" />
+			<item Name="Yes" />
+		</_field_short_enum>
+		<_field_long_integer name="Vertical beam count override" />
+		<_field_real name="Beam 1 height override" />
+		<_field_real name="Beam 2 height override" />
+		<_field_real name="Beam 3 height override" />
+		<_field_real name="Beam 4 and above height override" />
+		<_field_long_integer name="Volume importance override value" />
+		<_field_block_64 name="Editor Metadata!" max="1024">
+			<_field_long_string name="data name" />
+			<_field_long_enum name="data type">
+				<item Name="class" />
+				<item Name="array" />
+				<item Name="string" />
+				<item Name="bool" />
+				<item Name="int" />
+			</_field_long_enum>
+			<_field_long_integer name="parent index" />
+			<_field_long_string name="data value" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_pad name="pad" length="4" />
+</plugin>

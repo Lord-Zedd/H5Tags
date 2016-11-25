@@ -1,0 +1,96 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="sprint" />
+	<_field_struct name="common ability parameters" />
+	<_field_long_flags name="flags">
+		<item Name="Use 3rd Person Camera When Active" />
+		<item Name="Hide Reticle When Active" />
+		<item Name="Is Motion Tracked (By Enemies) When Active" />
+		<item Name="One-Shot Activation Effect#Effect kills itself rather than being explicitly killed when the ability deactivates" />
+		<item Name="Can be activated when weapon state is relaxed" />
+		<item Name="Does Not Appear In Extended Motion Tracker Range" />
+	</_field_long_flags>
+	<_field_real_fraction name="activation energy cost#amount of energy required to activate the ability" />
+	<_field_real name="active energy consumption:energy/second#amount of energy consumed continuously while the ability is active" />
+	<_field_tag_reference_64 name="activation effect#effects triggered when player activates ability" />
+	<_field_long_flags name="flags{shoulder bash flags}">
+		<item Name="allow build up whilst airborne" />
+		<item Name="enable stopping power" />
+		<item Name="enable stopping power in campaign" />
+		<item Name="pause damage section recharge#when sprinting prevents the damage section recharging (N.B. not the same as the stun timer)" />
+		<item Name="zero sprint fraction when engaging combat actions#firing, throwing grenades, etc." />
+	</_field_long_flags>
+	<_field_long_enum name="stun timer control">
+		<item Name="Normal" />
+		<item Name="Suspend" />
+		<item Name="Reset" />
+	</_field_long_enum>
+	<_field_real name="evade delay time#how long after evading before the sprint fraction starts building up again" />
+	<_field_real name="seconds to full speed#how long to reach top speed" />
+	<_field_custom name="time to full speed:seconds#how long to reach top speed" />
+	<_field_struct name="time to full speed:seconds#how long to reach top speed" />
+	<_field_real name="Base Value" />
+	<_field_real_bounds name="Value Bounds" />
+	<_field_char_enum name="Combiner">
+		<item Name="sequential#applies the percentages one after another on the base" />
+		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+		<item Name="addition#adds on all of the modifiers to the base" />
+		<item Name="product#multiplies the values one after another on to the base" />
+	</_field_char_enum>
+	<_field_pad name="padEnd" length="3" />
+	<_field_real name="falloff time:seconds#amount of time it takes for effects of sprint (speed, look speed, and strafe scale) to wear off after exiting sprint" />
+	<_field_explanation name="speed ramp up function">Determines how speed multiplier increases from sprint initiation (0 on x axis) to full speed (1 on x axis). Y axis is percentage of full speed multiplier applied.</_field_explanation>
+	<_field_struct name="speed ramp up function" />
+	<_field_data_64 name="data" />
+	<_field_real name="full speed multiplier#how much faster we actually go when at full sprint" />
+	<_field_custom name="full speed scalar#how much faster we actually go when at full sprint" />
+	<_field_struct name="full speed scalar#how much faster we actually go when at full sprint" />
+	<_field_real name="Base Value" />
+	<_field_real_bounds name="Value Bounds" />
+	<_field_char_enum name="Combiner">
+		<item Name="sequential#applies the percentages one after another on the base" />
+		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+		<item Name="addition#adds on all of the modifiers to the base" />
+		<item Name="product#multiplies the values one after another on to the base" />
+	</_field_char_enum>
+	<_field_pad name="padEnd" length="3" />
+	<_field_explanation name="look velocity scale function">Determines how look velocity scale (both yaw and pitch) moves from 1.0 to full sprint scale as sprint is ramping up to full speed.</_field_explanation>
+	<_field_struct name="look velocity scale function" />
+	<_field_data_64 name="data" />
+	<_field_real name="yaw velocity scale at full sprint#scale applied to yaw velocity when sprinting at full speed" />
+	<_field_real name="pitch velocity scale at full sprint#scale applied to pitch velocity when sprinting at full speed" />
+	<_field_explanation name="max strafe throttle magnitude function">Determines how maximum strafe throttle magnitude moves from 1.0 to full sprint cap as sprint is ramping up to full speed.</_field_explanation>
+	<_field_struct name="max strafe throttle magnitude function" />
+	<_field_data_64 name="data" />
+	<_field_real name="max strafe throttle magnitude at full sprint#cap applied to strafe throttle magnitude at full sprint" />
+	<_field_real name="pegged magnitude#how far the stick needs to be pressed before being considered pegged" />
+	<_field_real name="pegged magnitude (legacy presets)#in legacy you don't get left/right throttle inputs only forward/back (default = 0.3)" />
+	<_field_angle name="pegged angular threshold#how far off straight up we consider pegged" />
+	<_field_angle name="max angle between facing and velocity:degrees#if facing deviates from velocity by more than this threshold, player is kicked out of sprint" />
+	<_field_real name="minimum player velocity to be considered in a sprinting state:world units per second" />
+	<_field_string_id name="animation stance" />
+	<_field_explanation name="stopping power">Determines how damage corresponds to sprint fraction reduction - takes a normalized damage (think percentage of shield) as the input and maps to the amount of speed fraction that should be removed.</_field_explanation>
+	<_field_struct name="damage to sprint fraction reduction" />
+	<_field_data_64 name="data" />
+	<_field_explanation name="damage recharge delay timer">There are some networking implications to this value such that we don't really want it to be too small. It currently relies on the damage state being send across from the authority and if this time value is too small it might be possible to miss out on some updates. Would suggest avoid going any lower than 1.5 for now.</_field_explanation>
+	<_field_real name="damage recharge delay timer#how long after taking damage before you can start to build up sprint" />
+	<_field_real_fraction name="damage reduction ignore threshold#only reduce sprint fraction from damage if the sprint fraction is &lt;= this" />
+	<_field_real_fraction name="damage reduction minimum#don't reduce the sprint fraction below this" />
+	<_field_custom name="exit animation speed scalar#scales the Spartan's sprint exit animation playback speed" />
+	<_field_struct name="exit animation speed scalar#scales the Spartan's sprint exit animation playback speed" />
+	<_field_real name="Base Value" />
+	<_field_real_bounds name="Value Bounds" />
+	<_field_char_enum name="Combiner">
+		<item Name="sequential#applies the percentages one after another on the base" />
+		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+		<item Name="addition#adds on all of the modifiers to the base" />
+		<item Name="product#multiplies the values one after another on to the base" />
+	</_field_char_enum>
+	<_field_pad name="padEnd" length="3" />
+	<_field_pad name="pad" length="4" />
+</plugin>

@@ -1,0 +1,161 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="Lightmap Priority Volumes" max="16384">
+		<_field_string_id name="Name" />
+		<_field_custom name="Volume settings" />
+		<_field_struct name="Volume" />
+		<_field_block_64 name="Points" max="32">
+			<_field_real_point_3d name="position" />
+			<_field_real_euler_angles_2d name="normal" />
+		</_field_block_64>
+		<_field_real name="height" />
+		<_field_real name="sink" />
+		<_field_real_point_3d name="center point!" />
+		<_field_real name="trivial cull radius squared!" />
+		<_field_pad name="gvolpad" length="4" />
+		<_field_real name="Volume Priority" />
+		<_field_real name="Lightmap Priority" />
+		<_field_short_enum name="Exclude Shadow Geometry">
+			<item Name="No" />
+			<item Name="Yes" />
+		</_field_short_enum>
+		<_field_short_enum name="Exclude Per Pixel Lighting">
+			<item Name="No" />
+			<item Name="Yes" />
+		</_field_short_enum>
+		<_field_short_enum name="Exclude Analytic Sun Contribution">
+			<item Name="No" />
+			<item Name="Yes" />
+		</_field_short_enum>
+		<_field_short_enum name="Exclude Analytic Light Contribution">
+			<item Name="No" />
+			<item Name="Yes" />
+		</_field_short_enum>
+		<_field_block_64 name="Editor Metadata!" max="1024">
+			<_field_long_string name="data name" />
+			<_field_long_enum name="data type">
+				<item Name="class" />
+				<item Name="array" />
+				<item Name="string" />
+				<item Name="bool" />
+				<item Name="int" />
+			</_field_long_enum>
+			<_field_long_integer name="parent index" />
+			<_field_long_string name="data value" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="Air Probe Density Volumes" max="16384">
+		<_field_string_id name="Name" />
+		<_field_custom name="Volume settings" />
+		<_field_struct name="Volume" />
+		<_field_block_64 name="Points" max="32">
+			<_field_real_point_3d name="position" />
+			<_field_real_euler_angles_2d name="normal" />
+		</_field_block_64>
+		<_field_real name="height" />
+		<_field_real name="sink" />
+		<_field_real_point_3d name="center point!" />
+		<_field_real name="trivial cull radius squared!" />
+		<_field_pad name="gvolpad" length="4" />
+		<_field_real name="Air Probe Density" />
+		<_field_block_64 name="Editor Metadata!" max="1024">
+			<_field_long_string name="data name" />
+			<_field_long_enum name="data type">
+				<item Name="class" />
+				<item Name="array" />
+				<item Name="string" />
+				<item Name="bool" />
+				<item Name="int" />
+			</_field_long_enum>
+			<_field_long_integer name="parent index" />
+			<_field_long_string name="data value" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="Air Probe Region Volumes" max="4">
+		<_field_string_id name="Name" />
+		<_field_custom name="Volume settings" />
+		<_field_struct name="Volume" />
+		<_field_block_64 name="Points" max="32">
+			<_field_real_point_3d name="position" />
+			<_field_real_euler_angles_2d name="normal" />
+		</_field_block_64>
+		<_field_real name="height" />
+		<_field_real name="sink" />
+		<_field_real_point_3d name="center point!" />
+		<_field_real name="trivial cull radius squared!" />
+		<_field_pad name="gvolpad" length="4" />
+		<_field_block_64 name="Editor Metadata!" max="1024">
+			<_field_long_string name="data name" />
+			<_field_long_enum name="data type">
+				<item Name="class" />
+				<item Name="array" />
+				<item Name="string" />
+				<item Name="bool" />
+				<item Name="int" />
+			</_field_long_enum>
+			<_field_long_integer name="parent index" />
+			<_field_long_string name="data value" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="Cubemap Volumes" max="64">
+		<_field_string_id name="Name" />
+		<_field_long_flags name="Flags">
+			<item Name="Enable Intensity Correction" />
+			<item Name="Capture With Effects" />
+			<item Name="Affects Adjacent Bsps" />
+		</_field_long_flags>
+		<_field_struct name="Dumpling" />
+		<_field_block_64 name="inner points" max="32">
+			<_field_real_point_3d name="position" />
+			<_field_real_euler_angles_2d name="normal" />
+		</_field_block_64>
+		<_field_block_64 name="outer points" max="32">
+			<_field_real_point_3d name="position" />
+			<_field_real_euler_angles_2d name="normal" />
+		</_field_block_64>
+		<_field_real name="height" />
+		<_field_real name="sink" />
+		<_field_real name="inner value" />
+		<_field_real name="outer value" />
+		<_field_real_point_3d name="center point!" />
+		<_field_real name="trivial cull radius squared!" />
+		<_field_real name="bound volume" />
+		<_field_tag_reference_64 name="Cubemap Bitmap" />
+		<_field_short_enum name="Enable Parallax Correction">
+			<item Name="Off" />
+			<item Name="On" />
+		</_field_short_enum>
+		<_field_short_integer name="Cubemap Volume Priority" />
+		<_field_real_point_3d name="Cubemap Origin" />
+		<_field_real_vector_3d name="Depth Positive" />
+		<_field_real_vector_3d name="Depth Negative{Depth Negative Z}" />
+		<_field_short_enum name="Active Volume">
+			<item Name="Off" />
+			<item Name="On" />
+		</_field_short_enum>
+		<_field_short_enum name="Maximum cubemap size">
+			<item Name="128x128" />
+			<item Name="256x256" />
+			<item Name="512x512" />
+		</_field_short_enum>
+		<_field_real_point_3d name="Intensity" />
+		<_field_real name="Self-illum Scale Down" />
+		<_field_block_64 name="Editor Metadata!" max="1024">
+			<_field_long_string name="data name" />
+			<_field_long_enum name="data type">
+				<item Name="class" />
+				<item Name="array" />
+				<item Name="string" />
+				<item Name="bool" />
+				<item Name="int" />
+			</_field_long_enum>
+			<_field_long_integer name="parent index" />
+			<_field_long_string name="data value" />
+		</_field_block_64>
+	</_field_block_64>
+</plugin>

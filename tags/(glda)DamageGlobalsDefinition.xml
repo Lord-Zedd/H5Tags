@@ -1,0 +1,89 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="damage table" max="2">
+		<_field_block_64 name="damage groups" max="512">
+			<_field_string_id name="name^" />
+			<_field_block_64 name="armor modifiers" max="512">
+				<_field_string_id name="name^" />
+				<_field_real name="damage multiplier" />
+			</_field_block_64>
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="damage{falling damage}" max="1">
+		<_field_explanation name="Guardians Damage Source">Damage source used for damage caused by the &quot;guardians&quot;. This includes instant kills performed without the use of a damage effect as well as any damage caused by an unknown damage source.</_field_explanation>
+		<_field_struct name="guardiansDamageSource" />
+		<_field_string_id name="Damage Source Name" />
+		<_field_explanation name="Unknown Damage Type">Damage type for damage caused without the use of a damage effect.</_field_explanation>
+		<_field_struct name="unknownDamageType" />
+		<_field_string_id name="Damage Type Name" />
+		<_field_explanation name="Generic Collision Damage Source">Damage source used for collision damage against static geo or when the instigating object has no custom collision damage source.</_field_explanation>
+		<_field_struct name="genericCollisionDamageSource" />
+		<_field_string_id name="Damage Source Name" />
+		<_field_explanation name="Scripting Damage Source">Damage source used for generic damage applied directly through scripting.</_field_explanation>
+		<_field_struct name="scriptingDamageSource" />
+		<_field_string_id name="Damage Source Name" />
+		<_field_tag_reference_64 name="Instant kill damage#damage effect used when instantly killing an object" />
+		<_field_tag_reference_64 name="falling damage" />
+		<_field_tag_reference_64 name="jumping damage" />
+		<_field_tag_reference_64 name="soft landing damage" />
+		<_field_tag_reference_64 name="hard landing damage" />
+		<_field_tag_reference_64 name="hs damage" />
+		<_field_explanation name="Fire Damage Source">Damage source used for damage applied through DamageObjectWithFire script function.</_field_explanation>
+		<_field_struct name="scriptingFireDamageSource" />
+		<_field_string_id name="Damage Source Name" />
+		<_field_tag_reference_64 name="hs fire damage" />
+		<_field_explanation name="Terminal Velocity Damage Source">Damage source used for terminal velocity damage.</_field_explanation>
+		<_field_struct name="terminalVelocityDamageSource" />
+		<_field_string_id name="Damage Source Name" />
+		<_field_real name="terminal velocity:wu/s#you die if you fall faster than this (non-multiplayer only)" />
+		<_field_tag_reference_64 name="terminal velocity damage{distance damage}" />
+		<_field_tag_reference_64 name="default damage response{damage response}#fall back if none is specified in damage effect tags" />
+		<_field_tag_reference_64 name="friendly fire damage response#anytime your teammate shoots you" />
+		<_field_real name="player shield spillover#the minimum amount of shield vitality needed to prevent spillover from damage types that do not spillover." />
+		<_field_custom name="damage decay" />
+		<_field_struct name="damage decay props*!" />
+		<_field_real name="current damage decay delay:seconds#current damage begins to fall after a time delay has passed since last the damage (MAX 4.1, because timer is stored in a char so 127 ticks maximum)" />
+		<_field_real name="current damage decay time:seconds#amount of time it would take for 100% current damage to decay to 0" />
+		<_field_real name="current damage decay rate:damage/second#amount of damage that decays from our current damage every second" />
+		<_field_real name="recent damage decay delay:seconds#recent damage begins to fall after a time delay has passed since last the damage (MAX 4.1, because timer is stored in a char so 127 ticks maximum)" />
+		<_field_real name="recent damage decay time:seconds#amount of time it would take for 100% recent damage to decay to 0" />
+		<_field_custom name="AI damage decay" />
+		<_field_struct name="ai damage decay props*!" />
+		<_field_real name="current damage decay delay:seconds#current damage begins to fall after a time delay has passed since last the damage (MAX 4.1, because timer is stored in a char so 127 ticks maximum)" />
+		<_field_real name="current damage decay time:seconds#amount of time it would take for 100% current damage to decay to 0" />
+		<_field_real name="current damage decay rate:damage/second#amount of damage that decays from our current damage every second" />
+		<_field_real name="recent damage decay delay:seconds#recent damage begins to fall after a time delay has passed since last the damage (MAX 4.1, because timer is stored in a char so 127 ticks maximum)" />
+		<_field_real name="recent damage decay time:seconds#amount of time it would take for 100% recent damage to decay to 0" />
+		<_field_custom name="shield impact decay" />
+		<_field_struct name="shield impact decay props" />
+		<_field_real name="current damage decay delay:seconds#current damage begins to fall after a time delay has passed since last the damage (MAX 4.1, because timer is stored in a char so 127 ticks maximum)" />
+		<_field_real name="current damage decay time:seconds#amount of time it would take for 100% current damage to decay to 0" />
+		<_field_real name="current damage decay rate:damage/second#amount of damage that decays from our current damage every second" />
+		<_field_real name="recent damage decay delay:seconds#recent damage begins to fall after a time delay has passed since last the damage (MAX 4.1, because timer is stored in a char so 127 ticks maximum)" />
+		<_field_real name="recent damage decay time:seconds#amount of time it would take for 100% recent damage to decay to 0" />
+		<_field_custom name="player damage additive sounds" />
+		<_field_tag_reference_64 name="deprecated player dealt damage additive sound{player dealt damage additive sound}*!#sound played when a local player deals damage to another player or an AI" />
+		<_field_tag_reference_64 name="deprecated player dealt AOE damage additive sound{player dealt AOE damage additive sound}*!#sound played when a local player deals AoE damage to another player or an AI" />
+		<_field_tag_reference_64 name="deprecated player dealt friendly fire additive sound{player dealt friendly fire additive sound}*!#sound played when a local player deals friendly fire to another player or an AI" />
+		<_field_struct name="player additive sound deal damage" />
+		<_field_tag_reference_64 name="player additive sound deal damage regular#sound played when a local player deals damage to another player or an AI" />
+		<_field_tag_reference_64 name="player additive sound deal damage aoe#sound played when a local player deals AoE damage to another player or an AI" />
+		<_field_tag_reference_64 name="player additive sound deal damage friendly fire#sound played when a local player deals friendly fire to another player or an AI" />
+		<_field_tag_reference_64 name="player additive sound deal damage weak spot" />
+		<_field_tag_reference_64 name="player additive sound deal damage headshot" />
+		<_field_tag_reference_64 name="player additive sound deal damage kill" />
+		<_field_tag_reference_64 name="player additive sound deal damage headshot kill" />
+		<_field_tag_reference_64 name="player received damage additive sound (default)#sound played when a local player receives damage and is in normal first-person view" />
+		<_field_tag_reference_64 name="player received damage additive sound (third person)#sound played when a local player receives damage and is in third-person view" />
+		<_field_tag_reference_64 name="player received damage additive sound (in vehicle)#sound played when the vehicle that a local player is riding in receives damage" />
+		<_field_tag_reference_64 name="player received AOE damage additive sound (default)#sound played when a local player receives AOE damage and is in normal first-person view" />
+		<_field_tag_reference_64 name="player received AOE damage additive sound (third person)#sound played when a local player receives AOE damage and is in third-person view" />
+		<_field_tag_reference_64 name="player received AOE damage additive sound (in vehicle)#sound played when the vehicle that a local player is riding in receives AOE damage" />
+		<_field_tag_reference_64 name="player died from AOE damage sound" />
+	</_field_block_64>
+</plugin>

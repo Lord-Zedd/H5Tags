@@ -1,0 +1,20 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="entries" max="32">
+		<_field_struct name="filter" />
+		<_field_long_integer name="minimum player count" />
+		<_field_struct name="profile" />
+		<_field_long_integer name="maximum havok proxy count" />
+		<_field_long_integer name="maximum impact count" />
+		<_field_long_integer name="vehicle suspension update frequency" />
+		<_field_long_integer name="Actor LOD, AI actors to update fully each frame" />
+		<_field_long_integer name="Actor LOD, Number of frames to tick LODed AI" />
+		<_field_long_integer name="Actor LOD, Number of concurrent LOD actors to tick" />
+	</_field_block_64>
+	<_field_pad name="pad_tp" length="4" />
+</plugin>

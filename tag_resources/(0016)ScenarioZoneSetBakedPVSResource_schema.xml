@@ -1,0 +1,26 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_block_64 name="BSP index map" max="65535">
+		<_field_long_integer name="Value" />
+	</_field_block_64>
+	<_field_block_64 name="Per BSP data" max="32">
+		<_field_block_64 name="Subregion array" max="65535">
+			<_field_block_64 name="Visibility array" max="65535">
+				<_field_dword_integer name="Value" />
+			</_field_block_64>
+			<_field_word_integer name="sx" />
+			<_field_word_integer name="sy" />
+			<_field_real name="z min" />
+			<_field_real name="z max" />
+		</_field_block_64>
+		<_field_real_point_3d name="AABB min" />
+		<_field_real_point_3d name="AABB max" />
+		<_field_real_vector_3d name="Block Size" />
+		<_field_long_integer name="Instance count" />
+		<_field_long_integer name="Block count X" />
+		<_field_long_integer name="Block count Y" />
+		<_field_long_integer name="BSP index" />
+		<_field_int64_integer name="Instance Postprocess Checksum!" />
+	</_field_block_64>
+</plugin>

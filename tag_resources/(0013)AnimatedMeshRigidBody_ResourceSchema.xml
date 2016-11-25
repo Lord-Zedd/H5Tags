@@ -1,0 +1,54 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="Runtime*!~" />
+	<_field_block_64 name="Render stats per frame" max="3000">
+		<_field_block_64 name="Render stats per frame per material" max="32">
+			<_field_dword_integer name="Index buffer start index" />
+			<_field_dword_integer name="Index buffer indices count" />
+			<_field_dword_integer name="Vertex buffer start index" />
+			<_field_dword_integer name="Vertex buffer vertices count" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="Bounds per frame" max="3000">
+		<_field_real_point_3d name="Position AABB min" />
+		<_field_real_point_3d name="Position AABB extents" />
+	</_field_block_64>
+	<_field_block_64 name="Referenced parts per material" max="32">
+		<_field_block_64 name="Referenced part indices" max="8192">
+			<_field_word_integer name="word*" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="Part transforms per frame" max="3000">
+		<_field_block_64 name="Part transform" max="32768">
+			<_field_array name="Compressed quantized rigid transform">
+				<_field_dword_integer name="Compressed quantized rigid transform channel*!" />
+				<_field_dword_integer name="Compressed quantized rigid transform channel*!" />
+				<_field_dword_integer name="Compressed quantized rigid transform channel*!" />
+			</_field_array>
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="Compound index buffer" max="2621400">
+		<_field_dword_integer name="dword*" />
+	</_field_block_64>
+	<_field_block_64 name="Compound vertex buffer" max="1048560">
+		<_field_real_point_3d name="position" />
+		<_field_real name="texcoord" />
+		<_field_dword_integer name="normal" />
+		<_field_dword_integer name="tangent" />
+		<_field_dword_integer name="part index" />
+	</_field_block_64>
+	<_field_block_64 name="Transform vertex buffer" max="1048560">
+		<_field_real_point_3d name="position" />
+		<_field_dword_integer name="half texcoord" />
+		<_field_dword_integer name="compressed normal" />
+		<_field_dword_integer name="compressed tangent" />
+		<_field_dword_integer name="compressed color" />
+	</_field_block_64>
+	<_field_word_integer name="Material count" />
+	<_field_char_enum name="Animation transform type">
+		<item Name="Per Part" />
+		<item Name="Per Vertex" />
+	</_field_char_enum>
+	<_field_pad name="pad0" length="1" />
+</plugin>

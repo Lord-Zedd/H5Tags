@@ -1,0 +1,99 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_long_flags name="flags">
+		<item Name="never obstruct#disable occlusion/obstruction for this sound" />
+		<item Name="use huge sound transmission" />
+		<item Name="link count to owner unit" />
+		<item Name="don't use lipsync data" />
+		<item Name="instant sound propagation" />
+		<item Name="optional player sound event!*" />
+		<item Name="fallback sound event!*" />
+		<item Name="has lipsync data" />
+		<item Name="is deterministic" />
+		<item Name="is external source" />
+		<item Name="override external source event" />
+		<item Name="use don't play time!" />
+		<item Name="delay start if sound bank not loaded" />
+		<item Name="use fallback only for DVD" />
+		<item Name="has subtitle!*" />
+		<item Name="ignore node transform#use this if you're getting wacky spatialization (such as scorpion cannon)" />
+		<item Name="radio combo voice" />
+		<item Name="cinematic allow tails to play out" />
+		<item Name="negate radius-based focus#Use the opposite of the decision for whether to apply focus feature based on whether the sound is 2D or 3D" />
+	</_field_long_flags>
+	<_field_string_id name="SFX Event Name#Sound event name." />
+	<_field_string_id name="SFX Player Event Name#Optional sound event name for player only." />
+	<_field_string_id name="SFX Fallback Event Name#Fallback sound event if the others don't play - should be in a guaranteed bank." />
+	<_field_string_id name="SFX Player Fallback Event Name#Fallback player-only sound event if the others don't play - should be in a guaranteed bank." />
+	<_field_real name="Max Radius" />
+	<_field_real name="Max Duration#Max duration of this event. Enter manually for now - will auto-fill later." />
+	<_field_real name="Don't play time.#Time the event will not retrigger for (global)" />
+	<_field_tag_reference_64 name="Sound bank#Reference to the sound bank tag this event is in. Can be empty." />
+	<_field_tag_reference_64 name="Player sound bank#Will only load if there is a player event set above. Reference to the player sound bank tag this event is in. Can be empty." />
+	<_field_block_64 name="VO Event Info" max="32">
+		<_field_string_id name="Event Name*" />
+		<_field_string_id name="Subtitle Name*" />
+		<_field_real name="Event duration*" />
+		<_field_real name="Event max radius" />
+		<_field_block_64 name="Narrative Reference" max="1">
+			<_field_string name="Character name*" />
+			<_field_long_string name="Dialogue*" />
+			<_field_string name="WWise effect*" />
+			<_field_string name="Narrative Wwise Effect Recommendation" />
+			<_field_long_enum name="Wwise 2D/3D*">
+				<item Name="2D" />
+				<item Name="3D" />
+				<item Name="Combo" />
+			</_field_long_enum>
+			<_field_long_enum name="Narrative 2D/3D Recommendation">
+				<item Name="2D" />
+				<item Name="3D" />
+				<item Name="Combo" />
+			</_field_long_enum>
+			<_field_real name="WWise Attenuation*" />
+		</_field_block_64>
+		<_field_block_64 name="AI Dialogue Info" max="1">
+			<_field_long_flags name="flags">
+				<item Name="Campaign Only" />
+				<item Name="Exclude from certain missions" />
+				<item Name="Exclude from M10" />
+				<item Name="Exclude from M20" />
+				<item Name="Exclude from M30" />
+				<item Name="Exclude from M40" />
+				<item Name="Exclude from M60" />
+				<item Name="Exclude from M70" />
+				<item Name="Exclude from M80" />
+				<item Name="Exclude from M90" />
+			</_field_long_flags>
+			<_field_real name="skip fraction#Percent this file will be skipped when picked. 0 is always, 0.99 is almost never" />
+		</_field_block_64>
+		<_field_block_64 name="facial animation resource languages" max="17">
+			<_field_pageable_resource_64 name="facial animation resource" />
+			<_field_long_enum name="language">
+				<item Name="english" />
+				<item Name="japanese" />
+				<item Name="german" />
+				<item Name="french" />
+				<item Name="spanish" />
+				<item Name="mexican spanish" />
+				<item Name="italian" />
+				<item Name="korean" />
+				<item Name="chinese-traditional" />
+				<item Name="chinese-simplified" />
+				<item Name="portuguese" />
+				<item Name="polish" />
+				<item Name="russian" />
+				<item Name="danish" />
+				<item Name="finnish" />
+				<item Name="dutch" />
+				<item Name="norwegian" />
+			</_field_long_enum>
+		</_field_block_64>
+	</_field_block_64>
+	<_field_long_integer name="deterministic flag index" />
+</plugin>

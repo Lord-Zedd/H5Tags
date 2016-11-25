@@ -1,0 +1,230 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_explanation name="default bitmaps:">0:  ............... default 2D texture (white)
+1:  ............... default normal map (no bump)
+2:  ............... default cube map (error pattern)
+3:  ............... color bars
+4:  ............... black 2D texture
+5:  ............... transparent black 2D texture
+6:  ............... gray 2D texture
+7:  ............... auto exposure weight
+8:  ............... auto exposure weight (4x3)
+9:  ............... stencil dither pattern
+10: ............... smooth noise warp
+11: ............... ripple pattern
+12: ............... rain ripple
+13: ............... unsigned noise
+14: ............... MLAA area map
+15: ............... red 2D texture
+16: ............... green 2D texture
+17: ............... blue 2D texture
+18: ............... cyan 2D texture
+19: ............... dxt5 atlas texture
+20: ............... dxn atlas texture
+21: ............... foam texture
+22: ............... extra pc colorgrade for xbone compat
+</_field_explanation>
+	<_field_block_64 name="default bitmaps" max="32">
+		<_field_long_flags name="options">
+			<item Name="don't load bitmap by default" />
+		</_field_long_flags>
+		<_field_tag_reference_64 name="default bitmaps" />
+	</_field_block_64>
+	<_field_explanation name="material textures:">0: ............... lightmap falloff sharpening
+6: ............... Approximate specular curve
+</_field_explanation>
+	<_field_block_64 name="material textures" max="16">
+		<_field_tag_reference_64 name="material textures" />
+	</_field_block_64>
+	<_field_explanation name="explicit shaders:">0: ............... debug
+1: ............... debug2d
+2: ............... copy w/ scale
+8: ............... debug_mesh
+11: .............. bloom: kernel blur (11 horizontal)
+12: .............. bloom: kernel blur (11 vertical)
+13: .............. cubemap: blur (phi)
+14: .............. cubemap: blur (theta)
+15: .............. cubemap: clamp
+16: .............. cubemap: divide
+17: .............. write depth
+18: .............. final composite
+20: .............. transparent
+22: .............. postprocess hologram
+23: .............. arbitrary gaussian blur
+24: .............. hologram composite
+25: .............. geo fog
+26: .............. particle update
+29: .............. downsample 2x2
+30: .............. rotate 2d
+33: .............. final composite (with DOF)
+34: .............. convolve 5-tap kernel
+36: .............. yuv to rgb
+37: .............. displacement
+39: .............. downsample 4x4 block
+40: .............. depth of field downsample
+45: .............. stencil 4x4 dither pattern
+46: .............. lens flare render
+49: .............. bloom: NEW downsample 4x4 gaussian
+51: .............. copy
+52: .............. shadow geometry
+54: .............. gradient
+55: .............. alpha test
+56: .............. patchy fog
+57: .............. light volume
+58: .............. water ripple
+59: .............. double gradient
+60: .............. sniper scope
+61: .............. shield impact
+63: .............. bloom merge layers
+64: .............. final composite dirt
+67: .............. final composite dof dirt
+69: .............. copy to correct colorspace
+76: .............. shadow apply point
+78: .............. shadow apply fancy
+79: .............. shadow apply faster
+80: .............. bokeh blur
+84: .............. shadow apply variance
+87: .............. shadow apply variance no normal test
+88: .............. Exposure Generate
+91: .............. bloom wide Gaussian blur
+94: .............. Instance Group Cull
+99: .............. aim down sights downsample
+100: ............. final composite aim down sights
+101: ............. downsample depth
+111: ............. animated mesh transformations extensions
+112: ............. animated mesh transformations
+113: ............. wpf common
+114: ............. wpf 3d
+115: ............. wpf common SustainFeb
+116: ............. wpf 3d SustainFeb
+121: ............. deferred reflections
+128: ............. screen space atmosphere fog
+129: ............. debug portals
+132: ............. cui copy
+133: ............. cui change channel
+134: ............. cui linear gradient
+135: ............. cui directional blur
+136: ............. cui overlay mask
+137: ............. cheap particles
+141: ............. cui emblem
+142: ............. planar fog
+146: ............. single pass apply
+147: ............. single pass apply debug
+155: ............. cui debug
+156: ............. rigid world geometry
+157: ............. effects debug wireframe
+158: ............. effects debug heatmap
+159: ............. downsample 2x2 block bloom
+162: ............. poisson shadow
+165: ............. ResolveAndLinearizeDepthMSAA
+166: ............. DownsampleDepth
+167: ............. HBAO_CS
+169: ............. BlurX_CS
+170: ............. BlurY_CS
+171: ............. Blur_Composite
+172: ............. FUI Textured Quads
+173: ............. FUI Text Quads
+174: ............. FUI Radial Textured Quads
+175: ............. FUI Meter Two Tone
+176: ............. FUI Two Tone Gradient
+177: ............. FUI Linear Gradient
+178: ............. FUI Hud Geometry
+179: ............. FUI Array Textured Quads
+180: ............. FUI Chromatic Aberration
+181: ............. midgraph poisson shadow 8
+182: ............. midgraph poisson shadow 6
+183: ............. blend gobo
+184: ............. FUI RGB Offset
+188: ............. forge lightmap render sun structure
+189: ............. forge lightmap render sun
+190: ............. forge shadow render
+191: ............. forge lightmap render
+192: ............. forge lightmap decorators
+193: ............. forge lightmap block compress
+194: ............. forge lightmap error
+195: ............. exponential shadow generate
+198: ............. forge lightmap postprocess
+199: ............. cui gamma correct copy
+200: ............. cui gamma correct overlay mask
+204: ............. ausar forge colored geometry
+205: ............. ausar forge line circle
+206: ............. tracer update
+207: ............. polyart render
+208: ............. gamma correct double draw text
+209: ............. volumetric light shafts
+210: ............. Cui: Gamma correct text
+211: ............. FXAA (CS)
+212: ............. FXAA
+213: ............. Hud Meter
+214: ............. Quadrant Gradient
+215: ............. Blend: Overlay
+216: ............. Filter: DropShadow
+217: ............. Filter: OuterGlow
+218: ............. Filter: InnerGlow
+219: ............. Filter: Stroke
+220: ............. Filter: EdgeDetectSetup
+221: ............. Cui: Clip corners
+222: ............. Cui: Chromatic aberration
+223: ............. Cui: Hud Meter Two Tone
+224: ............. Cui: Background blur
+225: ............. Cui: high contrast additive
+226: ............. Cui: double draw additive
+227: ............. Cui: Adjust hsv
+228: ............. Cui: Hud meter radial
+229: ............. Cui: Hud meter color blend
+230: ............. Chud: Damage generate
+231: ............. Chud: Damage apply
+232: ............. Fast Hud Textured Drop Shadow
+233: .............	Fast Hud Text Drop Shadow
+234: ............. Navpoints
+235: ............. Cui: Shearing
+236: ............. Blendshape Geometry Shaders
+237: ............. Forward light clustering compute
+238: ............. Fast Hud Textured Drop Shadow SustainDec
+239: ............. Fast Hud Text
+</_field_explanation>
+	<_field_block_64 name="explicit shaders" max="1024">
+		<_field_string_id name="name" />
+		<_field_tag_reference_64 name="shader{explicit vertex shader}^" validtags="mat , mats" />
+	</_field_block_64>
+	<_field_explanation name="global materials:">0:  ............... deprecated
+1:  ............... invalid
+2:  ............... missing
+3:  ............... hologram
+4:  ............... outline
+5:  ............... phased
+6:  ............... runtimeMissing
+7:  ............... outline_order
+8:  ............... phased object color
+</_field_explanation>
+	<_field_block_64 name="global materials" max="32">
+		<_field_string_id name="name" />
+		<_field_tag_reference_64 name="material^" />
+	</_field_block_64>
+	<_field_tag_reference_64 name="Active Camo Distortion Texture" />
+	<_field_tag_reference_64 name="default performance throttles" />
+	<_field_tag_reference_64 name="Logo Texture" />
+	<_field_tag_reference_64 name="default scenario render data" />
+	<_field_tag_reference_64 name="Cheap Particle Type Library" />
+	<_field_explanation name="Motion blur parameters:">max blur:............  max amount to blur, as a percentage of the screen
+blur scale:..........  scales blur for a given velocity
+center falloff:....... reduces motion blur around the screen center (larger values give smaller reduction regions...)
+expected dt:.......... expected time per tick, in seconds (used to correct motion blur in fast/slow frames)
+</_field_explanation>
+	<_field_real name="max blur{max blur x}:[0 - 0.2]#max amount to blur, as a percentage of the screen" />
+	<_field_real name="blur scale{blur scale x}:[0 - 0.5]#scales blur for a given velocity" />
+	<_field_real name="center falloff x:[0 - 20]#larger values make smaller areas of no blur" />
+	<_field_real name="center falloff y:[0 - 20]#larger values make smaller areas of no blur" />
+	<_field_tag_reference_64 name="Hologram Camera FX" />
+	<_field_explanation name="lighting debug parameters:" />
+	<_field_tag_reference_64 name="airprobe render model" />
+	<_field_real name="debug lighting value#we will replace the albedo with this value across RGB" />
+	<_field_real name="albedo clip min#pixels that have an albedo below this value will get colorized blue in the albedo clip debug display" />
+	<_field_real name="albedo clip max#pixels that have an albedo above this value will get colorized red in the albedo clip debug display" />
+	<_field_pad name="pad" length="4" />
+</plugin>

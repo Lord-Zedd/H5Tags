@@ -1,0 +1,23 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="suppressed incidents" max="1000">
+		<_field_string_id name="incident name^" />
+		<_field_byte_flags name="suppression type">
+			<item Name="suppress cause player game engine event{suppress game engine event}" />
+			<item Name="suppress effect player game engine event" />
+			<item Name="suppress cause team game engine event" />
+			<item Name="suppress effect team game engine event" />
+			<item Name="suppress medal display{suppress display}" />
+			<item Name="suppress medal stats{suppress stats}" />
+			<item Name="suppress fanfare" />
+			<item Name="suppress audio" />
+		</_field_byte_flags>
+		<_field_pad name="VNJESHFHV" length="3" />
+	</_field_block_64>
+	<_field_pad name="pad_tp" length="4" />
+</plugin>

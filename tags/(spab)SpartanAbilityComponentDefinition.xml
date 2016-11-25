@@ -1,0 +1,55 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_real name="recharge duration:seconds#amount of time it takes to fully charge energy from empty" />
+	<_field_real name="recharge delay:seconds#time that elapses after last ability use before recharging begins" />
+	<_field_custom name="recharge base duration:seconds#amount of time it takes to fully charge energy from empty" />
+	<_field_struct name="recharge base duration:seconds#amount of time it takes to fully charge energy from empty" />
+	<_field_real name="Base Value" />
+	<_field_real_bounds name="Value Bounds" />
+	<_field_char_enum name="Combiner">
+		<item Name="sequential#applies the percentages one after another on the base" />
+		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+		<item Name="addition#adds on all of the modifiers to the base" />
+		<item Name="product#multiplies the values one after another on to the base" />
+	</_field_char_enum>
+	<_field_pad name="padEnd" length="3" />
+	<_field_custom name="recharge base delay:seconds#time that elapses after last ability use before recharging begins" />
+	<_field_struct name="recharge base delay:seconds#time that elapses after last ability use before recharging begins" />
+	<_field_real name="Base Value" />
+	<_field_real_bounds name="Value Bounds" />
+	<_field_char_enum name="Combiner">
+		<item Name="sequential#applies the percentages one after another on the base" />
+		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+		<item Name="addition#adds on all of the modifiers to the base" />
+		<item Name="product#multiplies the values one after another on to the base" />
+	</_field_char_enum>
+	<_field_pad name="padEnd" length="3" />
+	<_field_custom name="activation energy cost scalar#scales how much energy activating any ability that requires energy to activate consumes" />
+	<_field_struct name="activation energy cost scalar#scales how much energy activating any ability that requires energy to activate consumes" />
+	<_field_real name="Base Value" />
+	<_field_real_bounds name="Value Bounds" />
+	<_field_char_enum name="Combiner">
+		<item Name="sequential#applies the percentages one after another on the base" />
+		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+		<item Name="addition#adds on all of the modifiers to the base" />
+		<item Name="product#multiplies the values one after another on to the base" />
+	</_field_char_enum>
+	<_field_pad name="padEnd" length="3" />
+	<_field_tag_reference_64 name="ability activation failure effect#effect played when an ability wants to activate but fails to do so (usually due to inadequate energy)" />
+	<_field_tag_reference_64 name="overheat effect#effects triggered when thrusters overheat" />
+	<_field_tag_reference_64 name="cooldown effect#effects triggered when thrusters cooldown" />
+	<_field_real name="energy bar row#the screen is divided up into a grid like structure such that if you use integral numbers for the row and column you can easily space multiple energy bars." />
+	<_field_real name="energy bar column#the screen is divided up into a grid like structure such that if you use integral numbers for the row and column you can easily space multiple energy bars." />
+	<_field_real_fraction name="energy bar warning pct:[0,1]#energy bar pct at which we notify player they can't perform action." />
+	<_field_tag_reference_64 name="evade ref" />
+	<_field_tag_reference_64 name="stabilizer ref" />
+	<_field_tag_reference_64 name="shoulder bash ref" />
+	<_field_tag_reference_64 name="ground pound ref" />
+	<_field_tag_reference_64 name="sprint ref" />
+	<_field_pad name="pad" length="4" />
+</plugin>

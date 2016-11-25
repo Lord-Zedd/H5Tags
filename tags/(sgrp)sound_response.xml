@@ -1,0 +1,39 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="responses" max="10">
+		<_field_string_id name="name" />
+		<_field_string_id name="channel" />
+		<_field_string_id name="category" />
+		<_field_long_integer name="category priority" />
+		<_field_real name="queue timeout" />
+		<_field_real name="consideration time" />
+		<_field_real name="gap after sound" />
+		<_field_byte_flags name="queue behavior">
+			<item Name="bypass queue" />
+			<item Name="clear queue" />
+			<item Name="stop active sound" />
+			<item Name="do not track" />
+		</_field_byte_flags>
+		<_field_pad name="SRBQXEK" length="3" />
+		<_field_block_64 name="potential responses" max="10">
+			<_field_tag_reference_64 name="sound" />
+			<_field_tag_reference_64 name="music" />
+		</_field_block_64>
+		<_field_block_64 name="combiners" max="10">
+			<_field_string_id name="name" />
+			<_field_byte_flags name="response behavior">
+				<item Name="cancel queued" />
+				<item Name="cancel active" />
+				<item Name="cancel new" />
+			</_field_byte_flags>
+			<_field_pad name="SRBQXEK" length="3" />
+			<_field_tag_reference_64 name="response" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_pad name="pad_tp" length="4" />
+</plugin>

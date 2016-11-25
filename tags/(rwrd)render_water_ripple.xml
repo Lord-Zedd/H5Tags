@@ -1,0 +1,78 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_explanation name="TYPE FLAGS" />
+	<_field_long_flags name="flags">
+		<item Name="ripple drifted by flow" />
+		<item Name="amplitude changed by pendulum function" />
+		<item Name="display flash foam" />
+		<item Name="foam size defined in game unit" />
+	</_field_long_flags>
+	<_field_explanation name="INITIAL SETTINGS" />
+	<_field_real name="initial radius{radius}" />
+	<_field_real name="initial amplitude{amplitude}" />
+	<_field_real name="spread speed" />
+	<_field_real name="speed bias" />
+	<_field_real name="position random range" />
+	<_field_real name="max visibility distance" />
+	<_field_explanation name="LIFE SETTINGS">what happens during the ripple life. damping should be always larger than 0.</_field_explanation>
+	<_field_real name="duration max" />
+	<_field_real name="duration min" />
+	<_field_real name="rise period ratio" />
+	<_field_short_enum name="rise function">
+		<item Name="linear" />
+		<item Name="early" />
+		<item Name="very early" />
+		<item Name="late" />
+		<item Name="very late" />
+		<item Name="cosine" />
+		<item Name="one" />
+		<item Name="zero" />
+	</_field_short_enum>
+	<_field_short_enum name="descend function">
+		<item Name="linear" />
+		<item Name="early" />
+		<item Name="very early" />
+		<item Name="late" />
+		<item Name="very late" />
+		<item Name="cosine" />
+		<item Name="one" />
+		<item Name="zero" />
+	</_field_short_enum>
+	<_field_explanation name="PENDULUM SETTINGS">Only valid in case of the predulum flag has been checked.</_field_explanation>
+	<_field_real name="phase revolution speed" />
+	<_field_real name="phase repeat along radius" />
+	<_field_explanation name="SHAPE TRANSITION">interpolate between shapes in ripple pattern array</_field_explanation>
+	<_field_real name="pattern start idx" />
+	<_field_real name="pattern end idx" />
+	<_field_short_enum name="pattern transition">
+		<item Name="linear" />
+		<item Name="early" />
+		<item Name="very early" />
+		<item Name="late" />
+		<item Name="very late" />
+		<item Name="cosine" />
+		<item Name="one" />
+		<item Name="zero" />
+	</_field_short_enum>
+	<_field_pad name="SexyPadding1" length="2" />
+	<_field_explanation name="FOAM">quick flashed foam</_field_explanation>
+	<_field_real name="foam out radius" />
+	<_field_real name="foam fade distance" />
+	<_field_real name="foam duration" />
+	<_field_short_enum name="foam fade function">
+		<item Name="linear" />
+		<item Name="early" />
+		<item Name="very early" />
+		<item Name="late" />
+		<item Name="very late" />
+		<item Name="cosine" />
+		<item Name="one" />
+		<item Name="zero" />
+	</_field_short_enum>
+	<_field_pad name="SexyPadding2" length="2" />
+</plugin>

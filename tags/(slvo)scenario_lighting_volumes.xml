@@ -1,0 +1,158 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="Visual Environment Volumes" max="100">
+		<_field_string_id name="Name" />
+		<_field_custom name="Dumpling settings" />
+		<_field_struct name="Dumpling" />
+		<_field_block_64 name="inner points" max="32">
+			<_field_real_point_3d name="position" />
+			<_field_real_euler_angles_2d name="normal" />
+		</_field_block_64>
+		<_field_block_64 name="outer points" max="32">
+			<_field_real_point_3d name="position" />
+			<_field_real_euler_angles_2d name="normal" />
+		</_field_block_64>
+		<_field_real name="height" />
+		<_field_real name="sink" />
+		<_field_real name="inner value" />
+		<_field_real name="outer value" />
+		<_field_real_point_3d name="center point!" />
+		<_field_real name="trivial cull radius squared!" />
+		<_field_real name="bound volume" />
+		<_field_block_64 name="Editor Metadata!" max="1024">
+			<_field_long_string name="data name" />
+			<_field_long_enum name="data type">
+				<item Name="class" />
+				<item Name="array" />
+				<item Name="string" />
+				<item Name="bool" />
+				<item Name="int" />
+			</_field_long_enum>
+			<_field_long_integer name="parent index" />
+			<_field_long_string name="data value" />
+		</_field_block_64>
+		<_field_struct name="Visual Environment" />
+		<_field_tag_reference_64 name="Camera Settings" />
+		<_field_tag_reference_64 name="Fog Settings" />
+		<_field_struct name="Custom Object Lighting" />
+		<_field_explanation name="Character Lighting">
+</_field_explanation>
+		<_field_block_64 name="Authored Light Probes" max="4">
+			<_field_block_64 name="Lights*" max="1">
+				<_field_custom name="Authored Light Probe" />
+				<_field_custom name="Direction 1&amp;Direction(D)" />
+				<_field_real name="Direction 1&amp;Direction(D)" />
+				<_field_custom name="Front-Back 1&amp;Front-Back(D)" />
+				<_field_real name="Front-Back 1&amp;Front-Back(D)" />
+				<_field_real_rgb_color name="Direct color 1" />
+				<_field_custom name="Direct intensity 1" />
+				<_field_real name="Direct intensity 1" />
+				<_field_custom name="Direction 2&amp;Direction(D)" />
+				<_field_real name="Direction 2&amp;Direction(D)" />
+				<_field_custom name="Front-Back 2&amp;Front-Back(D)" />
+				<_field_real name="Front-Back 2&amp;Front-Back(D)" />
+				<_field_real_rgb_color name="Direct color 2" />
+				<_field_custom name="Direct intensity 2" />
+				<_field_real name="Direct intensity 2" />
+				<_field_real_rgb_color name="Ambient Color" />
+				<_field_custom name="Ambient intensity" />
+				<_field_real name="Ambient intensity" />
+				<_field_real_rgb_color name="Sun Color" />
+				<_field_custom name="Sun intensity" />
+				<_field_real name="Sun intensity" />
+				<_field_real_rgb_color name="Cubemap Scale Color" />
+				<_field_custom name="Cubemap Scale intensity" />
+				<_field_real name="Cubemap Scale intensity" />
+				<_field_custom name="Authored Light Probe Intensity Scale" />
+				<_field_real name="Authored Light Probe Intensity Scale" />
+				<_field_custom name="Generated Air Probe Intensity Scale" />
+				<_field_real name="Generated Air Probe Intensity Scale" />
+			</_field_block_64>
+			<_field_custom name="Generated Air Probe Intensity Scale!" />
+			<_field_real name="Generated Air Probe Intensity Scale!" />
+			<_field_array name="raw sh data!">
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+			</_field_array>
+			<_field_array name="per frame sh data*!~">
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+				<_field_real name="sh data" />
+			</_field_array>
+			<_field_real_point_3d name="Sun Color!" />
+			<_field_real_point_3d name="Cubemap Scale!" />
+			<_field_word_flags name="Flags">
+				<item Name="Characters" />
+				<item Name="First Person Geometry" />
+				<item Name="Vehicles" />
+			</_field_word_flags>
+			<_field_pad name="fapply" length="2" />
+		</_field_block_64>
+		<_field_char_enum name="Is Camera-space">
+			<item Name="Off" />
+			<item Name="On" />
+		</_field_char_enum>
+		<_field_byte_flags name="Flags">
+			<item Name="Force Always Sun#Will still get dynamic shadows" />
+		</_field_byte_flags>
+		<_field_pad name="pdd" length="2" />
+		<_field_tag_reference_64 name="cubemap override" />
+		<_field_tag_reference_64 name="Cubemap Bitmap DEPRECATED{Cubemap Bitmap}" />
+		<_field_string_id name="Lighting Variant Name" />
+	</_field_block_64>
+	<_field_pad name="slvopad" length="4" />
+</plugin>

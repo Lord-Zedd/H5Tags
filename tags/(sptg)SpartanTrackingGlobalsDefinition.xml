@@ -1,0 +1,43 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_custom name="Sorting" />
+	<_field_real name="distance weight" />
+	<_field_real name="blended weight" />
+	<_field_real name="FOV weight" />
+	<_field_pad name="pad0[3]" length="3" />
+	<_field_custom name="Outlining" />
+	<_field_char_enum name="default outline color index#index into outline material's 4-color 'outline_color' parameter">
+		<item Name="color index 0" />
+		<item Name="color index 1" />
+		<item Name="color index 2" />
+		<item Name="color index 3" />
+	</_field_char_enum>
+	<_field_real_fraction name="default outline intensity:(0,1] - 0 or less defaults to 0.025" />
+	<_field_real_fraction name="default outline thickness:(0,1] - 0 or less defaults to 0.25" />
+	<_field_real name="outline fade duration:(0...) seconds - 0 or less defaults to 0.33" />
+	<_field_real name="interaction target outline intensity scale:[1...) - less than 1 defaults to 2#overall intensity will be capped at 1" />
+	<_field_real name="interaction target outline thickness scale:[1...) - less than 1 defaults to 2.5#overall thickness will be capped at 1" />
+	<_field_block_64 name="Ping Globals" max="2">
+		<_field_real name="ping display time:seconds#how long tracked objects are marked" />
+		<_field_explanation name="Per Priority Default Ranges">The following list defines the default ranges at which objects can be hit with a ping. The list contains one default, per priority.  They are ordered by increasing priority, from low to critical, so for example, the range for highest priority trackables should be entered under &quot;0. DefaultRangeBlock&quot;.</_field_explanation>
+		<_field_block_64 name="default range per priority" max="4">
+			<_field_real name="default range" />
+		</_field_block_64>
+		<_field_explanation name="Per Priority Tracking Limits">The following list defines the maximum number of objects to be tracked per priority.  Limits are ordered by increasing priority, from low to critical, so for example, the limit for highest priority trackables should be entered under &quot;0. DisplayMaximumsBlock&quot;.</_field_explanation>
+		<_field_block_64 name="max tracked per priority" max="4">
+			<_field_byte_integer name="maximum number of tracked objects displayed" />
+		</_field_block_64>
+		<_field_custom name="active ping properties" />
+		<_field_explanation name="The following fields only apply to active tracking." />
+		<_field_tag_reference_64 name="ping effect 0&amp;team Chief active ping effect#this effect is used when the spartan uses their tracking device" />
+		<_field_tag_reference_64 name="ping effect 1{ping effect}&amp;team Locke active ping effect#this effect is used when the spartan uses their tracking device" />
+		<_field_tag_reference_64 name="ping effect 2&amp;team Chief (cracked visor) active ping effect#this effect is used when the spartan uses their tracking device" />
+		<_field_real name="ping recharge time&amp;active ping recharge time:seconds#minimum time (in seconds) between successive pings" />
+		<_field_real name="ping travel rate&amp;active ping travel rate:world units per second#approximation of how fast the active ping effect travels so we can synchronize when things show up in the UI" />
+	</_field_block_64>
+</plugin>

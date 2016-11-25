@@ -1,0 +1,178 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_explanation name="Motion sensor globals">Misc settings for the motion sensor</_field_explanation>
+	<_field_byte_flags name="flags">
+		<item Name="show scripted pings at any distance" />
+		<item Name="enable north indicator" />
+	</_field_byte_flags>
+	<_field_pad name="padMotionFlags" length="3" />
+	<_field_real name="active camo appears as enemy when lower than#active Camo users show up as enemy when active camo is lower than this value (multiplayer)" />
+	<_field_real name="height classified as above#relative height at which something is above (meters)" />
+	<_field_real name="height classified as below#relative height at which something is below (meters)" />
+	<_field_real name="upwards movement scaling#multiplier for vertical speed upwards (multiplier)" />
+	<_field_real name="downwards movement scaling#multiplier for vertical speed downwards (multiplier)" />
+	<_field_real name="crouching movement scaling#multiplier for speed when crouching (multiplier)" />
+	<_field_real name="edge indicator position scale#multiplier for blip's distance from center of motion tracker to its outer edge" />
+	<_field_real name="vehicle navigation marker range detection#range at which hud nav markers will show (meters)" />
+	<_field_real name="vehicle contested flash time#rate at which a contested vehicle flashes (seconds)" />
+	<_field_real name="activecamo xray animation cooldown #duration to wait before showing another animation (seconds)" />
+	<_field_real name="dead people visible time#time for which we will see dead team mates (seconds)" />
+	<_field_long_integer name="Motion Tracker Fade Frames#The number of frames that a non moving target will fade out over on the motion tracker." />
+	<_field_long_integer name="Armor Mod Display Counter#The number of seconds to show the players armor mod in the HUD (seconds)." />
+	<_field_real name="Broadsword Parallax Velocity Override" />
+	<_field_real name="Pelican Parallax Velocity Override" />
+	<_field_explanation name="Fanfare and Messaging globals">Misc settings for fanfares and messages</_field_explanation>
+	<_field_real name="fanfare display time #time to display the fanfares (seconds)" />
+	<_field_real name="fanfare speed up display time #time to display when higher priority fanfare queues up (seconds)" />
+	<_field_real name="medal score message lifetime #message time of the medal score message (seconds)" />
+	<_field_real name="medal score message restart time #time to reset message to when messages collide (seconds)" />
+	<_field_explanation name="Remote motion sensor globals">Misc settings for the remote motion sensor</_field_explanation>
+	<_field_real name="remote sensor range#absolute range. (meters)" />
+	<_field_real name="remote sensor weak distance#distance at which the remote sensor starts to fail (meters)" />
+	<_field_real name="remote sensor failure distance#distance at which the remote sensor completely fails (meters)" />
+	<_field_explanation name="Navpoints globals">Settings for navpoints.</_field_explanation>
+	<_field_real name="near player distance (metres)#default distance at which we say that a navpoint is in the 'near' state (metres)" />
+	<_field_real_point_2d name="defaultNavPointPosition2d (pixels)# the screen position used for MP navpoints that want to clamp to the hud eg. strongholds capture (pixels)" />
+	<_field_real name="defaultNavPoint2dDelayTime (seconds)#delay before we obey changes between 2d / 3d (seconds)" />
+	<_field_block_64 name="navpoint parameters" max="256">
+		<_field_string_id name="name^" />
+		<_field_tag_reference_64 name="navpoint tag" />
+	</_field_block_64>
+	<_field_explanation name="Damage globals">HUD damage settings</_field_explanation>
+	<_field_real name="shield bar recent damage duration#time taken to drain an entire bar of visible damage. less damage drains faster (seconds)" />
+	<_field_real name="damage indicator response duration#duration which the damage indicator icons will show in the HUD (seconds)" />
+	<_field_real name="damage flash response duration#used to determine how long to show the fullscreen damage flash (seconds)" />
+	<_field_tag_reference_64 name="tiled mesh seen when hit in 1st person" />
+	<_field_real name="number of tiles across the screen" />
+	<_field_real name="total intensity cap (0..1)" />
+	<_field_explanation name="Screen blob globals">Settings for HUD shield impact blob</_field_explanation>
+	<_field_byte_flags name="screen blob flags">
+		<item Name="enable effect" />
+	</_field_byte_flags>
+	<_field_pad name="padblobflags" length="3" />
+	<_field_real_rgb_color name="color of effect while shielded" />
+	<_field_real_rgb_color name="color of effect with no shield" />
+	<_field_real name="shield pattern scale X" />
+	<_field_real name="shield pattern scale Y" />
+	<_field_real name="effect overall intensity" />
+	<_field_real name="effect lifetime (in seconds)" />
+	<_field_real name="effect width on first frame (0-1)" />
+	<_field_real name="effect width on last frame (0-1)" />
+	<_field_struct name="opacity-time function#Defines opacity as a function of time" />
+	<_field_data_64 name="data" />
+	<_field_struct name="size-time function#Defines blob screen space size as a function of time" />
+	<_field_data_64 name="data" />
+	<_field_struct name="size-damage function#Defines effect size as a function of damage received" />
+	<_field_data_64 name="data" />
+	<_field_tag_reference_64 name="pattern shield texture" />
+	<_field_tag_reference_64 name="mask 0 texture" />
+	<_field_tag_reference_64 name="mask 1 texture" />
+	<_field_tag_reference_64 name="mask 2 texture" />
+	<_field_tag_reference_64 name="mask 3 texture" />
+	<_field_explanation name="Reticule globals">Settings for the weapon reticules</_field_explanation>
+	<_field_real name="Reticule maximum spread angle:degrees#Maximum spread for all weapon reticules. This should be set to the largest spread angle of all the weapons." />
+	<_field_explanation name="Sounds">misc global audio stuff</_field_explanation>
+	<_field_tag_reference_64 name="banned vehicle entrance sound" validtags="lsnd, snd!" />
+	<_field_explanation name="High Contrast globals">Settings controlling the high contrast hud rendering</_field_explanation>
+	<_field_byte_flags name="High Contrast Flags">
+		<item Name="disable dynamic contrast" />
+		<item Name="disable double draw" />
+	</_field_byte_flags>
+	<_field_pad name="pad1" length="3" />
+	<_field_explanation name="Dynamic Contrast Settings">Settings controlling the dynamic contrast</_field_explanation>
+	<_field_real name="Minimum Threshold#Minimum brightness value at which the dynamic contrast activates." />
+	<_field_real name="Maximum Threshold#Brightness value at which the dynamic contrast is fully activated." />
+	<_field_real name="Clamp Threshold#Clamped brightness value. Can be used to limit the intensity of the dynamic contrast, or enable over strength contrast." />
+	<_field_explanation name="Double Draw Settings">Settings controlling the double draw</_field_explanation>
+	<_field_real name="Darken Factor#Opacity of the black layer." />
+	<_field_real name="Brighten Factor#Overbrightness factor to apply to the additive layer." />
+	<_field_explanation name="Text">Text-related settings</_field_explanation>
+	<_field_block_64 name="string references" max="64">
+		<_field_tag_reference_64 name="string list" />
+	</_field_block_64>
+	<_field_tag_reference_64 name="Interact Message Appear Sound" validtags="snd!" />
+	<_field_tag_reference_64 name="Interact Message Disappear Sound " validtags="snd!" />
+	<_field_real name="medal fanfare animation lifetime #animation time of the medal fanfare (seconds)" />
+	<_field_real name="medal fanfare animation in lifetime #animation in time of the medal fanfare (seconds)" />
+	<_field_real name="medal fanfare animation out begin time #the time to begin the animation out sequence (seconds)" />
+	<_field_real name="event fanfare animation lifetime #animation time of the medal fanfare (seconds)" />
+	<_field_real name="event fanfare animation in lifetime #animation in time of the medal fanfare (seconds)" />
+	<_field_real name="event fanfare animation out begin time #the time to begin the animation out sequence (seconds)" />
+	<_field_real_argb_color name="self kill feed color #The color of the name of a player in the kill feed if the player is you" />
+	<_field_real_argb_color name="fireteam kill feed color #The color of the name of a player in the kill feed that is in your fireteam" />
+	<_field_real_argb_color name="allied kill feed color #The color of the name of a player that is on your team" />
+	<_field_real_argb_color name="enemy kill feed color #The color of the name of a player is NOT on your team" />
+	<_field_real_argb_color name="neutral kill feed color #The color of the name of a player that is neutral towards your team" />
+	<_field_explanation name="Player Training" />
+	<_field_block_64 name="player training data" max="34">
+		<_field_string_id name="display string#comes out of the HUD text globals" />
+		<_field_word_integer name="max display time#how long the message can be on screen before being hidden" />
+		<_field_word_integer name="display count#how many times a training message will get displayed (0-3 only!)" />
+		<_field_word_integer name="dissapear delay#how long a displayed but untriggered message stays up" />
+		<_field_word_integer name="redisplay delay#how long after display this message will stay hidden" />
+		<_field_real name="display delay (s)#how long the event can be triggered before it's displayed" />
+		<_field_word_flags name="flags">
+			<item Name="not in multiplayer" />
+		</_field_word_flags>
+		<_field_pad name="HURLUV" length="2" />
+	</_field_block_64>
+	<_field_explanation name="Grenade Indicator Globals">Settings for the grenade indicator</_field_explanation>
+	<_field_real name="grenade indicator danger radius #range for when the grenade indicator warning will appear" />
+	<_field_real name="grenade indicator lifetime dampener #prevents a newly thrown grenade from showing up in the grenade indicator" />
+	<_field_explanation name="Parallax globals">Settings related to parallax</_field_explanation>
+	<_field_real name="vehicle transition time (seconds)#time it takes for parallax to start or stop when entering vehicles" />
+	<_field_block_64 name="parallax params" max="32">
+		<_field_string_id name="name^" />
+		<_field_real name="parallax falloff time#changes how much influence older frames have vs new ones" />
+		<_field_real name="parallax camera velocity factor#change how much influence camera movement has on parallax movement" />
+		<_field_real_point_3d name="parallax movement multiplier#scales the parallax movement" />
+		<_field_real_point_3d name="parallax clamp min" />
+		<_field_real_point_3d name="parallax clamp max" />
+		<_field_real_euler_angles_3d name="parallax angular multiplier#scales the parallax rotation" />
+		<_field_real_euler_angles_3d name="parallax angle clamp min" />
+		<_field_real_euler_angles_3d name="parallax angle clamp max" />
+	</_field_block_64>
+	<_field_explanation name="Warp params">Settings related to warp</_field_explanation>
+	<_field_block_64 name="warp params" max="32">
+		<_field_string_id name="name^" />
+		<_field_real_point_3d name="ellipsoid scale" />
+		<_field_real_point_3d name="ellipsoid center" />
+		<_field_real_point_3d name="output offset" />
+		<_field_long_integer name="tessellation X" />
+		<_field_long_integer name="tessellation Y" />
+		<_field_byte_flags name="flags">
+			<item Name="enabled" />
+		</_field_byte_flags>
+		<_field_pad name="pad0" length="3" />
+	</_field_block_64>
+	<_field_explanation name="Chromatic aberration params">Settings related to chromatic aberration</_field_explanation>
+	<_field_block_64 name="chromatic aberration params" max="32">
+		<_field_string_id name="name^" />
+		<_field_real name="base mix" />
+		<_field_real_point_2d name="center offset" />
+		<_field_real_point_2d name="red aberration scale" />
+		<_field_real_point_2d name="green aberration scale" />
+		<_field_real_point_2d name="blue aberration scale" />
+		<_field_byte_flags name="flags">
+			<item Name="enabled" />
+		</_field_byte_flags>
+		<_field_pad name="pad0" length="3" />
+	</_field_block_64>
+	<_field_explanation name="High contrast globals">Settings related to high contrast</_field_explanation>
+	<_field_block_64 name="high contrast params" max="32">
+		<_field_string_id name="name^" />
+		<_field_real name="dynamic threshold min" />
+		<_field_real name="dynamic threshold max" />
+		<_field_real name="dynamic threshold clamp" />
+		<_field_byte_flags name="flags">
+			<item Name="enabled" />
+		</_field_byte_flags>
+		<_field_pad name="pad0" length="3" />
+	</_field_block_64>
+	<_field_pad name="pad" length="4" />
+</plugin>

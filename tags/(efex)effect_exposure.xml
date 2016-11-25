@@ -1,0 +1,50 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_custom name="Alpha-blend Override" />
+	<_field_struct name="Alpha-blend Override" />
+	<_field_real name="min exposure" />
+	<_field_real name="max exposure" />
+	<_field_real name="underexposed slope" />
+	<_field_real name="overexposed slope" />
+	<_field_custom name="Additive Override" />
+	<_field_struct name="Additive Override" />
+	<_field_real name="min exposure" />
+	<_field_real name="max exposure" />
+	<_field_real name="underexposed slope" />
+	<_field_real name="overexposed slope" />
+	<_field_custom name="Lit Alpha-blend Override" />
+	<_field_struct name="Lit Alpha-blend Override" />
+	<_field_real name="min exposure" />
+	<_field_real name="max exposure" />
+	<_field_real name="underexposed slope" />
+	<_field_real name="overexposed slope" />
+	<_field_custom name="Lit Additive Override" />
+	<_field_struct name="Lit Additive Override" />
+	<_field_real name="min exposure" />
+	<_field_real name="max exposure" />
+	<_field_real name="underexposed slope" />
+	<_field_real name="overexposed slope" />
+	<_field_custom name="Surface Alpha-blend Override" />
+	<_field_struct name="Surface Alpha-blend Override" />
+	<_field_real name="min exposure" />
+	<_field_real name="max exposure" />
+	<_field_real name="underexposed slope" />
+	<_field_real name="overexposed slope" />
+	<_field_custom name="Surface Additive Override" />
+	<_field_struct name="Surface Additive Override" />
+	<_field_real name="min exposure" />
+	<_field_real name="max exposure" />
+	<_field_real name="underexposed slope" />
+	<_field_real name="overexposed slope" />
+	<_field_custom name="Cheap Light Override" />
+	<_field_struct name="Cheap Light Override" />
+	<_field_real name="min exposure" />
+	<_field_real name="max exposure" />
+	<_field_real name="underexposed slope" />
+	<_field_real name="overexposed slope" />
+</plugin>

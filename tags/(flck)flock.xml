@@ -1,0 +1,46 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_explanation name="Simple flocking" />
+	<_field_real name="forward weight{forward scale}:[0..1]#weight given to boid's desire to fly straight ahead" />
+	<_field_real name="leveling force weight{leveling force scale}:[0..1]#weight given to boids desire to fly level" />
+	<_field_real name="destination weight{sink scale}:[0..1]#weight given to boid's desire to fly towards its sinks" />
+	<_field_real name="average throttle:[0..1]#throttle at which boids will naturally fly" />
+	<_field_real name="maximum throttle:[0..1]#maximum throttle applicable" />
+	<_field_real name="movement weight threshold#The threshold of accumulated weight over which movement occurs" />
+	<_field_real name="danger radius:wus#distance within which boids will avoid a dangerous object (e.g. the player)" />
+	<_field_real name="danger weight{danger scale}#weight given to boid's desire to avoid danger" />
+	<_field_real name="target weight{target scale}:[0..1]#weight given to boid's desire to attack fly after their target, if they have one" />
+	<_field_real name="target distance:wus#distance within which we aggressively pursue a target" />
+	<_field_real name="target delay time:seconds#amount of time we need to be locked onto a target before we might start killing it" />
+	<_field_real name="target kill chance:chance per second#probability of killing your target in one second" />
+	<_field_real name="ai destroy chance:chance per second#if targetted by AI, the probability of dying in one second" />
+	<_field_explanation name="Perlin noise parameters">Recommended initial values: 
+	random offset scale= 0.2 
+	offset period bounds= 1, 3</_field_explanation>
+	<_field_real name="random offset weight{random offset scale}:[0..1]#weight given to boid's random heading offset" />
+	<_field_real_bounds name="random offset period:seconds" />
+	<_field_explanation name="Complex Flocking">WARNING: In flocks with a neighborhood radius of 0, creatures are not influenced by the other creatures around them. THESE ARE MUCH CHEAPER.
+</_field_explanation>
+	<_field_real name="neighborhood radius:world units#distance within which one boid is affected by another" />
+	<_field_angle name="perception angle:degrees#angle-from-forward within which one boid can perceive and react to another" />
+	<_field_real name="avoidance weight{avoidance scale}:[0..1]#weight given to boid's desire to avoid collisions with other boids, when within the avoidance radius" />
+	<_field_real name="avoidance radius:world units#distance that a boid tries to maintain from another" />
+	<_field_real name="alignment weight{alignment scale}:[0..1]#weight given to boid's desire to align itself with neighboring boids" />
+	<_field_real name="position weight{position scale}:[0..1]#weight given to boid's desire to be near flock center" />
+	<_field_real name="position min radius:wus#distance to flock center beyond which an attracting force is applied" />
+	<_field_real name="position max radius:wus#distance to flock center at which the maximum attracting force is applied" />
+	<_field_tag_reference_64 name="looping sound for idle" />
+	<_field_tag_reference_64 name="single shot sound for idle (randomly plays)" validtags="snd!" />
+	<_field_real_bounds name="time between one off idle sounds per boid (lower to upper bound)" />
+	<_field_tag_reference_64 name="looping sound for moving" />
+	<_field_tag_reference_64 name="single shot sound for moving (randomly plays)" validtags="snd!" />
+	<_field_real_bounds name="time between one off moving sounds per boid (lower to upper bound)" />
+	<_field_tag_reference_64 name="single shot sound for reacting to danger" validtags="snd!" />
+	<_field_tag_reference_64 name="single shot sound for death" validtags="snd!" />
+	<_field_tag_reference_64 name="single shot sound for shooting" validtags="snd!" />
+</plugin>

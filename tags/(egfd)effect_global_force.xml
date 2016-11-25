@@ -1,0 +1,28 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="force" />
+	<_field_byte_flags name="flags">
+		<item Name="is infinitely long cylinder!" />
+		<item Name="multiply force by attached object speed" />
+		<item Name="override force direction" />
+	</_field_byte_flags>
+	<_field_char_enum name="shape">
+		<item Name="sphere" />
+		<item Name="cylinder" />
+		<item Name="plane" />
+	</_field_char_enum>
+	<_field_byte_integer name="version!" />
+	<_field_pad name="grog" length="1" />
+	<_field_real name="normal force strength#force strength perpendicular to shape surface, positive pushes out, negative pulls in{force strength}" />
+	<_field_real name="tangent force strength#force strength tangent to shape surface and aligned to particle velocity" />
+	<_field_real name="binormal force strength#force strength binormal to shape surface and perpendicular to particle velocity" />
+	<_field_real name="falloff begin:wus{sphere falloff begin}" />
+	<_field_real name="falloff end:wus{sphere falloff end}" />
+	<_field_real name="max speed#maximum speed from attached object that optionally gets normalized and multiplied with the force" />
+	<_field_real_vector_3d name="direction override" />
+</plugin>

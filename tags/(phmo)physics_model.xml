@@ -1,0 +1,927 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_long_flags name="flags">
+		<item Name="serialized havok data converted to target platform!*" />
+		<item Name="make physical children keyframed" />
+		<item Name="shrink radius by havok complex radius" />
+		<item Name="use physics for collision" />
+	</_field_long_flags>
+	<_field_real name="mass scale#scales the mass of each rigid body.  If you leave this field as 0, then it will be calculated from the total mass below." />
+	<_field_real name="mass#override total mass of all rigid bodies.  Note that this will NOT be the mass of the object if not all rigid bodies are present (for example if you are using permutations)
+If you set a mass scale above, this field is unused." />
+	<_field_real name="low freq. deactivation scale#0 is default (1). LESS than 1 deactivates less aggressively. GREATER than 1 is more aggressive." />
+	<_field_real name="high freq. deactivation scale#0 is default (1). LESS than 1 deactivates less aggressively. GREATER than 1 is more aggressive." />
+	<_field_real name="custom shape radius!#0 defaults to .016.  This field is intentionally hidden because we should only alter this for very special situations.  Lower number == lower performance" />
+	<_field_real name="maximum penetration depth scale#0 is default (1). for objects that are prone to falling through the world we can reduce this number at the cost of performance" />
+	<_field_char_integer name="import version*!" />
+	<_field_pad name="pad0" length="3" />
+	<_field_real name="welding tolerance#if &gt; 0 this will override the physics default welding tolerance" />
+	<_field_block_64 name="damped spring motors" max="128">
+		<_field_string_id name="name" />
+		<_field_real name="maximum force#0 defaults to k_real_max" />
+		<_field_real name="minimum force#0 defaults to maximum force.  In general you should leave this alone unless working on ragdolls or something like them" />
+		<_field_real name="spring k" />
+		<_field_real name="damping#0 means default daming of 1.0f" />
+		<_field_real name="initial position" />
+	</_field_block_64>
+	<_field_block_64 name="position motors" max="128">
+		<_field_string_id name="name" />
+		<_field_real name="maximum force" />
+		<_field_real name="minimum force#0 defaults to maximum force.  In general you should leave this alone unless working on ragdolls or something like them" />
+		<_field_real name="tau#from 0-1.  relative stiffness" />
+		<_field_real name="damping#from 0-1" />
+		<_field_real name="proportion recover vel#fraction of recover velocity used.  0 defaults to 1" />
+		<_field_real name="constant recover vel#velocity used to recover when errors happen.  in degress per second" />
+		<_field_real name="initial position" />
+	</_field_block_64>
+	<_field_block_64 name="phantom types" max="12">
+		<_field_long_flags name="flags">
+			<item Name="UNUSED" />
+			<item Name="use acc as force" />
+			<item Name="negates gravity" />
+			<item Name="ignores players" />
+			<item Name="ignores nonplayers" />
+			<item Name="ignores bipeds" />
+			<item Name="ignores vehicles" />
+			<item Name="ignores weapons" />
+			<item Name="ignores equipment" />
+			<item Name="ignores projectiles" />
+			<item Name="ignores scenery" />
+			<item Name="ignores devices" />
+			<item Name="ignores crates" />
+			<item Name="ignores creatures" />
+			<item Name="ignores giants" />
+			<item Name="ignores entities" />
+			<item Name="ignores mechs" />
+			<item Name="ignores team objects" />
+			<item Name="smart directional acceleration" />
+			<item Name="ignores grounded bipeds" />
+			<item Name="localizes physics" />
+			<item Name="disable linear damping" />
+			<item Name="disable angular damping" />
+			<item Name="ignores dead bipeds" />
+			<item Name="ignores live bipeds" />
+			<item Name="latching disabled" />
+			<item Name="mirrored axis" />
+			<item Name="activate ragdolls" />
+			<item Name="ignores forge editor" />
+			<item Name="accelerate along input direction" />
+		</_field_long_flags>
+		<_field_real name="brittle timer:seconds#objects in this phantom volume will be set to brittle collision damage for this amount of time." />
+		<_field_char_enum name="minimum size">
+			<item Name="default" />
+			<item Name="tiny" />
+			<item Name="small" />
+			<item Name="medium" />
+			<item Name="large" />
+			<item Name="huge" />
+			<item Name="extra huge" />
+		</_field_char_enum>
+		<_field_char_enum name="maximum size">
+			<item Name="default" />
+			<item Name="tiny" />
+			<item Name="small" />
+			<item Name="medium" />
+			<item Name="large" />
+			<item Name="huge" />
+			<item Name="extra huge" />
+		</_field_char_enum>
+		<_field_pad name="OF" length="2" />
+		<_field_string_id name="marker name#you don't need this if you're just generating effects.  If empty it defaults to the up of the object" />
+		<_field_string_id name="alignment marker name#you don't need this if you're just generating effects.  If empty it defaults to &quot;marker name&quot;" />
+		<_field_explanation name="Linear Motion">0 - means do nothing
+CENTER: motion towards marker position 
+AXIS: motion towards marker axis, such that object is on the axis
+DIRECTION: motion along marker direction</_field_explanation>
+		<_field_pad name="WTBFO" length="8" />
+		<_field_real name="hookes law e#0 if you don't want this to behave like spring.  1 is a good starting point if you do." />
+		<_field_real name="linear dead radius#radius from linear motion origin in which acceleration is dead." />
+		<_field_real name="center acc" />
+		<_field_real name="center max vel" />
+		<_field_real name="axis acc" />
+		<_field_real name="axis max vel" />
+		<_field_real name="direction acc" />
+		<_field_real name="direction max vel" />
+		<_field_real name="orbit acc#negative values spin the opposite direction from positive ones" />
+		<_field_real name="orbit max vel" />
+		<_field_pad name="TF" length="28" />
+		<_field_explanation name="Angular Motion">0 - means do nothing
+ALIGNMENT: algin objects in the phantom with the marker
+SPIN: spin the object about the marker axis</_field_explanation>
+		<_field_real name="alignment hookes law e#0 if you don't want this to behave like spring.  1 is a good starting point if you do." />
+		<_field_real name="alignment acc" />
+		<_field_real name="alignment max vel" />
+		<_field_pad name="TYXJL" length="8" />
+	</_field_block_64>
+	<_field_block_64 name="powered chains" max="128">
+		<_field_block_64 name="nodes" max="255">
+			<_field_long_block_index name="node" />
+		</_field_block_64>
+		<_field_block_64 name="constraints" max="128">
+			<_field_short_enum name="constraint type">
+				<item Name="hinge" />
+				<item Name="limited hinge" />
+				<item Name="ragdoll" />
+				<item Name="stiff spring" />
+				<item Name="ball and socket" />
+				<item Name="prismatic" />
+				<item Name="powered chain" />
+			</_field_short_enum>
+			<_field_custom_short_block_index name="constraint index" />
+			<_field_struct name="motor x" />
+			<_field_short_enum name="motor type">
+				<item Name="none" />
+				<item Name="damped spring" />
+				<item Name="stongest force" />
+			</_field_short_enum>
+			<_field_custom_short_block_index name="index" />
+			<_field_struct name="motor y" />
+			<_field_short_enum name="motor type">
+				<item Name="none" />
+				<item Name="damped spring" />
+				<item Name="stongest force" />
+			</_field_short_enum>
+			<_field_custom_short_block_index name="index" />
+			<_field_struct name="motor z" />
+			<_field_short_enum name="motor type">
+				<item Name="none" />
+				<item Name="damped spring" />
+				<item Name="stongest force" />
+			</_field_short_enum>
+			<_field_custom_short_block_index name="index" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="node edges*" max="16384">
+		<_field_short_integer name="runtime material type a!" />
+		<_field_short_integer name="runtime material type b!" />
+		<_field_long_block_index name="node a*!" />
+		<_field_long_block_index name="node b*!" />
+		<_field_block_64 name="constraints*" max="128">
+			<_field_short_enum name="type*!">
+				<item Name="hinge" />
+				<item Name="limited hinge" />
+				<item Name="ragdoll" />
+				<item Name="stiff spring" />
+				<item Name="ball and socket" />
+				<item Name="prismatic" />
+				<item Name="powered chain" />
+			</_field_short_enum>
+			<_field_custom_short_block_index name="index*!" />
+			<_field_long_flags name="flags">
+				<item Name="is physical child#this constraint will only be created when this object is a child of another physical object (turrets on vehicles for example)" />
+				<item Name="is rigid#this constraint makes the edge rigid until it is loosened by damage" />
+				<item Name="disable effects#this constraint will not generate impact effects" />
+				<item Name="not created automatically#this flag is used for special systems that need to create constraints dynamically" />
+			</_field_long_flags>
+			<_field_real name="friction#0 is the default (takes what it was set in max) anything else overrides that value" />
+			<_field_block_64 name="ragdoll motors" max="1">
+				<_field_explanation name="twist" />
+				<_field_struct name="twist motor" />
+				<_field_short_enum name="motor type">
+					<item Name="none" />
+					<item Name="damped spring" />
+					<item Name="stongest force" />
+				</_field_short_enum>
+				<_field_custom_short_block_index name="index" />
+				<_field_explanation name="cone" />
+				<_field_struct name="cone motor" />
+				<_field_short_enum name="motor type">
+					<item Name="none" />
+					<item Name="damped spring" />
+					<item Name="stongest force" />
+				</_field_short_enum>
+				<_field_custom_short_block_index name="index" />
+				<_field_explanation name="plane" />
+				<_field_struct name="plane motor" />
+				<_field_short_enum name="motor type">
+					<item Name="none" />
+					<item Name="damped spring" />
+					<item Name="stongest force" />
+				</_field_short_enum>
+				<_field_custom_short_block_index name="index" />
+			</_field_block_64>
+			<_field_block_64 name="limited hinge motors" max="1">
+				<_field_struct name="motor" />
+				<_field_short_enum name="motor type">
+					<item Name="none" />
+					<item Name="damped spring" />
+					<item Name="stongest force" />
+				</_field_short_enum>
+				<_field_custom_short_block_index name="index" />
+			</_field_block_64>
+		</_field_block_64>
+		<_field_string_id name="node a material#if you don't fill this out we will pluck the material from the first primitive, of the first rigid body attached to node a" />
+		<_field_string_id name="node b material#if you don't fill this out we will pluck the material from the first primitive, of the first rigid body attached to node b, if node b is none we use whatever material a has" />
+	</_field_block_64>
+	<_field_block_64 name="rigid bodies*" max="128">
+		<_field_long_block_index name="node*" />
+		<_field_long_block_index name="region*" />
+		<_field_custom_long_block_index name="permutation*" />
+		<_field_real_point_3d name="bouding sphere offset*!" />
+		<_field_real name="bounding sphere radius*!" />
+		<_field_byte_flags name="flags">
+			<item Name="has no phantom power version#don't check this flag without talking to eamon" />
+			<item Name="infinite intertia tensor#rigid body will never have angular velocity" />
+			<item Name="Havok rigid body#rigid body properties like center of mass and inertia tensor come from Havok Content Tools (and shouldn't be edited in Bonobo)" />
+			<item Name="explicit mass#the mass is explicit, and not computed based on volume and density" />
+			<item Name="absolute center of mass#the 'center of mass offset' is relative to the pivot and not to the computed center" />
+			<item Name="force keyframed#rigid body is always keyframed and can't be overriden to dynamic or fixed" />
+			<item Name="force not cut NavMesh#this rigid body will not generate a cutting silhouette" />
+		</_field_byte_flags>
+		<_field_char_enum name="motion type">
+			<item Name="Dynamic" />
+			<item Name="Keyframed" />
+			<item Name="Static" />
+		</_field_char_enum>
+		<_field_char_enum name="size">
+			<item Name="default" />
+			<item Name="tiny" />
+			<item Name="small" />
+			<item Name="medium" />
+			<item Name="large" />
+			<item Name="huge" />
+			<item Name="extra huge" />
+		</_field_char_enum>
+		<_field_pad name="pad0" length="1" />
+		<_field_long_block_index name="no phantom power alt" />
+		<_field_explanation name="collision layer override">This value overrides the default collision layer.  It also overrides values specified in the materials block of this tag. Values set here can be overridden per shape through the shape primitive blocks.</_field_explanation>
+		<_field_string_id name="collision layer" />
+		<_field_explanation name="inertia tensor scales">if you want to set he scale uniforml just set &quot;inertia tensor scale&quot;.  If you want to set the values seperately per axis you can set &quot;inertia tensor scale x\y\z&quot;</_field_explanation>
+		<_field_real name="inertia tensor scale#0.0 defaults to 1.0" />
+		<_field_real name="inertia tensor scale x#0.0 defaults to 1.0" />
+		<_field_real name="inertia tensor scale y#0.0 defaults to 1.0" />
+		<_field_real name="inertia tensor scale z#0.0 defaults to 1.0" />
+		<_field_real name="linear damping#this goes from 0-10 (10 is really, really high)" />
+		<_field_real name="angular damping#this goes from 0-10 (10 is really, really high)" />
+		<_field_real_vector_3d name="center off mass offset" />
+		<_field_explanation name="water physics bounding box">if any of these fields are non-zero, this overrides the bounding box used for water physics</_field_explanation>
+		<_field_real name="water physics x0#x0 value of the water physics aabb" />
+		<_field_real name="water physics x1#x1 value of the water physics aabb" />
+		<_field_real name="water physics y0#y0 value of the water physics aabb" />
+		<_field_real name="water physics y1#y1 value of the water physics aabb" />
+		<_field_real name="water physics z0#z0 value of the water physics aabb" />
+		<_field_real name="water physics z1#z1 value of the water physics aabb" />
+		<_field_pad name="padnew" length="12" />
+		<_field_real_vector_3d name="center of mass*!" />
+		<_field_real name="havok w center of mass*!!" />
+		<_field_real_vector_3d name="intertia tensor x*!" />
+		<_field_real name="havok w intertia tensor x*!!" />
+		<_field_real_vector_3d name="intertia tensor y*!" />
+		<_field_real name="havok w intertia tensor y*!!" />
+		<_field_real_vector_3d name="intertia tensor z*!" />
+		<_field_real name="havok w intertia tensor z*!!" />
+		<_field_struct name="Shape" />
+		<_field_long_enum name="shape type*">
+			<item Name="Sphere" />
+			<item Name="Pill" />
+			<item Name="Box" />
+			<item Name="Triangle" />
+			<item Name="ConvexHull" />
+			<item Name="Multi sphere" />
+			<item Name="Triangle mesh" />
+			<item Name="Compound shape" />
+		</_field_long_enum>
+		<_field_custom_long_block_index name="shape*" />
+		<_field_block_64 name="primitive collision layers*!" max="255">
+			<_field_string_id name="name~" />
+		</_field_block_64>
+		<_field_real name="mass:kg*!" />
+		<_field_real name="bounding sphere pad#the bounding sphere for this rigid body will be outset by this much" />
+		<_field_explanation name="Stupid mass override">If you want to override what the calculated mass distribution or artist set mass is, this is where you do it. Also, this will show up as n/100 in the game debugger. Awesome.</_field_explanation>
+		<_field_real name="Mass body override" />
+		<_field_char_enum name="collision quality override type">
+			<item Name="None" />
+			<item Name="Static" />
+			<item Name="Debris" />
+			<item Name="Dynamic" />
+			<item Name="Critical" />
+			<item Name="Character" />
+		</_field_char_enum>
+		<_field_char_integer name="runtime_flags*!" />
+		<_field_pad name="pad2" length="14" />
+	</_field_block_64>
+	<_field_block_64 name="materials*" max="128">
+		<_field_string_id name="name^*!" />
+		<_field_byte_flags name="flags">
+			<item Name="supresses effects" />
+			<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
+		</_field_byte_flags>
+		<_field_pad name="flags pad" length="3" />
+		<_field_string_id name="global material name" />
+		<_field_long_block_index name="phantom type" />
+		<_field_explanation name="collision layer override">This value overrides the default collision layer.  It is overridden by any values specified rigid bodies block that overlap. Values set here can be overridden per shape through the shape primitive blocks.</_field_explanation>
+		<_field_string_id name="collision layer" />
+		<_field_string_id name="runtime collision layer*!" />
+	</_field_block_64>
+	<_field_block_64 name="convex hulls*!" max="16384">
+		<_field_int64_integer name="field pointer skip!~" />
+		<_field_block_64 name="primitive^*!" max="16384">
+			<_field_string_id name="name^*!" />
+			<_field_real name="relative mass scale" />
+			<_field_real_fraction name="friction" />
+			<_field_real_fraction name="restitution" />
+			<_field_real name="volume *" />
+			<_field_real name="mass*!" />
+			<_field_long_block_index name="phantom*" />
+			<_field_short_integer name="runtime material type*~!" />
+			<_field_char_block_index name="material*" />
+			<_field_byte_flags name="material flags*">
+				<item Name="supresses effects" />
+				<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
+			</_field_byte_flags>
+			<_field_short_integer name="mass distribution index!" />
+			<_field_short_integer name="should use" />
+			<_field_explanation name="collision layer override">This value overrides the default, model, and rigid body layer.</_field_explanation>
+			<_field_string_id name="collision layer" />
+		</_field_block_64>
+		<_field_data_64 name="Packfile Data*!" />
+		<_field_data_64 name="TagFile Data*!" />
+		<_field_pad name="pad" length="4" />
+	</_field_block_64>
+	<_field_block_64 name="spheres*!" max="16384">
+		<_field_int64_integer name="field pointer skip!~" />
+		<_field_block_64 name="primitive^*!" max="16384">
+			<_field_string_id name="name^*!" />
+			<_field_real name="relative mass scale" />
+			<_field_real_fraction name="friction" />
+			<_field_real_fraction name="restitution" />
+			<_field_real name="volume *" />
+			<_field_real name="mass*!" />
+			<_field_long_block_index name="phantom*" />
+			<_field_short_integer name="runtime material type*~!" />
+			<_field_char_block_index name="material*" />
+			<_field_byte_flags name="material flags*">
+				<item Name="supresses effects" />
+				<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
+			</_field_byte_flags>
+			<_field_short_integer name="mass distribution index!" />
+			<_field_short_integer name="should use" />
+			<_field_explanation name="collision layer override">This value overrides the default, model, and rigid body layer.</_field_explanation>
+			<_field_string_id name="collision layer" />
+		</_field_block_64>
+		<_field_data_64 name="Packfile Data*!" />
+		<_field_data_64 name="TagFile Data*!" />
+		<_field_pad name="pad" length="4" />
+	</_field_block_64>
+	<_field_block_64 name="multi spheres*!" max="16384">
+		<_field_int64_integer name="field pointer skip!~" />
+		<_field_block_64 name="primitive^*!" max="16384">
+			<_field_string_id name="name^*!" />
+			<_field_real name="relative mass scale" />
+			<_field_real_fraction name="friction" />
+			<_field_real_fraction name="restitution" />
+			<_field_real name="volume *" />
+			<_field_real name="mass*!" />
+			<_field_long_block_index name="phantom*" />
+			<_field_short_integer name="runtime material type*~!" />
+			<_field_char_block_index name="material*" />
+			<_field_byte_flags name="material flags*">
+				<item Name="supresses effects" />
+				<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
+			</_field_byte_flags>
+			<_field_short_integer name="mass distribution index!" />
+			<_field_short_integer name="should use" />
+			<_field_explanation name="collision layer override">This value overrides the default, model, and rigid body layer.</_field_explanation>
+			<_field_string_id name="collision layer" />
+		</_field_block_64>
+		<_field_data_64 name="Packfile Data*!" />
+		<_field_data_64 name="TagFile Data*!" />
+		<_field_pad name="pad" length="4" />
+	</_field_block_64>
+	<_field_block_64 name="pills*!" max="16384">
+		<_field_int64_integer name="field pointer skip!~" />
+		<_field_block_64 name="primitive^*!" max="16384">
+			<_field_string_id name="name^*!" />
+			<_field_real name="relative mass scale" />
+			<_field_real_fraction name="friction" />
+			<_field_real_fraction name="restitution" />
+			<_field_real name="volume *" />
+			<_field_real name="mass*!" />
+			<_field_long_block_index name="phantom*" />
+			<_field_short_integer name="runtime material type*~!" />
+			<_field_char_block_index name="material*" />
+			<_field_byte_flags name="material flags*">
+				<item Name="supresses effects" />
+				<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
+			</_field_byte_flags>
+			<_field_short_integer name="mass distribution index!" />
+			<_field_short_integer name="should use" />
+			<_field_explanation name="collision layer override">This value overrides the default, model, and rigid body layer.</_field_explanation>
+			<_field_string_id name="collision layer" />
+		</_field_block_64>
+		<_field_data_64 name="Packfile Data*!" />
+		<_field_data_64 name="TagFile Data*!" />
+		<_field_pad name="pad" length="4" />
+	</_field_block_64>
+	<_field_block_64 name="boxes*!" max="16384">
+		<_field_int64_integer name="field pointer skip!~" />
+		<_field_block_64 name="primitive^*!" max="16384">
+			<_field_string_id name="name^*!" />
+			<_field_real name="relative mass scale" />
+			<_field_real_fraction name="friction" />
+			<_field_real_fraction name="restitution" />
+			<_field_real name="volume *" />
+			<_field_real name="mass*!" />
+			<_field_long_block_index name="phantom*" />
+			<_field_short_integer name="runtime material type*~!" />
+			<_field_char_block_index name="material*" />
+			<_field_byte_flags name="material flags*">
+				<item Name="supresses effects" />
+				<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
+			</_field_byte_flags>
+			<_field_short_integer name="mass distribution index!" />
+			<_field_short_integer name="should use" />
+			<_field_explanation name="collision layer override">This value overrides the default, model, and rigid body layer.</_field_explanation>
+			<_field_string_id name="collision layer" />
+		</_field_block_64>
+		<_field_data_64 name="Packfile Data*!" />
+		<_field_data_64 name="TagFile Data*!" />
+		<_field_pad name="pad" length="4" />
+	</_field_block_64>
+	<_field_block_64 name="compound shapes*!" max="16384">
+		<_field_int64_integer name="field pointer skip!~" />
+		<_field_block_64 name="primitive^*!" max="16384">
+			<_field_string_id name="name^*!" />
+			<_field_real name="relative mass scale" />
+			<_field_real_fraction name="friction" />
+			<_field_real_fraction name="restitution" />
+			<_field_real name="volume *" />
+			<_field_real name="mass*!" />
+			<_field_long_block_index name="phantom*" />
+			<_field_short_integer name="runtime material type*~!" />
+			<_field_char_block_index name="material*" />
+			<_field_byte_flags name="material flags*">
+				<item Name="supresses effects" />
+				<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
+			</_field_byte_flags>
+			<_field_short_integer name="mass distribution index!" />
+			<_field_short_integer name="should use" />
+			<_field_explanation name="collision layer override">This value overrides the default, model, and rigid body layer.</_field_explanation>
+			<_field_string_id name="collision layer" />
+		</_field_block_64>
+		<_field_data_64 name="Packfile Data*!" />
+		<_field_data_64 name="TagFile Data*!" />
+		<_field_pad name="pad" length="4" />
+	</_field_block_64>
+	<_field_block_64 name="triangles*!" max="16384">
+		<_field_int64_integer name="field pointer skip!~" />
+		<_field_block_64 name="primitive^*!" max="16384">
+			<_field_string_id name="name^*!" />
+			<_field_real name="relative mass scale" />
+			<_field_real_fraction name="friction" />
+			<_field_real_fraction name="restitution" />
+			<_field_real name="volume *" />
+			<_field_real name="mass*!" />
+			<_field_long_block_index name="phantom*" />
+			<_field_short_integer name="runtime material type*~!" />
+			<_field_char_block_index name="material*" />
+			<_field_byte_flags name="material flags*">
+				<item Name="supresses effects" />
+				<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
+			</_field_byte_flags>
+			<_field_short_integer name="mass distribution index!" />
+			<_field_short_integer name="should use" />
+			<_field_explanation name="collision layer override">This value overrides the default, model, and rigid body layer.</_field_explanation>
+			<_field_string_id name="collision layer" />
+		</_field_block_64>
+		<_field_data_64 name="Packfile Data*!" />
+		<_field_data_64 name="TagFile Data*!" />
+		<_field_pad name="pad" length="4" />
+	</_field_block_64>
+	<_field_block_64 name="triangle meshs*!" max="16384">
+		<_field_int64_integer name="field pointer skip!~" />
+		<_field_block_64 name="primitive^*!" max="16384">
+			<_field_string_id name="name^*!" />
+			<_field_real name="relative mass scale" />
+			<_field_real_fraction name="friction" />
+			<_field_real_fraction name="restitution" />
+			<_field_real name="volume *" />
+			<_field_real name="mass*!" />
+			<_field_long_block_index name="phantom*" />
+			<_field_short_integer name="runtime material type*~!" />
+			<_field_char_block_index name="material*" />
+			<_field_byte_flags name="material flags*">
+				<item Name="supresses effects" />
+				<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
+			</_field_byte_flags>
+			<_field_short_integer name="mass distribution index!" />
+			<_field_short_integer name="should use" />
+			<_field_explanation name="collision layer override">This value overrides the default, model, and rigid body layer.</_field_explanation>
+			<_field_string_id name="collision layer" />
+		</_field_block_64>
+		<_field_data_64 name="Packfile Data*!" />
+		<_field_data_64 name="TagFile Data*!" />
+		<_field_pad name="pad" length="4" />
+	</_field_block_64>
+	<_field_block_64 name="mass_distributions*!" max="1024">
+		<_field_int64_integer name="field pointer skip!~" />
+		<_field_data_64 name="Packfile Data*!" />
+		<_field_data_64 name="Tagfile Data*!" />
+	</_field_block_64>
+	<_field_block_64 name="hinge constraints*!" max="128">
+		<_field_struct name="constraint bodies*!" />
+		<_field_string_id name="name^*!" />
+		<_field_long_block_index name="node a*!" />
+		<_field_long_block_index name="node b*!" />
+		<_field_real name="a scale*!" />
+		<_field_real_vector_3d name="a forward*!" />
+		<_field_real_vector_3d name="a left*!" />
+		<_field_real_vector_3d name="a up*!" />
+		<_field_real_point_3d name="a position*!" />
+		<_field_real name="b scale*!" />
+		<_field_real_vector_3d name="b forward*!" />
+		<_field_real_vector_3d name="b left*!" />
+		<_field_real_vector_3d name="b up*!" />
+		<_field_real_point_3d name="b position*!" />
+		<_field_long_block_index name="edge index*!" />
+		<_field_pad name="JENFOXHY" length="4" />
+	</_field_block_64>
+	<_field_block_64 name="ragdoll constraints*!" max="128">
+		<_field_struct name="constraint bodies*!" />
+		<_field_string_id name="name^*!" />
+		<_field_long_block_index name="node a*!" />
+		<_field_long_block_index name="node b*!" />
+		<_field_real name="a scale*!" />
+		<_field_real_vector_3d name="a forward*!" />
+		<_field_real_vector_3d name="a left*!" />
+		<_field_real_vector_3d name="a up*!" />
+		<_field_real_point_3d name="a position*!" />
+		<_field_real name="b scale*!" />
+		<_field_real_vector_3d name="b forward*!" />
+		<_field_real_vector_3d name="b left*!" />
+		<_field_real_vector_3d name="b up*!" />
+		<_field_real_point_3d name="b position*!" />
+		<_field_long_block_index name="edge index*!" />
+		<_field_pad name="OVIM" length="4" />
+		<_field_real name="min twist*!" />
+		<_field_real name="max twist*!" />
+		<_field_real name="min cone*!" />
+		<_field_real name="max cone*!" />
+		<_field_real name="min plane*!" />
+		<_field_real name="max plane*!" />
+		<_field_real name="max friciton torque*!" />
+	</_field_block_64>
+	<_field_block_64 name="ragdoll subgroups" max="128">
+		<_field_string_id name="name^" />
+		<_field_block_64 name="nodes" max="128">
+			<_field_long_block_index name="node^" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="point to path curves*!" max="128">
+		<_field_string_id name="name^*!" />
+		<_field_long_block_index name="node index*!" />
+		<_field_block_64 name="points*!" max="1024">
+			<_field_real_point_3d name="position*!" />
+			<_field_real name="t value*!" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="limited hinge constraints*!" max="128">
+		<_field_struct name="constraint bodies*!" />
+		<_field_string_id name="name^*!" />
+		<_field_long_block_index name="node a*!" />
+		<_field_long_block_index name="node b*!" />
+		<_field_real name="a scale*!" />
+		<_field_real_vector_3d name="a forward*!" />
+		<_field_real_vector_3d name="a left*!" />
+		<_field_real_vector_3d name="a up*!" />
+		<_field_real_point_3d name="a position*!" />
+		<_field_real name="b scale*!" />
+		<_field_real_vector_3d name="b forward*!" />
+		<_field_real_vector_3d name="b left*!" />
+		<_field_real_vector_3d name="b up*!" />
+		<_field_real_point_3d name="b position*!" />
+		<_field_long_block_index name="edge index*!" />
+		<_field_pad name="TC" length="4" />
+		<_field_real name="limit friction*!" />
+		<_field_real name="limit min angle*!" />
+		<_field_real name="limit max angle*!" />
+	</_field_block_64>
+	<_field_block_64 name="ball and socket constraints*!" max="128">
+		<_field_struct name="constraint bodies*!" />
+		<_field_string_id name="name^*!" />
+		<_field_long_block_index name="node a*!" />
+		<_field_long_block_index name="node b*!" />
+		<_field_real name="a scale*!" />
+		<_field_real_vector_3d name="a forward*!" />
+		<_field_real_vector_3d name="a left*!" />
+		<_field_real_vector_3d name="a up*!" />
+		<_field_real_point_3d name="a position*!" />
+		<_field_real name="b scale*!" />
+		<_field_real_vector_3d name="b forward*!" />
+		<_field_real_vector_3d name="b left*!" />
+		<_field_real_vector_3d name="b up*!" />
+		<_field_real_point_3d name="b position*!" />
+		<_field_long_block_index name="edge index*!" />
+		<_field_pad name="UPDLSKB" length="4" />
+	</_field_block_64>
+	<_field_block_64 name="stiff spring constraints*!" max="128">
+		<_field_struct name="constraint bodies*!" />
+		<_field_string_id name="name^*!" />
+		<_field_long_block_index name="node a*!" />
+		<_field_long_block_index name="node b*!" />
+		<_field_real name="a scale*!" />
+		<_field_real_vector_3d name="a forward*!" />
+		<_field_real_vector_3d name="a left*!" />
+		<_field_real_vector_3d name="a up*!" />
+		<_field_real_point_3d name="a position*!" />
+		<_field_real name="b scale*!" />
+		<_field_real_vector_3d name="b forward*!" />
+		<_field_real_vector_3d name="b left*!" />
+		<_field_real_vector_3d name="b up*!" />
+		<_field_real_point_3d name="b position*!" />
+		<_field_long_block_index name="edge index*!" />
+		<_field_pad name="KGB" length="4" />
+		<_field_real name="spring_length*!" />
+	</_field_block_64>
+	<_field_block_64 name="prismatic constraints*!" max="128">
+		<_field_struct name="constraint bodies*!" />
+		<_field_string_id name="name^*!" />
+		<_field_long_block_index name="node a*!" />
+		<_field_long_block_index name="node b*!" />
+		<_field_real name="a scale*!" />
+		<_field_real_vector_3d name="a forward*!" />
+		<_field_real_vector_3d name="a left*!" />
+		<_field_real_vector_3d name="a up*!" />
+		<_field_real_point_3d name="a position*!" />
+		<_field_real name="b scale*!" />
+		<_field_real_vector_3d name="b forward*!" />
+		<_field_real_vector_3d name="b left*!" />
+		<_field_real_vector_3d name="b up*!" />
+		<_field_real_point_3d name="b position*!" />
+		<_field_long_block_index name="edge index*!" />
+		<_field_pad name="XVEPD" length="4" />
+		<_field_real name="min_limit*!" />
+		<_field_real name="max_limit*!" />
+		<_field_real name="max_friction_force*!" />
+	</_field_block_64>
+	<_field_block_64 name="regions*" max="32">
+		<_field_string_id name="name^*!" />
+		<_field_block_64 name="permutations" max="1023">
+			<_field_string_id name="name^*!" />
+			<_field_block_64 name="rigid bodies" max="128">
+				<_field_long_block_index name="rigid body^*!" />
+			</_field_block_64>
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="nodes*" max="255">
+		<_field_string_id name="name^*!" />
+		<_field_long_flags name="flags">
+			<item Name="does not animate" />
+		</_field_long_flags>
+		<_field_long_block_index name="parent*!" />
+		<_field_long_block_index name="sibling*!" />
+		<_field_long_block_index name="child*!" />
+	</_field_block_64>
+	<_field_block_64 name="errors*!" max="512">
+		<_field_long_string name="name^*" />
+		<_field_short_enum name="report type*">
+			<item Name="silent" />
+			<item Name="comment" />
+			<item Name="warning" />
+			<item Name="error" />
+		</_field_short_enum>
+		<_field_word_flags name="flags*">
+			<item Name="rendered" />
+			<item Name="tangent-space" />
+			<item Name="non-critical" />
+			<item Name="lightmap light" />
+			<item Name="report key is valid" />
+		</_field_word_flags>
+		<_field_short_integer name="runtime generation flags!" />
+		<_field_pad name="WVTP" length="2" />
+		<_field_long_integer name="runtime something~!" />
+		<_field_block_64 name="reports*" max="1048576">
+			<_field_char_enum name="type*">
+				<item Name="silent" />
+				<item Name="comment" />
+				<item Name="warning" />
+				<item Name="error" />
+			</_field_char_enum>
+			<_field_char_enum name="source*">
+				<item Name="none" />
+				<item Name="structure" />
+				<item Name="poop" />
+				<item Name="lightmap" />
+				<item Name="pathfinding" />
+			</_field_char_enum>
+			<_field_word_flags name="flags*">
+				<item Name="rendered" />
+				<item Name="tangent-space" />
+				<item Name="non-critical" />
+				<item Name="lightmap light" />
+				<item Name="report key is valid" />
+			</_field_word_flags>
+			<_field_data_64 name="text*" />
+			<_field_long_integer name="source identifier*" />
+			<_field_string name="source filename*" />
+			<_field_long_integer name="source line number*" />
+			<_field_block_64 name="vertices*" max="1048576">
+				<_field_struct name="point" />
+				<_field_real_point_3d name="position*" />
+				<_field_array name="node indices*">
+					<_field_char_integer name="node index*" />
+					<_field_char_integer name="node index*" />
+					<_field_char_integer name="node index*" />
+					<_field_char_integer name="node index*" />
+				</_field_array>
+				<_field_array name="node weights*">
+					<_field_real name="node weight*" />
+					<_field_real name="node weight*" />
+					<_field_real name="node weight*" />
+					<_field_real name="node weight*" />
+				</_field_array>
+				<_field_real_argb_color name="color*" />
+				<_field_real name="screen size*" />
+			</_field_block_64>
+			<_field_block_64 name="vectors*" max="1048576">
+				<_field_struct name="point" />
+				<_field_real_point_3d name="position*" />
+				<_field_array name="node indices*">
+					<_field_char_integer name="node index*" />
+					<_field_char_integer name="node index*" />
+					<_field_char_integer name="node index*" />
+					<_field_char_integer name="node index*" />
+				</_field_array>
+				<_field_array name="node weights*">
+					<_field_real name="node weight*" />
+					<_field_real name="node weight*" />
+					<_field_real name="node weight*" />
+					<_field_real name="node weight*" />
+				</_field_array>
+				<_field_real_argb_color name="color*" />
+				<_field_real_vector_3d name="normal*" />
+				<_field_real name="screen length*" />
+			</_field_block_64>
+			<_field_block_64 name="lines*" max="1048576">
+				<_field_array name="points*">
+					<_field_struct name="point" />
+					<_field_real_point_3d name="position*" />
+					<_field_array name="node indices*">
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+					</_field_array>
+					<_field_array name="node weights*">
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+					</_field_array>
+					<_field_struct name="point" />
+					<_field_real_point_3d name="position*" />
+					<_field_array name="node indices*">
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+					</_field_array>
+					<_field_array name="node weights*">
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+					</_field_array>
+				</_field_array>
+				<_field_real_argb_color name="color*" />
+			</_field_block_64>
+			<_field_block_64 name="triangles*" max="1048576">
+				<_field_array name="points*">
+					<_field_struct name="point" />
+					<_field_real_point_3d name="position*" />
+					<_field_array name="node indices*">
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+					</_field_array>
+					<_field_array name="node weights*">
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+					</_field_array>
+					<_field_struct name="point" />
+					<_field_real_point_3d name="position*" />
+					<_field_array name="node indices*">
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+					</_field_array>
+					<_field_array name="node weights*">
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+					</_field_array>
+					<_field_struct name="point" />
+					<_field_real_point_3d name="position*" />
+					<_field_array name="node indices*">
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+					</_field_array>
+					<_field_array name="node weights*">
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+					</_field_array>
+				</_field_array>
+				<_field_real_argb_color name="color*" />
+			</_field_block_64>
+			<_field_block_64 name="quads*" max="1048576">
+				<_field_array name="points*">
+					<_field_struct name="point" />
+					<_field_real_point_3d name="position*" />
+					<_field_array name="node indices*">
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+					</_field_array>
+					<_field_array name="node weights*">
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+					</_field_array>
+					<_field_struct name="point" />
+					<_field_real_point_3d name="position*" />
+					<_field_array name="node indices*">
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+					</_field_array>
+					<_field_array name="node weights*">
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+					</_field_array>
+					<_field_struct name="point" />
+					<_field_real_point_3d name="position*" />
+					<_field_array name="node indices*">
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+					</_field_array>
+					<_field_array name="node weights*">
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+					</_field_array>
+					<_field_struct name="point" />
+					<_field_real_point_3d name="position*" />
+					<_field_array name="node indices*">
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+					</_field_array>
+					<_field_array name="node weights*">
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+					</_field_array>
+				</_field_array>
+				<_field_real_argb_color name="color*" />
+			</_field_block_64>
+			<_field_block_64 name="comments*" max="1048576">
+				<_field_data_64 name="text*" />
+				<_field_struct name="point" />
+				<_field_real_point_3d name="position*" />
+				<_field_array name="node indices*">
+					<_field_char_integer name="node index*" />
+					<_field_char_integer name="node index*" />
+					<_field_char_integer name="node index*" />
+					<_field_char_integer name="node index*" />
+				</_field_array>
+				<_field_array name="node weights*">
+					<_field_real name="node weight*" />
+					<_field_real name="node weight*" />
+					<_field_real name="node weight*" />
+					<_field_real name="node weight*" />
+				</_field_array>
+				<_field_real_argb_color name="color*" />
+			</_field_block_64>
+			<_field_long_integer name="report key*" />
+			<_field_long_integer name="node index*" />
+			<_field_real_bounds name="bounds x*" />
+			<_field_real_bounds name="bounds y*" />
+			<_field_real_bounds name="bounds z*" />
+			<_field_real_argb_color name="color*" />
+		</_field_block_64>
+	</_field_block_64>
+</plugin>

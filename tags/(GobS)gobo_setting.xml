@@ -1,0 +1,79 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_explanation name="Gobos" />
+	<_field_block_64 name="Gobos" max="4">
+		<_field_char_enum name="bitmap address mode">
+			<item Name="wrap" />
+			<item Name="clamp" />
+			<item Name="mirror" />
+			<item Name="black border" />
+			<item Name="mirroronce" />
+			<item Name="mirroronce border" />
+		</_field_char_enum>
+		<_field_char_enum name="displacement bitmap address mode">
+			<item Name="wrap" />
+			<item Name="clamp" />
+			<item Name="mirror" />
+			<item Name="black border" />
+			<item Name="mirroronce" />
+			<item Name="mirroronce border" />
+		</_field_char_enum>
+		<_field_pad name="gobo_pad_0" length="2" />
+		<_field_tag_reference_64 name="Bitmap" />
+		<_field_block_64 name="animation parameters" max="32767">
+			<_field_long_enum name="type^">
+				<item Name="offset u" />
+				<item Name="offset v" />
+				<item Name="rotation" />
+				<item Name="offset w (animation)" />
+				<item Name="scale u (tiling)" />
+				<item Name="scale v (tiling)" />
+			</_field_long_enum>
+			<_field_real name="origin x:normalized#for rotations" />
+			<_field_real name="origin y:normalized#for rotations" />
+			<_field_explanation name="Gobo Parameters" />
+			<_field_string_id name="Input Variable!" />
+			<_field_string_id name="Range Variable!" />
+			<_field_short_enum name="Output Modifier!">
+				<item Name=" " />
+				<item Name="Plus" />
+				<item Name="Times" />
+			</_field_short_enum>
+			<_field_pad name="BVCG" length="2" />
+			<_field_string_id name="Output Modifier Input!" />
+			<_field_struct name="Mapping" />
+			<_field_data_64 name="data" />
+		</_field_block_64>
+		<_field_tag_reference_64 name="Displacement Bitmap" />
+		<_field_block_64 name="displacement animation parameters" max="32767">
+			<_field_long_enum name="type^">
+				<item Name="offset u" />
+				<item Name="offset v" />
+				<item Name="rotation" />
+				<item Name="offset w (animation)" />
+				<item Name="scale u (tiling)" />
+				<item Name="scale v (tiling)" />
+			</_field_long_enum>
+			<_field_real name="origin x:normalized#for rotations" />
+			<_field_real name="origin y:normalized#for rotations" />
+			<_field_explanation name="Gobo Parameters" />
+			<_field_string_id name="Input Variable!" />
+			<_field_string_id name="Range Variable!" />
+			<_field_short_enum name="Output Modifier!">
+				<item Name=" " />
+				<item Name="Plus" />
+				<item Name="Times" />
+			</_field_short_enum>
+			<_field_pad name="BVCG" length="2" />
+			<_field_string_id name="Output Modifier Input!" />
+			<_field_struct name="Mapping" />
+			<_field_data_64 name="data" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_long_integer name="Resolution" />
+</plugin>

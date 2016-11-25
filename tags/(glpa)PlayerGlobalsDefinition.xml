@@ -1,0 +1,534 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="@player information" max="3">
+		<_field_real name="walking speed:world units per second" />
+		<_field_real name="run forward:world units per second" />
+		<_field_real name="run backward:world units per second" />
+		<_field_real name="run sideways:world units per second" />
+		<_field_real name="run acceleration:world units per second squared" />
+		<_field_real name="sneak forward:world units per second" />
+		<_field_real name="sneak backward:world units per second" />
+		<_field_real name="sneak sideways:world units per second" />
+		<_field_real name="sneak acceleration:world units per second squared" />
+		<_field_real name="downed forward:world units per second" />
+		<_field_real name="downed backward:world units per second" />
+		<_field_real name="downed sideways:world units per second" />
+		<_field_real name="downed acceleration:world units per second squared" />
+		<_field_real name="airborne acceleration:world units per second squared" />
+		<_field_real name="weapon ready anim scaler" />
+		<_field_real_point_3d name="grenade origin" />
+		<_field_struct name="grenade aiming#determines the distance along the aiming vector to orient the grenade based on the camera pitch" />
+		<_field_data_64 name="data" />
+		<_field_real_bounds name="first person idle time:seconds" />
+		<_field_real_fraction name="first person skip fraction:[0,1]" />
+		<_field_tag_reference_64 name="coop countdown sound" validtags="snd!" />
+		<_field_tag_reference_64 name="coop respawn sound" validtags="snd!" />
+		<_field_tag_reference_64 name="coop respawn effect" />
+		<_field_tag_reference_64 name="hologram death effect" />
+		<_field_long_integer name="binoculars zoom count" />
+		<_field_real_bounds name="binoculars zoom range" />
+		<_field_tag_reference_64 name="night vision on{flashlight on}" validtags="snd!" />
+		<_field_tag_reference_64 name="night vision off{flashlight off}" validtags="snd!" />
+		<_field_real name="tracking detection locked decay time" />
+		<_field_real name="tracking detection locking decay time" />
+		<_field_real name="fire team objective range" />
+		<_field_real name="fire team sandbox range" />
+		<_field_real name="fire team cone angle: in degrees" />
+	</_field_block_64>
+	<_field_block_64 name="@player camera" max="1">
+		<_field_explanation name="Pitch values">How fast the first person camera rotates up and down based on the sensitivity preference</_field_explanation>
+		<_field_array name="pitch values">
+			<_field_real name="Angular velocity#degrees per second" />
+			<_field_real name="Angular velocity#degrees per second" />
+			<_field_real name="Angular velocity#degrees per second" />
+			<_field_real name="Angular velocity#degrees per second" />
+			<_field_real name="Angular velocity#degrees per second" />
+			<_field_real name="Angular velocity#degrees per second" />
+			<_field_real name="Angular velocity#degrees per second" />
+			<_field_real name="Angular velocity#degrees per second" />
+			<_field_real name="Angular velocity#degrees per second" />
+			<_field_real name="Angular velocity#degrees per second" />
+		</_field_array>
+		<_field_explanation name="Yaw values">How fast the first person camera rotates left and right based on the sensitivity preference</_field_explanation>
+		<_field_array name="yaw values">
+			<_field_real name="Angular velocity#degrees per second" />
+			<_field_real name="Angular velocity#degrees per second" />
+			<_field_real name="Angular velocity#degrees per second" />
+			<_field_real name="Angular velocity#degrees per second" />
+			<_field_real name="Angular velocity#degrees per second" />
+			<_field_real name="Angular velocity#degrees per second" />
+			<_field_real name="Angular velocity#degrees per second" />
+			<_field_real name="Angular velocity#degrees per second" />
+			<_field_real name="Angular velocity#degrees per second" />
+			<_field_real name="Angular velocity#degrees per second" />
+		</_field_array>
+		<_field_explanation name="Flying camera pitch values">How fast the flying person camera rotates up and down based on the sensitivity preference</_field_explanation>
+		<_field_array name="flying camera pitch values">
+			<_field_real name="Angular velocity#degrees per second" />
+			<_field_real name="Angular velocity#degrees per second" />
+			<_field_real name="Angular velocity#degrees per second" />
+			<_field_real name="Angular velocity#degrees per second" />
+		</_field_array>
+		<_field_explanation name="Flying camera yaw values">How fast the flying person camera rotates left and right based on the sensitivity preference</_field_explanation>
+		<_field_array name="flying camera yaw values">
+			<_field_real name="Angular velocity#degrees per second" />
+			<_field_real name="Angular velocity#degrees per second" />
+			<_field_real name="Angular velocity#degrees per second" />
+			<_field_real name="Angular velocity#degrees per second" />
+		</_field_array>
+		<_field_explanation name="Flying camera speed values">Scales movement speed</_field_explanation>
+		<_field_array name="flying camera speed values">
+			<_field_real name="Speed" />
+			<_field_real name="Speed" />
+			<_field_real name="Speed" />
+			<_field_real name="Speed" />
+		</_field_array>
+		<_field_explanation name="Flying camera thrust values">Scales thrust speed</_field_explanation>
+		<_field_array name="flying camera thrust values">
+			<_field_real name="Thrust" />
+			<_field_real name="Thrust" />
+			<_field_real name="Thrust" />
+		</_field_array>
+	</_field_block_64>
+	<_field_block_64 name="@player representation" max="3">
+		<_field_byte_flags name="flags">
+			<item Name="can use health packs" />
+		</_field_byte_flags>
+		<_field_pad name="pad" length="3" />
+		<_field_tag_reference_64 name="hud screen reference" />
+		<_field_tag_reference_64 name="first person hands model" />
+		<_field_string_id name="first person multiplayer hands variant" />
+		<_field_tag_reference_64 name="first person body model" />
+		<_field_string_id name="first person multiplayer body variant" />
+		<_field_block_64 name="hidden fpBody regions" max="32">
+			<_field_string_id name="hidden region^" />
+			<_field_byte_flags name="flags">
+				<item Name="visible in ICS" />
+			</_field_byte_flags>
+			<_field_pad name="pad" length="3" />
+		</_field_block_64>
+		<_field_tag_reference_64 name="third person unit" />
+		<_field_string_id name="third person variant" />
+		<_field_tag_reference_64 name="binoculars zoom in sound" validtags="snd!" />
+		<_field_tag_reference_64 name="binoculars zoom out sounds" validtags="snd!" />
+		<_field_long_block_index name="player information" />
+		<_field_block_64 name="Coop teams#The visual representation for the coop fireteams in campaign" max="3">
+			<_field_long_enum name="Fireteam type">
+				<item Name="Chief (Blue team)" />
+				<item Name="Locke (Osiris Team)" />
+				<item Name="Chief (cracked visor and blue team)" />
+			</_field_long_enum>
+			<_field_block_64 name="Coop player representation#The visual representation a character in the fireteam" max="4">
+				<_field_tag_reference_64 name="character first person hands model" />
+				<_field_string_id name="character first person hands variant name" />
+				<_field_tag_reference_64 name="character first person body (legs) model" />
+				<_field_string_id name="character first person body (legs) variant name" />
+				<_field_tag_reference_64 name="character third person unit" />
+				<_field_string_id name="character third person unit variant name" />
+				<_field_char_enum name="character avatar name">
+					<item Name="None" />
+					<item Name="Masterchief" />
+					<item Name="Fred" />
+					<item Name="Kelly" />
+					<item Name="Linda" />
+					<item Name="Locke" />
+					<item Name="Thorne" />
+					<item Name="Tanaka" />
+					<item Name="Vale" />
+				</_field_char_enum>
+				<_field_pad name="pad" length="3" />
+				<_field_block_64 name="hidden regions override#Applied to the first person body (legs) model. If this is left empty, will use the global hidden fpBody regions defined in playerglobals instead." max="32">
+					<_field_string_id name="hidden region^" />
+					<_field_byte_flags name="flags">
+						<item Name="visible in ICS" />
+					</_field_byte_flags>
+					<_field_pad name="pad" length="3" />
+				</_field_block_64>
+			</_field_block_64>
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="default player traits" max="1">
+		<_field_block_64 name="vitality traits" max="1">
+			<_field_long_flags name="should apply trait">
+				<item Name="damage resistance" />
+				<item Name="shield multiplier" />
+				<item Name="body multiplier" />
+				<item Name="shield stun duration" />
+				<item Name="shield recharge rate" />
+				<item Name="body recharge rate" />
+				<item Name="overshield recharge rate" />
+				<item Name="vampirism percent" />
+				<item Name="explosive damage resistance" />
+				<item Name="wheelman armor vehicle stun time modifier" />
+				<item Name="wheelman armor vehicle recharge time modifier" />
+				<item Name="wheelman armor vehicle emp disabled time modifier" />
+				<item Name="fall damage multiplier" />
+			</_field_long_flags>
+			<_field_explanation name="damage resistance">Any damage taken is divided by this number.  If you put -1, that means &quot;invulnerable&quot;.</_field_explanation>
+			<_field_real name="damage resistance" />
+			<_field_real name="shield multiplier" />
+			<_field_real name="body multiplier" />
+			<_field_real name="shield stun duration" />
+			<_field_real name="shield recharge rate" />
+			<_field_real name="body recharge rate" />
+			<_field_real name="overshield recharge rate" />
+			<_field_real name="vampirism percent" />
+			<_field_real name="explosive damage resistance#incoming damage multiplied by (1 - resistance)" />
+			<_field_real name="wheelman armor vehicle stun time modifier" />
+			<_field_real name="wheelman armor vehicle recharge time modifier" />
+			<_field_real name="wheelman armor vehicle emp disabled time modifier" />
+			<_field_real name="fall damage multiplier" />
+			<_field_char_enum name="headshot immunity">
+				<item Name="unchanged" />
+				<item Name="false" />
+				<item Name="true" />
+			</_field_char_enum>
+			<_field_char_enum name="assassination immunity">
+				<item Name="unchanged" />
+				<item Name="false" />
+				<item Name="true" />
+			</_field_char_enum>
+			<_field_char_enum name="deathless">
+				<item Name="unchanged" />
+				<item Name="false" />
+				<item Name="true" />
+			</_field_char_enum>
+			<_field_char_enum name="fast track armor">
+				<item Name="unchanged" />
+				<item Name="false" />
+				<item Name="true" />
+			</_field_char_enum>
+			<_field_char_enum name="powerup cancellation">
+				<item Name="unchanged" />
+				<item Name="none" />
+				<item Name="no_overshield" />
+			</_field_char_enum>
+			<_field_pad name="pad" length="3" />
+		</_field_block_64>
+		<_field_block_64 name="weapon traits" max="1">
+			<_field_long_flags name="should apply trait">
+				<item Name="damage multiplier" />
+				<item Name="melee damage multiplier" />
+				<item Name="grenade damage multiplier" />
+				<item Name="grenade recharge seconds frag" />
+				<item Name="grenade recharge seconds plasma" />
+				<item Name="grenade recharge seconds spike" />
+				<item Name="hero equipment energy use rate modifier" />
+				<item Name="hero equipment energy recharge delay modifier" />
+				<item Name="hero equipment energy recharge rate modifier" />
+				<item Name="hero equipment initial energy modifier" />
+				<item Name="equipment energy use rate modifier" />
+				<item Name="equipment energy recharge delay modifier" />
+				<item Name="equipment energy use recharge rate modifier" />
+				<item Name="equipment energy initial energy modifier" />
+				<item Name="switch speed modifier" />
+				<item Name="reload speed modifier" />
+				<item Name="explosive area of effect radius modifier" />
+				<item Name="gunner armor modifier" />
+				<item Name="stability armor modifier" />
+				<item Name="drop recon warning seconds" />
+				<item Name="assassination speed modifier" />
+			</_field_long_flags>
+			<_field_real name="damage multiplier" />
+			<_field_real name="melee damage multiplier" />
+			<_field_real name="grenade damage multiplier" />
+			<_field_real name="grenade recharge seconds frag" />
+			<_field_real name="grenade recharge seconds plasma" />
+			<_field_real name="grenade recharge seconds spike" />
+			<_field_real name="hero equipment energy use rate modifier" />
+			<_field_real name="hero equipment energy recharge delay modifier" />
+			<_field_real name="hero equipment energy recharge rate modifier" />
+			<_field_real name="hero equipment initial energy modifier" />
+			<_field_real name="equipment energy use rate modifier" />
+			<_field_real name="equipment energy recharge delay modifier" />
+			<_field_real name="equipment energy use recharge rate modifier" />
+			<_field_real name="equipment energy initial energy modifier" />
+			<_field_real name="switch speed modifier" />
+			<_field_real name="reload speed modifier" />
+			<_field_real name="explosive area of effect radius modifier" />
+			<_field_real name="gunner armor modifier" />
+			<_field_real name="stability armor modifier" />
+			<_field_real name="drop recon warning seconds" />
+			<_field_real name="assassination speed modifier" />
+			<_field_char_enum name="weapon pickup allowed">
+				<item Name="unchanged" />
+				<item Name="false" />
+				<item Name="true" />
+			</_field_char_enum>
+			<_field_pad name="pad0" length="3" />
+			<_field_block_64 name="initial grenade count" max="16">
+				<_field_tag_reference_64 name="grenade reference" />
+				<_field_char_integer name="count" />
+				<_field_pad name="pad0" length="3" />
+			</_field_block_64>
+			<_field_char_enum name="infinite ammo">
+				<item Name="unchanged" />
+				<item Name="off" />
+				<item Name="on" />
+				<item Name="bottomless_clip" />
+			</_field_char_enum>
+			<_field_char_enum name="equipment usage">
+				<item Name="unchanged" />
+				<item Name="off" />
+				<item Name="not with objectives" />
+				<item Name="on" />
+			</_field_char_enum>
+			<_field_char_enum name="equipment usage excepting auto turret#false will disable all equipment except auto turret">
+				<item Name="unchanged" />
+				<item Name="off" />
+				<item Name="not with objectives" />
+				<item Name="on" />
+			</_field_char_enum>
+			<_field_char_enum name="equipment drop">
+				<item Name="unchanged" />
+				<item Name="false" />
+				<item Name="true" />
+			</_field_char_enum>
+			<_field_char_enum name="infinite equipment">
+				<item Name="unchanged" />
+				<item Name="false" />
+				<item Name="true" />
+			</_field_char_enum>
+			<_field_char_enum name="weapons ammopack">
+				<item Name="unchanged" />
+				<item Name="false" />
+				<item Name="true" />
+			</_field_char_enum>
+			<_field_char_enum name="weapons grenadier">
+				<item Name="unchanged" />
+				<item Name="false" />
+				<item Name="true" />
+			</_field_char_enum>
+			<_field_char_enum name="weapons explode on death armormod#spawns projectile specified in globals.globals">
+				<item Name="unchanged" />
+				<item Name="false" />
+				<item Name="true" />
+			</_field_char_enum>
+			<_field_char_enum name="weapons well equipped">
+				<item Name="unchanged" />
+				<item Name="false" />
+				<item Name="true" />
+			</_field_char_enum>
+			<_field_pad name="weapons_padding" length="3" />
+			<_field_explanation name="initial weapons/equipment">Type any string from the relevant sections of multiplayer/globals.multiplayer_object_type_list.</_field_explanation>
+			<_field_string_id name="initial primary weapon" />
+			<_field_string_id name="initial secondary weapon" />
+			<_field_string_id name="initial equipment" />
+			<_field_string_id name="initial tactical package" />
+			<_field_string_id name="initial support upgrade" />
+		</_field_block_64>
+		<_field_block_64 name="movement traits" max="1">
+			<_field_long_flags name="should apply trait">
+				<item Name="speed" />
+				<item Name="gravity multiplier" />
+				<item Name="jump multiplier" />
+				<item Name="turn speed multiplier" />
+			</_field_long_flags>
+			<_field_real name="speed" />
+			<_field_real name="gravity multiplier" />
+			<_field_real name="jump multiplier" />
+			<_field_real name="turn speed multiplier" />
+			<_field_char_enum name="vehicle usage">
+				<item Name="unchanged" />
+				<item Name="none" />
+				<item Name="passenger_only" />
+				<item Name="driver_only" />
+				<item Name="gunner_only" />
+				<item Name="not_passenger" />
+				<item Name="not_driver" />
+				<item Name="not_gunner" />
+				<item Name="full" />
+			</_field_char_enum>
+			<_field_char_enum name="double jump">
+				<item Name="unchanged" />
+				<item Name="off" />
+				<item Name="on" />
+				<item Name="on_plus_lunge" />
+			</_field_char_enum>
+			<_field_char_enum name="sprint usage">
+				<item Name="unchanged" />
+				<item Name="false" />
+				<item Name="true" />
+			</_field_char_enum>
+			<_field_char_enum name="automatic momentum usage">
+				<item Name="unchanged" />
+				<item Name="false" />
+				<item Name="true" />
+			</_field_char_enum>
+			<_field_char_enum name="vaulting enabled">
+				<item Name="unchanged" />
+				<item Name="false" />
+				<item Name="true" />
+			</_field_char_enum>
+			<_field_char_enum name="stealthy">
+				<item Name="unchanged" />
+				<item Name="false" />
+				<item Name="true" />
+			</_field_char_enum>
+			<_field_char_enum name="clamber enabled">
+				<item Name="unchanged" />
+				<item Name="false" />
+				<item Name="true" />
+			</_field_char_enum>
+			<_field_char_enum name="thrusters enabled">
+				<item Name="unchanged" />
+				<item Name="false" />
+				<item Name="true" />
+			</_field_char_enum>
+			<_field_char_enum name="stabilizer enabled">
+				<item Name="unchanged" />
+				<item Name="false" />
+				<item Name="true" />
+			</_field_char_enum>
+			<_field_pad name="grue" length="3" />
+		</_field_block_64>
+		<_field_block_64 name="appearance traits" max="1">
+			<_field_char_enum name="active camo">
+				<item Name="unchanged" />
+				<item Name="off" />
+				<item Name="poor" />
+				<item Name="good" />
+				<item Name="excellent" />
+				<item Name="invisible" />
+			</_field_char_enum>
+			<_field_char_enum name="waypoint">
+				<item Name="unchanged" />
+				<item Name="off" />
+				<item Name="allies" />
+				<item Name="all" />
+			</_field_char_enum>
+			<_field_char_enum name="gamertag visible">
+				<item Name="unchanged" />
+				<item Name="off" />
+				<item Name="allies" />
+				<item Name="all" />
+			</_field_char_enum>
+			<_field_char_enum name="aura">
+				<item Name="unchanged" />
+				<item Name="off" />
+				<item Name="team_color" />
+				<item Name="black" />
+				<item Name="white" />
+			</_field_char_enum>
+			<_field_explanation name="death effect/attached effect">Type any string from the relevant sections of multiplayer/megalo/multiplayer_effects.multiplayereffects.</_field_explanation>
+			<_field_string_id name="death effect" />
+			<_field_string_id name="attached effect" />
+		</_field_block_64>
+		<_field_block_64 name="sensor traits" max="1">
+			<_field_long_flags name="should apply trait">
+				<item Name="motion tracker range" />
+			</_field_long_flags>
+			<_field_real name="motion tracker range" />
+			<_field_char_enum name="motion tracker">
+				<item Name="unchanged" />
+				<item Name="off" />
+				<item Name="moving_friendly_bipeds_moving_neutral_vehicles" />
+				<item Name="moving_bipeds_moving_vehicles" />
+				<item Name="all_bipeds_moving_vehicles" />
+			</_field_char_enum>
+			<_field_char_enum name="motion tracker while zoomed">
+				<item Name="unchanged" />
+				<item Name="false" />
+				<item Name="true" />
+			</_field_char_enum>
+			<_field_char_enum name="directional damage indicator">
+				<item Name="unchanged" />
+				<item Name="false" />
+				<item Name="true" />
+			</_field_char_enum>
+			<_field_char_enum name="vision mode">
+				<item Name="unchanged" />
+				<item Name="false" />
+				<item Name="true" />
+			</_field_char_enum>
+			<_field_char_enum name="battle awareness">
+				<item Name="unchanged" />
+				<item Name="false" />
+				<item Name="true" />
+			</_field_char_enum>
+			<_field_char_enum name="threat view">
+				<item Name="unchanged" />
+				<item Name="false" />
+				<item Name="true" />
+			</_field_char_enum>
+			<_field_char_enum name="aural enhancement">
+				<item Name="unchanged" />
+				<item Name="false" />
+				<item Name="true" />
+			</_field_char_enum>
+			<_field_pad name="pad" length="1" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_struct name="player malleable properties" />
+	<_field_custom name="motion tracker normal range#distance at which objects appear on the motion tracker" />
+	<_field_struct name="motion tracker normal range#distance at which objects appear on the motion tracker" />
+	<_field_real name="Base Value" />
+	<_field_real_bounds name="Value Bounds" />
+	<_field_char_enum name="Combiner">
+		<item Name="sequential#applies the percentages one after another on the base" />
+		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+		<item Name="addition#adds on all of the modifiers to the base" />
+		<item Name="product#multiplies the values one after another on to the base" />
+	</_field_char_enum>
+	<_field_pad name="padEnd" length="3" />
+	<_field_custom name="motion tracker extended range#distance at which objects appear on the motion tracker" />
+	<_field_struct name="motion tracker extended range#distance at which objects appear on the motion tracker" />
+	<_field_real name="Base Value" />
+	<_field_real_bounds name="Value Bounds" />
+	<_field_char_enum name="Combiner">
+		<item Name="sequential#applies the percentages one after another on the base" />
+		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+		<item Name="addition#adds on all of the modifiers to the base" />
+		<item Name="product#multiplies the values one after another on to the base" />
+	</_field_char_enum>
+	<_field_pad name="padEnd" length="3" />
+	<_field_custom name="motion tracker vehicle range#distance at which objects appear on the motion tracker" />
+	<_field_struct name="motion tracker vehicle range#distance at which objects appear on the motion tracker" />
+	<_field_real name="Base Value" />
+	<_field_real_bounds name="Value Bounds" />
+	<_field_char_enum name="Combiner">
+		<item Name="sequential#applies the percentages one after another on the base" />
+		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+		<item Name="addition#adds on all of the modifiers to the base" />
+		<item Name="product#multiplies the values one after another on to the base" />
+	</_field_char_enum>
+	<_field_pad name="padEnd" length="3" />
+	<_field_custom name="motion tracker threshold speed (friendly):world units per second#speed above which friendly/neutral objects appear on the player's motion tracker" />
+	<_field_struct name="motion tracker threshold speed (friendly):world units per second#speed above which friendly/neutral objects appear on the player's motion tracker" />
+	<_field_real name="Base Value" />
+	<_field_real_bounds name="Value Bounds" />
+	<_field_char_enum name="Combiner">
+		<item Name="sequential#applies the percentages one after another on the base" />
+		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+		<item Name="addition#adds on all of the modifiers to the base" />
+		<item Name="product#multiplies the values one after another on to the base" />
+	</_field_char_enum>
+	<_field_pad name="padEnd" length="3" />
+	<_field_custom name="motion tracker threshold speed (enemy):world units per second#speed above which enemy objects appear on the player's motion tracker" />
+	<_field_struct name="motion tracker threshold speed (enemy):world units per second#speed above which enemy objects appear on the player's motion tracker" />
+	<_field_real name="Base Value" />
+	<_field_real_bounds name="Value Bounds" />
+	<_field_char_enum name="Combiner">
+		<item Name="sequential#applies the percentages one after another on the base" />
+		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+		<item Name="addition#adds on all of the modifiers to the base" />
+		<item Name="product#multiplies the values one after another on to the base" />
+	</_field_char_enum>
+	<_field_pad name="padEnd" length="3" />
+	<_field_custom name="motion tracker visibility scalar#scales how fast this player will appear to be moving to other motion trackers (does not scale the actual speed)" />
+	<_field_struct name="motion tracker visibility scalar#scales how fast this player will appear to be moving to other motion trackers (does not scale the actual speed)" />
+	<_field_real name="Base Value" />
+	<_field_real_bounds name="Value Bounds" />
+	<_field_char_enum name="Combiner">
+		<item Name="sequential#applies the percentages one after another on the base" />
+		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+		<item Name="addition#adds on all of the modifiers to the base" />
+		<item Name="product#multiplies the values one after another on to the base" />
+	</_field_char_enum>
+	<_field_pad name="padEnd" length="3" />
+</plugin>

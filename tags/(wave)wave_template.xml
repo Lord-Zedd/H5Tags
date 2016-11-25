@@ -1,0 +1,34 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="squad specifications" max="16">
+		<_field_tag_reference_64 name="squad template^" />
+		<_field_struct name="spawn conditions" />
+		<_field_word_flags name="difficulty flags">
+			<item Name="easy" />
+			<item Name="normal" />
+			<item Name="heroic" />
+			<item Name="legendary" />
+		</_field_word_flags>
+		<_field_pad name="post-difficulty-flags-padding" length="2" />
+		<_field_short_integer name="weight#The relative weight given to this squad spawning" />
+		<_field_explanation name="std::min/std::max SPAWN COUNTS">When spawning a number of squads from this wave template, try and spawn at least the minimum number, and at most the maximum number. Once these min/max bounds have been met, probabilistic distribution will continue.</_field_explanation>
+		<_field_char_integer name="min spawn#Spawn AT LEAST this number of squads. Value of 0 means &quot;no minimum&quot;" />
+		<_field_char_integer name="max spawn#Spawn NO MORE THAN this number of squads. Value of 0 means &quot;no maximum&quot;" />
+		<_field_long_enum name="placement filter#Filter where this squad specification can spawn by matching this value with the values in squad definitions in the scenario">
+			<item Name="None" />
+			<item Name="Heavy Infantry" />
+			<item Name="Boss Infantry" />
+			<item Name="Light Vehicle" />
+			<item Name="Heavy Vehicle" />
+			<item Name="Flying Infantry" />
+			<item Name="Flying Vehicle" />
+			<item Name="Bonus" />
+		</_field_long_enum>
+	</_field_block_64>
+	<_field_pad name="pad_tp" length="4" />
+</plugin>

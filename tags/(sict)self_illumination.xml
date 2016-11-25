@@ -1,0 +1,27 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="States" max="16">
+		<_field_explanation name="Self-Illumination State">An animated self-illumination controller state.</_field_explanation>
+		<_field_string_id name="Name^" />
+		<_field_long_flags name="Flags">
+			<item Name="Looping" />
+			<item Name="Triggered By AI State" />
+			<item Name="Triggered By Anim State" />
+			<item Name="Triggered By Dialog" />
+		</_field_long_flags>
+		<_field_real name="Length #Length of illumination animation in seconds." />
+		<_field_string_id name="Next State #Used to automatically transition to another state when finished." />
+		<_field_struct name="Intensity #Animates intensity over time. 0 - Min Intensity.  1 - Max Intensity" />
+		<_field_data_64 name="data" />
+		<_field_struct name="Color #Animates color over time.  0 - White.  1 - Full Color" />
+		<_field_data_64 name="data" />
+		<_field_struct name="Activation #Animates On/Off state over time. 0 - Off. 1 - On" />
+		<_field_data_64 name="data" />
+	</_field_block_64>
+	<_field_pad name="pad_tp" length="4" />
+</plugin>

@@ -1,0 +1,51 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_block_64 name="facial animation permutations" max="544">
+		<_field_real name="start time" />
+		<_field_real name="end time" />
+		<_field_real name="blend in" />
+		<_field_real name="blend out" />
+		<_field_block_64 name="facial animation curves" max="34">
+			<_field_long_enum name="facial animation track">
+				<item Name="Silence" />
+				<item Name="Eat" />
+				<item Name="Earth" />
+				<item Name="If" />
+				<item Name="Ox" />
+				<item Name="Oat" />
+				<item Name="Wet" />
+				<item Name="Size" />
+				<item Name="Church" />
+				<item Name="Fave" />
+				<item Name="Though" />
+				<item Name="Told" />
+				<item Name="Bump" />
+				<item Name="New" />
+				<item Name="Roar" />
+				<item Name="Cage" />
+				<item Name="Eyebrow_Raise" />
+				<item Name="Blink" />
+				<item Name="Orientation_Head_Pitch" />
+				<item Name="Orientation_Head_Roll" />
+				<item Name="Orientation_Head_Yaw" />
+				<item Name="Emphasis_Head_Pitch" />
+				<item Name="Emphasis_Head_Roll" />
+				<item Name="Emphasis_Head_Yaw" />
+				<item Name="Gaze_Eye_Pitch" />
+				<item Name="Gaze_Eye_Yaw" />
+				<item Name="happy" />
+				<item Name="sad" />
+				<item Name="angry" />
+				<item Name="disgusted" />
+				<item Name="scared" />
+				<item Name="surprised" />
+				<item Name="pain" />
+				<item Name="shout" />
+			</_field_long_enum>
+			<_field_long_integer name="facial animation curve data offset" />
+			<_field_long_integer name="facial animation curve data size" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_data_64 name="compressed facial animation curve data" />
+</plugin>

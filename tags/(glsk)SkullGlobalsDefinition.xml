@@ -1,0 +1,30 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="campaign metagame globals" max="1">
+		<_field_block_64 name="styles" max="100">
+			<_field_string_id name="incident name^" />
+			<_field_real name="style multiplier" />
+		</_field_block_64>
+		<_field_block_64 name="difficulty" max="4">
+			<_field_real name="difficulty multiplier" />
+		</_field_block_64>
+		<_field_block_64 name="skulls{Primary Skulls}" max="20">
+			<_field_real name="difficulty multiplier" />
+		</_field_block_64>
+		<_field_long_integer name="friendly_death_point_count" />
+		<_field_long_integer name="player_death_point_count" />
+		<_field_long_integer name="player_betrayal_point_count" />
+		<_field_real name="transient score time{multi kill window}:s#how long does transient score stay onscreen" />
+		<_field_real name="EMP kill window#time after taking a guys shields down with emp damage you have to get the emp kill bonus (seconds)" />
+		<_field_real name="Cowbell explosion acceleration multiplier#acceleration multiplier from explosions if cowbell is enabled" />
+		<_field_real name="Famine ammo multiplier#scalar multiplier to determine what percentage of normally dropped ammo will drop if famine is on" />
+		<_field_real name="Score delta display seconds (max)#How long to display accumulated points" />
+		<_field_real name="Score delta display seconds (incremental)#How long to extend the timer when displaying accumulated points, extended every time accumulated points increases" />
+	</_field_block_64>
+	<_field_pad name="pad" length="4" />
+</plugin>

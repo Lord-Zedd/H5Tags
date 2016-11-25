@@ -1,0 +1,34 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_string name="name" />
+	<_field_long_string name="description" />
+	<_field_tag_reference_64 name="icon bitmap" />
+	<_field_long_integer name="icon sprite index" />
+	<_field_block_64 name="slots" max="64">
+		<_field_block_64 name="cards" max="64">
+			<_field_real name="weight" />
+			<_field_tag_reference_64 name="card" />
+			<_field_char_integer name="count" />
+			<_field_pad name="pad0" length="3" />
+		</_field_block_64>
+		<_field_block_64 name="pools" max="64">
+			<_field_real name="weight" />
+			<_field_tag_reference_64 name="pool" />
+			<_field_char_integer name="count" />
+			<_field_pad name="pad0" length="3" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_long_flags name="flags">
+		<item Name="Can Purchase With Credits" />
+		<item Name="Can Purchase With Currency" />
+		<item Name="Is Starter Pack" />
+	</_field_long_flags>
+	<_field_long_integer name="credit price" />
+	<_field_long_integer name="marketplace price" />
+	<_field_long_integer name="display sort order" />
+</plugin>

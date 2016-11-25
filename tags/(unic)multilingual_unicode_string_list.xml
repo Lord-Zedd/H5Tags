@@ -1,0 +1,72 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_custom name="import - directory" />
+	<_field_custom name="import - single file" />
+	<_field_block_64 name="string references*" max="34816">
+		<_field_string_id name="string id^*" />
+		<_field_long_integer name="english offset*" />
+		<_field_long_integer name="japanese offset*" />
+		<_field_long_integer name="german offset*" />
+		<_field_long_integer name="french offset*" />
+		<_field_long_integer name="spanish offset*" />
+		<_field_long_integer name="mexican spanish offset*" />
+		<_field_long_integer name="italian offset*" />
+		<_field_long_integer name="korean offset*" />
+		<_field_long_integer name="traditional chinese offset*" />
+		<_field_long_integer name="simplified chinese offset*" />
+		<_field_long_integer name="portuguese offset*" />
+		<_field_long_integer name="polish offset*" />
+		<_field_long_integer name="russian offset*" />
+		<_field_long_integer name="danish offset*" />
+		<_field_long_integer name="finnish offset*" />
+		<_field_long_integer name="dutch offset*" />
+		<_field_long_integer name="norwegian offset*" />
+	</_field_block_64>
+	<_field_block_64 name="substitution pairs*" max="2048">
+		<_field_string_id name="first string id^*!" />
+		<_field_string_id name="second string id*!" />
+		<_field_long_integer name="associated value*!" />
+	</_field_block_64>
+	<_field_data_64 name="string data utf8*" />
+	<_field_array name="language pack offsets!">
+		<_field_short_integer name="start index!" />
+		<_field_short_integer name="string count!" />
+		<_field_short_integer name="start index!" />
+		<_field_short_integer name="string count!" />
+		<_field_short_integer name="start index!" />
+		<_field_short_integer name="string count!" />
+		<_field_short_integer name="start index!" />
+		<_field_short_integer name="string count!" />
+		<_field_short_integer name="start index!" />
+		<_field_short_integer name="string count!" />
+		<_field_short_integer name="start index!" />
+		<_field_short_integer name="string count!" />
+		<_field_short_integer name="start index!" />
+		<_field_short_integer name="string count!" />
+		<_field_short_integer name="start index!" />
+		<_field_short_integer name="string count!" />
+		<_field_short_integer name="start index!" />
+		<_field_short_integer name="string count!" />
+		<_field_short_integer name="start index!" />
+		<_field_short_integer name="string count!" />
+		<_field_short_integer name="start index!" />
+		<_field_short_integer name="string count!" />
+		<_field_short_integer name="start index!" />
+		<_field_short_integer name="string count!" />
+		<_field_short_integer name="start index!" />
+		<_field_short_integer name="string count!" />
+		<_field_short_integer name="start index!" />
+		<_field_short_integer name="string count!" />
+		<_field_short_integer name="start index!" />
+		<_field_short_integer name="string count!" />
+		<_field_short_integer name="start index!" />
+		<_field_short_integer name="string count!" />
+		<_field_short_integer name="start index!" />
+		<_field_short_integer name="string count!" />
+	</_field_array>
+</plugin>

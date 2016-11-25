@@ -1,0 +1,27 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="Music action list#List of music actions to perform. All will be performed when the tag is called." max="16">
+		<_field_long_enum name="Music action">
+			<item Name="NoAction#Take no action" />
+			<item Name="StartEvent#Saved  event to start music. Will call a wwise event. Restored on load" />
+			<item Name="StopEvent#Saved event to stop music. Will call a wwise event. Restored on load" />
+			<item Name="ControlEvent#Saved event for control info. Will call a wwise event. Restored on load" />
+			<item Name="TriggerEvent#NOT saved event for one-offs. Will call a wwise event. NOT restored on load" />
+			<item Name="TriggerEventTracked#Same as trigger event but timing is tracked for event system" />
+			<item Name="SetState#set the state group to the value. Restored on load" />
+			<item Name="SetSwitch#set the switch group to the value. Restored on load" />
+			<item Name="SetRTPC#set the rtpc value. Restored on load" />
+			<item Name="SetPriority#use rtpc value field. sets the music playback priority. Use with caution" />
+		</_field_long_enum>
+		<_field_string_id name="Event or Group Name#Event, or state group name" />
+		<_field_long_integer name="Event or Group Name hash" />
+		<_field_string_id name="Group value#Value to set the state or switch to" />
+		<_field_long_integer name="rtpc value" />
+	</_field_block_64>
+	<_field_long_integer name="Event priority#0s will always play until a higher number is set, then only an even higher number will play after that until a reset from the sound marker occurs" />
+</plugin>

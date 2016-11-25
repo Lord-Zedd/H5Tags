@@ -1,0 +1,71 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_string name="name" />
+	<_field_long_string name="description" />
+	<_field_tag_reference_64 name="icon bitmap" />
+	<_field_long_integer name="icon sprite index" />
+	<_field_tag_reference_64 name="small icon bitmap" />
+	<_field_long_integer name="small icon sprite index" />
+	<_field_tag_reference_64 name="category" />
+	<_field_char_enum name="rarity{tier}">
+		<item Name="Common" />
+		<item Name="Uncommon" />
+		<item Name="Rare" />
+		<item Name="Super Rare" />
+		<item Name="Ultra Rare" />
+	</_field_char_enum>
+	<_field_char_enum name="type">
+		<item Name="Consumable" />
+		<item Name="Loadout" />
+		<item Name="Boost" />
+		<item Name="Certification - DO NOT USE" />
+		<item Name="Cosmetic" />
+		<item Name="Credit Granting - DO NOT USE" />
+		<item Name="Random - DO NOT USE" />
+	</_field_char_enum>
+	<_field_char_integer name="card tier" />
+	<_field_char_integer name="minimum level" />
+	<_field_byte_flags name="flags">
+		<item Name="Is Legendary" />
+	</_field_byte_flags>
+	<_field_pad name="pad0" length="3" />
+	<_field_block_64 name="loadout properties" max="1">
+		<_field_tag_reference_64 name="deployable" />
+		<_field_byte_flags name="slots">
+			<item Name="Primary" />
+			<item Name="Secondary" />
+			<item Name="Powerup" />
+			<item Name="Vehicle" />
+		</_field_byte_flags>
+		<_field_pad name="pad0" length="3" />
+	</_field_block_64>
+	<_field_block_64 name="consumable properties" max="1">
+		<_field_block_64 name="deployables" max="4">
+			<_field_tag_reference_64 name="deployable^" />
+		</_field_block_64>
+		<_field_real name="consumable cooldown" />
+		<_field_block_64 name="random cards" max="50">
+			<_field_real name="weight" />
+			<_field_tag_reference_64 name="card" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="cosmetic properties" max="1">
+		<_field_char_enum name="cosmetic slot">
+			<item Name="Helmet" />
+			<item Name="Body" />
+			<item Name="Visor" />
+			<item Name="Emblem" />
+			<item Name="ArmorFX" />
+			<item Name="Stance" />
+			<item Name="Assassination" />
+			<item Name="LoadoutWeaponSkin" />
+		</_field_char_enum>
+		<_field_pad name="pad0" length="3" />
+	</_field_block_64>
+	<_field_pad name="endPad" length="4" />
+</plugin>

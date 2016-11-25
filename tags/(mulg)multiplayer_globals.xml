@@ -1,0 +1,166 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="universal" max="1">
+		<_field_tag_reference_64 name="random player names" />
+		<_field_tag_reference_64 name="team names" />
+		<_field_block_64 name="teams" max="8">
+			<_field_string_id name="name^" />
+			<_field_real_rgb_color name="primary color" />
+			<_field_real_rgb_color name="secondary color" />
+			<_field_custom name="- Emblem Data" />
+			<_field_long_integer name="emblem id" />
+			<_field_long_integer name="harmony group index" />
+			<_field_long_integer name="harmony index" />
+		</_field_block_64>
+		<_field_tag_reference_64 name="sandbox text" />
+		<_field_tag_reference_64 name="effects" />
+		<_field_block_64 name="multiplayer roles" max="8">
+			<_field_long_flags name="flags!">
+				<item Name="UNUSED" />
+			</_field_long_flags>
+			<_field_short_enum name="team^!">
+				<item Name="defender" />
+				<item Name="attacker" />
+				<item Name="third party" />
+				<item Name="fourth party" />
+				<item Name="fifth party" />
+				<item Name="sixth party" />
+				<item Name="seventh party" />
+				<item Name="eighth party{eigth party}" />
+				<item Name="neutral" />
+			</_field_short_enum>
+			<_field_pad name="QVO" length="2" />
+			<_field_block_64 name="player roles" max="64">
+				<_field_string_id name="role name^" />
+				<_field_long_flags name="flags!">
+					<item Name="UNUSED" />
+				</_field_long_flags>
+				<_field_tag_reference_64 name="primary weapon" />
+				<_field_short_integer name="primary weapon rounds loaded" />
+				<_field_short_integer name="primary weapon rounds total" />
+				<_field_tag_reference_64 name="secondary weapon" />
+				<_field_short_integer name="secondary weapon rounds loaded" />
+				<_field_short_integer name="secondary weapon rounds total" />
+				<_field_short_integer name="frag grenade count" />
+				<_field_short_integer name="plasma grenade count" />
+				<_field_short_integer name="UNUSED!" />
+				<_field_short_integer name="spawn location index!" />
+				<_field_tag_reference_64 name="starting equipment!" />
+				<_field_string name="display name" />
+				<_field_long_integer name="killstreak bonus time:secs" />
+				<_field_real name="movement speed multiplier" />
+				<_field_tag_reference_64 name="killstreak bonus equipment" />
+				<_field_tag_reference_64 name="killstreak bonus activation sound" validtags="snd!" />
+			</_field_block_64>
+		</_field_block_64>
+		<_field_block_64 name="player starting profile" max="256">
+			<_field_string name="name^" />
+			<_field_real_fraction name="starting health damage:[0,1]" />
+			<_field_real_fraction name="starting shield damage:[0,1]" />
+			<_field_tag_reference_64 name="primary weapon" />
+			<_field_short_integer name="primaryrounds loaded#0 = weapon default" />
+			<_field_short_integer name="primaryrounds total#0 = weapon default" />
+			<_field_tag_reference_64 name="primary weapon configuration" />
+			<_field_string_id name="primary weapon variant name" />
+			<_field_tag_reference_64 name="secondary weapon" />
+			<_field_short_integer name="secondaryrounds loaded#0 = weapon default" />
+			<_field_short_integer name="secondaryrounds total#0 = weapon default" />
+			<_field_tag_reference_64 name="secondary weapon configuration" />
+			<_field_string_id name="secondary weapon variant name" />
+			<_field_char_integer name="starting fragmentation grenade count" />
+			<_field_char_integer name="starting plasma grenade count" />
+			<_field_char_integer name="starting grenade 3 count" />
+			<_field_char_integer name="starting grenade 4 count" />
+			<_field_char_integer name="starting grenade 5 count" />
+			<_field_char_integer name="starting grenade 6 count" />
+			<_field_char_integer name="starting grenade 7 count" />
+			<_field_char_integer name="starting grenade 8 count" />
+			<_field_tag_reference_64 name="starting equipment" />
+			<_field_string_id name="starting tactical package" />
+			<_field_string_id name="starting support upgrade" />
+			<_field_char_enum name="avatar name#only a player that has this avatar will receive this loadout">
+				<item Name="None" />
+				<item Name="Masterchief" />
+				<item Name="Fred" />
+				<item Name="Kelly" />
+				<item Name="Linda" />
+				<item Name="Locke" />
+				<item Name="Thorne" />
+				<item Name="Tanaka" />
+				<item Name="Vale" />
+			</_field_char_enum>
+			<_field_pad name="pad" length="3" />
+			<_field_short_block_index name="editor folder!" />
+			<_field_pad name="AHDVHJE" length="2" />
+			<_field_block_64 name="Editor Metadata!" max="1024">
+				<_field_long_string name="data name" />
+				<_field_long_enum name="data type">
+					<item Name="class" />
+					<item Name="array" />
+					<item Name="string" />
+					<item Name="bool" />
+					<item Name="int" />
+				</_field_long_enum>
+				<_field_long_integer name="parent index" />
+				<_field_long_string name="data value" />
+			</_field_block_64>
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="runtime" max="1">
+		<_field_tag_reference_64 name="editor biped" />
+		<_field_tag_reference_64 name="editor helper" />
+		<_field_tag_reference_64 name="flag" />
+		<_field_tag_reference_64 name="ball" />
+		<_field_tag_reference_64 name="assault bomb" />
+		<_field_tag_reference_64 name="vip influence area" />
+		<_field_block_64 name="sounds" max="60">
+			<_field_tag_reference_64 name="sound^" validtags="snd!" />
+		</_field_block_64>
+		<_field_block_64 name="looping sounds" max="60">
+			<_field_tag_reference_64 name="looping sound^" />
+		</_field_block_64>
+		<_field_tag_reference_64 name="communication sounds{comm english}" />
+		<_field_pad name="MAXFRAGCOUNT" length="4" />
+		<_field_pad name="MAXPLASMACOUNT" length="4" />
+		<_field_block_64 name="multiplayer constants" max="1">
+			<_field_explanation name="PLAYER SPAWN INFLUENCERS">These are the default spawn influencer settings which can be overridden by scenario tags</_field_explanation>
+			<_field_tag_reference_64 name="Default Spawn Settings" />
+			<_field_explanation name="MORE MP CONSTANTS">More old Halo2 stuff follows...</_field_explanation>
+			<_field_real name="teleporter recharge time:seconds" />
+			<_field_tag_reference_64 name="sandbox effect" />
+			<_field_string_id name="blocked teleporter string" />
+			<_field_explanation name="RESPAWN STRINGS">These are used for respawn status message displays
+The text comes from the in-game-text multiplayer message strings list tag
+in the multiplayer runtime globals block above</_field_explanation>
+			<_field_string_id name="voluntary respawn control instructions" />
+			<_field_string_id name="spawn allowed default respawn" />
+			<_field_string_id name="spawn at player allowed looking at self" />
+			<_field_string_id name="spawn at player allowed looking at target" />
+			<_field_string_id name="spawn at player allowed looking at potential target" />
+			<_field_string_id name="spawn at territory allowed looking at target" />
+			<_field_string_id name="spawn at territory allowed looking at potential target" />
+			<_field_string_id name="you are out of lives" />
+			<_field_string_id name="invalid spawn target selected" />
+			<_field_string_id name="targetted player enemies nearby" />
+			<_field_string_id name="targetted player unfriendly team" />
+			<_field_string_id name="targetted player dead" />
+			<_field_string_id name="targetted player in combat" />
+			<_field_string_id name="targetted player too far from owned flag" />
+			<_field_string_id name="no available netpoints" />
+			<_field_string_id name="targetted netpoint contested" />
+		</_field_block_64>
+		<_field_tag_reference_64 name="hill shader" validtags="mat " />
+		<_field_tag_reference_64 name="default_biped_simulation_interpolation" />
+		<_field_tag_reference_64 name="default_vehicle_simulation_interpolation" />
+		<_field_tag_reference_64 name="default_crate_simulation_interpolation" />
+		<_field_tag_reference_64 name="default_item_simulation_interpolation" />
+		<_field_tag_reference_64 name="default_projectile_simulation_interpolation" />
+		<_field_tag_reference_64 name="default_object_simulation_interpolation" />
+		<_field_tag_reference_64 name="megalo string_id table" />
+	</_field_block_64>
+</plugin>

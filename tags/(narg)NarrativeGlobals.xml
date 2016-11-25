@@ -1,0 +1,17 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="Narrative Flag Definitions" max="64">
+		<_field_long_integer name="Index" />
+		<_field_char_enum name="Type">
+			<item Name="Unknown" />
+			<item Name="Terminal" />
+		</_field_char_enum>
+		<_field_pad name="fsarewrsda" length="3" />
+	</_field_block_64>
+	<_field_pad name="pad_tp" length="4" />
+</plugin>

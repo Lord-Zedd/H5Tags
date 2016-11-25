@@ -1,0 +1,39 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="flinch system" />
+	<_field_custom name="Gun Flinch" />
+	<_field_struct name="gun flinch" />
+	<_field_angle_bounds name="yaw bounds:degrees#define min and max angles the flinch can move" />
+	<_field_angle_bounds name="pitch bounds:degrees#define min and max angles the flinch can move" />
+	<_field_block_64 name="recoil" max="2">
+		<_field_struct name="recoil return" />
+		<_field_angle name="deceleration away from center:degrees#acceleration only applied when moving away from center" />
+		<_field_angle name="acceleration to center:degrees#acceleration only applied when moving to center" />
+	</_field_block_64>
+	<_field_block_64 name="spring damper" max="2">
+		<_field_struct name="spring damper" />
+		<_field_real name="spring constant#scales the center spring acceleration based on distance" />
+		<_field_real name="damping ratio##0 would be no damping, 1 is critical damping.  Is used to automatically calculate the damping coefficient" />
+		<_field_real name="runtime damping constant!*" />
+	</_field_block_64>
+	<_field_custom name="View Flinch" />
+	<_field_struct name="view flinch" />
+	<_field_angle_bounds name="yaw bounds:degrees#define min and max angles the flinch can move" />
+	<_field_angle_bounds name="pitch bounds:degrees#define min and max angles the flinch can move" />
+	<_field_block_64 name="recoil" max="2">
+		<_field_struct name="recoil return" />
+		<_field_angle name="deceleration away from center:degrees#acceleration only applied when moving away from center" />
+		<_field_angle name="acceleration to center:degrees#acceleration only applied when moving to center" />
+	</_field_block_64>
+	<_field_block_64 name="spring damper" max="2">
+		<_field_struct name="spring damper" />
+		<_field_real name="spring constant#scales the center spring acceleration based on distance" />
+		<_field_real name="damping ratio##0 would be no damping, 1 is critical damping.  Is used to automatically calculate the damping coefficient" />
+		<_field_real name="runtime damping constant!*" />
+	</_field_block_64>
+</plugin>

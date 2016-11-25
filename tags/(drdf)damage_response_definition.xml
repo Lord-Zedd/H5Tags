@@ -1,0 +1,97 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="classes" max="2">
+		<_field_short_enum name="type">
+			<item Name="shielded" />
+			<item Name="unshielded" />
+			<item Name="all" />
+		</_field_short_enum>
+		<_field_word_flags name="flags">
+			<item Name="ignore on no damage" />
+			<item Name="suppress directional damage flashes" />
+			<item Name="suppress directional damage arrows" />
+			<item Name="only when zoomed#if target is zoomed" />
+			<item Name="sound effect only applied when scale is full" />
+		</_field_word_flags>
+		<_field_explanation name="directional flash" />
+		<_field_struct name="directional flash" />
+		<_field_real name="indicator duration" />
+		<_field_real name="flash duration {duration}" />
+		<_field_short_enum name="fade function">
+			<item Name="linear" />
+			<item Name="late" />
+			<item Name="very late" />
+			<item Name="early" />
+			<item Name="very early" />
+			<item Name="cosine" />
+			<item Name="zero" />
+			<item Name="one" />
+		</_field_short_enum>
+		<_field_pad name="ZASSFACE" length="2" />
+		<_field_real name="center size" />
+		<_field_real name="offscreen size{size}" />
+		<_field_real name="center alpha" />
+		<_field_real name="offscreen alpha" />
+		<_field_real name="inner alpha{inner scale}" />
+		<_field_real name="outer alpha{outer scale}" />
+		<_field_real_argb_color name="flash color" />
+		<_field_real_argb_color name="arrow color" />
+		<_field_explanation name="motion sensor ping">WARNING 'motion sensor ping' section no longer functions post CHUD-2-CUI switchover!</_field_explanation>
+		<_field_struct name="motion sensor ping" />
+		<_field_short_integer name="ping duration:ticks" />
+		<_field_short_integer name="ping scale" />
+		<_field_explanation name="rumble" />
+		<_field_tag_reference_64 name="rumble{rumble data}" />
+		<_field_tag_reference_64 name="rumble descope#if not specified, it will fallback to rumble" />
+		<_field_explanation name="camera shake and impulse data" />
+		<_field_tag_reference_64 name="camera shake{camera shake data}" />
+		<_field_tag_reference_64 name="camera shake zoomed{camera shake data} #falls back on camerashake if untuned" />
+		<_field_tag_reference_64 name="camera shake descope#if not specified, it will fallback to zoomed" />
+		<_field_explanation name="Flinch" />
+		<_field_tag_reference_64 name="flinch impulse" />
+		<_field_tag_reference_64 name="flinch impulse ads#if not specified, it will fallback to non-ads" />
+		<_field_tag_reference_64 name="flinch impulse descope#if not specified, it will fall back to ads" />
+		<_field_explanation name="simulated input" />
+		<_field_tag_reference_64 name="simulated_input" />
+		<_field_tag_reference_64 name="simulated_input zoomed #falls back on simulated input if untuned" />
+		<_field_tag_reference_64 name="simulated_input descope #if not specified, fallsback to zoomed" />
+		<_field_explanation name="global sound effect" />
+		<_field_block_64 name="global sound effect" max="1">
+			<_field_string_id name="effect name" />
+			<_field_struct name="scale =&gt; duration:seconds" />
+			<_field_data_64 name="data" />
+		</_field_block_64>
+	</_field_block_64>
+	<_field_block_64 name="area control" max="1">
+		<_field_explanation name="AREA CONTROL">Higher level scale controls for camera shake, camera impulse and rumble.</_field_explanation>
+		<_field_word_flags name="flags">
+			<item Name="distance_falloff" />
+			<item Name="angle_falloff" />
+			<item Name="object function falloff" />
+			<item Name="use unit position#use the head position and facing vector of the unit instead of the player camera" />
+		</_field_word_flags>
+		<_field_pad name="DRCS" length="2" />
+		<_field_explanation name="Distance Falloff">controls the maximum distance and the distance falloff of this effect
+NOTE: not used for scenario global effects</_field_explanation>
+		<_field_real name="maximum distance:world units#the maximum distance this player feedback will affect" />
+		<_field_struct name="distance falloff" />
+		<_field_struct name="Mapping" />
+		<_field_data_64 name="data" />
+		<_field_explanation name="Angle Falloff">controls the falloff of this effect based on how close you are to looking directly at it
+NOTE: not used for scenario global effects</_field_explanation>
+		<_field_struct name="angle falloff" />
+		<_field_struct name="Mapping" />
+		<_field_data_64 name="data" />
+		<_field_explanation name="Object Falloff">applies a falloff based on an object function - ignored if the effect is not attached to an object</_field_explanation>
+		<_field_struct name="object falloff" />
+		<_field_string_id name="Input Variable!" />
+		<_field_string_id name="Range Variable!" />
+		<_field_struct name="Mapping" />
+		<_field_data_64 name="data" />
+	</_field_block_64>
+</plugin>

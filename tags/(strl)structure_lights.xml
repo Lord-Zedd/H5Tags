@@ -1,0 +1,190 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="generic light definitions" max="32767">
+		<_field_long_integer name="Composer Id!" />
+		<_field_real_point_3d name="position" />
+		<_field_real_euler_angles_3d name="facing" />
+		<_field_char_integer name="Version!" />
+		<_field_char_enum name="Active">
+			<item Name="Off" />
+			<item Name="On" />
+		</_field_char_enum>
+		<_field_short_enum name="light mode">
+			<item Name="Dynamic" />
+			<item Name="Static" />
+			<item Name="Analytic" />
+		</_field_short_enum>
+		<_field_struct name="Midnight_Light_Parameters" />
+		<_field_explanation name="Dynamic/Static Shared Light Parameters" />
+		<_field_string_id name="haloLightNode:^#Light node name in DCC." />
+		<_field_long_enum name="Type{Light Type}">
+			<item Name="Omni" />
+			<item Name="Spot" />
+			<item Name="Directional" />
+			<item Name="Planar" />
+			<item Name="Sun" />
+		</_field_long_enum>
+		<_field_real_rgb_color name="Color{Light Color}" />
+		<_field_real name="Intensity Scalar" />
+		<_field_struct name="Intensity Function{Intensity}" />
+		<_field_string_id name="Input Variable!" />
+		<_field_string_id name="Range Variable!" />
+		<_field_short_enum name="Output Modifier!">
+			<item Name=" " />
+			<item Name="Plus" />
+			<item Name="Times" />
+		</_field_short_enum>
+		<_field_pad name="BVCG" length="2" />
+		<_field_string_id name="Output Modifier Input!" />
+		<_field_struct name="Mapping" />
+		<_field_data_64 name="data" />
+		<_field_real name="Near Attenuation{Distance Attenuation Start}" />
+		<_field_real name="Far Attenuation{Distance Attenuation End Scalar}" />
+		<_field_struct name="Outer Attenuation Function{Distance Attenuation End}" />
+		<_field_string_id name="Input Variable!" />
+		<_field_string_id name="Range Variable!" />
+		<_field_short_enum name="Output Modifier!">
+			<item Name=" " />
+			<item Name="Plus" />
+			<item Name="Times" />
+		</_field_short_enum>
+		<_field_pad name="BVCG" length="2" />
+		<_field_string_id name="Output Modifier Input!" />
+		<_field_struct name="Mapping" />
+		<_field_data_64 name="data" />
+		<_field_real name="Near Begin:#Distance at which the light begins affecting things" />
+		<_field_real name="Far Begin:#Distance at which the light begins affecting at full strength" />
+		<_field_real name="Camera Distance Fade Start:#Distance at which we start to fade out this light" />
+		<_field_real name="Camera Distance Fade End:#Distance at which the light should be completely faded out and not seen" />
+		<_field_real name="Camera Distance Shadow Fade Start:#Distance at which we start to fade out this shadow" />
+		<_field_real name="Camera Distance Shadow Fade End:#Distance at which the shadow should be completely faded out and not seen" />
+		<_field_real name="Specular Intensity:#For screen-space dynamic lights" />
+		<_field_explanation name="Area Lights Parameters" />
+		<_field_real name="Planar Light Width" />
+		<_field_real name="Planar Light Height" />
+		<_field_real name="Area Light Radius" />
+		<_field_explanation name="Shared Spot Parameters" />
+		<_field_real name="Inner Cone Angle" />
+		<_field_real name="Outer Cone Angle" />
+		<_field_struct name="Outer Cone Angle Function{Outer Cone End}" />
+		<_field_string_id name="Input Variable!" />
+		<_field_string_id name="Range Variable!" />
+		<_field_short_enum name="Output Modifier!">
+			<item Name=" " />
+			<item Name="Plus" />
+			<item Name="Times" />
+		</_field_short_enum>
+		<_field_pad name="BVCG" length="2" />
+		<_field_string_id name="Output Modifier Input!" />
+		<_field_struct name="Mapping" />
+		<_field_data_64 name="data" />
+		<_field_long_enum name="Cone Projection Shape:#Use cone in all cases unless you have a gobo you need to project, frustum uses the full clip area of the light">
+			<item Name="Cone" />
+			<item Name="Frustum" />
+		</_field_long_enum>
+		<_field_explanation name="Dynamic Only Parameters" />
+		<_field_short_enum name="Shadows">
+			<item Name="Off" />
+			<item Name="On" />
+		</_field_short_enum>
+		<_field_short_integer name="Dynamic Shadow Resolution" />
+		<_field_real name="Shadow Near Clip Plane" />
+		<_field_real name="Shadow Far Clip Plane" />
+		<_field_real name="Shadow Bias Offset" />
+		<_field_real name="Shadow Filter Width" />
+		<_field_pad name="pad_mlp_1" length="1" />
+		<_field_char_enum name="Ignore Dynamic Objects">
+			<item Name="Off" />
+			<item Name="On" />
+		</_field_char_enum>
+		<_field_char_enum name="Cinema Objects Only#This should only be turned on if you have light linking data correctly setup">
+			<item Name="Off" />
+			<item Name="On" />
+		</_field_char_enum>
+		<_field_char_enum name="Cinema Only">
+			<item Name="Off" />
+			<item Name="On" />
+		</_field_char_enum>
+		<_field_char_enum name="Cinema Exclude">
+			<item Name="Off" />
+			<item Name="On" />
+		</_field_char_enum>
+		<_field_char_integer name="Manual Version" />
+		<_field_char_enum name="Specular Contribution">
+			<item Name="Off" />
+			<item Name="On" />
+		</_field_char_enum>
+		<_field_char_enum name="Diffuse Contribution">
+			<item Name="Off" />
+			<item Name="On" />
+		</_field_char_enum>
+		<_field_explanation name="Analytic Only Parameters" />
+		<_field_short_enum name="Enable Analytic Shadows">
+			<item Name="Off" />
+			<item Name="On" />
+		</_field_short_enum>
+		<_field_short_integer name="Analytic Shadow Map Index" />
+		<_field_real name="Analytic Shadow Sharpness" />
+		<_field_real name="Analytic Shadow Near Depth" />
+		<_field_explanation name="Dynamic Gobo" />
+		<_field_tag_reference_64 name="Gobos" />
+		<_field_explanation name="Color Change" />
+		<_field_struct name="Interpolation Function" />
+		<_field_string_id name="Input Variable!" />
+		<_field_string_id name="Range Variable!" />
+		<_field_short_enum name="Output Modifier!">
+			<item Name=" " />
+			<item Name="Plus" />
+			<item Name="Times" />
+		</_field_short_enum>
+		<_field_pad name="BVCG" length="2" />
+		<_field_string_id name="Output Modifier Input!" />
+		<_field_struct name="Mapping" />
+		<_field_data_64 name="data" />
+		<_field_real_rgb_color name="Target Color" />
+		<_field_explanation name="Bungie Parameters" />
+		<_field_long_flags name="flags">
+			<item Name="dont render splitscreen#no rendering this light in splitscreen mode" />
+			<item Name="render in multiplayer override#overrides game settings that disable dynamic lights" />
+			<item Name="move to camera in first person#moves the light to match the camera" />
+			<item Name="always on for weapon#even it is dropped" />
+			<item Name="ignores dynamic objects (analytic lights only)" />
+			<item Name="disables object shadows (analytic lights only)" />
+		</_field_long_flags>
+		<_field_real name="destroy light after:seconds#automatically destroys the light after it has existed this long (0 to disable)" />
+		<_field_tag_reference_64 name="Lens Flare" />
+		<_field_tag_reference_64 name="Light Cone" />
+		<_field_real name="indirect amplification factor" />
+		<_field_real name="jitter angle" />
+		<_field_char_integer name="is a lightmapper-only light!" />
+		<_field_char_enum name="indirect only">
+			<item Name="Off" />
+			<item Name="On" />
+		</_field_char_enum>
+		<_field_short_integer name="runtime index*" />
+		<_field_block_64 name="Editor Metadata!" max="1024">
+			<_field_long_string name="data name" />
+			<_field_long_enum name="data type">
+				<item Name="class" />
+				<item Name="array" />
+				<item Name="string" />
+				<item Name="bool" />
+				<item Name="int" />
+			</_field_long_enum>
+			<_field_long_integer name="parent index" />
+			<_field_long_string name="data value" />
+		</_field_block_64>
+		<_field_string_id name="bone name" />
+		<_field_char_enum name="should contribute to adjacent BSPs">
+			<item Name="Off" />
+			<item Name="On" />
+		</_field_char_enum>
+		<_field_pad name="pad0" length="3" />
+	</_field_block_64>
+	<_field_long_integer name="lastLightId!" />
+</plugin>

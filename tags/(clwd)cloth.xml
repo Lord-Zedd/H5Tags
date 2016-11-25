@@ -1,0 +1,54 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_long_flags name="flags">
+		<item Name="Doesn't use wind" />
+		<item Name="Uses grid attach top" />
+	</_field_long_flags>
+	<_field_string_id name="marker attachment name" />
+	<_field_string_id name="secondary axis attachment name" />
+	<_field_tag_reference_64 name="Shader" />
+	<_field_explanation name="Default cloth vertices">if not importing from a render model, type a grid size</_field_explanation>
+	<_field_short_integer name="grid x dimension" />
+	<_field_short_integer name="grid y dimension" />
+	<_field_real name="grid spacing x" />
+	<_field_real name="grid spacing y" />
+	<_field_block_64 name="collision spheres" max="8">
+		<_field_string_id name="object marker name" />
+		<_field_real name="radius" />
+	</_field_block_64>
+	<_field_explanation name="Cloth Properties" />
+	<_field_struct name="properties" />
+	<_field_short_enum name="Integration type*">
+		<item Name="verlet" />
+	</_field_short_enum>
+	<_field_short_integer name="Number iterations#[1-8] sug 1" />
+	<_field_real name="weight#[-10.0 - 10.0] sug 1.0" />
+	<_field_real name="drag#[0.0 - 0.5] sug 0.07" />
+	<_field_real name="wind_scale#[0.0 - 3.0] sug 1.0" />
+	<_field_real name="wind_flappiness_scale#[0.0 - 1.0] sug 0.75" />
+	<_field_real name="longest_rod#[1.0 - 10.0] sug 3.5" />
+	<_field_pad name="WXLH" length="24" />
+	<_field_explanation name="Import or grid data" />
+	<_field_block_64 name="vertices*" max="121">
+		<_field_real_point_3d name="initial position*" />
+		<_field_real_vector_2d name="uv*" />
+	</_field_block_64>
+	<_field_block_64 name="indices*" max="1210">
+		<_field_short_integer name="index*" />
+	</_field_block_64>
+	<_field_block_64 name="strip indices*" max="1210">
+		<_field_short_integer name="index*" />
+	</_field_block_64>
+	<_field_block_64 name="links*" max="1210">
+		<_field_real name="default_distance*" />
+		<_field_long_integer name="index1*" />
+		<_field_long_integer name="index2*" />
+		<_field_pad name="vmx_pad" length="4" />
+	</_field_block_64>
+	<_field_pad name="pad_cd_0" length="4" />
+</plugin>

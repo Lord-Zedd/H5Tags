@@ -1,0 +1,161 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_explanation name="LENS FLARE" />
+	<_field_angle name="falloff angle:degrees" />
+	<_field_angle name="cutoff angle:degrees" />
+	<_field_angle name="separate X falloff angle:degrees" />
+	<_field_angle name="separate X cutoff angle:degrees" />
+	<_field_angle name="separate Y falloff angle:degrees" />
+	<_field_angle name="separate Y cutoff angle:degrees" />
+	<_field_explanation name="OCCLUSION">Occlusion factor affects overall lens flare brightness and can also affect scale. Occlusion never affects rotation.</_field_explanation>
+	<_field_long_integer name="occlusion reflection index#occlusion information will be generated against the size of this reflection" />
+	<_field_real name="occlusion offset distance:world units#distance along offset direction used to test occlusion" />
+	<_field_short_enum name="occlusion offset direction">
+		<item Name="toward viewer" />
+		<item Name="marker forward" />
+		<item Name="none" />
+	</_field_short_enum>
+	<_field_pad name="PANTS" length="2" />
+	<_field_real name="occlusion inner radius scale#percent of the corona to occlude against (ie 0.25, 0.125, etc)" />
+	<_field_real name="occlusion min pixels" />
+	<_field_real name="occlusion max pixels" />
+	<_field_real name="near fade begin distance:world units#distance where the lens flare starts to fade in" />
+	<_field_real name="near fade end distance:world units#distance where the lens flare is fully faded in" />
+	<_field_real name="far fade begin distance{near fade distance}:world units#distance at which the lens flare brightness is maximum" />
+	<_field_real name="far fade end distance{far fade distance}:world units#distance at which the lens flare brightness is minimum; set to zero to disable distance fading" />
+	<_field_tag_reference_64 name="bitmap" />
+	<_field_word_flags name="flags">
+		<item Name="rotate occlusion testing box with lens flare#otherwise remains aligned with screen. turn on render_debug_lens_flares and look at green box" />
+		<item Name="no occlusion test" />
+		<item Name="only render in first person" />
+		<item Name="only render in third person" />
+		<item Name="no reflection opacity feedback#unchecked, each reflection evaluates its opacity from the previous reflection in the list" />
+		<item Name="scale by marker" />
+		<item Name="don't autofade#otherwise fade based on effect time, for effect attachments only" />
+		<item Name="don't render while zoomed" />
+		<item Name="use separate X and Y falloff angles" />
+	</_field_word_flags>
+	<_field_short_integer name="runtime flags!" />
+	<_field_short_enum name="rotation function">
+		<item Name="none" />
+		<item Name="rotation A" />
+		<item Name="rotation B" />
+		<item Name="rotation-translation" />
+		<item Name="translation" />
+	</_field_short_enum>
+	<_field_pad name="WWZC" length="2" />
+	<_field_angle name="rotation function scale:degrees" />
+	<_field_explanation name="EFFECT PARAMETERS">Only affects lens flares created by effects.</_field_explanation>
+	<_field_short_enum name="falloff function">
+		<item Name="linear" />
+		<item Name="late" />
+		<item Name="very late" />
+		<item Name="early" />
+		<item Name="very early" />
+		<item Name="cosine" />
+		<item Name="zero" />
+		<item Name="one" />
+	</_field_short_enum>
+	<_field_pad name="COYUTLR" length="2" />
+	<_field_block_64 name="reflections" max="32">
+		<_field_string_id name="name^" />
+		<_field_word_flags name="flags">
+			<item Name="rotate from center of screen" />
+			<item Name="radius scaled by distance" />
+			<item Name="radius scaled by occlusion factor" />
+			<item Name="ignore external color" />
+			<item Name="only move along Y{lock to flare X}" />
+			<item Name="only move along X{lock to flare Y}" />
+			<item Name="proximity to center as function input#The input to the curves below should be multiplied by 1 if at the center of the screen and 0 if at the edge" />
+			<item Name="mirror across flare#Also renders this reflection's mirror image across the flare center" />
+			<item Name="disabled for debugging" />
+			<item Name="flip U coordinate" />
+			<item Name="flip V coordinate" />
+			<item Name="draw in world space instead of screen space" />
+			<item Name="override falloff angles" />
+			<item Name="override fade distances" />
+			<item Name="use separate X and Y falloff angles" />
+			<item Name="do not render" />
+		</_field_word_flags>
+		<_field_short_integer name="bitmap index" />
+		<_field_tag_reference_64 name="bitmap override" />
+		<_field_angle name="falloff angle:degrees" />
+		<_field_angle name="cutoff_angle:degrees" />
+		<_field_angle name="separate X falloff angle:degrees" />
+		<_field_angle name="separate X cutoff angle:degrees" />
+		<_field_angle name="separate Y falloff angle:degrees" />
+		<_field_angle name="separate Y cutoff angle:degrees" />
+		<_field_real name="near fade begin distance:world units#distance where the lens flare starts to fade in" />
+		<_field_real name="near fade end distance:world units#distance where the lens flare is fully faded in" />
+		<_field_real name="far fade begin distance:world units#distance at which the lens flare brightness is maximum" />
+		<_field_real name="far fade end distance:world units#distance at which the lens flare brightness is minimum; set to zero to disable distance fading" />
+		<_field_real name="rotation offset:degrees" />
+		<_field_real name="axis offset:percent#percent offset in screen space along corona axis - 0.0 is on the corona, 1.0 is primary side edge of the screen, -1.0 is opposite side" />
+		<_field_real name="x offset:percent" />
+		<_field_real name="y offset:percent" />
+		<_field_real_bounds name="offset bounds#the axis offset times corona offset is clamped between these values" />
+		<_field_struct name="radius curve#interpolated by external input" />
+		<_field_data_64 name="data" />
+		<_field_struct name="scale curve X#interpolated by external input" />
+		<_field_data_64 name="data" />
+		<_field_struct name="scale curve Y#interpolated by external input" />
+		<_field_data_64 name="data" />
+		<_field_struct name="brightness curve#interpolated by external input" />
+		<_field_data_64 name="data" />
+		<_field_explanation name="TINT COLOR">Tinting and modulating are not the same; 'tinting' a reflection will color the darker regions but leave the highlights, while 'modulating' will color everything uniformly. The modulation factor controls how much the reflection is modulated as opposed to tinted (0 is tinted, 1 is modulated). The tint power affects the curve of how much of the color range to tint.</_field_explanation>
+		<_field_struct name="color curve#interpolated by external input" />
+		<_field_data_64 name="data" />
+		<_field_real_fraction name="modulation factor:[0,1]" />
+		<_field_real name="tint power:[0.1, 16]" />
+	</_field_block_64>
+	<_field_explanation name="ANIMATION" />
+	<_field_word_flags name="animation flags">
+		<item Name="synchronized" />
+	</_field_word_flags>
+	<_field_pad name="AQVC" length="2" />
+	<_field_block_64 name="time brightness" max="1">
+		<_field_data_64 name="data" />
+	</_field_block_64>
+	<_field_block_64 name="age brightness" max="1">
+		<_field_data_64 name="data" />
+	</_field_block_64>
+	<_field_block_64 name="time color" max="1">
+		<_field_struct name="color animation" />
+		<_field_string_id name="Input Variable!" />
+		<_field_string_id name="Range Variable!" />
+		<_field_short_enum name="Output Modifier!">
+			<item Name=" " />
+			<item Name="Plus" />
+			<item Name="Times" />
+		</_field_short_enum>
+		<_field_pad name="BVCG1" length="2" />
+		<_field_string_id name="Output Modifier Input!" />
+		<_field_struct name="lens flare color mapping" />
+		<_field_data_64 name="data" />
+	</_field_block_64>
+	<_field_block_64 name="age color" max="1">
+		<_field_struct name="color animation" />
+		<_field_string_id name="Input Variable!" />
+		<_field_string_id name="Range Variable!" />
+		<_field_short_enum name="Output Modifier!">
+			<item Name=" " />
+			<item Name="Plus" />
+			<item Name="Times" />
+		</_field_short_enum>
+		<_field_pad name="BVCG1" length="2" />
+		<_field_string_id name="Output Modifier Input!" />
+		<_field_struct name="lens flare color mapping" />
+		<_field_data_64 name="data" />
+	</_field_block_64>
+	<_field_block_64 name="time rotation" max="1">
+		<_field_data_64 name="data" />
+	</_field_block_64>
+	<_field_block_64 name="age rotation" max="1">
+		<_field_data_64 name="data" />
+	</_field_block_64>
+</plugin>

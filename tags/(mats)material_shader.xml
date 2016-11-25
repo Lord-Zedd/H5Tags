@@ -1,0 +1,114 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_long_flags name="flags!">
+		<item Name="is_distortion" />
+		<item Name="is_decal" />
+		<item Name="blended_materials" />
+		<item Name="no_physics_material" />
+		<item Name="is_volume_fog" />
+		<item Name="is_water" />
+		<item Name="is_hologram" />
+		<item Name="is_blended_hologram" />
+		<item Name="is_emblem" />
+		<item Name="blended_materials_2" />
+		<item Name="blended_materials_3" />
+		<item Name="is_alpha_clip" />
+		<item Name="shader_compile_failed" />
+		<item Name="is_explicit_shader" />
+		<item Name="uses_fade_time" />
+		<item Name="is_hologram_lofi" />
+		<item Name="split_lighting" />
+		<item Name="deferred_reflection" />
+		<item Name="order_independent_transparency" />
+		<item Name="disable_decorator_stipple_fade" />
+		<item Name="custom_deformer" />
+	</_field_long_flags>
+	<_field_block_64 name="compiled effects!" max="3">
+		<_field_int64_integer name="shader hash 0" />
+		<_field_int64_integer name="shader hash 1" />
+	</_field_block_64>
+	<_field_block_64 name="precompiled effect objects!" max="2">
+		<_field_data_64 name="effect object data" />
+	</_field_block_64>
+	<_field_tag_reference_64 name="shader bank" />
+	<_field_block_64 name="shader references*" max="1024">
+		<_field_block_64 name="shader passes*" max="1024">
+			<_field_block_64 name="shader references*" max="1024">
+				<_field_long_integer name="ShaderHash*" />
+				<_field_long_integer name="XBOne Shader Hash*" />
+			</_field_block_64>
+			<_field_array name="vdecl handles ~*!">
+				<_field_long_integer name="vdecl handles" />
+				<_field_long_integer name="vdecl handles" />
+			</_field_array>
+		</_field_block_64>
+		<_field_long_integer name="lightingEntryPointIndex*" />
+	</_field_block_64>
+	<_field_block_64 name="material parameters*" max="267">
+		<_field_string_id name="parameter name^*" />
+		<_field_long_enum name="parameter type*">
+			<item Name="bitmap" />
+			<item Name="real" />
+			<item Name="int" />
+			<item Name="bool" />
+			<item Name="color" />
+		</_field_long_enum>
+		<_field_long_integer name="parameter index*!" />
+		<_field_tag_reference_64 name="bitmap" />
+		<_field_string_id name="bitmap path" />
+		<_field_real_argb_color name="color" />
+		<_field_real name="real" />
+		<_field_real_vector_3d name="vector" />
+		<_field_long_integer name="int/bool" />
+		<_field_word_integer name="bitmap flags" />
+		<_field_word_integer name="bitmap filter mode" />
+		<_field_word_integer name="bitmap address mode" />
+		<_field_word_integer name="bitmap address mode x" />
+		<_field_word_integer name="bitmap address mode y" />
+		<_field_word_integer name="bitmap sharpen mode" />
+		<_field_byte_integer name="bitmap extern mode" />
+		<_field_byte_integer name="bitmap min mipmap" />
+		<_field_byte_integer name="bitmap max mipmap" />
+		<_field_byte_integer name="parameter flags!" />
+		<_field_dword_integer name="render phases used" />
+		<_field_dword_integer name="shader types used" />
+		<_field_block_64 name="function parameters" max="267">
+			<_field_long_enum name="type^">
+				<item Name="value" />
+				<item Name="color" />
+				<item Name="scale uniform" />
+				<item Name="scale u" />
+				<item Name="scale v" />
+				<item Name="offset u" />
+				<item Name="offset v" />
+				<item Name="frame index" />
+				<item Name="alpha" />
+			</_field_long_enum>
+			<_field_string_id name="input name" />
+			<_field_string_id name="range name" />
+			<_field_char_enum name="Output Modifier!">
+				<item Name=" " />
+				<item Name="Add" />
+				<item Name="Multiply" />
+			</_field_char_enum>
+			<_field_pad name="BVCG" length="3" />
+			<_field_string_id name="Output Modifier Input!" />
+			<_field_real name="time period:seconds" />
+			<_field_explanation name="FUNCTION" />
+			<_field_data_64 name="data" />
+		</_field_block_64>
+		<_field_data_64 name="display name*" />
+		<_field_data_64 name="display group*" />
+		<_field_data_64 name="display help text*" />
+		<_field_real name="display minimum" />
+		<_field_real name="display maximum" />
+		<_field_word_integer name="register offset*!" />
+		<_field_word_integer name="register size*!" />
+	</_field_block_64>
+	<_field_pad name="pad_tp" length="4" />
+</plugin>

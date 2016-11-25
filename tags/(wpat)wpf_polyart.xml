@@ -1,0 +1,17 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_custom name="import" />
+	<_field_block_64 name="vertices*" max="32768">
+		<_field_real_point_3d name="position*" />
+		<_field_real_point_3d name="normal*" />
+		<_field_real_point_2d name="texture coordinate*" />
+	</_field_block_64>
+	<_field_block_64 name="indices*" max="32768">
+		<_field_short_integer name="index*" />
+	</_field_block_64>
+</plugin>

@@ -1,0 +1,36 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_block_64 name="interpolators" max="32">
+		<_field_word_flags name="flags">
+			<item Name="loops#will continue to play until stopped.  if checked, no wrap should also be checked" />
+			<item Name="always active#will be started when the map loads.  good for looping interpolators" />
+		</_field_word_flags>
+		<_field_pad name="SCBP1" length="2" />
+		<_field_string_id name="name^" />
+		<_field_data_64 name="data" />
+		<_field_real name="duration:seconds" />
+		<_field_long_enum name="map reset type">
+			<item Name="initial" />
+			<item Name="ending" />
+			<item Name="custom" />
+		</_field_long_enum>
+		<_field_real_fraction name="custom map reset value" />
+		<_field_long_enum name="start type">
+			<item Name="initial" />
+			<item Name="unchanged" />
+		</_field_long_enum>
+		<_field_long_enum name="stop type">
+			<item Name="initial" />
+			<item Name="hold" />
+			<item Name="ending" />
+			<item Name="custom" />
+		</_field_long_enum>
+		<_field_real_fraction name="custom stop value" />
+	</_field_block_64>
+	<_field_pad name="pad_tp" length="4" />
+</plugin>

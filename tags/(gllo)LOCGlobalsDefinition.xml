@@ -1,0 +1,28 @@
+<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- Made by Zedd lol -->
+<plugin>
+	<_field_int64_integer name="vtable space*~!" />
+	<_field_struct name="internal struct" />
+	<_field_long_integer name="global tag ID!" />
+	<_field_pad name="local tag handle!~" length="4" />
+	<_field_long_enum name="language">
+		<item Name="english" />
+		<item Name="japanese" />
+		<item Name="german" />
+		<item Name="french" />
+		<item Name="spanish" />
+		<item Name="mexican spanish" />
+		<item Name="italian" />
+		<item Name="korean" />
+		<item Name="chinese-traditional" />
+		<item Name="chinese-simplified" />
+		<item Name="portuguese" />
+		<item Name="polish" />
+		<item Name="russian" />
+		<item Name="danish" />
+		<item Name="finnish" />
+		<item Name="dutch" />
+		<item Name="norwegian" />
+	</_field_long_enum>
+	<_field_pad name="pad" length="4" />
+</plugin>
