@@ -372,7 +372,7 @@
 		<item Name="left bumper" />
 		<item Name="right bumper" />
 	</_field_short_enum>
-	<_field_short_enum name="radio message">
+	<_field_short_enum name="navpoint signal {radio message}">
 		<item Name="left trigger" />
 		<item Name="right trigger" />
 		<item Name="dpad up" />

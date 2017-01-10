@@ -15,15 +15,7 @@
 		<_field_string_id name="name^" />
 		<_field_string_id name="description" />
 		<_field_short_integer name="sequence index" />
-		<_field_char_enum name="medal class">
-			<item Name="special" />
-			<item Name="role spree" />
-			<item Name="spree" />
-			<item Name="multikill" />
-			<item Name="objectives" />
-			<item Name="circumstance" />
-			<item Name="finesse" />
-		</_field_char_enum>
+		<_field_byte_integer name="medal weight" />
 		<_field_byte_integer name="tier index#the tier that this medal belongs to" />
 	</_field_block_64>
 </plugin>

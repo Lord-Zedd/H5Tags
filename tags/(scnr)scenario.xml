@@ -181,7 +181,7 @@
 		<_field_string_id name="sky name^" />
 		<_field_long_block_flags name="active on bsps!" />
 	</_field_block_64>
-	<_field_block_64 name="warzone objective definitions" max="32">
+	<_field_block_64 name="warzone objective definitions" max="320">
 		<_field_string name="name^" />
 		<_field_string name="label" />
 		<_field_string name="user facing name" />

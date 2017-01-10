@@ -211,11 +211,12 @@
 			<item Name="depth_peeling_blend_mode" />
 			<item Name="depth_peeling_Z_pass" />
 			<item Name="wpf_additive_blend_mode" />
-			<item Name="unused" />
+			<item Name="forge_normalize" />
 			<item Name="depth_peeling_accumulate_alpha" />
 			<item Name="alpha_blend_for_display_planes" />
 			<item Name="forge_light" />
 			<item Name="forge_light_inverse" />
+			<item Name="composite_UI" />
 		</_field_char_enum>
 		<_field_char_enum name="layer blend mode">
 			<item Name="none" />
@@ -303,11 +304,12 @@
 		<item Name="depth_peeling_blend_mode" />
 		<item Name="depth_peeling_Z_pass" />
 		<item Name="wpf_additive_blend_mode" />
-		<item Name="unused" />
+		<item Name="forge_normalize" />
 		<item Name="depth_peeling_accumulate_alpha" />
 		<item Name="alpha_blend_for_display_planes" />
 		<item Name="forge_light" />
 		<item Name="forge_light_inverse" />
+		<item Name="composite_UI" />
 	</_field_char_enum>
 	<_field_char_enum name="sort layer*">
 		<item Name="invalid" />

@@ -101,6 +101,7 @@
 		<item Name="aim assist ADS only#only enable aim assist when aimed down sight" />
 		<item Name="aim assist magnetism ADS only#only enable aim assist magnetism when aimed down sight" />
 		<item Name="hide weapon in ADS#weapon will become hidden when the targeting computer (tc) transition begins" />
+		<item Name="outline locked targets in ADS#for weapons that have target tracking this will enable outline when the weapon is ADS" />
 	</_field_long_flags>
 	<_field_custom name="ads transition in time{precision aim transition in time}#time in seconds to transition into precision aim mode" />
 	<_field_struct name="ads transition in time{precision aim transition in time}#time in seconds to transition into precision aim mode" />

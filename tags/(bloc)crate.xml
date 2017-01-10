@@ -550,6 +550,7 @@ You should create at most one block of Spartan Tracking data for each ping type.
 		<item Name="reject all contact points inside#allows one-way collision inside -&gt; outside regardless of team" />
 		<item Name="reject all contact points outside#allows one-way collision outside -&gt; inside regardless of team" />
 		<item Name="deactivate collision layer on mp team none#filters all collision when the crate multiplyaer team is set to 'None'" />
+		<item Name="non-networked motion#use with caution" />
 	</_field_long_flags>
 	<_field_real_bounds name="fuse timer range:seconds#How long the crate should exist if spawned by an effect" />
 	<_field_block_64 name="campaign metagame bucket" max="1">

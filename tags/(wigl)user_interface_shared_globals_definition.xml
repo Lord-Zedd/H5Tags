@@ -111,10 +111,8 @@ Notes:
 		<_field_string_id name="dialog name^" />
 		<_field_word_flags name="flags">
 			<item Name="unused" />
-			<item Name="text_input_24" />
-			<item Name="text_input_120" />
+			<item Name="has_text_input" />
 			<item Name="countdown_timer" />
-			<item Name="text_input_4" />
 		</_field_word_flags>
 		<_field_pad name="pad0" length="2" />
 		<_field_string_id name="title" />
@@ -138,6 +136,8 @@ Notes:
 			<item Name="third item activates" />
 			<item Name="fourth item activates" />
 		</_field_short_enum>
+		<_field_short_integer name="maximum text input" />
+		<_field_pad name="pad1" length="2" />
 	</_field_block_64>
 	<_field_explanation name="Lua User Libraries">These lua script files are loaded into every new UI lua state in the order specified to provide suplemental functionality.</_field_explanation>
 	<_field_block_64 name="lua user libraries" max="32">
