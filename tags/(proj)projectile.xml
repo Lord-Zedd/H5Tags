@@ -576,6 +576,7 @@ You should create at most one block of Spartan Tracking data for each ping type.
 		<item Name="never use localized physics#overrides early mover localize projectiles" />
 		<item Name="is considered a grenade#treated as a grenade for purposes of AI dialogue and player grenade damage multipliers" />
 		<item Name="can be deflected by enemies#enemies can knock this away under certain circumstances" />
+		<item Name="hits prefer parent to items#a projectile will pass through an item if it will hit its parent" />
 	</_field_long_flags>
 	<_field_short_enum name="detonation timer starts">
 		<item Name="immediately" />

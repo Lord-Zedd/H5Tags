@@ -578,7 +578,7 @@ You should create at most one block of Spartan Tracking data for each ping type.
 	<_field_pad name="tag_tp" length="4" />
 	<_field_custom name="$$$ WEAPON $$$" />
 	<_field_long_flags name="flags">
-		<item Name="vertical heat display" />
+		<item Name="gunkick disable roll" />
 		<item Name="mutually exclusive triggers" />
 		<item Name="attacks automatically on bump" />
 		<item Name="must be readied" />
@@ -653,6 +653,7 @@ You should create at most one block of Spartan Tracking data for each ping type.
 		<item Name="No idle to precision idle transition while evading" />
 		<item Name="No idle to precision idle transition while firing" />
 		<item Name="No idle to precision idle transition while reloading" />
+		<item Name="Firing animations are blocked during ADS transitions" />
 	</_field_long_flags>
 	<_field_string_id name="unused label!" />
 	<_field_real name="turn on time#how long after being readied it takes this weapon to switch its 'turned_on' attachment to 1.0" />

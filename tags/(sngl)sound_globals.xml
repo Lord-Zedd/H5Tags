@@ -63,4 +63,5 @@
 	<_field_block_64 name="State Groups#State groups we care enough about to have saved and loaded, as well as inherited during campaign player-teleportation" max="256" guid="35da4a68-4dc0-4148-8431-8dbc75986ffc">
 		<_field_tag_reference_64 name="State-group reference" />
 	</_field_block_64>
+	<_field_tag_reference_64 name="Forge sound events" />
 </plugin>

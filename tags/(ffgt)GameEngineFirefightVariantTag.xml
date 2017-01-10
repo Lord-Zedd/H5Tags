@@ -48,6 +48,7 @@
 			<item Name="early respawn allowed" />
 			<item Name="join in progress wait for next round to spawn" />
 			<item Name="bypass line of sight check for allowing player spawn" />
+			<item Name="bypass all influencer checks" />
 		</_field_word_flags>
 		<_field_char_integer name="lives per round" />
 		<_field_char_integer name="team lives per round" />
