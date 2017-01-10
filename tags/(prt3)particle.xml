@@ -13,7 +13,7 @@
 		<item Name="has sweetener" />
 		<item Name="uses cheap shader" />
 	</_field_long_flags>
-	<_field_block_64 name="attachments" max="4">
+	<_field_block_64 name="attachments" max="4" guid="db309672-40fd-3964-2a93-b18d361707d3">
 		<_field_byte_flags name="flags">
 			<item Name="disabled for debugging" />
 		</_field_byte_flags>
@@ -120,7 +120,7 @@
 	<_field_custom name="material" />
 	<_field_struct name="actual material?" />
 	<_field_tag_reference_64 name="material shader" />
-	<_field_block_64 name="material parameters" max="267">
+	<_field_block_64 name="material parameters" max="267" guid="5e4b3e06-4736-18a8-3f96-cfbe9dd6ca42">
 		<_field_string_id name="parameter name^*" />
 		<_field_long_enum name="parameter type*">
 			<item Name="bitmap" />
@@ -148,7 +148,7 @@
 		<_field_byte_integer name="parameter flags!" />
 		<_field_dword_integer name="render phases used" />
 		<_field_dword_integer name="shader types used" />
-		<_field_block_64 name="function parameters" max="267">
+		<_field_block_64 name="function parameters" max="267" guid="5471f0e3-4472-f54d-16a5-55aded7b009a">
 			<_field_long_enum name="type^">
 				<item Name="value" />
 				<item Name="color" />
@@ -181,8 +181,8 @@
 		<_field_word_integer name="register offset*!" />
 		<_field_word_integer name="register size*!" />
 	</_field_block_64>
-	<_field_block_64 name="postprocess definition!" max="1">
-		<_field_block_64 name="textures" max="32">
+	<_field_block_64 name="postprocess definition!" max="1" guid="1d50d0c3-41c0-c852-5790-5b9ea3f398ce">
+		<_field_block_64 name="textures" max="32" guid="cd9812ec-4be1-3cd6-48fe-3bb396a5bc0b">
 			<_field_tag_reference_64 name="bitmap reference" />
 			<_field_dword_integer name="render phase mask" />
 			<_field_dword_integer name="shader stage mask" />
@@ -194,7 +194,7 @@
 			<_field_int64_integer name="SamplerState!~" />
 		</_field_block_64>
 		<_field_long_integer name="textures to clear" />
-		<_field_block_64 name="functions" max="267">
+		<_field_block_64 name="functions" max="267" guid="5471f0e3-4472-f54d-16a5-55aded7b009a">
 			<_field_long_enum name="type^">
 				<item Name="value" />
 				<item Name="color" />
@@ -219,14 +219,14 @@
 			<_field_explanation name="FUNCTION" />
 			<_field_data_64 name="data" />
 		</_field_block_64>
-		<_field_block_64 name="function parameters" max="255">
+		<_field_block_64 name="function parameters" max="255" guid="25a1ecc0-4cbe-b81f-e266-949fdbcfa980">
 			<_field_byte_integer name="function index" />
 			<_field_byte_integer name="register offset" />
 			<_field_byte_integer name="parameter group" />
 			<_field_pad name="DHaFS" length="1" />
 			<_field_dword_integer name="render phase mask" />
 		</_field_block_64>
-		<_field_block_64 name="extern parameters" max="255">
+		<_field_block_64 name="extern parameters" max="255" guid="72118236-4f91-b22c-afda-45a6bba5e7ab">
 			<_field_byte_integer name="extern index" />
 			<_field_byte_integer name="extern offset" />
 			<_field_byte_integer name="parameter group" />
@@ -305,20 +305,20 @@
 			<item Name="has variable material constant functions" />
 			<item Name="has at least one extern texture used" />
 		</_field_word_flags>
-		<_field_block_64 name="material constants!~" max="255">
+		<_field_block_64 name="material constants!~" max="255" guid="8333766c-49c6-9913-871f-34aef2fb867f">
 			<_field_real_quaternion name="register" />
 		</_field_block_64>
-		<_field_block_64 name="alternate constants!~" max="255">
+		<_field_block_64 name="alternate constants!~" max="255" guid="8333766c-49c6-9913-871f-34aef2fb867f">
 			<_field_real_quaternion name="register" />
 		</_field_block_64>
 		<_field_int64_integer name="materialConstantBuffer!~" />
 		<_field_int64_integer name="alternateConstantBuffer!~" />
 		<_field_dword_integer name="material constant shader stage mask" />
 		<_field_array name="runtime queryable properties table">
-			<_field_char_block_index name="index" />
-			<_field_char_block_index name="index" />
-			<_field_char_block_index name="index" />
-			<_field_char_block_index name="index" />
+			<_field_char_block_index name="index" srcguid="757e48a6-4cbc-9cac-1ca1-46bcf3e2f763" />
+			<_field_char_block_index name="index" srcguid="757e48a6-4cbc-9cac-1ca1-46bcf3e2f763" />
+			<_field_char_block_index name="index" srcguid="757e48a6-4cbc-9cac-1ca1-46bcf3e2f763" />
+			<_field_char_block_index name="index" srcguid="757e48a6-4cbc-9cac-1ca1-46bcf3e2f763" />
 		</_field_array>
 	</_field_block_64>
 	<_field_string_id name="physics material name" />
@@ -1010,7 +1010,7 @@
 	<_field_dword_integer name="runtime m_constant_per_particle_properties!" />
 	<_field_dword_integer name="runtime m_constant_over_time_properties!" />
 	<_field_struct name="runtime m_gpu_data!" />
-	<_field_block_64 name="runtime m_sprite!" max="1">
+	<_field_block_64 name="runtime m_sprite!" max="1" guid="821f9c90-4863-9584-1d37-2594dde8b87a">
 		<_field_array name="runtime gpu_sprite_array!">
 			<_field_real name="runtime gpu_real!" />
 			<_field_real name="runtime gpu_real!" />
@@ -1018,7 +1018,7 @@
 			<_field_real name="runtime gpu_real!" />
 		</_field_array>
 	</_field_block_64>
-	<_field_block_64 name="runtime m_frames!" max="16">
+	<_field_block_64 name="runtime m_frames!" max="16" guid="7820cc6f-40f4-0228-e75b-229397bd8d81">
 		<_field_array name="runtime m_count!">
 			<_field_real name="runtime gpu_real!" />
 			<_field_real name="runtime gpu_real!" />

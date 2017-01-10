@@ -5,8 +5,8 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="Musketeer Teams" max="32">
-		<_field_block_64 name="Musketeer" max="32">
+	<_field_block_64 name="Musketeer Teams" max="32" guid="6a244837-4ad6-c6fc-72bd-b7a4af36a0fc">
+		<_field_block_64 name="Musketeer" max="32" guid="acc36aae-41af-d75d-d29c-768dce5c763f">
 			<_field_tag_reference_64 name="character" />
 			<_field_char_enum name="avatar name">
 				<item Name="None" />
@@ -21,8 +21,8 @@
 			</_field_char_enum>
 			<_field_pad name="pad" length="3" />
 		</_field_block_64>
-		<_field_block_64 name="Difficulty Tunings" max="1">
-			<_field_block_64 name="Tuning Sets" max="10">
+		<_field_block_64 name="Difficulty Tunings" max="1" guid="cca1607f-49a4-7b6c-f024-bfbd2fb4c4cd">
+			<_field_block_64 name="Tuning Sets" max="10" guid="e07b541d-4003-0c3c-1738-0189a5ea6267">
 				<_field_long_enum name="Type">
 					<item Name="Target visible to any player" />
 					<item Name="Actor gunning for any player" />

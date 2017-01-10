@@ -5,7 +5,7 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="portrait poses" max="32">
+	<_field_block_64 name="portrait poses" max="32" guid="44f2f85b-4a15-2627-7cae-c8bddabc789a">
 		<_field_string_id name="pose name^" />
 		<_field_string_id name="animation name" />
 		<_field_string_id name="camera view name" />

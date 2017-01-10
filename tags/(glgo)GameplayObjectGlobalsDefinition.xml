@@ -5,7 +5,7 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="Hologram Lighting" max="1">
+	<_field_block_64 name="Hologram Lighting" max="1" guid="8e264b3b-4745-9fd1-8ed7-bc83ac73bb9f">
 		<_field_custom name="HOLOGRAM FUNCTIONS" />
 		<_field_string_id name="Intensity" />
 		<_field_custom name="KEY LIGHT FUNCTIONS" />
@@ -27,7 +27,7 @@
 		<_field_string_id name="Right" />
 		<_field_string_id name="Up" />
 	</_field_block_64>
-	<_field_block_64 name="active camo" max="1">
+	<_field_block_64 name="active camo" max="1" guid="4034ff5e-4c2d-39d8-fba4-6c91bc83790c">
 		<_field_real name="biped speed reference:wu/s#for bipeds, the speed at which you are on the far right of the 'speed to max camo' graph" />
 		<_field_real name="active camo ground vertical speed scalar#0 means no vertical speed is used for active camo reduction, and 1 means it is fully used while on the ground" />
 		<_field_real name="active camo airborne vertical speed scalar#0 means no vertical speed is used for active camo reduction, and 1 means it is fully used while airborne" />
@@ -47,7 +47,7 @@
 		<_field_real name="camo depth bias max distance#This is used to deal with ugly rendering artifacts when camo is not fully on" />
 		<_field_struct name="camo depth bias function#This is used to deal with ugly rendering artifacts when camo is not fully on" />
 		<_field_data_64 name="data" />
-		<_field_block_64 name="camo levels" max="5">
+		<_field_block_64 name="camo levels" max="5" guid="e283deaa-46ff-d17b-69f6-028077e386f1">
 			<_field_real name="grenade throw penalty:0..1!*#reduces camo value by this much when throwing a grenade" />
 			<_field_real name="melee penalty:0..1!*#reduces camo by this much when meleeing" />
 			<_field_real name="minimum dinged value!*#when taking damage or doing other actions that reduce camo, we will never drop below this value" />
@@ -56,7 +56,7 @@
 			<_field_data_64 name="data" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="shield boost" max="1">
+	<_field_block_64 name="shield boost" max="1" guid="c8a4d40e-49e4-830f-7122-96907c8fdc1f">
 		<_field_explanation name="shield boosting">This feature was implemented for the engineer character in atlas. Shield dynamics overrides for when shields are being 'boosted' by an external source</_field_explanation>
 		<_field_real name="shield boost decay#amount of shield-boost to decay per second" />
 		<_field_real name="shield boost recharge time#time to recharge full shields when getting boosted" />

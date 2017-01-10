@@ -5,7 +5,7 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="interpolators" max="32">
+	<_field_block_64 name="interpolators" max="32" guid="2fa4af3d-4c1d-658e-5911-568b51109aee">
 		<_field_word_flags name="flags">
 			<item Name="loops#will continue to play until stopped.  if checked, no wrap should also be checked" />
 			<item Name="always active#will be started when the map loads.  good for looping interpolators" />

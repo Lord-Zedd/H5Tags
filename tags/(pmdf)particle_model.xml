@@ -20,17 +20,17 @@ Even an empty geometry structure is pretty large, so I didn't want to put it in 
 		<item Name="pca animation table sorted*!" />
 		<item Name="has dual quat*!" />
 	</_field_long_flags>
-	<_field_block_64 name="meshes import info*!" max="8191">
+	<_field_block_64 name="meshes import info*!" max="8191" guid="67fac496-4e7d-883d-a2f7-94b7f793ff8d">
 		<_field_dword_integer name="CRC" />
 		<_field_real_point_3d name="position bounds 0" />
 		<_field_real_point_3d name="position bounds 1" />
 		<_field_real_point_2d name="texcoord bounds 0" />
 		<_field_real_point_2d name="texcoord bounds 1" />
 	</_field_block_64>
-	<_field_block_64 name="meshes*" max="8191">
-		<_field_block_64 name="LOD render data" max="16">
-			<_field_block_64 name="per mesh temporary*" max="8191">
-				<_field_block_64 name="raw vertices*" max="16777214">
+	<_field_block_64 name="meshes*" max="8191" guid="ebb348bb-4cc8-a7c0-1515-e5a67d9ca9a5">
+		<_field_block_64 name="LOD render data" max="16" guid="67fac497-4e7d-883d-a2f7-94b7f893ff8d">
+			<_field_block_64 name="per mesh temporary*" max="8191" guid="52900ab0-4b64-2305-131c-86ba015cc92c">
+				<_field_block_64 name="raw vertices*" max="16777214" guid="98f6c836-43c5-cd93-8831-31ba77babd05">
 					<_field_real_point_3d name="position*" />
 					<_field_real_point_2d name="texcoord*" />
 					<_field_real_point_3d name="normal*" />
@@ -62,21 +62,21 @@ Even an empty geometry structure is pretty large, so I didn't want to put it in 
 					<_field_real name="dual quat weight*" />
 					<_field_real name="vertex alpha*" />
 				</_field_block_64>
-				<_field_block_64 name="raw indices*" max="2621400">
+				<_field_block_64 name="raw indices*" max="2621400" guid="92f5e99b-45b5-fc5b-3c97-94a5a8968e68">
 					<_field_short_integer name="word*" />
 				</_field_block_64>
-				<_field_block_64 name="raw indices32*" max="2621400">
+				<_field_block_64 name="raw indices32*" max="2621400" guid="73514b8e-4978-5ea5-0d44-aa8a4cc2e139">
 					<_field_long_integer name="dword*" />
 				</_field_block_64>
-				<_field_block_64 name="raw water data" max="32">
-					<_field_block_64 name="raw water indices*" max="2621400">
+				<_field_block_64 name="raw water data" max="32" guid="4f09c644-4f12-93ed-e154-d7a9c754706e">
+					<_field_block_64 name="raw water indices*" max="2621400" guid="92f5e99b-45b5-fc5b-3c97-94a5a8968e68">
 						<_field_short_integer name="word*" />
 					</_field_block_64>
-					<_field_block_64 name="raw water vertices*" max="65535">
+					<_field_block_64 name="raw water vertices*" max="65535" guid="b6f83085-41b1-c99a-a854-f4b78e00e25a">
 						<_field_real_point_2d name="base texcoord*" />
 					</_field_block_64>
 				</_field_block_64>
-				<_field_block_64 name="raw blendshapes*" max="16777216">
+				<_field_block_64 name="raw blendshapes*" max="16777216" guid="7d5e5593-4db9-f97e-00bc-978ee95cec72">
 					<_field_real_vector_3d name="position*" />
 					<_field_real_vector_3d name="normal*" />
 					<_field_real_argb_color name="tension and ambient occlusion*" />
@@ -87,7 +87,7 @@ Even an empty geometry structure is pretty large, so I didn't want to put it in 
 					<item Name="indices are quad lists" />
 				</_field_long_flags>
 			</_field_block_64>
-			<_field_block_64 name="part sorting position*" max="65535">
+			<_field_block_64 name="part sorting position*" max="65535" guid="684ef46d-4111-b52e-fbfe-208e9e1cfbee">
 				<_field_real_plane_3d name="plane*" />
 				<_field_real_point_3d name="position*" />
 				<_field_real name="radius*" />
@@ -111,9 +111,9 @@ Even an empty geometry structure is pretty large, so I didn't want to put it in 
 					<_field_real name="node weight*" />
 				</_field_array>
 			</_field_block_64>
-			<_field_block_64 name="parts*" max="255">
-				<_field_short_block_index name="material index{render method index}^*" />
-				<_field_short_block_index name="transparent sorting index*" />
+			<_field_block_64 name="parts*" max="255" guid="4a81849d-42b4-fbee-ac56-c9a3180f53e6">
+				<_field_short_block_index name="material index{render method index}^*" srcguid="b1135973-4dc5-34a5-3116-909973e5b5b0" />
+				<_field_short_block_index name="transparent sorting index*" srcguid="684ef46d-4111-b52e-fbfe-208e9e1cfbee" />
 				<_field_long_integer name="index start*" />
 				<_field_long_integer name="index count*" />
 				<_field_short_integer name="subpart start*" />
@@ -150,10 +150,10 @@ Even an empty geometry structure is pretty large, so I didn't want to put it in 
 				<_field_word_integer name="budget vertex count" />
 				<_field_pad name="THSDFHG" length="2" />
 			</_field_block_64>
-			<_field_block_64 name="subparts*" max="65535">
+			<_field_block_64 name="subparts*" max="65535" guid="09109a33-436f-9c27-babf-38b4ae1b97b6">
 				<_field_long_integer name="index start*" />
 				<_field_long_integer name="index count*" />
-				<_field_short_block_index name="part index*" />
+				<_field_short_block_index name="part index*" srcguid="4a81849d-42b4-fbee-ac56-c9a3180f53e6" />
 				<_field_word_integer name="budget vertex count" />
 				<_field_dword_integer name="analytical light index" />
 			</_field_block_64>
@@ -265,29 +265,29 @@ Even an empty geometry structure is pretty large, so I didn't want to put it in 
 			<item Name="rect list" />
 		</_field_char_enum>
 		<_field_short_integer name="pca mesh index*" />
-		<_field_block_64 name="instance buckets*" max="2048">
+		<_field_block_64 name="instance buckets*" max="2048" guid="0c556069-4baa-c790-e096-9fa32071b2d9">
 			<_field_short_integer name="mesh index*" />
 			<_field_short_integer name="definition index*" />
-			<_field_block_64 name="instances" max="65535">
+			<_field_block_64 name="instances" max="65535" guid="bb11bc2a-4bac-5252-be57-37993e852780">
 				<_field_short_integer name="instance index*" />
 			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="water indices start" max="2621400">
+		<_field_block_64 name="water indices start" max="2621400" guid="92f5e99b-45b5-fc5b-3c97-94a5a8968e68">
 			<_field_short_integer name="word*" />
 		</_field_block_64>
-		<_field_block_64 name="vertex keys*" max="16777216">
+		<_field_block_64 name="vertex keys*" max="16777216" guid="dad1c118-4e4e-570f-0b84-86afe0b10b86">
 			<_field_long_integer name="key1*" />
 			<_field_long_integer name="key2*" />
 		</_field_block_64>
-		<_field_short_block_index name="clone index*" />
+		<_field_short_block_index name="clone index*" srcguid="ebb348bb-4cc8-a7c0-1515-e5a67d9ca9a5" />
 		<_field_short_integer name="cumulative part count (initialized by PVS building code)" />
 		<_field_short_integer name="optional LOD volume index" />
 		<_field_pad name="OMFGNOWAY" length="2" />
 	</_field_block_64>
-	<_field_block_64 name="PCA Mesh Indices*" max="8191">
-		<_field_long_block_index name="mesh index" />
+	<_field_block_64 name="PCA Mesh Indices*" max="8191" guid="47c61323-4d16-1f27-0248-cd97a5ffa9cc">
+		<_field_long_block_index name="mesh index" srcguid="ebb348bb-4cc8-a7c0-1515-e5a67d9ca9a5" />
 	</_field_block_64>
-	<_field_block_64 name="compression info*" max="65536">
+	<_field_block_64 name="compression info*" max="65536" guid="fe51fdac-4778-62ff-5430-c3a86ca923a0">
 		<_field_word_flags name="compression flags*">
 			<item Name="compressed position" />
 			<item Name="compressed texcoord" />
@@ -308,13 +308,13 @@ texcoord_bounds.y0 texcoord_bounds.y1
 		<_field_real name="unused0*" />
 		<_field_real name="unused1*" />
 	</_field_block_64>
-	<_field_block_64 name="per mesh node map*" max="8191">
-		<_field_block_64 name="node map*" max="255">
+	<_field_block_64 name="per mesh node map*" max="8191" guid="c23b2003-450c-2aa6-d997-248b0f81506c">
+		<_field_block_64 name="node map*" max="255" guid="77db2a4a-490d-0ec6-27a7-2e8280f82630">
 			<_field_char_integer name="node index*" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="per mesh subpart visibility*" max="64">
-		<_field_block_64 name="bounding_sphere*" max="65535">
+	<_field_block_64 name="per mesh subpart visibility*" max="64" guid="06360432-47e0-14be-23b2-8a81a206dba6">
+		<_field_block_64 name="bounding_sphere*" max="65535" guid="684ef46d-4111-b52e-fbfe-208e9e1cfbee">
 			<_field_real_plane_3d name="plane*" />
 			<_field_real_point_3d name="position*" />
 			<_field_real name="radius*" />
@@ -339,16 +339,16 @@ texcoord_bounds.y0 texcoord_bounds.y1
 			</_field_array>
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="normalized_per_definition_lightmap_texcoords*" max="65535">
-		<_field_block_64 name="per LOD Data" max="16">
-			<_field_block_64 name="texture coordinates (concise)" max="16777214">
+	<_field_block_64 name="normalized_per_definition_lightmap_texcoords*" max="65535" guid="add17af6-dfbe-b937-99ff-be9335eebea7">
+		<_field_block_64 name="per LOD Data" max="16" guid="f880a4d0-48ae-f9f8-d536-b499e552c5c2">
+			<_field_block_64 name="texture coordinates (concise)" max="16777214" guid="6e3d7633-492d-56f5-9ef7-f0841acd700e">
 				<_field_real_point_2d name="texcoord*" />
 			</_field_block_64>
 			<_field_short_integer name="vertex buffer index*" />
 			<_field_pad name="HTJIAHA" length="2" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="per_instance_per_chart_lightmap_transforms*" max="2097152">
+	<_field_block_64 name="per_instance_per_chart_lightmap_transforms*" max="2097152" guid="79487d4e-4ee9-5b60-e619-0899a554841b">
 		<_field_real name="Scale X" />
 		<_field_real name="Scale Y" />
 		<_field_real name="Translate X" />
@@ -357,29 +357,29 @@ texcoord_bounds.y0 texcoord_bounds.y1
 	<_field_long_integer name="raw chart count" />
 	<_field_short_integer name="per_instance_per_chart_lightmap_transforms buffer index" />
 	<_field_short_integer name="lightmap_transform_version_number" />
-	<_field_block_64 name="per_instance_per_vertex_transform_indices*" max="65535">
-		<_field_block_64 name="per lod data" max="16">
-			<_field_block_64 name="indices" max="2621400">
+	<_field_block_64 name="per_instance_per_vertex_transform_indices*" max="65535" guid="c8d81a34-af6b-0417-8da4-f8a80a48914a">
+		<_field_block_64 name="per lod data" max="16" guid="caeb2234-e23b-af6e-8d23-e1ba1de18a4a">
+			<_field_block_64 name="indices" max="2621400" guid="73514b8e-4978-5ea5-0d44-aa8a4cc2e139">
 				<_field_long_integer name="dword*" />
 			</_field_block_64>
 			<_field_short_integer name="vertex buffer index*" />
 			<_field_short_integer name="normalized chart definition index*" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="water bounding box block*" max="32">
+	<_field_block_64 name="water bounding box block*" max="32" guid="f28eacd0-41a9-f1ff-d030-b99659a2a5c2">
 		<_field_short_integer name="mesh index" />
 		<_field_short_integer name="part index" />
 		<_field_real_point_3d name="position bounds 0" />
 		<_field_real_point_3d name="position bounds 1" />
 	</_field_block_64>
-	<_field_block_64 name="Optional animated mesh tag references" max="64">
+	<_field_block_64 name="Optional animated mesh tag references" max="64" guid="f74ac124-4d7e-1cbd-2d2e-4bbb77e3c4b2">
 		<_field_tag_reference_64 name="Animated mesh tag reference" />
 		<_field_string_id name="Name^" />
 	</_field_block_64>
-	<_field_block_64 name="Optional LOD volumes data" max="4096">
+	<_field_block_64 name="Optional LOD volumes data" max="4096" guid="d7cc9a5e-4536-54e8-973b-91afc91989a1">
 		<_field_real_point_3d name="position bounds 0" />
 		<_field_real_point_3d name="position bounds 1" />
-		<_field_block_64 name="position data*" max="65535">
+		<_field_block_64 name="position data*" max="65535" guid="684ef46d-4111-b52e-fbfe-208e9e1cfbee">
 			<_field_real_plane_3d name="plane*" />
 			<_field_real_point_3d name="position*" />
 			<_field_real name="radius*" />
@@ -412,19 +412,19 @@ texcoord_bounds.y0 texcoord_bounds.y1
 	</_field_short_enum>
 	<_field_word_integer name="total index buffer count*!" />
 	<_field_word_integer name="total vertex buffer count*!" />
-	<_field_block_64 name="mesh resource groups*!" max="16384">
+	<_field_block_64 name="mesh resource groups*!" max="16384" guid="211c66f6-4c98-41c3-8c8e-47999c6844e0">
 		<_field_pageable_resource_64 name="mesh resource!*" />
 	</_field_block_64>
-	<_field_block_64 name="index resource look up*!" max="16384">
+	<_field_block_64 name="index resource look up*!" max="16384" guid="b12cfdd4-4fe2-0575-fb34-e0ba99470a48">
 		<_field_short_integer name="resource group index" />
 		<_field_short_integer name="group item index" />
 	</_field_block_64>
-	<_field_block_64 name="vertex resource look up*!" max="16384">
+	<_field_block_64 name="vertex resource look up*!" max="16384" guid="b12cfdd4-4fe2-0575-fb34-e0ba99470a48">
 		<_field_short_integer name="resource group index" />
 		<_field_short_integer name="group item index" />
 	</_field_block_64>
 	<_field_struct name="m_gpu_data!" />
-	<_field_block_64 name="m_variants!" max="16">
+	<_field_block_64 name="m_variants!" max="16" guid="7820cc6f-40f4-0228-e75b-229397bd8d81">
 		<_field_array name="runtime m_count!">
 			<_field_real name="runtime gpu_real!" />
 			<_field_real name="runtime gpu_real!" />

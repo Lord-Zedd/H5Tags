@@ -6,7 +6,7 @@
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
 	<_field_string_id name="name^" />
-	<_field_block_64 name="cell templates" max="10">
+	<_field_block_64 name="cell templates" max="10" guid="84753568-4d62-2bd1-fdc1-f8b1689c89be">
 		<_field_string_id name="name^" />
 		<_field_struct name="place on" />
 		<_field_word_flags name="difficulty flags">
@@ -25,7 +25,7 @@
 			<item Name="all" />
 		</_field_short_enum>
 		<_field_explanation name="Character Build">Specify the distribution of characters and weapons in the following blocks</_field_explanation>
-		<_field_block_64 name="character type" max="8">
+		<_field_block_64 name="character type" max="8" guid="01e52f15-4df8-71c3-67ea-8fa501f63d4e">
 			<_field_struct name="place on" />
 			<_field_word_flags name="difficulty flags">
 				<item Name="easy" />
@@ -38,7 +38,7 @@
 			<_field_short_integer name="chance" />
 			<_field_pad name="post-chance" length="2" />
 		</_field_block_64>
-		<_field_block_64 name="initial weapon" max="8">
+		<_field_block_64 name="initial weapon" max="8" guid="75ee0928-4fc6-d53e-8e2a-da834fc9df7c">
 			<_field_struct name="place on" />
 			<_field_word_flags name="difficulty flags">
 				<item Name="easy" />
@@ -51,7 +51,7 @@
 			<_field_short_integer name="chance" />
 			<_field_pad name="post-chance" length="2" />
 		</_field_block_64>
-		<_field_block_64 name="initial secondary weapon" max="8">
+		<_field_block_64 name="initial secondary weapon" max="8" guid="75ee0928-4fc6-d53e-8e2a-da834fc9df7c">
 			<_field_struct name="place on" />
 			<_field_word_flags name="difficulty flags">
 				<item Name="easy" />
@@ -64,7 +64,7 @@
 			<_field_short_integer name="chance" />
 			<_field_pad name="post-chance" length="2" />
 		</_field_block_64>
-		<_field_block_64 name="initial equipment" max="8">
+		<_field_block_64 name="initial equipment" max="8" guid="adf3a9b8-4ea7-faca-316d-2caa394970df">
 			<_field_struct name="place on" />
 			<_field_word_flags name="difficulty flags">
 				<item Name="easy" />

@@ -6,12 +6,12 @@
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
 	<_field_custom name="import" />
-	<_field_block_64 name="vertices*" max="32768">
+	<_field_block_64 name="vertices*" max="32768" guid="1f0b2e3d-4309-aac4-b253-3abf775dbd30">
 		<_field_real_point_3d name="position*" />
 		<_field_real_point_3d name="normal*" />
 		<_field_real_point_2d name="texture coordinate*" />
 	</_field_block_64>
-	<_field_block_64 name="indices*" max="32768">
+	<_field_block_64 name="indices*" max="32768" guid="27dbbddf-4520-d250-559b-879298d7e020">
 		<_field_short_integer name="index*" />
 	</_field_block_64>
 </plugin>

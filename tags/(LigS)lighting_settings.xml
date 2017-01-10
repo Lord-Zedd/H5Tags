@@ -146,7 +146,7 @@
 		<item Name="6144x6144" />
 		<item Name="8192x8192" />
 	</_field_long_enum>
-	<_field_block_64 name="Adjacent BSPs" max="1024">
+	<_field_block_64 name="Adjacent BSPs" max="1024" guid="acb5abce-c923-1780-8927-deacb7be9278">
 		<_field_string_id name="name" />
 		<_field_string_id name="lighting variant name" />
 	</_field_block_64>
@@ -158,8 +158,8 @@
 	<_field_struct name="Custom Object Lighting" />
 	<_field_explanation name="Character Lighting">
 </_field_explanation>
-	<_field_block_64 name="Authored Light Probes" max="4">
-		<_field_block_64 name="Lights*" max="1">
+	<_field_block_64 name="Authored Light Probes" max="4" guid="1202400e-e569-5a0d-15ea-96e69adfd5f0">
+		<_field_block_64 name="Lights*" max="1" guid="c2ea80ad-c6ad-e1b9-bed3-7e66ffa3a679">
 			<_field_custom name="Authored Light Probe" />
 			<_field_custom name="Direction 1&amp;Direction(D)" />
 			<_field_real name="Direction 1&amp;Direction(D)" />
@@ -372,7 +372,7 @@
 		<_field_pad name="pad_eruerybgh" length="2" />
 	</_field_array>
 	<_field_custom name="panning clouds" />
-	<_field_block_64 name="Cloud settings" max="32">
+	<_field_block_64 name="Cloud settings" max="32" guid="e01dacdb-4d5f-1f3a-2436-8cbb45bd5fed">
 		<_field_real name="cloud scale#mapping to the world unit" />
 		<_field_real name="cloud speed#cloud movement speed" />
 		<_field_real name="cloud direction#cloud movement direction, 0-360 degree" />

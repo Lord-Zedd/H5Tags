@@ -27,7 +27,7 @@
 	<_field_tag_reference_64 name="hybrid vMF probe data per-vertex 565" />
 	<_field_tag_reference_64 name="hybrid vMF probe data per-vertex lite 565" />
 	<_field_tag_reference_64 name="per-vertex analytic texture" />
-	<_field_block_64 name="runtime lights" max="32767">
+	<_field_block_64 name="runtime lights" max="32767" guid="5cad7a73-4084-815e-f819-c0be024dd1b6">
 		<_field_long_integer name="Composer Id!" />
 		<_field_real_point_3d name="position" />
 		<_field_real_euler_angles_3d name="facing" />
@@ -189,7 +189,7 @@
 			<item Name="On" />
 		</_field_char_enum>
 		<_field_short_integer name="runtime index*" />
-		<_field_block_64 name="Editor Metadata!" max="1024">
+		<_field_block_64 name="Editor Metadata!" max="1024" guid="49566d10-3ee6-efbe-6d8c-8eb1db3d0368">
 			<_field_long_string name="data name" />
 			<_field_long_enum name="data type">
 				<item Name="class" />
@@ -208,12 +208,12 @@
 		</_field_char_enum>
 		<_field_pad name="pad0" length="3" />
 	</_field_block_64>
-	<_field_block_64 name="instances" max="65535">
+	<_field_block_64 name="instances" max="65535" guid="02b9848c-495a-68e0-77d7-aa8b2f9faf64">
 		<_field_struct name="material override data~*" />
-		<_field_block_64 name="material remap indices~*" max="10240">
+		<_field_block_64 name="material remap indices~*" max="10240" guid="1aed06e6-46b6-f1ac-d2f2-2a8a4cb551da">
 			<_field_long_integer name="new material index~*" />
 		</_field_block_64>
-		<_field_block_64 name="lod part override data~*" max="4080">
+		<_field_block_64 name="lod part override data~*" max="4080" guid="1aed06e5-46b7-f1ac-d1f2-2a8a4db551da">
 			<_field_word_integer name="lod and part index~*" />
 			<_field_word_flags name="lod part override flags~*">
 				<item Name="is water surface" />
@@ -253,7 +253,7 @@
 			<item Name="per vertex lighting" />
 		</_field_word_flags>
 		<_field_pad name="pad" length="2" />
-		<_field_block_64 name="per LOD data" max="16">
+		<_field_block_64 name="per LOD data" max="16" guid="283490ab-3653-cbb2-3498-0c00663a4822">
 			<_field_short_integer name="per pixel type{lightprobe texture array index}" />
 			<_field_short_integer name="per vertex type{pervertex block index}" />
 			<_field_long_integer name="probe block index" />
@@ -267,11 +267,11 @@
 				<item Name="Diffuse UV" />
 				<item Name="Auto/Diffuse" />
 			</_field_long_enum>
-			<_field_block_64 name="analytic light indices" max="65535">
+			<_field_block_64 name="analytic light indices" max="65535" guid="ddf00598-4cb8-22cf-fe80-349b2904209b">
 				<_field_long_integer name="Indices" />
 			</_field_block_64>
-			<_field_block_64 name="per-part analytic light data" max="32767">
-				<_field_block_64 name="light indices" max="255">
+			<_field_block_64 name="per-part analytic light data" max="32767" guid="d6d22367-47f2-109b-6f18-8486b9a358c1">
+				<_field_block_64 name="light indices" max="255" guid="1d3c8325-4975-795c-9624-898db778ecf7">
 					<_field_short_integer name="analytic light index*" />
 				</_field_block_64>
 			</_field_block_64>
@@ -285,7 +285,7 @@
 		<_field_word_integer name="compression index" />
 		<_field_long_integer name="runtime bitmap tag reference!~" />
 	</_field_block_64>
-	<_field_block_64 name="probes" max="65535">
+	<_field_block_64 name="probes" max="65535" guid="8a43fcfc-47aa-3487-0a7c-fcbb0cdd25c4">
 		<_field_struct name="sh terms" />
 		<_field_array name="red sh terms">
 			<_field_short_integer name="coefficient*" />
@@ -324,14 +324,14 @@
 		<_field_byte_integer name="sun intensity" />
 		<_field_pad name="sllv_byte_pad" length="1" />
 	</_field_block_64>
-	<_field_block_64 name="instanceCubemapReferences" max="65535">
+	<_field_block_64 name="instanceCubemapReferences" max="65535" guid="a77b2da1-7932-caff-327e-43c4bf45d3ae">
 		<_field_tag_reference_64 name="instance cubemap" />
 	</_field_block_64>
 	<_field_pad name="pad3" length="4" />
 	<_field_pageable_resource_64 name="Constants Data*" />
-	<_field_block_64 name="shadow geometry excluded instances" max="65535">
+	<_field_block_64 name="shadow geometry excluded instances" max="65535" guid="7e3c9241-c0d9-42d0-2eb7-93b027f222da">
 		<_field_long_integer name="Instance Index" />
-		<_field_block_64 name="part indices" max="255">
+		<_field_block_64 name="part indices" max="255" guid="4d3e8776-f265-62f3-fda3-897676d492ac">
 			<_field_short_integer name="part index*" />
 		</_field_block_64>
 	</_field_block_64>
@@ -345,11 +345,11 @@
 	<_field_int64_integer name="Per-pixel LOD scale checksum!" />
 	<_field_short_integer name="Lightmap packing version number" />
 	<_field_pad name="pad2" length="2" />
-	<_field_block_64 name="Lightmap Instance Availability!" max="8192">
+	<_field_block_64 name="Lightmap Instance Availability!" max="8192" guid="aeb6e7ea-9274-1833-4223-ebafb1891dab">
 		<_field_long_integer name="Lightmap Instance Index" />
 		<_field_long_integer name="Lightmap Mesh Index" />
 	</_field_block_64>
-	<_field_block_64 name="BSP Mesh Sources" max="8192">
+	<_field_block_64 name="BSP Mesh Sources" max="8192" guid="1cde1233-c78c-4844-6d45-e6abb14b1e99">
 		<_field_real_vector_3d name="scale" />
 		<_field_real_vector_3d name="forward" />
 		<_field_real_vector_3d name="left" />
@@ -362,7 +362,7 @@
 		<_field_int64_integer name="Source Mesh Checksum" />
 		<_field_tag_reference_64 name="Source Geometry Reference" />
 	</_field_block_64>
-	<_field_block_64 name="materials*" max="10240">
+	<_field_block_64 name="materials*" max="10240" guid="b1135973-4dc5-34a5-3116-909973e5b5b0">
 		<_field_tag_reference_64 name="material{render method}^*" />
 	</_field_block_64>
 	<_field_custom name="render_geo" />
@@ -377,17 +377,17 @@
 		<item Name="pca animation table sorted*!" />
 		<item Name="has dual quat*!" />
 	</_field_long_flags>
-	<_field_block_64 name="meshes import info*!" max="8191">
+	<_field_block_64 name="meshes import info*!" max="8191" guid="67fac496-4e7d-883d-a2f7-94b7f793ff8d">
 		<_field_dword_integer name="CRC" />
 		<_field_real_point_3d name="position bounds 0" />
 		<_field_real_point_3d name="position bounds 1" />
 		<_field_real_point_2d name="texcoord bounds 0" />
 		<_field_real_point_2d name="texcoord bounds 1" />
 	</_field_block_64>
-	<_field_block_64 name="meshes*" max="8191">
-		<_field_block_64 name="LOD render data" max="16">
-			<_field_block_64 name="per mesh temporary*" max="8191">
-				<_field_block_64 name="raw vertices*" max="16777214">
+	<_field_block_64 name="meshes*" max="8191" guid="ebb348bb-4cc8-a7c0-1515-e5a67d9ca9a5">
+		<_field_block_64 name="LOD render data" max="16" guid="67fac497-4e7d-883d-a2f7-94b7f893ff8d">
+			<_field_block_64 name="per mesh temporary*" max="8191" guid="52900ab0-4b64-2305-131c-86ba015cc92c">
+				<_field_block_64 name="raw vertices*" max="16777214" guid="98f6c836-43c5-cd93-8831-31ba77babd05">
 					<_field_real_point_3d name="position*" />
 					<_field_real_point_2d name="texcoord*" />
 					<_field_real_point_3d name="normal*" />
@@ -419,21 +419,21 @@
 					<_field_real name="dual quat weight*" />
 					<_field_real name="vertex alpha*" />
 				</_field_block_64>
-				<_field_block_64 name="raw indices*" max="2621400">
+				<_field_block_64 name="raw indices*" max="2621400" guid="92f5e99b-45b5-fc5b-3c97-94a5a8968e68">
 					<_field_short_integer name="word*" />
 				</_field_block_64>
-				<_field_block_64 name="raw indices32*" max="2621400">
+				<_field_block_64 name="raw indices32*" max="2621400" guid="73514b8e-4978-5ea5-0d44-aa8a4cc2e139">
 					<_field_long_integer name="dword*" />
 				</_field_block_64>
-				<_field_block_64 name="raw water data" max="32">
-					<_field_block_64 name="raw water indices*" max="2621400">
+				<_field_block_64 name="raw water data" max="32" guid="4f09c644-4f12-93ed-e154-d7a9c754706e">
+					<_field_block_64 name="raw water indices*" max="2621400" guid="92f5e99b-45b5-fc5b-3c97-94a5a8968e68">
 						<_field_short_integer name="word*" />
 					</_field_block_64>
-					<_field_block_64 name="raw water vertices*" max="65535">
+					<_field_block_64 name="raw water vertices*" max="65535" guid="b6f83085-41b1-c99a-a854-f4b78e00e25a">
 						<_field_real_point_2d name="base texcoord*" />
 					</_field_block_64>
 				</_field_block_64>
-				<_field_block_64 name="raw blendshapes*" max="16777216">
+				<_field_block_64 name="raw blendshapes*" max="16777216" guid="7d5e5593-4db9-f97e-00bc-978ee95cec72">
 					<_field_real_vector_3d name="position*" />
 					<_field_real_vector_3d name="normal*" />
 					<_field_real_argb_color name="tension and ambient occlusion*" />
@@ -444,7 +444,7 @@
 					<item Name="indices are quad lists" />
 				</_field_long_flags>
 			</_field_block_64>
-			<_field_block_64 name="part sorting position*" max="65535">
+			<_field_block_64 name="part sorting position*" max="65535" guid="684ef46d-4111-b52e-fbfe-208e9e1cfbee">
 				<_field_real_plane_3d name="plane*" />
 				<_field_real_point_3d name="position*" />
 				<_field_real name="radius*" />
@@ -468,9 +468,9 @@
 					<_field_real name="node weight*" />
 				</_field_array>
 			</_field_block_64>
-			<_field_block_64 name="parts*" max="255">
-				<_field_short_block_index name="material index{render method index}^*" />
-				<_field_short_block_index name="transparent sorting index*" />
+			<_field_block_64 name="parts*" max="255" guid="4a81849d-42b4-fbee-ac56-c9a3180f53e6">
+				<_field_short_block_index name="material index{render method index}^*" srcguid="b1135973-4dc5-34a5-3116-909973e5b5b0" />
+				<_field_short_block_index name="transparent sorting index*" srcguid="684ef46d-4111-b52e-fbfe-208e9e1cfbee" />
 				<_field_long_integer name="index start*" />
 				<_field_long_integer name="index count*" />
 				<_field_short_integer name="subpart start*" />
@@ -507,10 +507,10 @@
 				<_field_word_integer name="budget vertex count" />
 				<_field_pad name="THSDFHG" length="2" />
 			</_field_block_64>
-			<_field_block_64 name="subparts*" max="65535">
+			<_field_block_64 name="subparts*" max="65535" guid="09109a33-436f-9c27-babf-38b4ae1b97b6">
 				<_field_long_integer name="index start*" />
 				<_field_long_integer name="index count*" />
-				<_field_short_block_index name="part index*" />
+				<_field_short_block_index name="part index*" srcguid="4a81849d-42b4-fbee-ac56-c9a3180f53e6" />
 				<_field_word_integer name="budget vertex count" />
 				<_field_dword_integer name="analytical light index" />
 			</_field_block_64>
@@ -622,29 +622,29 @@
 			<item Name="rect list" />
 		</_field_char_enum>
 		<_field_short_integer name="pca mesh index*" />
-		<_field_block_64 name="instance buckets*" max="2048">
+		<_field_block_64 name="instance buckets*" max="2048" guid="0c556069-4baa-c790-e096-9fa32071b2d9">
 			<_field_short_integer name="mesh index*" />
 			<_field_short_integer name="definition index*" />
-			<_field_block_64 name="instances" max="65535">
+			<_field_block_64 name="instances" max="65535" guid="bb11bc2a-4bac-5252-be57-37993e852780">
 				<_field_short_integer name="instance index*" />
 			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="water indices start" max="2621400">
+		<_field_block_64 name="water indices start" max="2621400" guid="92f5e99b-45b5-fc5b-3c97-94a5a8968e68">
 			<_field_short_integer name="word*" />
 		</_field_block_64>
-		<_field_block_64 name="vertex keys*" max="16777216">
+		<_field_block_64 name="vertex keys*" max="16777216" guid="dad1c118-4e4e-570f-0b84-86afe0b10b86">
 			<_field_long_integer name="key1*" />
 			<_field_long_integer name="key2*" />
 		</_field_block_64>
-		<_field_short_block_index name="clone index*" />
+		<_field_short_block_index name="clone index*" srcguid="ebb348bb-4cc8-a7c0-1515-e5a67d9ca9a5" />
 		<_field_short_integer name="cumulative part count (initialized by PVS building code)" />
 		<_field_short_integer name="optional LOD volume index" />
 		<_field_pad name="OMFGNOWAY" length="2" />
 	</_field_block_64>
-	<_field_block_64 name="PCA Mesh Indices*" max="8191">
-		<_field_long_block_index name="mesh index" />
+	<_field_block_64 name="PCA Mesh Indices*" max="8191" guid="47c61323-4d16-1f27-0248-cd97a5ffa9cc">
+		<_field_long_block_index name="mesh index" srcguid="ebb348bb-4cc8-a7c0-1515-e5a67d9ca9a5" />
 	</_field_block_64>
-	<_field_block_64 name="compression info*" max="65536">
+	<_field_block_64 name="compression info*" max="65536" guid="fe51fdac-4778-62ff-5430-c3a86ca923a0">
 		<_field_word_flags name="compression flags*">
 			<item Name="compressed position" />
 			<item Name="compressed texcoord" />
@@ -665,13 +665,13 @@ texcoord_bounds.y0 texcoord_bounds.y1
 		<_field_real name="unused0*" />
 		<_field_real name="unused1*" />
 	</_field_block_64>
-	<_field_block_64 name="per mesh node map*" max="8191">
-		<_field_block_64 name="node map*" max="255">
+	<_field_block_64 name="per mesh node map*" max="8191" guid="c23b2003-450c-2aa6-d997-248b0f81506c">
+		<_field_block_64 name="node map*" max="255" guid="77db2a4a-490d-0ec6-27a7-2e8280f82630">
 			<_field_char_integer name="node index*" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="per mesh subpart visibility*" max="64">
-		<_field_block_64 name="bounding_sphere*" max="65535">
+	<_field_block_64 name="per mesh subpart visibility*" max="64" guid="06360432-47e0-14be-23b2-8a81a206dba6">
+		<_field_block_64 name="bounding_sphere*" max="65535" guid="684ef46d-4111-b52e-fbfe-208e9e1cfbee">
 			<_field_real_plane_3d name="plane*" />
 			<_field_real_point_3d name="position*" />
 			<_field_real name="radius*" />
@@ -696,16 +696,16 @@ texcoord_bounds.y0 texcoord_bounds.y1
 			</_field_array>
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="normalized_per_definition_lightmap_texcoords*" max="65535">
-		<_field_block_64 name="per LOD Data" max="16">
-			<_field_block_64 name="texture coordinates (concise)" max="16777214">
+	<_field_block_64 name="normalized_per_definition_lightmap_texcoords*" max="65535" guid="add17af6-dfbe-b937-99ff-be9335eebea7">
+		<_field_block_64 name="per LOD Data" max="16" guid="f880a4d0-48ae-f9f8-d536-b499e552c5c2">
+			<_field_block_64 name="texture coordinates (concise)" max="16777214" guid="6e3d7633-492d-56f5-9ef7-f0841acd700e">
 				<_field_real_point_2d name="texcoord*" />
 			</_field_block_64>
 			<_field_short_integer name="vertex buffer index*" />
 			<_field_pad name="HTJIAHA" length="2" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="per_instance_per_chart_lightmap_transforms*" max="2097152">
+	<_field_block_64 name="per_instance_per_chart_lightmap_transforms*" max="2097152" guid="79487d4e-4ee9-5b60-e619-0899a554841b">
 		<_field_real name="Scale X" />
 		<_field_real name="Scale Y" />
 		<_field_real name="Translate X" />
@@ -714,29 +714,29 @@ texcoord_bounds.y0 texcoord_bounds.y1
 	<_field_long_integer name="raw chart count" />
 	<_field_short_integer name="per_instance_per_chart_lightmap_transforms buffer index" />
 	<_field_short_integer name="lightmap_transform_version_number" />
-	<_field_block_64 name="per_instance_per_vertex_transform_indices*" max="65535">
-		<_field_block_64 name="per lod data" max="16">
-			<_field_block_64 name="indices" max="2621400">
+	<_field_block_64 name="per_instance_per_vertex_transform_indices*" max="65535" guid="c8d81a34-af6b-0417-8da4-f8a80a48914a">
+		<_field_block_64 name="per lod data" max="16" guid="caeb2234-e23b-af6e-8d23-e1ba1de18a4a">
+			<_field_block_64 name="indices" max="2621400" guid="73514b8e-4978-5ea5-0d44-aa8a4cc2e139">
 				<_field_long_integer name="dword*" />
 			</_field_block_64>
 			<_field_short_integer name="vertex buffer index*" />
 			<_field_short_integer name="normalized chart definition index*" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="water bounding box block*" max="32">
+	<_field_block_64 name="water bounding box block*" max="32" guid="f28eacd0-41a9-f1ff-d030-b99659a2a5c2">
 		<_field_short_integer name="mesh index" />
 		<_field_short_integer name="part index" />
 		<_field_real_point_3d name="position bounds 0" />
 		<_field_real_point_3d name="position bounds 1" />
 	</_field_block_64>
-	<_field_block_64 name="Optional animated mesh tag references" max="64">
+	<_field_block_64 name="Optional animated mesh tag references" max="64" guid="f74ac124-4d7e-1cbd-2d2e-4bbb77e3c4b2">
 		<_field_tag_reference_64 name="Animated mesh tag reference" />
 		<_field_string_id name="Name^" />
 	</_field_block_64>
-	<_field_block_64 name="Optional LOD volumes data" max="4096">
+	<_field_block_64 name="Optional LOD volumes data" max="4096" guid="d7cc9a5e-4536-54e8-973b-91afc91989a1">
 		<_field_real_point_3d name="position bounds 0" />
 		<_field_real_point_3d name="position bounds 1" />
-		<_field_block_64 name="position data*" max="65535">
+		<_field_block_64 name="position data*" max="65535" guid="684ef46d-4111-b52e-fbfe-208e9e1cfbee">
 			<_field_real_plane_3d name="plane*" />
 			<_field_real_point_3d name="position*" />
 			<_field_real name="radius*" />
@@ -769,14 +769,14 @@ texcoord_bounds.y0 texcoord_bounds.y1
 	</_field_short_enum>
 	<_field_word_integer name="total index buffer count*!" />
 	<_field_word_integer name="total vertex buffer count*!" />
-	<_field_block_64 name="mesh resource groups*!" max="16384">
+	<_field_block_64 name="mesh resource groups*!" max="16384" guid="211c66f6-4c98-41c3-8c8e-47999c6844e0">
 		<_field_pageable_resource_64 name="mesh resource!*" />
 	</_field_block_64>
-	<_field_block_64 name="index resource look up*!" max="16384">
+	<_field_block_64 name="index resource look up*!" max="16384" guid="b12cfdd4-4fe2-0575-fb34-e0ba99470a48">
 		<_field_short_integer name="resource group index" />
 		<_field_short_integer name="group item index" />
 	</_field_block_64>
-	<_field_block_64 name="vertex resource look up*!" max="16384">
+	<_field_block_64 name="vertex resource look up*!" max="16384" guid="b12cfdd4-4fe2-0575-fb34-e0ba99470a48">
 		<_field_short_integer name="resource group index" />
 		<_field_short_integer name="group item index" />
 	</_field_block_64>
@@ -793,17 +793,17 @@ texcoord_bounds.y0 texcoord_bounds.y1
 		<item Name="pca animation table sorted*!" />
 		<item Name="has dual quat*!" />
 	</_field_long_flags>
-	<_field_block_64 name="meshes import info*!" max="8191">
+	<_field_block_64 name="meshes import info*!" max="8191" guid="67fac496-4e7d-883d-a2f7-94b7f793ff8d">
 		<_field_dword_integer name="CRC" />
 		<_field_real_point_3d name="position bounds 0" />
 		<_field_real_point_3d name="position bounds 1" />
 		<_field_real_point_2d name="texcoord bounds 0" />
 		<_field_real_point_2d name="texcoord bounds 1" />
 	</_field_block_64>
-	<_field_block_64 name="meshes*" max="8191">
-		<_field_block_64 name="LOD render data" max="16">
-			<_field_block_64 name="per mesh temporary*" max="8191">
-				<_field_block_64 name="raw vertices*" max="16777214">
+	<_field_block_64 name="meshes*" max="8191" guid="ebb348bb-4cc8-a7c0-1515-e5a67d9ca9a5">
+		<_field_block_64 name="LOD render data" max="16" guid="67fac497-4e7d-883d-a2f7-94b7f893ff8d">
+			<_field_block_64 name="per mesh temporary*" max="8191" guid="52900ab0-4b64-2305-131c-86ba015cc92c">
+				<_field_block_64 name="raw vertices*" max="16777214" guid="98f6c836-43c5-cd93-8831-31ba77babd05">
 					<_field_real_point_3d name="position*" />
 					<_field_real_point_2d name="texcoord*" />
 					<_field_real_point_3d name="normal*" />
@@ -835,21 +835,21 @@ texcoord_bounds.y0 texcoord_bounds.y1
 					<_field_real name="dual quat weight*" />
 					<_field_real name="vertex alpha*" />
 				</_field_block_64>
-				<_field_block_64 name="raw indices*" max="2621400">
+				<_field_block_64 name="raw indices*" max="2621400" guid="92f5e99b-45b5-fc5b-3c97-94a5a8968e68">
 					<_field_short_integer name="word*" />
 				</_field_block_64>
-				<_field_block_64 name="raw indices32*" max="2621400">
+				<_field_block_64 name="raw indices32*" max="2621400" guid="73514b8e-4978-5ea5-0d44-aa8a4cc2e139">
 					<_field_long_integer name="dword*" />
 				</_field_block_64>
-				<_field_block_64 name="raw water data" max="32">
-					<_field_block_64 name="raw water indices*" max="2621400">
+				<_field_block_64 name="raw water data" max="32" guid="4f09c644-4f12-93ed-e154-d7a9c754706e">
+					<_field_block_64 name="raw water indices*" max="2621400" guid="92f5e99b-45b5-fc5b-3c97-94a5a8968e68">
 						<_field_short_integer name="word*" />
 					</_field_block_64>
-					<_field_block_64 name="raw water vertices*" max="65535">
+					<_field_block_64 name="raw water vertices*" max="65535" guid="b6f83085-41b1-c99a-a854-f4b78e00e25a">
 						<_field_real_point_2d name="base texcoord*" />
 					</_field_block_64>
 				</_field_block_64>
-				<_field_block_64 name="raw blendshapes*" max="16777216">
+				<_field_block_64 name="raw blendshapes*" max="16777216" guid="7d5e5593-4db9-f97e-00bc-978ee95cec72">
 					<_field_real_vector_3d name="position*" />
 					<_field_real_vector_3d name="normal*" />
 					<_field_real_argb_color name="tension and ambient occlusion*" />
@@ -860,7 +860,7 @@ texcoord_bounds.y0 texcoord_bounds.y1
 					<item Name="indices are quad lists" />
 				</_field_long_flags>
 			</_field_block_64>
-			<_field_block_64 name="part sorting position*" max="65535">
+			<_field_block_64 name="part sorting position*" max="65535" guid="684ef46d-4111-b52e-fbfe-208e9e1cfbee">
 				<_field_real_plane_3d name="plane*" />
 				<_field_real_point_3d name="position*" />
 				<_field_real name="radius*" />
@@ -884,9 +884,9 @@ texcoord_bounds.y0 texcoord_bounds.y1
 					<_field_real name="node weight*" />
 				</_field_array>
 			</_field_block_64>
-			<_field_block_64 name="parts*" max="255">
-				<_field_short_block_index name="material index{render method index}^*" />
-				<_field_short_block_index name="transparent sorting index*" />
+			<_field_block_64 name="parts*" max="255" guid="4a81849d-42b4-fbee-ac56-c9a3180f53e6">
+				<_field_short_block_index name="material index{render method index}^*" srcguid="b1135973-4dc5-34a5-3116-909973e5b5b0" />
+				<_field_short_block_index name="transparent sorting index*" srcguid="684ef46d-4111-b52e-fbfe-208e9e1cfbee" />
 				<_field_long_integer name="index start*" />
 				<_field_long_integer name="index count*" />
 				<_field_short_integer name="subpart start*" />
@@ -923,10 +923,10 @@ texcoord_bounds.y0 texcoord_bounds.y1
 				<_field_word_integer name="budget vertex count" />
 				<_field_pad name="THSDFHG" length="2" />
 			</_field_block_64>
-			<_field_block_64 name="subparts*" max="65535">
+			<_field_block_64 name="subparts*" max="65535" guid="09109a33-436f-9c27-babf-38b4ae1b97b6">
 				<_field_long_integer name="index start*" />
 				<_field_long_integer name="index count*" />
-				<_field_short_block_index name="part index*" />
+				<_field_short_block_index name="part index*" srcguid="4a81849d-42b4-fbee-ac56-c9a3180f53e6" />
 				<_field_word_integer name="budget vertex count" />
 				<_field_dword_integer name="analytical light index" />
 			</_field_block_64>
@@ -1038,29 +1038,29 @@ texcoord_bounds.y0 texcoord_bounds.y1
 			<item Name="rect list" />
 		</_field_char_enum>
 		<_field_short_integer name="pca mesh index*" />
-		<_field_block_64 name="instance buckets*" max="2048">
+		<_field_block_64 name="instance buckets*" max="2048" guid="0c556069-4baa-c790-e096-9fa32071b2d9">
 			<_field_short_integer name="mesh index*" />
 			<_field_short_integer name="definition index*" />
-			<_field_block_64 name="instances" max="65535">
+			<_field_block_64 name="instances" max="65535" guid="bb11bc2a-4bac-5252-be57-37993e852780">
 				<_field_short_integer name="instance index*" />
 			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="water indices start" max="2621400">
+		<_field_block_64 name="water indices start" max="2621400" guid="92f5e99b-45b5-fc5b-3c97-94a5a8968e68">
 			<_field_short_integer name="word*" />
 		</_field_block_64>
-		<_field_block_64 name="vertex keys*" max="16777216">
+		<_field_block_64 name="vertex keys*" max="16777216" guid="dad1c118-4e4e-570f-0b84-86afe0b10b86">
 			<_field_long_integer name="key1*" />
 			<_field_long_integer name="key2*" />
 		</_field_block_64>
-		<_field_short_block_index name="clone index*" />
+		<_field_short_block_index name="clone index*" srcguid="ebb348bb-4cc8-a7c0-1515-e5a67d9ca9a5" />
 		<_field_short_integer name="cumulative part count (initialized by PVS building code)" />
 		<_field_short_integer name="optional LOD volume index" />
 		<_field_pad name="OMFGNOWAY" length="2" />
 	</_field_block_64>
-	<_field_block_64 name="PCA Mesh Indices*" max="8191">
-		<_field_long_block_index name="mesh index" />
+	<_field_block_64 name="PCA Mesh Indices*" max="8191" guid="47c61323-4d16-1f27-0248-cd97a5ffa9cc">
+		<_field_long_block_index name="mesh index" srcguid="ebb348bb-4cc8-a7c0-1515-e5a67d9ca9a5" />
 	</_field_block_64>
-	<_field_block_64 name="compression info*" max="65536">
+	<_field_block_64 name="compression info*" max="65536" guid="fe51fdac-4778-62ff-5430-c3a86ca923a0">
 		<_field_word_flags name="compression flags*">
 			<item Name="compressed position" />
 			<item Name="compressed texcoord" />
@@ -1081,13 +1081,13 @@ texcoord_bounds.y0 texcoord_bounds.y1
 		<_field_real name="unused0*" />
 		<_field_real name="unused1*" />
 	</_field_block_64>
-	<_field_block_64 name="per mesh node map*" max="8191">
-		<_field_block_64 name="node map*" max="255">
+	<_field_block_64 name="per mesh node map*" max="8191" guid="c23b2003-450c-2aa6-d997-248b0f81506c">
+		<_field_block_64 name="node map*" max="255" guid="77db2a4a-490d-0ec6-27a7-2e8280f82630">
 			<_field_char_integer name="node index*" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="per mesh subpart visibility*" max="64">
-		<_field_block_64 name="bounding_sphere*" max="65535">
+	<_field_block_64 name="per mesh subpart visibility*" max="64" guid="06360432-47e0-14be-23b2-8a81a206dba6">
+		<_field_block_64 name="bounding_sphere*" max="65535" guid="684ef46d-4111-b52e-fbfe-208e9e1cfbee">
 			<_field_real_plane_3d name="plane*" />
 			<_field_real_point_3d name="position*" />
 			<_field_real name="radius*" />
@@ -1112,16 +1112,16 @@ texcoord_bounds.y0 texcoord_bounds.y1
 			</_field_array>
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="normalized_per_definition_lightmap_texcoords*" max="65535">
-		<_field_block_64 name="per LOD Data" max="16">
-			<_field_block_64 name="texture coordinates (concise)" max="16777214">
+	<_field_block_64 name="normalized_per_definition_lightmap_texcoords*" max="65535" guid="add17af6-dfbe-b937-99ff-be9335eebea7">
+		<_field_block_64 name="per LOD Data" max="16" guid="f880a4d0-48ae-f9f8-d536-b499e552c5c2">
+			<_field_block_64 name="texture coordinates (concise)" max="16777214" guid="6e3d7633-492d-56f5-9ef7-f0841acd700e">
 				<_field_real_point_2d name="texcoord*" />
 			</_field_block_64>
 			<_field_short_integer name="vertex buffer index*" />
 			<_field_pad name="HTJIAHA" length="2" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="per_instance_per_chart_lightmap_transforms*" max="2097152">
+	<_field_block_64 name="per_instance_per_chart_lightmap_transforms*" max="2097152" guid="79487d4e-4ee9-5b60-e619-0899a554841b">
 		<_field_real name="Scale X" />
 		<_field_real name="Scale Y" />
 		<_field_real name="Translate X" />
@@ -1130,29 +1130,29 @@ texcoord_bounds.y0 texcoord_bounds.y1
 	<_field_long_integer name="raw chart count" />
 	<_field_short_integer name="per_instance_per_chart_lightmap_transforms buffer index" />
 	<_field_short_integer name="lightmap_transform_version_number" />
-	<_field_block_64 name="per_instance_per_vertex_transform_indices*" max="65535">
-		<_field_block_64 name="per lod data" max="16">
-			<_field_block_64 name="indices" max="2621400">
+	<_field_block_64 name="per_instance_per_vertex_transform_indices*" max="65535" guid="c8d81a34-af6b-0417-8da4-f8a80a48914a">
+		<_field_block_64 name="per lod data" max="16" guid="caeb2234-e23b-af6e-8d23-e1ba1de18a4a">
+			<_field_block_64 name="indices" max="2621400" guid="73514b8e-4978-5ea5-0d44-aa8a4cc2e139">
 				<_field_long_integer name="dword*" />
 			</_field_block_64>
 			<_field_short_integer name="vertex buffer index*" />
 			<_field_short_integer name="normalized chart definition index*" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="water bounding box block*" max="32">
+	<_field_block_64 name="water bounding box block*" max="32" guid="f28eacd0-41a9-f1ff-d030-b99659a2a5c2">
 		<_field_short_integer name="mesh index" />
 		<_field_short_integer name="part index" />
 		<_field_real_point_3d name="position bounds 0" />
 		<_field_real_point_3d name="position bounds 1" />
 	</_field_block_64>
-	<_field_block_64 name="Optional animated mesh tag references" max="64">
+	<_field_block_64 name="Optional animated mesh tag references" max="64" guid="f74ac124-4d7e-1cbd-2d2e-4bbb77e3c4b2">
 		<_field_tag_reference_64 name="Animated mesh tag reference" />
 		<_field_string_id name="Name^" />
 	</_field_block_64>
-	<_field_block_64 name="Optional LOD volumes data" max="4096">
+	<_field_block_64 name="Optional LOD volumes data" max="4096" guid="d7cc9a5e-4536-54e8-973b-91afc91989a1">
 		<_field_real_point_3d name="position bounds 0" />
 		<_field_real_point_3d name="position bounds 1" />
-		<_field_block_64 name="position data*" max="65535">
+		<_field_block_64 name="position data*" max="65535" guid="684ef46d-4111-b52e-fbfe-208e9e1cfbee">
 			<_field_real_plane_3d name="plane*" />
 			<_field_real_point_3d name="position*" />
 			<_field_real name="radius*" />
@@ -1185,24 +1185,24 @@ texcoord_bounds.y0 texcoord_bounds.y1
 	</_field_short_enum>
 	<_field_word_integer name="total index buffer count*!" />
 	<_field_word_integer name="total vertex buffer count*!" />
-	<_field_block_64 name="mesh resource groups*!" max="16384">
+	<_field_block_64 name="mesh resource groups*!" max="16384" guid="211c66f6-4c98-41c3-8c8e-47999c6844e0">
 		<_field_pageable_resource_64 name="mesh resource!*" />
 	</_field_block_64>
-	<_field_block_64 name="index resource look up*!" max="16384">
+	<_field_block_64 name="index resource look up*!" max="16384" guid="b12cfdd4-4fe2-0575-fb34-e0ba99470a48">
 		<_field_short_integer name="resource group index" />
 		<_field_short_integer name="group item index" />
 	</_field_block_64>
-	<_field_block_64 name="vertex resource look up*!" max="16384">
+	<_field_block_64 name="vertex resource look up*!" max="16384" guid="b12cfdd4-4fe2-0575-fb34-e0ba99470a48">
 		<_field_short_integer name="resource group index" />
 		<_field_short_integer name="group item index" />
 	</_field_block_64>
 	<_field_real_vector_3d name="shadow bounds in sun space 1" />
 	<_field_real_vector_3d name="shadow bounds in sun space 2" />
-	<_field_block_64 name="shadow geometry region bounds" max="32767">
+	<_field_block_64 name="shadow geometry region bounds" max="32767" guid="828f1100-ea09-aac0-e082-40a6d6bc5c20">
 		<_field_real_point_3d name="center*" />
 		<_field_real name="radius*" />
 	</_field_block_64>
-	<_field_block_64 name="airprobes" max="1048576">
+	<_field_block_64 name="airprobes" max="1048576" guid="51851d4a-4b69-54a6-23ba-b0a65d8240ae">
 		<_field_struct name="sh terms" />
 		<_field_array name="red sh terms">
 			<_field_short_integer name="coefficient*" />
@@ -1239,22 +1239,22 @@ texcoord_bounds.y0 texcoord_bounds.y1
 		</_field_array>
 		<_field_short_integer name="analytical visibility" />
 	</_field_block_64>
-	<_field_block_64 name="analytic data" max="1048576">
+	<_field_block_64 name="analytic data" max="1048576" guid="f206c43d-2eb8-10ec-50bb-a6b47d079b0a">
 		<_field_short_integer name="analytic index" />
 		<_field_char_integer name="intensity" />
 		<_field_pad name="shoulda_beena_pad" length="1" />
 	</_field_block_64>
-	<_field_block_64 name="Airprobe Regions" max="4">
+	<_field_block_64 name="Airprobe Regions" max="4" guid="964f8860-76dd-a0b3-ec67-b2e94e4cce8a">
 		<_field_real_point_3d name="position bounds 0" />
 		<_field_real_point_3d name="position bounds 1" />
-		<_field_block_64 name="airprobe indices*" max="1048576">
+		<_field_block_64 name="airprobe indices*" max="1048576" guid="67f4e61f-12c2-94c7-c2ae-8981a32556cd">
 			<_field_long_integer name="probe index*" />
 		</_field_block_64>
-		<_field_block_64 name="airprobe analytic data index and counts*" max="1048576">
+		<_field_block_64 name="airprobe analytic data index and counts*" max="1048576" guid="1b0c96e8-511e-4b4e-2090-953eb68b79f3">
 			<_field_short_integer name="analytic data index*" />
 			<_field_short_integer name="analytic data count*" />
 		</_field_block_64>
-		<_field_block_64 name="optional airprobe volume indices*" max="1048576">
+		<_field_block_64 name="optional airprobe volume indices*" max="1048576" guid="67f4e61f-12c2-94c7-c2ae-8981a32556cd">
 			<_field_long_integer name="probe index*" />
 		</_field_block_64>
 		<_field_long_integer name="num X*" />
@@ -1265,11 +1265,11 @@ texcoord_bounds.y0 texcoord_bounds.y1
 	<_field_pageable_resource_64 name="optional airprobe resource*" />
 	<_field_tag_reference_64 name="forge per-pixel color" />
 	<_field_tag_reference_64 name="forge per-pixel sun" />
-	<_field_block_64 name="forge cubemaps" max="5">
+	<_field_block_64 name="forge cubemaps" max="5" guid="105280a8-b982-13e7-7866-b39221d5adce">
 		<_field_tag_reference_64 name="cubemap" />
 	</_field_block_64>
-	<_field_block_64 name="Decorator Clusters" max="255">
-		<_field_block_64 name="decorator groups*" max="1073741824">
+	<_field_block_64 name="Decorator Clusters" max="255" guid="9152db53-f470-5328-b64c-3e810fd0ad45">
+		<_field_block_64 name="decorator groups*" max="1073741824" guid="e2543a30-42b9-a9e7-f79a-488f3f7883c2">
 			<_field_word_integer name="decorator placement count*" />
 			<_field_byte_integer name="decorator set index*" />
 			<_field_byte_integer name="decorator instance buffer index*" />
@@ -1283,7 +1283,7 @@ texcoord_bounds.y0 texcoord_bounds.y1
 		<_field_int64_integer name="runtimeConstants!~" />
 	</_field_block_64>
 	<_field_custom name="decorator info" />
-	<_field_block_64 name="decorator sets*" max="64">
+	<_field_block_64 name="decorator sets*" max="64" guid="ebc8164a-40c6-5831-a077-82bbda7a3558">
 		<_field_tag_reference_64 name="decorator set reference*" />
 	</_field_block_64>
 	<_field_struct name="decorator instance buffer!*" />
@@ -1297,17 +1297,17 @@ texcoord_bounds.y0 texcoord_bounds.y1
 		<item Name="pca animation table sorted*!" />
 		<item Name="has dual quat*!" />
 	</_field_long_flags>
-	<_field_block_64 name="meshes import info*!" max="8191">
+	<_field_block_64 name="meshes import info*!" max="8191" guid="67fac496-4e7d-883d-a2f7-94b7f793ff8d">
 		<_field_dword_integer name="CRC" />
 		<_field_real_point_3d name="position bounds 0" />
 		<_field_real_point_3d name="position bounds 1" />
 		<_field_real_point_2d name="texcoord bounds 0" />
 		<_field_real_point_2d name="texcoord bounds 1" />
 	</_field_block_64>
-	<_field_block_64 name="meshes*" max="8191">
-		<_field_block_64 name="LOD render data" max="16">
-			<_field_block_64 name="per mesh temporary*" max="8191">
-				<_field_block_64 name="raw vertices*" max="16777214">
+	<_field_block_64 name="meshes*" max="8191" guid="ebb348bb-4cc8-a7c0-1515-e5a67d9ca9a5">
+		<_field_block_64 name="LOD render data" max="16" guid="67fac497-4e7d-883d-a2f7-94b7f893ff8d">
+			<_field_block_64 name="per mesh temporary*" max="8191" guid="52900ab0-4b64-2305-131c-86ba015cc92c">
+				<_field_block_64 name="raw vertices*" max="16777214" guid="98f6c836-43c5-cd93-8831-31ba77babd05">
 					<_field_real_point_3d name="position*" />
 					<_field_real_point_2d name="texcoord*" />
 					<_field_real_point_3d name="normal*" />
@@ -1339,21 +1339,21 @@ texcoord_bounds.y0 texcoord_bounds.y1
 					<_field_real name="dual quat weight*" />
 					<_field_real name="vertex alpha*" />
 				</_field_block_64>
-				<_field_block_64 name="raw indices*" max="2621400">
+				<_field_block_64 name="raw indices*" max="2621400" guid="92f5e99b-45b5-fc5b-3c97-94a5a8968e68">
 					<_field_short_integer name="word*" />
 				</_field_block_64>
-				<_field_block_64 name="raw indices32*" max="2621400">
+				<_field_block_64 name="raw indices32*" max="2621400" guid="73514b8e-4978-5ea5-0d44-aa8a4cc2e139">
 					<_field_long_integer name="dword*" />
 				</_field_block_64>
-				<_field_block_64 name="raw water data" max="32">
-					<_field_block_64 name="raw water indices*" max="2621400">
+				<_field_block_64 name="raw water data" max="32" guid="4f09c644-4f12-93ed-e154-d7a9c754706e">
+					<_field_block_64 name="raw water indices*" max="2621400" guid="92f5e99b-45b5-fc5b-3c97-94a5a8968e68">
 						<_field_short_integer name="word*" />
 					</_field_block_64>
-					<_field_block_64 name="raw water vertices*" max="65535">
+					<_field_block_64 name="raw water vertices*" max="65535" guid="b6f83085-41b1-c99a-a854-f4b78e00e25a">
 						<_field_real_point_2d name="base texcoord*" />
 					</_field_block_64>
 				</_field_block_64>
-				<_field_block_64 name="raw blendshapes*" max="16777216">
+				<_field_block_64 name="raw blendshapes*" max="16777216" guid="7d5e5593-4db9-f97e-00bc-978ee95cec72">
 					<_field_real_vector_3d name="position*" />
 					<_field_real_vector_3d name="normal*" />
 					<_field_real_argb_color name="tension and ambient occlusion*" />
@@ -1364,7 +1364,7 @@ texcoord_bounds.y0 texcoord_bounds.y1
 					<item Name="indices are quad lists" />
 				</_field_long_flags>
 			</_field_block_64>
-			<_field_block_64 name="part sorting position*" max="65535">
+			<_field_block_64 name="part sorting position*" max="65535" guid="684ef46d-4111-b52e-fbfe-208e9e1cfbee">
 				<_field_real_plane_3d name="plane*" />
 				<_field_real_point_3d name="position*" />
 				<_field_real name="radius*" />
@@ -1388,9 +1388,9 @@ texcoord_bounds.y0 texcoord_bounds.y1
 					<_field_real name="node weight*" />
 				</_field_array>
 			</_field_block_64>
-			<_field_block_64 name="parts*" max="255">
-				<_field_short_block_index name="material index{render method index}^*" />
-				<_field_short_block_index name="transparent sorting index*" />
+			<_field_block_64 name="parts*" max="255" guid="4a81849d-42b4-fbee-ac56-c9a3180f53e6">
+				<_field_short_block_index name="material index{render method index}^*" srcguid="b1135973-4dc5-34a5-3116-909973e5b5b0" />
+				<_field_short_block_index name="transparent sorting index*" srcguid="684ef46d-4111-b52e-fbfe-208e9e1cfbee" />
 				<_field_long_integer name="index start*" />
 				<_field_long_integer name="index count*" />
 				<_field_short_integer name="subpart start*" />
@@ -1427,10 +1427,10 @@ texcoord_bounds.y0 texcoord_bounds.y1
 				<_field_word_integer name="budget vertex count" />
 				<_field_pad name="THSDFHG" length="2" />
 			</_field_block_64>
-			<_field_block_64 name="subparts*" max="65535">
+			<_field_block_64 name="subparts*" max="65535" guid="09109a33-436f-9c27-babf-38b4ae1b97b6">
 				<_field_long_integer name="index start*" />
 				<_field_long_integer name="index count*" />
-				<_field_short_block_index name="part index*" />
+				<_field_short_block_index name="part index*" srcguid="4a81849d-42b4-fbee-ac56-c9a3180f53e6" />
 				<_field_word_integer name="budget vertex count" />
 				<_field_dword_integer name="analytical light index" />
 			</_field_block_64>
@@ -1542,29 +1542,29 @@ texcoord_bounds.y0 texcoord_bounds.y1
 			<item Name="rect list" />
 		</_field_char_enum>
 		<_field_short_integer name="pca mesh index*" />
-		<_field_block_64 name="instance buckets*" max="2048">
+		<_field_block_64 name="instance buckets*" max="2048" guid="0c556069-4baa-c790-e096-9fa32071b2d9">
 			<_field_short_integer name="mesh index*" />
 			<_field_short_integer name="definition index*" />
-			<_field_block_64 name="instances" max="65535">
+			<_field_block_64 name="instances" max="65535" guid="bb11bc2a-4bac-5252-be57-37993e852780">
 				<_field_short_integer name="instance index*" />
 			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="water indices start" max="2621400">
+		<_field_block_64 name="water indices start" max="2621400" guid="92f5e99b-45b5-fc5b-3c97-94a5a8968e68">
 			<_field_short_integer name="word*" />
 		</_field_block_64>
-		<_field_block_64 name="vertex keys*" max="16777216">
+		<_field_block_64 name="vertex keys*" max="16777216" guid="dad1c118-4e4e-570f-0b84-86afe0b10b86">
 			<_field_long_integer name="key1*" />
 			<_field_long_integer name="key2*" />
 		</_field_block_64>
-		<_field_short_block_index name="clone index*" />
+		<_field_short_block_index name="clone index*" srcguid="ebb348bb-4cc8-a7c0-1515-e5a67d9ca9a5" />
 		<_field_short_integer name="cumulative part count (initialized by PVS building code)" />
 		<_field_short_integer name="optional LOD volume index" />
 		<_field_pad name="OMFGNOWAY" length="2" />
 	</_field_block_64>
-	<_field_block_64 name="PCA Mesh Indices*" max="8191">
-		<_field_long_block_index name="mesh index" />
+	<_field_block_64 name="PCA Mesh Indices*" max="8191" guid="47c61323-4d16-1f27-0248-cd97a5ffa9cc">
+		<_field_long_block_index name="mesh index" srcguid="ebb348bb-4cc8-a7c0-1515-e5a67d9ca9a5" />
 	</_field_block_64>
-	<_field_block_64 name="compression info*" max="65536">
+	<_field_block_64 name="compression info*" max="65536" guid="fe51fdac-4778-62ff-5430-c3a86ca923a0">
 		<_field_word_flags name="compression flags*">
 			<item Name="compressed position" />
 			<item Name="compressed texcoord" />
@@ -1585,13 +1585,13 @@ texcoord_bounds.y0 texcoord_bounds.y1
 		<_field_real name="unused0*" />
 		<_field_real name="unused1*" />
 	</_field_block_64>
-	<_field_block_64 name="per mesh node map*" max="8191">
-		<_field_block_64 name="node map*" max="255">
+	<_field_block_64 name="per mesh node map*" max="8191" guid="c23b2003-450c-2aa6-d997-248b0f81506c">
+		<_field_block_64 name="node map*" max="255" guid="77db2a4a-490d-0ec6-27a7-2e8280f82630">
 			<_field_char_integer name="node index*" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="per mesh subpart visibility*" max="64">
-		<_field_block_64 name="bounding_sphere*" max="65535">
+	<_field_block_64 name="per mesh subpart visibility*" max="64" guid="06360432-47e0-14be-23b2-8a81a206dba6">
+		<_field_block_64 name="bounding_sphere*" max="65535" guid="684ef46d-4111-b52e-fbfe-208e9e1cfbee">
 			<_field_real_plane_3d name="plane*" />
 			<_field_real_point_3d name="position*" />
 			<_field_real name="radius*" />
@@ -1616,16 +1616,16 @@ texcoord_bounds.y0 texcoord_bounds.y1
 			</_field_array>
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="normalized_per_definition_lightmap_texcoords*" max="65535">
-		<_field_block_64 name="per LOD Data" max="16">
-			<_field_block_64 name="texture coordinates (concise)" max="16777214">
+	<_field_block_64 name="normalized_per_definition_lightmap_texcoords*" max="65535" guid="add17af6-dfbe-b937-99ff-be9335eebea7">
+		<_field_block_64 name="per LOD Data" max="16" guid="f880a4d0-48ae-f9f8-d536-b499e552c5c2">
+			<_field_block_64 name="texture coordinates (concise)" max="16777214" guid="6e3d7633-492d-56f5-9ef7-f0841acd700e">
 				<_field_real_point_2d name="texcoord*" />
 			</_field_block_64>
 			<_field_short_integer name="vertex buffer index*" />
 			<_field_pad name="HTJIAHA" length="2" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="per_instance_per_chart_lightmap_transforms*" max="2097152">
+	<_field_block_64 name="per_instance_per_chart_lightmap_transforms*" max="2097152" guid="79487d4e-4ee9-5b60-e619-0899a554841b">
 		<_field_real name="Scale X" />
 		<_field_real name="Scale Y" />
 		<_field_real name="Translate X" />
@@ -1634,29 +1634,29 @@ texcoord_bounds.y0 texcoord_bounds.y1
 	<_field_long_integer name="raw chart count" />
 	<_field_short_integer name="per_instance_per_chart_lightmap_transforms buffer index" />
 	<_field_short_integer name="lightmap_transform_version_number" />
-	<_field_block_64 name="per_instance_per_vertex_transform_indices*" max="65535">
-		<_field_block_64 name="per lod data" max="16">
-			<_field_block_64 name="indices" max="2621400">
+	<_field_block_64 name="per_instance_per_vertex_transform_indices*" max="65535" guid="c8d81a34-af6b-0417-8da4-f8a80a48914a">
+		<_field_block_64 name="per lod data" max="16" guid="caeb2234-e23b-af6e-8d23-e1ba1de18a4a">
+			<_field_block_64 name="indices" max="2621400" guid="73514b8e-4978-5ea5-0d44-aa8a4cc2e139">
 				<_field_long_integer name="dword*" />
 			</_field_block_64>
 			<_field_short_integer name="vertex buffer index*" />
 			<_field_short_integer name="normalized chart definition index*" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="water bounding box block*" max="32">
+	<_field_block_64 name="water bounding box block*" max="32" guid="f28eacd0-41a9-f1ff-d030-b99659a2a5c2">
 		<_field_short_integer name="mesh index" />
 		<_field_short_integer name="part index" />
 		<_field_real_point_3d name="position bounds 0" />
 		<_field_real_point_3d name="position bounds 1" />
 	</_field_block_64>
-	<_field_block_64 name="Optional animated mesh tag references" max="64">
+	<_field_block_64 name="Optional animated mesh tag references" max="64" guid="f74ac124-4d7e-1cbd-2d2e-4bbb77e3c4b2">
 		<_field_tag_reference_64 name="Animated mesh tag reference" />
 		<_field_string_id name="Name^" />
 	</_field_block_64>
-	<_field_block_64 name="Optional LOD volumes data" max="4096">
+	<_field_block_64 name="Optional LOD volumes data" max="4096" guid="d7cc9a5e-4536-54e8-973b-91afc91989a1">
 		<_field_real_point_3d name="position bounds 0" />
 		<_field_real_point_3d name="position bounds 1" />
-		<_field_block_64 name="position data*" max="65535">
+		<_field_block_64 name="position data*" max="65535" guid="684ef46d-4111-b52e-fbfe-208e9e1cfbee">
 			<_field_real_plane_3d name="plane*" />
 			<_field_real_point_3d name="position*" />
 			<_field_real name="radius*" />
@@ -1689,14 +1689,14 @@ texcoord_bounds.y0 texcoord_bounds.y1
 	</_field_short_enum>
 	<_field_word_integer name="total index buffer count*!" />
 	<_field_word_integer name="total vertex buffer count*!" />
-	<_field_block_64 name="mesh resource groups*!" max="16384">
+	<_field_block_64 name="mesh resource groups*!" max="16384" guid="211c66f6-4c98-41c3-8c8e-47999c6844e0">
 		<_field_pageable_resource_64 name="mesh resource!*" />
 	</_field_block_64>
-	<_field_block_64 name="index resource look up*!" max="16384">
+	<_field_block_64 name="index resource look up*!" max="16384" guid="b12cfdd4-4fe2-0575-fb34-e0ba99470a48">
 		<_field_short_integer name="resource group index" />
 		<_field_short_integer name="group item index" />
 	</_field_block_64>
-	<_field_block_64 name="vertex resource look up*!" max="16384">
+	<_field_block_64 name="vertex resource look up*!" max="16384" guid="b12cfdd4-4fe2-0575-fb34-e0ba99470a48">
 		<_field_short_integer name="resource group index" />
 		<_field_short_integer name="group item index" />
 	</_field_block_64>

@@ -28,17 +28,17 @@
 		<item Name="disable_decorator_stipple_fade" />
 		<item Name="custom_deformer" />
 	</_field_long_flags>
-	<_field_block_64 name="compiled effects!" max="3">
+	<_field_block_64 name="compiled effects!" max="3" guid="1935f30f-4e9e-65bf-c49c-ec8f0745119e">
 		<_field_int64_integer name="shader hash 0" />
 		<_field_int64_integer name="shader hash 1" />
 	</_field_block_64>
-	<_field_block_64 name="precompiled effect objects!" max="2">
+	<_field_block_64 name="precompiled effect objects!" max="2" guid="d80d700b-4a21-76b0-1d3e-cca58ddec1d6">
 		<_field_data_64 name="effect object data" />
 	</_field_block_64>
 	<_field_tag_reference_64 name="shader bank" />
-	<_field_block_64 name="shader references*" max="1024">
-		<_field_block_64 name="shader passes*" max="1024">
-			<_field_block_64 name="shader references*" max="1024">
+	<_field_block_64 name="shader references*" max="1024" guid="360ab835-4e4d-a087-ed6d-2196bbba7fb5">
+		<_field_block_64 name="shader passes*" max="1024" guid="eb1b19ef-4528-65e6-a321-9088f5458bc3">
+			<_field_block_64 name="shader references*" max="1024" guid="b6dda484-456c-3bfe-03f0-bba4de6498b0">
 				<_field_long_integer name="ShaderHash*" />
 				<_field_long_integer name="XBOne Shader Hash*" />
 			</_field_block_64>
@@ -49,7 +49,7 @@
 		</_field_block_64>
 		<_field_long_integer name="lightingEntryPointIndex*" />
 	</_field_block_64>
-	<_field_block_64 name="material parameters*" max="267">
+	<_field_block_64 name="material parameters*" max="267" guid="5e4b3e06-4736-18a8-3f96-cfbe9dd6ca42">
 		<_field_string_id name="parameter name^*" />
 		<_field_long_enum name="parameter type*">
 			<item Name="bitmap" />
@@ -77,7 +77,7 @@
 		<_field_byte_integer name="parameter flags!" />
 		<_field_dword_integer name="render phases used" />
 		<_field_dword_integer name="shader types used" />
-		<_field_block_64 name="function parameters" max="267">
+		<_field_block_64 name="function parameters" max="267" guid="5471f0e3-4472-f54d-16a5-55aded7b009a">
 			<_field_long_enum name="type^">
 				<item Name="value" />
 				<item Name="color" />

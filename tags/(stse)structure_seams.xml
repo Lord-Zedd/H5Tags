@@ -22,7 +22,7 @@
 	<_field_long_integer name="manifest_id3*!" />
 	<_field_long_integer name="build_index*" />
 	<_field_long_integer name="structure importer version*" />
-	<_field_block_64 name="bsp manifest*" max="64">
+	<_field_block_64 name="bsp manifest*" max="64" guid="bab8cc0a-45ef-4801-2158-a3928ad03c3e">
 		<_field_struct name="build identifer*" />
 		<_field_long_integer name="manifest_id0*!" />
 		<_field_long_integer name="manifest_id1*!" />
@@ -41,7 +41,7 @@
 	</_field_block_64>
 	<_field_explanation name="This tag defines the geometry between seam connected structures bsp." />
 	<_field_long_integer name="version*!" />
-	<_field_block_64 name="errors*!" max="512">
+	<_field_block_64 name="errors*!" max="512" guid="3cbb78d5-4d83-ca07-1a29-948996f4138e">
 		<_field_long_string name="name^*" />
 		<_field_short_enum name="report type*">
 			<item Name="silent" />
@@ -59,7 +59,7 @@
 		<_field_short_integer name="runtime generation flags!" />
 		<_field_pad name="WVTP" length="2" />
 		<_field_long_integer name="runtime something~!" />
-		<_field_block_64 name="reports*" max="1048576">
+		<_field_block_64 name="reports*" max="1048576" guid="ee6aab20-499f-3227-d608-45919eaafc40">
 			<_field_char_enum name="type*">
 				<item Name="silent" />
 				<item Name="comment" />
@@ -84,7 +84,7 @@
 			<_field_long_integer name="source identifier*" />
 			<_field_string name="source filename*" />
 			<_field_long_integer name="source line number*" />
-			<_field_block_64 name="vertices*" max="1048576">
+			<_field_block_64 name="vertices*" max="1048576" guid="b44d11d1-463d-a884-1325-55b95004390e">
 				<_field_struct name="point" />
 				<_field_real_point_3d name="position*" />
 				<_field_array name="node indices*">
@@ -102,7 +102,7 @@
 				<_field_real_argb_color name="color*" />
 				<_field_real name="screen size*" />
 			</_field_block_64>
-			<_field_block_64 name="vectors*" max="1048576">
+			<_field_block_64 name="vectors*" max="1048576" guid="f617e038-4e8d-0b4e-b986-4faf1f5e7402">
 				<_field_struct name="point" />
 				<_field_real_point_3d name="position*" />
 				<_field_array name="node indices*">
@@ -121,7 +121,7 @@
 				<_field_real_vector_3d name="normal*" />
 				<_field_real name="screen length*" />
 			</_field_block_64>
-			<_field_block_64 name="lines*" max="1048576">
+			<_field_block_64 name="lines*" max="1048576" guid="1c172d3c-4356-604a-48de-1b8f8482cae0">
 				<_field_array name="points*">
 					<_field_struct name="point" />
 					<_field_real_point_3d name="position*" />
@@ -154,69 +154,8 @@
 				</_field_array>
 				<_field_real_argb_color name="color*" />
 			</_field_block_64>
-			<_field_block_64 name="triangles*" max="1048576">
+			<_field_block_64 name="triangles*" max="1048576" guid="f926e761-44e3-0012-1631-17857a34962b">
 				<_field_array name="points*">
-					<_field_struct name="point" />
-					<_field_real_point_3d name="position*" />
-					<_field_array name="node indices*">
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-					</_field_array>
-					<_field_array name="node weights*">
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-					</_field_array>
-					<_field_struct name="point" />
-					<_field_real_point_3d name="position*" />
-					<_field_array name="node indices*">
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-					</_field_array>
-					<_field_array name="node weights*">
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-					</_field_array>
-					<_field_struct name="point" />
-					<_field_real_point_3d name="position*" />
-					<_field_array name="node indices*">
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-					</_field_array>
-					<_field_array name="node weights*">
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-					</_field_array>
-				</_field_array>
-				<_field_real_argb_color name="color*" />
-			</_field_block_64>
-			<_field_block_64 name="quads*" max="1048576">
-				<_field_array name="points*">
-					<_field_struct name="point" />
-					<_field_real_point_3d name="position*" />
-					<_field_array name="node indices*">
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-					</_field_array>
-					<_field_array name="node weights*">
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-					</_field_array>
 					<_field_struct name="point" />
 					<_field_real_point_3d name="position*" />
 					<_field_array name="node indices*">
@@ -262,7 +201,68 @@
 				</_field_array>
 				<_field_real_argb_color name="color*" />
 			</_field_block_64>
-			<_field_block_64 name="comments*" max="1048576">
+			<_field_block_64 name="quads*" max="1048576" guid="d1071621-4305-e7d8-cc9f-ea8abf5529c5">
+				<_field_array name="points*">
+					<_field_struct name="point" />
+					<_field_real_point_3d name="position*" />
+					<_field_array name="node indices*">
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+					</_field_array>
+					<_field_array name="node weights*">
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+					</_field_array>
+					<_field_struct name="point" />
+					<_field_real_point_3d name="position*" />
+					<_field_array name="node indices*">
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+					</_field_array>
+					<_field_array name="node weights*">
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+					</_field_array>
+					<_field_struct name="point" />
+					<_field_real_point_3d name="position*" />
+					<_field_array name="node indices*">
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+					</_field_array>
+					<_field_array name="node weights*">
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+					</_field_array>
+					<_field_struct name="point" />
+					<_field_real_point_3d name="position*" />
+					<_field_array name="node indices*">
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+					</_field_array>
+					<_field_array name="node weights*">
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+					</_field_array>
+				</_field_array>
+				<_field_real_argb_color name="color*" />
+			</_field_block_64>
+			<_field_block_64 name="comments*" max="1048576" guid="709a9566-4617-dea3-b950-ff8a50e96ddb">
 				<_field_data_64 name="text*" />
 				<_field_struct name="point" />
 				<_field_real_point_3d name="position*" />
@@ -288,40 +288,40 @@
 			<_field_real_argb_color name="color*" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="seams*!" max="128">
+	<_field_block_64 name="seams*!" max="128" guid="71952903-49a5-695e-5e30-cd850c8f8657">
 		<_field_struct name="identifier*!" />
 		<_field_long_integer name="seam_id0*!" />
 		<_field_long_integer name="seam_id1*!" />
 		<_field_long_integer name="seam_id2*!" />
 		<_field_long_integer name="seam_id3*!" />
 		<_field_struct name="original*!" />
-		<_field_block_64 name="original vertices*!" max="32767">
+		<_field_block_64 name="original vertices*!" max="32767" guid="1c23a365-4449-182e-8310-b79e8a789160">
 			<_field_real_point_3d name="original vertex*!" />
 			<_field_long_integer name="final point index*!" />
-			<_field_block_64 name="plane normals*" max="1024">
+			<_field_block_64 name="plane normals*" max="1024" guid="1c23aabc-4449-1123-8310-ab9e8a0d1709">
 				<_field_real_vector_3d name="triangle normal*!" />
 			</_field_block_64>
 		</_field_block_64>
 		<_field_struct name="final*!" />
-		<_field_block_64 name="planes*!" max="32767">
+		<_field_block_64 name="planes*!" max="32767" guid="9d8d76fa-4d57-c55d-928c-1ebea868dc39">
 			<_field_real_plane_3d name="plane*" />
 		</_field_block_64>
-		<_field_block_64 name="points*!" max="32767">
+		<_field_block_64 name="points*!" max="32767" guid="d88a3db6-4955-8370-5221-01b4a7cc693e">
 			<_field_real_point_3d name="final point*!" />
 		</_field_block_64>
-		<_field_block_64 name="triangles*!" max="32767">
+		<_field_block_64 name="triangles*!" max="32767" guid="fa685de8-4914-a9bf-8ed9-c3b6ed0c4b0c">
 			<_field_long_integer name="final plane*!" />
-			<_field_short_block_index name="final point0*!" />
-			<_field_short_block_index name="final point1*!" />
-			<_field_short_block_index name="final point2*!" />
+			<_field_short_block_index name="final point0*!" srcguid="d88a3db6-4955-8370-5221-01b4a7cc693e" />
+			<_field_short_block_index name="final point1*!" srcguid="d88a3db6-4955-8370-5221-01b4a7cc693e" />
+			<_field_short_block_index name="final point2*!" srcguid="d88a3db6-4955-8370-5221-01b4a7cc693e" />
 			<_field_pad name="pad0" length="2" />
 		</_field_block_64>
-		<_field_block_64 name="edges*!" max="32767">
-			<_field_short_block_index name="final point0*!" />
-			<_field_short_block_index name="final point1*!" />
+		<_field_block_64 name="edges*!" max="32767" guid="5ce6fc51-4cd5-55d5-4cc2-048bca456911">
+			<_field_short_block_index name="final point0*!" srcguid="d88a3db6-4955-8370-5221-01b4a7cc693e" />
+			<_field_short_block_index name="final point1*!" srcguid="d88a3db6-4955-8370-5221-01b4a7cc693e" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="seam triangle mopp code block!*" max="32767">
+	<_field_block_64 name="seam triangle mopp code block!*" max="32767" guid="ee2bc898-4e98-8ad1-e551-43b676f65c63">
 		<_field_int64_integer name="field pointer skip!~" />
 		<_field_short_integer name="size*!" />
 		<_field_short_integer name="count~*!" />
@@ -337,7 +337,7 @@
 		<_field_char_integer name="int8 m_buildType*!" />
 		<_field_pad name="pad2" length="7" />
 		<_field_pad name="pad64_01" length="4" />
-		<_field_block_64 name="mopp data block *!" max="16777216">
+		<_field_block_64 name="mopp data block *!" max="16777216" guid="0eab741f-4408-f5d7-e132-5a9d6dfdd412">
 			<_field_byte_integer name="mopp data*!" />
 		</_field_block_64>
 		<_field_char_integer name="mopp build type!*#they say it only matters for ps3" />

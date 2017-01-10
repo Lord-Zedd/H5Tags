@@ -8,7 +8,7 @@
 	<_field_pad name="pad" length="8" />
 	<_field_struct name="weapon" />
 	<_field_string_id name="variant name#variant name will get propagated to all attachments" />
-	<_field_block_64 name="generic attachments" max="2">
+	<_field_block_64 name="generic attachments" max="2" guid="6dd1d13d-42c5-d1c4-7d41-01a250bce220">
 		<_field_tag_reference_64 name="attachment" />
 	</_field_block_64>
 	<_field_tag_reference_64 name="barrel attachment" />

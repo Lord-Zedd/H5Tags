@@ -5,7 +5,7 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="cards" max="512">
+	<_field_block_64 name="cards" max="512" guid="8e942e89-4619-43f8-a15c-50a22ddc992b">
 		<_field_real name="weight" />
 		<_field_tag_reference_64 name="card^" />
 	</_field_block_64>

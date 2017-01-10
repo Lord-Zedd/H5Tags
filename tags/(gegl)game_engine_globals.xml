@@ -6,7 +6,7 @@
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
 	<_field_tag_reference_64 name="game engine settings" />
-	<_field_block_64 name="game engine text" max="16">
+	<_field_block_64 name="game engine text" max="16" guid="20c34820-4771-d84a-667d-a19bb077b0dc">
 		<_field_tag_reference_64 name="text source" />
 	</_field_block_64>
 	<_field_pad name="pad0" length="4" />

@@ -5,10 +5,10 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="havok cleanup resources" max="1">
+	<_field_block_64 name="havok cleanup resources" max="1" guid="1158b5b8-4d5a-fbfc-5922-86b47beb91cb">
 		<_field_tag_reference_64 name="object cleanup effect" />
 	</_field_block_64>
-	<_field_block_64 name="garbage collection" max="1">
+	<_field_block_64 name="garbage collection" max="1" guid="49b147e0-4847-863c-aa48-13be7e2dc96b">
 		<_field_explanation name="Garbage Times">time before the game considers that following entities as garbage</_field_explanation>
 		<_field_real name="Dropped item:seconds" />
 		<_field_real name="Dropped special item:seconds" />

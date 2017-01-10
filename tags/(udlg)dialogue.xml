@@ -9,9 +9,9 @@
 	<_field_long_flags name="flags">
 		<item Name="female" />
 	</_field_long_flags>
-	<_field_block_64 name="vocalizations" max="4096">
+	<_field_block_64 name="vocalizations" max="4096" guid="6751bc80-4348-af51-f0f0-6a88168fdb68">
 		<_field_string_id name="vocalization^" />
-		<_field_block_64 name="stimuli" max="6">
+		<_field_block_64 name="stimuli" max="6" guid="8ea8b87c-4ee8-e73c-fed4-958cc69eefb6">
 			<_field_word_flags name="flags">
 				<item Name="additive#this stimulus should add to the default vocalization instead of replacing it" />
 				<item Name="don't suppress#this stimulus cannot be suppressed" />

@@ -39,7 +39,7 @@
 	<_field_real name="near player distance (metres)#default distance at which we say that a navpoint is in the 'near' state (metres)" />
 	<_field_real_point_2d name="defaultNavPointPosition2d (pixels)# the screen position used for MP navpoints that want to clamp to the hud eg. strongholds capture (pixels)" />
 	<_field_real name="defaultNavPoint2dDelayTime (seconds)#delay before we obey changes between 2d / 3d (seconds)" />
-	<_field_block_64 name="navpoint parameters" max="256">
+	<_field_block_64 name="navpoint parameters" max="256" guid="9aa7632f-423f-18d2-f2dc-9e8ed2a364b6">
 		<_field_string_id name="name^" />
 		<_field_tag_reference_64 name="navpoint tag" />
 	</_field_block_64>
@@ -92,7 +92,7 @@
 	<_field_real name="Darken Factor#Opacity of the black layer." />
 	<_field_real name="Brighten Factor#Overbrightness factor to apply to the additive layer." />
 	<_field_explanation name="Text">Text-related settings</_field_explanation>
-	<_field_block_64 name="string references" max="64">
+	<_field_block_64 name="string references" max="64" guid="f35ba8a6-4cec-4ca5-2270-709422e51721">
 		<_field_tag_reference_64 name="string list" />
 	</_field_block_64>
 	<_field_tag_reference_64 name="Interact Message Appear Sound" validtags="snd!" />
@@ -109,7 +109,7 @@
 	<_field_real_argb_color name="enemy kill feed color #The color of the name of a player is NOT on your team" />
 	<_field_real_argb_color name="neutral kill feed color #The color of the name of a player that is neutral towards your team" />
 	<_field_explanation name="Player Training" />
-	<_field_block_64 name="player training data" max="34">
+	<_field_block_64 name="player training data" max="34" guid="02521b32-4819-611c-6a7b-06a1bf773d68">
 		<_field_string_id name="display string#comes out of the HUD text globals" />
 		<_field_word_integer name="max display time#how long the message can be on screen before being hidden" />
 		<_field_word_integer name="display count#how many times a training message will get displayed (0-3 only!)" />
@@ -126,7 +126,7 @@
 	<_field_real name="grenade indicator lifetime dampener #prevents a newly thrown grenade from showing up in the grenade indicator" />
 	<_field_explanation name="Parallax globals">Settings related to parallax</_field_explanation>
 	<_field_real name="vehicle transition time (seconds)#time it takes for parallax to start or stop when entering vehicles" />
-	<_field_block_64 name="parallax params" max="32">
+	<_field_block_64 name="parallax params" max="32" guid="272f07a6-4bae-ecc9-22da-e881c780f15a">
 		<_field_string_id name="name^" />
 		<_field_real name="parallax falloff time#changes how much influence older frames have vs new ones" />
 		<_field_real name="parallax camera velocity factor#change how much influence camera movement has on parallax movement" />
@@ -138,7 +138,7 @@
 		<_field_real_euler_angles_3d name="parallax angle clamp max" />
 	</_field_block_64>
 	<_field_explanation name="Warp params">Settings related to warp</_field_explanation>
-	<_field_block_64 name="warp params" max="32">
+	<_field_block_64 name="warp params" max="32" guid="743ad28a-4470-0937-c0e0-3bb8bc5dc835">
 		<_field_string_id name="name^" />
 		<_field_real_point_3d name="ellipsoid scale" />
 		<_field_real_point_3d name="ellipsoid center" />
@@ -151,7 +151,7 @@
 		<_field_pad name="pad0" length="3" />
 	</_field_block_64>
 	<_field_explanation name="Chromatic aberration params">Settings related to chromatic aberration</_field_explanation>
-	<_field_block_64 name="chromatic aberration params" max="32">
+	<_field_block_64 name="chromatic aberration params" max="32" guid="cb32f419-4c79-9ef5-2458-2d9aa2154e54">
 		<_field_string_id name="name^" />
 		<_field_real name="base mix" />
 		<_field_real_point_2d name="center offset" />
@@ -164,7 +164,7 @@
 		<_field_pad name="pad0" length="3" />
 	</_field_block_64>
 	<_field_explanation name="High contrast globals">Settings related to high contrast</_field_explanation>
-	<_field_block_64 name="high contrast params" max="32">
+	<_field_block_64 name="high contrast params" max="32" guid="d5b5b159-4364-7549-ff41-eaa3c0fad791">
 		<_field_string_id name="name^" />
 		<_field_real name="dynamic threshold min" />
 		<_field_real name="dynamic threshold max" />

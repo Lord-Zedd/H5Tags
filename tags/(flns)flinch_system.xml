@@ -10,12 +10,12 @@
 	<_field_struct name="gun flinch" />
 	<_field_angle_bounds name="yaw bounds:degrees#define min and max angles the flinch can move" />
 	<_field_angle_bounds name="pitch bounds:degrees#define min and max angles the flinch can move" />
-	<_field_block_64 name="recoil" max="2">
+	<_field_block_64 name="recoil" max="2" guid="5fb40f69-4cf6-6031-def6-30adca3db93b">
 		<_field_struct name="recoil return" />
 		<_field_angle name="deceleration away from center:degrees#acceleration only applied when moving away from center" />
 		<_field_angle name="acceleration to center:degrees#acceleration only applied when moving to center" />
 	</_field_block_64>
-	<_field_block_64 name="spring damper" max="2">
+	<_field_block_64 name="spring damper" max="2" guid="43cc9eea-4b31-4d37-b665-8ba4647fa9fb">
 		<_field_struct name="spring damper" />
 		<_field_real name="spring constant#scales the center spring acceleration based on distance" />
 		<_field_real name="damping ratio##0 would be no damping, 1 is critical damping.  Is used to automatically calculate the damping coefficient" />
@@ -25,12 +25,12 @@
 	<_field_struct name="view flinch" />
 	<_field_angle_bounds name="yaw bounds:degrees#define min and max angles the flinch can move" />
 	<_field_angle_bounds name="pitch bounds:degrees#define min and max angles the flinch can move" />
-	<_field_block_64 name="recoil" max="2">
+	<_field_block_64 name="recoil" max="2" guid="5fb40f69-4cf6-6031-def6-30adca3db93b">
 		<_field_struct name="recoil return" />
 		<_field_angle name="deceleration away from center:degrees#acceleration only applied when moving away from center" />
 		<_field_angle name="acceleration to center:degrees#acceleration only applied when moving to center" />
 	</_field_block_64>
-	<_field_block_64 name="spring damper" max="2">
+	<_field_block_64 name="spring damper" max="2" guid="43cc9eea-4b31-4d37-b665-8ba4647fa9fb">
 		<_field_struct name="spring damper" />
 		<_field_real name="spring constant#scales the center spring acceleration based on distance" />
 		<_field_real name="damping ratio##0 would be no damping, 1 is critical damping.  Is used to automatically calculate the damping coefficient" />

@@ -12,20 +12,20 @@
 	<_field_explanation name="Game Hopper Localization Strings">This is for the loc game hopper strings</_field_explanation>
 	<_field_tag_reference_64 name="game hopper descriptions" />
 	<_field_explanation name="Screen Widgets">These are the HaloX screen widgets</_field_explanation>
-	<_field_block_64 name="node graphs" max="256">
+	<_field_block_64 name="node graphs" max="256" guid="064ae50c-430d-3a4d-c4d9-6b8170436678">
 		<_field_tag_reference_64 name="node graph tag" />
 	</_field_block_64>
-	<_field_block_64 name="wpf fonts" max="256">
+	<_field_block_64 name="wpf fonts" max="256" guid="39753fd6-4ad2-f3da-c89f-599ce1b140df">
 		<_field_tag_reference_64 name="wpf font set tag" />
 	</_field_block_64>
-	<_field_block_64 name="bitmap dictionaries#allow bitmap tags to be referenced using ampersand notation in HaloTextBlocks" max="256">
+	<_field_block_64 name="bitmap dictionaries#allow bitmap tags to be referenced using ampersand notation in HaloTextBlocks" max="256" guid="cd4a6b7f-4148-d3c9-1ee9-0887f0c7c745">
 		<_field_tag_reference_64 name="bitmap dictionary" />
 	</_field_block_64>
-	<_field_block_64 name="cui screen widgets" max="256">
+	<_field_block_64 name="cui screen widgets" max="256" guid="5760e7a0-4769-4c3b-783d-f1864287287b">
 		<_field_string_id name="name^#for use in code" />
 		<_field_tag_reference_64 name="cui screen tag" />
 	</_field_block_64>
-	<_field_block_64 name="cui overlay cameras" max="24">
+	<_field_block_64 name="cui overlay cameras" max="24" guid="83781bd0-418e-054d-59ce-9488e0265695">
 		<_field_string_id name="resolution name" />
 		<_field_char_enum name="pivot corner">
 			<item Name="top left" />
@@ -39,7 +39,7 @@
 		<_field_real name="X angle degrees#camera angle around the X axis" />
 		<_field_real name="Y angle degrees#camera angle around the Y axis" />
 	</_field_block_64>
-	<_field_block_64 name="player model camera settings" max="32">
+	<_field_block_64 name="player model camera settings" max="32" guid="73f77a8a-08be-d544-babd-b685efb872f8">
 		<_field_explanation name="Camera Settings">These are model-viewing camera parameters that you can control
 * FOV is the field of view used by the texture camera
   if left 0, a suitable default FOV is used
@@ -64,7 +64,7 @@
 		<_field_real name="initial zoom:[0,1]" />
 		<_field_real name="fov:degrees" />
 	</_field_block_64>
-	<_field_block_64 name="player model input settings" max="32">
+	<_field_block_64 name="player model input settings" max="32" guid="5d1bd5fe-14d2-e2c8-f7f4-be82fe82a043">
 		<_field_string_id name="name" />
 		<_field_real name="zoom speed:wu per tick" />
 		<_field_struct name="zoom transition function" />
@@ -74,11 +74,11 @@
 		<_field_real_euler_angles_2d name="maximum rotation:degrees" />
 		<_field_real name="rotation speed:degrees per tick" />
 	</_field_block_64>
-	<_field_block_64 name="player model camera transition settings" max="1">
+	<_field_block_64 name="player model camera transition settings" max="1" guid="20e2fa5b-4706-22e5-621f-ccb4adace040">
 		<_field_struct name="camera transition function" />
 		<_field_data_64 name="data" />
 	</_field_block_64>
-	<_field_block_64 name="active roster settings" max="1">
+	<_field_block_64 name="active roster settings" max="1" guid="53a07740-4ca2-597d-bc33-01bde6166518">
 		<_field_struct name="analog scroll function" />
 		<_field_data_64 name="data" />
 	</_field_block_64>
@@ -87,13 +87,13 @@
 	<_field_explanation name="PGCR Damage Types Definitions">This is a reference to the tag storing details about damage types for display in the PGCR</_field_explanation>
 	<_field_tag_reference_64 name="pgcr damage types definitions" />
 	<_field_explanation name="Campaign State Screen Scripts">Contains a mapping of campaign map IDs and screen scripts used to implement lobby backgrounds that track campaign state. This block should only be non-empty for the main menu.</_field_explanation>
-	<_field_block_64 name="campaign state screen scripts" max="64">
+	<_field_block_64 name="campaign state screen scripts" max="64" guid="94a0c938-49a6-2b65-0315-54bd58bd3bc7">
 		<_field_long_integer name="map ID" />
 		<_field_string_id name="screen script name" />
 		<_field_tag_reference_64 name="music override" />
 	</_field_block_64>
 	<_field_real name="spawn-timer countdown rate:counts/sec" />
-	<_field_block_64 name="game intro sequence" max="5">
+	<_field_block_64 name="game intro sequence" max="5" guid="790fa350-4de5-a494-ad32-7b83a40c6252">
 		<_field_byte_flags name="flags">
 			<item Name="show loadout menu" />
 			<item Name="loadout menu close ends sequence" />
@@ -107,7 +107,7 @@
 		<_field_short_integer name="startTime:ticks" />
 		<_field_short_integer name="endTime:ticks" />
 	</_field_block_64>
-	<_field_block_64 name="game round end sequence" max="5">
+	<_field_block_64 name="game round end sequence" max="5" guid="790fa350-4de5-a494-ad32-7b83a40c6252">
 		<_field_byte_flags name="flags">
 			<item Name="show loadout menu" />
 			<item Name="loadout menu close ends sequence" />
@@ -121,7 +121,7 @@
 		<_field_short_integer name="startTime:ticks" />
 		<_field_short_integer name="endTime:ticks" />
 	</_field_block_64>
-	<_field_block_64 name="game round end with killcam sequence" max="5">
+	<_field_block_64 name="game round end with killcam sequence" max="5" guid="790fa350-4de5-a494-ad32-7b83a40c6252">
 		<_field_byte_flags name="flags">
 			<item Name="show loadout menu" />
 			<item Name="loadout menu close ends sequence" />
@@ -135,7 +135,7 @@
 		<_field_short_integer name="startTime:ticks" />
 		<_field_short_integer name="endTime:ticks" />
 	</_field_block_64>
-	<_field_block_64 name="game next round sequence" max="5">
+	<_field_block_64 name="game next round sequence" max="5" guid="790fa350-4de5-a494-ad32-7b83a40c6252">
 		<_field_byte_flags name="flags">
 			<item Name="show loadout menu" />
 			<item Name="loadout menu close ends sequence" />
@@ -149,7 +149,7 @@
 		<_field_short_integer name="startTime:ticks" />
 		<_field_short_integer name="endTime:ticks" />
 	</_field_block_64>
-	<_field_block_64 name="game end sequence" max="5">
+	<_field_block_64 name="game end sequence" max="5" guid="790fa350-4de5-a494-ad32-7b83a40c6252">
 		<_field_byte_flags name="flags">
 			<item Name="show loadout menu" />
 			<item Name="loadout menu close ends sequence" />
@@ -163,7 +163,7 @@
 		<_field_short_integer name="startTime:ticks" />
 		<_field_short_integer name="endTime:ticks" />
 	</_field_block_64>
-	<_field_block_64 name="game end with killcam sequence" max="5">
+	<_field_block_64 name="game end with killcam sequence" max="5" guid="790fa350-4de5-a494-ad32-7b83a40c6252">
 		<_field_byte_flags name="flags">
 			<item Name="show loadout menu" />
 			<item Name="loadout menu close ends sequence" />
@@ -177,7 +177,7 @@
 		<_field_short_integer name="startTime:ticks" />
 		<_field_short_integer name="endTime:ticks" />
 	</_field_block_64>
-	<_field_block_64 name="in game sequence" max="5">
+	<_field_block_64 name="in game sequence" max="5" guid="790fa350-4de5-a494-ad32-7b83a40c6252">
 		<_field_byte_flags name="flags">
 			<item Name="show loadout menu" />
 			<item Name="loadout menu close ends sequence" />
@@ -193,7 +193,7 @@
 	</_field_block_64>
 	<_field_tag_reference_64 name="HUD globals#global settings for the HUD. Set this for ingame globals." />
 	<_field_tag_reference_64 name="portrait poses" />
-	<_field_block_64 name="swap tags" max="128">
+	<_field_block_64 name="swap tags" max="128" guid="60312daa-4ab4-faeb-27fc-d8b8a82751ed">
 		<_field_tag_reference_64 name="original tag^" />
 		<_field_tag_reference_64 name="replacement tag" />
 	</_field_block_64>

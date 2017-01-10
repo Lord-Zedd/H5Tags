@@ -24,22 +24,22 @@
 	<_field_real_argb_color name="text color" />
 	<_field_real_argb_color name="shadow color" />
 	<_field_explanation name="Color presets">Colors are defined here and used in text widgets throughout the UI.  Specify a string_id here and the same one in a text widget.  If you don't specify one in a text widget, you'll use the first entry here.</_field_explanation>
-	<_field_block_64 name="color presets" max="1024">
+	<_field_block_64 name="color presets" max="1024" guid="26b5a836-412e-2251-4a45-3ea2dedc3900">
 		<_field_string_id name="name^" />
 		<_field_real_argb_color name="color" />
 	</_field_block_64>
 	<_field_explanation name="Tint colors">These colors are used for tinting widgets by team or player color.</_field_explanation>
-	<_field_block_64 name="tint colors" max="1">
-		<_field_block_64 name="text player" max="63">
+	<_field_block_64 name="tint colors" max="1" guid="60c481ee-46a2-8000-08da-048372c351ac">
+		<_field_block_64 name="text player" max="63" guid="0f5f62c7-4a78-c6a2-7abb-cfbccd917bf4">
 			<_field_real_argb_color name="color" />
 		</_field_block_64>
-		<_field_block_64 name="text team" max="63">
+		<_field_block_64 name="text team" max="63" guid="0f5f62c7-4a78-c6a2-7abb-cfbccd917bf4">
 			<_field_real_argb_color name="color" />
 		</_field_block_64>
-		<_field_block_64 name="bitmap player" max="63">
+		<_field_block_64 name="bitmap player" max="63" guid="0f5f62c7-4a78-c6a2-7abb-cfbccd917bf4">
 			<_field_real_argb_color name="color" />
 		</_field_block_64>
-		<_field_block_64 name="bitmap team" max="63">
+		<_field_block_64 name="bitmap team" max="63" guid="0f5f62c7-4a78-c6a2-7abb-cfbccd917bf4">
 			<_field_real_argb_color name="color" />
 		</_field_block_64>
 		<_field_custom name="Affiliation" />
@@ -79,7 +79,7 @@
 	<_field_explanation name="User interface sounds">Default sound effects for various UI actions</_field_explanation>
 	<_field_tag_reference_64 name="default sounds" />
 	<_field_explanation name="HaloX Alerts">Alerts are triggered by specific events that happen in the game.  The game can require that an error be resolved before the dialog can be dismissed.  Once the error is resolved (or if it doesn't require resolution,) the user can dismiss it.</_field_explanation>
-	<_field_block_64 name="alert descriptions" max="512">
+	<_field_block_64 name="alert descriptions" max="512" guid="be222e19-4774-7f2b-dbfc-4383773d291e">
 		<_field_string_id name="error name^" />
 		<_field_byte_flags name="flags">
 			<item Name="allow auto dismissal" />
@@ -107,7 +107,7 @@
 Notes:
 - first item defaults to 'ok', second item defaults to 'cancel.  third and fourth items don't display if they're not set
 - if 'b button action' is set to 'button ignored' then the b button doesn't do anything (such as cancelling)</_field_explanation>
-	<_field_block_64 name="dialog descriptions" max="256">
+	<_field_block_64 name="dialog descriptions" max="256" guid="7c5393a4-4f38-9474-2d1e-c58cf4fb9d29">
 		<_field_string_id name="dialog name^" />
 		<_field_word_flags name="flags">
 			<item Name="unused" />
@@ -140,7 +140,7 @@ Notes:
 		<_field_pad name="pad1" length="2" />
 	</_field_block_64>
 	<_field_explanation name="Lua User Libraries">These lua script files are loaded into every new UI lua state in the order specified to provide suplemental functionality.</_field_explanation>
-	<_field_block_64 name="lua user libraries" max="32">
+	<_field_block_64 name="lua user libraries" max="32" guid="38464d85-41b8-7370-802a-6194759fcbb3">
 		<_field_tag_reference_64 name="lua library" />
 	</_field_block_64>
 	<_field_explanation name="Content Aspect Ratio Scaling">These define the scaling that will get applied to UI content and animations when running at the specified display modes</_field_explanation>
@@ -183,17 +183,17 @@ The output (y) is the distance to the edge (should be 1).</_field_explanation>
 	<_field_long_integer name="delay:seconds" />
 	<_field_explanation name="WPF settings">Settings and shared content for WPF</_field_explanation>
 	<_field_tag_reference_64 name="WPF app resources tag" />
-	<_field_block_64 name="WPF widget set" max="512">
+	<_field_block_64 name="WPF widget set" max="512" guid="25402733-4e4c-9e38-cce4-64b5c9e085b9">
 		<_field_string_id name="wpf widget name^" />
 		<_field_tag_reference_64 name="wpf widget tag" />
 	</_field_block_64>
-	<_field_block_64 name="wpf font sets" max="256">
+	<_field_block_64 name="wpf font sets" max="256" guid="39753fd6-4ad2-f3da-c89f-599ce1b140df">
 		<_field_tag_reference_64 name="wpf font set tag" />
 	</_field_block_64>
-	<_field_block_64 name="bitmap dictionaries#allow bitmap tags to be referenced using ampersand notation in HaloTextBlocks" max="256">
+	<_field_block_64 name="bitmap dictionaries#allow bitmap tags to be referenced using ampersand notation in HaloTextBlocks" max="256" guid="cd4a6b7f-4148-d3c9-1ee9-0887f0c7c745">
 		<_field_tag_reference_64 name="bitmap dictionary" />
 	</_field_block_64>
-	<_field_block_64 name="PGCR per player tracked incidents" max="50">
+	<_field_block_64 name="PGCR per player tracked incidents" max="50" guid="177fa8b3-4622-d261-2e9f-dfbbb998c500">
 		<_field_string_id name="incident name^" />
 		<_field_long_integer name="maximum stat count*#number of times this can happen before the PGCR stops tracking them" />
 	</_field_block_64>
@@ -239,7 +239,7 @@ The output (y) is the distance to the edge (should be 1).</_field_explanation>
 	<_field_real name="secondTierDistance: distance the outer cone extends (multiplied by zoom level)" />
 	<_field_real name="vehicleDistanceScalar: multiply the normal first and second tier distance when the reticled over player is in a vehicle" />
 	<_field_explanation name="Localized font mappings">What font should be loaded instead of the requested font</_field_explanation>
-	<_field_block_64 name="font mappings" max="32">
+	<_field_block_64 name="font mappings" max="32" guid="126f79eb-4a26-3def-5b58-89b5ad17e283">
 		<_field_long_enum name="language^">
 			<item Name="english" />
 			<item Name="japanese" />
@@ -259,7 +259,7 @@ The output (y) is the distance to the edge (should be 1).</_field_explanation>
 			<item Name="dutch" />
 			<item Name="norwegian" />
 		</_field_long_enum>
-		<_field_block_64 name="mappings" max="32">
+		<_field_block_64 name="mappings" max="32" guid="bb96cda1-4e8f-948e-9626-e4a339fd9f0c">
 			<_field_long_string name="original name^" />
 			<_field_long_string name="remapped name" />
 		</_field_block_64>
@@ -273,7 +273,7 @@ The output (y) is the distance to the edge (should be 1).</_field_explanation>
 	<_field_real_argb_color name="Team Osiris icon Color" />
 	<_field_real_argb_color name="Team Blue icon Color" />
 	<_field_explanation name="Emblem and Nameplate Data">Emblem and Nameplate visual data</_field_explanation>
-	<_field_block_64 name="emblem and nameplate data" max="1024">
+	<_field_block_64 name="emblem and nameplate data" max="1024" guid="f688077f-9b4d-7f01-f202-55ac05af1c45">
 		<_field_string_id name="name^" />
 		<_field_tag_reference_64 name="emblem bitmap" />
 		<_field_tag_reference_64 name="nameplate bitmap" />
@@ -296,7 +296,7 @@ The output (y) is the distance to the edge (should be 1).</_field_explanation>
 	<_field_real_point_2d name="min resolution for 4K assets" />
 	<_field_real_point_2d name="max resolution for 4K assets" />
 	<_field_tag_reference_64 name="English keyboard bitmap" />
-	<_field_block_64 name="keyboard bitmap list for different languages" max="32">
+	<_field_block_64 name="keyboard bitmap list for different languages" max="32" guid="e9507d6a-41a2-b08a-6054-4c9b6179c303">
 		<_field_string_id name="identifier" />
 		<_field_tag_reference_64 name="keyboard bitmap" />
 	</_field_block_64>

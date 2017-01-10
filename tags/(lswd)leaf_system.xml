@@ -23,7 +23,7 @@
 	<_field_real name="movement cylinder radius" />
 	<_field_real name="fade in time!" />
 	<_field_real name="fade out time!" />
-	<_field_block_64 name="leaf types" max="16">
+	<_field_block_64 name="leaf types" max="16" guid="9cb09d25-4521-b339-fd82-22bc55ed4afa">
 		<_field_short_integer name="bitmap sprite index#assumes sequence 0. if no sprites uses full bitmap" />
 		<_field_pad name="UNAX" length="2" />
 		<_field_real name="frequency" />

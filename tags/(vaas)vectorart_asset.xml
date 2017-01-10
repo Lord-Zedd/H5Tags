@@ -14,7 +14,7 @@
 	<_field_real name="import fudge factor (suggested 0.5)" />
 	<_field_real_point_2d name="bounds*" />
 	<_field_real name="curve smoothness" />
-	<_field_block_64 name="vertices*" max="32768">
+	<_field_block_64 name="vertices*" max="32768" guid="118494c3-4b9b-b73f-dc4d-74a49b327406">
 		<_field_short_integer name="half x*" />
 		<_field_short_integer name="half y*" />
 		<_field_short_integer name="half z*" />
@@ -22,10 +22,10 @@
 		<_field_short_integer name="half u*" />
 		<_field_short_integer name="half v*" />
 	</_field_block_64>
-	<_field_block_64 name="indices*" max="32768">
+	<_field_block_64 name="indices*" max="32768" guid="a4c7cb01-4d14-2540-a27f-a2b5f24d7693">
 		<_field_short_integer name="index*" />
 	</_field_block_64>
-	<_field_block_64 name="pc vertex buffers*" max="1">
+	<_field_block_64 name="pc vertex buffers*" max="1" guid="f38916ab-435e-ca2a-b153-b3bc3e0d1357">
 		<_field_byte_integer name="declaration type*" />
 		<_field_byte_integer name="stride*" />
 		<_field_pad name="vertex buffer pad" length="2" />
@@ -35,7 +35,7 @@
 		<_field_int64_integer name="ptr d3d SRV*" />
 		<_field_int64_integer name="ptr d3d cpu copy*" />
 	</_field_block_64>
-	<_field_block_64 name="pc index buffers*" max="1">
+	<_field_block_64 name="pc index buffers*" max="1" guid="fb7aa38b-4625-3ce5-0300-6cb9bc2b8160">
 		<_field_byte_integer name="declaration type*" />
 		<_field_byte_integer name="stride*" />
 		<_field_pad name="vertex buffer pad" length="2" />

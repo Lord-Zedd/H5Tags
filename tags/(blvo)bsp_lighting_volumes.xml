@@ -5,11 +5,11 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="Lightmap Priority Volumes" max="16384">
+	<_field_block_64 name="Lightmap Priority Volumes" max="16384" guid="9d0b0b83-42ac-3daa-4af1-afb1f9c040e5">
 		<_field_string_id name="Name" />
 		<_field_custom name="Volume settings" />
 		<_field_struct name="Volume" />
-		<_field_block_64 name="Points" max="32">
+		<_field_block_64 name="Points" max="32" guid="66dd021f-42b7-67e4-69b7-44af5c73a047">
 			<_field_real_point_3d name="position" />
 			<_field_real_euler_angles_2d name="normal" />
 		</_field_block_64>
@@ -36,7 +36,7 @@
 			<item Name="No" />
 			<item Name="Yes" />
 		</_field_short_enum>
-		<_field_block_64 name="Editor Metadata!" max="1024">
+		<_field_block_64 name="Editor Metadata!" max="1024" guid="49566d10-3ee6-efbe-6d8c-8eb1db3d0368">
 			<_field_long_string name="data name" />
 			<_field_long_enum name="data type">
 				<item Name="class" />
@@ -49,11 +49,11 @@
 			<_field_long_string name="data value" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="Air Probe Density Volumes" max="16384">
+	<_field_block_64 name="Air Probe Density Volumes" max="16384" guid="a564e868-4a15-1faf-4fa0-dd99a6214c35">
 		<_field_string_id name="Name" />
 		<_field_custom name="Volume settings" />
 		<_field_struct name="Volume" />
-		<_field_block_64 name="Points" max="32">
+		<_field_block_64 name="Points" max="32" guid="66dd021f-42b7-67e4-69b7-44af5c73a047">
 			<_field_real_point_3d name="position" />
 			<_field_real_euler_angles_2d name="normal" />
 		</_field_block_64>
@@ -63,7 +63,7 @@
 		<_field_real name="trivial cull radius squared!" />
 		<_field_pad name="gvolpad" length="4" />
 		<_field_real name="Air Probe Density" />
-		<_field_block_64 name="Editor Metadata!" max="1024">
+		<_field_block_64 name="Editor Metadata!" max="1024" guid="49566d10-3ee6-efbe-6d8c-8eb1db3d0368">
 			<_field_long_string name="data name" />
 			<_field_long_enum name="data type">
 				<item Name="class" />
@@ -76,11 +76,11 @@
 			<_field_long_string name="data value" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="Air Probe Region Volumes" max="4">
+	<_field_block_64 name="Air Probe Region Volumes" max="4" guid="531729e8-4fa0-b942-df8b-54962472edf4">
 		<_field_string_id name="Name" />
 		<_field_custom name="Volume settings" />
 		<_field_struct name="Volume" />
-		<_field_block_64 name="Points" max="32">
+		<_field_block_64 name="Points" max="32" guid="66dd021f-42b7-67e4-69b7-44af5c73a047">
 			<_field_real_point_3d name="position" />
 			<_field_real_euler_angles_2d name="normal" />
 		</_field_block_64>
@@ -89,7 +89,7 @@
 		<_field_real_point_3d name="center point!" />
 		<_field_real name="trivial cull radius squared!" />
 		<_field_pad name="gvolpad" length="4" />
-		<_field_block_64 name="Editor Metadata!" max="1024">
+		<_field_block_64 name="Editor Metadata!" max="1024" guid="49566d10-3ee6-efbe-6d8c-8eb1db3d0368">
 			<_field_long_string name="data name" />
 			<_field_long_enum name="data type">
 				<item Name="class" />
@@ -102,7 +102,7 @@
 			<_field_long_string name="data value" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="Cubemap Volumes" max="64">
+	<_field_block_64 name="Cubemap Volumes" max="64" guid="ba187d43-481a-d1ce-8b9c-6cbc3c5171be">
 		<_field_string_id name="Name" />
 		<_field_long_flags name="Flags">
 			<item Name="Enable Intensity Correction" />
@@ -110,11 +110,11 @@
 			<item Name="Affects Adjacent Bsps" />
 		</_field_long_flags>
 		<_field_struct name="Dumpling" />
-		<_field_block_64 name="inner points" max="32">
+		<_field_block_64 name="inner points" max="32" guid="5b797cb1-4931-9aad-827f-d6a4efb8e03a">
 			<_field_real_point_3d name="position" />
 			<_field_real_euler_angles_2d name="normal" />
 		</_field_block_64>
-		<_field_block_64 name="outer points" max="32">
+		<_field_block_64 name="outer points" max="32" guid="5b797cb1-4931-9aad-827f-d6a4efb8e03a">
 			<_field_real_point_3d name="position" />
 			<_field_real_euler_angles_2d name="normal" />
 		</_field_block_64>
@@ -145,7 +145,7 @@
 		</_field_short_enum>
 		<_field_real_point_3d name="Intensity" />
 		<_field_real name="Self-illum Scale Down" />
-		<_field_block_64 name="Editor Metadata!" max="1024">
+		<_field_block_64 name="Editor Metadata!" max="1024" guid="49566d10-3ee6-efbe-6d8c-8eb1db3d0368">
 			<_field_long_string name="data name" />
 			<_field_long_enum name="data type">
 				<item Name="class" />

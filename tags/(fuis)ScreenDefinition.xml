@@ -9,7 +9,7 @@
 	<_field_string_id name="warp params name" />
 	<_field_string_id name="chromatic aberration params name" />
 	<_field_string_id name="high contrast params name" />
-	<_field_block_64 name="components#all UI components to include as a part of this screen" max="32">
+	<_field_block_64 name="components#all UI components to include as a part of this screen" max="32" guid="bc0d2ebc-45f6-1119-1beb-e28bc230cff7">
 		<_field_tag_reference_64 name="reference^" />
 	</_field_block_64>
 	<_field_pad name="Pad0" length="4" />

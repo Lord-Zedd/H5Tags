@@ -89,7 +89,7 @@
 	</_field_char_enum>
 	<_field_pad name="pad2" length="3" />
 	<_field_long_integer name="runtime flags!*" />
-	<_field_block_64 name="source sidecar" max="1">
+	<_field_block_64 name="source sidecar" max="1" guid="dd2e8f64-42f1-0f5f-7fdf-1a8d7d24bd29">
 		<_field_long_string name="sidecar path*" />
 	</_field_block_64>
 	<_field_string_id name="default model variant" />
@@ -106,7 +106,7 @@
 	<_field_real name="navpoint vertical offset" />
 	<_field_explanation name="only set this tag if you want to override the default collision damage values in globals.globals" />
 	<_field_tag_reference_64 name="collision damage" />
-	<_field_block_64 name="early mover OBB" max="1">
+	<_field_block_64 name="early mover OBB" max="1" guid="7ad1ffff-48ff-aaaa-d477-36cb3b0ee7ff">
 		<_field_string_id name="node name#empty mean object space" />
 		<_field_long_integer name="runtime node index*!" />
 		<_field_real name="x0" />
@@ -123,7 +123,7 @@
 	<_field_real name="kill on first contact or damage after time:seconds#grace period before object can be instantly killed by kill on first contact or damage flag" />
 	<_field_real name="self-destruct time:seconds#if non-zero, any instances of this object will destroy themselves after this many seconds." />
 	<_field_real name="self-destruct time max:seconds#if non-zero, defines range from which self-destruct time is chosen randomly" />
-	<_field_block_64 name="ai properties" max="1">
+	<_field_block_64 name="ai properties" max="1" guid="26fb5335-447d-712e-527f-f7937178fdaf">
 		<_field_long_flags name="ai flags">
 			<item Name="detroyable cover" />
 			<item Name="pathfinding ignore when dead" />
@@ -157,7 +157,7 @@
 			<item Name="infinite" />
 		</_field_short_enum>
 	</_field_block_64>
-	<_field_block_64 name="functions" max="256">
+	<_field_block_64 name="functions" max="256" guid="d2efdbe6-4dc2-41ee-1024-5f80d9baf582">
 		<_field_long_flags name="flags">
 			<item Name="invert#result of function is one minus actual result" />
 			<item Name="mapping does not controls active#the curve mapping can make the function active/inactive" />
@@ -174,7 +174,7 @@
 		<_field_struct name="default function" />
 		<_field_data_64 name="data" />
 		<_field_string_id name="scale by" />
-		<_field_block_64 name="interpolation" max="2">
+		<_field_block_64 name="interpolation" max="2" guid="5a96873e-4c1c-ac0d-4165-0b8a2e8d2846">
 			<_field_long_enum name="interpolation mode">
 				<item Name="constant velocity" />
 				<item Name="linear acceleration" />
@@ -196,15 +196,15 @@ determines damping based on velocity" />
 			<_field_real name="fraction:0-1#used by fractional
 how mush of the distance to the target to cover each update" />
 		</_field_block_64>
-		<_field_long_block_index name="runtime interpolator index*!" />
+		<_field_long_block_index name="runtime interpolator index*!" srcguid="a2efdbe6-4dc2-4bee-1024-5f30d9baf532" />
 	</_field_block_64>
-	<_field_block_64 name="runtime interpolator functions*!" max="256">
+	<_field_block_64 name="runtime interpolator functions*!" max="256" guid="a2efdbe6-4dc2-4bee-1024-5f30d9baf532">
 		<_field_long_integer name="runtime interpolator to object function mapping*!" />
 	</_field_block_64>
-	<_field_block_64 name="function switches" max="32">
+	<_field_block_64 name="function switches" max="32" guid="cd9999fc-42ce-ab66-5317-4fb7541ca31e">
 		<_field_string_id name="switch function name" />
 		<_field_string_id name="export name" />
-		<_field_block_64 name="switched functions" max="8">
+		<_field_block_64 name="switched functions" max="8" guid="42436123-44bf-650f-c76e-c193f74535d7">
 			<_field_real_bounds name="selection bounds#if the switch function is between these values, this function will be picked" />
 			<_field_string_id name="function name^" />
 		</_field_block_64>
@@ -222,7 +222,7 @@ how mush of the distance to the target to cover each update" />
 		<item Name="No shoulder bash rebound" />
 		<item Name="Combine child shapes into convext hull when cutting navmesh" />
 	</_field_word_flags>
-	<_field_block_64 name="attachments" max="48">
+	<_field_block_64 name="attachments" max="48" guid="11097257-429c-4775-33d9-75a73f4575ee">
 		<_field_tag_reference_64 name="type^" validtags="ligh, gldf, ltvl, effe, lsnd, lens, cpem, egfd, decs" />
 		<_field_tag_reference_64 name="override type#this attachment will override the attachment on the object that shares this " validtags="ligh, gldf, ltvl, effe, lsnd, lens, cpem, egfd, decs" />
 		<_field_string_id name="marker" />
@@ -241,7 +241,7 @@ how mush of the distance to the target to cover each update" />
 		<_field_string_id name="primary scale" />
 		<_field_string_id name="secondary scale" />
 	</_field_block_64>
-	<_field_block_64 name="hull surfaces" max="64">
+	<_field_block_64 name="hull surfaces" max="64" guid="201415c3-45f8-124b-838f-11b7505bada4">
 		<_field_word_flags name="flags">
 			<item Name="works on land#drives on an extruded version of everything physical in your level" />
 			<item Name="effects only" />
@@ -249,7 +249,7 @@ how mush of the distance to the target to cover each update" />
 		<_field_pad name="pad0" length="2" />
 		<_field_string_id name="marker name^" />
 		<_field_real name="radius" />
-		<_field_block_64 name="drag" max="512">
+		<_field_block_64 name="drag" max="512" guid="520e02ba-44fa-2360-a778-53a5d2f10aa4">
 			<_field_string_id name="material^" />
 			<_field_struct name="drag" />
 			<_field_custom name="Pressure" />
@@ -266,7 +266,7 @@ how mush of the distance to the target to cover each update" />
 			<_field_real name="angular damping" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="jetwash" max="4">
+	<_field_block_64 name="jetwash" max="4" guid="c47aa872-4bc5-0a22-93c9-779bab9c9679">
 		<_field_string_id name="marker name^" />
 		<_field_real name="radius" />
 		<_field_long_integer name="maximum traces!:traces per second" />
@@ -275,17 +275,17 @@ how mush of the distance to the target to cover each update" />
 		<_field_angle_bounds name="trace pitch angle: degrees" />
 		<_field_real name="particle offset:world units" />
 	</_field_block_64>
-	<_field_block_64 name="widgets" max="4">
+	<_field_block_64 name="widgets" max="4" guid="62919b1e-4661-a5aa-8a7d-31b8aaddc03a">
 		<_field_tag_reference_64 name="type" validtags="ant!, clwd" />
 	</_field_block_64>
-	<_field_block_64 name="change colors" max="4">
-		<_field_block_64 name="initial permutations" max="32">
+	<_field_block_64 name="change colors" max="4" guid="0ab056ad-41c9-8f32-6ab2-db9efef6249b">
+		<_field_block_64 name="initial permutations" max="32" guid="fc403e79-4d2e-a7a6-216c-0cad7b6ca0c2">
 			<_field_real name="weight" />
 			<_field_real_rgb_color name="color lower bound" />
 			<_field_real_rgb_color name="color upper bound" />
 			<_field_string_id name="variant name#if empty, may be used by any model variant" />
 		</_field_block_64>
-		<_field_block_64 name="functions" max="4">
+		<_field_block_64 name="functions" max="4" guid="9f69cb7c-4f58-ba0d-0ca3-ce96289ca8d0">
 			<_field_pad name="TJJWBYNU" length="4" />
 			<_field_long_flags name="scale flags">
 				<item Name="blend in hsv#blends colors in hsv rather than rgb space" />
@@ -297,7 +297,7 @@ how mush of the distance to the target to cover each update" />
 			<_field_string_id name="scale by" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="multiplayer object" max="1">
+	<_field_block_64 name="multiplayer object" max="1" guid="027b0263-43de-e976-6b53-73b167e4ae73">
 		<_field_explanation name="TYPE AND FLAGS">Type pertains to how you want the game engine to handle this object
 Certain flags applicable only to certain object types, should be self evident</_field_explanation>
 		<_field_char_enum name="type">
@@ -375,7 +375,7 @@ Certain flags applicable only to certain object types, should be self evident</_
 		</_field_long_flags>
 		<_field_explanation name="RESPAWN ZONE DATA">These are respawn zone weights, used only for respawn zones</_field_explanation>
 		<_field_real name="normal weight:aka natural weight" />
-		<_field_block_64 name="falloff function#Multiplier applied to weight (domain is center to radius, range should be 0 to 1)." max="1">
+		<_field_block_64 name="falloff function#Multiplier applied to weight (domain is center to radius, range should be 0 to 1)." max="1" guid="506e405f-40de-3d03-3d40-9e98c316758f">
 			<_field_data_64 name="data" />
 		</_field_block_64>
 		<_field_explanation name="MARKER DATA">These fields are only used for defining certain, special markers to use for positional locations if the default position (object origin) is not sufficient</_field_explanation>
@@ -426,7 +426,7 @@ Certain flags applicable only to certain object types, should be self evident</_
 		<_field_string_id name="Default Label [3]#Label reference into the Forge labels block in forge.forge_globals" />
 		<_field_string_id name="Default Label [4]#Label reference into the Forge labels block in forge.forge_globals" />
 	</_field_block_64>
-	<_field_block_64 name="Forge data" max="36">
+	<_field_block_64 name="Forge data" max="36" guid="89e8f6a5-4178-73b5-af26-08b9cb87b0af">
 		<_field_tag_reference_64 name="Palette" />
 		<_field_string_id name="Name" />
 		<_field_string_id name="Description" />
@@ -436,17 +436,17 @@ Certain flags applicable only to certain object types, should be self evident</_
 		<_field_real_vector_3d name="Starting yaw/pitch/roll" />
 	</_field_block_64>
 	<_field_tag_reference_64 name="simulation_interpolation#Set to a specific interpolation definition, or leave blank to inherit the default for the object type (there are defaults for bipeds, vehicles, and crates in multiplayer_globals).  To disable interpolation on a particular object whose type has interpolation by default, set this reference to the special disable_interpolation.simulation_interpolation tag." />
-	<_field_block_64 name="spawn effects" max="1">
+	<_field_block_64 name="spawn effects" max="1" guid="caa36528-4d30-4bd4-ecfe-db92325ca7a3">
 		<_field_explanation name="Spawn Effects">Effect played when an object of this type spawns in during each game mode.
 Unlike creation effect, it is only played when the object spawns in through certain methods, not whenever one is created.</_field_explanation>
 		<_field_tag_reference_64 name="multiplayer spawn effect#effect played when this object spawns in MP games" />
 		<_field_tag_reference_64 name="campaign spawn effect#effect played when this object spawns in Campaign games" />
 	</_field_block_64>
-	<_field_block_64 name="model dissolve data" max="13">
+	<_field_block_64 name="model dissolve data" max="13" guid="95694a9f-4f6b-93e9-40ad-598949a3a896">
 		<_field_tag_reference_64 name="model dissolve data" />
 	</_field_block_64>
 	<_field_long_string name="class name" />
-	<_field_block_64 name="script tagalongs" max="1024">
+	<_field_block_64 name="script tagalongs" max="1024" guid="d5081a5a-49b0-aaae-215c-dda38b1a4c98">
 		<_field_tag_reference_64 name="reference*^" />
 	</_field_block_64>
 	<_field_tag_reference_64 name="prototype script!" />
@@ -459,11 +459,11 @@ Unlike creation effect, it is only played when the object spawns in through cert
 		<item Name="Enable In Single Player" />
 	</_field_byte_flags>
 	<_field_pad name="DPKP" length="3" />
-	<_field_block_64 name="Designer Metadata" max="32">
+	<_field_block_64 name="Designer Metadata" max="32" guid="7a236d95-4b5b-6697-5b69-1494408a3af4">
 		<_field_string_id name="meta label^" />
 	</_field_block_64>
 	<_field_explanation name="Object Function Smoothing" />
-	<_field_block_64 name="Object function smoothing" max="64">
+	<_field_block_64 name="Object function smoothing" max="64" guid="1d4d4ab4-4eff-b1c9-b566-67b534f92fb9">
 		<_field_string_id name="id" />
 		<_field_string_id name="alias of#(Optional) If set will internally read this instead of 'id' to generate the smoothed value. Can be used to create smoothed aliases of existing functions." />
 		<_field_real_fraction name="smoothing factor" />
@@ -476,7 +476,7 @@ Unlike creation effect, it is only played when the object spawns in through cert
 	<_field_pad name="pad_anmesh" length="3" />
 	<_field_tag_reference_64 name="Core" validtags="spry, rscn" />
 	<_field_tag_reference_64 name="Trigger volume component info" />
-	<_field_block_64 name="Tracking Info&amp;Spartan Tracking" max="2">
+	<_field_block_64 name="Tracking Info&amp;Spartan Tracking" max="2" guid="c3031d37-42d5-b52a-63d5-0fbebc784642">
 		<_field_explanation name="Map these settings to a ping type">Active - This is generated manually by the player, by pressing a button on their controller.  This behavior will override passive behavior.  
 
 Passive - This is a constant ping, automatically generated by the tracking system.  Use this to mark things automatically as the player comes into range.  
@@ -556,7 +556,7 @@ You should create at most one block of Spartan Tracking data for each ping type.
 	<_field_string_id name="notify empty msg" />
 	<_field_string_id name="notify overheated message" />
 	<_field_tag_reference_64 name="collision sound" validtags="snd!" />
-	<_field_block_64 name="predicted bitmaps" max="8">
+	<_field_block_64 name="predicted bitmaps" max="8" guid="7a456e83-4218-479f-2a9b-f9be20b53607">
 		<_field_tag_reference_64 name="bitmap" />
 	</_field_block_64>
 	<_field_tag_reference_64 name="detonation damage effect" />
@@ -711,7 +711,7 @@ You should create at most one block of Spartan Tracking data for each ping type.
 	<_field_tag_reference_64 name="overheated damage effect" validtags="jpt!, drdf" />
 	<_field_tag_reference_64 name="detonation" validtags="snd!, effe" />
 	<_field_tag_reference_64 name="detonation damage effect" validtags="jpt!, drdf" />
-	<_field_block_64 name="melee damage parameters" max="2">
+	<_field_block_64 name="melee damage parameters" max="2" guid="b9eba02e-a76c-e895-74ea-8baba5c19c40">
 		<_field_explanation name="melee damage parameters">damage pyramid angles: defines the frustum from the camera that the melee-attack uses to find targets
 damage pyramid depth: how far the melee attack searches for a target</_field_explanation>
 		<_field_real_euler_angles_2d name="damage pyramid angles" />
@@ -740,7 +740,7 @@ damage pyramid depth: how far the melee attack searches for a target</_field_exp
 	<_field_pad name="wzt" length="3" />
 	<_field_tag_reference_64 name="zoom effect#effect that is played while zoomed" validtags="snd!, effe" />
 	<_field_custom name="aim assist deprecated" />
-	<_field_block_64 name="aim assist modes#First mode is normal, second mode is iron sights/scoped" max="3">
+	<_field_block_64 name="aim assist modes#First mode is normal, second mode is iron sights/scoped" max="3" guid="36080f7a-42af-0f93-eb5a-a080085a98de">
 		<_field_byte_flags name="flags">
 			<item Name="do not scale for magnification#Disables scaling distances by magnification and inverse scaling angles by magnification.  Aim assist is normally scaled for magnification in order to have the same screen space result regardless of magnification." />
 		</_field_byte_flags>
@@ -871,12 +871,12 @@ damage pyramid depth: how far the melee attack searches for a target</_field_exp
 		<item Name="product#multiplies the values one after another on to the base" />
 	</_field_char_enum>
 	<_field_pad name="padEnd" length="3" />
-	<_field_block_64 name="target tracking" max="1">
+	<_field_block_64 name="target tracking" max="1" guid="5c0dcda7-44ba-2d92-ebe4-0b94220bd594">
 		<_field_byte_flags name="target tracking flags">
 			<item Name="only enable when aimed down sight" />
 		</_field_byte_flags>
 		<_field_pad name="flagPad" length="3" />
-		<_field_block_64 name="tracking types#specify the kinds of targets this tracking system can lock on" max="16">
+		<_field_block_64 name="tracking types#specify the kinds of targets this tracking system can lock on" max="16" guid="1e369ad6-43a0-88c0-5a67-0aaa502676e3">
 			<_field_string_id name="tracking type^" />
 		</_field_block_64>
 		<_field_real name="acquire time:s" />
@@ -887,7 +887,7 @@ damage pyramid depth: how far the melee attack searches for a target</_field_exp
 		<_field_tag_reference_64 name="tracking sound" validtags="lsnd, snd!" />
 		<_field_tag_reference_64 name="locked sound" validtags="lsnd, snd!" />
 	</_field_block_64>
-	<_field_block_64 name="laser guidance" max="1">
+	<_field_block_64 name="laser guidance" max="1" guid="863cbd4f-4467-5e2b-8758-ab86d084f9f9">
 		<_field_char_enum name="laser guidance activation">
 			<item Name="Ads" />
 		</_field_char_enum>
@@ -967,7 +967,7 @@ damage pyramid depth: how far the melee attack searches for a target</_field_exp
 		<item Name="hide ammo#hides stored ammo and clip ammo displays" />
 	</_field_byte_flags>
 	<_field_pad name="flagsPad" length="3" />
-	<_field_block_64 name="first person" max="2">
+	<_field_block_64 name="first person" max="2" guid="3b47d10e-4ec2-b50c-32eb-4ba6865a2f71">
 		<_field_tag_reference_64 name="first person model" />
 		<_field_tag_reference_64 name="first person animations" />
 		<_field_real name="first person fov scale#the multiplier by the standard first person FOV to use when this weapon is held" />
@@ -988,7 +988,7 @@ damage pyramid depth: how far the melee attack searches for a target</_field_exp
 	<_field_tag_reference_64 name="ui alt4 screen reference" />
 	<_field_tag_reference_64 name="ui alt5 screen reference" />
 	<_field_tag_reference_64 name="ui arm screen reference" />
-	<_field_block_64 name="UI display info" max="1">
+	<_field_block_64 name="UI display info" max="1" guid="6bb873fd-472b-52c6-7790-9b90d0074580">
 		<_field_string_id name="name^#short name for the item" />
 		<_field_string_id name="display name#friendly name for the item" />
 		<_field_string_id name="description#general in-universe item description" />
@@ -1003,7 +1003,7 @@ damage pyramid depth: how far the melee attack searches for a target</_field_exp
 	</_field_block_64>
 	<_field_tag_reference_64 name="Ammo Ticker Bitmap Reference" />
 	<_field_pad name="pad" length="4" />
-	<_field_block_64 name="magazines" max="2">
+	<_field_block_64 name="magazines" max="2" guid="b8fcf9a4-4c8e-a019-c564-fe8c41c0cfb1">
 		<_field_long_flags name="flags">
 			<item Name="wastes rounds when reloaded" />
 			<item Name="every round must be chambered" />
@@ -1032,13 +1032,13 @@ damage pyramid depth: how far the melee attack searches for a target</_field_exp
 		<_field_tag_reference_64 name="reloading damage effect" validtags="jpt!, drdf" />
 		<_field_tag_reference_64 name="chambering effect" validtags="snd!, effe" />
 		<_field_tag_reference_64 name="chambering damage effect" validtags="jpt!, drdf" />
-		<_field_block_64 name="magazines" max="8">
+		<_field_block_64 name="magazines" max="8" guid="3ef33972-4c51-c4ac-1284-b596acd42774">
 			<_field_short_integer name="rounds" />
 			<_field_pad name="DTDPY" length="2" />
 			<_field_tag_reference_64 name="equipment^" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="new triggers" max="2">
+	<_field_block_64 name="new triggers" max="2" guid="908ced94-4ada-2913-0ae1-009666d04e2c">
 		<_field_long_flags name="flags">
 			<item Name="autofire single action only" />
 		</_field_long_flags>
@@ -1060,8 +1060,8 @@ damage pyramid depth: how far the melee attack searches for a target</_field_exp
 			<item Name="double-latch-tether#projectile is tethered by 1st latch, 2nd releases and detonates it" />
 			<item Name="charge-with-magazine#like charge, but pays attention to any magazine and will not charge unless magazine is idle and barrel is actually able to fire" />
 		</_field_short_enum>
-		<_field_short_block_index name="primary barrel" />
-		<_field_short_block_index name="secondary barrel" />
+		<_field_short_block_index name="primary barrel" srcguid="5c518e74-4ed4-c30c-8317-fb985689b2e0" />
+		<_field_short_block_index name="secondary barrel" srcguid="5c518e74-4ed4-c30c-8317-fb985689b2e0" />
 		<_field_short_enum name="prediction">
 			<item Name="none" />
 			<item Name="spew" />
@@ -1105,13 +1105,13 @@ damage pyramid depth: how far the melee attack searches for a target</_field_exp
 		<_field_real name="charged drain rate#how much battery to drain per second when charged" />
 		<_field_tag_reference_64 name="discharge effect#the discharging effect is created once when the trigger releases its charge" validtags="snd!, effe" />
 		<_field_tag_reference_64 name="discharge damage effect#the discharging effect is created once when the trigger releases its charge" validtags="jpt!, drdf" />
-		<_field_block_64 name="fire fractions" max="16">
+		<_field_block_64 name="fire fractions" max="16" guid="59082a5c-456e-8986-9a4b-03bf5e0b9b22">
 			<_field_real_fraction name="charge fraction^:[0.1]#charging fraction at which the weapon should additionally fire a shot." />
 		</_field_block_64>
 		<_field_tag_reference_64 name="double latch projectile releasable effect#created once player is able to release the tethered projectile" />
 		<_field_tag_reference_64 name="double latch projectile released effect#created when player releases the tethered projectile" />
 	</_field_block_64>
-	<_field_block_64 name="barrels" max="2">
+	<_field_block_64 name="barrels" max="2" guid="5c518e74-4ed4-c30c-8317-fb985689b2e0">
 		<_field_long_flags name="flags">
 			<item Name="random firing effects#rather than being chosen sequentially, firing effects are picked randomly" />
 			<item Name="can fire with partial ammo#allows a weapon to be fired as long as there is a non-zero amount of ammunition loaded" />
@@ -1150,7 +1150,7 @@ damage pyramid depth: how far the melee attack searches for a target</_field_exp
 		<_field_real_fraction name="melee soft recovery fraction#how much of the melee recovery allows melee to be queued" />
 		<_field_real name="runtime rate of fire acceleration rate!" />
 		<_field_real name="runtime rate of fire deceleration rate!" />
-		<_field_short_block_index name="magazine#the magazine from which this trigger draws its ammunition" />
+		<_field_short_block_index name="magazine#the magazine from which this trigger draws its ammunition" srcguid="b8fcf9a4-4c8e-a019-c564-fe8c41c0cfb1" />
 		<_field_short_integer name="rounds per shot#the number of rounds expended to create a single firing effect" />
 		<_field_short_integer name="minimum rounds loaded#the minimum number of rounds necessary to fire the weapon" />
 		<_field_short_integer name="rounds per burst#if &gt; 0 this will be the ammo consumed at the start of a new burst.  Automatic reloads will wait for burst to finish" />
@@ -1201,10 +1201,10 @@ for reference, profile sensitivities are set to:
 			<item Name="custom positions" />
 		</_field_short_enum>
 		<_field_short_integer name="projectiles per shot" />
-		<_field_block_64 name="direction offset#Custom vectors must be set in distribution function above" max="16">
+		<_field_block_64 name="direction offset#Custom vectors must be set in distribution function above" max="16" guid="cb9e245e-4828-9870-9b82-ffacba57b7b4">
 			<_field_real_euler_angles_2d name="angle offset^:[-90, 90]#yaw +right pitch +up" />
 		</_field_block_64>
-		<_field_block_64 name="position offsets#Custom vectors must be set in distribution function above" max="16">
+		<_field_block_64 name="position offsets#Custom vectors must be set in distribution function above" max="16" guid="9db02e18-4feb-cd2d-abbd-b7a63c77e884">
 			<_field_real_point_2d name="Point offset^:[-1.1]#x-y offset - +x is right, +y is up" />
 		</_field_block_64>
 		<_field_real name="distribution angle:degrees#used by distribution function 'horizontal fan' above" />
@@ -1225,35 +1225,35 @@ Where input value 'X' produces output value 'Y'
 </_field_explanation>
 		<_field_custom name="single wield penalties" />
 		<_field_struct name="single wield penalties" />
-		<_field_block_64 name="firing penalty function#percentage accuracy lost when the barrel has fired" max="1">
+		<_field_block_64 name="firing penalty function#percentage accuracy lost when the barrel has fired" max="1" guid="7db0bb50-4ab6-dd6d-2809-68b1c8e10a13">
 			<_field_data_64 name="data" />
 		</_field_block_64>
-		<_field_block_64 name="firing crouched penalty function#percentage accuracy lost when the barrel has fired from a crouched position" max="1">
+		<_field_block_64 name="firing crouched penalty function#percentage accuracy lost when the barrel has fired from a crouched position" max="1" guid="7db0bb50-4ab6-dd6d-2809-68b1c8e10a13">
 			<_field_data_64 name="data" />
 		</_field_block_64>
-		<_field_block_64 name="moving penalty function#percentage accuracy lost when moving" max="1">
+		<_field_block_64 name="moving penalty function#percentage accuracy lost when moving" max="1" guid="7db0bb50-4ab6-dd6d-2809-68b1c8e10a13">
 			<_field_data_64 name="data" />
 		</_field_block_64>
-		<_field_block_64 name="turning penalty function#percentage accuracy lost when turning the camera" max="1">
+		<_field_block_64 name="turning penalty function#percentage accuracy lost when turning the camera" max="1" guid="7db0bb50-4ab6-dd6d-2809-68b1c8e10a13">
 			<_field_data_64 name="data" />
 		</_field_block_64>
 		<_field_real name="error angle max rotation#angle which represents the maximum input to the turning penalty function." />
 		<_field_custom name="dual wield penalties" />
 		<_field_struct name="dual wield penalties" />
-		<_field_block_64 name="firing penalty function#percentage accuracy lost when the barrel has fired" max="1">
+		<_field_block_64 name="firing penalty function#percentage accuracy lost when the barrel has fired" max="1" guid="7db0bb50-4ab6-dd6d-2809-68b1c8e10a13">
 			<_field_data_64 name="data" />
 		</_field_block_64>
-		<_field_block_64 name="firing crouched penalty function#percentage accuracy lost when the barrel has fired from a crouched position" max="1">
+		<_field_block_64 name="firing crouched penalty function#percentage accuracy lost when the barrel has fired from a crouched position" max="1" guid="7db0bb50-4ab6-dd6d-2809-68b1c8e10a13">
 			<_field_data_64 name="data" />
 		</_field_block_64>
-		<_field_block_64 name="moving penalty function#percentage accuracy lost when moving" max="1">
+		<_field_block_64 name="moving penalty function#percentage accuracy lost when moving" max="1" guid="7db0bb50-4ab6-dd6d-2809-68b1c8e10a13">
 			<_field_data_64 name="data" />
 		</_field_block_64>
-		<_field_block_64 name="turning penalty function#percentage accuracy lost when turning the camera" max="1">
+		<_field_block_64 name="turning penalty function#percentage accuracy lost when turning the camera" max="1" guid="7db0bb50-4ab6-dd6d-2809-68b1c8e10a13">
 			<_field_data_64 name="data" />
 		</_field_block_64>
 		<_field_real name="error angle max rotation#angle which represents the maximum input to the turning penalty function." />
-		<_field_block_64 name="first person offset" max="3">
+		<_field_block_64 name="first person offset" max="3" guid="0aeb3ed8-4570-cded-fd29-0ba14a10a4cf">
 			<_field_real_point_3d name="first person offset:world units#+x is forward, +z is up, +y is left" />
 		</_field_block_64>
 		<_field_tag_reference_64 name="projectile" />
@@ -1275,7 +1275,7 @@ Where input value 'X' produces output value 'Y'
 		<_field_real name="overload time:seconds#the next trigger fires this often while holding down this trigger" />
 		<_field_real name="runtime illumination recovery rate!" />
 		<_field_real name="runtime ejection port recovery rate!" />
-		<_field_block_64 name="firing effects#firing effects determine what happens when this trigger is fired" max="5">
+		<_field_block_64 name="firing effects#firing effects determine what happens when this trigger is fired" max="5" guid="28bbfa00-42b0-7568-d15c-e794e6f4e7b8">
 			<_field_short_integer name="shot count lower bound#the minimum number of times this firing effect will be used, once it has been chosen" />
 			<_field_short_integer name="shot count upper bound#the maximum number of times this firing effect will be used, once it has been chosen" />
 			<_field_tag_reference_64 name="firing effect^#this effect is used when the weapon is loaded and fired normally" validtags="snd!, effe" />
@@ -1319,7 +1319,7 @@ The end result is clamped to the random bounds.</_field_explanation>
 		<_field_real name="recoil impulse scale crouched#0 defaults to 1.  Interpolates from 1 to this based off of crouch." />
 		<_field_real name="recoil impulse scale airborne#0 defaults to 1.  Only uses this scale when airborne, but not stabilized" />
 		<_field_real name="recoil impulse scale stabilized#0 defaults to 1.  Only uses this scale when stabilized" />
-		<_field_block_64 name="acceleration hip" max="1">
+		<_field_block_64 name="acceleration hip" max="1" guid="71bb4097-477c-3b0b-db80-099059573aae">
 			<_field_struct name="Acceleration Stance" />
 			<_field_custom name="Yaw" />
 			<_field_struct name="view kick yaw:degrees/s" />
@@ -1352,7 +1352,7 @@ The end result is clamped to the random bounds.</_field_explanation>
 		<_field_real name="recoil impulse scale crouched#0 defaults to 1.  Interpolates from 1 to this based off of crouch." />
 		<_field_real name="recoil impulse scale airborne#0 defaults to 1.  Only uses this scale when airborne, but not stabilized" />
 		<_field_real name="recoil impulse scale stabilized#0 defaults to 1.  Only uses this scale when stabilized" />
-		<_field_block_64 name="gunkick hip settings" max="1">
+		<_field_block_64 name="gunkick hip settings" max="1" guid="9b1d6cfa-48fb-d280-d00d-948174ba2510">
 			<_field_struct name="gunkick acceleration stance" />
 			<_field_angle_bounds name="gunkick yaw acceleration:degrees" />
 			<_field_angle name="gunkick yaw min magnitude:degrees" />
@@ -1367,7 +1367,7 @@ The end result is clamped to the random bounds.</_field_explanation>
 		<_field_struct name="procedural animation fp fire impulse" />
 		<_field_struct name="procedural animation fp fire kickback impulse" />
 		<_field_real_bounds name="procedural animation fp fire kickback impulse:wu per s#random range for fire kickback#velocity added to the procedural fp fire system" />
-		<_field_block_64 name="procedural animation fp fire kickback impulse hip#add this to override in hip" max="1">
+		<_field_block_64 name="procedural animation fp fire kickback impulse hip#add this to override in hip" max="1" guid="f9def1d2-45a5-682a-8a0d-6c99e72d990b">
 			<_field_struct name="procedural animation fp fire kickback impulse" />
 			<_field_real_bounds name="procedural animation fp fire kickback impulse:wu per s#random range for fire kickback#velocity added to the procedural fp fire system" />
 		</_field_block_64>
@@ -1380,7 +1380,7 @@ The end result is clamped to the random bounds.</_field_explanation>
 		<_field_tag_reference_64 name="sound" />
 		<_field_struct name="automatic fire sound" />
 		<_field_tag_reference_64 name="firing loop for automatics" />
-		<_field_block_64 name="automatic fire variations" max="8">
+		<_field_block_64 name="automatic fire variations" max="8" guid="df1e4eca-40f6-a183-b2df-23a84795ada6">
 			<_field_tag_reference_64 name="firing loop for automatics" />
 		</_field_block_64>
 		<_field_struct name="tail fire sound" />
@@ -1475,7 +1475,7 @@ The end result is clamped to the random bounds.</_field_explanation>
 	<_field_real name="tether transition to linked time:seconds#begins when tethered projectile is LNKED" />
 	<_field_real name="tether transition from linked time:seconds#begins when tethered projectile becomes non-LNKED" />
 	<_field_string_id name="unit stow anchor name" />
-	<_field_block_64 name="screen effects" max="4">
+	<_field_block_64 name="screen effects" max="4" guid="13215947-4a9c-d5db-e032-869d3d51affd">
 		<_field_byte_flags name="flags">
 			<item Name="overrides unit and camera screen effects" />
 			<item Name="unzoomed" />
@@ -1491,17 +1491,17 @@ The end result is clamped to the random bounds.</_field_explanation>
 	<_field_string_id name="Reload cancel event#Note - this is a direct event string - not a .sound" />
 	<_field_long_integer name="Reload cancel event hash!" />
 	<_field_tag_reference_64 name="deprecated firing loop for automatics{firing loop for automatics}!*" />
-	<_field_block_64 name="deprecated automatic fire variations{automatic fire variations}!*" max="8">
+	<_field_block_64 name="deprecated automatic fire variations{automatic fire variations}!*" max="8" guid="df1e4eca-40f6-a183-b2df-23a84795ada6">
 		<_field_tag_reference_64 name="firing loop for automatics" />
 	</_field_block_64>
 	<_field_pad name="PADT" length="4" />
-	<_field_block_64 name="Sound RTPCs" max="32">
-		<_field_long_block_index name="Attachment Index#Sound attachment to affect" />
+	<_field_block_64 name="Sound RTPCs" max="32" guid="6edcfd78-4177-1147-644d-27b8b574d61d">
+		<_field_long_block_index name="Attachment Index#Sound attachment to affect" srcguid="11097257-429c-4775-33d9-75a73f4575ee" />
 		<_field_string_id name="Function#Function to drive the RTPC" />
 		<_field_string_id name="RTPC Name#WWise RTPC string name" />
 		<_field_long_integer name="RTPC name hash value*!" />
 	</_field_block_64>
-	<_field_block_64 name="Sound Sweeteners" max="16">
+	<_field_block_64 name="Sound Sweeteners" max="16" guid="443f16aa-4b2a-7a81-de74-fb815c3ca2f7">
 		<_field_string_id name="Function#Function to trigger the sweetener" />
 		<_field_tag_reference_64 name="sound" validtags="snd!" />
 		<_field_real name="Switch point#value of the function where the sound is triggered" />
@@ -1513,7 +1513,7 @@ The end result is clamped to the random bounds.</_field_explanation>
 	<_field_string_id name="Locking Reticle Screen Name" />
 	<_field_string_id name="Locked On Reticle Screen Name" />
 	<_field_custom name="Default Attachments" />
-	<_field_block_64 name="generic attachments" max="2">
+	<_field_block_64 name="generic attachments" max="2" guid="6dd1d13d-42c5-d1c4-7d41-01a250bce220">
 		<_field_tag_reference_64 name="attachment" />
 	</_field_block_64>
 	<_field_tag_reference_64 name="barrel attachment" />
@@ -1588,7 +1588,7 @@ Yaw: +right Pitch: +up</_field_explanation>
 	<_field_struct name="view kick precision aim" />
 	<_field_angle name="view kick deceleration:degrees/s/s#slows down the current kick when moving away from center" />
 	<_field_angle name="view kick return to center acceleration:degrees/s/s#how fast the current kick falls back to center" />
-	<_field_block_64 name="view kick hip" max="1">
+	<_field_block_64 name="view kick hip" max="1" guid="1706238d-409f-9659-f13e-5687dae50c91">
 		<_field_struct name="view kick settings stance" />
 		<_field_angle name="view kick deceleration:degrees/s/s#slows down the current kick when moving away from center" />
 		<_field_angle name="view kick return to center acceleration:degrees/s/s#how fast the current kick falls back to center" />
@@ -1624,7 +1624,7 @@ up = +pitch</_field_explanation>
 	<_field_struct name="gunkick ads settings" />
 	<_field_real name="gunkick spring constant#scales the return acceleration based on distance.applied per axis" />
 	<_field_real name="gunkick damping ratio#0 would be no damping, 1 is critical damping.  Is used to automatically calculate the damping coefficient" />
-	<_field_block_64 name="gunkick hip settings" max="1">
+	<_field_block_64 name="gunkick hip settings" max="1" guid="1b1a6c7e-45f7-ca7f-00ab-dc856686f619">
 		<_field_struct name="gunkick stance" />
 		<_field_real name="gunkick spring constant#scales the return acceleration based on distance.applied per axis" />
 		<_field_real name="gunkick damping ratio#0 would be no damping, 1 is critical damping.  Is used to automatically calculate the damping coefficient" />
@@ -1650,7 +1650,7 @@ up = +pitch</_field_explanation>
 	<_field_real name="procedural animation fp fire spring constant#scales the center spring acceleration based on distance" />
 	<_field_real name="procedural animation fp fire damping ratio#0 would be no damping, 1 is critical damping.  Is used to automatically calculate the damping coefficient" />
 	<_field_real name="runtime damping constant!*" />
-	<_field_block_64 name="procedural animation fp fire spring hip#add a block to override fire spring in hip" max="1">
+	<_field_block_64 name="procedural animation fp fire spring hip#add a block to override fire spring in hip" max="1" guid="84e297b4-4302-c846-9b41-aba6755df71e">
 		<_field_struct name="procedural animation fp fire spring" />
 		<_field_real name="procedural animation fp fire spring constant#scales the center spring acceleration based on distance" />
 		<_field_real name="procedural animation fp fire damping ratio#0 would be no damping, 1 is critical damping.  Is used to automatically calculate the damping coefficient" />

@@ -10,7 +10,7 @@
 	<_field_string_id name="global air material#the default value for what material type air is" />
 	<_field_short_integer name="global water material type!" />
 	<_field_short_integer name="global air material type!" />
-	<_field_block_64 name="runtime materials*!" max="512">
+	<_field_block_64 name="runtime materials*!" max="512" guid="83b9d6fb-45b8-e0f8-963f-5a94ee8af3d4">
 		<_field_string_id name="name^" />
 		<_field_string_id name="parent name" />
 		<_field_short_integer name="runtime material index!" />
@@ -30,7 +30,7 @@
 		<_field_real name="density:kg/m^3" />
 		<_field_explanation name="Drag" />
 		<_field_tag_reference_64 name="water physics drag properties" />
-		<_field_block_64 name="drag overrides" max="16">
+		<_field_block_64 name="drag overrides" max="16" guid="12b22bb0-4906-af9e-bae6-ccb065e3c4b6">
 			<_field_tag_reference_64 name="drag properties" />
 		</_field_block_64>
 		<_field_explanation name="Floatation">objects of this flotation category have this density relative to being in this material (1.0f==neutral)</_field_explanation>
@@ -80,7 +80,7 @@
 			<item Name="water_ripple_large" />
 		</_field_long_flags>
 		<_field_tag_reference_64 name="material effects" />
-		<_field_block_64 name="underwater proxies" max="512">
+		<_field_block_64 name="underwater proxies" max="512" guid="ad5f9353-c7a3-a0b9-6f40-a0ba53266fc1">
 			<_field_explanation name="when this material is encounted under a material of this type ..." />
 			<_field_string_id name="underwater material" />
 			<_field_explanation name="... we report it as this material" />
@@ -89,7 +89,7 @@
 			<_field_short_integer name="proxy material type*!" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="materials" max="256">
+	<_field_block_64 name="materials" max="256" guid="4d5f9153-47a3-00b9-6f40-afbc5c066fc5">
 		<_field_string_id name="name^" />
 		<_field_string_id name="parent name" />
 		<_field_short_integer name="runtime material index!" />
@@ -109,7 +109,7 @@
 		<_field_real name="density:kg/m^3" />
 		<_field_explanation name="Drag" />
 		<_field_tag_reference_64 name="water physics drag properties" />
-		<_field_block_64 name="drag overrides" max="16">
+		<_field_block_64 name="drag overrides" max="16" guid="12b22bb0-4906-af9e-bae6-ccb065e3c4b6">
 			<_field_tag_reference_64 name="drag properties" />
 		</_field_block_64>
 		<_field_explanation name="Floatation">objects of this flotation category have this density relative to being in this material (1.0f==neutral)</_field_explanation>
@@ -159,7 +159,7 @@
 			<item Name="water_ripple_large" />
 		</_field_long_flags>
 		<_field_tag_reference_64 name="material effects" />
-		<_field_block_64 name="underwater proxies" max="512">
+		<_field_block_64 name="underwater proxies" max="512" guid="ad5f9353-c7a3-a0b9-6f40-a0ba53266fc1">
 			<_field_explanation name="when this material is encounted under a material of this type ..." />
 			<_field_string_id name="underwater material" />
 			<_field_explanation name="... we report it as this material" />

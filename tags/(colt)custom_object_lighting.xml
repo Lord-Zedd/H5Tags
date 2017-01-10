@@ -8,8 +8,8 @@
 	<_field_struct name="Probe" />
 	<_field_explanation name="Character Lighting">
 </_field_explanation>
-	<_field_block_64 name="Authored Light Probes" max="4">
-		<_field_block_64 name="Lights*" max="1">
+	<_field_block_64 name="Authored Light Probes" max="4" guid="1202400e-e569-5a0d-15ea-96e69adfd5f0">
+		<_field_block_64 name="Lights*" max="1" guid="c2ea80ad-c6ad-e1b9-bed3-7e66ffa3a679">
 			<_field_custom name="Authored Light Probe" />
 			<_field_custom name="Direction 1&amp;Direction(D)" />
 			<_field_real name="Direction 1&amp;Direction(D)" />

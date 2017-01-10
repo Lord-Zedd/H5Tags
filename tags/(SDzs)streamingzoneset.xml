@@ -7,15 +7,15 @@
 	<_field_pad name="local tag handle!~" length="4" />
 	<_field_real_point_2d name="resource subregion AABB min" />
 	<_field_real_vector_2d name="resource subregion block size" />
-	<_field_block_64 name="streaming resource ids" max="4096">
+	<_field_block_64 name="streaming resource ids" max="4096" guid="b75f1e6a-4ea3-c740-40d4-87984044a719">
 		<_field_tag_reference_64 name="streaming_reference_tag" />
 	</_field_block_64>
-	<_field_block_64 name="streaming resource subregions" max="65536">
+	<_field_block_64 name="streaming resource subregions" max="65536" guid="3659ba90-4e39-eb27-78b2-2183019f7021">
 		<_field_long_integer name="block offset X" />
 		<_field_long_integer name="block offset Y" />
 		<_field_real name="min Z" />
 		<_field_real name="max Z" />
-		<_field_block_64 name="resource levels" max="4096">
+		<_field_block_64 name="resource levels" max="4096" guid="6af99b48-44bc-35c8-1902-96bd92853246">
 			<_field_short_integer name="requested width" />
 			<_field_short_integer name="requested height" />
 		</_field_block_64>

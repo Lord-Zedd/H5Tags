@@ -8,7 +8,7 @@
 	<_field_long_flags name="flags">
 		<item Name="Use Environment Acoustics" />
 	</_field_long_flags>
-	<_field_block_64 name="Scenario sound bank list" max="52">
+	<_field_block_64 name="Scenario sound bank list" max="52" guid="0ce98746-473b-d3da-6762-d2ae37dd8acd">
 		<_field_tag_reference_64 name="Sound bank" />
 	</_field_block_64>
 	<_field_string_id name="Inside reverb name#This reverb will be used for inside areas when the listener is outside." />
@@ -18,7 +18,7 @@
 	<_field_real name="enemy rtpc distance#max distance an enemy can be to be counted in our enemy-related rtpcs" />
 	<_field_real name="kill count frequency time period:seconds#the amount of time to consider a kill relevant for the kill count frequency" />
 	<_field_real name="combat intensity RTPCs timer#number of seconds between each time the combat intensity RTPCs are set" />
-	<_field_block_64 name="State Groups#State groups we care enough about to have saved and loaded, as well as inherited during campaign player-teleportation" max="256">
+	<_field_block_64 name="State Groups#State groups we care enough about to have saved and loaded, as well as inherited during campaign player-teleportation" max="256" guid="35da4a68-4dc0-4148-8431-8dbc75986ffc">
 		<_field_tag_reference_64 name="State-group reference" />
 	</_field_block_64>
 </plugin>

@@ -5,15 +5,15 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="Visual Environment Volumes" max="100">
+	<_field_block_64 name="Visual Environment Volumes" max="100" guid="b452e234-4268-ef56-12e8-b4abc451ec5c">
 		<_field_string_id name="Name" />
 		<_field_custom name="Dumpling settings" />
 		<_field_struct name="Dumpling" />
-		<_field_block_64 name="inner points" max="32">
+		<_field_block_64 name="inner points" max="32" guid="5b797cb1-4931-9aad-827f-d6a4efb8e03a">
 			<_field_real_point_3d name="position" />
 			<_field_real_euler_angles_2d name="normal" />
 		</_field_block_64>
-		<_field_block_64 name="outer points" max="32">
+		<_field_block_64 name="outer points" max="32" guid="5b797cb1-4931-9aad-827f-d6a4efb8e03a">
 			<_field_real_point_3d name="position" />
 			<_field_real_euler_angles_2d name="normal" />
 		</_field_block_64>
@@ -24,7 +24,7 @@
 		<_field_real_point_3d name="center point!" />
 		<_field_real name="trivial cull radius squared!" />
 		<_field_real name="bound volume" />
-		<_field_block_64 name="Editor Metadata!" max="1024">
+		<_field_block_64 name="Editor Metadata!" max="1024" guid="49566d10-3ee6-efbe-6d8c-8eb1db3d0368">
 			<_field_long_string name="data name" />
 			<_field_long_enum name="data type">
 				<item Name="class" />
@@ -42,8 +42,8 @@
 		<_field_struct name="Custom Object Lighting" />
 		<_field_explanation name="Character Lighting">
 </_field_explanation>
-		<_field_block_64 name="Authored Light Probes" max="4">
-			<_field_block_64 name="Lights*" max="1">
+		<_field_block_64 name="Authored Light Probes" max="4" guid="1202400e-e569-5a0d-15ea-96e69adfd5f0">
+			<_field_block_64 name="Lights*" max="1" guid="c2ea80ad-c6ad-e1b9-bed3-7e66ffa3a679">
 				<_field_custom name="Authored Light Probe" />
 				<_field_custom name="Direction 1&amp;Direction(D)" />
 				<_field_real name="Direction 1&amp;Direction(D)" />

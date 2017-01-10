@@ -10,7 +10,7 @@
 	<_field_string_id name="luaFileName" />
 	<_field_data_64 name="luaFileData*" />
 	<_field_long_string name="luaFileNameString*" />
-	<_field_block_64 name="referencedScripts*" max="32">
+	<_field_block_64 name="referencedScripts*" max="32" guid="9e51f865-470a-5707-6dfb-5e8ed56ebeb2">
 		<_field_tag_reference_64 name="script*" />
 	</_field_block_64>
 	<_field_pad name="pad0" length="4" />

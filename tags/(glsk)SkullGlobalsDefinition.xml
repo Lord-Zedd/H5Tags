@@ -5,15 +5,15 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="campaign metagame globals" max="1">
-		<_field_block_64 name="styles" max="100">
+	<_field_block_64 name="campaign metagame globals" max="1" guid="84d6cb38-47ba-9f71-0088-47805c6d0200">
+		<_field_block_64 name="styles" max="100" guid="5dfa1230-4653-8a3d-75d8-939e4248d3af">
 			<_field_string_id name="incident name^" />
 			<_field_real name="style multiplier" />
 		</_field_block_64>
-		<_field_block_64 name="difficulty" max="4">
+		<_field_block_64 name="difficulty" max="4" guid="4c1dfa8f-4eaa-201e-1b85-8bad95e2677d">
 			<_field_real name="difficulty multiplier" />
 		</_field_block_64>
-		<_field_block_64 name="skulls{Primary Skulls}" max="20">
+		<_field_block_64 name="skulls{Primary Skulls}" max="20" guid="8f1530d9-4c93-c5cc-1393-73a6aebac8d5">
 			<_field_real name="difficulty multiplier" />
 		</_field_block_64>
 		<_field_long_integer name="friendly_death_point_count" />

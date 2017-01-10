@@ -9,7 +9,7 @@
 	<_field_custom name="Weapon Attachment" />
 	<_field_string_id name="variant region name" />
 	<_field_string_id name="variant permutation name" />
-	<_field_block_64 name="attachments" max="48">
+	<_field_block_64 name="attachments" max="48" guid="11097257-429c-4775-33d9-75a73f4575ee">
 		<_field_tag_reference_64 name="type^" validtags="ligh, gldf, ltvl, effe, lsnd, lens, cpem, egfd, decs" />
 		<_field_tag_reference_64 name="override type#this attachment will override the attachment on the object that shares this " validtags="ligh, gldf, ltvl, effe, lsnd, lens, cpem, egfd, decs" />
 		<_field_string_id name="marker" />
@@ -32,24 +32,24 @@
 	<_field_explanation name="Attachment Name">Used for damage reporting - we want to know what attachments something has when it deals damage</_field_explanation>
 	<_field_struct name="attachmentName" />
 	<_field_string_id name="Attachment Name" />
-	<_field_block_64 name="attachment object" max="1">
+	<_field_block_64 name="attachment object" max="1" guid="69a0d818-4a18-977c-2ec5-2c9c5c788d2a">
 		<_field_tag_reference_64 name="object" />
 		<_field_string_id name="weapon marker" />
 		<_field_string_id name="attachment marker" />
 	</_field_block_64>
-	<_field_block_64 name="accuracy modifiers" max="1">
+	<_field_block_64 name="accuracy modifiers" max="1" guid="da887998-4a0f-4ed5-7912-3c8f4048154f">
 		<_field_real name="accuracy spread{Accuracy Bloom}:percent" />
 	</_field_block_64>
-	<_field_block_64 name="precision aim modifiers" max="1">
+	<_field_block_64 name="precision aim modifiers" max="1" guid="80940841-4624-313b-546f-658e2d588e96">
 		<_field_real name="precision transition in time modifier:percent" />
 		<_field_real name="precision transition out time modifier:percent" />
 	</_field_block_64>
-	<_field_block_64 name="unit modifiers" max="1">
+	<_field_block_64 name="unit modifiers" max="1" guid="c17f9f40-4926-9ffe-bbb7-7b8e2ad9a775">
 		<_field_real name="move speed scale modifier:percent" />
 		<_field_real name="turn rate scale modifier:percent" />
 		<_field_real name="simulated input scale modifier:percent" />
 	</_field_block_64>
-	<_field_block_64 name="aim assist modifiers" max="1">
+	<_field_block_64 name="aim assist modifiers" max="1" guid="2cb7ba74-4814-28a0-0d7d-2a93c4188131">
 		<_field_real name="autoaim angle:percent#the maximum angle that autoaim works at full strength" />
 		<_field_real name="prioritization angle:percent#angle used to select model targets based on priority" />
 		<_field_real name="autoaim range:percent#autoaim only has an effect along this distance" />
@@ -61,26 +61,26 @@
 		<_field_real name="magnetism near falloff range:percent#at what point magnetism reaches full power" />
 		<_field_real name="deviation angle:percent#the maximum angle that a projectile is allowed to deviate from the gun barrel due to autoaim OR network lead vector reconstruction" />
 	</_field_block_64>
-	<_field_block_64 name="recoil view kick modifiers" max="1">
+	<_field_block_64 name="recoil view kick modifiers" max="1" guid="867b6ceb-45ee-09b7-3487-0c94b40a00b6">
 		<_field_real name="view kick deceleration modifier:percent" />
 		<_field_real name="view kick return to center modifier:percent" />
 	</_field_block_64>
-	<_field_block_64 name="recoil gunkick modifiers" max="1">
+	<_field_block_64 name="recoil gunkick modifiers" max="1" guid="c0b6345a-4408-0b16-986b-de88c03694a1">
 		<_field_real name="gunkick spring constant modifier:percent" />
 	</_field_block_64>
-	<_field_block_64 name="animation modifiers" max="1">
+	<_field_block_64 name="animation modifiers" max="1" guid="f921d36c-4356-b5f6-5bb1-efae74b1566b">
 		<_field_real name="ready playback speed modifier:percent" />
 		<_field_real name="ready initial playback modifier:percent" />
 		<_field_real name="put away playback speed modifier:percent" />
 		<_field_real name="reload playback speed modifier:percent" />
 		<_field_real name="reload while empty playback speed modifier:percent" />
 	</_field_block_64>
-	<_field_block_64 name="heat modifiers" max="1">
+	<_field_block_64 name="heat modifiers" max="1" guid="4a20a34a-469c-b8b1-bdb0-6aa633975ec0">
 		<_field_real name="heat loss per second modifier:percent" />
 		<_field_real name="overheated heat loss per second modifier:percent" />
 		<_field_real name="heat generated per round modifier:percent" />
 	</_field_block_64>
-	<_field_block_64 name="UI display info" max="1">
+	<_field_block_64 name="UI display info" max="1" guid="6bb873fd-472b-52c6-7790-9b90d0074580">
 		<_field_string_id name="name^#short name for the item" />
 		<_field_string_id name="display name#friendly name for the item" />
 		<_field_string_id name="description#general in-universe item description" />
@@ -96,7 +96,7 @@
 	<_field_pad name="endPad" length="4" />
 	<_field_struct name="weapon melee component" />
 	<_field_custom name="Weapon Melee" />
-	<_field_block_64 name="melee damage parameters" max="2">
+	<_field_block_64 name="melee damage parameters" max="2" guid="b9eba02e-a76c-e895-74ea-8baba5c19c40">
 		<_field_explanation name="melee damage parameters">damage pyramid angles: defines the frustum from the camera that the melee-attack uses to find targets
 damage pyramid depth: how far the melee attack searches for a target</_field_explanation>
 		<_field_real_euler_angles_2d name="damage pyramid angles" />

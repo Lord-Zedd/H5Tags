@@ -6,10 +6,10 @@
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
 	<_field_struct name="script data" />
-	<_field_block_64 name="source file references*" max="128">
+	<_field_block_64 name="source file references*" max="128" guid="8cf36b3a-4fcc-8c22-839b-8aa3d20ec8ce">
 		<_field_tag_reference_64 name="reference^" />
 	</_field_block_64>
-	<_field_block_64 name="external source references" max="128">
+	<_field_block_64 name="external source references" max="128" guid="8cf36b3a-4fcc-8c22-839b-8aa3d20ec8ce">
 		<_field_tag_reference_64 name="reference^" />
 	</_field_block_64>
 </plugin>

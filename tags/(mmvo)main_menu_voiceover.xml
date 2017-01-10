@@ -5,7 +5,7 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="lines" max="100">
+	<_field_block_64 name="lines" max="100" guid="a2bd65ab-4ddf-8cf8-7c29-b4901b3ce54c">
 		<_field_tag_reference_64 name="sound^" />
 	</_field_block_64>
 	<_field_pad name="pad_tp" length="4" />

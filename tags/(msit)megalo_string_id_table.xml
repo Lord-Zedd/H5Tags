@@ -5,11 +5,11 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="megalo string_ids" max="512">
+	<_field_block_64 name="megalo string_ids" max="512" guid="6b782187-4e8d-32c2-79e3-17be962b77eb">
 		<_field_string_id name="string_id^" />
 	</_field_block_64>
-	<_field_block_64 name="megalo string_ids sprite mapping" max="256">
-		<_field_custom_long_block_index name="from megalo string_id" />
+	<_field_block_64 name="megalo string_ids sprite mapping" max="256" guid="fc7d7ac9-4548-adf8-cbb5-1980adfdc6c6">
+		<_field_custom_long_block_index name="from megalo string_id" val="megalo_string_collection_search_definition" />
 		<_field_long_integer name="loadout menu sprite frame" />
 	</_field_block_64>
 </plugin>

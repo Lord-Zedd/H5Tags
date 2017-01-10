@@ -5,7 +5,7 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="Narrative Flag Definitions" max="64">
+	<_field_block_64 name="Narrative Flag Definitions" max="64" guid="b43281fc-4268-4c5e-804e-e38495dd6a24">
 		<_field_long_integer name="Index" />
 		<_field_char_enum name="Type">
 			<item Name="Unknown" />

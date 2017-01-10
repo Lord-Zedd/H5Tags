@@ -5,7 +5,7 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="@player information" max="3">
+	<_field_block_64 name="@player information" max="3" guid="45af4745-477d-4d24-2c70-05a2e7ebcae5">
 		<_field_real name="walking speed:world units per second" />
 		<_field_real name="run forward:world units per second" />
 		<_field_real name="run backward:world units per second" />
@@ -40,7 +40,7 @@
 		<_field_real name="fire team sandbox range" />
 		<_field_real name="fire team cone angle: in degrees" />
 	</_field_block_64>
-	<_field_block_64 name="@player camera" max="1">
+	<_field_block_64 name="@player camera" max="1" guid="4c73792c-41f6-c467-44aa-4a8d794cbb50">
 		<_field_explanation name="Pitch values">How fast the first person camera rotates up and down based on the sensitivity preference</_field_explanation>
 		<_field_array name="pitch values">
 			<_field_real name="Angular velocity#degrees per second" />
@@ -95,7 +95,7 @@
 			<_field_real name="Thrust" />
 		</_field_array>
 	</_field_block_64>
-	<_field_block_64 name="@player representation" max="3">
+	<_field_block_64 name="@player representation" max="3" guid="4f35e23a-43d1-facb-26d7-c690b796c449">
 		<_field_byte_flags name="flags">
 			<item Name="can use health packs" />
 		</_field_byte_flags>
@@ -105,7 +105,7 @@
 		<_field_string_id name="first person multiplayer hands variant" />
 		<_field_tag_reference_64 name="first person body model" />
 		<_field_string_id name="first person multiplayer body variant" />
-		<_field_block_64 name="hidden fpBody regions" max="32">
+		<_field_block_64 name="hidden fpBody regions" max="32" guid="b6c7f81f-4d11-2d74-8fb3-a99cc52bf350">
 			<_field_string_id name="hidden region^" />
 			<_field_byte_flags name="flags">
 				<item Name="visible in ICS" />
@@ -116,14 +116,14 @@
 		<_field_string_id name="third person variant" />
 		<_field_tag_reference_64 name="binoculars zoom in sound" validtags="snd!" />
 		<_field_tag_reference_64 name="binoculars zoom out sounds" validtags="snd!" />
-		<_field_long_block_index name="player information" />
-		<_field_block_64 name="Coop teams#The visual representation for the coop fireteams in campaign" max="3">
+		<_field_long_block_index name="player information" srcguid="45af4745-477d-4d24-2c70-05a2e7ebcae5" />
+		<_field_block_64 name="Coop teams#The visual representation for the coop fireteams in campaign" max="3" guid="b17a8ec3-1a80-b7ab-14ca-66bbf54bf982">
 			<_field_long_enum name="Fireteam type">
 				<item Name="Chief (Blue team)" />
 				<item Name="Locke (Osiris Team)" />
 				<item Name="Chief (cracked visor and blue team)" />
 			</_field_long_enum>
-			<_field_block_64 name="Coop player representation#The visual representation a character in the fireteam" max="4">
+			<_field_block_64 name="Coop player representation#The visual representation a character in the fireteam" max="4" guid="1a65f858-1d94-bd46-df48-b6e81d52a380">
 				<_field_tag_reference_64 name="character first person hands model" />
 				<_field_string_id name="character first person hands variant name" />
 				<_field_tag_reference_64 name="character first person body (legs) model" />
@@ -142,7 +142,7 @@
 					<item Name="Vale" />
 				</_field_char_enum>
 				<_field_pad name="pad" length="3" />
-				<_field_block_64 name="hidden regions override#Applied to the first person body (legs) model. If this is left empty, will use the global hidden fpBody regions defined in playerglobals instead." max="32">
+				<_field_block_64 name="hidden regions override#Applied to the first person body (legs) model. If this is left empty, will use the global hidden fpBody regions defined in playerglobals instead." max="32" guid="b6c7f81f-4d11-2d74-8fb3-a99cc52bf350">
 					<_field_string_id name="hidden region^" />
 					<_field_byte_flags name="flags">
 						<item Name="visible in ICS" />
@@ -152,8 +152,8 @@
 			</_field_block_64>
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="default player traits" max="1">
-		<_field_block_64 name="vitality traits" max="1">
+	<_field_block_64 name="default player traits" max="1" guid="aecdfa4e-47fd-7541-81e7-99aa907f53f6">
+		<_field_block_64 name="vitality traits" max="1" guid="8f23b52b-4650-7e56-74d2-6ebde86fa6d5">
 			<_field_long_flags name="should apply trait">
 				<item Name="damage resistance" />
 				<item Name="shield multiplier" />
@@ -210,7 +210,7 @@
 			</_field_char_enum>
 			<_field_pad name="pad" length="3" />
 		</_field_block_64>
-		<_field_block_64 name="weapon traits" max="1">
+		<_field_block_64 name="weapon traits" max="1" guid="b29d76d0-4289-3a95-9dd0-81ab6107a9c0">
 			<_field_long_flags name="should apply trait">
 				<item Name="damage multiplier" />
 				<item Name="melee damage multiplier" />
@@ -261,7 +261,7 @@
 				<item Name="true" />
 			</_field_char_enum>
 			<_field_pad name="pad0" length="3" />
-			<_field_block_64 name="initial grenade count" max="16">
+			<_field_block_64 name="initial grenade count" max="16" guid="5819a7ec-4fc4-6525-f005-c197a4decad8">
 				<_field_tag_reference_64 name="grenade reference" />
 				<_field_char_integer name="count" />
 				<_field_pad name="pad0" length="3" />
@@ -322,7 +322,7 @@
 			<_field_string_id name="initial tactical package" />
 			<_field_string_id name="initial support upgrade" />
 		</_field_block_64>
-		<_field_block_64 name="movement traits" max="1">
+		<_field_block_64 name="movement traits" max="1" guid="4f62673d-46f6-6d61-4d68-a6a3b367c138">
 			<_field_long_flags name="should apply trait">
 				<item Name="speed" />
 				<item Name="gravity multiplier" />
@@ -387,7 +387,7 @@
 			</_field_char_enum>
 			<_field_pad name="grue" length="3" />
 		</_field_block_64>
-		<_field_block_64 name="appearance traits" max="1">
+		<_field_block_64 name="appearance traits" max="1" guid="3f915812-41dc-ea75-a641-bca001fc1ce8">
 			<_field_char_enum name="active camo">
 				<item Name="unchanged" />
 				<item Name="off" />
@@ -419,7 +419,7 @@
 			<_field_string_id name="death effect" />
 			<_field_string_id name="attached effect" />
 		</_field_block_64>
-		<_field_block_64 name="sensor traits" max="1">
+		<_field_block_64 name="sensor traits" max="1" guid="e4c40b0c-4b60-e067-7133-10aaaa5dfe9b">
 			<_field_long_flags name="should apply trait">
 				<item Name="motion tracker range" />
 			</_field_long_flags>

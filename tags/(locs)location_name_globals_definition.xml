@@ -5,7 +5,7 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="location names" max="1024">
+	<_field_block_64 name="location names" max="1024" guid="04dce9a5-4478-6a09-32b1-8e8b6a5a8c2a">
 		<_field_string_id name="name^" />
 	</_field_block_64>
 	<_field_tag_reference_64 name="location name string list" />

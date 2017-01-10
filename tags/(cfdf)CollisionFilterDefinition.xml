@@ -5,10 +5,10 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="types~" max="255">
+	<_field_block_64 name="types~" max="255" guid="38026b63-4390-2361-9109-deadde3df413">
 		<_field_string_id name="name~" />
 	</_field_block_64>
-	<_field_block_64 name="layers~" max="520200">
+	<_field_block_64 name="layers~" max="520200" guid="edb2780b-45f0-189b-0b23-379b76113080">
 		<_field_char_integer name="collision~" />
 	</_field_block_64>
 </plugin>

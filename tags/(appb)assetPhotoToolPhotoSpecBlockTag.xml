@@ -5,7 +5,7 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="photo specs" max="128">
+	<_field_block_64 name="photo specs" max="128" guid="72d73bb7-450f-dfa4-f030-ea83cb2919ed">
 		<_field_tag_reference_64 name="photo spec reference" />
 	</_field_block_64>
 	<_field_pad name="pad0" length="4" />

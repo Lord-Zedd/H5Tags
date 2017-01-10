@@ -8,7 +8,7 @@
 	<_field_real_rgb_color name="color" />
 	<_field_real_rgb_color name="UI fill meter color" />
 	<_field_real_rgb_color name="UI backer bitmap color" />
-	<_field_block_64 name="properties" max="32">
+	<_field_block_64 name="properties" max="32" guid="0f9304be-472a-a430-7021-aba4b3c77452">
 		<_field_string_id name="malleable property name" />
 		<_field_real name="scalar#scales the movement speed" />
 		<_field_real name="duration#how long the scale is applied" />

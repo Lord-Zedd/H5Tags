@@ -5,7 +5,7 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="font references" max="512">
+	<_field_block_64 name="font references" max="512" guid="bfcec7c4-4183-bfc3-241d-7894be04e860">
 		<_field_tag_reference_64 name="font" />
 		<_field_long_flags name="WPF All Languages">
 			<item Name="All" />

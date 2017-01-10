@@ -5,7 +5,7 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="achievement" max="256">
+	<_field_block_64 name="achievement" max="256" guid="7549688b-4edf-d7d7-ef71-ac92f5943d57">
 		<_field_string_id name="name^" />
 		<_field_char_enum name="type">
 			<item Name="m10_complete" />
@@ -73,7 +73,7 @@
 			<item Name="legendary" />
 		</_field_byte_flags>
 		<_field_pad name="VJNOSNJER" length="2" />
-		<_field_block_64 name="restricted levels" max="5">
+		<_field_block_64 name="restricted levels" max="5" guid="55cef750-4598-5141-432f-6b96e5236c4a">
 			<_field_string_id name="level name^#Compared to map name in scenario" />
 		</_field_block_64>
 	</_field_block_64>

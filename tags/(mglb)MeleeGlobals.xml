@@ -45,7 +45,7 @@ These are hidden by default and must be modified in expert mode.</_field_explana
 	<_field_real name="lunge acceleration time:seconds#default[0.1]" />
 	<_field_real name="lunge deceleration time:seconds#default[0.1]" />
 	<_field_custom name="default melee damage" />
-	<_field_block_64 name="default damage" max="2">
+	<_field_block_64 name="default damage" max="2" guid="b9eba02e-a76c-e895-74ea-8baba5c19c40">
 		<_field_explanation name="melee damage parameters">damage pyramid angles: defines the frustum from the camera that the melee-attack uses to find targets
 damage pyramid depth: how far the melee attack searches for a target</_field_explanation>
 		<_field_real_euler_angles_2d name="damage pyramid angles" />

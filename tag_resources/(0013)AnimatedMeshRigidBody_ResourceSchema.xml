@@ -2,25 +2,25 @@
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="Runtime*!~" />
-	<_field_block_64 name="Render stats per frame" max="3000">
-		<_field_block_64 name="Render stats per frame per material" max="32">
+	<_field_block_64 name="Render stats per frame" max="3000" guid="7afe1bf3-4867-e1b2-8cf6-6e8cbfa3ec29">
+		<_field_block_64 name="Render stats per frame per material" max="32" guid="a27d0165-418a-0e63-8429-d4a743707eb9">
 			<_field_dword_integer name="Index buffer start index" />
 			<_field_dword_integer name="Index buffer indices count" />
 			<_field_dword_integer name="Vertex buffer start index" />
 			<_field_dword_integer name="Vertex buffer vertices count" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="Bounds per frame" max="3000">
+	<_field_block_64 name="Bounds per frame" max="3000" guid="003f8ace-9ebb-94d3-8b46-1f862498ee93">
 		<_field_real_point_3d name="Position AABB min" />
 		<_field_real_point_3d name="Position AABB extents" />
 	</_field_block_64>
-	<_field_block_64 name="Referenced parts per material" max="32">
-		<_field_block_64 name="Referenced part indices" max="8192">
+	<_field_block_64 name="Referenced parts per material" max="32" guid="c2f3c539-4fa3-8f14-6666-3f8f8c36e0cd">
+		<_field_block_64 name="Referenced part indices" max="8192" guid="0a57c5f1-49f4-bdc7-6d48-c992bcd17d7b">
 			<_field_word_integer name="word*" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="Part transforms per frame" max="3000">
-		<_field_block_64 name="Part transform" max="32768">
+	<_field_block_64 name="Part transforms per frame" max="3000" guid="fd90fbe2-4877-22de-5e91-1d86269e2a83">
+		<_field_block_64 name="Part transform" max="32768" guid="a8c4c449-480a-4a39-916f-619760d77b74">
 			<_field_array name="Compressed quantized rigid transform">
 				<_field_dword_integer name="Compressed quantized rigid transform channel*!" />
 				<_field_dword_integer name="Compressed quantized rigid transform channel*!" />
@@ -28,17 +28,17 @@
 			</_field_array>
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="Compound index buffer" max="2621400">
+	<_field_block_64 name="Compound index buffer" max="2621400" guid="73514b8e-4978-5ea5-0d44-aa8a4cc2e199">
 		<_field_dword_integer name="dword*" />
 	</_field_block_64>
-	<_field_block_64 name="Compound vertex buffer" max="1048560">
+	<_field_block_64 name="Compound vertex buffer" max="1048560" guid="914b228f-41fb-bc09-ee20-adadc253b97a">
 		<_field_real_point_3d name="position" />
 		<_field_real name="texcoord" />
 		<_field_dword_integer name="normal" />
 		<_field_dword_integer name="tangent" />
 		<_field_dword_integer name="part index" />
 	</_field_block_64>
-	<_field_block_64 name="Transform vertex buffer" max="1048560">
+	<_field_block_64 name="Transform vertex buffer" max="1048560" guid="3299ccb6-49e2-cc34-1888-df8095033e34">
 		<_field_real_point_3d name="position" />
 		<_field_dword_integer name="half texcoord" />
 		<_field_dword_integer name="compressed normal" />

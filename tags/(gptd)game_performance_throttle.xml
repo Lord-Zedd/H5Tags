@@ -5,7 +5,7 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="entries" max="32">
+	<_field_block_64 name="entries" max="32" guid="7195a903-49a5-69be-5e30-cdc5dc8f8657">
 		<_field_struct name="filter" />
 		<_field_long_integer name="minimum player count" />
 		<_field_struct name="profile" />

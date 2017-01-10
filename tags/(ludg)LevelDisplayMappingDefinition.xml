@@ -5,9 +5,9 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="Level UI Data" max="100">
+	<_field_block_64 name="Level UI Data" max="100" guid="0b5899e7-4f3d-175b-6513-b989ef29398a">
 		<_field_tag_reference_64 name="scenario" />
-		<_field_block_64 name="images" max="10">
+		<_field_block_64 name="images" max="10" guid="887b2d7a-4b72-1aec-1429-fa9038116114">
 			<_field_string_id name="image name" />
 			<_field_tag_reference_64 name="sprite" />
 			<_field_short_integer name="sprite index" />

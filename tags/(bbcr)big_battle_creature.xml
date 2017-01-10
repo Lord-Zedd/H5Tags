@@ -68,18 +68,18 @@
 	<_field_string_id name="dead material name#collision material used when character is dead" />
 	<_field_short_integer name="runtime global material type!" />
 	<_field_short_integer name="runtime dead global material type!" />
-	<_field_block_64 name="dead sphere shapes*#don't edit!" max="16384">
+	<_field_block_64 name="dead sphere shapes*#don't edit!" max="16384" guid="80c5709c-4180-37da-8a27-8fa8ee3e942f">
 		<_field_int64_integer name="field pointer skip!~" />
-		<_field_block_64 name="primitive^*!" max="16384">
+		<_field_block_64 name="primitive^*!" max="16384" guid="c9ec3299-40e7-2886-36f5-2697b1dc2c04">
 			<_field_string_id name="name^*!" />
 			<_field_real name="relative mass scale" />
 			<_field_real_fraction name="friction" />
 			<_field_real_fraction name="restitution" />
 			<_field_real name="volume *" />
 			<_field_real name="mass*!" />
-			<_field_long_block_index name="phantom*" />
+			<_field_long_block_index name="phantom*" srcguid="80c5709c-4180-37da-8a27-8fa8ee3e942f" />
 			<_field_short_integer name="runtime material type*~!" />
-			<_field_char_block_index name="material*" />
+			<_field_char_block_index name="material*" srcguid="b42ceadd-4c5c-135a-3b6f-e7b913a951fb" />
 			<_field_byte_flags name="material flags*">
 				<item Name="supresses effects" />
 				<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
@@ -93,18 +93,18 @@
 		<_field_data_64 name="TagFile Data*!" />
 		<_field_pad name="pad" length="4" />
 	</_field_block_64>
-	<_field_block_64 name="transformed dead sphere shapes*#don't edit!" max="16384">
+	<_field_block_64 name="transformed dead sphere shapes*#don't edit!" max="16384" guid="80c5709c-4180-37da-8a27-8fa8ee3e942f">
 		<_field_int64_integer name="field pointer skip!~" />
-		<_field_block_64 name="primitive^*!" max="16384">
+		<_field_block_64 name="primitive^*!" max="16384" guid="c9ec3299-40e7-2886-36f5-2697b1dc2c04">
 			<_field_string_id name="name^*!" />
 			<_field_real name="relative mass scale" />
 			<_field_real_fraction name="friction" />
 			<_field_real_fraction name="restitution" />
 			<_field_real name="volume *" />
 			<_field_real name="mass*!" />
-			<_field_long_block_index name="phantom*" />
+			<_field_long_block_index name="phantom*" srcguid="80c5709c-4180-37da-8a27-8fa8ee3e942f" />
 			<_field_short_integer name="runtime material type*~!" />
-			<_field_char_block_index name="material*" />
+			<_field_char_block_index name="material*" srcguid="b42ceadd-4c5c-135a-3b6f-e7b913a951fb" />
 			<_field_byte_flags name="material flags*">
 				<item Name="supresses effects" />
 				<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
@@ -118,18 +118,18 @@
 		<_field_data_64 name="TagFile Data*!" />
 		<_field_pad name="pad" length="4" />
 	</_field_block_64>
-	<_field_block_64 name="pill shapes*#don't edit!" max="16384">
+	<_field_block_64 name="pill shapes*#don't edit!" max="16384" guid="80c5709c-4180-37da-8a27-8fa8ee3e942f">
 		<_field_int64_integer name="field pointer skip!~" />
-		<_field_block_64 name="primitive^*!" max="16384">
+		<_field_block_64 name="primitive^*!" max="16384" guid="c9ec3299-40e7-2886-36f5-2697b1dc2c04">
 			<_field_string_id name="name^*!" />
 			<_field_real name="relative mass scale" />
 			<_field_real_fraction name="friction" />
 			<_field_real_fraction name="restitution" />
 			<_field_real name="volume *" />
 			<_field_real name="mass*!" />
-			<_field_long_block_index name="phantom*" />
+			<_field_long_block_index name="phantom*" srcguid="80c5709c-4180-37da-8a27-8fa8ee3e942f" />
 			<_field_short_integer name="runtime material type*~!" />
-			<_field_char_block_index name="material*" />
+			<_field_char_block_index name="material*" srcguid="b42ceadd-4c5c-135a-3b6f-e7b913a951fb" />
 			<_field_byte_flags name="material flags*">
 				<item Name="supresses effects" />
 				<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
@@ -143,18 +143,18 @@
 		<_field_data_64 name="TagFile Data*!" />
 		<_field_pad name="pad" length="4" />
 	</_field_block_64>
-	<_field_block_64 name="sphere shapes*#don't edit!" max="16384">
+	<_field_block_64 name="sphere shapes*#don't edit!" max="16384" guid="80c5709c-4180-37da-8a27-8fa8ee3e942f">
 		<_field_int64_integer name="field pointer skip!~" />
-		<_field_block_64 name="primitive^*!" max="16384">
+		<_field_block_64 name="primitive^*!" max="16384" guid="c9ec3299-40e7-2886-36f5-2697b1dc2c04">
 			<_field_string_id name="name^*!" />
 			<_field_real name="relative mass scale" />
 			<_field_real_fraction name="friction" />
 			<_field_real_fraction name="restitution" />
 			<_field_real name="volume *" />
 			<_field_real name="mass*!" />
-			<_field_long_block_index name="phantom*" />
+			<_field_long_block_index name="phantom*" srcguid="80c5709c-4180-37da-8a27-8fa8ee3e942f" />
 			<_field_short_integer name="runtime material type*~!" />
-			<_field_char_block_index name="material*" />
+			<_field_char_block_index name="material*" srcguid="b42ceadd-4c5c-135a-3b6f-e7b913a951fb" />
 			<_field_byte_flags name="material flags*">
 				<item Name="supresses effects" />
 				<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
@@ -168,18 +168,18 @@
 		<_field_data_64 name="TagFile Data*!" />
 		<_field_pad name="pad" length="4" />
 	</_field_block_64>
-	<_field_block_64 name="compund sphere shapes*#don't edit!" max="16384">
+	<_field_block_64 name="compund sphere shapes*#don't edit!" max="16384" guid="80c5709c-4180-37da-8a27-8fa8ee3e942f">
 		<_field_int64_integer name="field pointer skip!~" />
-		<_field_block_64 name="primitive^*!" max="16384">
+		<_field_block_64 name="primitive^*!" max="16384" guid="c9ec3299-40e7-2886-36f5-2697b1dc2c04">
 			<_field_string_id name="name^*!" />
 			<_field_real name="relative mass scale" />
 			<_field_real_fraction name="friction" />
 			<_field_real_fraction name="restitution" />
 			<_field_real name="volume *" />
 			<_field_real name="mass*!" />
-			<_field_long_block_index name="phantom*" />
+			<_field_long_block_index name="phantom*" srcguid="80c5709c-4180-37da-8a27-8fa8ee3e942f" />
 			<_field_short_integer name="runtime material type*~!" />
-			<_field_char_block_index name="material*" />
+			<_field_char_block_index name="material*" srcguid="b42ceadd-4c5c-135a-3b6f-e7b913a951fb" />
 			<_field_byte_flags name="material flags*">
 				<item Name="supresses effects" />
 				<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
@@ -285,7 +285,7 @@
 	<_field_real name="non directional vertical acceleration:wu per second squared" />
 	<_field_tag_reference_64 name="impact damage" />
 	<_field_tag_reference_64 name="impact shield damage#if not specified, uses 'impact damage'" />
-	<_field_block_64 name="campaign metagame bucket" max="1">
+	<_field_block_64 name="campaign metagame bucket" max="1" guid="63d7ee66-4d6f-cfe4-718e-5abc62e52871">
 		<_field_byte_flags name="flags">
 			<item Name="only counts with riders" />
 		</_field_byte_flags>
@@ -352,8 +352,8 @@
 		<_field_short_integer name="point count" />
 		<_field_pad name="pad1" length="2" />
 	</_field_block_64>
-	<_field_block_64 name="Sound RTPCs" max="32">
-		<_field_long_block_index name="Attachment Index#Sound attachment to affect" />
+	<_field_block_64 name="Sound RTPCs" max="32" guid="6edcfd78-4177-1147-644d-27b8b574d61d">
+		<_field_long_block_index name="Attachment Index#Sound attachment to affect" srcguid="11097257-429c-4775-33d9-75a73f4575ee" />
 		<_field_string_id name="Function#Function to drive the RTPC" />
 		<_field_string_id name="RTPC Name#WWise RTPC string name" />
 		<_field_long_integer name="RTPC name hash value*!" />
@@ -370,7 +370,7 @@
 	<_field_real_point_3d name="big battle weapon offset" />
 	<_field_tag_reference_64 name="big battle weapon emitter 2#if you leave this empty, only the first emitter will fire" />
 	<_field_real_point_3d name="big battle weapon offset 2" />
-	<_field_block_64 name="big battle weapon fire timing" max="1">
+	<_field_block_64 name="big battle weapon fire timing" max="1" guid="3bf7e066-44f4-d7b2-e592-a3a9cf91c10b">
 		<_field_struct name="function_curve" />
 		<_field_data_64 name="data" />
 	</_field_block_64>

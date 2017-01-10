@@ -5,8 +5,8 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="campaign globals" max="15">
-		<_field_block_64 name="maps" max="3">
+	<_field_block_64 name="campaign globals" max="15" guid="f61ec9e0-42c7-5d9f-9e6b-779a345339c9">
+		<_field_block_64 name="maps" max="3" guid="087bef9f-4144-6634-0fc7-5b97bde82fe4">
 			<_field_long_integer name="map id" />
 			<_field_string_id name="map name" />
 		</_field_block_64>

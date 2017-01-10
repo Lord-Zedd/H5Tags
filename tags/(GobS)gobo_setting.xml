@@ -6,7 +6,7 @@
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
 	<_field_explanation name="Gobos" />
-	<_field_block_64 name="Gobos" max="4">
+	<_field_block_64 name="Gobos" max="4" guid="094ea2e1-c126-09db-deca-ca09ee99df09">
 		<_field_char_enum name="bitmap address mode">
 			<item Name="wrap" />
 			<item Name="clamp" />
@@ -25,7 +25,7 @@
 		</_field_char_enum>
 		<_field_pad name="gobo_pad_0" length="2" />
 		<_field_tag_reference_64 name="Bitmap" />
-		<_field_block_64 name="animation parameters" max="32767">
+		<_field_block_64 name="animation parameters" max="32767" guid="0295746e-ee71-7e12-de0c-bcba6bc39979">
 			<_field_long_enum name="type^">
 				<item Name="offset u" />
 				<item Name="offset v" />
@@ -50,7 +50,7 @@
 			<_field_data_64 name="data" />
 		</_field_block_64>
 		<_field_tag_reference_64 name="Displacement Bitmap" />
-		<_field_block_64 name="displacement animation parameters" max="32767">
+		<_field_block_64 name="displacement animation parameters" max="32767" guid="0295746e-ee71-7e12-de0c-bcba6bc39979">
 			<_field_long_enum name="type^">
 				<item Name="offset u" />
 				<item Name="offset v" />

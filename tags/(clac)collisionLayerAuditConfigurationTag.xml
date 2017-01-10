@@ -5,10 +5,10 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="ignored directories" max="256">
+	<_field_block_64 name="ignored directories" max="256" guid="fb98340e-477f-ab78-d6c6-49bc66924ec4">
 		<_field_long_string name="string" />
 	</_field_block_64>
-	<_field_block_64 name="ignored files" max="256">
+	<_field_block_64 name="ignored files" max="256" guid="fb98340e-477f-ab78-d6c6-49bc66924ec4">
 		<_field_long_string name="string" />
 	</_field_block_64>
 </plugin>

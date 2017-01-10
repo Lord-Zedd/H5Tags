@@ -2,11 +2,11 @@
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_struct name="resource_items" />
-	<_field_block_64 name="collision bsp*" max="1">
-		<_field_block_64 name="bsp3d nodes*" max="8388608">
+	<_field_block_64 name="collision bsp*" max="1" guid="e15e4f1b-442d-1f17-bbf6-30874520e0c0">
+		<_field_block_64 name="bsp3d nodes*" max="8388608" guid="b5d8fc21-48e7-ff8e-521f-6192a371733e">
 			<_field_int64_integer name="node data designator!" />
 		</_field_block_64>
-		<_field_block_64 name="bsp3d supernodes*" max="2048">
+		<_field_block_64 name="bsp3d supernodes*" max="2048" guid="abcdc201-4fa9-1012-b40a-40a7bcb41ae0">
 			<_field_real name="plane 0*!" />
 			<_field_real name="plane 1*!" />
 			<_field_real name="plane 2*!" />
@@ -40,10 +40,10 @@
 			<_field_long_integer name="child index14*!" />
 			<_field_long_integer name="child index15*!" />
 		</_field_block_64>
-		<_field_block_64 name="planes*" max="536870911">
+		<_field_block_64 name="planes*" max="536870911" guid="5d188a8d-4e0d-719c-daa6-1580eb42e322">
 			<_field_real_plane_3d name="plane*" />
 		</_field_block_64>
-		<_field_block_64 name="leaves*" max="8388608">
+		<_field_block_64 name="leaves*" max="8388608" guid="a5fd8ee3-4ecc-9a64-fbf2-eb9ca10c0345">
 			<_field_byte_flags name="flags*">
 				<item Name="contains double-sided surfaces" />
 			</_field_byte_flags>
@@ -51,16 +51,16 @@
 			<_field_word_integer name="bsp2d reference count*" />
 			<_field_dword_integer name="first bsp2d reference*" />
 		</_field_block_64>
-		<_field_block_64 name="bsp2d references*" max="196608">
+		<_field_block_64 name="bsp2d references*" max="196608" guid="591e809e-445f-8c38-6fde-89b8ff74543b">
 			<_field_short_integer name="plane*" />
 			<_field_short_integer name="bsp2d node*" />
 		</_field_block_64>
-		<_field_block_64 name="bsp2d nodes*" max="32767">
+		<_field_block_64 name="bsp2d nodes*" max="32767" guid="6cd60c8c-4124-c73b-8c40-39b3bed36a96">
 			<_field_real_plane_2d name="plane*" />
 			<_field_short_integer name="left child*" />
 			<_field_short_integer name="right child*" />
 		</_field_block_64>
-		<_field_block_64 name="surfaces*" max="32767">
+		<_field_block_64 name="surfaces*" max="32767" guid="7ab81935-4b88-010a-80de-12ab3991cd85">
 			<_field_word_integer name="plane index*" />
 			<_field_word_integer name="first edge*" />
 			<_field_short_integer name="material*" />
@@ -75,7 +75,7 @@
 			</_field_byte_flags>
 			<_field_byte_integer name="best plane calculation vertex index *!" />
 		</_field_block_64>
-		<_field_block_64 name="edges*" max="65535">
+		<_field_block_64 name="edges*" max="65535" guid="b51da635-4400-ec53-338c-b581fdcadcd1">
 			<_field_word_integer name="start vertex*" />
 			<_field_word_integer name="end vertex*" />
 			<_field_word_integer name="forward edge*" />
@@ -83,19 +83,19 @@
 			<_field_word_integer name="left surface*" />
 			<_field_word_integer name="right surface*" />
 		</_field_block_64>
-		<_field_block_64 name="vertices*" max="131072">
+		<_field_block_64 name="vertices*" max="131072" guid="6c3f6a60-4c6a-1fce-65e2-898f602f6de5">
 			<_field_real_point_3d name="point*" />
 			<_field_word_integer name="first edge*" />
 			<_field_short_integer name="sink*!" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="large collision bsp*" max="1">
-		<_field_block_64 name="bsp3d nodes*" max="536870911">
+	<_field_block_64 name="large collision bsp*" max="1" guid="e15aaf1b-422d-bf17-dbf6-30b74320e0cd">
+		<_field_block_64 name="bsp3d nodes*" max="536870911" guid="b16070e2-48dd-373c-386e-53bce0e279a9">
 			<_field_long_integer name="plane*" />
 			<_field_long_integer name="back child*" />
 			<_field_long_integer name="front child*" />
 		</_field_block_64>
-		<_field_block_64 name="bsp3d supernodes*" max="2048">
+		<_field_block_64 name="bsp3d supernodes*" max="2048" guid="abcdc201-4fa9-1012-b40a-40a7bcb41ae0">
 			<_field_real name="plane 0*!" />
 			<_field_real name="plane 1*!" />
 			<_field_real name="plane 2*!" />
@@ -129,26 +129,26 @@
 			<_field_long_integer name="child index14*!" />
 			<_field_long_integer name="child index15*!" />
 		</_field_block_64>
-		<_field_block_64 name="planes*" max="536870911">
+		<_field_block_64 name="planes*" max="536870911" guid="5d188a8d-4e0d-719c-daa6-1580eb42e322">
 			<_field_real_plane_3d name="plane*" />
 		</_field_block_64>
-		<_field_block_64 name="leaves*" max="134217728">
+		<_field_block_64 name="leaves*" max="134217728" guid="6facafaa-4c58-8b1c-aa73-3391949e8a7c">
 			<_field_word_flags name="flags*">
 				<item Name="contains double-sided surfaces" />
 			</_field_word_flags>
 			<_field_short_integer name="bsp2d reference count*" />
 			<_field_long_integer name="first bsp2d reference*" />
 		</_field_block_64>
-		<_field_block_64 name="bsp2d references*" max="536870911">
+		<_field_block_64 name="bsp2d references*" max="536870911" guid="7e600865-49ee-4813-6655-59aabbc2d94f">
 			<_field_long_integer name="plane*" />
 			<_field_long_integer name="bsp2d node*" />
 		</_field_block_64>
-		<_field_block_64 name="bsp2d nodes*" max="536870911">
+		<_field_block_64 name="bsp2d nodes*" max="536870911" guid="c17973c7-4ee5-16c1-77a2-0fa450802d21">
 			<_field_real_plane_2d name="plane*" />
 			<_field_long_integer name="left child*" />
 			<_field_long_integer name="right child*" />
 		</_field_block_64>
-		<_field_block_64 name="surfaces*" max="262136">
+		<_field_block_64 name="surfaces*" max="262136" guid="abf80b98-4c5b-0016-3d56-ceba8945a104">
 			<_field_long_integer name="plane index*" />
 			<_field_long_integer name="first edge*" />
 			<_field_short_integer name="material*" />
@@ -163,7 +163,7 @@
 			</_field_byte_flags>
 			<_field_byte_integer name="best plane calculation vertex index *!" />
 		</_field_block_64>
-		<_field_block_64 name="edges*" max="2621440">
+		<_field_block_64 name="edges*" max="2621440" guid="76b24be8-4464-e157-619c-c0b771348f94">
 			<_field_long_integer name="start vertex*" />
 			<_field_long_integer name="end vertex*" />
 			<_field_long_integer name="forward edge*" />
@@ -171,13 +171,13 @@
 			<_field_long_integer name="left surface*" />
 			<_field_long_integer name="right surface*" />
 		</_field_block_64>
-		<_field_block_64 name="vertices*" max="1310720">
+		<_field_block_64 name="vertices*" max="1310720" guid="0459797b-4186-f03b-788c-63aadd791bd4">
 			<_field_real_point_3d name="point*" />
 			<_field_long_integer name="first edge*" />
 			<_field_long_integer name="sink*!" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="instanced geometries definitions*" max="2048">
+	<_field_block_64 name="instanced geometries definitions*" max="2048" guid="f51d0b5f-4eb1-9195-1f7e-0c8b828f1685">
 		<_field_long_integer name="checksum*" />
 		<_field_long_flags name="flags*">
 			<item Name="miscolored bsp" />
@@ -193,16 +193,16 @@
 		<_field_short_integer name="external_index" />
 		<_field_pad name="useme" length="2" />
 	</_field_block_64>
-	<_field_block_64 name="Havok Data*" max="1">
+	<_field_block_64 name="Havok Data*" max="1" guid="07320729-468d-546a-213f-b6bd418cc5f4">
 		<_field_long_integer name="Prefab Index*!" />
-		<_field_block_64 name="Serialized Per Collision Type Havok Geometry" max="3">
+		<_field_block_64 name="Serialized Per Collision Type Havok Geometry" max="3" guid="462d260a-4227-3c7e-ddcd-c2b0fa66e2a8">
 			<_field_int64_integer name="field pointer skip!~" />
 			<_field_long_integer name="collision type" />
 			<_field_long_integer name="number of shapes" />
 			<_field_data_64 name="Packfile Data*!" />
 			<_field_data_64 name="TagFile Data*!" />
 		</_field_block_64>
-		<_field_block_64 name="Serialized Per Collision Type Havok Geometry Inverted" max="3">
+		<_field_block_64 name="Serialized Per Collision Type Havok Geometry Inverted" max="3" guid="462d260a-4227-3c7e-ddcd-c2b0fa66e2a8">
 			<_field_int64_integer name="field pointer skip!~" />
 			<_field_long_integer name="collision type" />
 			<_field_long_integer name="number of shapes" />

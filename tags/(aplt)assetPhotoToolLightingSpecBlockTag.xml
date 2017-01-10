@@ -5,7 +5,7 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="lighting specs" max="128">
+	<_field_block_64 name="lighting specs" max="128" guid="c92ae0e8-4afa-12bd-95ed-68a479cf2d8b">
 		<_field_string_id name="lighting variant id" />
 		<_field_long_flags name="flags">
 			<item Name="use lightmapped object visibility" />

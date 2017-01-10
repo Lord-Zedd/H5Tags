@@ -5,13 +5,13 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="packs" max="512">
+	<_field_block_64 name="packs" max="512" guid="8787e476-4c3b-7e89-df33-a0a1cce3dfe0">
 		<_field_tag_reference_64 name="pack^" />
 	</_field_block_64>
 	<_field_long_integer name="starting credits" />
 	<_field_long_integer name="starting currency" />
 	<_field_long_integer name="credits to grant on match complete" />
-	<_field_block_64 name="in game terminal category UI data" max="16">
+	<_field_block_64 name="in game terminal category UI data" max="16" guid="e74e3363-4502-0e08-3fcf-7b805523519f">
 		<_field_string name="name" />
 		<_field_tag_reference_64 name="icon bitmap" />
 		<_field_long_integer name="icon sprite index" />

@@ -5,7 +5,7 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="classes" max="2">
+	<_field_block_64 name="classes" max="2" guid="4b0239eb-4e9f-e7e4-3586-3c9a9bf660a6">
 		<_field_short_enum name="type">
 			<item Name="shielded" />
 			<item Name="unshielded" />
@@ -61,13 +61,13 @@
 		<_field_tag_reference_64 name="simulated_input zoomed #falls back on simulated input if untuned" />
 		<_field_tag_reference_64 name="simulated_input descope #if not specified, fallsback to zoomed" />
 		<_field_explanation name="global sound effect" />
-		<_field_block_64 name="global sound effect" max="1">
+		<_field_block_64 name="global sound effect" max="1" guid="d8af888d-4554-5da5-0382-fa8016ed6ec9">
 			<_field_string_id name="effect name" />
 			<_field_struct name="scale =&gt; duration:seconds" />
 			<_field_data_64 name="data" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="area control" max="1">
+	<_field_block_64 name="area control" max="1" guid="865d9c15-4f67-2638-176b-338fde738ae2">
 		<_field_explanation name="AREA CONTROL">Higher level scale controls for camera shake, camera impulse and rumble.</_field_explanation>
 		<_field_word_flags name="flags">
 			<item Name="distance_falloff" />

@@ -5,7 +5,7 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="difficulty" max="1">
+	<_field_block_64 name="difficulty" max="1" guid="9c84698c-40b5-a3cf-6960-73b46b01d1ab">
 		<_field_explanation name="health">scale values for enemy health and damage settings</_field_explanation>
 		<_field_real name="easy enemy damage#enemy damage multiplier on easy difficulty" />
 		<_field_real name="normal enemy damage#enemy damage multiplier on normal difficulty" />
@@ -161,7 +161,7 @@
 		<_field_real name="imposs. bunker closed duration#scalar for how long to stay closed while bunkering on impossible difficulty" />
 		<_field_pad name="$$$$" length="16" />
 	</_field_block_64>
-	<_field_block_64 name="co-op difficulty" max="1">
+	<_field_block_64 name="co-op difficulty" max="1" guid="77c24405-4f7c-ca61-bdd3-929145809188">
 		<_field_explanation name="vitality">scale values for enemy health and shield settings</_field_explanation>
 		<_field_real name="two-player shield recharge delay#multiplier on enemy shield recharge delay with two coop players" />
 		<_field_real name="four-player shield recharge delay#multiplier on enemy shield recharge delay with four coop players" />

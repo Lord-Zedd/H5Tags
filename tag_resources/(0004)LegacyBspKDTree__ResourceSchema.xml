@@ -1,7 +1,7 @@
 <!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
 <!-- Made by Zedd lol -->
 <plugin>
-	<_field_block_64 name="super aabbs*!" max="32768">
+	<_field_block_64 name="super aabbs*!" max="32768" guid="abaaaa8a-4161-3204-2fca-6734bf1647ad">
 		<_field_real name="x0" />
 		<_field_real name="x1" />
 		<_field_real name="y0" />
@@ -9,46 +9,46 @@
 		<_field_real name="z0" />
 		<_field_real name="z1" />
 	</_field_block_64>
-	<_field_block_64 name="super node parent mappings*!" max="2048">
+	<_field_block_64 name="super node parent mappings*!" max="2048" guid="61aa468a-4161-0a04-2fca-67b1bf1627cb">
 		<_field_short_integer name="parent_super_node_index!*" />
 		<_field_char_integer name="parent_internal_node_index!*" />
 		<_field_byte_flags name="flags!*">
 			<item Name="above" />
 		</_field_byte_flags>
 		<_field_long_integer name="has_traversal_geometry_mask!*" />
-		<_field_short_block_index name="first_traversal_geometry_index!*" />
-		<_field_short_block_index name="first_aabb_index!*" />
+		<_field_short_block_index name="first_traversal_geometry_index!*" srcguid="61aaaa8a-4161-8004-2fca-6731bf1647cd" />
+		<_field_short_block_index name="first_aabb_index!*" srcguid="abaaaa8a-4161-3204-2fca-6734bf1647ad" />
 		<_field_long_integer name="aabb_mask!*" />
-		<_field_short_block_index name="non_terminal_traversal_geometry_index!*" />
+		<_field_short_block_index name="non_terminal_traversal_geometry_index!*" srcguid="61aaaa8a-4161-8004-2fca-6731bf1647cd" />
 		<_field_pad name="pad" length="2" />
 	</_field_block_64>
-	<_field_block_64 name="super node recursable_masks*!" max="2048">
+	<_field_block_64 name="super node recursable_masks*!" max="2048" guid="61ab468a-4161-ca04-afca-67b1bf16271b">
 		<_field_short_integer name="mask!*" />
 	</_field_block_64>
-	<_field_block_64 name="structure_super_node_traversal_geometry_block*!" max="32767">
-		<_field_block_64 name="portal_indices!*" max="1000">
+	<_field_block_64 name="structure_super_node_traversal_geometry_block*!" max="32767" guid="61aaab8a-4161-1004-2fca-67c1bf1647cb">
+		<_field_block_64 name="portal_indices!*" max="1000" guid="61aaaa8a-4161-8004-2fca-6731bf1647cd">
 			<_field_short_integer name="index!*" />
 		</_field_block_64>
-		<_field_block_64 name="seam_indices!*" max="1000">
+		<_field_block_64 name="seam_indices!*" max="1000" guid="61aaaa8a-4161-8004-2fca-6731bf1647cd">
 			<_field_short_integer name="index!*" />
 		</_field_block_64>
 	</_field_block_64>
 	<_field_struct name="instance kd hierarchy!" />
 	<_field_long_integer name="hash total_count!" />
-	<_field_block_64 name="hash data" max="32767">
+	<_field_block_64 name="hash data" max="32767" guid="1c33aabc-4449-1a23-8310-ab3e8a0d17a9">
 		<_field_long_integer name="node index!" />
 		<_field_long_integer name="key a!" />
 		<_field_long_integer name="key b!" />
 		<_field_long_integer name="key c!" />
 	</_field_block_64>
-	<_field_block_64 name="hash entry count" max="32767">
+	<_field_block_64 name="hash entry count" max="32767" guid="1c33aabc-4449-ca23-c310-ab3e8a0917a9">
 		<_field_short_integer name="index!" />
 	</_field_block_64>
-	<_field_block_64 name="original hash entry count" max="32767">
+	<_field_block_64 name="original hash entry count" max="32767" guid="1c33aabc-4449-ca23-c310-ab3e8a0917a9">
 		<_field_short_integer name="index!" />
 	</_field_block_64>
-	<_field_block_64 name="nodes" max="32767">
-		<_field_block_64 name="render only headers!" max="32767">
+	<_field_block_64 name="nodes" max="32767" guid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9">
+		<_field_block_64 name="render only headers!" max="32767" guid="1c33aabc-4449-7a23-83d0-ab0e8a3d17d9">
 			<_field_word_flags name="cull flags!">
 				<item Name="render only" />
 				<item Name="does not block aoe" />
@@ -60,7 +60,7 @@
 			<_field_pad name="bsp-index-pad" length="2" />
 			<_field_long_integer name="bsp mask!" />
 		</_field_block_64>
-		<_field_block_64 name="collidable headers!" max="32767">
+		<_field_block_64 name="collidable headers!" max="32767" guid="1c33aabc-4449-7a23-83d0-ab0e8a3d17d9">
 			<_field_word_flags name="cull flags!">
 				<item Name="render only" />
 				<item Name="does not block aoe" />
@@ -72,48 +72,48 @@
 			<_field_pad name="bsp-index-pad" length="2" />
 			<_field_long_integer name="bsp mask!" />
 		</_field_block_64>
-		<_field_short_block_index name="child below!" />
-		<_field_short_block_index name="child above!" />
-		<_field_short_block_index name="parent!" />
+		<_field_short_block_index name="child below!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+		<_field_short_block_index name="child above!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+		<_field_short_block_index name="parent!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
 		<_field_short_integer name="cluster index!" />
 	</_field_block_64>
-	<_field_block_64 name="in use masks" max="2048">
+	<_field_block_64 name="in use masks" max="2048" guid="0c33aabc-4449-3a23-8310-ab1e8a0d87a9">
 		<_field_long_integer name="mask!" />
 	</_field_block_64>
-	<_field_block_64 name="cluster table" max="32767">
-		<_field_block_64 name="super node mappings" max="32767">
+	<_field_block_64 name="cluster table" max="32767" guid="1cabdabc-c449-1a23-83d0-abae8a0da719">
+		<_field_block_64 name="super node mappings" max="32767" guid="acc3dabc-4449-ba2f-b310-abce8a0ca749">
 			<_field_array name="indices!">
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
-				<_field_short_block_index name="index!" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
+				<_field_short_block_index name="index!" srcguid="1c33aabc-4449-9a23-8310-ab0e8a3d17a9" />
 			</_field_array>
 			<_field_pad name="pad" length="2" />
 		</_field_block_64>

@@ -1,7 +1,7 @@
 <!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
 <!-- Made by Zedd lol -->
 <plugin>
-	<_field_block_64 name="airprobes" max="1048576">
+	<_field_block_64 name="airprobes" max="1048576" guid="51851d4a-4b69-54a6-23ba-b0a65d8240ae">
 		<_field_struct name="sh terms" />
 		<_field_array name="red sh terms">
 			<_field_short_integer name="coefficient*" />
@@ -38,22 +38,22 @@
 		</_field_array>
 		<_field_short_integer name="analytical visibility" />
 	</_field_block_64>
-	<_field_block_64 name="analytic data" max="1048576">
+	<_field_block_64 name="analytic data" max="1048576" guid="f206c43d-2eb8-10ec-50bb-a6b47d079b0a">
 		<_field_short_integer name="analytic index" />
 		<_field_char_integer name="intensity" />
 		<_field_pad name="shoulda_beena_pad" length="1" />
 	</_field_block_64>
-	<_field_block_64 name="Airprobe Regions" max="4">
+	<_field_block_64 name="Airprobe Regions" max="4" guid="964f8860-76dd-a0b3-ec67-b2e94e4cce8a">
 		<_field_real_point_3d name="position bounds 0" />
 		<_field_real_point_3d name="position bounds 1" />
-		<_field_block_64 name="airprobe indices*" max="1048576">
+		<_field_block_64 name="airprobe indices*" max="1048576" guid="67f4e61f-12c2-94c7-c2ae-8981a32556cd">
 			<_field_long_integer name="probe index*" />
 		</_field_block_64>
-		<_field_block_64 name="airprobe analytic data index and counts*" max="1048576">
+		<_field_block_64 name="airprobe analytic data index and counts*" max="1048576" guid="1b0c96e8-511e-4b4e-2090-953eb68b79f3">
 			<_field_short_integer name="analytic data index*" />
 			<_field_short_integer name="analytic data count*" />
 		</_field_block_64>
-		<_field_block_64 name="optional airprobe volume indices*" max="1048576">
+		<_field_block_64 name="optional airprobe volume indices*" max="1048576" guid="67f4e61f-12c2-94c7-c2ae-8981a32556cd">
 			<_field_long_integer name="probe index*" />
 		</_field_block_64>
 		<_field_long_integer name="num X*" />

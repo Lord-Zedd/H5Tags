@@ -5,13 +5,13 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="tiers" max="10">
+	<_field_block_64 name="tiers" max="10" guid="c1c2d85e-4f4f-9e66-c1ab-769b0ecdb1da">
 		<_field_string_id name="name^" />
 		<_field_string_id name="description" />
 		<_field_short_integer name="sequence index" />
 		<_field_pad name="pad" length="2" />
 	</_field_block_64>
-	<_field_block_64 name="medals" max="512">
+	<_field_block_64 name="medals" max="512" guid="f9f8912f-46a0-7513-b7d5-70b699179a79">
 		<_field_string_id name="name^" />
 		<_field_string_id name="description" />
 		<_field_short_integer name="sequence index" />

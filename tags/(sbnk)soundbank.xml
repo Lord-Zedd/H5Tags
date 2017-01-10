@@ -19,7 +19,7 @@
 		<item Name="Character" />
 		<item Name="Vehicle" />
 	</_field_long_enum>
-	<_field_block_64 name="Sound bank list#List of names of soundbanks. If more than one, one will be randomly chosen at load" max="8">
+	<_field_block_64 name="Sound bank list#List of names of soundbanks. If more than one, one will be randomly chosen at load" max="8" guid="ba6c3a66-40c5-f2b2-0ae0-b38db6dc2961">
 		<_field_string_id name="Sound bank name#Name of the main sound bank." />
 	</_field_block_64>
 	<_field_long_integer name="Bank priority#the importance of this bank over others. 1 is highest priority (ie will bump all others)" />

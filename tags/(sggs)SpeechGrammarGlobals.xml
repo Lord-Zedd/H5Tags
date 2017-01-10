@@ -12,7 +12,7 @@
 		<item Name="turn all vui off" />
 	</_field_byte_flags>
 	<_field_pad name="pad_tp" length="3" />
-	<_field_block_64 name="Speech Grammars" max="256">
+	<_field_block_64 name="Speech Grammars" max="256" guid="fc828af6-4e08-806e-09d0-6184b486f845">
 		<_field_tag_reference_64 name="Speech Grammar" />
 	</_field_block_64>
 	<_field_tag_reference_64 name="localized errors" />

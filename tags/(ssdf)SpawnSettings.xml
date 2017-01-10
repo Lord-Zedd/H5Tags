@@ -15,7 +15,7 @@
 	<_field_explanation name="Spawn weight settings">Settings to change how weight values are calculated.</_field_explanation>
 	<_field_real name="Quantization step" />
 	<_field_explanation name="Unit Influencers">Influencers in this block are applied to all matching units.</_field_explanation>
-	<_field_block_64 name="Unit influencers" max="1024">
+	<_field_block_64 name="Unit influencers" max="1024" guid="577c0d30-4342-e458-bf3b-a0bed3236ff4">
 		<_field_long_flags name="Flags">
 			<item Name="Does not stack" />
 		</_field_long_flags>
@@ -32,19 +32,19 @@
 			<item Name="Enemy" />
 			<item Name="Neutral" />
 		</_field_long_flags>
-		<_field_block_64 name="Influencer" max="256">
-			<_field_block_64 name="Sphere" max="256">
+		<_field_block_64 name="Influencer" max="256" guid="07632e4d-4ec9-642d-5780-a5b215b36591">
+			<_field_block_64 name="Sphere" max="256" guid="201b5264-4684-edf5-f15b-cca17c6e92ec">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
 				<_field_real name="Radius" />
 				<_field_real name="Weight" />
-				<_field_block_64 name="Weight function" max="1">
+				<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 					<_field_struct name="Function" />
 					<_field_data_64 name="data" />
 				</_field_block_64>
 			</_field_block_64>
-			<_field_block_64 name="Box" max="256">
+			<_field_block_64 name="Box" max="256" guid="8bd9c8e9-4e61-f27d-5829-2fa0b3c0eac7">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
@@ -53,53 +53,53 @@
 				<_field_real name="Height" />
 				<_field_real name="Weight" />
 			</_field_block_64>
-			<_field_block_64 name="Cylinder" max="256">
+			<_field_block_64 name="Cylinder" max="256" guid="bb97b272-4e83-6f37-aad5-cb904fe89a8e">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
 				<_field_real name="Radius" />
 				<_field_real name="Height" />
 				<_field_real name="Weight" />
-				<_field_block_64 name="Weight function" max="1">
+				<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 					<_field_struct name="Function" />
 					<_field_data_64 name="data" />
 				</_field_block_64>
 			</_field_block_64>
-			<_field_block_64 name="Cone" max="256">
+			<_field_block_64 name="Cone" max="256" guid="39dd0a85-4a7a-502a-d2d0-33a3b842dbb2">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
 				<_field_real name="Length" />
 				<_field_real name="Base radius" />
 				<_field_real name="Weight" />
-				<_field_block_64 name="Weight function" max="1">
+				<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 					<_field_struct name="Function" />
 					<_field_data_64 name="data" />
 				</_field_block_64>
 			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="Movement influencer" max="256">
+		<_field_block_64 name="Movement influencer" max="256" guid="9ff8ceac-4552-f09d-60a4-9e98fc38cc4f">
 			<_field_real name="Lead time:s" />
-			<_field_block_64 name="Cone" max="256">
+			<_field_block_64 name="Cone" max="256" guid="39dd0a85-4a7a-502a-d2d0-33a3b842dbb2">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
 				<_field_real name="Length" />
 				<_field_real name="Base radius" />
 				<_field_real name="Weight" />
-				<_field_block_64 name="Weight function" max="1">
+				<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 					<_field_struct name="Function" />
 					<_field_data_64 name="data" />
 				</_field_block_64>
 			</_field_block_64>
-			<_field_block_64 name="Pill" max="256">
+			<_field_block_64 name="Pill" max="256" guid="16e35856-435c-1628-909b-00006947b7e7">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
 				<_field_real name="Length" />
 				<_field_real name="Radius" />
 				<_field_real name="Weight" />
-				<_field_block_64 name="Weight function" max="1">
+				<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 					<_field_struct name="Function" />
 					<_field_data_64 name="data" />
 				</_field_block_64>
@@ -108,7 +108,7 @@
 	</_field_block_64>
 	<_field_explanation name="Dead Unit Influencers">Influencers in this block are applied to all locations a player has died at.</_field_explanation>
 	<_field_real name="Active duration:s" />
-	<_field_block_64 name="Dead unit influencers" max="1024">
+	<_field_block_64 name="Dead unit influencers" max="1024" guid="e10d7d53-4b45-2710-8587-628357e15491">
 		<_field_struct name="Unit Influencer" />
 		<_field_long_flags name="Filter flags">
 			<item Name="Player controlled" />
@@ -122,19 +122,19 @@
 			<item Name="Enemy" />
 			<item Name="Neutral" />
 		</_field_long_flags>
-		<_field_block_64 name="Influencer" max="256">
-			<_field_block_64 name="Sphere" max="256">
+		<_field_block_64 name="Influencer" max="256" guid="07632e4d-4ec9-642d-5780-a5b215b36591">
+			<_field_block_64 name="Sphere" max="256" guid="201b5264-4684-edf5-f15b-cca17c6e92ec">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
 				<_field_real name="Radius" />
 				<_field_real name="Weight" />
-				<_field_block_64 name="Weight function" max="1">
+				<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 					<_field_struct name="Function" />
 					<_field_data_64 name="data" />
 				</_field_block_64>
 			</_field_block_64>
-			<_field_block_64 name="Box" max="256">
+			<_field_block_64 name="Box" max="256" guid="8bd9c8e9-4e61-f27d-5829-2fa0b3c0eac7">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
@@ -143,53 +143,53 @@
 				<_field_real name="Height" />
 				<_field_real name="Weight" />
 			</_field_block_64>
-			<_field_block_64 name="Cylinder" max="256">
+			<_field_block_64 name="Cylinder" max="256" guid="bb97b272-4e83-6f37-aad5-cb904fe89a8e">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
 				<_field_real name="Radius" />
 				<_field_real name="Height" />
 				<_field_real name="Weight" />
-				<_field_block_64 name="Weight function" max="1">
+				<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 					<_field_struct name="Function" />
 					<_field_data_64 name="data" />
 				</_field_block_64>
 			</_field_block_64>
-			<_field_block_64 name="Cone" max="256">
+			<_field_block_64 name="Cone" max="256" guid="39dd0a85-4a7a-502a-d2d0-33a3b842dbb2">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
 				<_field_real name="Length" />
 				<_field_real name="Base radius" />
 				<_field_real name="Weight" />
-				<_field_block_64 name="Weight function" max="1">
+				<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 					<_field_struct name="Function" />
 					<_field_data_64 name="data" />
 				</_field_block_64>
 			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="Movement influencer" max="256">
+		<_field_block_64 name="Movement influencer" max="256" guid="9ff8ceac-4552-f09d-60a4-9e98fc38cc4f">
 			<_field_real name="Lead time:s" />
-			<_field_block_64 name="Cone" max="256">
+			<_field_block_64 name="Cone" max="256" guid="39dd0a85-4a7a-502a-d2d0-33a3b842dbb2">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
 				<_field_real name="Length" />
 				<_field_real name="Base radius" />
 				<_field_real name="Weight" />
-				<_field_block_64 name="Weight function" max="1">
+				<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 					<_field_struct name="Function" />
 					<_field_data_64 name="data" />
 				</_field_block_64>
 			</_field_block_64>
-			<_field_block_64 name="Pill" max="256">
+			<_field_block_64 name="Pill" max="256" guid="16e35856-435c-1628-909b-00006947b7e7">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
 				<_field_real name="Length" />
 				<_field_real name="Radius" />
 				<_field_real name="Weight" />
-				<_field_block_64 name="Weight function" max="1">
+				<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 					<_field_struct name="Function" />
 					<_field_data_64 name="data" />
 				</_field_block_64>
@@ -197,7 +197,7 @@
 		</_field_block_64>
 	</_field_block_64>
 	<_field_explanation name="Spawning Unit Influencers">Influencers in this block are applied to locations that a player is about to spawn at.</_field_explanation>
-	<_field_block_64 name="Spawning unit influencers" max="1024">
+	<_field_block_64 name="Spawning unit influencers" max="1024" guid="e10d7d53-4b45-2710-8587-628357e15491">
 		<_field_struct name="Unit Influencer" />
 		<_field_long_flags name="Filter flags">
 			<item Name="Player controlled" />
@@ -211,19 +211,19 @@
 			<item Name="Enemy" />
 			<item Name="Neutral" />
 		</_field_long_flags>
-		<_field_block_64 name="Influencer" max="256">
-			<_field_block_64 name="Sphere" max="256">
+		<_field_block_64 name="Influencer" max="256" guid="07632e4d-4ec9-642d-5780-a5b215b36591">
+			<_field_block_64 name="Sphere" max="256" guid="201b5264-4684-edf5-f15b-cca17c6e92ec">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
 				<_field_real name="Radius" />
 				<_field_real name="Weight" />
-				<_field_block_64 name="Weight function" max="1">
+				<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 					<_field_struct name="Function" />
 					<_field_data_64 name="data" />
 				</_field_block_64>
 			</_field_block_64>
-			<_field_block_64 name="Box" max="256">
+			<_field_block_64 name="Box" max="256" guid="8bd9c8e9-4e61-f27d-5829-2fa0b3c0eac7">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
@@ -232,53 +232,53 @@
 				<_field_real name="Height" />
 				<_field_real name="Weight" />
 			</_field_block_64>
-			<_field_block_64 name="Cylinder" max="256">
+			<_field_block_64 name="Cylinder" max="256" guid="bb97b272-4e83-6f37-aad5-cb904fe89a8e">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
 				<_field_real name="Radius" />
 				<_field_real name="Height" />
 				<_field_real name="Weight" />
-				<_field_block_64 name="Weight function" max="1">
+				<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 					<_field_struct name="Function" />
 					<_field_data_64 name="data" />
 				</_field_block_64>
 			</_field_block_64>
-			<_field_block_64 name="Cone" max="256">
+			<_field_block_64 name="Cone" max="256" guid="39dd0a85-4a7a-502a-d2d0-33a3b842dbb2">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
 				<_field_real name="Length" />
 				<_field_real name="Base radius" />
 				<_field_real name="Weight" />
-				<_field_block_64 name="Weight function" max="1">
+				<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 					<_field_struct name="Function" />
 					<_field_data_64 name="data" />
 				</_field_block_64>
 			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="Movement influencer" max="256">
+		<_field_block_64 name="Movement influencer" max="256" guid="9ff8ceac-4552-f09d-60a4-9e98fc38cc4f">
 			<_field_real name="Lead time:s" />
-			<_field_block_64 name="Cone" max="256">
+			<_field_block_64 name="Cone" max="256" guid="39dd0a85-4a7a-502a-d2d0-33a3b842dbb2">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
 				<_field_real name="Length" />
 				<_field_real name="Base radius" />
 				<_field_real name="Weight" />
-				<_field_block_64 name="Weight function" max="1">
+				<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 					<_field_struct name="Function" />
 					<_field_data_64 name="data" />
 				</_field_block_64>
 			</_field_block_64>
-			<_field_block_64 name="Pill" max="256">
+			<_field_block_64 name="Pill" max="256" guid="16e35856-435c-1628-909b-00006947b7e7">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
 				<_field_real name="Length" />
 				<_field_real name="Radius" />
 				<_field_real name="Weight" />
-				<_field_block_64 name="Weight function" max="1">
+				<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 					<_field_struct name="Function" />
 					<_field_data_64 name="data" />
 				</_field_block_64>
@@ -286,9 +286,9 @@
 		</_field_block_64>
 	</_field_block_64>
 	<_field_explanation name="Weapon Influencers">Influencers in this block are applied to weapons held by players or mounted on vehicles.</_field_explanation>
-	<_field_block_64 name="Weapon influencers" max="1024">
+	<_field_block_64 name="Weapon influencers" max="1024" guid="87d4a845-4864-1070-57f4-a19650edb858">
 		<_field_tag_reference_64 name="Weapon^" />
-		<_field_block_64 name="Unit influencer" max="1024">
+		<_field_block_64 name="Unit influencer" max="1024" guid="e10d7d53-4b45-2710-8587-628357e15491">
 			<_field_struct name="Unit Influencer" />
 			<_field_long_flags name="Filter flags">
 				<item Name="Player controlled" />
@@ -302,19 +302,19 @@
 				<item Name="Enemy" />
 				<item Name="Neutral" />
 			</_field_long_flags>
-			<_field_block_64 name="Influencer" max="256">
-				<_field_block_64 name="Sphere" max="256">
+			<_field_block_64 name="Influencer" max="256" guid="07632e4d-4ec9-642d-5780-a5b215b36591">
+				<_field_block_64 name="Sphere" max="256" guid="201b5264-4684-edf5-f15b-cca17c6e92ec">
 					<_field_long_flags name="Flags">
 						<item Name="Reject Spawn" />
 					</_field_long_flags>
 					<_field_real name="Radius" />
 					<_field_real name="Weight" />
-					<_field_block_64 name="Weight function" max="1">
+					<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 						<_field_struct name="Function" />
 						<_field_data_64 name="data" />
 					</_field_block_64>
 				</_field_block_64>
-				<_field_block_64 name="Box" max="256">
+				<_field_block_64 name="Box" max="256" guid="8bd9c8e9-4e61-f27d-5829-2fa0b3c0eac7">
 					<_field_long_flags name="Flags">
 						<item Name="Reject Spawn" />
 					</_field_long_flags>
@@ -323,53 +323,53 @@
 					<_field_real name="Height" />
 					<_field_real name="Weight" />
 				</_field_block_64>
-				<_field_block_64 name="Cylinder" max="256">
+				<_field_block_64 name="Cylinder" max="256" guid="bb97b272-4e83-6f37-aad5-cb904fe89a8e">
 					<_field_long_flags name="Flags">
 						<item Name="Reject Spawn" />
 					</_field_long_flags>
 					<_field_real name="Radius" />
 					<_field_real name="Height" />
 					<_field_real name="Weight" />
-					<_field_block_64 name="Weight function" max="1">
+					<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 						<_field_struct name="Function" />
 						<_field_data_64 name="data" />
 					</_field_block_64>
 				</_field_block_64>
-				<_field_block_64 name="Cone" max="256">
+				<_field_block_64 name="Cone" max="256" guid="39dd0a85-4a7a-502a-d2d0-33a3b842dbb2">
 					<_field_long_flags name="Flags">
 						<item Name="Reject Spawn" />
 					</_field_long_flags>
 					<_field_real name="Length" />
 					<_field_real name="Base radius" />
 					<_field_real name="Weight" />
-					<_field_block_64 name="Weight function" max="1">
+					<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 						<_field_struct name="Function" />
 						<_field_data_64 name="data" />
 					</_field_block_64>
 				</_field_block_64>
 			</_field_block_64>
-			<_field_block_64 name="Movement influencer" max="256">
+			<_field_block_64 name="Movement influencer" max="256" guid="9ff8ceac-4552-f09d-60a4-9e98fc38cc4f">
 				<_field_real name="Lead time:s" />
-				<_field_block_64 name="Cone" max="256">
+				<_field_block_64 name="Cone" max="256" guid="39dd0a85-4a7a-502a-d2d0-33a3b842dbb2">
 					<_field_long_flags name="Flags">
 						<item Name="Reject Spawn" />
 					</_field_long_flags>
 					<_field_real name="Length" />
 					<_field_real name="Base radius" />
 					<_field_real name="Weight" />
-					<_field_block_64 name="Weight function" max="1">
+					<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 						<_field_struct name="Function" />
 						<_field_data_64 name="data" />
 					</_field_block_64>
 				</_field_block_64>
-				<_field_block_64 name="Pill" max="256">
+				<_field_block_64 name="Pill" max="256" guid="16e35856-435c-1628-909b-00006947b7e7">
 					<_field_long_flags name="Flags">
 						<item Name="Reject Spawn" />
 					</_field_long_flags>
 					<_field_real name="Length" />
 					<_field_real name="Radius" />
 					<_field_real name="Weight" />
-					<_field_block_64 name="Weight function" max="1">
+					<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 						<_field_struct name="Function" />
 						<_field_data_64 name="data" />
 					</_field_block_64>
@@ -379,9 +379,9 @@
 		<_field_real name="Location unseen multiplier" />
 	</_field_block_64>
 	<_field_explanation name="Vehicle Influencers">Influencers in this block are applied to vehicles.</_field_explanation>
-	<_field_block_64 name="Vehicle influencers" max="1024">
+	<_field_block_64 name="Vehicle influencers" max="1024" guid="64ae7b1c-4906-32a6-b875-2a8995bec0eb">
 		<_field_tag_reference_64 name="Vehicle^" />
-		<_field_block_64 name="Unit influencer" max="1024">
+		<_field_block_64 name="Unit influencer" max="1024" guid="e10d7d53-4b45-2710-8587-628357e15491">
 			<_field_struct name="Unit Influencer" />
 			<_field_long_flags name="Filter flags">
 				<item Name="Player controlled" />
@@ -395,19 +395,19 @@
 				<item Name="Enemy" />
 				<item Name="Neutral" />
 			</_field_long_flags>
-			<_field_block_64 name="Influencer" max="256">
-				<_field_block_64 name="Sphere" max="256">
+			<_field_block_64 name="Influencer" max="256" guid="07632e4d-4ec9-642d-5780-a5b215b36591">
+				<_field_block_64 name="Sphere" max="256" guid="201b5264-4684-edf5-f15b-cca17c6e92ec">
 					<_field_long_flags name="Flags">
 						<item Name="Reject Spawn" />
 					</_field_long_flags>
 					<_field_real name="Radius" />
 					<_field_real name="Weight" />
-					<_field_block_64 name="Weight function" max="1">
+					<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 						<_field_struct name="Function" />
 						<_field_data_64 name="data" />
 					</_field_block_64>
 				</_field_block_64>
-				<_field_block_64 name="Box" max="256">
+				<_field_block_64 name="Box" max="256" guid="8bd9c8e9-4e61-f27d-5829-2fa0b3c0eac7">
 					<_field_long_flags name="Flags">
 						<item Name="Reject Spawn" />
 					</_field_long_flags>
@@ -416,53 +416,53 @@
 					<_field_real name="Height" />
 					<_field_real name="Weight" />
 				</_field_block_64>
-				<_field_block_64 name="Cylinder" max="256">
+				<_field_block_64 name="Cylinder" max="256" guid="bb97b272-4e83-6f37-aad5-cb904fe89a8e">
 					<_field_long_flags name="Flags">
 						<item Name="Reject Spawn" />
 					</_field_long_flags>
 					<_field_real name="Radius" />
 					<_field_real name="Height" />
 					<_field_real name="Weight" />
-					<_field_block_64 name="Weight function" max="1">
+					<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 						<_field_struct name="Function" />
 						<_field_data_64 name="data" />
 					</_field_block_64>
 				</_field_block_64>
-				<_field_block_64 name="Cone" max="256">
+				<_field_block_64 name="Cone" max="256" guid="39dd0a85-4a7a-502a-d2d0-33a3b842dbb2">
 					<_field_long_flags name="Flags">
 						<item Name="Reject Spawn" />
 					</_field_long_flags>
 					<_field_real name="Length" />
 					<_field_real name="Base radius" />
 					<_field_real name="Weight" />
-					<_field_block_64 name="Weight function" max="1">
+					<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 						<_field_struct name="Function" />
 						<_field_data_64 name="data" />
 					</_field_block_64>
 				</_field_block_64>
 			</_field_block_64>
-			<_field_block_64 name="Movement influencer" max="256">
+			<_field_block_64 name="Movement influencer" max="256" guid="9ff8ceac-4552-f09d-60a4-9e98fc38cc4f">
 				<_field_real name="Lead time:s" />
-				<_field_block_64 name="Cone" max="256">
+				<_field_block_64 name="Cone" max="256" guid="39dd0a85-4a7a-502a-d2d0-33a3b842dbb2">
 					<_field_long_flags name="Flags">
 						<item Name="Reject Spawn" />
 					</_field_long_flags>
 					<_field_real name="Length" />
 					<_field_real name="Base radius" />
 					<_field_real name="Weight" />
-					<_field_block_64 name="Weight function" max="1">
+					<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 						<_field_struct name="Function" />
 						<_field_data_64 name="data" />
 					</_field_block_64>
 				</_field_block_64>
-				<_field_block_64 name="Pill" max="256">
+				<_field_block_64 name="Pill" max="256" guid="16e35856-435c-1628-909b-00006947b7e7">
 					<_field_long_flags name="Flags">
 						<item Name="Reject Spawn" />
 					</_field_long_flags>
 					<_field_real name="Length" />
 					<_field_real name="Radius" />
 					<_field_real name="Weight" />
-					<_field_block_64 name="Weight function" max="1">
+					<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 						<_field_struct name="Function" />
 						<_field_data_64 name="data" />
 					</_field_block_64>
@@ -471,21 +471,21 @@
 		</_field_block_64>
 	</_field_block_64>
 	<_field_explanation name="Projectile Influencers">Influencers in this block are applied to projectiles.</_field_explanation>
-	<_field_block_64 name="Projectile influencers" max="1024">
+	<_field_block_64 name="Projectile influencers" max="1024" guid="6e14464d-4c80-2eb9-5436-1ca849b572b7">
 		<_field_tag_reference_64 name="Projectile^" />
-		<_field_block_64 name="Influencer" max="256">
-			<_field_block_64 name="Sphere" max="256">
+		<_field_block_64 name="Influencer" max="256" guid="07632e4d-4ec9-642d-5780-a5b215b36591">
+			<_field_block_64 name="Sphere" max="256" guid="201b5264-4684-edf5-f15b-cca17c6e92ec">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
 				<_field_real name="Radius" />
 				<_field_real name="Weight" />
-				<_field_block_64 name="Weight function" max="1">
+				<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 					<_field_struct name="Function" />
 					<_field_data_64 name="data" />
 				</_field_block_64>
 			</_field_block_64>
-			<_field_block_64 name="Box" max="256">
+			<_field_block_64 name="Box" max="256" guid="8bd9c8e9-4e61-f27d-5829-2fa0b3c0eac7">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
@@ -494,53 +494,53 @@
 				<_field_real name="Height" />
 				<_field_real name="Weight" />
 			</_field_block_64>
-			<_field_block_64 name="Cylinder" max="256">
+			<_field_block_64 name="Cylinder" max="256" guid="bb97b272-4e83-6f37-aad5-cb904fe89a8e">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
 				<_field_real name="Radius" />
 				<_field_real name="Height" />
 				<_field_real name="Weight" />
-				<_field_block_64 name="Weight function" max="1">
+				<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 					<_field_struct name="Function" />
 					<_field_data_64 name="data" />
 				</_field_block_64>
 			</_field_block_64>
-			<_field_block_64 name="Cone" max="256">
+			<_field_block_64 name="Cone" max="256" guid="39dd0a85-4a7a-502a-d2d0-33a3b842dbb2">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
 				<_field_real name="Length" />
 				<_field_real name="Base radius" />
 				<_field_real name="Weight" />
-				<_field_block_64 name="Weight function" max="1">
+				<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 					<_field_struct name="Function" />
 					<_field_data_64 name="data" />
 				</_field_block_64>
 			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="Movement influencer" max="256">
+		<_field_block_64 name="Movement influencer" max="256" guid="9ff8ceac-4552-f09d-60a4-9e98fc38cc4f">
 			<_field_real name="Lead time:s" />
-			<_field_block_64 name="Cone" max="256">
+			<_field_block_64 name="Cone" max="256" guid="39dd0a85-4a7a-502a-d2d0-33a3b842dbb2">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
 				<_field_real name="Length" />
 				<_field_real name="Base radius" />
 				<_field_real name="Weight" />
-				<_field_block_64 name="Weight function" max="1">
+				<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 					<_field_struct name="Function" />
 					<_field_data_64 name="data" />
 				</_field_block_64>
 			</_field_block_64>
-			<_field_block_64 name="Pill" max="256">
+			<_field_block_64 name="Pill" max="256" guid="16e35856-435c-1628-909b-00006947b7e7">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
 				<_field_real name="Length" />
 				<_field_real name="Radius" />
 				<_field_real name="Weight" />
-				<_field_block_64 name="Weight function" max="1">
+				<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 					<_field_struct name="Function" />
 					<_field_data_64 name="data" />
 				</_field_block_64>
@@ -548,21 +548,21 @@
 		</_field_block_64>
 	</_field_block_64>
 	<_field_explanation name="Equipment Influencers">Influencers in this block are applied to equipment.</_field_explanation>
-	<_field_block_64 name="Equipment influencers" max="1024">
+	<_field_block_64 name="Equipment influencers" max="1024" guid="2642bde4-4a33-300f-f812-bd8a854f901b">
 		<_field_tag_reference_64 name="Equipment^" />
-		<_field_block_64 name="Influencer" max="256">
-			<_field_block_64 name="Sphere" max="256">
+		<_field_block_64 name="Influencer" max="256" guid="07632e4d-4ec9-642d-5780-a5b215b36591">
+			<_field_block_64 name="Sphere" max="256" guid="201b5264-4684-edf5-f15b-cca17c6e92ec">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
 				<_field_real name="Radius" />
 				<_field_real name="Weight" />
-				<_field_block_64 name="Weight function" max="1">
+				<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 					<_field_struct name="Function" />
 					<_field_data_64 name="data" />
 				</_field_block_64>
 			</_field_block_64>
-			<_field_block_64 name="Box" max="256">
+			<_field_block_64 name="Box" max="256" guid="8bd9c8e9-4e61-f27d-5829-2fa0b3c0eac7">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
@@ -571,26 +571,26 @@
 				<_field_real name="Height" />
 				<_field_real name="Weight" />
 			</_field_block_64>
-			<_field_block_64 name="Cylinder" max="256">
+			<_field_block_64 name="Cylinder" max="256" guid="bb97b272-4e83-6f37-aad5-cb904fe89a8e">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
 				<_field_real name="Radius" />
 				<_field_real name="Height" />
 				<_field_real name="Weight" />
-				<_field_block_64 name="Weight function" max="1">
+				<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 					<_field_struct name="Function" />
 					<_field_data_64 name="data" />
 				</_field_block_64>
 			</_field_block_64>
-			<_field_block_64 name="Cone" max="256">
+			<_field_block_64 name="Cone" max="256" guid="39dd0a85-4a7a-502a-d2d0-33a3b842dbb2">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
 				<_field_real name="Length" />
 				<_field_real name="Base radius" />
 				<_field_real name="Weight" />
-				<_field_block_64 name="Weight function" max="1">
+				<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 					<_field_struct name="Function" />
 					<_field_data_64 name="data" />
 				</_field_block_64>
@@ -598,7 +598,7 @@
 		</_field_block_64>
 	</_field_block_64>
 	<_field_explanation name="Object Dispenser Influencers">Influencers in this block are applied to devices with object dispenser components.</_field_explanation>
-	<_field_block_64 name="Object dispenser influencers" max="1024">
+	<_field_block_64 name="Object dispenser influencers" max="1024" guid="3853228c-423c-6b4c-21c1-de9d62fcdb71">
 		<_field_byte_flags name="Filter flags">
 			<item Name="None" />
 			<item Name="Weapon Incoming" />
@@ -607,19 +607,19 @@
 			<item Name="Weapon Respawning" />
 		</_field_byte_flags>
 		<_field_pad name="pad0" length="3" />
-		<_field_block_64 name="Influencer" max="256">
-			<_field_block_64 name="Sphere" max="256">
+		<_field_block_64 name="Influencer" max="256" guid="07632e4d-4ec9-642d-5780-a5b215b36591">
+			<_field_block_64 name="Sphere" max="256" guid="201b5264-4684-edf5-f15b-cca17c6e92ec">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
 				<_field_real name="Radius" />
 				<_field_real name="Weight" />
-				<_field_block_64 name="Weight function" max="1">
+				<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 					<_field_struct name="Function" />
 					<_field_data_64 name="data" />
 				</_field_block_64>
 			</_field_block_64>
-			<_field_block_64 name="Box" max="256">
+			<_field_block_64 name="Box" max="256" guid="8bd9c8e9-4e61-f27d-5829-2fa0b3c0eac7">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
@@ -628,26 +628,26 @@
 				<_field_real name="Height" />
 				<_field_real name="Weight" />
 			</_field_block_64>
-			<_field_block_64 name="Cylinder" max="256">
+			<_field_block_64 name="Cylinder" max="256" guid="bb97b272-4e83-6f37-aad5-cb904fe89a8e">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
 				<_field_real name="Radius" />
 				<_field_real name="Height" />
 				<_field_real name="Weight" />
-				<_field_block_64 name="Weight function" max="1">
+				<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 					<_field_struct name="Function" />
 					<_field_data_64 name="data" />
 				</_field_block_64>
 			</_field_block_64>
-			<_field_block_64 name="Cone" max="256">
+			<_field_block_64 name="Cone" max="256" guid="39dd0a85-4a7a-502a-d2d0-33a3b842dbb2">
 				<_field_long_flags name="Flags">
 					<item Name="Reject Spawn" />
 				</_field_long_flags>
 				<_field_real name="Length" />
 				<_field_real name="Base radius" />
 				<_field_real name="Weight" />
-				<_field_block_64 name="Weight function" max="1">
+				<_field_block_64 name="Weight function" max="1" guid="5ce5fe7d-452b-2ebb-db18-8096958b8331">
 					<_field_struct name="Function" />
 					<_field_data_64 name="data" />
 				</_field_block_64>

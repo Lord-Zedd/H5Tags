@@ -5,12 +5,12 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="BSP index map" max="65535">
+	<_field_block_64 name="BSP index map" max="65535" guid="10cb84ff-4e41-d957-4887-70a494251e82">
 		<_field_long_integer name="Value" />
 	</_field_block_64>
-	<_field_block_64 name="Per BSP data" max="32">
-		<_field_block_64 name="Subregion array" max="65535">
-			<_field_block_64 name="Visibility array" max="65535">
+	<_field_block_64 name="Per BSP data" max="32" guid="10401e2c-4be6-6bd9-1967-5daafa6a56d5">
+		<_field_block_64 name="Subregion array" max="65535" guid="8f7434e3-4e16-96eb-33e9-46979c991c9a">
+			<_field_block_64 name="Visibility array" max="65535" guid="1daa41de-4ec6-dee9-8e79-9b9ef7f6e834">
 				<_field_dword_integer name="Value" />
 			</_field_block_64>
 			<_field_word_integer name="sx" />

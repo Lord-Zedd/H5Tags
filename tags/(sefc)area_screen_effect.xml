@@ -16,7 +16,7 @@
 		<item Name="update thread" />
 		<item Name="render thread" />
 	</_field_word_flags>
-	<_field_block_64 name="screen effects" max="8">
+	<_field_block_64 name="screen effects" max="8" guid="2e559b36-46a7-4e35-291e-aea19f23aa90">
 		<_field_string_id name="name^" />
 		<_field_word_flags name="flags">
 			<item Name="debug disable" />

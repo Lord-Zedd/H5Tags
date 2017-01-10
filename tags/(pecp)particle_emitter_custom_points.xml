@@ -11,7 +11,7 @@ Woo....
 	<_field_tag_reference_64 name="source reference!" />
 	<_field_real_vector_3d name="compression scale" />
 	<_field_real_vector_3d name="compression offset" />
-	<_field_block_64 name="points" max="32768">
+	<_field_block_64 name="points" max="32768" guid="705d9ddc-4bbc-1586-4412-8a89aebc2584">
 		<_field_short_integer name="position_x" />
 		<_field_short_integer name="position_y" />
 		<_field_short_integer name="position_z" />

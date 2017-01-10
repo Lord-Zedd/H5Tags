@@ -5,11 +5,11 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="Baked PVS Volumes" max="128">
+	<_field_block_64 name="Baked PVS Volumes" max="128" guid="d00b9d94-4abc-de37-c0a4-edb31382e16a">
 		<_field_string_id name="Name" />
 		<_field_custom name="Volume settings" />
 		<_field_struct name="Volume" />
-		<_field_block_64 name="Points" max="32">
+		<_field_block_64 name="Points" max="32" guid="66dd021f-42b7-67e4-69b7-44af5c73a047">
 			<_field_real_point_3d name="position" />
 			<_field_real_euler_angles_2d name="normal" />
 		</_field_block_64>
@@ -40,7 +40,7 @@
 		<_field_real name="Beam 3 height override" />
 		<_field_real name="Beam 4 and above height override" />
 		<_field_long_integer name="Volume importance override value" />
-		<_field_block_64 name="Editor Metadata!" max="1024">
+		<_field_block_64 name="Editor Metadata!" max="1024" guid="49566d10-3ee6-efbe-6d8c-8eb1db3d0368">
 			<_field_long_string name="data name" />
 			<_field_long_enum name="data type">
 				<item Name="class" />

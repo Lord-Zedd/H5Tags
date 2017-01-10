@@ -35,12 +35,12 @@
 	<_field_real name="Don't play time.#Time the event will not retrigger for (global)" />
 	<_field_tag_reference_64 name="Sound bank#Reference to the sound bank tag this event is in. Can be empty." />
 	<_field_tag_reference_64 name="Player sound bank#Will only load if there is a player event set above. Reference to the player sound bank tag this event is in. Can be empty." />
-	<_field_block_64 name="VO Event Info" max="32">
+	<_field_block_64 name="VO Event Info" max="32" guid="0e0134dd-4bba-62fe-8d85-d982d8072ee7">
 		<_field_string_id name="Event Name*" />
 		<_field_string_id name="Subtitle Name*" />
 		<_field_real name="Event duration*" />
 		<_field_real name="Event max radius" />
-		<_field_block_64 name="Narrative Reference" max="1">
+		<_field_block_64 name="Narrative Reference" max="1" guid="1108c492-497d-10f2-f70d-a3891d824d0e">
 			<_field_string name="Character name*" />
 			<_field_long_string name="Dialogue*" />
 			<_field_string name="WWise effect*" />
@@ -57,7 +57,7 @@
 			</_field_long_enum>
 			<_field_real name="WWise Attenuation*" />
 		</_field_block_64>
-		<_field_block_64 name="AI Dialogue Info" max="1">
+		<_field_block_64 name="AI Dialogue Info" max="1" guid="b62c04ed-4194-f852-6fcc-8f9e4549b7a9">
 			<_field_long_flags name="flags">
 				<item Name="Campaign Only" />
 				<item Name="Exclude from certain missions" />
@@ -72,7 +72,7 @@
 			</_field_long_flags>
 			<_field_real name="skip fraction#Percent this file will be skipped when picked. 0 is always, 0.99 is almost never" />
 		</_field_block_64>
-		<_field_block_64 name="facial animation resource languages" max="17">
+		<_field_block_64 name="facial animation resource languages" max="17" guid="5280f0a0-4a45-a280-452d-51b6b42f3132">
 			<_field_pageable_resource_64 name="facial animation resource" />
 			<_field_long_enum name="language">
 				<item Name="english" />

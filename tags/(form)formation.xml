@@ -6,7 +6,7 @@
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
 	<_field_string_id name="name^" />
-	<_field_block_64 name="primitives" max="4">
+	<_field_block_64 name="primitives" max="4" guid="8fa0d708-4f88-b9f3-2281-45853321cacc">
 		<_field_word_flags name="flags">
 			<item Name="radial" />
 			<item Name="leader" />
@@ -18,7 +18,7 @@
 		<_field_real name="dist backwards" />
 		<_field_real name="rank spacing" />
 		<_field_real name="file spacing" />
-		<_field_block_64 name="points" max="8">
+		<_field_block_64 name="points" max="8" guid="23abaab1-407e-a504-42a8-2ea083647b82">
 			<_field_angle name="angle" />
 			<_field_real name="offset" />
 		</_field_block_64>

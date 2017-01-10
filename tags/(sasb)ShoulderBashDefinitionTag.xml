@@ -101,7 +101,7 @@
 	<_field_real name="shoulder bash success rebound speed duration:seconds" />
 	<_field_real name="shoulder bash success rebound speed:wu/s" />
 	<_field_explanation name="no rebound surfaces">materials listed here will prevent the rebound from occurring.</_field_explanation>
-	<_field_block_64 name="no rebound materials" max="64">
+	<_field_block_64 name="no rebound materials" max="64" guid="d2679d1f-40b2-5b59-deb3-dfad436edf1c">
 		<_field_string_id name="material name" />
 	</_field_block_64>
 	<_field_string_id name="shoulder bash miss follow-through#animation played when the character hits nothing)" />

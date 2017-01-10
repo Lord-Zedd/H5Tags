@@ -8,7 +8,7 @@
 	<_field_string_id name="name^#short name for the item" />
 	<_field_string_id name="Vehicle Flip String" />
 	<_field_string_id name="Tint Color" />
-	<_field_block_64 name="UI Info" max="1">
+	<_field_block_64 name="UI Info" max="1" guid="6bb873fd-472b-52c6-7790-9b90d0074580">
 		<_field_string_id name="name^#short name for the item" />
 		<_field_string_id name="display name#friendly name for the item" />
 		<_field_string_id name="description#general in-universe item description" />
@@ -21,7 +21,7 @@
 		<_field_tag_reference_64 name="ui vehicle screen reference" />
 		<_field_pad name="pad0" length="4" />
 	</_field_block_64>
-	<_field_block_64 name="Seats" max="8">
+	<_field_block_64 name="Seats" max="8" guid="aec19f99-42c2-c8d8-211e-2ab6058629f1">
 		<_field_string_id name="label" />
 		<_field_string_id name="Boarding Grenade String" />
 		<_field_string_id name="Boarding Melee String" />

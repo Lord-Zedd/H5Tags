@@ -5,7 +5,7 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="linear acceleartions" max="3">
+	<_field_block_64 name="linear acceleartions" max="3" guid="1c23aaac-4449-1323-8310-abae8a0d17d9">
 		<_field_real name="acceleration range:world units" />
 		<_field_real name="inverse acceleration range:world units*!" />
 		<_field_real name="world acceleration scale#0 defaults to 1, scale the acceleration the object itself applies on this system." />
@@ -16,9 +16,9 @@
 		<_field_struct name="spring acceleration" />
 		<_field_data_64 name="data" />
 	</_field_block_64>
-	<_field_short_block_index name="x-axis" />
-	<_field_short_block_index name="y-axis" />
-	<_field_short_block_index name="z-axis" />
+	<_field_short_block_index name="x-axis" srcguid="1c23aaac-4449-1323-8310-abae8a0d17d9" />
+	<_field_short_block_index name="y-axis" srcguid="1c23aaac-4449-1323-8310-abae8a0d17d9" />
+	<_field_short_block_index name="z-axis" srcguid="1c23aaac-4449-1323-8310-abae8a0d17d9" />
 	<_field_pad name="pad" length="2" />
 	<_field_pad name="pad_tp" length="4" />
 </plugin>

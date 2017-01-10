@@ -5,16 +5,16 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="damage table" max="2">
-		<_field_block_64 name="damage groups" max="512">
+	<_field_block_64 name="damage table" max="2" guid="5e608798-4fdc-5896-b562-d0bc00d30273">
+		<_field_block_64 name="damage groups" max="512" guid="34945daa-409d-3110-0d33-f3a404fd1b4b">
 			<_field_string_id name="name^" />
-			<_field_block_64 name="armor modifiers" max="512">
+			<_field_block_64 name="armor modifiers" max="512" guid="1d0d482b-45c0-0ab1-80ef-b6868a83de3f">
 				<_field_string_id name="name^" />
 				<_field_real name="damage multiplier" />
 			</_field_block_64>
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="damage{falling damage}" max="1">
+	<_field_block_64 name="damage{falling damage}" max="1" guid="2b7ce12a-4184-c9fd-11c9-b5a50a5d516d">
 		<_field_explanation name="Guardians Damage Source">Damage source used for damage caused by the &quot;guardians&quot;. This includes instant kills performed without the use of a damage effect as well as any damage caused by an unknown damage source.</_field_explanation>
 		<_field_struct name="guardiansDamageSource" />
 		<_field_string_id name="Damage Source Name" />

@@ -34,7 +34,7 @@
 		<item Name="Is Legendary" />
 	</_field_byte_flags>
 	<_field_pad name="pad0" length="3" />
-	<_field_block_64 name="loadout properties" max="1">
+	<_field_block_64 name="loadout properties" max="1" guid="668ccc65-4e4a-270b-ea9c-8c9ebfe5ba31">
 		<_field_tag_reference_64 name="deployable" />
 		<_field_byte_flags name="slots">
 			<item Name="Primary" />
@@ -44,17 +44,17 @@
 		</_field_byte_flags>
 		<_field_pad name="pad0" length="3" />
 	</_field_block_64>
-	<_field_block_64 name="consumable properties" max="1">
-		<_field_block_64 name="deployables" max="4">
+	<_field_block_64 name="consumable properties" max="1" guid="1899a02a-4833-54be-393a-03bbbff214c5">
+		<_field_block_64 name="deployables" max="4" guid="dbffc830-4860-400d-baaa-15af3e65dc67">
 			<_field_tag_reference_64 name="deployable^" />
 		</_field_block_64>
 		<_field_real name="consumable cooldown" />
-		<_field_block_64 name="random cards" max="50">
+		<_field_block_64 name="random cards" max="50" guid="83526ab4-9758-7dc1-af64-58970251b279">
 			<_field_real name="weight" />
 			<_field_tag_reference_64 name="card" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="cosmetic properties" max="1">
+	<_field_block_64 name="cosmetic properties" max="1" guid="5201e297-42c7-2dcc-8eed-f6bfa0896a12">
 		<_field_char_enum name="cosmetic slot">
 			<item Name="Helmet" />
 			<item Name="Body" />

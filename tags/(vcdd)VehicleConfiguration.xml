@@ -8,10 +8,10 @@
 	<_field_pad name="pad" length="8" />
 	<_field_struct name="vehicle" />
 	<_field_string_id name="Variant name" />
-	<_field_block_64 name="generic attachments" max="2">
+	<_field_block_64 name="generic attachments" max="2" guid="6d2a5a9c-430a-643f-cbdc-6bb98a17adff">
 		<_field_tag_reference_64 name="attachment" />
 	</_field_block_64>
-	<_field_block_64 name="weapon configurations" max="4">
+	<_field_block_64 name="weapon configurations" max="4" guid="1bca1da1-42d2-50aa-1edd-9ca53f0fe85d">
 		<_field_tag_reference_64 name="weapon configuration" />
 		<_field_string_id name="Weapon name#Corresponds with weapon in model tag" />
 	</_field_block_64>

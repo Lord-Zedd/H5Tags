@@ -24,7 +24,7 @@
 	<_field_char_integer name="turbulence controller index!" />
 	<_field_char_integer name="global force controller index!" />
 	<_field_pad name="pphys" length="3" />
-	<_field_block_64 name="movements" max="8">
+	<_field_block_64 name="movements" max="8" guid="ffdf1eea-416f-e003-7f5c-e8bb10fa6aa0">
 		<_field_short_enum name="type">
 			<item Name="physics" />
 			<item Name="collider" />
@@ -37,7 +37,7 @@
 			<item Name="properties fully indexed" />
 		</_field_byte_flags>
 		<_field_pad name="KNTXOMS" length="1" />
-		<_field_block_64 name="parameters" max="9">
+		<_field_block_64 name="parameters" max="9" guid="ac90ed63-4ce1-7fcf-40a1-dead957f139c">
 			<_field_long_integer name="parameter id" />
 			<_field_struct name="property" />
 			<_field_char_enum name="Input Variable">

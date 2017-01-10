@@ -22,7 +22,7 @@ along camera view direction (into the screen).</_field_explanation>
 	<_field_real name="fog falloff end{max fog distance}" />
 	<_field_real_rgb_color name="fog color" />
 	<_field_real name="fog color intensity#scales color up or down to allow for HDR values" />
-	<_field_block_64 name="Function" max="1">
+	<_field_block_64 name="Function" max="1" guid="d1f9d529-d3e1-9b06-3c79-09d550af3136">
 		<_field_data_64 name="data" />
 	</_field_block_64>
 	<_field_custom name="Depth Ground Fog" />
@@ -37,7 +37,7 @@ along camera view direction (into the screen).</_field_explanation>
 	<_field_real name="fog falloff end{max fog distance}" />
 	<_field_real_rgb_color name="fog color" />
 	<_field_real name="fog color intensity#scales color up or down to allow for HDR values" />
-	<_field_block_64 name="Function" max="1">
+	<_field_block_64 name="Function" max="1" guid="d1f9d529-d3e1-9b06-3c79-09d550af3136">
 		<_field_data_64 name="data" />
 	</_field_block_64>
 	<_field_custom name="Depth Ceiling Fog" />

@@ -5,7 +5,7 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="soft ceilings" max="1">
+	<_field_block_64 name="soft ceilings" max="1" guid="64e57956-4ba7-3673-77cf-b683edea4fda">
 		<_field_real name="biped spring constant" />
 		<_field_real name="biped normal damping" />
 		<_field_real name="biped tangent damping" />

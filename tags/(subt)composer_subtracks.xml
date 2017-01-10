@@ -5,10 +5,10 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="SubTracks" max="1000">
+	<_field_block_64 name="SubTracks" max="1000" guid="264df9bb-4780-7f1c-9427-dba75f6fff71">
 		<_field_string_id name="Name^" />
 		<_field_dword_integer name="Color" />
-		<_field_block_64 name="SubActions" max="10000">
+		<_field_block_64 name="SubActions" max="10000" guid="dc209993-442c-e81d-869c-6f92f854bf5e">
 			<_field_long_enum name="Type^">
 				<item Name="Branch" />
 				<item Name="Look At" />
@@ -82,7 +82,7 @@
 			<_field_long_integer name="End Action" />
 			<_field_long_integer name="End Offset" />
 		</_field_block_64>
-		<_field_block_64 name="Editor SubActions" max="10000">
+		<_field_block_64 name="Editor SubActions" max="10000" guid="73035674-4f19-a2c6-0766-83a8a18562d7">
 			<_field_long_string name="Comment" />
 			<_field_dword_integer name="Color" />
 			<_field_byte_integer name="SubTrack*" />
@@ -106,12 +106,12 @@
 			<_field_struct name="Custom Script" />
 			<_field_data_64 name="Data" />
 			<_field_dword_integer name="Script CRC!~" />
-			<_field_block_64 name="Branch Scripts" max="10000">
+			<_field_block_64 name="Branch Scripts" max="10000" guid="5541b078-47e1-81b9-21be-7bab894c3af7">
 				<_field_data_64 name="Data" />
 				<_field_dword_integer name="Script CRC!~" />
 			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="Points" max="10000">
+		<_field_block_64 name="Points" max="10000" guid="57193946-4181-abcd-268a-cbbd3c425ab5">
 			<_field_byte_flags name="Flags">
 				<item Name="Unattached" />
 			</_field_byte_flags>
@@ -148,8 +148,8 @@
 			<_field_real_euler_angles_3d name="Rotation" />
 			<_field_tag_reference_64 name="Asset^" validtags="lsnd, snd!, musc, mdlg, sefc, bink, fogg, cfxs, bitm, colt, holt" />
 		</_field_block_64>
-		<_field_block_64 name="Branches" max="10000">
-			<_field_block_64 name="Elements" max="8">
+		<_field_block_64 name="Branches" max="10000" guid="453617f7-4519-bf27-444f-ac93546db442">
+			<_field_block_64 name="Elements" max="8" guid="5a1e6c29-4e19-75cc-474e-5e8695e6c734">
 				<_field_long_integer name="Target Action" />
 				<_field_struct name="Condition Script!" />
 				<_field_string name="Script Name!" />
@@ -162,8 +162,8 @@
 				<_field_dword_integer name="Script CRC!~" />
 			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="Dialog" max="10000">
-			<_field_block_64 name="Dialogs" max="8">
+		<_field_block_64 name="Dialog" max="10000" guid="f6581811-432d-19d7-3943-36846e76ce59">
+			<_field_block_64 name="Dialogs" max="8" guid="d8d8cc15-472d-bc1d-ba2f-d9a12f4bfc64">
 				<_field_tag_reference_64 name="Dialog^" validtags="snd!" />
 				<_field_long_integer name="Weight" />
 				<_field_real name="Scale" />
@@ -184,11 +184,11 @@
 			<_field_pad name="PAD1!" length="3" />
 			<_field_string_id name="Character" />
 		</_field_block_64>
-		<_field_block_64 name="Subtitles" max="10000">
+		<_field_block_64 name="Subtitles" max="10000" guid="01b162de-42f0-9e30-2207-dab497c62434">
 			<_field_string_id name="Subtitle" />
 			<_field_string_id name="Character" />
 		</_field_block_64>
-		<_field_block_64 name="Effects" max="10000">
+		<_field_block_64 name="Effects" max="10000" guid="a3550dc6-4f87-b175-8881-a0a56a47d43e">
 			<_field_byte_flags name="Flags">
 				<item Name="Loop" />
 				<item Name="Kill" />
@@ -230,7 +230,7 @@
 			<_field_string_id name="Function A" />
 			<_field_string_id name="Function B" />
 		</_field_block_64>
-		<_field_block_64 name="Lights" max="10000">
+		<_field_block_64 name="Lights" max="10000" guid="edea178a-459d-cfe0-2662-4e856153793f">
 			<_field_string_id name="Lights Tag Name" />
 			<_field_long_integer name="Light ID" />
 			<_field_custom name="Point" />
@@ -263,7 +263,7 @@
 			<_field_string_id name="Marker" />
 			<_field_real_point_3d name="Position" />
 			<_field_real_euler_angles_3d name="Rotation" />
-			<_field_block_64 name="Linked Objects" max="16">
+			<_field_block_64 name="Linked Objects" max="16" guid="c96ca9b0-4656-db11-7085-6187c9c031b8">
 				<_field_string_id name="Object Name^" />
 				<_field_long_integer name="Index!~" />
 				<_field_char_enum name="Index Type!~">
@@ -277,10 +277,10 @@
 				<_field_pad name="PAD1!" length="3" />
 			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="Clip Planes" max="10000">
+		<_field_block_64 name="Clip Planes" max="10000" guid="a0b7bdcc-417b-78c5-9162-1c85e1632fb6">
 			<_field_real_point_3d name="Plane Center" />
 			<_field_real_point_3d name="Plane Direction" />
-			<_field_block_64 name="Subjects" max="16">
+			<_field_block_64 name="Subjects" max="16" guid="c96ca9b0-4656-db11-7085-6187c9c031b8">
 				<_field_string_id name="Object Name^" />
 				<_field_long_integer name="Index!~" />
 				<_field_char_enum name="Index Type!~">
@@ -294,7 +294,7 @@
 				<_field_pad name="PAD1!" length="3" />
 			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="Functions" max="10000">
+		<_field_block_64 name="Functions" max="10000" guid="df6fd1bd-4cc5-2941-5619-7f9177927aec">
 			<_field_byte_flags name="Flags">
 				<item Name="Clear Value At End" />
 				<item Name="Global" />
@@ -304,22 +304,22 @@
 			<_field_struct name="Function" />
 			<_field_data_64 name="data" />
 		</_field_block_64>
-		<_field_block_64 name="Input Constraints" max="10000">
+		<_field_block_64 name="Input Constraints" max="10000" guid="44e22c94-4d8c-485d-2f72-c193fa82e226">
 			<_field_rectangle_2d name="Maximum Look Angles" />
 			<_field_real name="Frictional Force" />
 		</_field_block_64>
-		<_field_block_64 name="Generic SubActions" max="10000">
+		<_field_block_64 name="Generic SubActions" max="10000" guid="caed7102-4f77-f736-0185-0798ca41f38a">
 			<_field_tag_reference_64 name="Asset^" validtags="lsnd, snd!, musc, mdlg, sefc, bink, fogg, cfxs, bitm, colt, holt" />
 			<_field_long_integer name="Blend Frames" />
 		</_field_block_64>
-		<_field_block_64 name="Object SubActions" max="10000">
+		<_field_block_64 name="Object SubActions" max="10000" guid="9da5b671-40f1-f3f9-a4f1-e0828ce2f3ba">
 			<_field_string_id name="Object Name" />
 			<_field_byte_flags name="Flags">
 				<item Name="Kill" />
 			</_field_byte_flags>
 			<_field_pad name="PAD1!" length="3" />
 		</_field_block_64>
-		<_field_block_64 name="Value SubActions" max="10000">
+		<_field_block_64 name="Value SubActions" max="10000" guid="499ed478-405b-afce-cf1b-cf850ad2a328">
 			<_field_byte_flags name="Flags">
 				<item Name="Constant" />
 			</_field_byte_flags>
@@ -327,13 +327,13 @@
 			<_field_real name="Start Value" />
 			<_field_real name="End Value" />
 		</_field_block_64>
-		<_field_block_64 name="Trigger SubActions" max="10000">
+		<_field_block_64 name="Trigger SubActions" max="10000" guid="361c73e9-4e69-d217-225e-5dac4bf18242">
 			<_field_long_flags name="Flags">
 				<item Name="Enable FOV" />
 				<item Name="3rd Person Camera" />
 			</_field_long_flags>
 		</_field_block_64>
-		<_field_block_64 name="Scripts" max="10000">
+		<_field_block_64 name="Scripts" max="10000" guid="385eadfd-436d-9c0d-6de8-8a8e2c7d69a6">
 			<_field_string name="Script Name!" />
 			<_field_byte_flags name="Flags">
 				<item Name="Client" />
@@ -343,7 +343,7 @@
 			<_field_data_64 name="Data" />
 			<_field_dword_integer name="Script CRC!~" />
 		</_field_block_64>
-		<_field_block_64 name="UI Scenes" max="10000">
+		<_field_block_64 name="UI Scenes" max="10000" guid="b6374cc1-ede0-6ddd-a4af-65ac7d4bdad6">
 			<_field_byte_flags name="Flags">
 				<item Name="Attach" />
 				<item Name="Render 2D" />
@@ -382,7 +382,7 @@
 			<_field_real_point_3d name="Position" />
 			<_field_real_euler_angles_3d name="Rotation" />
 			<_field_real name="Scale" />
-			<_field_block_64 name="Player Data" max="1">
+			<_field_block_64 name="Player Data" max="1" guid="8e2771a3-4cd9-5760-b6d4-5eb613f5dbce">
 				<_field_char_enum name="Player Type">
 					<item Name="Multiplayer" />
 					<item Name="Campaign" />
@@ -408,17 +408,17 @@
 				<_field_long_integer name="Forge Spectator Player Index" />
 			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="NodeGraph Events" max="10000">
+		<_field_block_64 name="NodeGraph Events" max="10000" guid="00107580-ad56-2f53-0cd5-f78adfadbe93">
 			<_field_string_id name="Event Name" />
 			<_field_byte_flags name="Flags">
 				<item Name="Global Event" />
 			</_field_byte_flags>
 			<_field_pad name="PAD1!" length="3" />
 		</_field_block_64>
-		<_field_block_64 name="Game Engine Vignette Events" max="10000">
+		<_field_block_64 name="Game Engine Vignette Events" max="10000" guid="a43307fc-433e-f894-6539-998996066254">
 			<_field_string_id name="Event Name" />
 		</_field_block_64>
-		<_field_block_64 name="Camera Lens Dirt" max="10000">
+		<_field_block_64 name="Camera Lens Dirt" max="10000" guid="acaf71ef-4cde-19bf-f1a7-17a464054636">
 			<_field_real name="Intensity" />
 			<_field_tag_reference_64 name="Dirt Texture" />
 			<_field_char_enum name="Dirt Type">
@@ -427,7 +427,7 @@
 			</_field_char_enum>
 			<_field_pad name="PAD1!" length="3" />
 		</_field_block_64>
-		<_field_block_64 name="Transform SubActions" max="10000">
+		<_field_block_64 name="Transform SubActions" max="10000" guid="272ff5e7-485c-980b-111e-47a49883114b">
 			<_field_byte_flags name="Flags">
 				<item Name="Position" />
 				<item Name="Rotation" />

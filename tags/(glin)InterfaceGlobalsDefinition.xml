@@ -5,7 +5,7 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="interface tags" max="1">
+	<_field_block_64 name="interface tags" max="1" guid="eafcbd42-4dfb-2726-c124-269c3c0d8b92">
 		<_field_tag_reference_64 name="spinner bitmap" />
 		<_field_tag_reference_64 name="obsolete2" />
 		<_field_tag_reference_64 name="screen color table" />

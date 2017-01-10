@@ -32,7 +32,7 @@
 	<_field_real name="restart if within{overlap threshold}:world units" />
 	<_field_real name="continue if within:world units" />
 	<_field_real name="death_delay" />
-	<_field_short_block_index name="loop start event!" />
+	<_field_short_block_index name="loop start event!" srcguid="45adb157-4708-3fef-bb70-3fb0fef2f78c" />
 	<_field_char_enum name="priority!*">
 		<item Name="low" />
 		<item Name="normal" />
@@ -50,7 +50,7 @@
 	<_field_struct name="standaloneDamageSource" />
 	<_field_string_id name="Damage Source Name" />
 	<_field_pad name="pad2" length="4" />
-	<_field_block_64 name="locations!" max="8">
+	<_field_block_64 name="locations!" max="8" guid="f2742e8c-4e8b-caa3-f96d-3ebdb3bc6838">
 		<_field_explanation name="MARKER NAMES">In addition to the marker in the render model there are several special marker names:
 
 replace
@@ -101,7 +101,7 @@ The location of the last detonated projectile, in case the parent object is a we
 		</_field_char_enum>
 		<_field_pad name="RGEWNQIG" length="1" />
 	</_field_block_64>
-	<_field_block_64 name="events!" max="32">
+	<_field_block_64 name="events!" max="32" guid="45adb157-4708-3fef-bb70-3fb0fef2f78c">
 		<_field_string_id name="event name^" />
 		<_field_word_flags name="flags">
 			<item Name="disabled for debugging" />
@@ -126,7 +126,7 @@ The location of the last detonated projectile, in case the parent object is a we
 		<_field_real_bounds name="duration bounds:seconds#duration of this event" />
 		<_field_explanation name="event age duration override">Parts and particle systems can take &quot;event age&quot; as a function input.  Typically that goes from 0 to 1 over the event duration.  If you want a different time, specify it here.  0 means use the duration bounds above.</_field_explanation>
 		<_field_real name="event age duration override:seconds#the amount of time over which the &quot;event age&quot; function input goes from 0 to 1" />
-		<_field_block_64 name="parts" max="32">
+		<_field_block_64 name="parts" max="32" guid="10814b9b-42d7-e63d-24d8-5d94f877f26c">
 			<_field_short_enum name="create in">
 				<item Name="any environment" />
 				<item Name="air only" />
@@ -140,8 +140,8 @@ The location of the last detonated projectile, in case the parent object is a we
 				<item Name="violent mode only" />
 				<item Name="nonviolent mode only" />
 			</_field_short_enum>
-			<_field_short_block_index name="location" />
-			<_field_short_block_index name="secondary location (beams)" />
+			<_field_short_block_index name="location" srcguid="f2742e8c-4e8b-caa3-f96d-3ebdb3bc6838" />
+			<_field_short_block_index name="secondary location (beams)" srcguid="f2742e8c-4e8b-caa3-f96d-3ebdb3bc6838" />
 			<_field_word_flags name="flags">
 				<item Name="face down regardless of location (decals)" />
 				<item Name="offset origin away from geometry (lights)" />
@@ -213,7 +213,7 @@ The location of the last detonated projectile, in case the parent object is a we
 			</_field_long_flags>
 			<_field_tag_reference_64 name="particleize#optional particleization effect definition, if you want this to particleize on spawn" />
 		</_field_block_64>
-		<_field_block_64 name="accelerations" max="32">
+		<_field_block_64 name="accelerations" max="32" guid="007dda95-4d2a-2a08-3a4f-e48ad27d214f">
 			<_field_short_enum name="create in">
 				<item Name="any environment" />
 				<item Name="air only" />
@@ -227,13 +227,13 @@ The location of the last detonated projectile, in case the parent object is a we
 				<item Name="violent mode only" />
 				<item Name="nonviolent mode only" />
 			</_field_short_enum>
-			<_field_short_block_index name="location" />
+			<_field_short_block_index name="location" srcguid="f2742e8c-4e8b-caa3-f96d-3ebdb3bc6838" />
 			<_field_pad name="THY" length="2" />
 			<_field_real name="acceleration" />
 			<_field_real name="inner cone angle:degrees" />
 			<_field_real name="outer cone angle:degrees" />
 		</_field_block_64>
-		<_field_block_64 name="particle systems" max="32">
+		<_field_block_64 name="particle systems" max="32" guid="1a9dca45-4a9f-1306-4e03-469d8733700c">
 			<_field_char_enum name="priority">
 				<item Name="low" />
 				<item Name="normal" />
@@ -254,7 +254,7 @@ The location of the last detonated projectile, in case the parent object is a we
 			</_field_char_enum>
 			<_field_short_integer name="sort bias#use values between -10 and 10 to move closer and farther from camera (positive is closer)" />
 			<_field_tag_reference_64 name="particle" />
-			<_field_long_block_index name="location" />
+			<_field_long_block_index name="location" srcguid="f2742e8c-4e8b-caa3-f96d-3ebdb3bc6838" />
 			<_field_short_enum name="coordinate system">
 				<item Name="world" />
 				<item Name="local" />
@@ -325,7 +325,7 @@ The location of the last detonated projectile, in case the parent object is a we
 			<_field_real name="LOD out distance#defaults to 20.0" />
 			<_field_real name="LOD feather out delta#0 defaults to 5.0, minimum is 0.0001" />
 			<_field_real name="inverse LOD feather out!" />
-			<_field_block_64 name="emitters" max="8">
+			<_field_block_64 name="emitters" max="8" guid="d274ee53-4dda-8581-20bd-e882b51ab970">
 				<_field_string_id name="emitter name^" />
 				<_field_byte_integer name="version!" />
 				<_field_custom name="EMITTER SETTINGS|8FAF8D" />
@@ -1263,7 +1263,7 @@ The location of the last detonated projectile, in case the parent object is a we
 				<_field_char_integer name="turbulence controller index!" />
 				<_field_char_integer name="global force controller index!" />
 				<_field_pad name="pphys" length="3" />
-				<_field_block_64 name="movements" max="8">
+				<_field_block_64 name="movements" max="8" guid="ffdf1eea-416f-e003-7f5c-e8bb10fa6aa0">
 					<_field_short_enum name="type">
 						<item Name="physics" />
 						<item Name="collider" />
@@ -1276,7 +1276,7 @@ The location of the last detonated projectile, in case the parent object is a we
 						<item Name="properties fully indexed" />
 					</_field_byte_flags>
 					<_field_pad name="KNTXOMS" length="1" />
-					<_field_block_64 name="parameters" max="9">
+					<_field_block_64 name="parameters" max="9" guid="ac90ed63-4ce1-7fcf-40a1-dead957f139c">
 						<_field_long_integer name="parameter id" />
 						<_field_struct name="property" />
 						<_field_char_enum name="Input Variable">
@@ -1369,7 +1369,7 @@ The location of the last detonated projectile, in case the parent object is a we
 					<_field_long_integer name="runtime m_used_particle_states!" />
 				</_field_block_64>
 				<_field_tag_reference_64 name="turbulence texture" />
-				<_field_block_64 name="particle attractor/repulsor" max="4">
+				<_field_block_64 name="particle attractor/repulsor" max="4" guid="e1753503-470d-374e-ee24-93bda4ec8b4c">
 					<_field_struct name="global force" />
 					<_field_byte_flags name="flags">
 						<item Name="is infinitely long cylinder!" />
@@ -1393,7 +1393,7 @@ The location of the last detonated projectile, in case the parent object is a we
 					<_field_real_vector_3d name="offset" />
 					<_field_real_vector_3d name="axis{direction (for cylinder forces)}" />
 				</_field_block_64>
-				<_field_block_64 name="particle clip sphere" max="1">
+				<_field_block_64 name="particle clip sphere" max="1" guid="a39a3eb4-4a18-759b-f79a-b6bddabb1175">
 					<_field_real_vector_3d name="offset" />
 					<_field_real name="radius" />
 				</_field_block_64>
@@ -2602,7 +2602,7 @@ The location of the last detonated projectile, in case the parent object is a we
 				<_field_long_integer name="runtime m_constant_over_time_properties!" />
 				<_field_long_integer name="runtime m_used_particle_states!" />
 				<_field_struct name="runtime m_gpu_data!" />
-				<_field_block_64 name="runtime gpu_property_block!" max="20">
+				<_field_block_64 name="runtime gpu_property_block!" max="20" guid="a49c0823-4b62-46cf-4739-5ba40eda112d">
 					<_field_array name="runtime gpu_property_sub_array!">
 						<_field_real name="runtime gpu_property_real!" />
 						<_field_real name="runtime gpu_property_real!" />
@@ -2610,7 +2610,7 @@ The location of the last detonated projectile, in case the parent object is a we
 						<_field_real name="runtime gpu_property_real!" />
 					</_field_array>
 				</_field_block_64>
-				<_field_block_64 name="runtime gpu_functions_block!" max="28">
+				<_field_block_64 name="runtime gpu_functions_block!" max="28" guid="e4f4c1fd-4521-776d-eaf4-ccaacd0b3551">
 					<_field_array name="runtime gpu_function_sub_array!">
 						<_field_real name="runtime gpu_function_real!" />
 						<_field_real name="runtime gpu_function_real!" />
@@ -2630,7 +2630,7 @@ The location of the last detonated projectile, in case the parent object is a we
 						<_field_real name="runtime gpu_function_real!" />
 					</_field_array>
 				</_field_block_64>
-				<_field_block_64 name="runtime gpu_colors_block!" max="8">
+				<_field_block_64 name="runtime gpu_colors_block!" max="8" guid="77a26ffb-4319-0c16-d3c4-e4814937dc69">
 					<_field_array name="runtime gpu_color_sub_array!">
 						<_field_real name="runtime gpu_color_real!" />
 						<_field_real name="runtime gpu_color_real!" />
@@ -2644,23 +2644,23 @@ The location of the last detonated projectile, in case the parent object is a we
 			<_field_real name="runtime overdraw!" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="looping sounds!" max="2">
+	<_field_block_64 name="looping sounds!" max="2" guid="b07d23c9-4de9-ec51-f235-75824b79cd48">
 		<_field_tag_reference_64 name="looping sound^" />
-		<_field_short_block_index name="location" />
-		<_field_short_block_index name="bind scale to event" />
+		<_field_short_block_index name="location" srcguid="f2742e8c-4e8b-caa3-f96d-3ebdb3bc6838" />
+		<_field_short_block_index name="bind scale to event" srcguid="45adb157-4708-3fef-bb70-3fb0fef2f78c" />
 	</_field_block_64>
 	<_field_real name="always play distance" />
 	<_field_real name="never play distance" />
 	<_field_real name="runtime lightprobe_death_delay!" />
 	<_field_real name="runtime local_space_death_delay!" />
-	<_field_block_64 name="conical distribution!" max="1">
+	<_field_block_64 name="conical distribution!" max="1" guid="3b2368f1-495d-9891-1c5e-2fb02530935b">
 		<_field_explanation name="conical_projection: AKA shotgun">projectile_count = yaw_count*pitch_count</_field_explanation>
 		<_field_short_integer name="yaw count" />
 		<_field_short_integer name="pitch count" />
 		<_field_real name="distribution exponent#exp==.5 even distribution, exp&gt;.5== tighter" />
 		<_field_angle name="spread#degrees" />
 	</_field_block_64>
-	<_field_block_64 name="lods" max="8">
+	<_field_block_64 name="lods" max="8" guid="31265185-42e6-ea25-5302-1c839a585627">
 		<_field_string_id name="lod name^" />
 		<_field_real name="lod distance#World space distance from the camera where the lod starts" />
 		<_field_real name="lod timer#Seconds before the lod distance gets evaluated, 0.0 disables the timer and causes it to be evaluated at the end of the event" />
@@ -2671,8 +2671,8 @@ The location of the last detonated projectile, in case the parent object is a we
 			<item Name="run events in parallel" />
 			<item Name="disabled for debugging" />
 		</_field_word_flags>
-		<_field_short_block_index name="lod loop start event#Overridden when importing lod from external effect" />
-		<_field_block_64 name="lod locations#Overridden when importing lod from external effect" max="8">
+		<_field_short_block_index name="lod loop start event#Overridden when importing lod from external effect" srcguid="45adb157-4708-3fef-bb70-3fb0fef2f78c" />
+		<_field_block_64 name="lod locations#Overridden when importing lod from external effect" max="8" guid="f2742e8c-4e8b-caa3-f96d-3ebdb3bc6838">
 			<_field_explanation name="MARKER NAMES">In addition to the marker in the render model there are several special marker names:
 
 replace
@@ -2723,7 +2723,7 @@ The location of the last detonated projectile, in case the parent object is a we
 			</_field_char_enum>
 			<_field_pad name="RGEWNQIG" length="1" />
 		</_field_block_64>
-		<_field_block_64 name="lod events#Overridden when importing lod from external effect" max="32">
+		<_field_block_64 name="lod events#Overridden when importing lod from external effect" max="32" guid="45adb157-4708-3fef-bb70-3fb0fef2f78c">
 			<_field_string_id name="event name^" />
 			<_field_word_flags name="flags">
 				<item Name="disabled for debugging" />
@@ -2748,7 +2748,7 @@ The location of the last detonated projectile, in case the parent object is a we
 			<_field_real_bounds name="duration bounds:seconds#duration of this event" />
 			<_field_explanation name="event age duration override">Parts and particle systems can take &quot;event age&quot; as a function input.  Typically that goes from 0 to 1 over the event duration.  If you want a different time, specify it here.  0 means use the duration bounds above.</_field_explanation>
 			<_field_real name="event age duration override:seconds#the amount of time over which the &quot;event age&quot; function input goes from 0 to 1" />
-			<_field_block_64 name="parts" max="32">
+			<_field_block_64 name="parts" max="32" guid="10814b9b-42d7-e63d-24d8-5d94f877f26c">
 				<_field_short_enum name="create in">
 					<item Name="any environment" />
 					<item Name="air only" />
@@ -2762,8 +2762,8 @@ The location of the last detonated projectile, in case the parent object is a we
 					<item Name="violent mode only" />
 					<item Name="nonviolent mode only" />
 				</_field_short_enum>
-				<_field_short_block_index name="location" />
-				<_field_short_block_index name="secondary location (beams)" />
+				<_field_short_block_index name="location" srcguid="f2742e8c-4e8b-caa3-f96d-3ebdb3bc6838" />
+				<_field_short_block_index name="secondary location (beams)" srcguid="f2742e8c-4e8b-caa3-f96d-3ebdb3bc6838" />
 				<_field_word_flags name="flags">
 					<item Name="face down regardless of location (decals)" />
 					<item Name="offset origin away from geometry (lights)" />
@@ -2835,7 +2835,7 @@ The location of the last detonated projectile, in case the parent object is a we
 				</_field_long_flags>
 				<_field_tag_reference_64 name="particleize#optional particleization effect definition, if you want this to particleize on spawn" />
 			</_field_block_64>
-			<_field_block_64 name="accelerations" max="32">
+			<_field_block_64 name="accelerations" max="32" guid="007dda95-4d2a-2a08-3a4f-e48ad27d214f">
 				<_field_short_enum name="create in">
 					<item Name="any environment" />
 					<item Name="air only" />
@@ -2849,13 +2849,13 @@ The location of the last detonated projectile, in case the parent object is a we
 					<item Name="violent mode only" />
 					<item Name="nonviolent mode only" />
 				</_field_short_enum>
-				<_field_short_block_index name="location" />
+				<_field_short_block_index name="location" srcguid="f2742e8c-4e8b-caa3-f96d-3ebdb3bc6838" />
 				<_field_pad name="THY" length="2" />
 				<_field_real name="acceleration" />
 				<_field_real name="inner cone angle:degrees" />
 				<_field_real name="outer cone angle:degrees" />
 			</_field_block_64>
-			<_field_block_64 name="particle systems" max="32">
+			<_field_block_64 name="particle systems" max="32" guid="1a9dca45-4a9f-1306-4e03-469d8733700c">
 				<_field_char_enum name="priority">
 					<item Name="low" />
 					<item Name="normal" />
@@ -2876,7 +2876,7 @@ The location of the last detonated projectile, in case the parent object is a we
 				</_field_char_enum>
 				<_field_short_integer name="sort bias#use values between -10 and 10 to move closer and farther from camera (positive is closer)" />
 				<_field_tag_reference_64 name="particle" />
-				<_field_long_block_index name="location" />
+				<_field_long_block_index name="location" srcguid="f2742e8c-4e8b-caa3-f96d-3ebdb3bc6838" />
 				<_field_short_enum name="coordinate system">
 					<item Name="world" />
 					<item Name="local" />
@@ -2947,7 +2947,7 @@ The location of the last detonated projectile, in case the parent object is a we
 				<_field_real name="LOD out distance#defaults to 20.0" />
 				<_field_real name="LOD feather out delta#0 defaults to 5.0, minimum is 0.0001" />
 				<_field_real name="inverse LOD feather out!" />
-				<_field_block_64 name="emitters" max="8">
+				<_field_block_64 name="emitters" max="8" guid="d274ee53-4dda-8581-20bd-e882b51ab970">
 					<_field_string_id name="emitter name^" />
 					<_field_byte_integer name="version!" />
 					<_field_custom name="EMITTER SETTINGS|8FAF8D" />
@@ -3885,7 +3885,7 @@ The location of the last detonated projectile, in case the parent object is a we
 					<_field_char_integer name="turbulence controller index!" />
 					<_field_char_integer name="global force controller index!" />
 					<_field_pad name="pphys" length="3" />
-					<_field_block_64 name="movements" max="8">
+					<_field_block_64 name="movements" max="8" guid="ffdf1eea-416f-e003-7f5c-e8bb10fa6aa0">
 						<_field_short_enum name="type">
 							<item Name="physics" />
 							<item Name="collider" />
@@ -3898,7 +3898,7 @@ The location of the last detonated projectile, in case the parent object is a we
 							<item Name="properties fully indexed" />
 						</_field_byte_flags>
 						<_field_pad name="KNTXOMS" length="1" />
-						<_field_block_64 name="parameters" max="9">
+						<_field_block_64 name="parameters" max="9" guid="ac90ed63-4ce1-7fcf-40a1-dead957f139c">
 							<_field_long_integer name="parameter id" />
 							<_field_struct name="property" />
 							<_field_char_enum name="Input Variable">
@@ -3991,7 +3991,7 @@ The location of the last detonated projectile, in case the parent object is a we
 						<_field_long_integer name="runtime m_used_particle_states!" />
 					</_field_block_64>
 					<_field_tag_reference_64 name="turbulence texture" />
-					<_field_block_64 name="particle attractor/repulsor" max="4">
+					<_field_block_64 name="particle attractor/repulsor" max="4" guid="e1753503-470d-374e-ee24-93bda4ec8b4c">
 						<_field_struct name="global force" />
 						<_field_byte_flags name="flags">
 							<item Name="is infinitely long cylinder!" />
@@ -4015,7 +4015,7 @@ The location of the last detonated projectile, in case the parent object is a we
 						<_field_real_vector_3d name="offset" />
 						<_field_real_vector_3d name="axis{direction (for cylinder forces)}" />
 					</_field_block_64>
-					<_field_block_64 name="particle clip sphere" max="1">
+					<_field_block_64 name="particle clip sphere" max="1" guid="a39a3eb4-4a18-759b-f79a-b6bddabb1175">
 						<_field_real_vector_3d name="offset" />
 						<_field_real name="radius" />
 					</_field_block_64>
@@ -5224,7 +5224,7 @@ The location of the last detonated projectile, in case the parent object is a we
 					<_field_long_integer name="runtime m_constant_over_time_properties!" />
 					<_field_long_integer name="runtime m_used_particle_states!" />
 					<_field_struct name="runtime m_gpu_data!" />
-					<_field_block_64 name="runtime gpu_property_block!" max="20">
+					<_field_block_64 name="runtime gpu_property_block!" max="20" guid="a49c0823-4b62-46cf-4739-5ba40eda112d">
 						<_field_array name="runtime gpu_property_sub_array!">
 							<_field_real name="runtime gpu_property_real!" />
 							<_field_real name="runtime gpu_property_real!" />
@@ -5232,7 +5232,7 @@ The location of the last detonated projectile, in case the parent object is a we
 							<_field_real name="runtime gpu_property_real!" />
 						</_field_array>
 					</_field_block_64>
-					<_field_block_64 name="runtime gpu_functions_block!" max="28">
+					<_field_block_64 name="runtime gpu_functions_block!" max="28" guid="e4f4c1fd-4521-776d-eaf4-ccaacd0b3551">
 						<_field_array name="runtime gpu_function_sub_array!">
 							<_field_real name="runtime gpu_function_real!" />
 							<_field_real name="runtime gpu_function_real!" />
@@ -5252,7 +5252,7 @@ The location of the last detonated projectile, in case the parent object is a we
 							<_field_real name="runtime gpu_function_real!" />
 						</_field_array>
 					</_field_block_64>
-					<_field_block_64 name="runtime gpu_colors_block!" max="8">
+					<_field_block_64 name="runtime gpu_colors_block!" max="8" guid="77a26ffb-4319-0c16-d3c4-e4814937dc69">
 						<_field_array name="runtime gpu_color_sub_array!">
 							<_field_real name="runtime gpu_color_real!" />
 							<_field_real name="runtime gpu_color_real!" />
@@ -5266,12 +5266,12 @@ The location of the last detonated projectile, in case the parent object is a we
 				<_field_real name="runtime overdraw!" />
 			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="lod looping sounds#Overridden when importing lod from external effect" max="2">
+		<_field_block_64 name="lod looping sounds#Overridden when importing lod from external effect" max="2" guid="b07d23c9-4de9-ec51-f235-75824b79cd48">
 			<_field_tag_reference_64 name="looping sound^" />
-			<_field_short_block_index name="location" />
-			<_field_short_block_index name="bind scale to event" />
+			<_field_short_block_index name="location" srcguid="f2742e8c-4e8b-caa3-f96d-3ebdb3bc6838" />
+			<_field_short_block_index name="bind scale to event" srcguid="45adb157-4708-3fef-bb70-3fb0fef2f78c" />
 		</_field_block_64>
-		<_field_block_64 name="lod conical distribution#Overridden when importing lod from external effect" max="1">
+		<_field_block_64 name="lod conical distribution#Overridden when importing lod from external effect" max="1" guid="3b2368f1-495d-9891-1c5e-2fb02530935b">
 			<_field_explanation name="conical_projection: AKA shotgun">projectile_count = yaw_count*pitch_count</_field_explanation>
 			<_field_short_integer name="yaw count" />
 			<_field_short_integer name="pitch count" />

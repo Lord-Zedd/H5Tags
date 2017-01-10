@@ -29,7 +29,7 @@
 	<_field_real name="full heat stun time:s#seconds from the time you are at maximum heat until it starts decaying again" />
 	<_field_real name="betrayal heat stun time:s#seconds from the time you are at maximum heat until it starts decaying again" />
 	<_field_tag_reference_64 name="incident definitions" />
-	<_field_block_64 name="default incident definition!*#generated in code" max="1000">
+	<_field_block_64 name="default incident definition!*#generated in code" max="1000" guid="ae3fffe9-415e-c8f4-1c45-9c8ee9aadcc8">
 		<_field_string_id name="name^" />
 		<_field_custom name="PROPERTIES" />
 		<_field_byte_flags name="flags">
@@ -61,7 +61,7 @@
 			<item Name="4 players only" />
 			<item Name="more than one player" />
 		</_field_char_enum>
-		<_field_block_64 name="suppressed incidents" max="1000">
+		<_field_block_64 name="suppressed incidents" max="1000" guid="cb9d3072-469e-c3a1-71ae-fa95e1e3a333">
 			<_field_string_id name="incident name^" />
 			<_field_byte_flags name="suppression type">
 				<item Name="suppress cause player game engine event{suppress game engine event}" />
@@ -75,13 +75,13 @@
 			</_field_byte_flags>
 			<_field_pad name="VNJESHFHV" length="3" />
 		</_field_block_64>
-		<_field_block_64 name="suppressed incident blocks" max="8">
+		<_field_block_64 name="suppressed incident blocks" max="8" guid="6bb34f94-411a-60a4-a76e-a79ba8d9d191">
 			<_field_tag_reference_64 name="suppression block" />
 		</_field_block_64>
 		<_field_custom name="CREATION" />
-		<_field_block_64 name="specialized incidents" max="1">
+		<_field_block_64 name="specialized incidents" max="1" guid="c1f3c060-4a72-bf5b-8bbc-e89c6be88cf9">
 			<_field_string_id name="base incident^" />
-			<_field_block_64 name="cause object" max="10">
+			<_field_block_64 name="cause object" max="10" guid="4d1fde04-4b60-8907-b075-48943eccac8d">
 				<_field_long_flags name="flags">
 					<item Name="player" />
 					<item Name="ai" />
@@ -181,7 +181,7 @@
 					<item Name="not in vehicle" />
 				</_field_word_flags>
 				<_field_string name="gamertag" />
-				<_field_block_64 name="riding in vehicles" max="10">
+				<_field_block_64 name="riding in vehicles" max="10" guid="0f5bb51f-4a01-a1e1-8ed1-5e83fe29979b">
 					<_field_long_enum name="vehicle type">
 						<item Name="vehicle_type_human_tank" />
 						<item Name="vehicle_type_human_jeep" />
@@ -200,7 +200,7 @@
 					</_field_long_enum>
 				</_field_block_64>
 			</_field_block_64>
-			<_field_block_64 name="effect object{kill bucket}" max="10">
+			<_field_block_64 name="effect object{kill bucket}" max="10" guid="4d1fde04-4b60-8907-b075-48943eccac8d">
 				<_field_long_flags name="flags">
 					<item Name="player" />
 					<item Name="ai" />
@@ -300,7 +300,7 @@
 					<item Name="not in vehicle" />
 				</_field_word_flags>
 				<_field_string name="gamertag" />
-				<_field_block_64 name="riding in vehicles" max="10">
+				<_field_block_64 name="riding in vehicles" max="10" guid="0f5bb51f-4a01-a1e1-8ed1-5e83fe29979b">
 					<_field_long_enum name="vehicle type">
 						<item Name="vehicle_type_human_tank" />
 						<item Name="vehicle_type_human_jeep" />
@@ -319,7 +319,7 @@
 					</_field_long_enum>
 				</_field_block_64>
 			</_field_block_64>
-			<_field_block_64 name="special kill type" max="10">
+			<_field_block_64 name="special kill type" max="10" guid="98e84edd-4eff-6c44-7e08-29ad19bb16b3">
 				<_field_char_enum name="special kill type^">
 					<item Name="headshot" />
 					<item Name="grenade stick" />
@@ -335,7 +335,7 @@
 				</_field_char_enum>
 				<_field_pad name="CVUIHEN" length="3" />
 			</_field_block_64>
-			<_field_block_64 name="game over filter" max="1">
+			<_field_block_64 name="game over filter" max="1" guid="897b0508-426f-aacf-53b0-2b8620d4a870">
 				<_field_word_flags name="flags">
 					<item Name="killed all enemies#only looks at the enemies in-game at the end" />
 					<item Name="highest score#had the highest score" />
@@ -348,7 +348,7 @@
 				</_field_word_flags>
 				<_field_short_integer name="minimum game length:seconds" />
 			</_field_block_64>
-			<_field_block_64 name="custom data filter" max="1">
+			<_field_block_64 name="custom data filter" max="1" guid="fea8c235-4a7b-959d-92e5-99a3fc5ffe8c">
 				<_field_byte_flags name="flags">
 					<item Name="equal to" />
 					<item Name="greater than" />
@@ -357,7 +357,7 @@
 				<_field_pad name="PAD1" length="3" />
 				<_field_long_integer name="value" />
 			</_field_block_64>
-			<_field_block_64 name="distance filter" max="1">
+			<_field_block_64 name="distance filter" max="1" guid="ae5c724e-4261-4529-0074-789b3ae7bd52">
 				<_field_byte_flags name="flags">
 					<item Name="equal to" />
 					<item Name="greater than" />
@@ -367,7 +367,7 @@
 				<_field_long_integer name="distance between effect and cause player: wu" />
 			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="accumulator incidents" max="1">
+		<_field_block_64 name="accumulator incidents" max="1" guid="7c9f1078-4d20-549d-610b-5a92e26570d0">
 			<_field_char_enum name="aggregation type">
 				<item Name="all" />
 				<item Name="any" />
@@ -380,7 +380,7 @@
 				<item Name="on incident" />
 			</_field_char_enum>
 			<_field_pad name="VJIOEJNLKS" length="2" />
-			<_field_block_64 name="child incidents" max="60">
+			<_field_block_64 name="child incidents" max="60" guid="c4843bbe-47ac-fb7b-0c6c-8d8c10af7abf">
 				<_field_byte_flags name="flags">
 					<item Name="equal to" />
 					<item Name="greater than" />
@@ -393,7 +393,7 @@
 				<_field_real name="reset timeout" />
 			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="sum accumulator incidents" max="1">
+		<_field_block_64 name="sum accumulator incidents" max="1" guid="6cdce224-4dc0-e8b6-ba97-a485a1478300">
 			<_field_char_enum name="resets on">
 				<item Name="four seconds since last event" />
 				<item Name="player death" />
@@ -408,13 +408,13 @@
 			</_field_byte_flags>
 			<_field_pad name="XSEXEC" length="2" />
 			<_field_long_integer name="count" />
-			<_field_block_64 name="child incidents" max="60">
+			<_field_block_64 name="child incidents" max="60" guid="3d98bf85-46e2-a9bf-5ffd-a9a4b348977f">
 				<_field_string_id name="incident name" />
 				<_field_string_id name="reset incident name" />
 				<_field_real name="reset timeout" />
 			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="response" max="32">
+		<_field_block_64 name="response" max="32" guid="2cd0cd80-4be0-1a09-b3b3-a6be165d2068">
 			<_field_custom name="allowed game modes" />
 			<_field_struct name="allowed game modes" />
 			<_field_byte_flags name="game mode">
@@ -461,7 +461,7 @@
 			<_field_long_integer name="heat award" />
 			<_field_string_id name="medal" />
 			<_field_string_id name="achievement" />
-			<_field_block_64 name="fanfare" max="1">
+			<_field_block_64 name="fanfare" max="1" guid="bdadbdb5-4ffe-3a93-85d3-cf9a12d697b1">
 				<_field_long_integer name="priority#0 is highest prioroty" />
 				<_field_char_enum name="queue type">
 					<item Name="personal score" />

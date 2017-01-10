@@ -6,7 +6,7 @@
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
 	<_field_struct name="object dispenser component" />
-	<_field_block_64 name="dispense slots" max="2">
+	<_field_block_64 name="dispense slots" max="2" guid="2dd3032b-4e2b-f022-dd81-7d93ac1686a1">
 		<_field_string_id name="slot name" />
 		<_field_string_id name="slot marker" />
 	</_field_block_64>

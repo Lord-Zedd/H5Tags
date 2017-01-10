@@ -10,7 +10,7 @@
 		<item Name="along hull surface only#spawn particles on the hull surface where it intersects with the water." />
 	</_field_char_enum>
 	<_field_pad name="PEBHSP1" length="3" />
-	<_field_block_64 name="markers" max="16">
+	<_field_block_64 name="markers" max="16" guid="c25b4b2b-49b9-662c-7527-a4aa79e09cae">
 		<_field_string_id name="marker group^" />
 	</_field_block_64>
 </plugin>

@@ -16,7 +16,7 @@
 	</_field_array>
 	<_field_string_id name="material" />
 	<_field_explanation name="test|FF0080" />
-	<_field_block_64 name="all fields|pink" max="7">
+	<_field_block_64 name="all fields|pink" max="7" guid="290e7263-4667-68df-94da-d59733105f20">
 		<_field_pageable_resource_64 name="test resource^" />
 		<_field_pageable_resource_64 name="test resource2" />
 		<_field_array name="blah">
@@ -90,10 +90,10 @@
 		<_field_real_bounds name="_field_real_bounds" />
 		<_field_fraction_bounds name="_field_real_fraction_bounds" />
 		<_field_tag_reference_64 name="_field_tag_reference" />
-		<_field_block_64 name="_field_block" max="7">
-			<_field_char_block_index name="_field_char_block_index" />
-			<_field_short_block_index name="_field_short_block_index" />
-			<_field_long_block_index name="_field_long_block_index" />
+		<_field_block_64 name="_field_block" max="7" guid="28c582e0-4f8a-5b66-441c-36ba0985b50d">
+			<_field_char_block_index name="_field_char_block_index" srcguid="290e7263-4667-68df-94da-d59733105f20" />
+			<_field_short_block_index name="_field_short_block_index" srcguid="290e7263-4667-68df-94da-d59733105f20" />
+			<_field_long_block_index name="_field_long_block_index" srcguid="290e7263-4667-68df-94da-d59733105f20" />
 		</_field_block_64>
 		<_field_long_integer name="look at me!" />
 		<_field_struct name="ugh foo ugh" />
@@ -121,10 +121,10 @@
 		</_field_short_enum>
 		<_field_struct name="Mapping" />
 		<_field_data_64 name="data" />
-		<_field_block_64 name="block2" max="7">
-			<_field_char_block_index name="_field_char_block_index" />
-			<_field_short_block_index name="_field_short_block_index" />
-			<_field_long_block_index name="_field_long_block_index" />
+		<_field_block_64 name="block2" max="7" guid="28c582e0-4f8a-5b66-441c-36ba0985b50d">
+			<_field_char_block_index name="_field_char_block_index" srcguid="290e7263-4667-68df-94da-d59733105f20" />
+			<_field_short_block_index name="_field_short_block_index" srcguid="290e7263-4667-68df-94da-d59733105f20" />
+			<_field_long_block_index name="_field_long_block_index" srcguid="290e7263-4667-68df-94da-d59733105f20" />
 		</_field_block_64>
 		<_field_long_enum name="ugh">
 			<item Name="alpha_blah{alpha}" />
@@ -135,14 +135,14 @@
 			<item Name="zeta" />
 			<item Name="eta" />
 		</_field_long_enum>
-		<_field_block_64 name="block3" max="1">
+		<_field_block_64 name="block3" max="1" guid="ed5fb6bd-4d35-f029-be2a-cea252d55038">
 			<_field_long_integer name="can you see me???^" />
 		</_field_block_64>
-		<_field_block_64 name="block4" max="3">
+		<_field_block_64 name="block4" max="3" guid="ed5fb6bd-4d35-f029-be2a-cea252d55038">
 			<_field_long_integer name="can you see me???^" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="custom fields" max="4">
+	<_field_block_64 name="custom fields" max="4" guid="f514520f-42af-fc88-2447-efbb3ad1ddb0">
 		<_field_long_integer name="more blah" />
 		<_field_char_enum name="_field_char_enum">
 			<item Name="alpha_blah{alpha}" />

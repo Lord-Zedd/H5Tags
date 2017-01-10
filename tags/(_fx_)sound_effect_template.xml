@@ -5,7 +5,7 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="template collection" max="8">
+	<_field_block_64 name="template collection" max="8" guid="5c8458f8-4560-94b8-6fb5-eb93026e7ea6">
 		<_field_string_id name="dsp effect" />
 		<_field_explanation name="WARNING">DON'T MODIFY THIS TAG UNLESS YOU KNOW WHAT YOU ARE DOING</_field_explanation>
 		<_field_data_64 name="explanation" />
@@ -15,7 +15,7 @@
 		</_field_long_flags>
 		<_field_short_integer name="dsp state offset!" />
 		<_field_short_integer name="dsp state size!" />
-		<_field_block_64 name="parameters" max="128">
+		<_field_block_64 name="parameters" max="128" guid="0c097b16-427a-12df-2e40-70a14f8ed4bf">
 			<_field_string_id name="name" />
 			<_field_short_enum name="type">
 				<item Name="integer" />
@@ -35,7 +35,7 @@
 		</_field_block_64>
 	</_field_block_64>
 	<_field_string_id name="internal dsp effect name{input effect name}" />
-	<_field_block_64 name="additional sound inputs" max="1">
+	<_field_block_64 name="additional sound inputs" max="1" guid="c146fb4e-4229-4445-67c6-30b8f0319f1a">
 		<_field_string_id name="dsp effect" />
 		<_field_struct name="low frequency sound" />
 		<_field_data_64 name="data" />

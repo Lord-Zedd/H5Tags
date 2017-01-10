@@ -8,19 +8,19 @@
 	<_field_custom name="import - directory" />
 	<_field_custom name="import - single file" />
 	<_field_string_id name="xamlName" />
-	<_field_block_64 name="xamlReferences" max="512">
+	<_field_block_64 name="xamlReferences" max="512" guid="51ec2a11-4262-d003-6e6d-47a35f7adeaf">
 		<_field_tag_reference_64 name="xaml reference" />
 	</_field_block_64>
-	<_field_block_64 name="imageListReferences" max="512">
+	<_field_block_64 name="imageListReferences" max="512" guid="c9881e5b-4268-4201-3d15-eb9e774ccd3d">
 		<_field_tag_reference_64 name="asset reference" />
 	</_field_block_64>
-	<_field_block_64 name="string references" max="64">
+	<_field_block_64 name="string references" max="64" guid="f35ba8a6-4cec-4ca5-2270-709422e51721">
 		<_field_tag_reference_64 name="string list" />
 	</_field_block_64>
-	<_field_block_64 name="sound references" max="512">
+	<_field_block_64 name="sound references" max="512" guid="e2ac6567-4cc7-5648-5741-21b0999d1785">
 		<_field_tag_reference_64 name="asset reference" validtags="snd!, lsnd, musc" />
 	</_field_block_64>
-	<_field_block_64 name="obj references" max="512">
+	<_field_block_64 name="obj references" max="512" guid="2c4ecd0e-4ef7-4f4c-83c2-688cf26ae077">
 		<_field_tag_reference_64 name="asset reference" />
 	</_field_block_64>
 	<_field_data_64 name="xamlfiledata*" />

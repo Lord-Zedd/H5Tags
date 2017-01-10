@@ -5,7 +5,7 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="generic light definitions" max="32767">
+	<_field_block_64 name="generic light definitions" max="32767" guid="5cad7a73-4084-815e-f819-c0be024dd1b6">
 		<_field_long_integer name="Composer Id!" />
 		<_field_real_point_3d name="position" />
 		<_field_real_euler_angles_3d name="facing" />
@@ -167,7 +167,7 @@
 			<item Name="On" />
 		</_field_char_enum>
 		<_field_short_integer name="runtime index*" />
-		<_field_block_64 name="Editor Metadata!" max="1024">
+		<_field_block_64 name="Editor Metadata!" max="1024" guid="49566d10-3ee6-efbe-6d8c-8eb1db3d0368">
 			<_field_long_string name="data name" />
 			<_field_long_enum name="data type">
 				<item Name="class" />

@@ -5,7 +5,7 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="squad specifications" max="16">
+	<_field_block_64 name="squad specifications" max="16" guid="55990120-4544-2780-6feb-4591a3a0a6bf">
 		<_field_tag_reference_64 name="squad template^" />
 		<_field_struct name="spawn conditions" />
 		<_field_word_flags name="difficulty flags">

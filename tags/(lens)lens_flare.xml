@@ -62,7 +62,7 @@
 		<item Name="one" />
 	</_field_short_enum>
 	<_field_pad name="COYUTLR" length="2" />
-	<_field_block_64 name="reflections" max="32">
+	<_field_block_64 name="reflections" max="32" guid="fbc30377-46ca-4bfc-998a-9f870a240dbc">
 		<_field_string_id name="name^" />
 		<_field_word_flags name="flags">
 			<item Name="rotate from center of screen" />
@@ -118,13 +118,13 @@
 		<item Name="synchronized" />
 	</_field_word_flags>
 	<_field_pad name="AQVC" length="2" />
-	<_field_block_64 name="time brightness" max="1">
+	<_field_block_64 name="time brightness" max="1" guid="70d82126-40bb-aabd-b003-7aa30bd1779d">
 		<_field_data_64 name="data" />
 	</_field_block_64>
-	<_field_block_64 name="age brightness" max="1">
+	<_field_block_64 name="age brightness" max="1" guid="70d82126-40bb-aabd-b003-7aa30bd1779d">
 		<_field_data_64 name="data" />
 	</_field_block_64>
-	<_field_block_64 name="time color" max="1">
+	<_field_block_64 name="time color" max="1" guid="a0b6d131-4a2f-2a63-77cb-d98d3a99dc8b">
 		<_field_struct name="color animation" />
 		<_field_string_id name="Input Variable!" />
 		<_field_string_id name="Range Variable!" />
@@ -138,7 +138,7 @@
 		<_field_struct name="lens flare color mapping" />
 		<_field_data_64 name="data" />
 	</_field_block_64>
-	<_field_block_64 name="age color" max="1">
+	<_field_block_64 name="age color" max="1" guid="a0b6d131-4a2f-2a63-77cb-d98d3a99dc8b">
 		<_field_struct name="color animation" />
 		<_field_string_id name="Input Variable!" />
 		<_field_string_id name="Range Variable!" />
@@ -152,10 +152,10 @@
 		<_field_struct name="lens flare color mapping" />
 		<_field_data_64 name="data" />
 	</_field_block_64>
-	<_field_block_64 name="time rotation" max="1">
+	<_field_block_64 name="time rotation" max="1" guid="70d82126-40bb-aabd-b003-7aa30bd1779d">
 		<_field_data_64 name="data" />
 	</_field_block_64>
-	<_field_block_64 name="age rotation" max="1">
+	<_field_block_64 name="age rotation" max="1" guid="70d82126-40bb-aabd-b003-7aa30bd1779d">
 		<_field_data_64 name="data" />
 	</_field_block_64>
 </plugin>

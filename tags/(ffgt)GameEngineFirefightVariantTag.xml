@@ -8,7 +8,7 @@
 	<_field_struct name="variant" />
 	<_field_string_id name="localizable name^" />
 	<_field_string_id name="localizable description" />
-	<_field_block_64 name="miscellaneous options" max="1">
+	<_field_block_64 name="miscellaneous options" max="1" guid="4e184020-44e9-9f9b-fad8-539b84649360">
 		<_field_word_flags name="flags">
 			<item Name="teams enabled" />
 			<item Name="__deprecated__perfection enabled" />
@@ -30,7 +30,7 @@
 		<_field_byte_integer name="overshield deplete time" />
 		<_field_pad name="RXXH" length="2" />
 	</_field_block_64>
-	<_field_block_64 name="prototype options" max="1">
+	<_field_block_64 name="prototype options" max="1" guid="1e7f0911-458a-fd98-e5dc-df85ae8adf8c">
 		<_field_char_integer name="prototype mode" />
 		<_field_char_integer name="promethean energy kill percent" />
 		<_field_char_integer name="promethean energy time percent" />
@@ -39,7 +39,7 @@
 		<_field_char_integer name="class color override" />
 		<_field_char_integer name="disable warzone initial assault" />
 	</_field_block_64>
-	<_field_block_64 name="respawn options" max="1">
+	<_field_block_64 name="respawn options" max="1" guid="ae909dd1-4c06-6a18-0ca8-50a890fb5661">
 		<_field_word_flags name="flags">
 			<item Name="inherit respawn time" />
 			<item Name="__deprecated__respawn with teammate" />
@@ -61,7 +61,7 @@
 		<_field_char_integer name="respawn player traits duration:seconds" />
 		<_field_pad name="woman bound for glory, why you leaving me again?" length="3" />
 	</_field_block_64>
-	<_field_block_64 name="social options" max="1">
+	<_field_block_64 name="social options" max="1" guid="ea186c9d-40b9-c049-1b4a-f4b8df26834e">
 		<_field_word_flags name="flags">
 			<item Name="observers enabled" />
 			<item Name="team changing enabled" />
@@ -75,7 +75,7 @@
 			<item Name="idle booting enabled" />
 		</_field_word_flags>
 	</_field_block_64>
-	<_field_block_64 name="map override options" max="1">
+	<_field_block_64 name="map override options" max="1" guid="e881d96d-4679-bb88-6403-cc9a7086d6e9">
 		<_field_string_id name="player traits name" />
 		<_field_string_id name="weapon set name" />
 		<_field_string_id name="vehicle set name" />
@@ -97,7 +97,7 @@
 		<_field_char_integer name="yellow powerup secondary duration:seconds" />
 		<_field_char_integer name="custom powerup secondary duration:seconds" />
 	</_field_block_64>
-	<_field_block_64 name="team options" max="1">
+	<_field_block_64 name="team options" max="1" guid="571f4d81-4cd5-003c-4506-0c95a06f6a5b">
 		<_field_char_enum name="model override type">
 			<item Name="none (player choice)" />
 			<item Name="force spartan" />
@@ -337,13 +337,13 @@
 			<_field_argb_color name="ui bitmap tint color override" />
 		</_field_array>
 	</_field_block_64>
-	<_field_block_64 name="loadout options" max="1">
+	<_field_block_64 name="loadout options" max="1" guid="2df85826-4a2b-424c-b4f7-e6ad920b783b">
 		<_field_byte_flags name="flags">
 			<item Name="custom loadouts enabled" />
 		</_field_byte_flags>
 		<_field_pad name="DLVKJSER" length="3" />
 	</_field_block_64>
-	<_field_block_64 name="event scripts" max="32">
+	<_field_block_64 name="event scripts" max="32" guid="2f115400-4f06-c977-7528-3f80eb2db7a3">
 		<_field_tag_reference_64 name="script file^" />
 		<_field_byte_flags name="flags">
 			<item Name="RunForVariant" />
@@ -380,7 +380,7 @@
 	<_field_char_integer name="Starting Crate 13" />
 	<_field_char_integer name="Starting Crate 14" />
 	<_field_string name="Variant Event#This event is always set for script" />
-	<_field_block_64 name="Midnight Player Goal Properties" max="15">
+	<_field_block_64 name="Midnight Player Goal Properties" max="15" guid="f636456e-41f5-cbb0-ab0e-12942eccb404">
 		<_field_char_enum name="Player Goal">
 			<item Name="Object Destruction" />
 			<item Name="Object Delivery" />
@@ -398,7 +398,7 @@
 			<item Name="Medium" />
 			<item Name="Hard" />
 		</_field_byte_flags>
-		<_field_block_64 name="Firefight Waves" max="30">
+		<_field_block_64 name="Firefight Waves" max="30" guid="a5cf24b4-47a9-efa0-39e4-d8b302dedfcd">
 			<_field_string_id name="squad type^#survival_mode_get_wave_squad" />
 			<_field_char_enum name="Delivery type">
 				<item Name="Dropship" />

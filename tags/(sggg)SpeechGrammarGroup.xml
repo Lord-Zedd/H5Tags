@@ -16,7 +16,7 @@
 		<item Name="grammar disabled in ui shell" />
 	</_field_byte_flags>
 	<_field_pad name="pad_tp1" length="3" />
-	<_field_block_64 name="spotted objects load#Only load if one of these objects are found (when flag above checked)" max="8">
+	<_field_block_64 name="spotted objects load#Only load if one of these objects are found (when flag above checked)" max="8" guid="ff0502a1-404e-2c56-4050-ada0dbbadbd0">
 		<_field_tag_reference_64 name="Spotted Object" />
 	</_field_block_64>
 	<_field_explanation name="load grammar condition: this condition can force of the grammar if it is defined" />
@@ -30,10 +30,10 @@
 	</_field_byte_flags>
 	<_field_pad name="pad_tp3" length="1" />
 	<_field_short_integer name="absolute dynamic grammar index!" />
-	<_field_block_64 name="lync'ed grammars#when this grammar is loaded load these grammars too" max="256">
+	<_field_block_64 name="lync'ed grammars#when this grammar is loaded load these grammars too" max="256" guid="fc828af6-4e08-806e-09d0-6184b486f845">
 		<_field_tag_reference_64 name="Speech Grammar" />
 	</_field_block_64>
-	<_field_block_64 name="Speech Phrases" max="256">
+	<_field_block_64 name="Speech Phrases" max="256" guid="976e10c5-4c17-9b83-8d18-fb9e87bd52e8">
 		<_field_string_id name="VUI ID# this is a string ID it is used to reference the localized display name in said list.  It is also used to reference the phrases that link to this VUI element in the phrases list" />
 		<_field_explanation name="Script Action" />
 		<_field_struct name="Script Action" />
@@ -52,7 +52,7 @@
 		<_field_short_integer name="user level" />
 		<_field_pad name="pad_tp2" length="2" />
 	</_field_block_64>
-	<_field_block_64 name="Speech Nodes" max="256">
+	<_field_block_64 name="Speech Nodes" max="256" guid="8740dc25-46ca-48db-6f7f-4b8e82fc005c">
 		<_field_data_64 name="Command{ }" />
 		<_field_explanation name="Script Condition~" />
 		<_field_struct name="Script Condition" />

@@ -5,7 +5,7 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="default custom loadouts" max="5">
+	<_field_block_64 name="default custom loadouts" max="5" guid="5c0c246c-4baa-3267-0dc6-959cd607567f">
 		<_field_string_id name="loadout name^" />
 		<_field_string_id name="initial primary weapon#name of an element from global starting weapons block. Other values:
 (empty) - unchanged
@@ -17,7 +17,7 @@ random - use random item from valid starting weapons" />
 		<_field_string_id name="initial secondary weapon#see above" />
 		<_field_string_id name="initial secondary weapon variant name" />
 		<_field_string_id name="initial equipment#see above" />
-		<_field_block_64 name="initial grenade count" max="16">
+		<_field_block_64 name="initial grenade count" max="16" guid="5819a7ec-4fc4-6525-f005-c197a4decad8">
 			<_field_tag_reference_64 name="grenade reference" />
 			<_field_char_integer name="count" />
 			<_field_pad name="pad0" length="3" />

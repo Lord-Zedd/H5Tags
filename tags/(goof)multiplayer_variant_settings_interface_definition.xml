@@ -6,7 +6,7 @@
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
 	<_field_string_id name="name (unused)" />
-	<_field_block_64 name="game engine settings" max="152">
+	<_field_block_64 name="game engine settings" max="152" guid="7364a0e9-43f8-967c-b95e-278c6f8c48af">
 		<_field_string_id name="name" />
 		<_field_long_enum name="setting category^">
 			<item Name="game base misc" />
@@ -162,7 +162,7 @@
 			<item Name="run-time template traits appearance" />
 			<item Name="run-time template traits abilities" />
 		</_field_long_enum>
-		<_field_block_64 name="options" max="16">
+		<_field_block_64 name="options" max="16" guid="e174884e-477f-69ad-46c6-79b8a6193002">
 			<_field_explanation name="SUB-CATEGORY">If this entry leads to a sub-category of UI, the tag reference to that chain of UI goes here</_field_explanation>
 			<_field_tag_reference_64 name="sub-category" />
 			<_field_explanation name="PLAYER TRAIT">If this entry leads to player-trait UI, you can use a tag reference to player trait template UI and the player trait category here</_field_explanation>

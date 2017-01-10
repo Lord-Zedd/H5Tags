@@ -29,7 +29,7 @@
 21: ............... foam texture
 22: ............... extra pc colorgrade for xbone compat
 </_field_explanation>
-	<_field_block_64 name="default bitmaps" max="32">
+	<_field_block_64 name="default bitmaps" max="32" guid="7b0790d8-47c8-d39d-8910-728528f1808a">
 		<_field_long_flags name="options">
 			<item Name="don't load bitmap by default" />
 		</_field_long_flags>
@@ -38,7 +38,7 @@
 	<_field_explanation name="material textures:">0: ............... lightmap falloff sharpening
 6: ............... Approximate specular curve
 </_field_explanation>
-	<_field_block_64 name="material textures" max="16">
+	<_field_block_64 name="material textures" max="16" guid="0f4db844-48cd-fd9f-47aa-dcb9d4cc472d">
 		<_field_tag_reference_64 name="material textures" />
 	</_field_block_64>
 	<_field_explanation name="explicit shaders:">0: ............... debug
@@ -188,7 +188,7 @@
 238: ............. Fast Hud Textured Drop Shadow SustainDec
 239: ............. Fast Hud Text
 </_field_explanation>
-	<_field_block_64 name="explicit shaders" max="1024">
+	<_field_block_64 name="explicit shaders" max="1024" guid="d3d3046b-4cab-f192-7b11-bc956f84cd3c">
 		<_field_string_id name="name" />
 		<_field_tag_reference_64 name="shader{explicit vertex shader}^" validtags="mat , mats" />
 	</_field_block_64>
@@ -202,7 +202,7 @@
 7:  ............... outline_order
 8:  ............... phased object color
 </_field_explanation>
-	<_field_block_64 name="global materials" max="32">
+	<_field_block_64 name="global materials" max="32" guid="d8faf27a-458e-9e49-130f-e2914beec1d7">
 		<_field_string_id name="name" />
 		<_field_tag_reference_64 name="material^" />
 	</_field_block_64>

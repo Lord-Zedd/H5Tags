@@ -17,7 +17,7 @@
 	<_field_short_integer name="grid y dimension" />
 	<_field_real name="grid spacing x" />
 	<_field_real name="grid spacing y" />
-	<_field_block_64 name="collision spheres" max="8">
+	<_field_block_64 name="collision spheres" max="8" guid="1168cfd4-4c7a-1eec-51ff-a585afcdab40">
 		<_field_string_id name="object marker name" />
 		<_field_real name="radius" />
 	</_field_block_64>
@@ -34,17 +34,17 @@
 	<_field_real name="longest_rod#[1.0 - 10.0] sug 3.5" />
 	<_field_pad name="WXLH" length="24" />
 	<_field_explanation name="Import or grid data" />
-	<_field_block_64 name="vertices*" max="121">
+	<_field_block_64 name="vertices*" max="121" guid="9cbfa025-4521-b339-fde2-81bc55ed91f7">
 		<_field_real_point_3d name="initial position*" />
 		<_field_real_vector_2d name="uv*" />
 	</_field_block_64>
-	<_field_block_64 name="indices*" max="1210">
+	<_field_block_64 name="indices*" max="1210" guid="37d025ee-4235-d2d2-d129-9ba9dcccea0b">
 		<_field_short_integer name="index*" />
 	</_field_block_64>
-	<_field_block_64 name="strip indices*" max="1210">
+	<_field_block_64 name="strip indices*" max="1210" guid="37d025ee-4235-d2d2-d129-9ba9dcccea0b">
 		<_field_short_integer name="index*" />
 	</_field_block_64>
-	<_field_block_64 name="links*" max="1210">
+	<_field_block_64 name="links*" max="1210" guid="2a08cad4-4f76-1ee6-91ff-a685af5ae340">
 		<_field_real name="default_distance*" />
 		<_field_long_integer name="index1*" />
 		<_field_long_integer name="index2*" />

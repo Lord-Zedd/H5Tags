@@ -20,23 +20,23 @@ So, for example, an entry with the damage source &quot;assault_rifle&quot;, only
 IMPORTANT: The algorithm will NOT handle duplicate blocks on the same level of the tree correctly. The rule of thumb is that you should never have two entries in a single dropdown menu with the same name.
 
 If you have questions please seek out the engineer in charge of the damage reporting system.</_field_explanation>
-	<_field_block_64 name="damageDisplayMap" max="1024">
+	<_field_block_64 name="damageDisplayMap" max="1024" guid="85b2e221-4557-ee8f-b446-f7bd80156dcf">
 		<_field_custom name="Damage Source" />
 		<_field_explanation name="Explanation">Damage source associated with all of the display definitions defined in the attachment list and damage type blocks. If you leave the damage source empty then the displays defined in the blocks below will be used for any damage sources that do not have content explicitly defined here.</_field_explanation>
 		<_field_struct name="damageSource" />
 		<_field_explanation name="NOTE">If the dropdown menu is empty, run the &quot;build damage reporting table&quot; tool command (build-damage-reporting-table from the command line) in order to generate the xml file used to populate the menu. If you added a new damage source you will need to run this command in order for the source to show up in the menu.</_field_explanation>
 		<_field_string_id name="Damage Source Name" />
-		<_field_block_64 name="displayByAttachmentList" max="50">
+		<_field_block_64 name="displayByAttachmentList" max="50" guid="086bb4fe-482d-4cf8-a12a-10acf8e9fb45">
 			<_field_custom name="Attachment List" />
 			<_field_explanation name="Explanation">Attachment list associated with the display definitions defined in the damage types block. If you leave the attachment list empty then the displays defined in the damage type blocks below will be used for any attachment lists that do not have content explicitly defined here.</_field_explanation>
-			<_field_block_64 name="attachmentList" max="8">
+			<_field_block_64 name="attachmentList" max="8" guid="88131fd8-42b5-e814-256e-7ebe17d5287f">
 				<_field_custom name="Attachment Name" />
 				<_field_explanation name="Explanation">Name of the attachment. Make sure you don't leave any invalid entries in the list!</_field_explanation>
 				<_field_struct name="attachmentName" />
 				<_field_explanation name="NOTE">If the dropdown menu is empty, run the &quot;build damage reporting table&quot; tool command (build-damage-reporting-table from the command line) in order to generate the xml file used to populate the menu. If you added a new attachment name you will need to run this command in order for the name to show up in the menu.</_field_explanation>
 				<_field_string_id name="Attachment Name" />
 			</_field_block_64>
-			<_field_block_64 name="displayByDamageType" max="10">
+			<_field_block_64 name="displayByDamageType" max="10" guid="97c40a67-4dbe-93dd-a9f7-ffbc507d24bc">
 				<_field_custom name="Damage Type" />
 				<_field_explanation name="Explanation">Damage type described by this display definition. If you leave this blank then this display will be used for any damage types that do not have content explicitly defined here.</_field_explanation>
 				<_field_struct name="damageType" />

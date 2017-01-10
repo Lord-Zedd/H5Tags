@@ -5,25 +5,25 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="object types" max="2048">
+	<_field_block_64 name="object types" max="2048" guid="817e82ba-4e3e-fcb5-4543-a681387bda9e">
 		<_field_explanation name="WARNING">This block is readonly because adding, removing, reordering, or renaming elements after we ship a map pack will completely break the game.  And I will punch you.  Hard.  In the face.</_field_explanation>
 		<_field_string_id name="name^" />
 		<_field_tag_reference_64 name="object" />
 	</_field_block_64>
-	<_field_block_64 name="weapons" max="64">
-		<_field_long_block_index name="object type^" />
+	<_field_block_64 name="weapons" max="64" guid="929b2f5e-4020-14fd-bec0-a08753f3a454">
+		<_field_long_block_index name="object type^" srcguid="817e82ba-4e3e-fcb5-4543-a681387bda9e" />
 		<_field_real name="random weight" />
 	</_field_block_64>
-	<_field_block_64 name="vehicles" max="64">
-		<_field_long_block_index name="object type^" />
+	<_field_block_64 name="vehicles" max="64" guid="929b2f5e-4020-14fd-bec0-a08753f3a454">
+		<_field_long_block_index name="object type^" srcguid="817e82ba-4e3e-fcb5-4543-a681387bda9e" />
 		<_field_real name="random weight" />
 	</_field_block_64>
-	<_field_block_64 name="grenades" max="8">
-		<_field_long_block_index name="object type^" />
+	<_field_block_64 name="grenades" max="8" guid="929b2f5e-4020-14fd-bec0-a08753f3a454">
+		<_field_long_block_index name="object type^" srcguid="817e82ba-4e3e-fcb5-4543-a681387bda9e" />
 		<_field_real name="random weight" />
 	</_field_block_64>
-	<_field_block_64 name="equipment" max="32">
-		<_field_long_block_index name="object type^" />
+	<_field_block_64 name="equipment" max="32" guid="929b2f5e-4020-14fd-bec0-a08753f3a454">
+		<_field_long_block_index name="object type^" srcguid="817e82ba-4e3e-fcb5-4543-a681387bda9e" />
 		<_field_real name="random weight" />
 	</_field_block_64>
 	<_field_long_integer name="random weapon menu sprite frame" />

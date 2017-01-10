@@ -5,7 +5,7 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="suppressed incidents" max="1000">
+	<_field_block_64 name="suppressed incidents" max="1000" guid="cb9d3072-469e-c3a1-71ae-fa95e1e3a333">
 		<_field_string_id name="incident name^" />
 		<_field_byte_flags name="suppression type">
 			<item Name="suppress cause player game engine event{suppress game engine event}" />

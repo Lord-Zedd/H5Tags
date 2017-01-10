@@ -6,9 +6,9 @@
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
 	<_field_tag_reference_64 name="bsp reference" />
-	<_field_block_64 name="material overrides" max="10240">
+	<_field_block_64 name="material overrides" max="10240" guid="5e7d4a2f-4184-4913-032e-65b28599a9ab">
 		<_field_string_id name="material override variant name" />
-		<_field_block_64 name="material override entries" max="1023">
+		<_field_block_64 name="material override entries" max="1023" guid="5e7d4a2e-4183-4913-022e-65b28499a9ab">
 			<_field_struct name="material override variants" />
 			<_field_tag_reference_64 name="original material" />
 			<_field_tag_reference_64 name="override material" />

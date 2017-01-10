@@ -5,10 +5,10 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="universal" max="1">
+	<_field_block_64 name="universal" max="1" guid="2f00f890-45b7-345f-d473-9f87ec9a5d0a">
 		<_field_tag_reference_64 name="random player names" />
 		<_field_tag_reference_64 name="team names" />
-		<_field_block_64 name="teams" max="8">
+		<_field_block_64 name="teams" max="8" guid="c4756744-4ae4-3b5d-c888-35944281341a">
 			<_field_string_id name="name^" />
 			<_field_real_rgb_color name="primary color" />
 			<_field_real_rgb_color name="secondary color" />
@@ -19,7 +19,7 @@
 		</_field_block_64>
 		<_field_tag_reference_64 name="sandbox text" />
 		<_field_tag_reference_64 name="effects" />
-		<_field_block_64 name="multiplayer roles" max="8">
+		<_field_block_64 name="multiplayer roles" max="8" guid="971a7ede-426c-2f8d-d70d-e89ffb03d61d">
 			<_field_long_flags name="flags!">
 				<item Name="UNUSED" />
 			</_field_long_flags>
@@ -35,7 +35,7 @@
 				<item Name="neutral" />
 			</_field_short_enum>
 			<_field_pad name="QVO" length="2" />
-			<_field_block_64 name="player roles" max="64">
+			<_field_block_64 name="player roles" max="64" guid="78742fc8-4ebe-50ac-252d-89b0cb78856c">
 				<_field_string_id name="role name^" />
 				<_field_long_flags name="flags!">
 					<item Name="UNUSED" />
@@ -58,7 +58,7 @@
 				<_field_tag_reference_64 name="killstreak bonus activation sound" validtags="snd!" />
 			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="player starting profile" max="256">
+		<_field_block_64 name="player starting profile" max="256" guid="5afb6481-40dc-6ed9-2ab0-5c85c41a3db7">
 			<_field_string name="name^" />
 			<_field_real_fraction name="starting health damage:[0,1]" />
 			<_field_real_fraction name="starting shield damage:[0,1]" />
@@ -95,9 +95,9 @@
 				<item Name="Vale" />
 			</_field_char_enum>
 			<_field_pad name="pad" length="3" />
-			<_field_short_block_index name="editor folder!" />
+			<_field_short_block_index name="editor folder!" srcguid="0b9d6a59-41cb-9a57-d1a5-d7a13d5a089f" />
 			<_field_pad name="AHDVHJE" length="2" />
-			<_field_block_64 name="Editor Metadata!" max="1024">
+			<_field_block_64 name="Editor Metadata!" max="1024" guid="49566d10-3ee6-efbe-6d8c-8eb1db3d0368">
 				<_field_long_string name="data name" />
 				<_field_long_enum name="data type">
 					<item Name="class" />
@@ -111,23 +111,23 @@
 			</_field_block_64>
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="runtime" max="1">
+	<_field_block_64 name="runtime" max="1" guid="6f17154d-4d05-4856-6a02-62b3547ff893">
 		<_field_tag_reference_64 name="editor biped" />
 		<_field_tag_reference_64 name="editor helper" />
 		<_field_tag_reference_64 name="flag" />
 		<_field_tag_reference_64 name="ball" />
 		<_field_tag_reference_64 name="assault bomb" />
 		<_field_tag_reference_64 name="vip influence area" />
-		<_field_block_64 name="sounds" max="60">
+		<_field_block_64 name="sounds" max="60" guid="8fd2d002-4f17-d5e4-4903-6690bbd307a7">
 			<_field_tag_reference_64 name="sound^" validtags="snd!" />
 		</_field_block_64>
-		<_field_block_64 name="looping sounds" max="60">
+		<_field_block_64 name="looping sounds" max="60" guid="44b2f1e2-4c4e-220f-9963-ecbba223a948">
 			<_field_tag_reference_64 name="looping sound^" />
 		</_field_block_64>
 		<_field_tag_reference_64 name="communication sounds{comm english}" />
 		<_field_pad name="MAXFRAGCOUNT" length="4" />
 		<_field_pad name="MAXPLASMACOUNT" length="4" />
-		<_field_block_64 name="multiplayer constants" max="1">
+		<_field_block_64 name="multiplayer constants" max="1" guid="8ffc2a96-4203-d8df-91dd-f5bb5a1ec6e6">
 			<_field_explanation name="PLAYER SPAWN INFLUENCERS">These are the default spawn influencer settings which can be overridden by scenario tags</_field_explanation>
 			<_field_tag_reference_64 name="Default Spawn Settings" />
 			<_field_explanation name="MORE MP CONSTANTS">More old Halo2 stuff follows...</_field_explanation>

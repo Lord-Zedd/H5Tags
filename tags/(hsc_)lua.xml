@@ -7,10 +7,10 @@
 	<_field_pad name="local tag handle!~" length="4" />
 	<_field_struct name="source file" />
 	<_field_data_64 name="source*" />
-	<_field_block_64 name="references*" max="1024">
+	<_field_block_64 name="references*" max="1024" guid="d5081a5a-49b0-aaae-215c-dda38b1a4c98">
 		<_field_tag_reference_64 name="reference*^" />
 	</_field_block_64>
-	<_field_block_64 name="name hashes*" max="1024">
+	<_field_block_64 name="name hashes*" max="1024" guid="74746212-4042-bb67-4741-c0befe85efc6">
 		<_field_int64_integer name="hash*" />
 	</_field_block_64>
 	<_field_tag_reference_64 name="prototype script*" />

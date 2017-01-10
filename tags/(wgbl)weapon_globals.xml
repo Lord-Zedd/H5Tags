@@ -18,7 +18,7 @@
 	<_field_data_64 name="data" />
 	<_field_struct name="flag throw pitch#The z axis additive value depending on the players aim vector z value" />
 	<_field_data_64 name="data" />
-	<_field_block_64 name="ads reticle movement thresholds" max="8">
+	<_field_block_64 name="ads reticle movement thresholds" max="8" guid="83614930-4df6-2be4-3789-aaae9bd34cd3">
 		<_field_string name="ads reticle movement threshold name^" />
 		<_field_angle name="ads reticle movement threshold angle:degrees" />
 		<_field_real_rgb_color name="ads reticle movement threshold color" />

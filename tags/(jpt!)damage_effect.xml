@@ -126,7 +126,7 @@ otherwise, makes headshot not instantly lethal, but multiplies damage done to he
 	<_field_real_fraction name="soft ping pain screen scale:[0,1]#The maximum amount to apply the pain screen pose overlay" />
 	<_field_string_id name="general_damage" />
 	<_field_string_id name="specific_damage" />
-	<_field_block_64 name="custom response labels" max="8">
+	<_field_block_64 name="custom response labels" max="8" guid="26ea92bd-40f2-e58b-d434-d3915629a8e8">
 		<_field_string_id name="custom label#label used to control what damage response will fire.^" />
 	</_field_block_64>
 	<_field_real name="AI stun radius:world units" />
@@ -141,7 +141,7 @@ otherwise, makes headshot not instantly lethal, but multiplies damage done to he
 	<_field_tag_reference_64 name="damage response" />
 	<_field_explanation name="sound" />
 	<_field_tag_reference_64 name="old melee sound{sound}" validtags="snd!" />
-	<_field_block_64 name="damage sounds" max="4">
+	<_field_block_64 name="damage sounds" max="4" guid="98e29191-4a13-66fd-3415-13bd3f0a1668">
 		<_field_tag_reference_64 name="sound" validtags="snd!" />
 		<_field_word_flags name="damage types">
 			<item Name="none!" />

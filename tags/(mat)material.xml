@@ -6,7 +6,7 @@
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
 	<_field_tag_reference_64 name="material shader" />
-	<_field_block_64 name="material parameters" max="267">
+	<_field_block_64 name="material parameters" max="267" guid="5e4b3e06-4736-18a8-3f96-cfbe9dd6ca42">
 		<_field_string_id name="parameter name^*" />
 		<_field_long_enum name="parameter type*">
 			<item Name="bitmap" />
@@ -34,7 +34,7 @@
 		<_field_byte_integer name="parameter flags!" />
 		<_field_dword_integer name="render phases used" />
 		<_field_dword_integer name="shader types used" />
-		<_field_block_64 name="function parameters" max="267">
+		<_field_block_64 name="function parameters" max="267" guid="5471f0e3-4472-f54d-16a5-55aded7b009a">
 			<_field_long_enum name="type^">
 				<item Name="value" />
 				<item Name="color" />
@@ -67,8 +67,8 @@
 		<_field_word_integer name="register offset*!" />
 		<_field_word_integer name="register size*!" />
 	</_field_block_64>
-	<_field_block_64 name="postprocess definition!" max="1">
-		<_field_block_64 name="textures" max="32">
+	<_field_block_64 name="postprocess definition!" max="1" guid="1d50d0c3-41c0-c852-5790-5b9ea3f398ce">
+		<_field_block_64 name="textures" max="32" guid="cd9812ec-4be1-3cd6-48fe-3bb396a5bc0b">
 			<_field_tag_reference_64 name="bitmap reference" />
 			<_field_dword_integer name="render phase mask" />
 			<_field_dword_integer name="shader stage mask" />
@@ -80,7 +80,7 @@
 			<_field_int64_integer name="SamplerState!~" />
 		</_field_block_64>
 		<_field_long_integer name="textures to clear" />
-		<_field_block_64 name="functions" max="267">
+		<_field_block_64 name="functions" max="267" guid="5471f0e3-4472-f54d-16a5-55aded7b009a">
 			<_field_long_enum name="type^">
 				<item Name="value" />
 				<item Name="color" />
@@ -105,14 +105,14 @@
 			<_field_explanation name="FUNCTION" />
 			<_field_data_64 name="data" />
 		</_field_block_64>
-		<_field_block_64 name="function parameters" max="255">
+		<_field_block_64 name="function parameters" max="255" guid="25a1ecc0-4cbe-b81f-e266-949fdbcfa980">
 			<_field_byte_integer name="function index" />
 			<_field_byte_integer name="register offset" />
 			<_field_byte_integer name="parameter group" />
 			<_field_pad name="DHaFS" length="1" />
 			<_field_dword_integer name="render phase mask" />
 		</_field_block_64>
-		<_field_block_64 name="extern parameters" max="255">
+		<_field_block_64 name="extern parameters" max="255" guid="72118236-4f91-b22c-afda-45a6bba5e7ab">
 			<_field_byte_integer name="extern index" />
 			<_field_byte_integer name="extern offset" />
 			<_field_byte_integer name="parameter group" />
@@ -191,20 +191,20 @@
 			<item Name="has variable material constant functions" />
 			<item Name="has at least one extern texture used" />
 		</_field_word_flags>
-		<_field_block_64 name="material constants!~" max="255">
+		<_field_block_64 name="material constants!~" max="255" guid="8333766c-49c6-9913-871f-34aef2fb867f">
 			<_field_real_quaternion name="register" />
 		</_field_block_64>
-		<_field_block_64 name="alternate constants!~" max="255">
+		<_field_block_64 name="alternate constants!~" max="255" guid="8333766c-49c6-9913-871f-34aef2fb867f">
 			<_field_real_quaternion name="register" />
 		</_field_block_64>
 		<_field_int64_integer name="materialConstantBuffer!~" />
 		<_field_int64_integer name="alternateConstantBuffer!~" />
 		<_field_dword_integer name="material constant shader stage mask" />
 		<_field_array name="runtime queryable properties table">
-			<_field_char_block_index name="index" />
-			<_field_char_block_index name="index" />
-			<_field_char_block_index name="index" />
-			<_field_char_block_index name="index" />
+			<_field_char_block_index name="index" srcguid="757e48a6-4cbc-9cac-1ca1-46bcf3e2f763" />
+			<_field_char_block_index name="index" srcguid="757e48a6-4cbc-9cac-1ca1-46bcf3e2f763" />
+			<_field_char_block_index name="index" srcguid="757e48a6-4cbc-9cac-1ca1-46bcf3e2f763" />
+			<_field_char_block_index name="index" srcguid="757e48a6-4cbc-9cac-1ca1-46bcf3e2f763" />
 		</_field_array>
 	</_field_block_64>
 	<_field_string_id name="physics material name" />

@@ -11,7 +11,7 @@
 	<_field_tag_reference_64 name="Asset Spec Block" />
 	<_field_tag_reference_64 name="Lighting Spec Block" />
 	<_field_tag_reference_64 name="Photo Spec" />
-	<_field_block_64 name="Override Image Data" max="1">
+	<_field_block_64 name="Override Image Data" max="1" guid="2304e8de-4100-e514-6d65-89b8ed3f21d4">
 		<_field_tag_reference_64 name="icon bitmap" />
 		<_field_long_integer name="icon sprite index" />
 		<_field_tag_reference_64 name="small icon bitmap" />

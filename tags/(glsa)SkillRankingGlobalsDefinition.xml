@@ -6,10 +6,10 @@
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
 	<_field_long_integer name="number of games to qualify for CSR" />
-	<_field_block_64 name="skill ranking globals" max="10">
+	<_field_block_64 name="skill ranking globals" max="10" guid="84e6fb38-47ba-8f71-0088-67805c6d0210">
 		<_field_string_id name="display_name^" />
 		<_field_long_integer name="icon_index" />
-		<_field_block_64 name="tier" max="10">
+		<_field_block_64 name="tier" max="10" guid="4c1dfa8f-42aa-204e-1b85-9bada5e2677c">
 			<_field_string_id name="display_name #total points needed to reach this rank" />
 			<_field_long_integer name="beginning_points" />
 			<_field_pad name="pad" length="4" />

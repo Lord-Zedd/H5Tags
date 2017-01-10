@@ -1,7 +1,7 @@
 <!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
 <!-- Made by Zedd lol -->
 <plugin>
-	<_field_block_64 name="group_members" max="4096">
+	<_field_block_64 name="group_members" max="4096" guid="f84a790e-4c5c-bb49-125b-d8a52ca15897">
 		<_field_string_id name="name^" />
 		<_field_dword_integer name="animation_checksum" />
 		<_field_short_integer name="frame count*" />
@@ -26,7 +26,7 @@
 4) The only time you should be editing the following hidden fields is to remove legacy
    frame events that have been replaced by events generated in Maya.
 </_field_explanation>
-		<_field_block_64 name="frame events|ABCDCC!*#Legacy field - please edit in new frame event tag below" max="512">
+		<_field_block_64 name="frame events|ABCDCC!*#Legacy field - please edit in new frame event tag below" max="512" guid="4b542454-4540-0863-469d-8994e131f57c">
 			<_field_short_enum name="type">
 				<item Name="none" />
 				<item Name="primary keyframe{primary_keyframe}" />
@@ -63,17 +63,17 @@
 			</_field_short_enum>
 			<_field_short_integer name="frame" />
 		</_field_block_64>
-		<_field_block_64 name="sound events|ABCDCC!*#Legacy field - please edit in new frame event tag below" max="512">
-			<_field_short_block_index name="sound" />
+		<_field_block_64 name="sound events|ABCDCC!*#Legacy field - please edit in new frame event tag below" max="512" guid="b35bc4a2-4535-13e8-b04b-dc992fee7a8c">
+			<_field_short_block_index name="sound" srcguid="44ff5ad9-4fbf-62ba-29db-b48b1d39cdca" />
 			<_field_short_integer name="frame" />
 			<_field_string_id name="marker name" />
 		</_field_block_64>
-		<_field_block_64 name="effect events|ABCDCC!*#Legacy field - please edit in new frame event tag below" max="512">
-			<_field_short_block_index name="effect" />
+		<_field_block_64 name="effect events|ABCDCC!*#Legacy field - please edit in new frame event tag below" max="512" guid="e4cd0730-42c9-8a83-0bee-a8b1c941e473">
+			<_field_short_block_index name="effect" srcguid="bdb82602-4e87-dc34-6195-91a9c7c8e0fa" />
 			<_field_short_integer name="frame" />
 			<_field_string_id name="marker name" />
 		</_field_block_64>
-		<_field_block_64 name="dialogue events|ABCDCC!*#Legacy field - please edit in new frame event tag below" max="512">
+		<_field_block_64 name="dialogue events|ABCDCC!*#Legacy field - please edit in new frame event tag below" max="512" guid="2a844863-473c-9aad-3e5c-a7930e6fbfd1">
 			<_field_short_enum name="dialogue event">
 				<item Name="bump" />
 				<item Name="dive" />
@@ -94,8 +94,8 @@
 			<_field_short_integer name="frame" />
 		</_field_block_64>
 		<_field_explanation name="b!" />
-		<_field_block_64 name="object-space parent nodes|ABCDCC" max="255">
-			<_field_short_block_index name="node index{node_index}^" />
+		<_field_block_64 name="object-space parent nodes|ABCDCC" max="255" guid="27bccd47-47a1-04c1-774a-4d9d02e716fa">
+			<_field_short_block_index name="node index{node_index}^" srcguid="a1bc3ec9-454c-a8a1-2d3f-898c6813ac2c" />
 			<_field_word_flags name="flags*">
 				<item Name="rotation" />
 				<item Name="translation" />
@@ -110,15 +110,15 @@
 			<_field_real_point_3d name="default translation*" />
 			<_field_real name="default scale*" />
 		</_field_block_64>
-		<_field_block_64 name="object space offset nodes|ABCDCC" max="16">
-			<_field_short_block_index name="object space offset node^" />
+		<_field_block_64 name="object space offset nodes|ABCDCC" max="16" guid="f10fb882-4f22-0015-2f94-f88b8aaeebbb">
+			<_field_short_block_index name="object space offset node^" srcguid="a1bc3ec9-454c-a8a1-2d3f-898c6813ac2c" />
 			<_field_pad name="wsonbp" length="2" />
 		</_field_block_64>
-		<_field_block_64 name="forward-invert kinetic anchor nodes|ABCDCC" max="5">
-			<_field_short_block_index name="anchor node^" />
+		<_field_block_64 name="forward-invert kinetic anchor nodes|ABCDCC" max="5" guid="34216e16-414b-b26a-5c51-c0a0ff5c6f92">
+			<_field_short_block_index name="anchor node^" srcguid="a1bc3ec9-454c-a8a1-2d3f-898c6813ac2c" />
 			<_field_pad name="dse" length="2" />
 		</_field_block_64>
-		<_field_block_64 name="ik chain events*!" max="32">
+		<_field_block_64 name="ik chain events*!" max="32" guid="093101e5-4d5e-2c2b-def5-1ab716e49b69">
 			<_field_explanation name="REFERENCE IK CHAIN INFO" />
 			<_field_string_id name="chain name" />
 			<_field_short_enum name="chain type">
@@ -126,8 +126,8 @@
 				<item Name="spine" />
 				<item Name="spline driven spine" />
 			</_field_short_enum>
-			<_field_short_block_index name="chain start node" />
-			<_field_short_block_index name="chain effector node" />
+			<_field_short_block_index name="chain start node" srcguid="a1bc3ec9-454c-a8a1-2d3f-898c6813ac2c" />
+			<_field_short_block_index name="chain effector node" srcguid="a1bc3ec9-454c-a8a1-2d3f-898c6813ac2c" />
 			<_field_explanation name="IMPORTED IK CHAIN INFO" />
 			<_field_short_enum name="chain usage">
 				<item Name="none" />
@@ -151,13 +151,13 @@
 			<_field_byte_integer name="chain index" />
 			<_field_pad name="aikcep" length="3" />
 		</_field_block_64>
-		<_field_block_64 name="ik chain proxies*!" max="16">
+		<_field_block_64 name="ik chain proxies*!" max="16" guid="cc1a00c4-4fbb-038d-5130-1f8fe04796a1">
 			<_field_long_integer name="id" />
 			<_field_string_id name="target marker" />
 			<_field_byte_integer name="proxy transform data index" />
 			<_field_pad name="aikcpp" length="3" />
 		</_field_block_64>
-		<_field_block_64 name="facial wrinkle events*!" max="32">
+		<_field_block_64 name="facial wrinkle events*!" max="32" guid="5d78b2ba-4c75-4120-5442-c2aae13d38a7">
 			<_field_explanation name="REFERENCE FACIAL WRINKLE EVENT INFO" />
 			<_field_string_id name="wrinkle name" />
 			<_field_real name="default value" />
@@ -179,7 +179,7 @@
 			<_field_short_integer name="wrinkle data index" />
 			<_field_pad name="aikcep" length="2" />
 		</_field_block_64>
-		<_field_block_64 name="extended data events*!" max="32">
+		<_field_block_64 name="extended data events*!" max="32" guid="20b7f541-4fa9-876b-ac76-5fadfab46726">
 			<_field_explanation name="IMPORTED EXTENDED DATA EVENT INFO" />
 			<_field_string_id name="name" />
 			<_field_short_integer name="start frame" />
@@ -188,7 +188,7 @@
 			<_field_short_integer name="data index" />
 			<_field_pad name="pants" length="2" />
 		</_field_block_64>
-		<_field_block_64 name="animation object functions" max="4">
+		<_field_block_64 name="animation object functions" max="4" guid="2c6b2ee2-4c48-fc97-f0f7-279114e9f8eb">
 			<_field_string_id name="real_name!*" />
 			<_field_long_enum name="name">
 				<item Name="animation_object_function_a" />

@@ -5,7 +5,7 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="responses" max="10">
+	<_field_block_64 name="responses" max="10" guid="fe59d7d1-4910-8b34-f19c-a591a0622b93">
 		<_field_string_id name="name" />
 		<_field_string_id name="channel" />
 		<_field_string_id name="category" />
@@ -20,11 +20,11 @@
 			<item Name="do not track" />
 		</_field_byte_flags>
 		<_field_pad name="SRBQXEK" length="3" />
-		<_field_block_64 name="potential responses" max="10">
+		<_field_block_64 name="potential responses" max="10" guid="4eff1491-46fb-3ffd-66ba-b2bcd52ad832">
 			<_field_tag_reference_64 name="sound" />
 			<_field_tag_reference_64 name="music" />
 		</_field_block_64>
-		<_field_block_64 name="combiners" max="10">
+		<_field_block_64 name="combiners" max="10" guid="79470448-470f-0e27-f3fb-4c9795cac28e">
 			<_field_string_id name="name" />
 			<_field_byte_flags name="response behavior">
 				<item Name="cancel queued" />

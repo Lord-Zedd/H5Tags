@@ -5,7 +5,7 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="data" max="1">
+	<_field_block_64 name="data" max="1" guid="1d0f80a0-4a1b-a5bd-180b-079a116c70a8">
 		<_field_real name="AI infantry-on-AI weapon damage scale:[0,1]#Global scale on weapon damage made by AI on other AI" />
 		<_field_real name="AI vehicle-on-AI weapon damage scale:[0,1]#Global scale on weapon damage made by AI in a vehicle on other AI" />
 		<_field_real name="AI player vehicle-on-AI weapon damage scale:[0,1]#Global scale on weapon damage made by AI in a vehicle with the player on other AI" />
@@ -48,7 +48,7 @@
 		<_field_real name="search range giant:wus" />
 		<_field_real name="AI seat cooldown:seconds#Seconds until an AI can consider a seat open after eviction" />
 		<_field_pad name="AI seat pad" length="4" />
-		<_field_block_64 name="gravemind properties" max="1">
+		<_field_block_64 name="gravemind properties" max="1" guid="5d6b3b9d-47fe-1fc0-e719-df8c56da87a2">
 			<_field_real name="min retreat time:secs" />
 			<_field_real name="ideal retreat time:secs" />
 			<_field_real name="max retreat time:secs" />
@@ -67,22 +67,22 @@
 		<_field_explanation name="TELEPORTATION">A few properties to help define when it is safe for a mission critical character to teleport.</_field_explanation>
 		<_field_real name="cover search duration:seconds#The number of seconds that must elapse before we try to look for a firing point behind cover to teleport to." />
 		<_field_real name="task direction search duration:seconds#The number of seconds we try to look for a firing point that aligns us with the actor's task direction." />
-		<_field_block_64 name="spawn formations" max="128">
+		<_field_block_64 name="spawn formations" max="128" guid="33fddab4-42ab-3b85-1aa8-c89f98a8454e">
 			<_field_tag_reference_64 name="formation^" />
 		</_field_block_64>
-		<_field_block_64 name="squad template folders" max="32">
+		<_field_block_64 name="squad template folders" max="32" guid="fca99de5-4c0f-f2f5-9874-f4b49207393b">
 			<_field_string_id name="folder name^" />
-			<_field_block_64 name="sub folders" max="32">
+			<_field_block_64 name="sub folders" max="32" guid="411a7443-4d55-dc4a-7b6b-e3b4e0727e01">
 				<_field_string_id name="sub folder name^" />
-				<_field_block_64 name="templates" max="128">
+				<_field_block_64 name="templates" max="128" guid="b77ac649-4ca5-5b2e-cb56-aca71b9ec982">
 					<_field_tag_reference_64 name="squad_template^" />
 				</_field_block_64>
 			</_field_block_64>
-			<_field_block_64 name="templates" max="128">
+			<_field_block_64 name="templates" max="128" guid="b77ac649-4ca5-5b2e-cb56-aca71b9ec982">
 				<_field_tag_reference_64 name="squad_template^" />
 			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="custom stimuli" max="128">
+		<_field_block_64 name="custom stimuli" max="128" guid="a198b553-42e7-7bc9-bec6-3bbddff5867d">
 			<_field_string_id name="name^" />
 		</_field_block_64>
 		<_field_explanation name="CLUMP THROTTLING">Some values to help you control how much guys will throttle when they want to stick with the rest of their squad.</_field_explanation>
@@ -110,16 +110,16 @@
 		<_field_short_integer name="investigate count" />
 		<_field_short_integer name="search by fire count" />
 		<_field_pad name="napoleon" length="2" />
-		<_field_block_64 name="vision traits" max="3">
+		<_field_block_64 name="vision traits" max="3" guid="5e1b04ef-4cbb-590f-5ad7-089af80b86c4">
 			<_field_explanation name="Vision Traits">Traits that affect the AI's vision</_field_explanation>
 			<_field_real name="vision distance scale#Scale the distance at which an AI can see their target." />
 			<_field_real name="vision angle scale#Scale the angles of the AI's vision cone." />
 		</_field_block_64>
-		<_field_block_64 name="sound traits" max="2">
+		<_field_block_64 name="sound traits" max="2" guid="fc75461e-4506-a827-59a3-d291d6b72b1b">
 			<_field_explanation name="Sound Traits">Traits that affect the AI's sound awareness</_field_explanation>
 			<_field_real name="hearing distance scale#Scale the character's hearing distance." />
 		</_field_block_64>
-		<_field_block_64 name="luck traits" max="3">
+		<_field_block_64 name="luck traits" max="3" guid="b158b95f-4cf9-f7da-fdd0-3fbcb2d19d8a">
 			<_field_explanation name="Luck Traits">Traits that affect the AI's luck</_field_explanation>
 			<_field_real name="evasion chance scale#Scale the chance of evading fire." />
 			<_field_real name="grenade dive chance scale#Scale the chance of diving from grenades." />
@@ -133,7 +133,7 @@
 			<_field_real name="melee leap delay timer scale#Scale the delay for performing melee leaps." />
 			<_field_real name="throw grenade delay scale#Scale the time between grenade throws." />
 		</_field_block_64>
-		<_field_block_64 name="grenade traits" max="2">
+		<_field_block_64 name="grenade traits" max="2" guid="0b0f3099-4756-3f95-f3f6-e0839657e874">
 			<_field_explanation name="Grenade Traits">Traits that affect the AI's grenade use</_field_explanation>
 			<_field_real name="velocity scale#Scale the velocity at which AI throws grenades" />
 			<_field_real name="throw grenade delay scale#Scale the time between grenade throws." />

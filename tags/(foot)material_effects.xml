@@ -5,8 +5,8 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="effects" max="30">
-		<_field_block_64 name="sounds" max="500">
+	<_field_block_64 name="effects" max="30" guid="b0032d67-41b8-821d-ac37-3fae16fdc06c">
+		<_field_block_64 name="sounds" max="500" guid="8fce6765-435c-945c-33de-419287d88edc">
 			<_field_tag_reference_64 name="tag (effect or sound)" validtags="lsnd, snd!, effe" />
 			<_field_tag_reference_64 name="secondary tag (effect or sound)" validtags="lsnd, snd!, effe" />
 			<_field_string_id name="material name^" />
@@ -19,7 +19,7 @@
 			<_field_pad name="L" length="1" />
 			<_field_real name="max_visibility_distance#manual override for the max distance this effect can be from the camera and still be rendered (not valid for sounds)." />
 		</_field_block_64>
-		<_field_block_64 name="effects" max="500">
+		<_field_block_64 name="effects" max="500" guid="8fce6765-435c-945c-33de-419287d88edc">
 			<_field_tag_reference_64 name="tag (effect or sound)" validtags="lsnd, snd!, effe" />
 			<_field_tag_reference_64 name="secondary tag (effect or sound)" validtags="lsnd, snd!, effe" />
 			<_field_string_id name="material name^" />

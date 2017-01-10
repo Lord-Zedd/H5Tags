@@ -7,7 +7,7 @@
 	<_field_pad name="local tag handle!~" length="4" />
 	<_field_struct name="properties" />
 	<_field_custom name="Vehicle Attachment" />
-	<_field_block_64 name="maximum vitality" max="1">
+	<_field_block_64 name="maximum vitality" max="1" guid="72fad036-492a-22b7-137a-9a80e9200afe">
 		<_field_real name="health scalar#0 means no changes, 1 means double" />
 		<_field_pad name="pad" length="4" />
 	</_field_block_64>

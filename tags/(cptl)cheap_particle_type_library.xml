@@ -6,18 +6,18 @@
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
 	<_field_custom name="compile" />
-	<_field_block_64 name="types" max="255">
+	<_field_block_64 name="types" max="255" guid="3268d5f7-49c2-4ee1-40c1-15af470190e9">
 		<_field_string_id name="name^" />
 		<_field_custom name="physics" />
 		<_field_real name="drag" />
 		<_field_real name="gravity" />
 		<_field_real name="turbulence" />
-		<_field_long_block_index name="turbulence type#the type of turbulence this particle will experience" />
+		<_field_long_block_index name="turbulence type#the type of turbulence this particle will experience" srcguid="97ca1a74-44a7-71cb-f507-748e23dc0eda" />
 		<_field_custom name="collision" />
 		<_field_real name="depth_range#depth range over which the particle will collide" />
 		<_field_real name="elasticity#energy remaining after collision bounce" />
 		<_field_real name="death#percentage change [0-1] that the particle will die on collision" />
-		<_field_long_block_index name="change type#the type this particle will change into on collision" />
+		<_field_long_block_index name="change type#the type this particle will change into on collision" srcguid="3268d5f7-49c2-4ee1-40c1-15af470190e9" />
 		<_field_custom name="render" />
 		<_field_long_enum name="orientation">
 			<item Name="velocity" />
@@ -30,14 +30,14 @@ as such, an alpha of zero gives you additive particles, and an alpha of one give
 		<_field_real name="fade start:[0,1]#point in particles lifetime at which fade begins" />
 		<_field_real_bounds name="size:world units" />
 		<_field_real name="motion blur stretch#how much the particle stretches as it moves" />
-		<_field_long_block_index name="texture" />
+		<_field_long_block_index name="texture" srcguid="6f5dfb08-4c2c-0fa0-4d18-51b0babe2da5" />
 		<_field_real name="texture y scale#scales the texture in the y direction" />
 	</_field_block_64>
-	<_field_block_64 name="textures" max="63">
+	<_field_block_64 name="textures" max="63" guid="6f5dfb08-4c2c-0fa0-4d18-51b0babe2da5">
 		<_field_tag_reference_64 name="bitmap^" />
 	</_field_block_64>
 	<_field_tag_reference_64 name="random:texture used to generate random values per particle" />
-	<_field_block_64 name="turbulence types" max="8">
+	<_field_block_64 name="turbulence types" max="8" guid="97ca1a74-44a7-71cb-f507-748e23dc0eda">
 		<_field_string_id name="name^" />
 		<_field_tag_reference_64 name="turbulence:texture used to turbulate particles" />
 		<_field_real name="turb du dt#change in u coordinate over time" />

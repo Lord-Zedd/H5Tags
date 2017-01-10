@@ -5,7 +5,7 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="asset tool configurations" max="512">
+	<_field_block_64 name="asset tool configurations" max="512" guid="fdcab363-4068-3add-0059-3e8c081a3ad0">
 		<_field_tag_reference_64 name="asset tool configuration reference" />
 	</_field_block_64>
 	<_field_pad name="pad0" length="4" />

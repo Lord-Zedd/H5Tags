@@ -5,7 +5,7 @@
 	<_field_struct name="internal struct" />
 	<_field_long_integer name="global tag ID!" />
 	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="camera" max="1">
+	<_field_block_64 name="camera" max="1" guid="5544fb06-4476-f3d0-5762-1fa5e234a66b">
 		<_field_tag_reference_64 name="default unit camera track" />
 		<_field_explanation name="SANDBOX" />
 		<_field_struct name="pitch to vertical offset" />
@@ -88,7 +88,7 @@
 		<_field_real name="obstruction max velocity:1.0/s#maximum speed the camera can move" />
 		<_field_real name="obstruction return delay:s#when the camera wants to start moving back out, wait this long before doing so" />
 	</_field_block_64>
-	<_field_block_64 name="camera impulse" max="1">
+	<_field_block_64 name="camera impulse" max="1" guid="57f39345-4565-0b82-b0c4-43a3479aadfd">
 		<_field_data_64 name="data" />
 	</_field_block_64>
 </plugin>

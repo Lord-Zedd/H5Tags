@@ -266,7 +266,7 @@
 		<item Name="MusketeerAvoidPlayerBehavior" />
 		<item Name="MusketeerCureIsolationBehavior" />
 	</_field_long_flags>
-	<_field_block_64 name="Special movement" max="1">
+	<_field_block_64 name="Special movement" max="1" guid="5af31295-42ab-e49d-bc9d-9aa4c3496b8b">
 		<_field_long_flags name="Special movement 1">
 			<item Name="jump" />
 			<item Name="climb" />
@@ -276,7 +276,7 @@
 			<item Name="wall jump" />
 		</_field_long_flags>
 	</_field_block_64>
-	<_field_block_64 name="Behavior list" max="256">
+	<_field_block_64 name="Behavior list" max="256" guid="3b1809cc-4135-71be-0eeb-09a5508e3542">
 		<_field_string name="behavior name*^" />
 	</_field_block_64>
 </plugin>

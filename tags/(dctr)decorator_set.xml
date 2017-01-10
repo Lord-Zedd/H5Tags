@@ -11,7 +11,7 @@
 	<_field_tag_reference_64 name="Lod2{render model_lod1}*" />
 	<_field_tag_reference_64 name="Lod3{render model_lod2}*" />
 	<_field_tag_reference_64 name="Lod4{render model_lod3}*" />
-	<_field_block_64 name="render model instance names!" max="32767">
+	<_field_block_64 name="render model instance names!" max="32767" guid="ba17da19-419a-1009-5213-5c87674b1cfe">
 		<_field_string_id name="name^" />
 	</_field_block_64>
 	<_field_long_integer name="render model instance name valid count!" />
@@ -87,9 +87,9 @@ in your level will cause the placed decorators to change types.
 
 DO NOT DELETE!  DO NOT INSERT!  OR YOUR PLACED DECORATORS WILL BE CHANGED!
 </_field_explanation>
-	<_field_block_64 name="decorator types" max="254">
+	<_field_block_64 name="decorator types" max="254" guid="02b61c35-4970-457e-50a0-11bb8ea1f82d">
 		<_field_long_integer name="index!" />
-		<_field_long_block_index name="mesh^" />
+		<_field_long_block_index name="mesh^" srcguid="ba17da19-419a-1009-5213-5c87674b1cfe" />
 		<_field_long_flags name="flags">
 			<item Name="only on ground" />
 			<item Name="random rotation" />

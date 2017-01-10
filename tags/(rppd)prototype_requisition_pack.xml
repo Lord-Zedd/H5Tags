@@ -9,14 +9,14 @@
 	<_field_long_string name="description" />
 	<_field_tag_reference_64 name="icon bitmap" />
 	<_field_long_integer name="icon sprite index" />
-	<_field_block_64 name="slots" max="64">
-		<_field_block_64 name="cards" max="64">
+	<_field_block_64 name="slots" max="64" guid="56aacae2-4385-b179-7539-e7abfa533710">
+		<_field_block_64 name="cards" max="64" guid="f7541eb8-4e3d-ed06-7f11-efbd6133a76d">
 			<_field_real name="weight" />
 			<_field_tag_reference_64 name="card" />
 			<_field_char_integer name="count" />
 			<_field_pad name="pad0" length="3" />
 		</_field_block_64>
-		<_field_block_64 name="pools" max="64">
+		<_field_block_64 name="pools" max="64" guid="7d249fd2-4d7c-f497-f31f-56afcf97005e">
 			<_field_real name="weight" />
 			<_field_tag_reference_64 name="pool" />
 			<_field_char_integer name="count" />

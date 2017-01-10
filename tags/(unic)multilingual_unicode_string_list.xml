@@ -7,7 +7,7 @@
 	<_field_pad name="local tag handle!~" length="4" />
 	<_field_custom name="import - directory" />
 	<_field_custom name="import - single file" />
-	<_field_block_64 name="string references*" max="34816">
+	<_field_block_64 name="string references*" max="34816" guid="c5bc6da3-4eb2-37a4-1d51-6aa2e6966923">
 		<_field_string_id name="string id^*" />
 		<_field_long_integer name="english offset*" />
 		<_field_long_integer name="japanese offset*" />
@@ -27,7 +27,7 @@
 		<_field_long_integer name="dutch offset*" />
 		<_field_long_integer name="norwegian offset*" />
 	</_field_block_64>
-	<_field_block_64 name="substitution pairs*" max="2048">
+	<_field_block_64 name="substitution pairs*" max="2048" guid="57436af6-4de1-3705-b60a-03bb0bdb5e68">
 		<_field_string_id name="first string id^*!" />
 		<_field_string_id name="second string id*!" />
 		<_field_long_integer name="associated value*!" />

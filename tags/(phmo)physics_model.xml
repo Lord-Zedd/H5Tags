@@ -21,7 +21,7 @@ If you set a mass scale above, this field is unused." />
 	<_field_char_integer name="import version*!" />
 	<_field_pad name="pad0" length="3" />
 	<_field_real name="welding tolerance#if &gt; 0 this will override the physics default welding tolerance" />
-	<_field_block_64 name="damped spring motors" max="128">
+	<_field_block_64 name="damped spring motors" max="128" guid="9b5b74ef-4727-72c2-1ba8-b48d2e8014f6">
 		<_field_string_id name="name" />
 		<_field_real name="maximum force#0 defaults to k_real_max" />
 		<_field_real name="minimum force#0 defaults to maximum force.  In general you should leave this alone unless working on ragdolls or something like them" />
@@ -29,7 +29,7 @@ If you set a mass scale above, this field is unused." />
 		<_field_real name="damping#0 means default daming of 1.0f" />
 		<_field_real name="initial position" />
 	</_field_block_64>
-	<_field_block_64 name="position motors" max="128">
+	<_field_block_64 name="position motors" max="128" guid="01fa65aa-4cc3-383d-f78f-c4a891125f08">
 		<_field_string_id name="name" />
 		<_field_real name="maximum force" />
 		<_field_real name="minimum force#0 defaults to maximum force.  In general you should leave this alone unless working on ragdolls or something like them" />
@@ -39,7 +39,7 @@ If you set a mass scale above, this field is unused." />
 		<_field_real name="constant recover vel#velocity used to recover when errors happen.  in degress per second" />
 		<_field_real name="initial position" />
 	</_field_block_64>
-	<_field_block_64 name="phantom types" max="12">
+	<_field_block_64 name="phantom types" max="12" guid="4732b95b-461f-3df6-c018-eb8606e14ddd">
 		<_field_long_flags name="flags">
 			<item Name="UNUSED" />
 			<item Name="use acc as force" />
@@ -118,11 +118,11 @@ SPIN: spin the object about the marker axis</_field_explanation>
 		<_field_real name="alignment max vel" />
 		<_field_pad name="TYXJL" length="8" />
 	</_field_block_64>
-	<_field_block_64 name="powered chains" max="128">
-		<_field_block_64 name="nodes" max="255">
-			<_field_long_block_index name="node" />
+	<_field_block_64 name="powered chains" max="128" guid="9d56f685-4076-8b9a-0f15-0e8e6a927991">
+		<_field_block_64 name="nodes" max="255" guid="c574cb19-4888-e29b-2c94-be8f63a30a20">
+			<_field_long_block_index name="node" srcguid="6eb5a870-4aca-f531-f624-fc9eb16a22b2" />
 		</_field_block_64>
-		<_field_block_64 name="constraints" max="128">
+		<_field_block_64 name="constraints" max="128" guid="9ff3f43c-4647-5bf5-d792-19a72f0d11e1">
 			<_field_short_enum name="constraint type">
 				<item Name="hinge" />
 				<item Name="limited hinge" />
@@ -132,36 +132,36 @@ SPIN: spin the object about the marker axis</_field_explanation>
 				<item Name="prismatic" />
 				<item Name="powered chain" />
 			</_field_short_enum>
-			<_field_custom_short_block_index name="constraint index" />
+			<_field_custom_short_block_index name="constraint index" val="custom_powered_chain_constraint_reference_block_index_definition" />
 			<_field_struct name="motor x" />
 			<_field_short_enum name="motor type">
 				<item Name="none" />
 				<item Name="damped spring" />
 				<item Name="stongest force" />
 			</_field_short_enum>
-			<_field_custom_short_block_index name="index" />
+			<_field_custom_short_block_index name="index" val="custom_physics_model_motor_reference_block_index_definition" />
 			<_field_struct name="motor y" />
 			<_field_short_enum name="motor type">
 				<item Name="none" />
 				<item Name="damped spring" />
 				<item Name="stongest force" />
 			</_field_short_enum>
-			<_field_custom_short_block_index name="index" />
+			<_field_custom_short_block_index name="index" val="custom_physics_model_motor_reference_block_index_definition" />
 			<_field_struct name="motor z" />
 			<_field_short_enum name="motor type">
 				<item Name="none" />
 				<item Name="damped spring" />
 				<item Name="stongest force" />
 			</_field_short_enum>
-			<_field_custom_short_block_index name="index" />
+			<_field_custom_short_block_index name="index" val="custom_physics_model_motor_reference_block_index_definition" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="node edges*" max="16384">
+	<_field_block_64 name="node edges*" max="16384" guid="6b58713f-40e4-5056-6747-d7908d7b5fb1">
 		<_field_short_integer name="runtime material type a!" />
 		<_field_short_integer name="runtime material type b!" />
-		<_field_long_block_index name="node a*!" />
-		<_field_long_block_index name="node b*!" />
-		<_field_block_64 name="constraints*" max="128">
+		<_field_long_block_index name="node a*!" srcguid="6eb5a870-4aca-f531-f624-fc9eb16a22b2" />
+		<_field_long_block_index name="node b*!" srcguid="6eb5a870-4aca-f531-f624-fc9eb16a22b2" />
+		<_field_block_64 name="constraints*" max="128" guid="bb506351-4c2d-7931-9ca7-8c913369a517">
 			<_field_short_enum name="type*!">
 				<item Name="hinge" />
 				<item Name="limited hinge" />
@@ -171,7 +171,7 @@ SPIN: spin the object about the marker axis</_field_explanation>
 				<item Name="prismatic" />
 				<item Name="powered chain" />
 			</_field_short_enum>
-			<_field_custom_short_block_index name="index*!" />
+			<_field_custom_short_block_index name="index*!" val="custom_constraint_reference_block_index_definition" />
 			<_field_long_flags name="flags">
 				<item Name="is physical child#this constraint will only be created when this object is a child of another physical object (turrets on vehicles for example)" />
 				<item Name="is rigid#this constraint makes the edge rigid until it is loosened by damage" />
@@ -179,7 +179,7 @@ SPIN: spin the object about the marker axis</_field_explanation>
 				<item Name="not created automatically#this flag is used for special systems that need to create constraints dynamically" />
 			</_field_long_flags>
 			<_field_real name="friction#0 is the default (takes what it was set in max) anything else overrides that value" />
-			<_field_block_64 name="ragdoll motors" max="1">
+			<_field_block_64 name="ragdoll motors" max="1" guid="f86cc531-4b95-a248-a797-cbbcacfd2e40">
 				<_field_explanation name="twist" />
 				<_field_struct name="twist motor" />
 				<_field_short_enum name="motor type">
@@ -187,7 +187,7 @@ SPIN: spin the object about the marker axis</_field_explanation>
 					<item Name="damped spring" />
 					<item Name="stongest force" />
 				</_field_short_enum>
-				<_field_custom_short_block_index name="index" />
+				<_field_custom_short_block_index name="index" val="custom_physics_model_motor_reference_block_index_definition" />
 				<_field_explanation name="cone" />
 				<_field_struct name="cone motor" />
 				<_field_short_enum name="motor type">
@@ -195,7 +195,7 @@ SPIN: spin the object about the marker axis</_field_explanation>
 					<item Name="damped spring" />
 					<item Name="stongest force" />
 				</_field_short_enum>
-				<_field_custom_short_block_index name="index" />
+				<_field_custom_short_block_index name="index" val="custom_physics_model_motor_reference_block_index_definition" />
 				<_field_explanation name="plane" />
 				<_field_struct name="plane motor" />
 				<_field_short_enum name="motor type">
@@ -203,25 +203,25 @@ SPIN: spin the object about the marker axis</_field_explanation>
 					<item Name="damped spring" />
 					<item Name="stongest force" />
 				</_field_short_enum>
-				<_field_custom_short_block_index name="index" />
+				<_field_custom_short_block_index name="index" val="custom_physics_model_motor_reference_block_index_definition" />
 			</_field_block_64>
-			<_field_block_64 name="limited hinge motors" max="1">
+			<_field_block_64 name="limited hinge motors" max="1" guid="49da31c0-4a87-da41-6963-e9b79093b788">
 				<_field_struct name="motor" />
 				<_field_short_enum name="motor type">
 					<item Name="none" />
 					<item Name="damped spring" />
 					<item Name="stongest force" />
 				</_field_short_enum>
-				<_field_custom_short_block_index name="index" />
+				<_field_custom_short_block_index name="index" val="custom_physics_model_motor_reference_block_index_definition" />
 			</_field_block_64>
 		</_field_block_64>
 		<_field_string_id name="node a material#if you don't fill this out we will pluck the material from the first primitive, of the first rigid body attached to node a" />
 		<_field_string_id name="node b material#if you don't fill this out we will pluck the material from the first primitive, of the first rigid body attached to node b, if node b is none we use whatever material a has" />
 	</_field_block_64>
-	<_field_block_64 name="rigid bodies*" max="128">
-		<_field_long_block_index name="node*" />
-		<_field_long_block_index name="region*" />
-		<_field_custom_long_block_index name="permutation*" />
+	<_field_block_64 name="rigid bodies*" max="128" guid="7038ea64-4e76-4dbf-3165-62aa741cff9e">
+		<_field_long_block_index name="node*" srcguid="6eb5a870-4aca-f531-f624-fc9eb16a22b2" />
+		<_field_long_block_index name="region*" srcguid="ed0288c0-4e04-9bf6-9408-458b67251047" />
+		<_field_custom_long_block_index name="permutation*" val="permutation_search" />
 		<_field_real_point_3d name="bouding sphere offset*!" />
 		<_field_real name="bounding sphere radius*!" />
 		<_field_byte_flags name="flags">
@@ -248,7 +248,7 @@ SPIN: spin the object about the marker axis</_field_explanation>
 			<item Name="extra huge" />
 		</_field_char_enum>
 		<_field_pad name="pad0" length="1" />
-		<_field_long_block_index name="no phantom power alt" />
+		<_field_long_block_index name="no phantom power alt" srcguid="8f6677d6-4dfa-cf67-680e-7fa775f815d1" />
 		<_field_explanation name="collision layer override">This value overrides the default collision layer.  It also overrides values specified in the materials block of this tag. Values set here can be overridden per shape through the shape primitive blocks.</_field_explanation>
 		<_field_string_id name="collision layer" />
 		<_field_explanation name="inertia tensor scales">if you want to set he scale uniforml just set &quot;inertia tensor scale&quot;.  If you want to set the values seperately per axis you can set &quot;inertia tensor scale x\y\z&quot;</_field_explanation>
@@ -286,8 +286,8 @@ SPIN: spin the object about the marker axis</_field_explanation>
 			<item Name="Triangle mesh" />
 			<item Name="Compound shape" />
 		</_field_long_enum>
-		<_field_custom_long_block_index name="shape*" />
-		<_field_block_64 name="primitive collision layers*!" max="255">
+		<_field_custom_long_block_index name="shape*" val="shape_search" />
+		<_field_block_64 name="primitive collision layers*!" max="255" guid="38026b63-4390-2361-9109-deadde3df413">
 			<_field_string_id name="name~" />
 		</_field_block_64>
 		<_field_real name="mass:kg*!" />
@@ -305,7 +305,7 @@ SPIN: spin the object about the marker axis</_field_explanation>
 		<_field_char_integer name="runtime_flags*!" />
 		<_field_pad name="pad2" length="14" />
 	</_field_block_64>
-	<_field_block_64 name="materials*" max="128">
+	<_field_block_64 name="materials*" max="128" guid="b42ceadd-4c5c-135a-3b6f-e7b913a951fb">
 		<_field_string_id name="name^*!" />
 		<_field_byte_flags name="flags">
 			<item Name="supresses effects" />
@@ -313,23 +313,23 @@ SPIN: spin the object about the marker axis</_field_explanation>
 		</_field_byte_flags>
 		<_field_pad name="flags pad" length="3" />
 		<_field_string_id name="global material name" />
-		<_field_long_block_index name="phantom type" />
+		<_field_long_block_index name="phantom type" srcguid="4732b95b-461f-3df6-c018-eb8606e14ddd" />
 		<_field_explanation name="collision layer override">This value overrides the default collision layer.  It is overridden by any values specified rigid bodies block that overlap. Values set here can be overridden per shape through the shape primitive blocks.</_field_explanation>
 		<_field_string_id name="collision layer" />
 		<_field_string_id name="runtime collision layer*!" />
 	</_field_block_64>
-	<_field_block_64 name="convex hulls*!" max="16384">
+	<_field_block_64 name="convex hulls*!" max="16384" guid="80c5709c-4180-37da-8a27-8fa8ee3e942f">
 		<_field_int64_integer name="field pointer skip!~" />
-		<_field_block_64 name="primitive^*!" max="16384">
+		<_field_block_64 name="primitive^*!" max="16384" guid="c9ec3299-40e7-2886-36f5-2697b1dc2c04">
 			<_field_string_id name="name^*!" />
 			<_field_real name="relative mass scale" />
 			<_field_real_fraction name="friction" />
 			<_field_real_fraction name="restitution" />
 			<_field_real name="volume *" />
 			<_field_real name="mass*!" />
-			<_field_long_block_index name="phantom*" />
+			<_field_long_block_index name="phantom*" srcguid="80c5709c-4180-37da-8a27-8fa8ee3e942f" />
 			<_field_short_integer name="runtime material type*~!" />
-			<_field_char_block_index name="material*" />
+			<_field_char_block_index name="material*" srcguid="b42ceadd-4c5c-135a-3b6f-e7b913a951fb" />
 			<_field_byte_flags name="material flags*">
 				<item Name="supresses effects" />
 				<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
@@ -343,18 +343,18 @@ SPIN: spin the object about the marker axis</_field_explanation>
 		<_field_data_64 name="TagFile Data*!" />
 		<_field_pad name="pad" length="4" />
 	</_field_block_64>
-	<_field_block_64 name="spheres*!" max="16384">
+	<_field_block_64 name="spheres*!" max="16384" guid="80c5709c-4180-37da-8a27-8fa8ee3e942f">
 		<_field_int64_integer name="field pointer skip!~" />
-		<_field_block_64 name="primitive^*!" max="16384">
+		<_field_block_64 name="primitive^*!" max="16384" guid="c9ec3299-40e7-2886-36f5-2697b1dc2c04">
 			<_field_string_id name="name^*!" />
 			<_field_real name="relative mass scale" />
 			<_field_real_fraction name="friction" />
 			<_field_real_fraction name="restitution" />
 			<_field_real name="volume *" />
 			<_field_real name="mass*!" />
-			<_field_long_block_index name="phantom*" />
+			<_field_long_block_index name="phantom*" srcguid="80c5709c-4180-37da-8a27-8fa8ee3e942f" />
 			<_field_short_integer name="runtime material type*~!" />
-			<_field_char_block_index name="material*" />
+			<_field_char_block_index name="material*" srcguid="b42ceadd-4c5c-135a-3b6f-e7b913a951fb" />
 			<_field_byte_flags name="material flags*">
 				<item Name="supresses effects" />
 				<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
@@ -368,18 +368,18 @@ SPIN: spin the object about the marker axis</_field_explanation>
 		<_field_data_64 name="TagFile Data*!" />
 		<_field_pad name="pad" length="4" />
 	</_field_block_64>
-	<_field_block_64 name="multi spheres*!" max="16384">
+	<_field_block_64 name="multi spheres*!" max="16384" guid="80c5709c-4180-37da-8a27-8fa8ee3e942f">
 		<_field_int64_integer name="field pointer skip!~" />
-		<_field_block_64 name="primitive^*!" max="16384">
+		<_field_block_64 name="primitive^*!" max="16384" guid="c9ec3299-40e7-2886-36f5-2697b1dc2c04">
 			<_field_string_id name="name^*!" />
 			<_field_real name="relative mass scale" />
 			<_field_real_fraction name="friction" />
 			<_field_real_fraction name="restitution" />
 			<_field_real name="volume *" />
 			<_field_real name="mass*!" />
-			<_field_long_block_index name="phantom*" />
+			<_field_long_block_index name="phantom*" srcguid="80c5709c-4180-37da-8a27-8fa8ee3e942f" />
 			<_field_short_integer name="runtime material type*~!" />
-			<_field_char_block_index name="material*" />
+			<_field_char_block_index name="material*" srcguid="b42ceadd-4c5c-135a-3b6f-e7b913a951fb" />
 			<_field_byte_flags name="material flags*">
 				<item Name="supresses effects" />
 				<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
@@ -393,18 +393,18 @@ SPIN: spin the object about the marker axis</_field_explanation>
 		<_field_data_64 name="TagFile Data*!" />
 		<_field_pad name="pad" length="4" />
 	</_field_block_64>
-	<_field_block_64 name="pills*!" max="16384">
+	<_field_block_64 name="pills*!" max="16384" guid="80c5709c-4180-37da-8a27-8fa8ee3e942f">
 		<_field_int64_integer name="field pointer skip!~" />
-		<_field_block_64 name="primitive^*!" max="16384">
+		<_field_block_64 name="primitive^*!" max="16384" guid="c9ec3299-40e7-2886-36f5-2697b1dc2c04">
 			<_field_string_id name="name^*!" />
 			<_field_real name="relative mass scale" />
 			<_field_real_fraction name="friction" />
 			<_field_real_fraction name="restitution" />
 			<_field_real name="volume *" />
 			<_field_real name="mass*!" />
-			<_field_long_block_index name="phantom*" />
+			<_field_long_block_index name="phantom*" srcguid="80c5709c-4180-37da-8a27-8fa8ee3e942f" />
 			<_field_short_integer name="runtime material type*~!" />
-			<_field_char_block_index name="material*" />
+			<_field_char_block_index name="material*" srcguid="b42ceadd-4c5c-135a-3b6f-e7b913a951fb" />
 			<_field_byte_flags name="material flags*">
 				<item Name="supresses effects" />
 				<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
@@ -418,18 +418,18 @@ SPIN: spin the object about the marker axis</_field_explanation>
 		<_field_data_64 name="TagFile Data*!" />
 		<_field_pad name="pad" length="4" />
 	</_field_block_64>
-	<_field_block_64 name="boxes*!" max="16384">
+	<_field_block_64 name="boxes*!" max="16384" guid="80c5709c-4180-37da-8a27-8fa8ee3e942f">
 		<_field_int64_integer name="field pointer skip!~" />
-		<_field_block_64 name="primitive^*!" max="16384">
+		<_field_block_64 name="primitive^*!" max="16384" guid="c9ec3299-40e7-2886-36f5-2697b1dc2c04">
 			<_field_string_id name="name^*!" />
 			<_field_real name="relative mass scale" />
 			<_field_real_fraction name="friction" />
 			<_field_real_fraction name="restitution" />
 			<_field_real name="volume *" />
 			<_field_real name="mass*!" />
-			<_field_long_block_index name="phantom*" />
+			<_field_long_block_index name="phantom*" srcguid="80c5709c-4180-37da-8a27-8fa8ee3e942f" />
 			<_field_short_integer name="runtime material type*~!" />
-			<_field_char_block_index name="material*" />
+			<_field_char_block_index name="material*" srcguid="b42ceadd-4c5c-135a-3b6f-e7b913a951fb" />
 			<_field_byte_flags name="material flags*">
 				<item Name="supresses effects" />
 				<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
@@ -443,18 +443,18 @@ SPIN: spin the object about the marker axis</_field_explanation>
 		<_field_data_64 name="TagFile Data*!" />
 		<_field_pad name="pad" length="4" />
 	</_field_block_64>
-	<_field_block_64 name="compound shapes*!" max="16384">
+	<_field_block_64 name="compound shapes*!" max="16384" guid="80c5709c-4180-37da-8a27-8fa8ee3e942f">
 		<_field_int64_integer name="field pointer skip!~" />
-		<_field_block_64 name="primitive^*!" max="16384">
+		<_field_block_64 name="primitive^*!" max="16384" guid="c9ec3299-40e7-2886-36f5-2697b1dc2c04">
 			<_field_string_id name="name^*!" />
 			<_field_real name="relative mass scale" />
 			<_field_real_fraction name="friction" />
 			<_field_real_fraction name="restitution" />
 			<_field_real name="volume *" />
 			<_field_real name="mass*!" />
-			<_field_long_block_index name="phantom*" />
+			<_field_long_block_index name="phantom*" srcguid="80c5709c-4180-37da-8a27-8fa8ee3e942f" />
 			<_field_short_integer name="runtime material type*~!" />
-			<_field_char_block_index name="material*" />
+			<_field_char_block_index name="material*" srcguid="b42ceadd-4c5c-135a-3b6f-e7b913a951fb" />
 			<_field_byte_flags name="material flags*">
 				<item Name="supresses effects" />
 				<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
@@ -468,18 +468,18 @@ SPIN: spin the object about the marker axis</_field_explanation>
 		<_field_data_64 name="TagFile Data*!" />
 		<_field_pad name="pad" length="4" />
 	</_field_block_64>
-	<_field_block_64 name="triangles*!" max="16384">
+	<_field_block_64 name="triangles*!" max="16384" guid="80c5709c-4180-37da-8a27-8fa8ee3e942f">
 		<_field_int64_integer name="field pointer skip!~" />
-		<_field_block_64 name="primitive^*!" max="16384">
+		<_field_block_64 name="primitive^*!" max="16384" guid="c9ec3299-40e7-2886-36f5-2697b1dc2c04">
 			<_field_string_id name="name^*!" />
 			<_field_real name="relative mass scale" />
 			<_field_real_fraction name="friction" />
 			<_field_real_fraction name="restitution" />
 			<_field_real name="volume *" />
 			<_field_real name="mass*!" />
-			<_field_long_block_index name="phantom*" />
+			<_field_long_block_index name="phantom*" srcguid="80c5709c-4180-37da-8a27-8fa8ee3e942f" />
 			<_field_short_integer name="runtime material type*~!" />
-			<_field_char_block_index name="material*" />
+			<_field_char_block_index name="material*" srcguid="b42ceadd-4c5c-135a-3b6f-e7b913a951fb" />
 			<_field_byte_flags name="material flags*">
 				<item Name="supresses effects" />
 				<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
@@ -493,18 +493,18 @@ SPIN: spin the object about the marker axis</_field_explanation>
 		<_field_data_64 name="TagFile Data*!" />
 		<_field_pad name="pad" length="4" />
 	</_field_block_64>
-	<_field_block_64 name="triangle meshs*!" max="16384">
+	<_field_block_64 name="triangle meshs*!" max="16384" guid="80c5709c-4180-37da-8a27-8fa8ee3e942f">
 		<_field_int64_integer name="field pointer skip!~" />
-		<_field_block_64 name="primitive^*!" max="16384">
+		<_field_block_64 name="primitive^*!" max="16384" guid="c9ec3299-40e7-2886-36f5-2697b1dc2c04">
 			<_field_string_id name="name^*!" />
 			<_field_real name="relative mass scale" />
 			<_field_real_fraction name="friction" />
 			<_field_real_fraction name="restitution" />
 			<_field_real name="volume *" />
 			<_field_real name="mass*!" />
-			<_field_long_block_index name="phantom*" />
+			<_field_long_block_index name="phantom*" srcguid="80c5709c-4180-37da-8a27-8fa8ee3e942f" />
 			<_field_short_integer name="runtime material type*~!" />
-			<_field_char_block_index name="material*" />
+			<_field_char_block_index name="material*" srcguid="b42ceadd-4c5c-135a-3b6f-e7b913a951fb" />
 			<_field_byte_flags name="material flags*">
 				<item Name="supresses effects" />
 				<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
@@ -518,16 +518,16 @@ SPIN: spin the object about the marker axis</_field_explanation>
 		<_field_data_64 name="TagFile Data*!" />
 		<_field_pad name="pad" length="4" />
 	</_field_block_64>
-	<_field_block_64 name="mass_distributions*!" max="1024">
+	<_field_block_64 name="mass_distributions*!" max="1024" guid="5352ae63-4e9e-8fa2-cc98-1e94eef66121">
 		<_field_int64_integer name="field pointer skip!~" />
 		<_field_data_64 name="Packfile Data*!" />
 		<_field_data_64 name="Tagfile Data*!" />
 	</_field_block_64>
-	<_field_block_64 name="hinge constraints*!" max="128">
+	<_field_block_64 name="hinge constraints*!" max="128" guid="ea9f162c-4c4f-8b3f-6cb8-7eb755278d5b">
 		<_field_struct name="constraint bodies*!" />
 		<_field_string_id name="name^*!" />
-		<_field_long_block_index name="node a*!" />
-		<_field_long_block_index name="node b*!" />
+		<_field_long_block_index name="node a*!" srcguid="6eb5a870-4aca-f531-f624-fc9eb16a22b2" />
+		<_field_long_block_index name="node b*!" srcguid="6eb5a870-4aca-f531-f624-fc9eb16a22b2" />
 		<_field_real name="a scale*!" />
 		<_field_real_vector_3d name="a forward*!" />
 		<_field_real_vector_3d name="a left*!" />
@@ -538,14 +538,14 @@ SPIN: spin the object about the marker axis</_field_explanation>
 		<_field_real_vector_3d name="b left*!" />
 		<_field_real_vector_3d name="b up*!" />
 		<_field_real_point_3d name="b position*!" />
-		<_field_long_block_index name="edge index*!" />
+		<_field_long_block_index name="edge index*!" srcguid="6b58713f-40e4-5056-6747-d7908d7b5fb1" />
 		<_field_pad name="JENFOXHY" length="4" />
 	</_field_block_64>
-	<_field_block_64 name="ragdoll constraints*!" max="128">
+	<_field_block_64 name="ragdoll constraints*!" max="128" guid="bd86edc6-4685-b0f9-8669-93ad5e7f812c">
 		<_field_struct name="constraint bodies*!" />
 		<_field_string_id name="name^*!" />
-		<_field_long_block_index name="node a*!" />
-		<_field_long_block_index name="node b*!" />
+		<_field_long_block_index name="node a*!" srcguid="6eb5a870-4aca-f531-f624-fc9eb16a22b2" />
+		<_field_long_block_index name="node b*!" srcguid="6eb5a870-4aca-f531-f624-fc9eb16a22b2" />
 		<_field_real name="a scale*!" />
 		<_field_real_vector_3d name="a forward*!" />
 		<_field_real_vector_3d name="a left*!" />
@@ -556,7 +556,7 @@ SPIN: spin the object about the marker axis</_field_explanation>
 		<_field_real_vector_3d name="b left*!" />
 		<_field_real_vector_3d name="b up*!" />
 		<_field_real_point_3d name="b position*!" />
-		<_field_long_block_index name="edge index*!" />
+		<_field_long_block_index name="edge index*!" srcguid="6b58713f-40e4-5056-6747-d7908d7b5fb1" />
 		<_field_pad name="OVIM" length="4" />
 		<_field_real name="min twist*!" />
 		<_field_real name="max twist*!" />
@@ -566,25 +566,25 @@ SPIN: spin the object about the marker axis</_field_explanation>
 		<_field_real name="max plane*!" />
 		<_field_real name="max friciton torque*!" />
 	</_field_block_64>
-	<_field_block_64 name="ragdoll subgroups" max="128">
+	<_field_block_64 name="ragdoll subgroups" max="128" guid="028d62af-42f6-3604-1ba7-2d907d846404">
 		<_field_string_id name="name^" />
-		<_field_block_64 name="nodes" max="128">
-			<_field_long_block_index name="node^" />
+		<_field_block_64 name="nodes" max="128" guid="dd1aef25-4034-0213-9eb4-d38e2fc9d219">
+			<_field_long_block_index name="node^" srcguid="7038ea64-4e76-4dbf-3165-62aa741cff9e" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="point to path curves*!" max="128">
+	<_field_block_64 name="point to path curves*!" max="128" guid="43718778-4fd0-9af0-2b10-6f93c58cf62d">
 		<_field_string_id name="name^*!" />
-		<_field_long_block_index name="node index*!" />
-		<_field_block_64 name="points*!" max="1024">
+		<_field_long_block_index name="node index*!" srcguid="6eb5a870-4aca-f531-f624-fc9eb16a22b2" />
+		<_field_block_64 name="points*!" max="1024" guid="91616cdc-49a8-36c1-7469-9fa73834c385">
 			<_field_real_point_3d name="position*!" />
 			<_field_real name="t value*!" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="limited hinge constraints*!" max="128">
+	<_field_block_64 name="limited hinge constraints*!" max="128" guid="324085e7-4afc-c689-c972-29b955467155">
 		<_field_struct name="constraint bodies*!" />
 		<_field_string_id name="name^*!" />
-		<_field_long_block_index name="node a*!" />
-		<_field_long_block_index name="node b*!" />
+		<_field_long_block_index name="node a*!" srcguid="6eb5a870-4aca-f531-f624-fc9eb16a22b2" />
+		<_field_long_block_index name="node b*!" srcguid="6eb5a870-4aca-f531-f624-fc9eb16a22b2" />
 		<_field_real name="a scale*!" />
 		<_field_real_vector_3d name="a forward*!" />
 		<_field_real_vector_3d name="a left*!" />
@@ -595,17 +595,17 @@ SPIN: spin the object about the marker axis</_field_explanation>
 		<_field_real_vector_3d name="b left*!" />
 		<_field_real_vector_3d name="b up*!" />
 		<_field_real_point_3d name="b position*!" />
-		<_field_long_block_index name="edge index*!" />
+		<_field_long_block_index name="edge index*!" srcguid="6b58713f-40e4-5056-6747-d7908d7b5fb1" />
 		<_field_pad name="TC" length="4" />
 		<_field_real name="limit friction*!" />
 		<_field_real name="limit min angle*!" />
 		<_field_real name="limit max angle*!" />
 	</_field_block_64>
-	<_field_block_64 name="ball and socket constraints*!" max="128">
+	<_field_block_64 name="ball and socket constraints*!" max="128" guid="a091e412-4fdf-3aea-978c-a78c4b6e3a11">
 		<_field_struct name="constraint bodies*!" />
 		<_field_string_id name="name^*!" />
-		<_field_long_block_index name="node a*!" />
-		<_field_long_block_index name="node b*!" />
+		<_field_long_block_index name="node a*!" srcguid="6eb5a870-4aca-f531-f624-fc9eb16a22b2" />
+		<_field_long_block_index name="node b*!" srcguid="6eb5a870-4aca-f531-f624-fc9eb16a22b2" />
 		<_field_real name="a scale*!" />
 		<_field_real_vector_3d name="a forward*!" />
 		<_field_real_vector_3d name="a left*!" />
@@ -616,14 +616,14 @@ SPIN: spin the object about the marker axis</_field_explanation>
 		<_field_real_vector_3d name="b left*!" />
 		<_field_real_vector_3d name="b up*!" />
 		<_field_real_point_3d name="b position*!" />
-		<_field_long_block_index name="edge index*!" />
+		<_field_long_block_index name="edge index*!" srcguid="6b58713f-40e4-5056-6747-d7908d7b5fb1" />
 		<_field_pad name="UPDLSKB" length="4" />
 	</_field_block_64>
-	<_field_block_64 name="stiff spring constraints*!" max="128">
+	<_field_block_64 name="stiff spring constraints*!" max="128" guid="ae05ffa0-4f5a-9716-5531-c1b2eadfec6d">
 		<_field_struct name="constraint bodies*!" />
 		<_field_string_id name="name^*!" />
-		<_field_long_block_index name="node a*!" />
-		<_field_long_block_index name="node b*!" />
+		<_field_long_block_index name="node a*!" srcguid="6eb5a870-4aca-f531-f624-fc9eb16a22b2" />
+		<_field_long_block_index name="node b*!" srcguid="6eb5a870-4aca-f531-f624-fc9eb16a22b2" />
 		<_field_real name="a scale*!" />
 		<_field_real_vector_3d name="a forward*!" />
 		<_field_real_vector_3d name="a left*!" />
@@ -634,15 +634,15 @@ SPIN: spin the object about the marker axis</_field_explanation>
 		<_field_real_vector_3d name="b left*!" />
 		<_field_real_vector_3d name="b up*!" />
 		<_field_real_point_3d name="b position*!" />
-		<_field_long_block_index name="edge index*!" />
+		<_field_long_block_index name="edge index*!" srcguid="6b58713f-40e4-5056-6747-d7908d7b5fb1" />
 		<_field_pad name="KGB" length="4" />
 		<_field_real name="spring_length*!" />
 	</_field_block_64>
-	<_field_block_64 name="prismatic constraints*!" max="128">
+	<_field_block_64 name="prismatic constraints*!" max="128" guid="36d9207e-4564-5541-c29d-6c8d0d2c8804">
 		<_field_struct name="constraint bodies*!" />
 		<_field_string_id name="name^*!" />
-		<_field_long_block_index name="node a*!" />
-		<_field_long_block_index name="node b*!" />
+		<_field_long_block_index name="node a*!" srcguid="6eb5a870-4aca-f531-f624-fc9eb16a22b2" />
+		<_field_long_block_index name="node b*!" srcguid="6eb5a870-4aca-f531-f624-fc9eb16a22b2" />
 		<_field_real name="a scale*!" />
 		<_field_real_vector_3d name="a forward*!" />
 		<_field_real_vector_3d name="a left*!" />
@@ -653,31 +653,31 @@ SPIN: spin the object about the marker axis</_field_explanation>
 		<_field_real_vector_3d name="b left*!" />
 		<_field_real_vector_3d name="b up*!" />
 		<_field_real_point_3d name="b position*!" />
-		<_field_long_block_index name="edge index*!" />
+		<_field_long_block_index name="edge index*!" srcguid="6b58713f-40e4-5056-6747-d7908d7b5fb1" />
 		<_field_pad name="XVEPD" length="4" />
 		<_field_real name="min_limit*!" />
 		<_field_real name="max_limit*!" />
 		<_field_real name="max_friction_force*!" />
 	</_field_block_64>
-	<_field_block_64 name="regions*" max="32">
+	<_field_block_64 name="regions*" max="32" guid="ed0288c0-4e04-9bf6-9408-458b67251047">
 		<_field_string_id name="name^*!" />
-		<_field_block_64 name="permutations" max="1023">
+		<_field_block_64 name="permutations" max="1023" guid="127afc6f-48dc-6769-e1a1-68a8d46f94ee">
 			<_field_string_id name="name^*!" />
-			<_field_block_64 name="rigid bodies" max="128">
-				<_field_long_block_index name="rigid body^*!" />
+			<_field_block_64 name="rigid bodies" max="128" guid="8f6677d6-4dfa-cf67-680e-7fa775f815d1">
+				<_field_long_block_index name="rigid body^*!" srcguid="7038ea64-4e76-4dbf-3165-62aa741cff9e" />
 			</_field_block_64>
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="nodes*" max="255">
+	<_field_block_64 name="nodes*" max="255" guid="6eb5a870-4aca-f531-f624-fc9eb16a22b2">
 		<_field_string_id name="name^*!" />
 		<_field_long_flags name="flags">
 			<item Name="does not animate" />
 		</_field_long_flags>
-		<_field_long_block_index name="parent*!" />
-		<_field_long_block_index name="sibling*!" />
-		<_field_long_block_index name="child*!" />
+		<_field_long_block_index name="parent*!" srcguid="6eb5a870-4aca-f531-f624-fc9eb16a22b2" />
+		<_field_long_block_index name="sibling*!" srcguid="6eb5a870-4aca-f531-f624-fc9eb16a22b2" />
+		<_field_long_block_index name="child*!" srcguid="6eb5a870-4aca-f531-f624-fc9eb16a22b2" />
 	</_field_block_64>
-	<_field_block_64 name="errors*!" max="512">
+	<_field_block_64 name="errors*!" max="512" guid="3cbb78d5-4d83-ca07-1a29-948996f4138e">
 		<_field_long_string name="name^*" />
 		<_field_short_enum name="report type*">
 			<item Name="silent" />
@@ -695,7 +695,7 @@ SPIN: spin the object about the marker axis</_field_explanation>
 		<_field_short_integer name="runtime generation flags!" />
 		<_field_pad name="WVTP" length="2" />
 		<_field_long_integer name="runtime something~!" />
-		<_field_block_64 name="reports*" max="1048576">
+		<_field_block_64 name="reports*" max="1048576" guid="ee6aab20-499f-3227-d608-45919eaafc40">
 			<_field_char_enum name="type*">
 				<item Name="silent" />
 				<item Name="comment" />
@@ -720,7 +720,7 @@ SPIN: spin the object about the marker axis</_field_explanation>
 			<_field_long_integer name="source identifier*" />
 			<_field_string name="source filename*" />
 			<_field_long_integer name="source line number*" />
-			<_field_block_64 name="vertices*" max="1048576">
+			<_field_block_64 name="vertices*" max="1048576" guid="b44d11d1-463d-a884-1325-55b95004390e">
 				<_field_struct name="point" />
 				<_field_real_point_3d name="position*" />
 				<_field_array name="node indices*">
@@ -738,7 +738,7 @@ SPIN: spin the object about the marker axis</_field_explanation>
 				<_field_real_argb_color name="color*" />
 				<_field_real name="screen size*" />
 			</_field_block_64>
-			<_field_block_64 name="vectors*" max="1048576">
+			<_field_block_64 name="vectors*" max="1048576" guid="f617e038-4e8d-0b4e-b986-4faf1f5e7402">
 				<_field_struct name="point" />
 				<_field_real_point_3d name="position*" />
 				<_field_array name="node indices*">
@@ -757,7 +757,7 @@ SPIN: spin the object about the marker axis</_field_explanation>
 				<_field_real_vector_3d name="normal*" />
 				<_field_real name="screen length*" />
 			</_field_block_64>
-			<_field_block_64 name="lines*" max="1048576">
+			<_field_block_64 name="lines*" max="1048576" guid="1c172d3c-4356-604a-48de-1b8f8482cae0">
 				<_field_array name="points*">
 					<_field_struct name="point" />
 					<_field_real_point_3d name="position*" />
@@ -790,69 +790,8 @@ SPIN: spin the object about the marker axis</_field_explanation>
 				</_field_array>
 				<_field_real_argb_color name="color*" />
 			</_field_block_64>
-			<_field_block_64 name="triangles*" max="1048576">
+			<_field_block_64 name="triangles*" max="1048576" guid="f926e761-44e3-0012-1631-17857a34962b">
 				<_field_array name="points*">
-					<_field_struct name="point" />
-					<_field_real_point_3d name="position*" />
-					<_field_array name="node indices*">
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-					</_field_array>
-					<_field_array name="node weights*">
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-					</_field_array>
-					<_field_struct name="point" />
-					<_field_real_point_3d name="position*" />
-					<_field_array name="node indices*">
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-					</_field_array>
-					<_field_array name="node weights*">
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-					</_field_array>
-					<_field_struct name="point" />
-					<_field_real_point_3d name="position*" />
-					<_field_array name="node indices*">
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-					</_field_array>
-					<_field_array name="node weights*">
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-					</_field_array>
-				</_field_array>
-				<_field_real_argb_color name="color*" />
-			</_field_block_64>
-			<_field_block_64 name="quads*" max="1048576">
-				<_field_array name="points*">
-					<_field_struct name="point" />
-					<_field_real_point_3d name="position*" />
-					<_field_array name="node indices*">
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-					</_field_array>
-					<_field_array name="node weights*">
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-					</_field_array>
 					<_field_struct name="point" />
 					<_field_real_point_3d name="position*" />
 					<_field_array name="node indices*">
@@ -898,7 +837,68 @@ SPIN: spin the object about the marker axis</_field_explanation>
 				</_field_array>
 				<_field_real_argb_color name="color*" />
 			</_field_block_64>
-			<_field_block_64 name="comments*" max="1048576">
+			<_field_block_64 name="quads*" max="1048576" guid="d1071621-4305-e7d8-cc9f-ea8abf5529c5">
+				<_field_array name="points*">
+					<_field_struct name="point" />
+					<_field_real_point_3d name="position*" />
+					<_field_array name="node indices*">
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+					</_field_array>
+					<_field_array name="node weights*">
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+					</_field_array>
+					<_field_struct name="point" />
+					<_field_real_point_3d name="position*" />
+					<_field_array name="node indices*">
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+					</_field_array>
+					<_field_array name="node weights*">
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+					</_field_array>
+					<_field_struct name="point" />
+					<_field_real_point_3d name="position*" />
+					<_field_array name="node indices*">
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+					</_field_array>
+					<_field_array name="node weights*">
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+					</_field_array>
+					<_field_struct name="point" />
+					<_field_real_point_3d name="position*" />
+					<_field_array name="node indices*">
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+					</_field_array>
+					<_field_array name="node weights*">
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+					</_field_array>
+				</_field_array>
+				<_field_real_argb_color name="color*" />
+			</_field_block_64>
+			<_field_block_64 name="comments*" max="1048576" guid="709a9566-4617-dea3-b950-ff8a50e96ddb">
 				<_field_data_64 name="text*" />
 				<_field_struct name="point" />
 				<_field_real_point_3d name="position*" />

@@ -17,28 +17,28 @@
 	<_field_real name="scale" />
 	<_field_real_point_3d name="worldPosition" />
 	<_field_real_quaternion name="worldRotation" />
-	<_field_block_64 name="default2d" max="1">
+	<_field_block_64 name="default2d" max="1" guid="f417607b-4812-093e-1f77-93b3b9f0f8e0">
 		<_field_pad name="pad0" length="1" />
 	</_field_block_64>
-	<_field_block_64 name="objectMarker3d" max="1">
+	<_field_block_64 name="objectMarker3d" max="1" guid="9a134f97-40d4-5dac-cdf0-b7bba209d8d9">
 		<_field_string_id name="object name" />
 		<_field_string_id name="marker name" />
 	</_field_block_64>
-	<_field_block_64 name="structureBSPMarker" max="1">
+	<_field_block_64 name="structureBSPMarker" max="1" guid="d008b1a7-4498-567a-8362-88ad2f07b244">
 		<_field_string name="marker name" />
 	</_field_block_64>
-	<_field_block_64 name="cameraOrientedStructureBSPMarker" max="1">
+	<_field_block_64 name="cameraOrientedStructureBSPMarker" max="1" guid="d74d3fba-49a4-3ec4-980d-75a64bb60877">
 		<_field_string name="marker name" />
 	</_field_block_64>
 	<_field_explanation name="Projection settings">Settings for the projection and camera used to see the nodegraph</_field_explanation>
-	<_field_block_64 name="default 2d" max="1">
+	<_field_block_64 name="default 2d" max="1" guid="5c9430b9-4922-9290-8a6c-12baa65bc402">
 		<_field_pad name="pad0" length="1" />
 	</_field_block_64>
-	<_field_block_64 name="playerView" max="1">
+	<_field_block_64 name="playerView" max="1" guid="8bfb2c45-42bb-01bf-f62c-f0b1599a4677">
 		<_field_pad name="pad0" length="1" />
 	</_field_block_64>
 	<_field_explanation name="Interaction settings">Settings for interacting with the nodegraph</_field_explanation>
-	<_field_block_64 name="Infinity console" max="1">
+	<_field_block_64 name="Infinity console" max="1" guid="d4dbac21-4fcb-01b6-c3c7-30998e786307">
 		<_field_real name="distance (metres)" />
 	</_field_block_64>
 </plugin>

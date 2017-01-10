@@ -89,7 +89,7 @@
 	</_field_char_enum>
 	<_field_pad name="pad2" length="3" />
 	<_field_long_integer name="runtime flags!*" />
-	<_field_block_64 name="source sidecar" max="1">
+	<_field_block_64 name="source sidecar" max="1" guid="dd2e8f64-42f1-0f5f-7fdf-1a8d7d24bd29">
 		<_field_long_string name="sidecar path*" />
 	</_field_block_64>
 	<_field_string_id name="default model variant" />
@@ -106,7 +106,7 @@
 	<_field_real name="navpoint vertical offset" />
 	<_field_explanation name="only set this tag if you want to override the default collision damage values in globals.globals" />
 	<_field_tag_reference_64 name="collision damage" />
-	<_field_block_64 name="early mover OBB" max="1">
+	<_field_block_64 name="early mover OBB" max="1" guid="7ad1ffff-48ff-aaaa-d477-36cb3b0ee7ff">
 		<_field_string_id name="node name#empty mean object space" />
 		<_field_long_integer name="runtime node index*!" />
 		<_field_real name="x0" />
@@ -123,7 +123,7 @@
 	<_field_real name="kill on first contact or damage after time:seconds#grace period before object can be instantly killed by kill on first contact or damage flag" />
 	<_field_real name="self-destruct time:seconds#if non-zero, any instances of this object will destroy themselves after this many seconds." />
 	<_field_real name="self-destruct time max:seconds#if non-zero, defines range from which self-destruct time is chosen randomly" />
-	<_field_block_64 name="ai properties" max="1">
+	<_field_block_64 name="ai properties" max="1" guid="26fb5335-447d-712e-527f-f7937178fdaf">
 		<_field_long_flags name="ai flags">
 			<item Name="detroyable cover" />
 			<item Name="pathfinding ignore when dead" />
@@ -157,7 +157,7 @@
 			<item Name="infinite" />
 		</_field_short_enum>
 	</_field_block_64>
-	<_field_block_64 name="functions" max="256">
+	<_field_block_64 name="functions" max="256" guid="d2efdbe6-4dc2-41ee-1024-5f80d9baf582">
 		<_field_long_flags name="flags">
 			<item Name="invert#result of function is one minus actual result" />
 			<item Name="mapping does not controls active#the curve mapping can make the function active/inactive" />
@@ -174,7 +174,7 @@
 		<_field_struct name="default function" />
 		<_field_data_64 name="data" />
 		<_field_string_id name="scale by" />
-		<_field_block_64 name="interpolation" max="2">
+		<_field_block_64 name="interpolation" max="2" guid="5a96873e-4c1c-ac0d-4165-0b8a2e8d2846">
 			<_field_long_enum name="interpolation mode">
 				<item Name="constant velocity" />
 				<item Name="linear acceleration" />
@@ -196,15 +196,15 @@ determines damping based on velocity" />
 			<_field_real name="fraction:0-1#used by fractional
 how mush of the distance to the target to cover each update" />
 		</_field_block_64>
-		<_field_long_block_index name="runtime interpolator index*!" />
+		<_field_long_block_index name="runtime interpolator index*!" srcguid="a2efdbe6-4dc2-4bee-1024-5f30d9baf532" />
 	</_field_block_64>
-	<_field_block_64 name="runtime interpolator functions*!" max="256">
+	<_field_block_64 name="runtime interpolator functions*!" max="256" guid="a2efdbe6-4dc2-4bee-1024-5f30d9baf532">
 		<_field_long_integer name="runtime interpolator to object function mapping*!" />
 	</_field_block_64>
-	<_field_block_64 name="function switches" max="32">
+	<_field_block_64 name="function switches" max="32" guid="cd9999fc-42ce-ab66-5317-4fb7541ca31e">
 		<_field_string_id name="switch function name" />
 		<_field_string_id name="export name" />
-		<_field_block_64 name="switched functions" max="8">
+		<_field_block_64 name="switched functions" max="8" guid="42436123-44bf-650f-c76e-c193f74535d7">
 			<_field_real_bounds name="selection bounds#if the switch function is between these values, this function will be picked" />
 			<_field_string_id name="function name^" />
 		</_field_block_64>
@@ -222,7 +222,7 @@ how mush of the distance to the target to cover each update" />
 		<item Name="No shoulder bash rebound" />
 		<item Name="Combine child shapes into convext hull when cutting navmesh" />
 	</_field_word_flags>
-	<_field_block_64 name="attachments" max="48">
+	<_field_block_64 name="attachments" max="48" guid="11097257-429c-4775-33d9-75a73f4575ee">
 		<_field_tag_reference_64 name="type^" validtags="ligh, gldf, ltvl, effe, lsnd, lens, cpem, egfd, decs" />
 		<_field_tag_reference_64 name="override type#this attachment will override the attachment on the object that shares this " validtags="ligh, gldf, ltvl, effe, lsnd, lens, cpem, egfd, decs" />
 		<_field_string_id name="marker" />
@@ -241,7 +241,7 @@ how mush of the distance to the target to cover each update" />
 		<_field_string_id name="primary scale" />
 		<_field_string_id name="secondary scale" />
 	</_field_block_64>
-	<_field_block_64 name="hull surfaces" max="64">
+	<_field_block_64 name="hull surfaces" max="64" guid="201415c3-45f8-124b-838f-11b7505bada4">
 		<_field_word_flags name="flags">
 			<item Name="works on land#drives on an extruded version of everything physical in your level" />
 			<item Name="effects only" />
@@ -249,7 +249,7 @@ how mush of the distance to the target to cover each update" />
 		<_field_pad name="pad0" length="2" />
 		<_field_string_id name="marker name^" />
 		<_field_real name="radius" />
-		<_field_block_64 name="drag" max="512">
+		<_field_block_64 name="drag" max="512" guid="520e02ba-44fa-2360-a778-53a5d2f10aa4">
 			<_field_string_id name="material^" />
 			<_field_struct name="drag" />
 			<_field_custom name="Pressure" />
@@ -266,7 +266,7 @@ how mush of the distance to the target to cover each update" />
 			<_field_real name="angular damping" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="jetwash" max="4">
+	<_field_block_64 name="jetwash" max="4" guid="c47aa872-4bc5-0a22-93c9-779bab9c9679">
 		<_field_string_id name="marker name^" />
 		<_field_real name="radius" />
 		<_field_long_integer name="maximum traces!:traces per second" />
@@ -275,17 +275,17 @@ how mush of the distance to the target to cover each update" />
 		<_field_angle_bounds name="trace pitch angle: degrees" />
 		<_field_real name="particle offset:world units" />
 	</_field_block_64>
-	<_field_block_64 name="widgets" max="4">
+	<_field_block_64 name="widgets" max="4" guid="62919b1e-4661-a5aa-8a7d-31b8aaddc03a">
 		<_field_tag_reference_64 name="type" validtags="ant!, clwd" />
 	</_field_block_64>
-	<_field_block_64 name="change colors" max="4">
-		<_field_block_64 name="initial permutations" max="32">
+	<_field_block_64 name="change colors" max="4" guid="0ab056ad-41c9-8f32-6ab2-db9efef6249b">
+		<_field_block_64 name="initial permutations" max="32" guid="fc403e79-4d2e-a7a6-216c-0cad7b6ca0c2">
 			<_field_real name="weight" />
 			<_field_real_rgb_color name="color lower bound" />
 			<_field_real_rgb_color name="color upper bound" />
 			<_field_string_id name="variant name#if empty, may be used by any model variant" />
 		</_field_block_64>
-		<_field_block_64 name="functions" max="4">
+		<_field_block_64 name="functions" max="4" guid="9f69cb7c-4f58-ba0d-0ca3-ce96289ca8d0">
 			<_field_pad name="TJJWBYNU" length="4" />
 			<_field_long_flags name="scale flags">
 				<item Name="blend in hsv#blends colors in hsv rather than rgb space" />
@@ -297,7 +297,7 @@ how mush of the distance to the target to cover each update" />
 			<_field_string_id name="scale by" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="multiplayer object" max="1">
+	<_field_block_64 name="multiplayer object" max="1" guid="027b0263-43de-e976-6b53-73b167e4ae73">
 		<_field_explanation name="TYPE AND FLAGS">Type pertains to how you want the game engine to handle this object
 Certain flags applicable only to certain object types, should be self evident</_field_explanation>
 		<_field_char_enum name="type">
@@ -375,7 +375,7 @@ Certain flags applicable only to certain object types, should be self evident</_
 		</_field_long_flags>
 		<_field_explanation name="RESPAWN ZONE DATA">These are respawn zone weights, used only for respawn zones</_field_explanation>
 		<_field_real name="normal weight:aka natural weight" />
-		<_field_block_64 name="falloff function#Multiplier applied to weight (domain is center to radius, range should be 0 to 1)." max="1">
+		<_field_block_64 name="falloff function#Multiplier applied to weight (domain is center to radius, range should be 0 to 1)." max="1" guid="506e405f-40de-3d03-3d40-9e98c316758f">
 			<_field_data_64 name="data" />
 		</_field_block_64>
 		<_field_explanation name="MARKER DATA">These fields are only used for defining certain, special markers to use for positional locations if the default position (object origin) is not sufficient</_field_explanation>
@@ -426,7 +426,7 @@ Certain flags applicable only to certain object types, should be self evident</_
 		<_field_string_id name="Default Label [3]#Label reference into the Forge labels block in forge.forge_globals" />
 		<_field_string_id name="Default Label [4]#Label reference into the Forge labels block in forge.forge_globals" />
 	</_field_block_64>
-	<_field_block_64 name="Forge data" max="36">
+	<_field_block_64 name="Forge data" max="36" guid="89e8f6a5-4178-73b5-af26-08b9cb87b0af">
 		<_field_tag_reference_64 name="Palette" />
 		<_field_string_id name="Name" />
 		<_field_string_id name="Description" />
@@ -436,17 +436,17 @@ Certain flags applicable only to certain object types, should be self evident</_
 		<_field_real_vector_3d name="Starting yaw/pitch/roll" />
 	</_field_block_64>
 	<_field_tag_reference_64 name="simulation_interpolation#Set to a specific interpolation definition, or leave blank to inherit the default for the object type (there are defaults for bipeds, vehicles, and crates in multiplayer_globals).  To disable interpolation on a particular object whose type has interpolation by default, set this reference to the special disable_interpolation.simulation_interpolation tag." />
-	<_field_block_64 name="spawn effects" max="1">
+	<_field_block_64 name="spawn effects" max="1" guid="caa36528-4d30-4bd4-ecfe-db92325ca7a3">
 		<_field_explanation name="Spawn Effects">Effect played when an object of this type spawns in during each game mode.
 Unlike creation effect, it is only played when the object spawns in through certain methods, not whenever one is created.</_field_explanation>
 		<_field_tag_reference_64 name="multiplayer spawn effect#effect played when this object spawns in MP games" />
 		<_field_tag_reference_64 name="campaign spawn effect#effect played when this object spawns in Campaign games" />
 	</_field_block_64>
-	<_field_block_64 name="model dissolve data" max="13">
+	<_field_block_64 name="model dissolve data" max="13" guid="95694a9f-4f6b-93e9-40ad-598949a3a896">
 		<_field_tag_reference_64 name="model dissolve data" />
 	</_field_block_64>
 	<_field_long_string name="class name" />
-	<_field_block_64 name="script tagalongs" max="1024">
+	<_field_block_64 name="script tagalongs" max="1024" guid="d5081a5a-49b0-aaae-215c-dda38b1a4c98">
 		<_field_tag_reference_64 name="reference*^" />
 	</_field_block_64>
 	<_field_tag_reference_64 name="prototype script!" />
@@ -459,11 +459,11 @@ Unlike creation effect, it is only played when the object spawns in through cert
 		<item Name="Enable In Single Player" />
 	</_field_byte_flags>
 	<_field_pad name="DPKP" length="3" />
-	<_field_block_64 name="Designer Metadata" max="32">
+	<_field_block_64 name="Designer Metadata" max="32" guid="7a236d95-4b5b-6697-5b69-1494408a3af4">
 		<_field_string_id name="meta label^" />
 	</_field_block_64>
 	<_field_explanation name="Object Function Smoothing" />
-	<_field_block_64 name="Object function smoothing" max="64">
+	<_field_block_64 name="Object function smoothing" max="64" guid="1d4d4ab4-4eff-b1c9-b566-67b534f92fb9">
 		<_field_string_id name="id" />
 		<_field_string_id name="alias of#(Optional) If set will internally read this instead of 'id' to generate the smoothed value. Can be used to create smoothed aliases of existing functions." />
 		<_field_real_fraction name="smoothing factor" />
@@ -476,7 +476,7 @@ Unlike creation effect, it is only played when the object spawns in through cert
 	<_field_pad name="pad_anmesh" length="3" />
 	<_field_tag_reference_64 name="Core" validtags="spry, rscn" />
 	<_field_tag_reference_64 name="Trigger volume component info" />
-	<_field_block_64 name="Tracking Info&amp;Spartan Tracking" max="2">
+	<_field_block_64 name="Tracking Info&amp;Spartan Tracking" max="2" guid="c3031d37-42d5-b52a-63d5-0fbebc784642">
 		<_field_explanation name="Map these settings to a ping type">Active - This is generated manually by the player, by pressing a button on their controller.  This behavior will override passive behavior.  
 
 Passive - This is a constant ping, automatically generated by the tracking system.  Use this to mark things automatically as the player comes into range.  
@@ -609,8 +609,8 @@ You should create at most one block of Spartan Tracking data for each ping type.
 	<_field_pad name="R" length="2" />
 	<_field_string_id name="shield name#shield (or any damage section) to control" />
 	<_field_string_id name="shield function#shield is on when this function is greater then 0.5f, off otherwise." />
-	<_field_block_64 name="Sound RTPCs" max="32">
-		<_field_long_block_index name="Attachment Index#Sound attachment to affect" />
+	<_field_block_64 name="Sound RTPCs" max="32" guid="6edcfd78-4177-1147-644d-27b8b574d61d">
+		<_field_long_block_index name="Attachment Index#Sound attachment to affect" srcguid="11097257-429c-4775-33d9-75a73f4575ee" />
 		<_field_string_id name="Function#Function to drive the RTPC" />
 		<_field_string_id name="RTPC Name#WWise RTPC string name" />
 		<_field_long_integer name="RTPC name hash value*!" />

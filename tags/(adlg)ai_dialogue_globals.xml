@@ -31,13 +31,13 @@
 	<_field_real name="player shield damage threshold:[0,1]#Damage greater than threshold is considered 'extended'" />
 	<_field_real name="player body damage threshold:[0,1]#Damage greater than threshold is considered 'extended'" />
 	<_field_explanation name="Default stimulus suppressors">when these stimuli are active on an actor, default stimulus permutations will be suppressed.</_field_explanation>
-	<_field_block_64 name="default stimulus suppressors" max="4">
+	<_field_block_64 name="default stimulus suppressors" max="4" guid="48735579-49b0-26b8-6d96-8bb0b055eeb3">
 		<_field_string_id name="stimulus^" />
 	</_field_block_64>
 	<_field_explanation name="Imported Data. Don't touch me." />
-	<_field_block_64 name="vocalizations" max="4096">
+	<_field_block_64 name="vocalizations" max="4096" guid="efa010a4-48e6-3ea1-e041-4ca4d551a17f">
 		<_field_string_id name="vocalization^" />
-		<_field_short_block_index name="parent index*" />
+		<_field_short_block_index name="parent index*" srcguid="efa010a4-48e6-3ea1-e041-4ca4d551a17f" />
 		<_field_short_enum name="priority">
 			<item Name="none" />
 			<item Name="autonomic" />
@@ -153,7 +153,7 @@
 		<_field_short_integer name="mission min value#The lowest mission id that we play this line in" />
 		<_field_short_integer name="mission max value#The highest mission id that we play this line in" />
 		<_field_string_id name="Sample line" />
-		<_field_block_64 name="reponses" max="20">
+		<_field_block_64 name="reponses" max="20" guid="0d94f560-4446-7a58-a4de-46836a20088a">
 			<_field_string_id name="vocalization name" />
 			<_field_word_flags name="flags">
 				<item Name="nonexclusive" />
@@ -172,7 +172,7 @@
 			<_field_short_integer name="dialogue index (import)*" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="patterns" max="4096">
+	<_field_block_64 name="patterns" max="4096" guid="d957fa41-43a7-cd6c-b7a7-2b9d8ccbecc3">
 		<_field_short_enum name="dialogue type">
 			<item Name="NONE" />
 			<item Name="death" />
@@ -938,15 +938,15 @@
 		<_field_short_integer name="subject max team count" />
 		<_field_pad name="pad-for-isValidInThisLevel" length="4" />
 	</_field_block_64>
-	<_field_block_64 name="dialogue data" max="277">
+	<_field_block_64 name="dialogue data" max="277" guid="fcf21c42-4d90-169b-4364-f0981ec7eac4">
 		<_field_short_integer name="start index (postprocess)*" />
 		<_field_short_integer name="length (postprocess)*" />
 	</_field_block_64>
-	<_field_block_64 name="involuntary data" max="100">
+	<_field_block_64 name="involuntary data" max="100" guid="208cdc38-4456-0802-bac9-f28640f23ba7">
 		<_field_short_integer name="involuntary vocalization index*" />
 		<_field_pad name="JXIFX" length="2" />
 	</_field_block_64>
-	<_field_block_64 name="predicted vocalizations" max="32">
+	<_field_block_64 name="predicted vocalizations" max="32" guid="6bb73155-4b00-9e88-81c8-86a9a3ae52da">
 		<_field_long_integer name="predicted vocalization index*" />
 	</_field_block_64>
 </plugin>
