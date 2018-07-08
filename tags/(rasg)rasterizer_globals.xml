@@ -152,8 +152,7 @@
 198: ............. forge lightmap postprocess
 199: ............. cui gamma correct copy
 200: ............. cui gamma correct overlay mask
-204: ............. ausar forge colored geometry
-205: ............. ausar forge line circle
+205: ............. Lanczos Scaling Filter
 206: ............. tracer update
 207: ............. polyart render
 208: ............. gamma correct double draw text
@@ -227,7 +226,5 @@ expected dt:.......... expected time per tick, in seconds (used to correct motio
 	<_field_real name="debug lighting value#we will replace the albedo with this value across RGB" />
 	<_field_real name="albedo clip min#pixels that have an albedo below this value will get colorized blue in the albedo clip debug display" />
 	<_field_real name="albedo clip max#pixels that have an albedo above this value will get colorized red in the albedo clip debug display" />
-	<_field_explanation name="Ausar: DX12 Pipeline state objects globals tag" />
-	<_field_tag_reference_64 name="pso globals" validtags="gpso" />
 	<_field_pad name="pad" length="4" />
 </plugin>

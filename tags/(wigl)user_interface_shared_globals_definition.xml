@@ -85,7 +85,6 @@
 		<_field_byte_flags name="flags">
 			<item Name="allow auto dismissal" />
 			<item Name="show spinner" />
-			<item Name="show close application button" />
 		</_field_byte_flags>
 		<_field_char_enum name="error category">
 			<item Name="default" />
@@ -112,8 +111,6 @@ Notes:
 		<_field_string_id name="dialog name^" />
 		<_field_word_flags name="flags">
 			<item Name="unused" />
-			<item Name="has_text_input" />
-			<item Name="countdown_timer" />
 		</_field_word_flags>
 		<_field_pad name="pad0" length="2" />
 		<_field_string_id name="title" />
@@ -137,8 +134,6 @@ Notes:
 			<item Name="third item activates" />
 			<item Name="fourth item activates" />
 		</_field_short_enum>
-		<_field_short_integer name="maximum text input" />
-		<_field_pad name="pad1" length="2" />
 	</_field_block_64>
 	<_field_explanation name="Lua User Libraries">These lua script files are loaded into every new UI lua state in the order specified to provide suplemental functionality.</_field_explanation>
 	<_field_block_64 name="lua user libraries" max="32" srcguid="38464d85-41b8-7370-802a-6194759fcbb3" srcName="gui_luaUserLibraryBlock">
@@ -298,12 +293,5 @@ The output (y) is the distance to the edge (should be 1).</_field_explanation>
 		</_field_char_enum>
 		<_field_pad name="pad0" length="3" />
 	</_field_block_64>
-	<_field_explanation name="4K Resolution Range">Resolution range for using 4K assets</_field_explanation>
-	<_field_real_point_2d name="min resolution for 4K assets" />
-	<_field_real_point_2d name="max resolution for 4K assets" />
-	<_field_tag_reference_64 name="English keyboard bitmap" validtags="bitm" />
-	<_field_block_64 name="keyboard bitmap list for different languages" max="32" srcguid="e9507d6a-41a2-b08a-6054-4c9b6179c303" srcName="KeyboardLanguageBitmapBlockDefinition">
-		<_field_string_id name="identifier" />
-		<_field_tag_reference_64 name="keyboard bitmap" validtags="bitm" />
-	</_field_block_64>
+	<_field_pad name="pad0" length="4" />
 </plugin>

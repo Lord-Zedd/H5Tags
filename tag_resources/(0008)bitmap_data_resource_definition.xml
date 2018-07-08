@@ -11,13 +11,11 @@
 	<_field_char_integer name="alignmentBits*" />
 	<_field_pad name="pad" length="1" />
 	<_field_real name="mipMapLOD" />
-	<_field_int64_integer name="bitmap data*" />
 	<_field_int64_integer name="virtual address*" />
 	<_field_block_64 name="streamingData*" max="7" srcguid="d1202c39-48dc-bdfc-49de-2b8193afe8b0" srcName="streaming_data_block">
 		<_field_long_integer name="memory handle*" />
-		<_field_long_integer name="gpu memory handle*" />
 		<_field_short_integer name="num pages*" />
 		<_field_short_integer name="loaded*" />
 	</_field_block_64>
-	<_field_real name="mipMapClamp" />
+	<_field_pad name="pad2*" length="4" />
 </plugin>

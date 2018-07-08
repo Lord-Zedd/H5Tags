@@ -6,12 +6,10 @@
 		<_field_long_integer name="global tag ID!" />
 		<_field_pad name="local tag handle!~" length="4" />
 	</_field_struct>
-	<_field_block_64 name="texture maps" max="1024" srcguid="12123674-4ce2-7cf1-877d-69bec3309093" srcName="defaultTextureMapBlock">
-		<_field_tag_reference_64 name="default texture" validtags="bitm" />
-		<_field_block_64 name="sprite index to 4k texture mapping" max="512" srcguid="8036ebca-47df-f8e5-5a7c-34a1fa18fc02" srcName="spriteIndexMapBlock">
-			<_field_tag_reference_64 name="4k texture" validtags="bitm" />
-			<_field_long_integer name="default texture sprite index" />
-		</_field_block_64>
+	<_field_block_64 name="texture maps" max="2048" srcguid="12123674-4ce2-7cf1-877d-69bec3309093" srcName="defaultTextureMapBlock">
+		<_field_dword_integer name="default texture" />
+		<_field_dword_integer name="sprite index to 4k texture mapping" />
 	</_field_block_64>
+	<_field_tag_reference_64 name="4K debug texture: When debugging is enabled, this texture will appears when a 4K texture does not exist or in place of 4K texture." validtags="bitm" />
 	<_field_pad name="pad0" length="4" />
 </plugin>

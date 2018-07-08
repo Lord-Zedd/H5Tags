@@ -79,7 +79,6 @@
 				<item Name="Hide On Spartan Render Mode (When in that mode, hide this screen)" />
 				<item Name="Allow Input Fall Through Even When Handled" />
 				<item Name="Draw on top of fades" />
-				<item Name="Allow Gameplay Input" />
 			</_field_long_flags>
 			<_field_real name="editor pos x!" />
 			<_field_real name="editor pos y!" />
