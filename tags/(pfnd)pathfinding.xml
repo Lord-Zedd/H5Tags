@@ -1,24 +1,25 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="bsp pathfinding data" max="32" guid="d935ab3c-4216-86ac-bb36-b7bc7c72e09a">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="bsp pathfinding data" max="32" srcguid="d935ab3c-4216-86ac-bb36-b7bc7c72e09a" srcName="pathfinding_data_block">
 		<_field_data_64 name="navGraphData*~" />
 		<_field_data_64 name="navMediatorData*~" />
 		<_field_data_64 name="navTraversalData*~" />
 		<_field_data_64 name="navFPTreeData*~" />
-		<_field_block_64 name="firingPointAABBList*~" max="2147483647" guid="673648e3-400c-260c-1a09-2cbdd6492ff3">
+		<_field_block_64 name="firingPointAABBList*~" max="2147483647" srcguid="673648e3-400c-260c-1a09-2cbdd6492ff3" srcName="FiringPointAABBBlock">
 			<_field_real_vector_3d name="m_min*~" />
 			<_field_real name="havok w m_min*~!" />
 			<_field_real_vector_3d name="m_max*~" />
 			<_field_real name="havok w m_max*~!" />
-			<_field_block_64 name="firingPoints*~" max="32767" guid="625d9e16-4a70-e01e-addd-db857a60a6a9">
+			<_field_block_64 name="firingPoints*~" max="32767" srcguid="625d9e16-4a70-e01e-addd-db857a60a6a9" srcName="FiringPointDefinitionBlock">
 				<_field_real_point_3d name="position!" />
-				<_field_custom_long_block_index name="packedKeyOffaceref~!" val="void" />
-				<_field_custom_long_block_index name="navMeshUIDOffaceref~!" val="void" />
+				<_field_custom_long_block_index name="packedKeyOffaceref~!" targetName="void" />
+				<_field_custom_long_block_index name="navMeshUIDOffaceref~!" targetName="void" />
 				<_field_word_flags name="flags!">
 					<item Name="open" />
 					<item Name="partial" />
@@ -39,7 +40,7 @@
 					<item Name="bunker high" />
 					<item Name="bunker low" />
 				</_field_word_flags>
-				<_field_short_block_index name="area^!" srcguid="65351716-4ec7-eef5-b196-63b1d7e3482f" />
+				<_field_short_block_index name="area^!" targetGuid="65351716-4ec7-eef5-b196-63b1d7e3482f" targetName="areas_block" />
 				<_field_char_integer name="bits and pad!" />
 				<_field_pad name="PAD1" length="1" />
 				<_field_real_euler_angles_2d name="normal!" />
@@ -53,20 +54,20 @@
 		<_field_long_integer name="structure checksum*~" />
 		<_field_pad name="padAlignPathfindingData" length="12" />
 	</_field_block_64>
-	<_field_block_64 name="mobileNavMeshes*~" max="500" guid="9417c730-4159-2664-b26c-eb9c20a97485">
+	<_field_block_64 name="mobileNavMeshes*~" max="500" srcguid="9417c730-4159-2664-b26c-eb9c20a97485" srcName="MobileNavMeshBlock">
 		<_field_data_64 name="navGraphData*~" />
 		<_field_data_64 name="navMediatorData*~" />
 		<_field_data_64 name="navTraversalData*~" />
 		<_field_data_64 name="navFPTreeData*~" />
-		<_field_block_64 name="firingPointAABBList*~" max="2147483647" guid="673648e3-400c-260c-1a09-2cbdd6492ff3">
+		<_field_block_64 name="firingPointAABBList*~" max="2147483647" srcguid="673648e3-400c-260c-1a09-2cbdd6492ff3" srcName="FiringPointAABBBlock">
 			<_field_real_vector_3d name="m_min*~" />
 			<_field_real name="havok w m_min*~!" />
 			<_field_real_vector_3d name="m_max*~" />
 			<_field_real name="havok w m_max*~!" />
-			<_field_block_64 name="firingPoints*~" max="32767" guid="625d9e16-4a70-e01e-addd-db857a60a6a9">
+			<_field_block_64 name="firingPoints*~" max="32767" srcguid="625d9e16-4a70-e01e-addd-db857a60a6a9" srcName="FiringPointDefinitionBlock">
 				<_field_real_point_3d name="position!" />
-				<_field_custom_long_block_index name="packedKeyOffaceref~!" val="void" />
-				<_field_custom_long_block_index name="navMeshUIDOffaceref~!" val="void" />
+				<_field_custom_long_block_index name="packedKeyOffaceref~!" targetName="void" />
+				<_field_custom_long_block_index name="navMeshUIDOffaceref~!" targetName="void" />
 				<_field_word_flags name="flags!">
 					<item Name="open" />
 					<item Name="partial" />
@@ -87,7 +88,7 @@
 					<item Name="bunker high" />
 					<item Name="bunker low" />
 				</_field_word_flags>
-				<_field_short_block_index name="area^!" srcguid="65351716-4ec7-eef5-b196-63b1d7e3482f" />
+				<_field_short_block_index name="area^!" targetGuid="65351716-4ec7-eef5-b196-63b1d7e3482f" targetName="areas_block" />
 				<_field_char_integer name="bits and pad!" />
 				<_field_pad name="PAD1" length="1" />
 				<_field_real_euler_angles_2d name="normal!" />
@@ -98,65 +99,66 @@
 			<_field_pad name="pad0" length="4" />
 		</_field_block_64>
 		<_field_long_integer name="version*~" />
-		<_field_struct name="object id" />
-		<_field_long_integer name="unique id*" />
-		<_field_short_block_index name="origin bsp index*" srcguid="e6cc8c8b-4e10-3b6b-9eb8-7c896228a21f" />
-		<_field_char_enum name="type*">
-			<item Name="biped" />
-			<item Name="vehicle" />
-			<item Name="weapon" />
-			<item Name="equipment" />
-			<item Name="terminal" />
-			<item Name="projectile" />
-			<item Name="scenery" />
-			<item Name="machine" />
-			<item Name="control" />
-			<item Name="dispenser" />
-			<item Name="sound_scenery" />
-			<item Name="crate" />
-			<item Name="creature" />
-			<item Name="giant" />
-			<item Name="effect_scenery" />
-			<item Name="entity" />
-		</_field_char_enum>
-		<_field_char_enum name="source*">
-			<item Name="structure" />
-			<item Name="editor" />
-			<item Name="dynamic" />
-			<item Name="legacy" />
-			<item Name="sky" />
-			<item Name="parent" />
-		</_field_char_enum>
+		<_field_struct name="object id" srcguid="a40a1401-45ae-de4b-1447-7fb47b9ec399">
+			<_field_long_integer name="unique id*" />
+			<_field_short_block_index name="origin bsp index*" targetGuid="e6cc8c8b-4e10-3b6b-9eb8-7c896228a21f" targetName="scenario_structure_bsp_reference_block" />
+			<_field_char_enum name="type*">
+				<item Name="biped" />
+				<item Name="vehicle" />
+				<item Name="weapon" />
+				<item Name="equipment" />
+				<item Name="terminal" />
+				<item Name="projectile" />
+				<item Name="scenery" />
+				<item Name="machine" />
+				<item Name="control" />
+				<item Name="dispenser" />
+				<item Name="sound_scenery" />
+				<item Name="crate" />
+				<item Name="creature" />
+				<item Name="giant" />
+				<item Name="effect_scenery" />
+				<item Name="entity" />
+			</_field_char_enum>
+			<_field_char_enum name="source*">
+				<item Name="structure" />
+				<item Name="editor" />
+				<item Name="dynamic" />
+				<item Name="legacy" />
+				<item Name="sky" />
+				<item Name="parent" />
+			</_field_char_enum>
+		</_field_struct>
 		<_field_long_integer name="nodeIndex" />
 		<_field_byte_flags name="flags">
 			<item Name="always loaded" />
 		</_field_byte_flags>
 		<_field_pad name="padFlags" length="3" />
 	</_field_block_64>
-	<_field_block_64 name="navVolumes*~" max="256" guid="967c1dd5-4334-6b6d-8f28-4f88c8bbaed1">
+	<_field_block_64 name="navVolumes*~" max="256" srcguid="967c1dd5-4334-6b6d-8f28-4f88c8bbaed1" srcName="NavVolumeBlock">
 		<_field_long_integer name="navMeshAreaIndex*~" />
 		<_field_long_integer name="version*~" />
-		<_field_block_64 name="buckets*~" max="3" guid="44fcafb0-4533-7cd7-9340-15b42594e09a">
+		<_field_block_64 name="buckets*~" max="3" srcguid="44fcafb0-4533-7cd7-9340-15b42594e09a" srcName="NavVolumeBucketBlock">
 			<_field_data_64 name="navMediatorData*~" />
 			<_field_char_integer name="bucketID" />
 			<_field_pad name="pad1" length="3" />
 		</_field_block_64>
 		<_field_pad name="padAlignNavVolume" length="12" />
 	</_field_block_64>
-	<_field_block_64 name="navClimbs*~" max="256" guid="5c34e203-4f21-f75d-662d-39b90146604b">
+	<_field_block_64 name="navClimbs*~" max="256" srcguid="5c34e203-4f21-f75d-662d-39b90146604b" srcName="NavClimbBlock">
 		<_field_data_64 name="navGraphData*~" />
 		<_field_data_64 name="navMediatorData*~" />
 		<_field_data_64 name="navTraversalData*~" />
 		<_field_data_64 name="navFPTreeData*~" />
-		<_field_block_64 name="firingPointAABBList*~" max="2147483647" guid="673648e3-400c-260c-1a09-2cbdd6492ff3">
+		<_field_block_64 name="firingPointAABBList*~" max="2147483647" srcguid="673648e3-400c-260c-1a09-2cbdd6492ff3" srcName="FiringPointAABBBlock">
 			<_field_real_vector_3d name="m_min*~" />
 			<_field_real name="havok w m_min*~!" />
 			<_field_real_vector_3d name="m_max*~" />
 			<_field_real name="havok w m_max*~!" />
-			<_field_block_64 name="firingPoints*~" max="32767" guid="625d9e16-4a70-e01e-addd-db857a60a6a9">
+			<_field_block_64 name="firingPoints*~" max="32767" srcguid="625d9e16-4a70-e01e-addd-db857a60a6a9" srcName="FiringPointDefinitionBlock">
 				<_field_real_point_3d name="position!" />
-				<_field_custom_long_block_index name="packedKeyOffaceref~!" val="void" />
-				<_field_custom_long_block_index name="navMeshUIDOffaceref~!" val="void" />
+				<_field_custom_long_block_index name="packedKeyOffaceref~!" targetName="void" />
+				<_field_custom_long_block_index name="navMeshUIDOffaceref~!" targetName="void" />
 				<_field_word_flags name="flags!">
 					<item Name="open" />
 					<item Name="partial" />
@@ -177,7 +179,7 @@
 					<item Name="bunker high" />
 					<item Name="bunker low" />
 				</_field_word_flags>
-				<_field_short_block_index name="area^!" srcguid="65351716-4ec7-eef5-b196-63b1d7e3482f" />
+				<_field_short_block_index name="area^!" targetGuid="65351716-4ec7-eef5-b196-63b1d7e3482f" targetName="areas_block" />
 				<_field_char_integer name="bits and pad!" />
 				<_field_pad name="PAD1" length="1" />
 				<_field_real_euler_angles_2d name="normal!" />
@@ -191,8 +193,8 @@
 		<_field_long_integer name="navMeshAreaIndex*~" />
 		<_field_pad name="padAlignPathfindingData" length="12" />
 	</_field_block_64>
-	<_field_block_64 name="hints" max="1" guid="8c8eeef8-4eb7-a522-95a6-fe9d5053ccc4">
-		<_field_block_64 name="jump hints" max="1000" guid="0e281bd7-41c0-6751-acc8-4a84c2cfbff4">
+	<_field_block_64 name="hints" max="1" srcguid="8c8eeef8-4eb7-a522-95a6-fe9d5053ccc4" srcName="user_hint_block">
+		<_field_block_64 name="jump hints" max="1000" srcguid="0e281bd7-41c0-6751-acc8-4a84c2cfbff4" srcName="user_hint_jump_block">
 			<_field_short_enum name="hint type">
 				<item Name="jump link" />
 				<item Name="climb link" />
@@ -201,7 +203,7 @@
 				<item Name="hoist link" />
 				<item Name="wall jump link" />
 			</_field_short_enum>
-			<_field_short_block_index name="Squad group filter" srcguid="924c4b16-4e62-87a0-707f-769a4fa11631" />
+			<_field_short_block_index name="Squad group filter" targetGuid="924c4b16-4e62-87a0-707f-769a4fa11631" targetName="squad_groups_block" />
 			<_field_long_integer name="hint data 0*!" />
 			<_field_short_integer name="hint data 1*!" />
 			<_field_byte_integer name="hint data 2*!" />
@@ -232,27 +234,28 @@
 				<item Name="force walk" />
 			</_field_word_flags>
 			<_field_pad name="post-forced-hoist-height" length="2" />
-			<_field_struct name="geometry" />
-			<_field_real_point_3d name="Point 0*!" />
-			<_field_custom_long_block_index name="packedKeyOffaceref0*~!" val="void" />
-			<_field_custom_long_block_index name="navMeshUIDOffaceref0*~!" val="void" />
-			<_field_real_point_3d name="Point 1*!" />
-			<_field_custom_long_block_index name="packedKeyOffaceref1*~!" val="void" />
-			<_field_custom_long_block_index name="navMeshUIDOffaceref1*~!" val="void" />
-			<_field_real_point_3d name="Point 2*!" />
-			<_field_custom_long_block_index name="packedKeyOffaceref2*~!" val="void" />
-			<_field_custom_long_block_index name="navMeshUIDOffaceref2*~!" val="void" />
-			<_field_real_point_3d name="Point 3*!" />
-			<_field_custom_long_block_index name="packedKeyOffaceref3*~!" val="void" />
-			<_field_custom_long_block_index name="navMeshUIDOffaceref3*~!" val="void" />
-			<_field_word_flags name="invalid_points*!">
-				<item Name="1" />
-				<item Name="2" />
-				<item Name="3" />
-				<item Name="4" />
-			</_field_word_flags>
-			<_field_pad name="KJHIUF" length="2" />
-			<_field_block_64 name="Editor Metadata!" max="1024" guid="49566d10-3ee6-efbe-6d8c-8eb1db3d0368">
+			<_field_struct name="geometry" srcguid="15170fed-4c5a-0d2b-ce4b-a1845ea189c8">
+				<_field_real_point_3d name="Point 0*!" />
+				<_field_custom_long_block_index name="packedKeyOffaceref0*~!" targetName="void" />
+				<_field_custom_long_block_index name="navMeshUIDOffaceref0*~!" targetName="void" />
+				<_field_real_point_3d name="Point 1*!" />
+				<_field_custom_long_block_index name="packedKeyOffaceref1*~!" targetName="void" />
+				<_field_custom_long_block_index name="navMeshUIDOffaceref1*~!" targetName="void" />
+				<_field_real_point_3d name="Point 2*!" />
+				<_field_custom_long_block_index name="packedKeyOffaceref2*~!" targetName="void" />
+				<_field_custom_long_block_index name="navMeshUIDOffaceref2*~!" targetName="void" />
+				<_field_real_point_3d name="Point 3*!" />
+				<_field_custom_long_block_index name="packedKeyOffaceref3*~!" targetName="void" />
+				<_field_custom_long_block_index name="navMeshUIDOffaceref3*~!" targetName="void" />
+				<_field_word_flags name="invalid_points*!">
+					<item Name="1" />
+					<item Name="2" />
+					<item Name="3" />
+					<item Name="4" />
+				</_field_word_flags>
+				<_field_pad name="KJHIUF" length="2" />
+			</_field_struct>
+			<_field_block_64 name="Editor Metadata!" max="1024" srcguid="49566d10-3ee6-efbe-6d8c-8eb1db3d0368" srcName="editorMetadataBlock">
 				<_field_long_string name="data name" />
 				<_field_long_enum name="data type">
 					<item Name="class" />
@@ -265,47 +268,48 @@
 				<_field_long_string name="data value" />
 			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="cookie cutters" max="512" guid="51c7f11e-4538-a506-9cea-afaa96a35481">
+		<_field_block_64 name="cookie cutters" max="512" srcguid="51c7f11e-4538-a506-9cea-afaa96a35481" srcName="user_hint_cookie_cutter_block">
 			<_field_int64_integer name="hkaiVolume vtable*~!" />
 			<_field_short_integer name="size*~!" />
 			<_field_short_integer name="count*~!" />
 			<_field_pad name="pad64_00" length="4" />
-			<_field_block_64 name="points" max="32" guid="33170c5b-41ff-1260-a4d6-bb8e4e46984c">
+			<_field_block_64 name="points" max="32" srcguid="33170c5b-41ff-1260-a4d6-bb8e4e46984c" srcName="user_hint_sector_point_block">
 				<_field_real_point_3d name="point" />
-				<_field_custom_long_block_index name="packedKeyOffaceref~!" val="void" />
-				<_field_custom_long_block_index name="navMeshUIDOffaceref~!" val="void" />
+				<_field_custom_long_block_index name="packedKeyOffaceref~!" targetName="void" />
+				<_field_custom_long_block_index name="navMeshUIDOffaceref~!" targetName="void" />
 				<_field_real_euler_angles_2d name="normal" />
 			</_field_block_64>
-			<_field_block_64 name="pointsObjectIds" max="32" guid="9b758221-43c2-4ab2-e55f-3b9ae0939aa0">
-				<_field_struct name="object ID*!" />
-				<_field_long_integer name="unique id*" />
-				<_field_short_block_index name="origin bsp index*" srcguid="e6cc8c8b-4e10-3b6b-9eb8-7c896228a21f" />
-				<_field_char_enum name="type*">
-					<item Name="biped" />
-					<item Name="vehicle" />
-					<item Name="weapon" />
-					<item Name="equipment" />
-					<item Name="terminal" />
-					<item Name="projectile" />
-					<item Name="scenery" />
-					<item Name="machine" />
-					<item Name="control" />
-					<item Name="dispenser" />
-					<item Name="sound_scenery" />
-					<item Name="crate" />
-					<item Name="creature" />
-					<item Name="giant" />
-					<item Name="effect_scenery" />
-					<item Name="entity" />
-				</_field_char_enum>
-				<_field_char_enum name="source*">
-					<item Name="structure" />
-					<item Name="editor" />
-					<item Name="dynamic" />
-					<item Name="legacy" />
-					<item Name="sky" />
-					<item Name="parent" />
-				</_field_char_enum>
+			<_field_block_64 name="pointsObjectIds" max="32" srcguid="9b758221-43c2-4ab2-e55f-3b9ae0939aa0" srcName="hint_object_id_block">
+				<_field_struct name="object ID*!" srcguid="a40a1401-45ae-de4b-1447-7fb47b9ec399">
+					<_field_long_integer name="unique id*" />
+					<_field_short_block_index name="origin bsp index*" targetGuid="e6cc8c8b-4e10-3b6b-9eb8-7c896228a21f" targetName="scenario_structure_bsp_reference_block" />
+					<_field_char_enum name="type*">
+						<item Name="biped" />
+						<item Name="vehicle" />
+						<item Name="weapon" />
+						<item Name="equipment" />
+						<item Name="terminal" />
+						<item Name="projectile" />
+						<item Name="scenery" />
+						<item Name="machine" />
+						<item Name="control" />
+						<item Name="dispenser" />
+						<item Name="sound_scenery" />
+						<item Name="crate" />
+						<item Name="creature" />
+						<item Name="giant" />
+						<item Name="effect_scenery" />
+						<item Name="entity" />
+					</_field_char_enum>
+					<_field_char_enum name="source*">
+						<item Name="structure" />
+						<item Name="editor" />
+						<item Name="dynamic" />
+						<item Name="legacy" />
+						<item Name="sky" />
+						<item Name="parent" />
+					</_field_char_enum>
+				</_field_struct>
 			</_field_block_64>
 			<_field_real name="z height" />
 			<_field_real name="z sink" />
@@ -316,7 +320,7 @@
 			</_field_short_enum>
 			<_field_short_integer name="pad*!" />
 			<_field_long_integer name="runtimeObjectTransformOverrideIndex*~!" />
-			<_field_block_64 name="Editor Metadata!" max="1024" guid="49566d10-3ee6-efbe-6d8c-8eb1db3d0368">
+			<_field_block_64 name="Editor Metadata!" max="1024" srcguid="49566d10-3ee6-efbe-6d8c-8eb1db3d0368" srcName="editorMetadataBlock">
 				<_field_long_string name="data name" />
 				<_field_long_enum name="data type">
 					<item Name="class" />
@@ -333,15 +337,15 @@
 			<_field_char_integer name="pad3*!" />
 			<_field_char_integer name="pad4*!" />
 		</_field_block_64>
-		<_field_block_64 name="navmesh areas" max="1024" guid="60c6e6a6-446b-ec9c-47f3-02ac2e02feac">
+		<_field_block_64 name="navmesh areas" max="1024" srcguid="60c6e6a6-446b-ec9c-47f3-02ac2e02feac" srcName="user_hint_navmesh_area_block">
 			<_field_int64_integer name="hkaiVolume vtable*~!" />
 			<_field_short_integer name="size*~!" />
 			<_field_short_integer name="count*~!" />
 			<_field_pad name="pad64_00" length="4" />
-			<_field_block_64 name="points" max="32" guid="33170c5b-41ff-1260-a4d6-bb8e4e46984c">
+			<_field_block_64 name="points" max="32" srcguid="33170c5b-41ff-1260-a4d6-bb8e4e46984c" srcName="user_hint_sector_point_block">
 				<_field_real_point_3d name="point" />
-				<_field_custom_long_block_index name="packedKeyOffaceref~!" val="void" />
-				<_field_custom_long_block_index name="navMeshUIDOffaceref~!" val="void" />
+				<_field_custom_long_block_index name="packedKeyOffaceref~!" targetName="void" />
+				<_field_custom_long_block_index name="navMeshUIDOffaceref~!" targetName="void" />
 				<_field_real_euler_angles_2d name="normal" />
 			</_field_block_64>
 			<_field_real name="z height" />
@@ -385,7 +389,7 @@
 			<_field_real name="Loop shrink factor" />
 			<_field_explanation name="Unique per volume cell size">This the size of the cell used when using a Custom Air Volume</_field_explanation>
 			<_field_real name="Custom Air Cell Size" />
-			<_field_block_64 name="Editor Metadata!" max="1024" guid="49566d10-3ee6-efbe-6d8c-8eb1db3d0368">
+			<_field_block_64 name="Editor Metadata!" max="1024" srcguid="49566d10-3ee6-efbe-6d8c-8eb1db3d0368" srcName="editorMetadataBlock">
 				<_field_long_string name="data name" />
 				<_field_long_enum name="data type">
 					<item Name="class" />

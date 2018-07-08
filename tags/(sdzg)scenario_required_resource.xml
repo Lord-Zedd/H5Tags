@@ -1,11 +1,12 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="resources" max="4096" guid="236e8b7d-45de-9d0d-74eb-ea9c8233dafe">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="resources" max="4096" srcguid="236e8b7d-45de-9d0d-74eb-ea9c8233dafe" srcName="scenario_budget_references_block">
 		<_field_tag_reference_64 name="reference^" />
 	</_field_block_64>
 	<_field_pad name="pad_tp" length="4" />

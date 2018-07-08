@@ -1,10 +1,11 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_explanation name="LENS FLARE" />
 	<_field_angle name="falloff angle:degrees" />
 	<_field_angle name="cutoff angle:degrees" />
@@ -28,7 +29,7 @@
 	<_field_real name="near fade end distance:world units#distance where the lens flare is fully faded in" />
 	<_field_real name="far fade begin distance{near fade distance}:world units#distance at which the lens flare brightness is maximum" />
 	<_field_real name="far fade end distance{far fade distance}:world units#distance at which the lens flare brightness is minimum; set to zero to disable distance fading" />
-	<_field_tag_reference_64 name="bitmap" />
+	<_field_tag_reference_64 name="bitmap" validtags="bitm" />
 	<_field_word_flags name="flags">
 		<item Name="rotate occlusion testing box with lens flare#otherwise remains aligned with screen. turn on render_debug_lens_flares and look at green box" />
 		<item Name="no occlusion test" />
@@ -62,7 +63,7 @@
 		<item Name="one" />
 	</_field_short_enum>
 	<_field_pad name="COYUTLR" length="2" />
-	<_field_block_64 name="reflections" max="32" guid="fbc30377-46ca-4bfc-998a-9f870a240dbc">
+	<_field_block_64 name="reflections" max="32" srcguid="fbc30377-46ca-4bfc-998a-9f870a240dbc" srcName="lens_flare_reflection_block">
 		<_field_string_id name="name^" />
 		<_field_word_flags name="flags">
 			<item Name="rotate from center of screen" />
@@ -83,7 +84,7 @@
 			<item Name="do not render" />
 		</_field_word_flags>
 		<_field_short_integer name="bitmap index" />
-		<_field_tag_reference_64 name="bitmap override" />
+		<_field_tag_reference_64 name="bitmap override" validtags="bitm" />
 		<_field_angle name="falloff angle:degrees" />
 		<_field_angle name="cutoff_angle:degrees" />
 		<_field_angle name="separate X falloff angle:degrees" />
@@ -99,17 +100,32 @@
 		<_field_real name="x offset:percent" />
 		<_field_real name="y offset:percent" />
 		<_field_real_bounds name="offset bounds#the axis offset times corona offset is clamped between these values" />
-		<_field_struct name="radius curve#interpolated by external input" />
-		<_field_data_64 name="data" />
-		<_field_struct name="scale curve X#interpolated by external input" />
-		<_field_data_64 name="data" />
-		<_field_struct name="scale curve Y#interpolated by external input" />
-		<_field_data_64 name="data" />
-		<_field_struct name="brightness curve#interpolated by external input" />
-		<_field_data_64 name="data" />
+		<_field_struct name="radius curve#interpolated by external input" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+			<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
+		<_field_struct name="scale curve X#interpolated by external input" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+			<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
+		<_field_struct name="scale curve Y#interpolated by external input" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+			<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
+		<_field_struct name="brightness curve#interpolated by external input" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+			<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
 		<_field_explanation name="TINT COLOR">Tinting and modulating are not the same; 'tinting' a reflection will color the darker regions but leave the highlights, while 'modulating' will color everything uniformly. The modulation factor controls how much the reflection is modulated as opposed to tinted (0 is tinted, 1 is modulated). The tint power affects the curve of how much of the color range to tint.</_field_explanation>
-		<_field_struct name="color curve#interpolated by external input" />
-		<_field_data_64 name="data" />
+		<_field_struct name="color curve#interpolated by external input" srcguid="f9547f48-4440-4728-8a3e-d4b0faf5d1bd">
+			<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
 		<_field_real_fraction name="modulation factor:[0,1]" />
 		<_field_real name="tint power:[0.1, 16]" />
 	</_field_block_64>
@@ -118,44 +134,64 @@
 		<item Name="synchronized" />
 	</_field_word_flags>
 	<_field_pad name="AQVC" length="2" />
-	<_field_block_64 name="time brightness" max="1" guid="70d82126-40bb-aabd-b003-7aa30bd1779d">
-		<_field_data_64 name="data" />
+	<_field_block_64 name="time brightness" max="1" srcguid="70d82126-40bb-aabd-b003-7aa30bd1779d" srcName="lens_flare_scalar_animation_block">
+		<_field_struct name="function" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+			<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
 	</_field_block_64>
-	<_field_block_64 name="age brightness" max="1" guid="70d82126-40bb-aabd-b003-7aa30bd1779d">
-		<_field_data_64 name="data" />
+	<_field_block_64 name="age brightness" max="1" srcguid="70d82126-40bb-aabd-b003-7aa30bd1779d" srcName="lens_flare_scalar_animation_block">
+		<_field_struct name="function" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+			<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
 	</_field_block_64>
-	<_field_block_64 name="time color" max="1" guid="a0b6d131-4a2f-2a63-77cb-d98d3a99dc8b">
-		<_field_struct name="color animation" />
-		<_field_string_id name="Input Variable!" />
-		<_field_string_id name="Range Variable!" />
-		<_field_short_enum name="Output Modifier!">
-			<item Name=" " />
-			<item Name="Plus" />
-			<item Name="Times" />
-		</_field_short_enum>
-		<_field_pad name="BVCG1" length="2" />
-		<_field_string_id name="Output Modifier Input!" />
-		<_field_struct name="lens flare color mapping" />
-		<_field_data_64 name="data" />
+	<_field_block_64 name="time color" max="1" srcguid="a0b6d131-4a2f-2a63-77cb-d98d3a99dc8b" srcName="lens_flare_color_animation_block">
+		<_field_struct name="color animation" srcguid="3dbb7f1a-4fd0-54f9-91da-249d78307a29">
+			<_field_string_id name="Input Variable!" />
+			<_field_string_id name="Range Variable!" />
+			<_field_short_enum name="Output Modifier!">
+				<item Name=" " />
+				<item Name="Plus" />
+				<item Name="Times" />
+			</_field_short_enum>
+			<_field_pad name="BVCG1" length="2" />
+			<_field_string_id name="Output Modifier Input!" />
+			<_field_struct name="lens flare color mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
 	</_field_block_64>
-	<_field_block_64 name="age color" max="1" guid="a0b6d131-4a2f-2a63-77cb-d98d3a99dc8b">
-		<_field_struct name="color animation" />
-		<_field_string_id name="Input Variable!" />
-		<_field_string_id name="Range Variable!" />
-		<_field_short_enum name="Output Modifier!">
-			<item Name=" " />
-			<item Name="Plus" />
-			<item Name="Times" />
-		</_field_short_enum>
-		<_field_pad name="BVCG1" length="2" />
-		<_field_string_id name="Output Modifier Input!" />
-		<_field_struct name="lens flare color mapping" />
-		<_field_data_64 name="data" />
+	<_field_block_64 name="age color" max="1" srcguid="a0b6d131-4a2f-2a63-77cb-d98d3a99dc8b" srcName="lens_flare_color_animation_block">
+		<_field_struct name="color animation" srcguid="3dbb7f1a-4fd0-54f9-91da-249d78307a29">
+			<_field_string_id name="Input Variable!" />
+			<_field_string_id name="Range Variable!" />
+			<_field_short_enum name="Output Modifier!">
+				<item Name=" " />
+				<item Name="Plus" />
+				<item Name="Times" />
+			</_field_short_enum>
+			<_field_pad name="BVCG1" length="2" />
+			<_field_string_id name="Output Modifier Input!" />
+			<_field_struct name="lens flare color mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
 	</_field_block_64>
-	<_field_block_64 name="time rotation" max="1" guid="70d82126-40bb-aabd-b003-7aa30bd1779d">
-		<_field_data_64 name="data" />
+	<_field_block_64 name="time rotation" max="1" srcguid="70d82126-40bb-aabd-b003-7aa30bd1779d" srcName="lens_flare_scalar_animation_block">
+		<_field_struct name="function" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+			<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
 	</_field_block_64>
-	<_field_block_64 name="age rotation" max="1" guid="70d82126-40bb-aabd-b003-7aa30bd1779d">
-		<_field_data_64 name="data" />
+	<_field_block_64 name="age rotation" max="1" srcguid="70d82126-40bb-aabd-b003-7aa30bd1779d" srcName="lens_flare_scalar_animation_block">
+		<_field_struct name="function" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+			<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
 	</_field_block_64>
 </plugin>

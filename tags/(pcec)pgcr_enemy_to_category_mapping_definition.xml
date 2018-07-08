@@ -1,25 +1,26 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="character categories" max="128" guid="13cb91f2-486c-8fa0-1aba-93ad3423a101">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="character categories" max="128" srcguid="13cb91f2-486c-8fa0-1aba-93ad3423a101" srcName="pgcr_enemy_to_category_list_block">
 		<_field_string_id name="category display name^" />
 		<_field_short_integer name="sprite index" />
 		<_field_byte_flags name="flags">
 			<item Name="category contains players" />
 		</_field_byte_flags>
 		<_field_pad name="pad0" length="1" />
-		<_field_block_64 name="player types" max="1" guid="b6d21071-4da8-d5c4-a148-f4a2a2e568ac">
+		<_field_block_64 name="player types" max="1" srcguid="b6d21071-4da8-d5c4-a148-f4a2a2e568ac" srcName="pgcr_player_to_category_entry_block">
 			<_field_char_enum name="player type">
 				<item Name="UNSC" />
 				<item Name="Covenant" />
 			</_field_char_enum>
 			<_field_pad name="pad0" length="3" />
 		</_field_block_64>
-		<_field_block_64 name="enemy types" max="16" guid="27d7ea73-49b9-810a-7047-469905b69802">
+		<_field_block_64 name="enemy types" max="16" srcguid="27d7ea73-49b9-810a-7047-469905b69802" srcName="pgcr_enemy_to_category_entry_block">
 			<_field_char_enum name="character type">
 				<item Name="any" />
 				<item Name="brute" />
@@ -84,21 +85,21 @@
 			<_field_pad name="pad0" length="2" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="vehicle categories" max="128" guid="13cb91f2-486c-8fa0-1aba-93ad3423a101">
+	<_field_block_64 name="vehicle categories" max="128" srcguid="13cb91f2-486c-8fa0-1aba-93ad3423a101" srcName="pgcr_enemy_to_category_list_block">
 		<_field_string_id name="category display name^" />
 		<_field_short_integer name="sprite index" />
 		<_field_byte_flags name="flags">
 			<item Name="category contains players" />
 		</_field_byte_flags>
 		<_field_pad name="pad0" length="1" />
-		<_field_block_64 name="player types" max="1" guid="b6d21071-4da8-d5c4-a148-f4a2a2e568ac">
+		<_field_block_64 name="player types" max="1" srcguid="b6d21071-4da8-d5c4-a148-f4a2a2e568ac" srcName="pgcr_player_to_category_entry_block">
 			<_field_char_enum name="player type">
 				<item Name="UNSC" />
 				<item Name="Covenant" />
 			</_field_char_enum>
 			<_field_pad name="pad0" length="3" />
 		</_field_block_64>
-		<_field_block_64 name="enemy types" max="16" guid="27d7ea73-49b9-810a-7047-469905b69802">
+		<_field_block_64 name="enemy types" max="16" srcguid="27d7ea73-49b9-810a-7047-469905b69802" srcName="pgcr_enemy_to_category_entry_block">
 			<_field_char_enum name="character type">
 				<item Name="any" />
 				<item Name="brute" />

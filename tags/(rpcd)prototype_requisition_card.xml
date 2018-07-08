@@ -1,17 +1,18 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_string name="name" />
 	<_field_long_string name="description" />
-	<_field_tag_reference_64 name="icon bitmap" />
+	<_field_tag_reference_64 name="icon bitmap" validtags="bitm" />
 	<_field_long_integer name="icon sprite index" />
-	<_field_tag_reference_64 name="small icon bitmap" />
+	<_field_tag_reference_64 name="small icon bitmap" validtags="bitm" />
 	<_field_long_integer name="small icon sprite index" />
-	<_field_tag_reference_64 name="category" />
+	<_field_tag_reference_64 name="category" validtags="rpca" />
 	<_field_char_enum name="rarity{tier}">
 		<item Name="Common" />
 		<item Name="Uncommon" />
@@ -34,8 +35,8 @@
 		<item Name="Is Legendary" />
 	</_field_byte_flags>
 	<_field_pad name="pad0" length="3" />
-	<_field_block_64 name="loadout properties" max="1" guid="668ccc65-4e4a-270b-ea9c-8c9ebfe5ba31">
-		<_field_tag_reference_64 name="deployable" />
+	<_field_block_64 name="loadout properties" max="1" srcguid="668ccc65-4e4a-270b-ea9c-8c9ebfe5ba31" srcName="prototype_requisition_card_loadout_part">
+		<_field_tag_reference_64 name="deployable" validtags="rbdd" />
 		<_field_byte_flags name="slots">
 			<item Name="Primary" />
 			<item Name="Secondary" />
@@ -44,17 +45,17 @@
 		</_field_byte_flags>
 		<_field_pad name="pad0" length="3" />
 	</_field_block_64>
-	<_field_block_64 name="consumable properties" max="1" guid="1899a02a-4833-54be-393a-03bbbff214c5">
-		<_field_block_64 name="deployables" max="4" guid="dbffc830-4860-400d-baaa-15af3e65dc67">
-			<_field_tag_reference_64 name="deployable^" />
+	<_field_block_64 name="consumable properties" max="1" srcguid="1899a02a-4833-54be-393a-03bbbff214c5" srcName="prototype_requisition_card_consumable_part">
+		<_field_block_64 name="deployables" max="4" srcguid="dbffc830-4860-400d-baaa-15af3e65dc67" srcName="prototype_requisition_deployable_block">
+			<_field_tag_reference_64 name="deployable^" validtags="rbdd" />
 		</_field_block_64>
 		<_field_real name="consumable cooldown" />
-		<_field_block_64 name="random cards" max="50" guid="83526ab4-9758-7dc1-af64-58970251b279">
+		<_field_block_64 name="random cards" max="50" srcguid="83526ab4-9758-7dc1-af64-58970251b279" srcName="prototype_requisition_random_card_slot_part">
 			<_field_real name="weight" />
-			<_field_tag_reference_64 name="card" />
+			<_field_tag_reference_64 name="card" validtags="rpcd" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="cosmetic properties" max="1" guid="5201e297-42c7-2dcc-8eed-f6bfa0896a12">
+	<_field_block_64 name="cosmetic properties" max="1" srcguid="5201e297-42c7-2dcc-8eed-f6bfa0896a12" srcName="prototype_requisition_card_cosmetic_part">
 		<_field_char_enum name="cosmetic slot">
 			<item Name="Helmet" />
 			<item Name="Body" />

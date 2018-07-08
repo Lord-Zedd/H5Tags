@@ -1,13 +1,14 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_custom name="import - directory" />
 	<_field_custom name="import - single file" />
-	<_field_block_64 name="string references*" max="34816" guid="c5bc6da3-4eb2-37a4-1d51-6aa2e6966923">
+	<_field_block_64 name="string references*" max="34816" srcguid="c5bc6da3-4eb2-37a4-1d51-6aa2e6966923" srcName="multilingual_unicode_string_reference_block">
 		<_field_string_id name="string id^*" />
 		<_field_long_integer name="english offset*" />
 		<_field_long_integer name="japanese offset*" />
@@ -27,7 +28,7 @@
 		<_field_long_integer name="dutch offset*" />
 		<_field_long_integer name="norwegian offset*" />
 	</_field_block_64>
-	<_field_block_64 name="substitution pairs*" max="2048" guid="57436af6-4de1-3705-b60a-03bb0bdb5e68">
+	<_field_block_64 name="substitution pairs*" max="2048" srcguid="57436af6-4de1-3705-b60a-03bb0bdb5e68" srcName="string_substitution_pair_block">
 		<_field_string_id name="first string id^*!" />
 		<_field_string_id name="second string id*!" />
 		<_field_long_integer name="associated value*!" />

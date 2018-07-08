@@ -1,29 +1,31 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="profile colors" max="63" guid="0a6c9756-4866-f0e2-e9f3-08a76219c4c9">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="profile colors" max="63" srcguid="0a6c9756-4866-f0e2-e9f3-08a76219c4c9" srcName="multiplayer_color_block">
 		<_field_real_rgb_color name="color" />
 	</_field_block_64>
-	<_field_block_64 name="emblem colors" max="33" guid="47afa957-db43-e3d9-535b-1bb8fe3c7932">
+	<_field_block_64 name="emblem colors" max="33" srcguid="47afa957-db43-e3d9-535b-1bb8fe3c7932" srcName="harmonyGroupBlock">
 		<_field_string_id name="harmony group name" />
-		<_field_block_64 name="harmonies" max="7" guid="5f0c6cda-0041-51ab-3f84-34b6ab2be4c8">
+		<_field_block_64 name="harmonies" max="7" srcguid="5f0c6cda-0041-51ab-3f84-34b6ab2be4c8" srcName="harmonyBlock">
 			<_field_string_id name="harmony name" />
 			<_field_real_rgb_color name="primary color" />
 			<_field_real_rgb_color name="secondary color" />
 			<_field_real_rgb_color name="tertiary color" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="visor colors" max="63" guid="91c73ac2-47bd-84f2-ad0b-3b933b13db26">
+	<_field_block_64 name="visor colors" max="63" srcguid="91c73ac2-47bd-84f2-ad0b-3b933b13db26" srcName="visor_color_block">
 		<_field_string_id name="name^" />
 		<_field_real_rgb_color name="tertiary color" />
 		<_field_real_rgb_color name="quaternary color" />
 	</_field_block_64>
-	<_field_struct name="elite specular color" />
-	<_field_real_rgb_color name="tertiary color" />
-	<_field_real_rgb_color name="quaternary color" />
+	<_field_struct name="elite specular color" srcguid="19358444-41d0-61ac-194e-138b1b3ac626">
+		<_field_real_rgb_color name="tertiary color" />
+		<_field_real_rgb_color name="quaternary color" />
+	</_field_struct>
 	<_field_pad name="pad" length="4" />
 </plugin>

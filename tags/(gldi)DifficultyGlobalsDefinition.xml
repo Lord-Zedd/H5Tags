@@ -1,11 +1,12 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="difficulty" max="1" guid="9c84698c-40b5-a3cf-6960-73b46b01d1ab">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="difficulty" max="1" srcguid="9c84698c-40b5-a3cf-6960-73b46b01d1ab" srcName="difficulty_block">
 		<_field_explanation name="health">scale values for enemy health and damage settings</_field_explanation>
 		<_field_real name="easy enemy damage#enemy damage multiplier on easy difficulty" />
 		<_field_real name="normal enemy damage#enemy damage multiplier on normal difficulty" />
@@ -161,7 +162,7 @@
 		<_field_real name="imposs. bunker closed duration#scalar for how long to stay closed while bunkering on impossible difficulty" />
 		<_field_pad name="$$$$" length="16" />
 	</_field_block_64>
-	<_field_block_64 name="co-op difficulty" max="1" guid="77c24405-4f7c-ca61-bdd3-929145809188">
+	<_field_block_64 name="co-op difficulty" max="1" srcguid="77c24405-4f7c-ca61-bdd3-929145809188" srcName="coop_difficulty_block">
 		<_field_explanation name="vitality">scale values for enemy health and shield settings</_field_explanation>
 		<_field_real name="two-player shield recharge delay#multiplier on enemy shield recharge delay with two coop players" />
 		<_field_real name="four-player shield recharge delay#multiplier on enemy shield recharge delay with four coop players" />

@@ -1,430 +1,57 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_struct name="Scene" />
-	<_field_string_id name="Name^" />
-	<_field_string_id name="Anchor Marker" />
-	<_field_real_point_3d name="Anchor Position" />
-	<_field_real_euler_angles_3d name="Anchor Rotation" />
-	<_field_char_enum name="Reset Lighting">
-		<item Name="Default" />
-		<item Name="Don't Reset" />
-		<item Name="Reset" />
-	</_field_char_enum>
-	<_field_byte_flags name="Flags">
-		<item Name="Supports Multiplayer Team Cameras" />
-		<item Name="Use Local Players First" />
-		<item Name="Sort Players By Place" />
-	</_field_byte_flags>
-	<_field_pad name="PAD1!" length="2" />
-	<_field_block_64 name="Tracks!" max="10000" guid="69681225-46f0-4641-6a7f-b4abadf964e8">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_struct name="Scene" srcguid="e44a3192-444a-da40-3ac4-2085b12c8d20">
 		<_field_string_id name="Name^" />
-		<_field_char_enum name="Type">
-			<item Name="Camera" />
-			<item Name="Puppet" />
-			<item Name="Dummy" />
+		<_field_string_id name="Anchor Marker" />
+		<_field_real_point_3d name="Anchor Position" />
+		<_field_real_euler_angles_3d name="Anchor Rotation" />
+		<_field_char_enum name="Reset Lighting">
+			<item Name="Default" />
+			<item Name="Don't Reset" />
+			<item Name="Reset" />
 		</_field_char_enum>
-		<_field_pad name="PAD1!" length="3" />
-		<_field_short_integer name="Data Index*" />
-		<_field_short_integer name="SubAction Count!" />
-		<_field_block_64 name="Actions" max="256" guid="432f0a15-46fa-d68a-3bbf-be94416a86b6">
+		<_field_byte_flags name="Flags">
+			<item Name="Supports Multiplayer Team Cameras" />
+			<item Name="Use Local Players First" />
+			<item Name="Sort Players By Place" />
+		</_field_byte_flags>
+		<_field_pad name="PAD1!" length="2" />
+		<_field_block_64 name="Tracks!" max="10000" srcguid="69681225-46f0-4641-6a7f-b4abadf964e8" srcName="composerTrackBlock">
 			<_field_string_id name="Name^" />
-			<_field_long_integer name="Id!" />
-			<_field_long_integer name="Blend In" />
-			<_field_long_integer name="Length" />
-			<_field_byte_flags name="Flags">
-				<item Name="Looping" />
-				<item Name="Simulate Position" />
-			</_field_byte_flags>
 			<_field_char_enum name="Type">
-				<item Name="Animation" />
-				<item Name="Path" />
 				<item Name="Camera" />
-				<item Name="Hide" />
+				<item Name="Puppet" />
 				<item Name="Dummy" />
-				<item Name="Animated Mesh" />
-				<item Name="Unit Recording" />
 			</_field_char_enum>
+			<_field_pad name="PAD1!" length="3" />
 			<_field_short_integer name="Data Index*" />
-			<_field_struct name="Condition Script!" />
-			<_field_string name="Script Name!" />
-			<_field_byte_flags name="Flags">
-				<item Name="Client" />
-				<item Name="HasAssociatedScript" />
-			</_field_byte_flags>
-			<_field_pad name="PAD1!" length="3" />
-			<_field_data_64 name="Data" />
-			<_field_dword_integer name="Script CRC!~" />
-		</_field_block_64>
-		<_field_block_64 name="Editor Actions" max="256" guid="a87d3fa9-4b6e-f066-348a-d69f763f3da6">
-			<_field_long_string name="Comment" />
-			<_field_dword_integer name="Color" />
-			<_field_byte_flags name="Editor Flags!*">
-				<item Name="Muted" />
-				<item Name="Expanded" />
-				<item Name="Imported" />
-				<item Name="Playing" />
-				<item Name="Recording" />
-			</_field_byte_flags>
-			<_field_pad name="PAD1!" length="3" />
-			<_field_custom name="Condition Script" />
-			<_field_struct name="Condition Script" />
-			<_field_data_64 name="Data" />
-			<_field_dword_integer name="Script CRC!~" />
-		</_field_block_64>
-		<_field_block_64 name="Cameras" max="256" guid="941d3600-46ee-61cd-8c34-98bcab83bb2f">
-			<_field_byte_flags name="Flags">
-				<item Name="Disable Lightmap Shadow" />
-				<item Name="Instant Auto Exposure" />
-				<item Name="Looping" />
-				<item Name="Play in Reverse" />
-				<item Name="Disable Floating Shadow" />
-			</_field_byte_flags>
-			<_field_char_enum name="Render resolution">
-				<item Name="1920 x 1080" />
-				<item Name="1856 x 1080" />
-				<item Name="1792 x 1080" />
-				<item Name="1728 x 1080" />
-				<item Name="1664 x 1080" />
-				<item Name="1600 x 1080" />
-				<item Name="1536 x 1080" />
-				<item Name="1664 x 960" />
-				<item Name="1600 x 960" />
-				<item Name="1536 x 960" />
-				<item Name="1472 x 960" />
-				<item Name="1408 x 960" />
-				<item Name="1344 x 960" />
-				<item Name="1472 x 832" />
-				<item Name="1408 x 832" />
-				<item Name="1344 x 832" />
-				<item Name="1280 x 832" />
-				<item Name="1216 x 832" />
-				<item Name="1152 x 832" />
-				<item Name="1152 x 810" />
-				<item Name="Dynamic Scaling" />
-			</_field_char_enum>
-			<_field_pad name="PAD1!" length="2" />
-			<_field_string_id name="Animation Name^" />
-			<_field_long_integer name="Animation Index*!" />
-			<_field_custom name="Position" />
-			<_field_struct name="Position" />
-			<_field_short_enum name="Type^">
-				<item Name="Current" />
-				<item Name="Object" />
-				<item Name="Point Set" />
-				<item Name="Flag" />
-				<item Name="Custom" />
-				<item Name="Scene Anchor" />
-				<item Name="Instance Anchor" />
-				<item Name="Nearest Player" />
-				<item Name="None" />
-			</_field_short_enum>
-			<_field_byte_flags name="Flags">
-				<item Name="Use Orientation" />
-				<item Name="Don't Stop" />
-			</_field_byte_flags>
-			<_field_char_enum name="Index Type!~">
-				<item Name="Name" />
-				<item Name="AI" />
-				<item Name="Global" />
-				<item Name="Puppet" />
-				<item Name="Point Set" />
-				<item Name="Flag" />
-			</_field_char_enum>
-			<_field_string_id name="Object Name" />
-			<_field_long_integer name="Index!~" />
-			<_field_string_id name="Marker" />
-			<_field_real_point_3d name="Position" />
-			<_field_real_euler_angles_3d name="Rotation" />
-			<_field_long_integer name="Start Frame" />
-			<_field_long_integer name="End Frame" />
-			<_field_long_integer name="Repeat Count" />
-			<_field_real name="Scale" />
-		</_field_block_64>
-		<_field_block_64 name="Animations" max="256" guid="a590e427-47b8-733d-d4b7-5c91a71fc34f">
-			<_field_block_64 name="Animations" max="8" guid="e475648c-4268-b49d-7e6a-6b8cdc449bb8">
+			<_field_short_integer name="SubAction Count!" />
+			<_field_block_64 name="Actions" max="256" srcguid="432f0a15-46fa-d68a-3bbf-be94416a86b6" srcName="composerActionBlock">
 				<_field_string_id name="Name^" />
-				<_field_long_integer name="Weight" />
-				<_field_string_id name="IKPointSet" />
-			</_field_block_64>
-			<_field_block_64 name="Model Animation Graphs" max="8" guid="0466cb20-4bf3-4bd4-2b88-2f9de547283e">
-				<_field_tag_reference_64 name="Type" validtags="bipd, char, ctrl, bloc, crea, efsc, gint, mach, scen, vehi, weap" />
-				<_field_tag_reference_64 name="Model Animation Graph" />
-			</_field_block_64>
-			<_field_custom name="Point" />
-			<_field_struct name="Position" />
-			<_field_short_enum name="Type^">
-				<item Name="Current" />
-				<item Name="Object" />
-				<item Name="Point Set" />
-				<item Name="Flag" />
-				<item Name="Custom" />
-				<item Name="Scene Anchor" />
-				<item Name="Instance Anchor" />
-				<item Name="Nearest Player" />
-				<item Name="None" />
-			</_field_short_enum>
-			<_field_byte_flags name="Flags">
-				<item Name="Use Orientation" />
-				<item Name="Don't Stop" />
-			</_field_byte_flags>
-			<_field_char_enum name="Index Type!~">
-				<item Name="Name" />
-				<item Name="AI" />
-				<item Name="Global" />
-				<item Name="Puppet" />
-				<item Name="Point Set" />
-				<item Name="Flag" />
-			</_field_char_enum>
-			<_field_string_id name="Object Name" />
-			<_field_long_integer name="Index!~" />
-			<_field_string_id name="Marker" />
-			<_field_real_point_3d name="Position" />
-			<_field_real_euler_angles_3d name="Rotation" />
-			<_field_char_enum name="Position Type">
-				<item Name="Teleport{Teleport and forget}" />
-				<item Name="Force Position{Attach (no motion/gravity)}" />
-				<item Name="Motion{Motion only (no gravity)}" />
-				<item Name="Attach" />
-				<item Name="Teleport Vertical" />
-				<item Name="None" />
-			</_field_char_enum>
-			<_field_pad name="PAD1!" length="1" />
-			<_field_word_flags name="Flags">
-				<item Name="Looping" />
-				<item Name="Play in Reverse" />
-				<item Name="Reset Object Position" />
-				<item Name="ICS Animation" />
-				<item Name="Reset Camera Rotation" />
-				<item Name="No Lightmap Shadow" />
-				<item Name="Never LOD{Never Imposter}" />
-				<item Name="Disable Physics" />
-				<item Name="Pause at End" />
-			</_field_word_flags>
-			<_field_string_id name="Sync Puppet" />
-			<_field_long_integer name="Start Frame" />
-			<_field_long_integer name="End Frame" />
-			<_field_long_integer name="Repeat Count" />
-			<_field_real name="Scale" />
-		</_field_block_64>
-		<_field_block_64 name="Animated Meshes" max="256" guid="e08f9d46-42e2-1c7d-e117-27972e1eeff2">
-			<_field_block_64 name="Animated Meshes" max="8" guid="3825778f-45fb-dff4-3488-df9ad678273c">
-				<_field_string_id name="Name^" />
-				<_field_long_integer name="Weight" />
-			</_field_block_64>
-			<_field_word_flags name="Flags">
-				<item Name="Looping" />
-				<item Name="Reset At End" />
-				<item Name="Never LOD{Never Imposter}" />
-				<item Name="Disable Physics" />
-			</_field_word_flags>
-			<_field_pad name="PAD1!" length="2" />
-			<_field_real name="Scale" />
-			<_field_long_integer name="Start Frame" />
-			<_field_long_integer name="End Frame" />
-		</_field_block_64>
-		<_field_block_64 name="Paths" max="256" guid="63539adb-43bd-d791-1c6b-0484e8d569ed">
-			<_field_real name="Throttle" />
-			<_field_block_64 name="Points" max="10000" guid="37814d45-4b86-690a-5145-a184a8b1e89b">
-				<_field_short_enum name="Type^">
-					<item Name="Current" />
-					<item Name="Object" />
-					<item Name="Point Set" />
-					<item Name="Flag" />
-					<item Name="Custom" />
-					<item Name="Scene Anchor" />
-					<item Name="Instance Anchor" />
-					<item Name="Nearest Player" />
-					<item Name="None" />
-				</_field_short_enum>
+				<_field_long_integer name="Id!" />
+				<_field_long_integer name="Blend In" />
+				<_field_long_integer name="Length" />
 				<_field_byte_flags name="Flags">
-					<item Name="Use Orientation" />
-					<item Name="Don't Stop" />
+					<item Name="Looping" />
+					<item Name="Simulate Position" />
 				</_field_byte_flags>
-				<_field_char_enum name="Index Type!~">
-					<item Name="Name" />
-					<item Name="AI" />
-					<item Name="Global" />
-					<item Name="Puppet" />
-					<item Name="Point Set" />
-					<item Name="Flag" />
-				</_field_char_enum>
-				<_field_string_id name="Object Name" />
-				<_field_long_integer name="Index!~" />
-				<_field_string_id name="Marker" />
-				<_field_real_point_3d name="Position" />
-				<_field_real_euler_angles_3d name="Rotation" />
-			</_field_block_64>
-		</_field_block_64>
-		<_field_block_64 name="Unit Recordings" max="256" guid="93aca270-4012-e2f6-4349-a095790334d6">
-			<_field_string_id name="recording unit type" />
-			<_field_string_id name="recording name" />
-			<_field_real name="Scale" />
-			<_field_long_integer name="Start Frame" />
-			<_field_long_integer name="End Frame" />
-			<_field_short_integer name="Smoothing Time" />
-			<_field_byte_flags name="Flags">
-				<item Name="Play in Reverse" />
-				<item Name="Pause at End" />
-				<item Name="Never LOD" />
-			</_field_byte_flags>
-			<_field_pad name="PAD1!" length="1" />
-		</_field_block_64>
-		<_field_struct name="SubTracks" />
-		<_field_block_64 name="SubTracks References" max="1000" guid="15c839ff-4979-42c6-e062-13af01cfb636">
-			<_field_tag_reference_64 name="SubTracks Reference^" />
-		</_field_block_64>
-		<_field_block_64 name="SubTracks" max="1000" guid="264df9bb-4780-7f1c-9427-dba75f6fff71">
-			<_field_string_id name="Name^" />
-			<_field_dword_integer name="Color" />
-			<_field_block_64 name="SubActions" max="10000" guid="dc209993-442c-e81d-869c-6f92f854bf5e">
-				<_field_long_enum name="Type^">
-					<item Name="Branch" />
-					<item Name="Look At" />
-					<item Name="Face" />
-					<item Name="Shoot At" />
-					<item Name="Effect" />
-					<item Name="Script" />
-					<item Name="Clip Plane" />
-					<item Name="Function" />
-					<item Name="Input Constraint" />
-					<item Name="Dialog" />
-					<item Name="Sound" />
-					<item Name="Screen Effect" />
-					<item Name="Texture Movie" />
-					<item Name="Custom Lighting{Lighting}" />
-					<item Name="Atmosphere Fog" />
-					<item Name="Camera FX Settings" />
-					<item Name="Cubemap" />
-					<item Name="Environment Darken" />
-					<item Name="Exposure" />
-					<item Name="Static Scalar{Lightmap Direct Scalar}" />
-					<item Name="Lightmap Indirect Scalar" />
-					<item Name="Analytic Scalar{Sun Scalar}" />
-					<item Name="Light" />
-					<item Name="Hologram Lighting" />
-					<item Name="Aim At" />
-					<item Name="Effect Object" />
-					<item Name="Title" />
-					<item Name="UI Scene" />
-					<item Name="NodeGraph Event" />
-					<item Name="Subtitle" />
-					<item Name="ICS Camera{ICS 3rd Person Camera}" />
-					<item Name="Game Engine Vignette Event" />
-					<item Name="Sound Object" />
-					<item Name="Light Cone" />
-					<item Name="Color Grading" />
-					<item Name="Camera Lens Dirt" />
-					<item Name="Transform" />
-				</_field_long_enum>
-				<_field_char_enum name="Start Type">
-					<item Name="Offset From Start" />
-					<item Name="Offset From End" />
-					<item Name="Condition" />
-				</_field_char_enum>
-				<_field_char_enum name="End Type">
-					<item Name="Offset From Start" />
-					<item Name="Offset From End" />
-					<item Name="Condition" />
+				<_field_char_enum name="Type">
+					<item Name="Animation" />
+					<item Name="Path" />
+					<item Name="Camera" />
+					<item Name="Hide" />
+					<item Name="Dummy" />
+					<item Name="Animated Mesh" />
+					<item Name="Unit Recording" />
 				</_field_char_enum>
 				<_field_short_integer name="Data Index*" />
-				<_field_long_integer name="Start Action" />
-				<_field_long_integer name="Start Offset" />
-				<_field_struct name="Start Condition Script!" />
-				<_field_string name="Script Name!" />
-				<_field_byte_flags name="Flags">
-					<item Name="Client" />
-					<item Name="HasAssociatedScript" />
-				</_field_byte_flags>
-				<_field_pad name="PAD1!" length="3" />
-				<_field_data_64 name="Data" />
-				<_field_dword_integer name="Script CRC!~" />
-				<_field_struct name="End Condition Script!" />
-				<_field_string name="Script Name!" />
-				<_field_byte_flags name="Flags">
-					<item Name="Client" />
-					<item Name="HasAssociatedScript" />
-				</_field_byte_flags>
-				<_field_pad name="PAD1!" length="3" />
-				<_field_data_64 name="Data" />
-				<_field_dword_integer name="Script CRC!~" />
-				<_field_long_integer name="End Action" />
-				<_field_long_integer name="End Offset" />
-			</_field_block_64>
-			<_field_block_64 name="Editor SubActions" max="10000" guid="73035674-4f19-a2c6-0766-83a8a18562d7">
-				<_field_long_string name="Comment" />
-				<_field_dword_integer name="Color" />
-				<_field_byte_integer name="SubTrack*" />
-				<_field_byte_flags name="Editor Flags!*">
-					<item Name="Muted" />
-					<item Name="Expanded" />
-					<item Name="Imported" />
-					<item Name="Playing" />
-					<item Name="Recording" />
-				</_field_byte_flags>
-				<_field_pad name="PAD1!" length="2" />
-				<_field_custom name="Start Condition Script" />
-				<_field_struct name="Start Condition Script" />
-				<_field_data_64 name="Data" />
-				<_field_dword_integer name="Script CRC!~" />
-				<_field_custom name="End Condition Script" />
-				<_field_struct name="End Condition Script" />
-				<_field_data_64 name="Data" />
-				<_field_dword_integer name="Script CRC!~" />
-				<_field_custom name="Custom Script" />
-				<_field_struct name="Custom Script" />
-				<_field_data_64 name="Data" />
-				<_field_dword_integer name="Script CRC!~" />
-				<_field_block_64 name="Branch Scripts" max="10000" guid="5541b078-47e1-81b9-21be-7bab894c3af7">
-					<_field_data_64 name="Data" />
-					<_field_dword_integer name="Script CRC!~" />
-				</_field_block_64>
-			</_field_block_64>
-			<_field_block_64 name="Points" max="10000" guid="57193946-4181-abcd-268a-cbbd3c425ab5">
-				<_field_byte_flags name="Flags">
-					<item Name="Unattached" />
-				</_field_byte_flags>
-				<_field_pad name="PAD1!" length="3" />
-				<_field_custom name="Point" />
-				<_field_struct name="Point" />
-				<_field_short_enum name="Type^">
-					<item Name="Current" />
-					<item Name="Object" />
-					<item Name="Point Set" />
-					<item Name="Flag" />
-					<item Name="Custom" />
-					<item Name="Scene Anchor" />
-					<item Name="Instance Anchor" />
-					<item Name="Nearest Player" />
-					<item Name="None" />
-				</_field_short_enum>
-				<_field_byte_flags name="Flags">
-					<item Name="Use Orientation" />
-					<item Name="Don't Stop" />
-				</_field_byte_flags>
-				<_field_char_enum name="Index Type!~">
-					<item Name="Name" />
-					<item Name="AI" />
-					<item Name="Global" />
-					<item Name="Puppet" />
-					<item Name="Point Set" />
-					<item Name="Flag" />
-				</_field_char_enum>
-				<_field_string_id name="Object Name" />
-				<_field_long_integer name="Index!~" />
-				<_field_string_id name="Marker" />
-				<_field_real_point_3d name="Position" />
-				<_field_real_euler_angles_3d name="Rotation" />
-				<_field_tag_reference_64 name="Asset^" validtags="lsnd, snd!, musc, mdlg, sefc, bink, fogg, cfxs, bitm, colt, holt" />
-			</_field_block_64>
-			<_field_block_64 name="Branches" max="10000" guid="453617f7-4519-bf27-444f-ac93546db442">
-				<_field_block_64 name="Elements" max="8" guid="5a1e6c29-4e19-75cc-474e-5e8695e6c734">
-					<_field_long_integer name="Target Action" />
-					<_field_struct name="Condition Script!" />
+				<_field_struct name="Condition Script!" srcguid="385eadfd-436d-9c0d-6de8-8a8e2c7d69a6">
 					<_field_string name="Script Name!" />
 					<_field_byte_flags name="Flags">
 						<item Name="Client" />
@@ -433,17 +60,789 @@
 					<_field_pad name="PAD1!" length="3" />
 					<_field_data_64 name="Data" />
 					<_field_dword_integer name="Script CRC!~" />
+				</_field_struct>
+			</_field_block_64>
+			<_field_block_64 name="Editor Actions" max="256" srcguid="a87d3fa9-4b6e-f066-348a-d69f763f3da6" srcName="composerEditorActionBlock">
+				<_field_long_string name="Comment" />
+				<_field_dword_integer name="Color" />
+				<_field_byte_flags name="Editor Flags!*">
+					<item Name="Muted" />
+					<item Name="Expanded" />
+					<item Name="Imported" />
+					<item Name="Playing" />
+					<item Name="Recording" />
+				</_field_byte_flags>
+				<_field_pad name="PAD1!" length="3" />
+				<_field_custom name="Condition Script" />
+				<_field_struct name="Condition Script" srcguid="5541b078-47e1-81b9-21be-7bab894c3af7">
+					<_field_data_64 name="Data" />
+					<_field_dword_integer name="Script CRC!~" />
+				</_field_struct>
+			</_field_block_64>
+			<_field_block_64 name="Cameras" max="256" srcguid="941d3600-46ee-61cd-8c34-98bcab83bb2f" srcName="composerActionCameraBlock">
+				<_field_byte_flags name="Flags">
+					<item Name="Disable Lightmap Shadow" />
+					<item Name="Instant Auto Exposure" />
+					<item Name="Looping" />
+					<item Name="Play in Reverse" />
+					<item Name="Disable Floating Shadow" />
+				</_field_byte_flags>
+				<_field_char_enum name="Render resolution">
+					<item Name="1920 x 1080" />
+					<item Name="1856 x 1080" />
+					<item Name="1792 x 1080" />
+					<item Name="1728 x 1080" />
+					<item Name="1664 x 1080" />
+					<item Name="1600 x 1080" />
+					<item Name="1536 x 1080" />
+					<item Name="1664 x 960" />
+					<item Name="1600 x 960" />
+					<item Name="1536 x 960" />
+					<item Name="1472 x 960" />
+					<item Name="1408 x 960" />
+					<item Name="1344 x 960" />
+					<item Name="1472 x 832" />
+					<item Name="1408 x 832" />
+					<item Name="1344 x 832" />
+					<item Name="1280 x 832" />
+					<item Name="1216 x 832" />
+					<item Name="1152 x 832" />
+					<item Name="1152 x 810" />
+					<item Name="Dynamic Scaling" />
+				</_field_char_enum>
+				<_field_pad name="PAD1!" length="2" />
+				<_field_string_id name="Animation Name^" />
+				<_field_long_integer name="Animation Index*!" />
+				<_field_custom name="Position" />
+				<_field_struct name="Position" srcguid="37814d45-4b86-690a-5145-a184a8b1e89b">
+					<_field_short_enum name="Type^">
+						<item Name="Current" />
+						<item Name="Object" />
+						<item Name="Point Set" />
+						<item Name="Flag" />
+						<item Name="Custom" />
+						<item Name="Scene Anchor" />
+						<item Name="Instance Anchor" />
+						<item Name="Nearest Player" />
+						<item Name="None" />
+					</_field_short_enum>
+					<_field_byte_flags name="Flags">
+						<item Name="Use Orientation" />
+						<item Name="Don't Stop" />
+					</_field_byte_flags>
+					<_field_char_enum name="Index Type!~">
+						<item Name="Name" />
+						<item Name="AI" />
+						<item Name="Global" />
+						<item Name="Puppet" />
+						<item Name="Point Set" />
+						<item Name="Flag" />
+					</_field_char_enum>
+					<_field_string_id name="Object Name" />
+					<_field_long_integer name="Index!~" />
+					<_field_string_id name="Marker" />
+					<_field_real_point_3d name="Position" />
+					<_field_real_euler_angles_3d name="Rotation" />
+				</_field_struct>
+				<_field_long_integer name="Start Frame" />
+				<_field_long_integer name="End Frame" />
+				<_field_long_integer name="Repeat Count" />
+				<_field_real name="Scale" />
+			</_field_block_64>
+			<_field_block_64 name="Animations" max="256" srcguid="a590e427-47b8-733d-d4b7-5c91a71fc34f" srcName="composerActionAnimationBlock">
+				<_field_block_64 name="Animations" max="8" srcguid="e475648c-4268-b49d-7e6a-6b8cdc449bb8" srcName="composerAnimationBlock">
+					<_field_string_id name="Name^" />
+					<_field_long_integer name="Weight" />
+					<_field_string_id name="IKPointSet" />
+				</_field_block_64>
+				<_field_block_64 name="Model Animation Graphs" max="8" srcguid="0466cb20-4bf3-4bd4-2b88-2f9de547283e" srcName="composerPuppetGraphBlock">
+					<_field_tag_reference_64 name="Type" validtags="bipd, char, ctrl, bloc, crea, efsc, gint, mach, scen, vehi, weap" />
+					<_field_tag_reference_64 name="Model Animation Graph" validtags="jmad" />
+				</_field_block_64>
+				<_field_custom name="Point" />
+				<_field_struct name="Position" srcguid="37814d45-4b86-690a-5145-a184a8b1e89b">
+					<_field_short_enum name="Type^">
+						<item Name="Current" />
+						<item Name="Object" />
+						<item Name="Point Set" />
+						<item Name="Flag" />
+						<item Name="Custom" />
+						<item Name="Scene Anchor" />
+						<item Name="Instance Anchor" />
+						<item Name="Nearest Player" />
+						<item Name="None" />
+					</_field_short_enum>
+					<_field_byte_flags name="Flags">
+						<item Name="Use Orientation" />
+						<item Name="Don't Stop" />
+					</_field_byte_flags>
+					<_field_char_enum name="Index Type!~">
+						<item Name="Name" />
+						<item Name="AI" />
+						<item Name="Global" />
+						<item Name="Puppet" />
+						<item Name="Point Set" />
+						<item Name="Flag" />
+					</_field_char_enum>
+					<_field_string_id name="Object Name" />
+					<_field_long_integer name="Index!~" />
+					<_field_string_id name="Marker" />
+					<_field_real_point_3d name="Position" />
+					<_field_real_euler_angles_3d name="Rotation" />
+				</_field_struct>
+				<_field_char_enum name="Position Type">
+					<item Name="Teleport{Teleport and forget}" />
+					<item Name="Force Position{Attach (no motion/gravity)}" />
+					<item Name="Motion{Motion only (no gravity)}" />
+					<item Name="Attach" />
+					<item Name="Teleport Vertical" />
+					<item Name="None" />
+				</_field_char_enum>
+				<_field_pad name="PAD1!" length="1" />
+				<_field_word_flags name="Flags">
+					<item Name="Looping" />
+					<item Name="Play in Reverse" />
+					<item Name="Reset Object Position" />
+					<item Name="ICS Animation" />
+					<item Name="Reset Camera Rotation" />
+					<item Name="No Lightmap Shadow" />
+					<item Name="Never LOD{Never Imposter}" />
+					<item Name="Disable Physics" />
+					<item Name="Pause at End" />
+				</_field_word_flags>
+				<_field_string_id name="Sync Puppet" />
+				<_field_long_integer name="Start Frame" />
+				<_field_long_integer name="End Frame" />
+				<_field_long_integer name="Repeat Count" />
+				<_field_real name="Scale" />
+			</_field_block_64>
+			<_field_block_64 name="Animated Meshes" max="256" srcguid="e08f9d46-42e2-1c7d-e117-27972e1eeff2" srcName="composerActionAnimatedMeshBlock">
+				<_field_block_64 name="Animated Meshes" max="8" srcguid="3825778f-45fb-dff4-3488-df9ad678273c" srcName="composerAnimatedMeshBlock">
+					<_field_string_id name="Name^" />
+					<_field_long_integer name="Weight" />
+				</_field_block_64>
+				<_field_word_flags name="Flags">
+					<item Name="Looping" />
+					<item Name="Reset At End" />
+					<item Name="Never LOD{Never Imposter}" />
+					<item Name="Disable Physics" />
+				</_field_word_flags>
+				<_field_pad name="PAD1!" length="2" />
+				<_field_real name="Scale" />
+				<_field_long_integer name="Start Frame" />
+				<_field_long_integer name="End Frame" />
+			</_field_block_64>
+			<_field_block_64 name="Paths" max="256" srcguid="63539adb-43bd-d791-1c6b-0484e8d569ed" srcName="composerActionPathBlock">
+				<_field_real name="Throttle" />
+				<_field_block_64 name="Points" max="10000" srcguid="37814d45-4b86-690a-5145-a184a8b1e89b" srcName="composerPathPointBlock">
+					<_field_short_enum name="Type^">
+						<item Name="Current" />
+						<item Name="Object" />
+						<item Name="Point Set" />
+						<item Name="Flag" />
+						<item Name="Custom" />
+						<item Name="Scene Anchor" />
+						<item Name="Instance Anchor" />
+						<item Name="Nearest Player" />
+						<item Name="None" />
+					</_field_short_enum>
+					<_field_byte_flags name="Flags">
+						<item Name="Use Orientation" />
+						<item Name="Don't Stop" />
+					</_field_byte_flags>
+					<_field_char_enum name="Index Type!~">
+						<item Name="Name" />
+						<item Name="AI" />
+						<item Name="Global" />
+						<item Name="Puppet" />
+						<item Name="Point Set" />
+						<item Name="Flag" />
+					</_field_char_enum>
+					<_field_string_id name="Object Name" />
+					<_field_long_integer name="Index!~" />
+					<_field_string_id name="Marker" />
+					<_field_real_point_3d name="Position" />
+					<_field_real_euler_angles_3d name="Rotation" />
 				</_field_block_64>
 			</_field_block_64>
-			<_field_block_64 name="Dialog" max="10000" guid="f6581811-432d-19d7-3943-36846e76ce59">
-				<_field_block_64 name="Dialogs" max="8" guid="d8d8cc15-472d-bc1d-ba2f-d9a12f4bfc64">
-					<_field_tag_reference_64 name="Dialog^" validtags="snd!" />
-					<_field_long_integer name="Weight" />
-					<_field_real name="Scale" />
-					<_field_string_id name="Subtitle" />
-					<_field_string_id name="Default Sound Effect" />
+			<_field_block_64 name="Unit Recordings" max="256" srcguid="93aca270-4012-e2f6-4349-a095790334d6" srcName="composerActionUnitRecordingBlock">
+				<_field_string_id name="recording unit type" />
+				<_field_string_id name="recording name" />
+				<_field_real name="Scale" />
+				<_field_long_integer name="Start Frame" />
+				<_field_long_integer name="End Frame" />
+				<_field_short_integer name="Smoothing Time" />
+				<_field_byte_flags name="Flags">
+					<item Name="Play in Reverse" />
+					<item Name="Pause at End" />
+					<item Name="Never LOD" />
+				</_field_byte_flags>
+				<_field_pad name="PAD1!" length="1" />
+			</_field_block_64>
+			<_field_struct name="SubTracks" srcguid="6a914656-4c08-fc30-2373-3eba19ea5f4c">
+				<_field_block_64 name="SubTracks References" max="1000" srcguid="15c839ff-4979-42c6-e062-13af01cfb636" srcName="composerSubTracksRefBlock">
+					<_field_tag_reference_64 name="SubTracks Reference^" validtags="subt" />
 				</_field_block_64>
-				<_field_struct name="Subject" />
+				<_field_block_64 name="SubTracks" max="1000" srcguid="264df9bb-4780-7f1c-9427-dba75f6fff71" srcName="composerSubTrackBlock">
+					<_field_string_id name="Name^" />
+					<_field_dword_integer name="Color" />
+					<_field_block_64 name="SubActions" max="10000" srcguid="dc209993-442c-e81d-869c-6f92f854bf5e" srcName="composerSubActionBlock">
+						<_field_long_enum name="Type^">
+							<item Name="Branch" />
+							<item Name="Look At" />
+							<item Name="Face" />
+							<item Name="Shoot At" />
+							<item Name="Effect" />
+							<item Name="Script" />
+							<item Name="Clip Plane" />
+							<item Name="Function" />
+							<item Name="Input Constraint" />
+							<item Name="Dialog" />
+							<item Name="Sound" />
+							<item Name="Screen Effect" />
+							<item Name="Texture Movie" />
+							<item Name="Custom Lighting{Lighting}" />
+							<item Name="Atmosphere Fog" />
+							<item Name="Camera FX Settings" />
+							<item Name="Cubemap" />
+							<item Name="Environment Darken" />
+							<item Name="Exposure" />
+							<item Name="Static Scalar{Lightmap Direct Scalar}" />
+							<item Name="Lightmap Indirect Scalar" />
+							<item Name="Analytic Scalar{Sun Scalar}" />
+							<item Name="Light" />
+							<item Name="Hologram Lighting" />
+							<item Name="Aim At" />
+							<item Name="Effect Object" />
+							<item Name="Title" />
+							<item Name="UI Scene" />
+							<item Name="NodeGraph Event" />
+							<item Name="Subtitle" />
+							<item Name="ICS Camera{ICS 3rd Person Camera}" />
+							<item Name="Game Engine Vignette Event" />
+							<item Name="Sound Object" />
+							<item Name="Light Cone" />
+							<item Name="Color Grading" />
+							<item Name="Camera Lens Dirt" />
+							<item Name="Transform" />
+						</_field_long_enum>
+						<_field_char_enum name="Start Type">
+							<item Name="Offset From Start" />
+							<item Name="Offset From End" />
+							<item Name="Condition" />
+						</_field_char_enum>
+						<_field_char_enum name="End Type">
+							<item Name="Offset From Start" />
+							<item Name="Offset From End" />
+							<item Name="Condition" />
+						</_field_char_enum>
+						<_field_short_integer name="Data Index*" />
+						<_field_long_integer name="Start Action" />
+						<_field_long_integer name="Start Offset" />
+						<_field_struct name="Start Condition Script!" srcguid="385eadfd-436d-9c0d-6de8-8a8e2c7d69a6">
+							<_field_string name="Script Name!" />
+							<_field_byte_flags name="Flags">
+								<item Name="Client" />
+								<item Name="HasAssociatedScript" />
+							</_field_byte_flags>
+							<_field_pad name="PAD1!" length="3" />
+							<_field_data_64 name="Data" />
+							<_field_dword_integer name="Script CRC!~" />
+						</_field_struct>
+						<_field_struct name="End Condition Script!" srcguid="385eadfd-436d-9c0d-6de8-8a8e2c7d69a6">
+							<_field_string name="Script Name!" />
+							<_field_byte_flags name="Flags">
+								<item Name="Client" />
+								<item Name="HasAssociatedScript" />
+							</_field_byte_flags>
+							<_field_pad name="PAD1!" length="3" />
+							<_field_data_64 name="Data" />
+							<_field_dword_integer name="Script CRC!~" />
+						</_field_struct>
+						<_field_long_integer name="End Action" />
+						<_field_long_integer name="End Offset" />
+					</_field_block_64>
+					<_field_block_64 name="Editor SubActions" max="10000" srcguid="73035674-4f19-a2c6-0766-83a8a18562d7" srcName="composerEditorSubActionBlock">
+						<_field_long_string name="Comment" />
+						<_field_dword_integer name="Color" />
+						<_field_byte_integer name="SubTrack*" />
+						<_field_byte_flags name="Editor Flags!*">
+							<item Name="Muted" />
+							<item Name="Expanded" />
+							<item Name="Imported" />
+							<item Name="Playing" />
+							<item Name="Recording" />
+						</_field_byte_flags>
+						<_field_pad name="PAD1!" length="2" />
+						<_field_custom name="Start Condition Script" />
+						<_field_struct name="Start Condition Script" srcguid="5541b078-47e1-81b9-21be-7bab894c3af7">
+							<_field_data_64 name="Data" />
+							<_field_dword_integer name="Script CRC!~" />
+						</_field_struct>
+						<_field_custom name="End Condition Script" />
+						<_field_struct name="End Condition Script" srcguid="5541b078-47e1-81b9-21be-7bab894c3af7">
+							<_field_data_64 name="Data" />
+							<_field_dword_integer name="Script CRC!~" />
+						</_field_struct>
+						<_field_custom name="Custom Script" />
+						<_field_struct name="Custom Script" srcguid="5541b078-47e1-81b9-21be-7bab894c3af7">
+							<_field_data_64 name="Data" />
+							<_field_dword_integer name="Script CRC!~" />
+						</_field_struct>
+						<_field_block_64 name="Branch Scripts" max="10000" srcguid="5541b078-47e1-81b9-21be-7bab894c3af7" srcName="composerTextDataBlock">
+							<_field_data_64 name="Data" />
+							<_field_dword_integer name="Script CRC!~" />
+						</_field_block_64>
+					</_field_block_64>
+					<_field_block_64 name="Points" max="10000" srcguid="57193946-4181-abcd-268a-cbbd3c425ab5" srcName="subActionPointBlock">
+						<_field_byte_flags name="Flags">
+							<item Name="Unattached" />
+						</_field_byte_flags>
+						<_field_pad name="PAD1!" length="3" />
+						<_field_custom name="Point" />
+						<_field_struct name="Point" srcguid="37814d45-4b86-690a-5145-a184a8b1e89b">
+							<_field_short_enum name="Type^">
+								<item Name="Current" />
+								<item Name="Object" />
+								<item Name="Point Set" />
+								<item Name="Flag" />
+								<item Name="Custom" />
+								<item Name="Scene Anchor" />
+								<item Name="Instance Anchor" />
+								<item Name="Nearest Player" />
+								<item Name="None" />
+							</_field_short_enum>
+							<_field_byte_flags name="Flags">
+								<item Name="Use Orientation" />
+								<item Name="Don't Stop" />
+							</_field_byte_flags>
+							<_field_char_enum name="Index Type!~">
+								<item Name="Name" />
+								<item Name="AI" />
+								<item Name="Global" />
+								<item Name="Puppet" />
+								<item Name="Point Set" />
+								<item Name="Flag" />
+							</_field_char_enum>
+							<_field_string_id name="Object Name" />
+							<_field_long_integer name="Index!~" />
+							<_field_string_id name="Marker" />
+							<_field_real_point_3d name="Position" />
+							<_field_real_euler_angles_3d name="Rotation" />
+						</_field_struct>
+						<_field_tag_reference_64 name="Asset^" validtags="lsnd, snd!, musc, mdlg, sefc, bink, fogg, cfxs, bitm, colt, holt" />
+					</_field_block_64>
+					<_field_block_64 name="Branches" max="10000" srcguid="453617f7-4519-bf27-444f-ac93546db442" srcName="subActionBranchBlock">
+						<_field_block_64 name="Elements" max="8" srcguid="5a1e6c29-4e19-75cc-474e-5e8695e6c734" srcName="composerBranchElementBlock">
+							<_field_long_integer name="Target Action" />
+							<_field_struct name="Condition Script!" srcguid="385eadfd-436d-9c0d-6de8-8a8e2c7d69a6">
+								<_field_string name="Script Name!" />
+								<_field_byte_flags name="Flags">
+									<item Name="Client" />
+									<item Name="HasAssociatedScript" />
+								</_field_byte_flags>
+								<_field_pad name="PAD1!" length="3" />
+								<_field_data_64 name="Data" />
+								<_field_dword_integer name="Script CRC!~" />
+							</_field_struct>
+						</_field_block_64>
+					</_field_block_64>
+					<_field_block_64 name="Dialog" max="10000" srcguid="f6581811-432d-19d7-3943-36846e76ce59" srcName="subActionDialogBlock">
+						<_field_block_64 name="Dialogs" max="8" srcguid="d8d8cc15-472d-bc1d-ba2f-d9a12f4bfc64" srcName="composerDialogBlock">
+							<_field_tag_reference_64 name="Dialog^" validtags="snd!" />
+							<_field_long_integer name="Weight" />
+							<_field_real name="Scale" />
+							<_field_string_id name="Subtitle" />
+							<_field_string_id name="Default Sound Effect" />
+						</_field_block_64>
+						<_field_struct name="Subject" srcguid="c96ca9b0-4656-db11-7085-6187c9c031b8">
+							<_field_string_id name="Object Name^" />
+							<_field_long_integer name="Index!~" />
+							<_field_char_enum name="Index Type!~">
+								<item Name="Name" />
+								<item Name="AI" />
+								<item Name="Global" />
+								<item Name="Puppet" />
+								<item Name="Point Set" />
+								<item Name="Flag" />
+							</_field_char_enum>
+							<_field_pad name="PAD1!" length="3" />
+						</_field_struct>
+						<_field_string_id name="Character" />
+					</_field_block_64>
+					<_field_block_64 name="Subtitles" max="10000" srcguid="01b162de-42f0-9e30-2207-dab497c62434" srcName="subActionSubtitleBlock">
+						<_field_string_id name="Subtitle" />
+						<_field_string_id name="Character" />
+					</_field_block_64>
+					<_field_block_64 name="Effects" max="10000" srcguid="a3550dc6-4f87-b175-8881-a0a56a47d43e" srcName="subActionEffectBlock">
+						<_field_byte_flags name="Flags">
+							<item Name="Loop" />
+							<item Name="Kill" />
+							<item Name="Attach" />
+						</_field_byte_flags>
+						<_field_pad name="PAD1!" length="3" />
+						<_field_tag_reference_64 name="Effect^" validtags="effe" />
+						<_field_custom name="Point" />
+						<_field_struct name="Point" srcguid="37814d45-4b86-690a-5145-a184a8b1e89b">
+							<_field_short_enum name="Type^">
+								<item Name="Current" />
+								<item Name="Object" />
+								<item Name="Point Set" />
+								<item Name="Flag" />
+								<item Name="Custom" />
+								<item Name="Scene Anchor" />
+								<item Name="Instance Anchor" />
+								<item Name="Nearest Player" />
+								<item Name="None" />
+							</_field_short_enum>
+							<_field_byte_flags name="Flags">
+								<item Name="Use Orientation" />
+								<item Name="Don't Stop" />
+							</_field_byte_flags>
+							<_field_char_enum name="Index Type!~">
+								<item Name="Name" />
+								<item Name="AI" />
+								<item Name="Global" />
+								<item Name="Puppet" />
+								<item Name="Point Set" />
+								<item Name="Flag" />
+							</_field_char_enum>
+							<_field_string_id name="Object Name" />
+							<_field_long_integer name="Index!~" />
+							<_field_string_id name="Marker" />
+							<_field_real_point_3d name="Position" />
+							<_field_real_euler_angles_3d name="Rotation" />
+						</_field_struct>
+						<_field_real name="Scale" />
+						<_field_string_id name="Function A" />
+						<_field_string_id name="Function B" />
+					</_field_block_64>
+					<_field_block_64 name="Lights" max="10000" srcguid="edea178a-459d-cfe0-2662-4e856153793f" srcName="subActionLightBlock">
+						<_field_string_id name="Lights Tag Name" />
+						<_field_long_integer name="Light ID" />
+						<_field_custom name="Point" />
+						<_field_struct name="Point" srcguid="37814d45-4b86-690a-5145-a184a8b1e89b">
+							<_field_short_enum name="Type^">
+								<item Name="Current" />
+								<item Name="Object" />
+								<item Name="Point Set" />
+								<item Name="Flag" />
+								<item Name="Custom" />
+								<item Name="Scene Anchor" />
+								<item Name="Instance Anchor" />
+								<item Name="Nearest Player" />
+								<item Name="None" />
+							</_field_short_enum>
+							<_field_byte_flags name="Flags">
+								<item Name="Use Orientation" />
+								<item Name="Don't Stop" />
+							</_field_byte_flags>
+							<_field_char_enum name="Index Type!~">
+								<item Name="Name" />
+								<item Name="AI" />
+								<item Name="Global" />
+								<item Name="Puppet" />
+								<item Name="Point Set" />
+								<item Name="Flag" />
+							</_field_char_enum>
+							<_field_string_id name="Object Name" />
+							<_field_long_integer name="Index!~" />
+							<_field_string_id name="Marker" />
+							<_field_real_point_3d name="Position" />
+							<_field_real_euler_angles_3d name="Rotation" />
+						</_field_struct>
+						<_field_block_64 name="Linked Objects" max="16" srcguid="c96ca9b0-4656-db11-7085-6187c9c031b8" srcName="composerSubjectBlock">
+							<_field_string_id name="Object Name^" />
+							<_field_long_integer name="Index!~" />
+							<_field_char_enum name="Index Type!~">
+								<item Name="Name" />
+								<item Name="AI" />
+								<item Name="Global" />
+								<item Name="Puppet" />
+								<item Name="Point Set" />
+								<item Name="Flag" />
+							</_field_char_enum>
+							<_field_pad name="PAD1!" length="3" />
+						</_field_block_64>
+					</_field_block_64>
+					<_field_block_64 name="Clip Planes" max="10000" srcguid="a0b7bdcc-417b-78c5-9162-1c85e1632fb6" srcName="subActionClipPlaneBlock">
+						<_field_real_point_3d name="Plane Center" />
+						<_field_real_point_3d name="Plane Direction" />
+						<_field_block_64 name="Subjects" max="16" srcguid="c96ca9b0-4656-db11-7085-6187c9c031b8" srcName="composerSubjectBlock">
+							<_field_string_id name="Object Name^" />
+							<_field_long_integer name="Index!~" />
+							<_field_char_enum name="Index Type!~">
+								<item Name="Name" />
+								<item Name="AI" />
+								<item Name="Global" />
+								<item Name="Puppet" />
+								<item Name="Point Set" />
+								<item Name="Flag" />
+							</_field_char_enum>
+							<_field_pad name="PAD1!" length="3" />
+						</_field_block_64>
+					</_field_block_64>
+					<_field_block_64 name="Functions" max="10000" srcguid="df6fd1bd-4cc5-2941-5619-7f9177927aec" srcName="subActionFunctionBlock">
+						<_field_byte_flags name="Flags">
+							<item Name="Clear Value At End" />
+							<item Name="Global" />
+						</_field_byte_flags>
+						<_field_pad name="PAD1!" length="3" />
+						<_field_string_id name="Function Name^" />
+						<_field_struct name="Function" srcguid="384eba00-4534-2aa9-43d0-11ad26ef234a">
+							<_field_struct name="function" srcguid="9019aba5-4a1a-4c5a-34f0-1aadada1fd11">
+								<_field_data_64 name="data" />
+							</_field_struct>
+						</_field_struct>
+					</_field_block_64>
+					<_field_block_64 name="Input Constraints" max="10000" srcguid="44e22c94-4d8c-485d-2f72-c193fa82e226" srcName="subActionUserInputConstraintsBlock">
+						<_field_rectangle_2d name="Maximum Look Angles" />
+						<_field_real name="Frictional Force" />
+					</_field_block_64>
+					<_field_block_64 name="Generic SubActions" max="10000" srcguid="caed7102-4f77-f736-0185-0798ca41f38a" srcName="subActionGenericBlock">
+						<_field_tag_reference_64 name="Asset^" validtags="lsnd, snd!, musc, mdlg, sefc, bink, fogg, cfxs, bitm, colt, holt" />
+						<_field_long_integer name="Blend Frames" />
+					</_field_block_64>
+					<_field_block_64 name="Object SubActions" max="10000" srcguid="9da5b671-40f1-f3f9-a4f1-e0828ce2f3ba" srcName="subActionObjectBlock">
+						<_field_string_id name="Object Name" />
+						<_field_byte_flags name="Flags">
+							<item Name="Kill" />
+						</_field_byte_flags>
+						<_field_pad name="PAD1!" length="3" />
+					</_field_block_64>
+					<_field_block_64 name="Value SubActions" max="10000" srcguid="499ed478-405b-afce-cf1b-cf850ad2a328" srcName="subActionValueBlock">
+						<_field_byte_flags name="Flags">
+							<item Name="Constant" />
+						</_field_byte_flags>
+						<_field_pad name="PAD1!" length="3" />
+						<_field_real name="Start Value" />
+						<_field_real name="End Value" />
+					</_field_block_64>
+					<_field_block_64 name="Trigger SubActions" max="10000" srcguid="361c73e9-4e69-d217-225e-5dac4bf18242" srcName="subActionTriggerBlock">
+						<_field_long_flags name="Flags">
+							<item Name="Enable FOV" />
+							<item Name="3rd Person Camera" />
+						</_field_long_flags>
+					</_field_block_64>
+					<_field_block_64 name="Scripts" max="10000" srcguid="385eadfd-436d-9c0d-6de8-8a8e2c7d69a6" srcName="composerScriptBlock">
+						<_field_string name="Script Name!" />
+						<_field_byte_flags name="Flags">
+							<item Name="Client" />
+							<item Name="HasAssociatedScript" />
+						</_field_byte_flags>
+						<_field_pad name="PAD1!" length="3" />
+						<_field_data_64 name="Data" />
+						<_field_dword_integer name="Script CRC!~" />
+					</_field_block_64>
+					<_field_block_64 name="UI Scenes" max="10000" srcguid="b6374cc1-ede0-6ddd-a4af-65ac7d4bdad6" srcName="subActionUISceneBlock">
+						<_field_byte_flags name="Flags">
+							<item Name="Attach" />
+							<item Name="Render 2D" />
+							<item Name="Render on display plane (1080p)" />
+						</_field_byte_flags>
+						<_field_pad name="PAD1!" length="3" />
+						<_field_tag_reference_64 name="UI Scene^" validtags="ngst" />
+						<_field_custom name="Point" />
+						<_field_struct name="Point" srcguid="37814d45-4b86-690a-5145-a184a8b1e89b">
+							<_field_short_enum name="Type^">
+								<item Name="Current" />
+								<item Name="Object" />
+								<item Name="Point Set" />
+								<item Name="Flag" />
+								<item Name="Custom" />
+								<item Name="Scene Anchor" />
+								<item Name="Instance Anchor" />
+								<item Name="Nearest Player" />
+								<item Name="None" />
+							</_field_short_enum>
+							<_field_byte_flags name="Flags">
+								<item Name="Use Orientation" />
+								<item Name="Don't Stop" />
+							</_field_byte_flags>
+							<_field_char_enum name="Index Type!~">
+								<item Name="Name" />
+								<item Name="AI" />
+								<item Name="Global" />
+								<item Name="Puppet" />
+								<item Name="Point Set" />
+								<item Name="Flag" />
+							</_field_char_enum>
+							<_field_string_id name="Object Name" />
+							<_field_long_integer name="Index!~" />
+							<_field_string_id name="Marker" />
+							<_field_real_point_3d name="Position" />
+							<_field_real_euler_angles_3d name="Rotation" />
+						</_field_struct>
+						<_field_real name="Scale" />
+						<_field_block_64 name="Player Data" max="1" srcguid="8e2771a3-4cd9-5760-b6d4-5eb613f5dbce" srcName="composerPlayerDataBlock">
+							<_field_char_enum name="Player Type">
+								<item Name="Multiplayer" />
+								<item Name="Campaign" />
+								<item Name="Dynamic" />
+							</_field_char_enum>
+							<_field_char_enum name="Multiplayer Team">
+								<item Name="defender" />
+								<item Name="attacker" />
+								<item Name="third party" />
+								<item Name="fourth party" />
+								<item Name="fifth party" />
+								<item Name="sixth party" />
+								<item Name="seventh party" />
+								<item Name="eighth party{eigth party}" />
+								<item Name="neutral" />
+							</_field_char_enum>
+							<_field_byte_flags name="Flags">
+								<item Name="UseWinningTeam" />
+								<item Name="ForgeIntroSpectator" />
+							</_field_byte_flags>
+							<_field_pad name="pad" length="1" />
+							<_field_long_integer name="Player Index" />
+							<_field_long_integer name="Forge Spectator Player Index" />
+						</_field_block_64>
+					</_field_block_64>
+					<_field_block_64 name="NodeGraph Events" max="10000" srcguid="00107580-ad56-2f53-0cd5-f78adfadbe93" srcName="subActionNodeGraphEventBlock">
+						<_field_string_id name="Event Name" />
+						<_field_byte_flags name="Flags">
+							<item Name="Global Event" />
+						</_field_byte_flags>
+						<_field_pad name="PAD1!" length="3" />
+					</_field_block_64>
+					<_field_block_64 name="Game Engine Vignette Events" max="10000" srcguid="a43307fc-433e-f894-6539-998996066254" srcName="subActionGameEngineVignetteEventBlock">
+						<_field_string_id name="Event Name" />
+					</_field_block_64>
+					<_field_block_64 name="Camera Lens Dirt" max="10000" srcguid="acaf71ef-4cde-19bf-f1a7-17a464054636" srcName="subActionCameraLensDirtBlock">
+						<_field_real name="Intensity" />
+						<_field_tag_reference_64 name="Dirt Texture" validtags="bitm" />
+						<_field_char_enum name="Dirt Type">
+							<item Name="Apply at bloom res" />
+							<item Name="Apply at full res" />
+						</_field_char_enum>
+						<_field_pad name="PAD1!" length="3" />
+					</_field_block_64>
+					<_field_block_64 name="Transform SubActions" max="10000" srcguid="272ff5e7-485c-980b-111e-47a49883114b" srcName="subActionTransformBlock">
+						<_field_byte_flags name="Flags">
+							<item Name="Position" />
+							<item Name="Rotation" />
+						</_field_byte_flags>
+						<_field_pad name="PAD1!" length="3" />
+						<_field_custom name="Point 1" />
+						<_field_struct name="Point 1" srcguid="37814d45-4b86-690a-5145-a184a8b1e89b">
+							<_field_short_enum name="Type^">
+								<item Name="Current" />
+								<item Name="Object" />
+								<item Name="Point Set" />
+								<item Name="Flag" />
+								<item Name="Custom" />
+								<item Name="Scene Anchor" />
+								<item Name="Instance Anchor" />
+								<item Name="Nearest Player" />
+								<item Name="None" />
+							</_field_short_enum>
+							<_field_byte_flags name="Flags">
+								<item Name="Use Orientation" />
+								<item Name="Don't Stop" />
+							</_field_byte_flags>
+							<_field_char_enum name="Index Type!~">
+								<item Name="Name" />
+								<item Name="AI" />
+								<item Name="Global" />
+								<item Name="Puppet" />
+								<item Name="Point Set" />
+								<item Name="Flag" />
+							</_field_char_enum>
+							<_field_string_id name="Object Name" />
+							<_field_long_integer name="Index!~" />
+							<_field_string_id name="Marker" />
+							<_field_real_point_3d name="Position" />
+							<_field_real_euler_angles_3d name="Rotation" />
+						</_field_struct>
+						<_field_custom name="Point 2" />
+						<_field_struct name="Point 2" srcguid="37814d45-4b86-690a-5145-a184a8b1e89b">
+							<_field_short_enum name="Type^">
+								<item Name="Current" />
+								<item Name="Object" />
+								<item Name="Point Set" />
+								<item Name="Flag" />
+								<item Name="Custom" />
+								<item Name="Scene Anchor" />
+								<item Name="Instance Anchor" />
+								<item Name="Nearest Player" />
+								<item Name="None" />
+							</_field_short_enum>
+							<_field_byte_flags name="Flags">
+								<item Name="Use Orientation" />
+								<item Name="Don't Stop" />
+							</_field_byte_flags>
+							<_field_char_enum name="Index Type!~">
+								<item Name="Name" />
+								<item Name="AI" />
+								<item Name="Global" />
+								<item Name="Puppet" />
+								<item Name="Point Set" />
+								<item Name="Flag" />
+							</_field_char_enum>
+							<_field_string_id name="Object Name" />
+							<_field_long_integer name="Index!~" />
+							<_field_string_id name="Marker" />
+							<_field_real_point_3d name="Position" />
+							<_field_real_euler_angles_3d name="Rotation" />
+						</_field_struct>
+						<_field_struct name="Mapping" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+							<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+								<_field_data_64 name="data" />
+							</_field_struct>
+						</_field_struct>
+					</_field_block_64>
+				</_field_block_64>
+			</_field_struct>
+			<_field_struct name="Start Script!" srcguid="385eadfd-436d-9c0d-6de8-8a8e2c7d69a6">
+				<_field_string name="Script Name!" />
+				<_field_byte_flags name="Flags">
+					<item Name="Client" />
+					<item Name="HasAssociatedScript" />
+				</_field_byte_flags>
+				<_field_pad name="PAD1!" length="3" />
+				<_field_data_64 name="Data" />
+				<_field_dword_integer name="Script CRC!~" />
+			</_field_struct>
+			<_field_struct name="End Script!" srcguid="385eadfd-436d-9c0d-6de8-8a8e2c7d69a6">
+				<_field_string name="Script Name!" />
+				<_field_byte_flags name="Flags">
+					<item Name="Client" />
+					<item Name="HasAssociatedScript" />
+				</_field_byte_flags>
+				<_field_pad name="PAD1!" length="3" />
+				<_field_data_64 name="Data" />
+				<_field_dword_integer name="Script CRC!~" />
+			</_field_struct>
+		</_field_block_64>
+		<_field_block_64 name="Editor Tracks!" max="10000" srcguid="7f85191a-4cfd-bd66-0845-6ba90a1a2ef8" srcName="composerEditorTrackBlock">
+			<_field_long_string name="Comment" />
+			<_field_dword_integer name="Color" />
+			<_field_short_integer name="Height!" />
+			<_field_byte_flags name="Editor Flags!*">
+				<item Name="Muted" />
+				<item Name="Expanded" />
+				<item Name="Imported" />
+				<item Name="Playing" />
+				<item Name="Recording" />
+			</_field_byte_flags>
+			<_field_pad name="PAD1!" length="1" />
+			<_field_custom name="Start Script" />
+			<_field_struct name="Start Script" srcguid="5541b078-47e1-81b9-21be-7bab894c3af7">
+				<_field_data_64 name="Data" />
+				<_field_dword_integer name="Script CRC!~" />
+			</_field_struct>
+			<_field_custom name="End Script" />
+			<_field_struct name="End Script" srcguid="5541b078-47e1-81b9-21be-7bab894c3af7">
+				<_field_data_64 name="Data" />
+				<_field_dword_integer name="Script CRC!~" />
+			</_field_struct>
+		</_field_block_64>
+		<_field_block_64 name="Puppet Tracks!" max="10000" srcguid="d525f3d0-4f1e-67fa-244e-fd80998cbd55" srcName="composerTrackPuppetBlock">
+			<_field_string_id name="Variant Name" />
+			<_field_string_id name="Object Attachment Name" />
+			<_field_struct name="Subject" srcguid="c96ca9b0-4656-db11-7085-6187c9c031b8">
 				<_field_string_id name="Object Name^" />
 				<_field_long_integer name="Index!~" />
 				<_field_char_enum name="Index Type!~">
@@ -455,445 +854,130 @@
 					<item Name="Flag" />
 				</_field_char_enum>
 				<_field_pad name="PAD1!" length="3" />
-				<_field_string_id name="Character" />
-			</_field_block_64>
-			<_field_block_64 name="Subtitles" max="10000" guid="01b162de-42f0-9e30-2207-dab497c62434">
-				<_field_string_id name="Subtitle" />
-				<_field_string_id name="Character" />
-			</_field_block_64>
-			<_field_block_64 name="Effects" max="10000" guid="a3550dc6-4f87-b175-8881-a0a56a47d43e">
-				<_field_byte_flags name="Flags">
-					<item Name="Loop" />
-					<item Name="Kill" />
-					<item Name="Attach" />
-				</_field_byte_flags>
-				<_field_pad name="PAD1!" length="3" />
-				<_field_tag_reference_64 name="Effect^" />
-				<_field_custom name="Point" />
-				<_field_struct name="Point" />
-				<_field_short_enum name="Type^">
-					<item Name="Current" />
-					<item Name="Object" />
-					<item Name="Point Set" />
-					<item Name="Flag" />
-					<item Name="Custom" />
-					<item Name="Scene Anchor" />
-					<item Name="Instance Anchor" />
-					<item Name="Nearest Player" />
-					<item Name="None" />
-				</_field_short_enum>
-				<_field_byte_flags name="Flags">
-					<item Name="Use Orientation" />
-					<item Name="Don't Stop" />
-				</_field_byte_flags>
-				<_field_char_enum name="Index Type!~">
-					<item Name="Name" />
-					<item Name="AI" />
-					<item Name="Global" />
-					<item Name="Puppet" />
-					<item Name="Point Set" />
-					<item Name="Flag" />
-				</_field_char_enum>
-				<_field_string_id name="Object Name" />
-				<_field_long_integer name="Index!~" />
-				<_field_string_id name="Marker" />
-				<_field_real_point_3d name="Position" />
-				<_field_real_euler_angles_3d name="Rotation" />
-				<_field_real name="Scale" />
-				<_field_string_id name="Function A" />
-				<_field_string_id name="Function B" />
-			</_field_block_64>
-			<_field_block_64 name="Lights" max="10000" guid="edea178a-459d-cfe0-2662-4e856153793f">
-				<_field_string_id name="Lights Tag Name" />
-				<_field_long_integer name="Light ID" />
-				<_field_custom name="Point" />
-				<_field_struct name="Point" />
-				<_field_short_enum name="Type^">
-					<item Name="Current" />
-					<item Name="Object" />
-					<item Name="Point Set" />
-					<item Name="Flag" />
-					<item Name="Custom" />
-					<item Name="Scene Anchor" />
-					<item Name="Instance Anchor" />
-					<item Name="Nearest Player" />
-					<item Name="None" />
-				</_field_short_enum>
-				<_field_byte_flags name="Flags">
-					<item Name="Use Orientation" />
-					<item Name="Don't Stop" />
-				</_field_byte_flags>
-				<_field_char_enum name="Index Type!~">
-					<item Name="Name" />
-					<item Name="AI" />
-					<item Name="Global" />
-					<item Name="Puppet" />
-					<item Name="Point Set" />
-					<item Name="Flag" />
-				</_field_char_enum>
-				<_field_string_id name="Object Name" />
-				<_field_long_integer name="Index!~" />
-				<_field_string_id name="Marker" />
-				<_field_real_point_3d name="Position" />
-				<_field_real_euler_angles_3d name="Rotation" />
-				<_field_block_64 name="Linked Objects" max="16" guid="c96ca9b0-4656-db11-7085-6187c9c031b8">
-					<_field_string_id name="Object Name^" />
-					<_field_long_integer name="Index!~" />
-					<_field_char_enum name="Index Type!~">
-						<item Name="Name" />
-						<item Name="AI" />
-						<item Name="Global" />
-						<item Name="Puppet" />
-						<item Name="Point Set" />
-						<item Name="Flag" />
-					</_field_char_enum>
-					<_field_pad name="PAD1!" length="3" />
-				</_field_block_64>
-			</_field_block_64>
-			<_field_block_64 name="Clip Planes" max="10000" guid="a0b7bdcc-417b-78c5-9162-1c85e1632fb6">
-				<_field_real_point_3d name="Plane Center" />
-				<_field_real_point_3d name="Plane Direction" />
-				<_field_block_64 name="Subjects" max="16" guid="c96ca9b0-4656-db11-7085-6187c9c031b8">
-					<_field_string_id name="Object Name^" />
-					<_field_long_integer name="Index!~" />
-					<_field_char_enum name="Index Type!~">
-						<item Name="Name" />
-						<item Name="AI" />
-						<item Name="Global" />
-						<item Name="Puppet" />
-						<item Name="Point Set" />
-						<item Name="Flag" />
-					</_field_char_enum>
-					<_field_pad name="PAD1!" length="3" />
-				</_field_block_64>
-			</_field_block_64>
-			<_field_block_64 name="Functions" max="10000" guid="df6fd1bd-4cc5-2941-5619-7f9177927aec">
-				<_field_byte_flags name="Flags">
-					<item Name="Clear Value At End" />
-					<item Name="Global" />
-				</_field_byte_flags>
-				<_field_pad name="PAD1!" length="3" />
-				<_field_string_id name="Function Name^" />
-				<_field_struct name="Function" />
-				<_field_data_64 name="data" />
-			</_field_block_64>
-			<_field_block_64 name="Input Constraints" max="10000" guid="44e22c94-4d8c-485d-2f72-c193fa82e226">
-				<_field_rectangle_2d name="Maximum Look Angles" />
-				<_field_real name="Frictional Force" />
-			</_field_block_64>
-			<_field_block_64 name="Generic SubActions" max="10000" guid="caed7102-4f77-f736-0185-0798ca41f38a">
-				<_field_tag_reference_64 name="Asset^" validtags="lsnd, snd!, musc, mdlg, sefc, bink, fogg, cfxs, bitm, colt, holt" />
-				<_field_long_integer name="Blend Frames" />
-			</_field_block_64>
-			<_field_block_64 name="Object SubActions" max="10000" guid="9da5b671-40f1-f3f9-a4f1-e0828ce2f3ba">
-				<_field_string_id name="Object Name" />
-				<_field_byte_flags name="Flags">
-					<item Name="Kill" />
-				</_field_byte_flags>
-				<_field_pad name="PAD1!" length="3" />
-			</_field_block_64>
-			<_field_block_64 name="Value SubActions" max="10000" guid="499ed478-405b-afce-cf1b-cf850ad2a328">
-				<_field_byte_flags name="Flags">
-					<item Name="Constant" />
-				</_field_byte_flags>
-				<_field_pad name="PAD1!" length="3" />
-				<_field_real name="Start Value" />
-				<_field_real name="End Value" />
-			</_field_block_64>
-			<_field_block_64 name="Trigger SubActions" max="10000" guid="361c73e9-4e69-d217-225e-5dac4bf18242">
-				<_field_long_flags name="Flags">
-					<item Name="Enable FOV" />
-					<item Name="3rd Person Camera" />
-				</_field_long_flags>
-			</_field_block_64>
-			<_field_block_64 name="Scripts" max="10000" guid="385eadfd-436d-9c0d-6de8-8a8e2c7d69a6">
-				<_field_string name="Script Name!" />
-				<_field_byte_flags name="Flags">
-					<item Name="Client" />
-					<item Name="HasAssociatedScript" />
-				</_field_byte_flags>
-				<_field_pad name="PAD1!" length="3" />
-				<_field_data_64 name="Data" />
-				<_field_dword_integer name="Script CRC!~" />
-			</_field_block_64>
-			<_field_block_64 name="UI Scenes" max="10000" guid="b6374cc1-ede0-6ddd-a4af-65ac7d4bdad6">
-				<_field_byte_flags name="Flags">
-					<item Name="Attach" />
-					<item Name="Render 2D" />
-					<item Name="Render on display plane (1080p)" />
-				</_field_byte_flags>
-				<_field_pad name="PAD1!" length="3" />
-				<_field_tag_reference_64 name="UI Scene^" />
-				<_field_custom name="Point" />
-				<_field_struct name="Point" />
-				<_field_short_enum name="Type^">
-					<item Name="Current" />
-					<item Name="Object" />
-					<item Name="Point Set" />
-					<item Name="Flag" />
-					<item Name="Custom" />
-					<item Name="Scene Anchor" />
-					<item Name="Instance Anchor" />
-					<item Name="Nearest Player" />
-					<item Name="None" />
-				</_field_short_enum>
-				<_field_byte_flags name="Flags">
-					<item Name="Use Orientation" />
-					<item Name="Don't Stop" />
-				</_field_byte_flags>
-				<_field_char_enum name="Index Type!~">
-					<item Name="Name" />
-					<item Name="AI" />
-					<item Name="Global" />
-					<item Name="Puppet" />
-					<item Name="Point Set" />
-					<item Name="Flag" />
-				</_field_char_enum>
-				<_field_string_id name="Object Name" />
-				<_field_long_integer name="Index!~" />
-				<_field_string_id name="Marker" />
-				<_field_real_point_3d name="Position" />
-				<_field_real_euler_angles_3d name="Rotation" />
-				<_field_real name="Scale" />
-				<_field_block_64 name="Player Data" max="1" guid="8e2771a3-4cd9-5760-b6d4-5eb613f5dbce">
-					<_field_char_enum name="Player Type">
-						<item Name="Multiplayer" />
-						<item Name="Campaign" />
-						<item Name="Dynamic" />
-					</_field_char_enum>
-					<_field_char_enum name="Multiplayer Team">
-						<item Name="defender" />
-						<item Name="attacker" />
-						<item Name="third party" />
-						<item Name="fourth party" />
-						<item Name="fifth party" />
-						<item Name="sixth party" />
-						<item Name="seventh party" />
-						<item Name="eighth party{eigth party}" />
-						<item Name="neutral" />
-					</_field_char_enum>
-					<_field_byte_flags name="Flags">
-						<item Name="UseWinningTeam" />
-						<item Name="ForgeIntroSpectator" />
-					</_field_byte_flags>
-					<_field_pad name="pad" length="1" />
-					<_field_long_integer name="Player Index" />
-					<_field_long_integer name="Forge Spectator Player Index" />
-				</_field_block_64>
-			</_field_block_64>
-			<_field_block_64 name="NodeGraph Events" max="10000" guid="00107580-ad56-2f53-0cd5-f78adfadbe93">
-				<_field_string_id name="Event Name" />
-				<_field_byte_flags name="Flags">
-					<item Name="Global Event" />
-				</_field_byte_flags>
-				<_field_pad name="PAD1!" length="3" />
-			</_field_block_64>
-			<_field_block_64 name="Game Engine Vignette Events" max="10000" guid="a43307fc-433e-f894-6539-998996066254">
-				<_field_string_id name="Event Name" />
-			</_field_block_64>
-			<_field_block_64 name="Camera Lens Dirt" max="10000" guid="acaf71ef-4cde-19bf-f1a7-17a464054636">
-				<_field_real name="Intensity" />
-				<_field_tag_reference_64 name="Dirt Texture" />
-				<_field_char_enum name="Dirt Type">
-					<item Name="Apply at bloom res" />
-					<item Name="Apply at full res" />
-				</_field_char_enum>
-				<_field_pad name="PAD1!" length="3" />
-			</_field_block_64>
-			<_field_block_64 name="Transform SubActions" max="10000" guid="272ff5e7-485c-980b-111e-47a49883114b">
-				<_field_byte_flags name="Flags">
-					<item Name="Position" />
-					<item Name="Rotation" />
-				</_field_byte_flags>
-				<_field_pad name="PAD1!" length="3" />
-				<_field_custom name="Point 1" />
-				<_field_struct name="Point 1" />
-				<_field_short_enum name="Type^">
-					<item Name="Current" />
-					<item Name="Object" />
-					<item Name="Point Set" />
-					<item Name="Flag" />
-					<item Name="Custom" />
-					<item Name="Scene Anchor" />
-					<item Name="Instance Anchor" />
-					<item Name="Nearest Player" />
-					<item Name="None" />
-				</_field_short_enum>
-				<_field_byte_flags name="Flags">
-					<item Name="Use Orientation" />
-					<item Name="Don't Stop" />
-				</_field_byte_flags>
-				<_field_char_enum name="Index Type!~">
-					<item Name="Name" />
-					<item Name="AI" />
-					<item Name="Global" />
-					<item Name="Puppet" />
-					<item Name="Point Set" />
-					<item Name="Flag" />
-				</_field_char_enum>
-				<_field_string_id name="Object Name" />
-				<_field_long_integer name="Index!~" />
-				<_field_string_id name="Marker" />
-				<_field_real_point_3d name="Position" />
-				<_field_real_euler_angles_3d name="Rotation" />
-				<_field_custom name="Point 2" />
-				<_field_struct name="Point 2" />
-				<_field_short_enum name="Type^">
-					<item Name="Current" />
-					<item Name="Object" />
-					<item Name="Point Set" />
-					<item Name="Flag" />
-					<item Name="Custom" />
-					<item Name="Scene Anchor" />
-					<item Name="Instance Anchor" />
-					<item Name="Nearest Player" />
-					<item Name="None" />
-				</_field_short_enum>
-				<_field_byte_flags name="Flags">
-					<item Name="Use Orientation" />
-					<item Name="Don't Stop" />
-				</_field_byte_flags>
-				<_field_char_enum name="Index Type!~">
-					<item Name="Name" />
-					<item Name="AI" />
-					<item Name="Global" />
-					<item Name="Puppet" />
-					<item Name="Point Set" />
-					<item Name="Flag" />
-				</_field_char_enum>
-				<_field_string_id name="Object Name" />
-				<_field_long_integer name="Index!~" />
-				<_field_string_id name="Marker" />
-				<_field_real_point_3d name="Position" />
-				<_field_real_euler_angles_3d name="Rotation" />
-				<_field_struct name="Mapping" />
-				<_field_data_64 name="data" />
-			</_field_block_64>
-		</_field_block_64>
-		<_field_struct name="Start Script!" />
-		<_field_string name="Script Name!" />
-		<_field_byte_flags name="Flags">
-			<item Name="Client" />
-			<item Name="HasAssociatedScript" />
-		</_field_byte_flags>
-		<_field_pad name="PAD1!" length="3" />
-		<_field_data_64 name="Data" />
-		<_field_dword_integer name="Script CRC!~" />
-		<_field_struct name="End Script!" />
-		<_field_string name="Script Name!" />
-		<_field_byte_flags name="Flags">
-			<item Name="Client" />
-			<item Name="HasAssociatedScript" />
-		</_field_byte_flags>
-		<_field_pad name="PAD1!" length="3" />
-		<_field_data_64 name="Data" />
-		<_field_dword_integer name="Script CRC!~" />
-	</_field_block_64>
-	<_field_block_64 name="Editor Tracks!" max="10000" guid="7f85191a-4cfd-bd66-0845-6ba90a1a2ef8">
-		<_field_long_string name="Comment" />
-		<_field_dword_integer name="Color" />
-		<_field_short_integer name="Height!" />
-		<_field_byte_flags name="Editor Flags!*">
-			<item Name="Muted" />
-			<item Name="Expanded" />
-			<item Name="Imported" />
-			<item Name="Playing" />
-			<item Name="Recording" />
-		</_field_byte_flags>
-		<_field_pad name="PAD1!" length="1" />
-		<_field_custom name="Start Script" />
-		<_field_struct name="Start Script" />
-		<_field_data_64 name="Data" />
-		<_field_dword_integer name="Script CRC!~" />
-		<_field_custom name="End Script" />
-		<_field_struct name="End Script" />
-		<_field_data_64 name="Data" />
-		<_field_dword_integer name="Script CRC!~" />
-	</_field_block_64>
-	<_field_block_64 name="Puppet Tracks!" max="10000" guid="d525f3d0-4f1e-67fa-244e-fd80998cbd55">
-		<_field_string_id name="Variant Name" />
-		<_field_string_id name="Object Attachment Name" />
-		<_field_struct name="Subject" />
-		<_field_string_id name="Object Name^" />
-		<_field_long_integer name="Index!~" />
-		<_field_char_enum name="Index Type!~">
-			<item Name="Name" />
-			<item Name="AI" />
-			<item Name="Global" />
-			<item Name="Puppet" />
-			<item Name="Point Set" />
-			<item Name="Flag" />
-		</_field_char_enum>
-		<_field_pad name="PAD1!" length="3" />
-		<_field_long_flags name="Flags">
-			<item Name="Optional" />
-			<item Name="Player" />
-			<item Name="deprecated" />
-			<item Name="Create If Missing" />
-			<item Name="Destroy When Finished" />
-			<item Name="Leave Show on Damage" />
-			<item Name="Leave Show on Alert" />
-			<item Name="Critical (abort the show when leaving)" />
-			<item Name="No Lightmap Shadow" />
-			<item Name="Apply Player Customization" />
-			<item Name="Apply First Person Player Customization" />
-			<item Name="Primary Hologram" />
-			<item Name="Pin Textures" />
-			<item Name="Never LOD{Never Imposter}" />
-			<item Name="Stow Weapon Immediately" />
-			<item Name="Cinematic Visibility" />
-			<item Name="Disable Physics" />
-			<item Name="ICS 3rd Person Camera" />
-			<item Name="Enable 3rd Person FOV" />
-			<item Name="Deathless" />
-			<item Name="Invincible" />
-			<item Name="AI Vehicle" />
-			<item Name="Preserve Velocity" />
-			<item Name="Muted" />
-		</_field_long_flags>
-		<_field_tag_reference_64 name="Type" validtags="bipd, char, ctrl, bloc, crea, efsc, gint, mach, scen, vehi, weap" />
-		<_field_block_64 name="Model Animation Graphs" max="8" guid="0466cb20-4bf3-4bd4-2b88-2f9de547283e">
+			</_field_struct>
+			<_field_long_flags name="Flags">
+				<item Name="Optional" />
+				<item Name="Player" />
+				<item Name="deprecated" />
+				<item Name="Create If Missing" />
+				<item Name="Destroy When Finished" />
+				<item Name="Leave Show on Damage" />
+				<item Name="Leave Show on Alert" />
+				<item Name="Critical (abort the show when leaving)" />
+				<item Name="No Lightmap Shadow" />
+				<item Name="Apply Player Customization" />
+				<item Name="Apply First Person Player Customization" />
+				<item Name="Primary Hologram" />
+				<item Name="Pin Textures" />
+				<item Name="Never LOD{Never Imposter}" />
+				<item Name="Stow Weapon Immediately" />
+				<item Name="Cinematic Visibility" />
+				<item Name="Disable Physics" />
+				<item Name="ICS 3rd Person Camera" />
+				<item Name="Enable 3rd Person FOV" />
+				<item Name="Deathless" />
+				<item Name="Invincible" />
+				<item Name="AI Vehicle" />
+				<item Name="Preserve Velocity" />
+				<item Name="Muted" />
+			</_field_long_flags>
 			<_field_tag_reference_64 name="Type" validtags="bipd, char, ctrl, bloc, crea, efsc, gint, mach, scen, vehi, weap" />
-			<_field_tag_reference_64 name="Model Animation Graph" />
+			<_field_block_64 name="Model Animation Graphs" max="8" srcguid="0466cb20-4bf3-4bd4-2b88-2f9de547283e" srcName="composerPuppetGraphBlock">
+				<_field_tag_reference_64 name="Type" validtags="bipd, char, ctrl, bloc, crea, efsc, gint, mach, scen, vehi, weap" />
+				<_field_tag_reference_64 name="Model Animation Graph" validtags="jmad" />
+			</_field_block_64>
+			<_field_pad name="pad" length="4" />
+			<_field_custom name="Position" />
+			<_field_struct name="Position" srcguid="37814d45-4b86-690a-5145-a184a8b1e89b">
+				<_field_short_enum name="Type^">
+					<item Name="Current" />
+					<item Name="Object" />
+					<item Name="Point Set" />
+					<item Name="Flag" />
+					<item Name="Custom" />
+					<item Name="Scene Anchor" />
+					<item Name="Instance Anchor" />
+					<item Name="Nearest Player" />
+					<item Name="None" />
+				</_field_short_enum>
+				<_field_byte_flags name="Flags">
+					<item Name="Use Orientation" />
+					<item Name="Don't Stop" />
+				</_field_byte_flags>
+				<_field_char_enum name="Index Type!~">
+					<item Name="Name" />
+					<item Name="AI" />
+					<item Name="Global" />
+					<item Name="Puppet" />
+					<item Name="Point Set" />
+					<item Name="Flag" />
+				</_field_char_enum>
+				<_field_string_id name="Object Name" />
+				<_field_long_integer name="Index!~" />
+				<_field_string_id name="Marker" />
+				<_field_real_point_3d name="Position" />
+				<_field_real_euler_angles_3d name="Rotation" />
+			</_field_struct>
+			<_field_block_64 name="Player Puppet Data" max="1" srcguid="8e2771a3-4cd9-5760-b6d4-5eb613f5dbce" srcName="composerPlayerDataBlock">
+				<_field_char_enum name="Player Type">
+					<item Name="Multiplayer" />
+					<item Name="Campaign" />
+					<item Name="Dynamic" />
+				</_field_char_enum>
+				<_field_char_enum name="Multiplayer Team">
+					<item Name="defender" />
+					<item Name="attacker" />
+					<item Name="third party" />
+					<item Name="fourth party" />
+					<item Name="fifth party" />
+					<item Name="sixth party" />
+					<item Name="seventh party" />
+					<item Name="eighth party{eigth party}" />
+					<item Name="neutral" />
+				</_field_char_enum>
+				<_field_byte_flags name="Flags">
+					<item Name="UseWinningTeam" />
+					<item Name="ForgeIntroSpectator" />
+				</_field_byte_flags>
+				<_field_pad name="pad" length="1" />
+				<_field_long_integer name="Player Index" />
+				<_field_long_integer name="Forge Spectator Player Index" />
+			</_field_block_64>
 		</_field_block_64>
-		<_field_pad name="pad" length="4" />
-		<_field_custom name="Position" />
-		<_field_struct name="Position" />
-		<_field_short_enum name="Type^">
-			<item Name="Current" />
-			<item Name="Object" />
-			<item Name="Point Set" />
-			<item Name="Flag" />
-			<item Name="Custom" />
-			<item Name="Scene Anchor" />
-			<item Name="Instance Anchor" />
-			<item Name="Nearest Player" />
-			<item Name="None" />
-		</_field_short_enum>
-		<_field_byte_flags name="Flags">
-			<item Name="Use Orientation" />
-			<item Name="Don't Stop" />
-		</_field_byte_flags>
-		<_field_char_enum name="Index Type!~">
-			<item Name="Name" />
-			<item Name="AI" />
-			<item Name="Global" />
-			<item Name="Puppet" />
-			<item Name="Point Set" />
-			<item Name="Flag" />
-		</_field_char_enum>
-		<_field_string_id name="Object Name" />
-		<_field_long_integer name="Index!~" />
-		<_field_string_id name="Marker" />
-		<_field_real_point_3d name="Position" />
-		<_field_real_euler_angles_3d name="Rotation" />
-		<_field_block_64 name="Player Puppet Data" max="1" guid="8e2771a3-4cd9-5760-b6d4-5eb613f5dbce">
-			<_field_char_enum name="Player Type">
-				<item Name="Multiplayer" />
-				<item Name="Campaign" />
-				<item Name="Dynamic" />
-			</_field_char_enum>
-			<_field_char_enum name="Multiplayer Team">
+		<_field_block_64 name="Camera Tracks!" max="9" srcguid="45fb2789-4558-fbf2-f8fc-dea39c2ed904" srcName="composerTrackCameraBlock">
+			<_field_tag_reference_64 name="Camera Animation Graph" validtags="camg" />
+			<_field_custom name="Position" />
+			<_field_struct name="Position" srcguid="37814d45-4b86-690a-5145-a184a8b1e89b">
+				<_field_short_enum name="Type^">
+					<item Name="Current" />
+					<item Name="Object" />
+					<item Name="Point Set" />
+					<item Name="Flag" />
+					<item Name="Custom" />
+					<item Name="Scene Anchor" />
+					<item Name="Instance Anchor" />
+					<item Name="Nearest Player" />
+					<item Name="None" />
+				</_field_short_enum>
+				<_field_byte_flags name="Flags">
+					<item Name="Use Orientation" />
+					<item Name="Don't Stop" />
+				</_field_byte_flags>
+				<_field_char_enum name="Index Type!~">
+					<item Name="Name" />
+					<item Name="AI" />
+					<item Name="Global" />
+					<item Name="Puppet" />
+					<item Name="Point Set" />
+					<item Name="Flag" />
+				</_field_char_enum>
+				<_field_string_id name="Object Name" />
+				<_field_long_integer name="Index!~" />
+				<_field_string_id name="Marker" />
+				<_field_real_point_3d name="Position" />
+				<_field_real_euler_angles_3d name="Rotation" />
+			</_field_struct>
+			<_field_char_enum name="Team Camera">
 				<item Name="defender" />
 				<item Name="attacker" />
 				<item Name="third party" />
@@ -904,64 +988,13 @@
 				<item Name="eighth party{eigth party}" />
 				<item Name="neutral" />
 			</_field_char_enum>
-			<_field_byte_flags name="Flags">
-				<item Name="UseWinningTeam" />
-				<item Name="ForgeIntroSpectator" />
-			</_field_byte_flags>
-			<_field_pad name="pad" length="1" />
-			<_field_long_integer name="Player Index" />
-			<_field_long_integer name="Forge Spectator Player Index" />
+			<_field_pad name="pad" length="3" />
 		</_field_block_64>
-	</_field_block_64>
-	<_field_block_64 name="Camera Tracks!" max="9" guid="45fb2789-4558-fbf2-f8fc-dea39c2ed904">
-		<_field_tag_reference_64 name="Camera Animation Graph" />
-		<_field_custom name="Position" />
-		<_field_struct name="Position" />
-		<_field_short_enum name="Type^">
-			<item Name="Current" />
-			<item Name="Object" />
-			<item Name="Point Set" />
-			<item Name="Flag" />
-			<item Name="Custom" />
-			<item Name="Scene Anchor" />
-			<item Name="Instance Anchor" />
-			<item Name="Nearest Player" />
-			<item Name="None" />
-		</_field_short_enum>
-		<_field_byte_flags name="Flags">
-			<item Name="Use Orientation" />
-			<item Name="Don't Stop" />
-		</_field_byte_flags>
-		<_field_char_enum name="Index Type!~">
-			<item Name="Name" />
-			<item Name="AI" />
-			<item Name="Global" />
-			<item Name="Puppet" />
-			<item Name="Point Set" />
-			<item Name="Flag" />
-		</_field_char_enum>
-		<_field_string_id name="Object Name" />
-		<_field_long_integer name="Index!~" />
-		<_field_string_id name="Marker" />
-		<_field_real_point_3d name="Position" />
-		<_field_real_euler_angles_3d name="Rotation" />
-		<_field_char_enum name="Team Camera">
-			<item Name="defender" />
-			<item Name="attacker" />
-			<item Name="third party" />
-			<item Name="fourth party" />
-			<item Name="fifth party" />
-			<item Name="sixth party" />
-			<item Name="seventh party" />
-			<item Name="eighth party{eigth party}" />
-			<item Name="neutral" />
-		</_field_char_enum>
-		<_field_pad name="pad" length="3" />
-	</_field_block_64>
-	<_field_block_64 name="Structure Lights" max="8" guid="598dbf5d-4568-b4c2-9739-978d805657aa">
-		<_field_tag_reference_64 name="Structure Light Reference" />
-		<_field_string_id name="Structure Light Name^" />
-	</_field_block_64>
-	<_field_long_integer name="lastActionId!" />
+		<_field_block_64 name="Structure Lights" max="8" srcguid="598dbf5d-4568-b4c2-9739-978d805657aa" srcName="composerSceneStructureLightBlockSchema">
+			<_field_tag_reference_64 name="Structure Light Reference" validtags="strl" />
+			<_field_string_id name="Structure Light Name^" />
+		</_field_block_64>
+		<_field_long_integer name="lastActionId!" />
+	</_field_struct>
 	<_field_pad name="pad_ctd_0!" length="4" />
 </plugin>

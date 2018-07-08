@@ -1,15 +1,16 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="Level UI Data" max="100" guid="0b5899e7-4f3d-175b-6513-b989ef29398a">
-		<_field_tag_reference_64 name="scenario" />
-		<_field_block_64 name="images" max="10" guid="887b2d7a-4b72-1aec-1429-fa9038116114">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="Level UI Data" max="100" srcguid="0b5899e7-4f3d-175b-6513-b989ef29398a" srcName="LevelDisplayInformationDefinition">
+		<_field_tag_reference_64 name="scenario" validtags="scnr" />
+		<_field_block_64 name="images" max="10" srcguid="887b2d7a-4b72-1aec-1429-fa9038116114" srcName="LevelImageBlockDefinition">
 			<_field_string_id name="image name" />
-			<_field_tag_reference_64 name="sprite" />
+			<_field_tag_reference_64 name="sprite" validtags="bitm" />
 			<_field_short_integer name="sprite index" />
 			<_field_pad name="pad0" length="2" />
 		</_field_block_64>

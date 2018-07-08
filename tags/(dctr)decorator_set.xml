@@ -1,22 +1,23 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_custom name="link to render model" />
 	<_field_explanation name="Render models:" />
-	<_field_tag_reference_64 name="Base{render model}*" />
-	<_field_tag_reference_64 name="Lod2{render model_lod1}*" />
-	<_field_tag_reference_64 name="Lod3{render model_lod2}*" />
-	<_field_tag_reference_64 name="Lod4{render model_lod3}*" />
-	<_field_block_64 name="render model instance names!" max="32767" guid="ba17da19-419a-1009-5213-5c87674b1cfe">
+	<_field_tag_reference_64 name="Base{render model}*" validtags="mode" />
+	<_field_tag_reference_64 name="Lod2{render model_lod1}*" validtags="mode" />
+	<_field_tag_reference_64 name="Lod3{render model_lod2}*" validtags="mode" />
+	<_field_tag_reference_64 name="Lod4{render model_lod3}*" validtags="mode" />
+	<_field_block_64 name="render model instance names!" max="32767" srcguid="ba17da19-419a-1009-5213-5c87674b1cfe" srcName="decorator_set_instance_name_block">
 		<_field_string_id name="name^" />
 	</_field_block_64>
 	<_field_long_integer name="render model instance name valid count!" />
-	<_field_tag_reference_64 name="texture" />
-	<_field_tag_reference_64 name="normal map" />
+	<_field_tag_reference_64 name="texture" validtags="bitm" />
+	<_field_tag_reference_64 name="normal map" validtags="bitm" />
 	<_field_explanation name="RENDERING">
 </_field_explanation>
 	<_field_byte_flags name="render flags">
@@ -40,10 +41,10 @@
 		<item Name="hanging" />
 	</_field_char_enum>
 	<_field_byte_integer name="version!" />
-	<_field_tag_reference_64 name="Base Shader{Shader}" />
-	<_field_tag_reference_64 name="Lod2 Shader" />
-	<_field_tag_reference_64 name="Lod3 Shader" />
-	<_field_tag_reference_64 name="Lod4 Shader" />
+	<_field_tag_reference_64 name="Base Shader{Shader}" validtags="mats" />
+	<_field_tag_reference_64 name="Lod2 Shader" validtags="mats" />
+	<_field_tag_reference_64 name="Lod3 Shader" validtags="mats" />
+	<_field_tag_reference_64 name="Lod4 Shader" validtags="mats" />
 	<_field_real name="decorator user parameter 0x{wavelength X}" />
 	<_field_real name="decorator user parameter 0y{wavelength Y}" />
 	<_field_real name="decorator user parameter 0z{wave speed}" />
@@ -87,9 +88,9 @@ in your level will cause the placed decorators to change types.
 
 DO NOT DELETE!  DO NOT INSERT!  OR YOUR PLACED DECORATORS WILL BE CHANGED!
 </_field_explanation>
-	<_field_block_64 name="decorator types" max="254" guid="02b61c35-4970-457e-50a0-11bb8ea1f82d">
+	<_field_block_64 name="decorator types" max="254" srcguid="02b61c35-4970-457e-50a0-11bb8ea1f82d" srcName="global_decorator_type_block">
 		<_field_long_integer name="index!" />
-		<_field_long_block_index name="mesh^" srcguid="ba17da19-419a-1009-5213-5c87674b1cfe" />
+		<_field_long_block_index name="mesh^" targetGuid="ba17da19-419a-1009-5213-5c87674b1cfe" targetName="decorator_set_instance_name_block" />
 		<_field_long_flags name="flags">
 			<item Name="only on ground" />
 			<item Name="random rotation" />

@@ -1,17 +1,19 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_tag_reference_64 name="bsp reference" />
-	<_field_block_64 name="material overrides" max="10240" guid="5e7d4a2f-4184-4913-032e-65b28599a9ab">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_tag_reference_64 name="bsp reference" validtags="sbsp" />
+	<_field_block_64 name="material overrides" max="10240" srcguid="5e7d4a2f-4184-4913-032e-65b28599a9ab" srcName="prefab_material_overrides_block_schema">
 		<_field_string_id name="material override variant name" />
-		<_field_block_64 name="material override entries" max="1023" guid="5e7d4a2e-4183-4913-022e-65b28499a9ab">
-			<_field_struct name="material override variants" />
-			<_field_tag_reference_64 name="original material" />
-			<_field_tag_reference_64 name="override material" />
+		<_field_block_64 name="material override entries" max="1023" srcguid="5e7d4a2e-4183-4913-022e-65b28499a9ab" srcName="prefab_material_override_entries_block_schema">
+			<_field_struct name="material override variants" srcguid="5e7d4a2d-4182-4913-012e-65b28399a9ab">
+				<_field_tag_reference_64 name="original material" validtags="mat " />
+				<_field_tag_reference_64 name="override material" validtags="mat " />
+			</_field_struct>
 		</_field_block_64>
 	</_field_block_64>
 	<_field_pad name="pad0" length="4" />

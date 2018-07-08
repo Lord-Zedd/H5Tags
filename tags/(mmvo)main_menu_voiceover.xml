@@ -1,12 +1,13 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="lines" max="100" guid="a2bd65ab-4ddf-8cf8-7c29-b4901b3ce54c">
-		<_field_tag_reference_64 name="sound^" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="lines" max="100" srcguid="a2bd65ab-4ddf-8cf8-7c29-b4901b3ce54c" srcName="main_menu_voiceover_lines_block">
+		<_field_tag_reference_64 name="sound^" validtags="snd!" />
 	</_field_block_64>
 	<_field_pad name="pad_tp" length="4" />
 </plugin>

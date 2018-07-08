@@ -1,10 +1,11 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_real name="VUI Timeout In Seconds" />
 	<_field_real name="VUI Leafnode Timeout In Seconds" />
 	<_field_real_fraction name="Default Confidence" />
@@ -12,15 +13,15 @@
 		<item Name="turn all vui off" />
 	</_field_byte_flags>
 	<_field_pad name="pad_tp" length="3" />
-	<_field_block_64 name="Speech Grammars" max="256" guid="fc828af6-4e08-806e-09d0-6184b486f845">
-		<_field_tag_reference_64 name="Speech Grammar" />
+	<_field_block_64 name="Speech Grammars" max="256" srcguid="fc828af6-4e08-806e-09d0-6184b486f845" srcName="SpeechGrammarBlock">
+		<_field_tag_reference_64 name="Speech Grammar" validtags="sggg" />
 	</_field_block_64>
-	<_field_tag_reference_64 name="localized errors" />
-	<_field_tag_reference_64 name="localized phrases" />
-	<_field_tag_reference_64 name="localized display text" />
-	<_field_tag_reference_64 name="localized needs text" />
-	<_field_tag_reference_64 name="localized locate text" />
-	<_field_tag_reference_64 name="localized orders text" />
-	<_field_tag_reference_64 name="default spotted effect#effect played on objects when they first become visible" />
+	<_field_tag_reference_64 name="localized errors" validtags="unic" />
+	<_field_tag_reference_64 name="localized phrases" validtags="unic" />
+	<_field_tag_reference_64 name="localized display text" validtags="unic" />
+	<_field_tag_reference_64 name="localized needs text" validtags="unic" />
+	<_field_tag_reference_64 name="localized locate text" validtags="unic" />
+	<_field_tag_reference_64 name="localized orders text" validtags="unic" />
+	<_field_tag_reference_64 name="default spotted effect#effect played on objects when they first become visible" validtags="effe" />
 	<_field_real name="default shimmer effect delay#how many seconds must you look at the object for the shimmer effect to play" />
 </plugin>

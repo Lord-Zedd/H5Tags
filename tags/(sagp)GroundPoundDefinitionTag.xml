@@ -1,243 +1,260 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_struct name="data" />
-	<_field_struct name="common ability parameters" />
-	<_field_long_flags name="flags">
-		<item Name="Use 3rd Person Camera When Active" />
-		<item Name="Hide Reticle When Active" />
-		<item Name="Is Motion Tracked (By Enemies) When Active" />
-		<item Name="One-Shot Activation Effect#Effect kills itself rather than being explicitly killed when the ability deactivates" />
-		<item Name="Can be activated when weapon state is relaxed" />
-		<item Name="Does Not Appear In Extended Motion Tracker Range" />
-	</_field_long_flags>
-	<_field_real_fraction name="activation energy cost#amount of energy required to activate the ability" />
-	<_field_real name="active energy consumption:energy/second#amount of energy consumed continuously while the ability is active" />
-	<_field_tag_reference_64 name="activation effect#effects triggered when player activates ability" />
-	<_field_long_flags name="ground pound flags">
-		<item Name="Limit Aim Vector Pitch When Charging" />
-		<item Name="Limit Aim Vector Pitch When Launching" />
-		<item Name="Limit Aim Vector Pitch When Exiting" />
-		<item Name="Aim At Biped Head" />
-		<item Name="Evading Breaks Aim Assist" />
-		<item Name="No Third Person Camera Until Valid Launch Position" />
-		<item Name="Must Land Again After Activating" />
-		<item Name="Always Cause AoE Damage" />
-		<item Name="Ignore AoE Damage If Direct Damage Applied" />
-		<item Name="Disable Soft Contacts" />
-		<item Name="Enable Weak Attacks" />
-		<item Name="Don't Render Aim Effect If RayCast Fails" />
-	</_field_long_flags>
-	<_field_real name="minimum height above floor#set to negative value to disable as 0 is used in the tag post-process to set a default" />
-	<_field_explanation name="Stabilization/Charge up">Parameters used for the charge up phase. Note that some fields are not used (energy related ones and the cooldown timer)</_field_explanation>
-	<_field_struct name="stabilizer definition" />
-	<_field_struct name="common ability parameters" />
-	<_field_long_flags name="flags">
-		<item Name="Use 3rd Person Camera When Active" />
-		<item Name="Hide Reticle When Active" />
-		<item Name="Is Motion Tracked (By Enemies) When Active" />
-		<item Name="One-Shot Activation Effect#Effect kills itself rather than being explicitly killed when the ability deactivates" />
-		<item Name="Can be activated when weapon state is relaxed" />
-		<item Name="Does Not Appear In Extended Motion Tracker Range" />
-	</_field_long_flags>
-	<_field_real_fraction name="activation energy cost#amount of energy required to activate the ability" />
-	<_field_real name="active energy consumption:energy/second#amount of energy consumed continuously while the ability is active" />
-	<_field_tag_reference_64 name="activation effect#effects triggered when player activates ability" />
-	<_field_long_flags name="flags">
-		<item Name="Toggle stabilizer off if activated with ADS active" />
-		<item Name="Must land again after activating" />
-		<item Name="Auto activate only if already in the air" />
-	</_field_long_flags>
-	<_field_real name="minimum height above floor#set to negative value to disable as 0 is used in the tag post-process to set a default" />
-	<_field_real name="activation deceleration:[0.01,+inf] wu/s per sec#Rate at which the player decelerates after activating the stabilizer" />
-	<_field_real name="stall duration:[0.01,+inf] seconds#Duration that the player remains completely stalled in mid air before starting to fall again" />
-	<_field_real name="time limit:seconds#Max time Stabilizer can remain active for a single burst.  Set to 0.0 if you want infinite." />
-	<_field_custom name="malleable time limit::seconds#Max time stabilizer can remain active for a single burst. Set to 0.0 if you want infinite. Ensure that the activation effect can persist for this duration." />
-	<_field_struct name="malleable time limit::seconds#Max time stabilizer can remain active for a single burst. Set to 0.0 if you want infinite. Ensure that the activation effect can persist for this duration." />
-	<_field_real name="Base Value" />
-	<_field_real_bounds name="Value Bounds" />
-	<_field_char_enum name="Combiner">
-		<item Name="sequential#applies the percentages one after another on the base" />
-		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
-		<item Name="addition#adds on all of the modifiers to the base" />
-		<item Name="product#multiplies the values one after another on to the base" />
-	</_field_char_enum>
-	<_field_pad name="padEnd" length="3" />
-	<_field_real name="cooldown:seconds#How much time must pass after deactivation before you can activate again." />
-	<_field_real name="time scale#Time scale applied to velocity after stall duration" />
-	<_field_custom name="malleable time scale#Time scale applied to velocity after stall duration" />
-	<_field_struct name="malleable time scale#Time scale applied to velocity after stall duration" />
-	<_field_real name="Base Value" />
-	<_field_real_bounds name="Value Bounds" />
-	<_field_char_enum name="Combiner">
-		<item Name="sequential#applies the percentages one after another on the base" />
-		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
-		<item Name="addition#adds on all of the modifiers to the base" />
-		<item Name="product#multiplies the values one after another on to the base" />
-	</_field_char_enum>
-	<_field_pad name="padEnd" length="3" />
-	<_field_real name="max horizontal speed:wu/s [0,+inf]#max horizontal speed while stabilizer is active" />
-	<_field_struct name="vertical speed boost at exit:wu/s#adds this on to the player vertical velocity, based on normalized time spent stabilizing" />
-	<_field_data_64 name="data" />
-	<_field_tag_reference_64 name="rumble" />
-	<_field_explanation name="Charge Up Settings" />
-	<_field_real name="charge up delay:seconds#how long to hold the button before activation and the stabilizer kicks in" />
-	<_field_real name="charge up min time:seconds#must charge for longer than this to initiate ground pound" />
-	<_field_real name="charge up auto release time:seconds#once the charge up reaches this time, the ground pound will automatically trigger (use 0 for infinite hold)" />
-	<_field_custom name="charge up min time scale#scales the charge up min time" />
-	<_field_struct name="charge up min time scale#scales the charge up min time" />
-	<_field_real name="Base Value" />
-	<_field_real_bounds name="Value Bounds" />
-	<_field_char_enum name="Combiner">
-		<item Name="sequential#applies the percentages one after another on the base" />
-		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
-		<item Name="addition#adds on all of the modifiers to the base" />
-		<item Name="product#multiplies the values one after another on to the base" />
-	</_field_char_enum>
-	<_field_pad name="padEnd" length="3" />
-	<_field_custom name="charge up auto release time scale#scales the charge up auto release time" />
-	<_field_struct name="charge up auto release time scale#scales the charge up auto release time" />
-	<_field_real name="Base Value" />
-	<_field_real_bounds name="Value Bounds" />
-	<_field_char_enum name="Combiner">
-		<item Name="sequential#applies the percentages one after another on the base" />
-		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
-		<item Name="addition#adds on all of the modifiers to the base" />
-		<item Name="product#multiplies the values one after another on to the base" />
-	</_field_char_enum>
-	<_field_pad name="padEnd" length="3" />
-	<_field_real_fraction name="charge up damage acceleration scalar#reduces the amount of acceleration applied when stabilizing during the charge up stage (default is 0.5)" />
-	<_field_explanation name="Launch" />
-	<_field_tag_reference_64 name="launch ready effect#played as soon as the player is able to launch" />
-	<_field_tag_reference_64 name="launch post ready effect#played between the launch ready and the launch (see fraction below)" />
-	<_field_real_fraction name="launch post ready effect activation fraction#how far between ready and auto-launch to play this effect" />
-	<_field_real_fraction name="launch activation energy cost#amount of energy required to activate the ability (need this much to start even charging up)" />
-	<_field_tag_reference_64 name="launch effect#this obeys the one-shot flag in the common ability parameters at the top" />
-	<_field_tag_reference_64 name="launch fail effect#used in latch mode if the fail flag is set when trying tp launch" />
-	<_field_real name="launch continuous rumble loop time#continuous rumble fraction = (flight_time % loop_time) / loop_time" />
-	<_field_tag_reference_64 name="launch continuous rumble" />
-	<_field_explanation name="Aiming" />
-	<_field_tag_reference_64 name="aim effect" />
-	<_field_long_enum name="aim vector fail selector">
-		<item Name="Off" />
-		<item Name="DistanceXYZ" />
-		<item Name="DistanceZ" />
-	</_field_long_enum>
-	<_field_real name="aim effect min fail display time:seconds" />
-	<_field_real name="aim vector fail distance:world units#depends on the selector above" />
-	<_field_real name="aim vector fail early time:seconds#if &gt; 0 then having a fail reticle for longer than this will cause a fail and exit early" />
-	<_field_real name="aim vector ray cast distance:world units" />
-	<_field_angle name="aim vector camera pitch limit:[-90,90]#allows us to control the camera pitch limit independently from the actual aim vector pitch limit" />
-	<_field_angle name="aim vector pitch limit{pound aim vector pitch required}:[-90,90]#this defines the cone at which the pound direction can be aimed at" />
-	<_field_angle name="aim vector pitch adjustment limit:[-90,90]#'aim vector pitch limit' will be adjusted to account for gravity after which do not let the new value go above this" />
-	<_field_real name="aim vector interpolation seconds (charging):seconds#Used if the 'Limit Aim Vector Pitch When Charging' flag is set." />
-	<_field_real name="aim vector interpolation seconds (launching):seconds#Used if the 'Limit Aim Vector Pitch When Launching' flag is set." />
-	<_field_real name="aim vector interpolation seconds (exiting):seconds#Used if the 'Limit Aim Vector Pitch When Exiting' flag is set." />
-	<_field_real name="aim vector interpolation exit stage time limit:seconds#If &gt; 0 will stop applying the limit after this amount of time in the exit stage to give player control back earlier." />
-	<_field_explanation name="Collision" />
-	<_field_real name="hit sphere initial offset z:wu#adjusts the start position above the biped origin by this much before offsetting along the pound direction (default = 0.2)" />
-	<_field_real name="hit sphere offset:wu#how much further long the pound direction the hit sphere should be placed relative to the character origin (default = 0.25)" />
-	<_field_real name="hit sphere radius:wu#(default = 0.2)" />
-	<_field_real name="hit sphere start point offset:wu#how far back from the sphere position to start the moving sphere hit test (should be positive, default = 0.25)" />
-	<_field_explanation name="Motion" />
-	<_field_angle name="max slope angle:degrees#the maximum floor plane angle that will be considered to allow a switch from falling to pounding" />
-	<_field_angle name="max opposing contact angle:degrees#pound if the angle between the negated pound direction and the contact normal is less than this" />
-	<_field_real name="pound fall speed:wu/s [0.01,+inf]#Speed at which the character moves during the Ground Pound" />
-	<_field_custom name="pound fall speed (malleable):wu/s#Speed at which the character moves during the Ground Pound" />
-	<_field_struct name="pound fall speed (malleable):wu/s#Speed at which the character moves during the Ground Pound" />
-	<_field_real name="Base Value" />
-	<_field_real_bounds name="Value Bounds" />
-	<_field_char_enum name="Combiner">
-		<item Name="sequential#applies the percentages one after another on the base" />
-		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
-		<item Name="addition#adds on all of the modifiers to the base" />
-		<item Name="product#multiplies the values one after another on to the base" />
-	</_field_char_enum>
-	<_field_pad name="padEnd" length="3" />
-	<_field_real name="pound fall duration:seconds [0.01,+inf]#Duration that the Ground Pound fall will last" />
-	<_field_real name="pound hit duration:seconds [0.0,+inf]#Duration that the Ground Pound hit will last" />
-	<_field_real name="pound exit no collision damage duration:seconds [0.0,+inf]#How long to prevent collision damage (most likely as a result of the pound) during the exit (default = 0.3)" />
-	<_field_explanation name="Impact" />
-	<_field_real name="aoe contact offset:wu#How much to lift the contact point up from the normal (too close to the floor can cause the line of sight checks to fail)" />
-	<_field_real name="aoe force offset z:wu#How much to adjust the source position for determining the aoe force direction (applied after the line of sight checks, negative value will cause objects to fly up more)" />
-	<_field_custom name="knockback scalar#scales knockback (instantaneous acceleration) effects caused by ground pound" />
-	<_field_struct name="knockback scalar#scales knockback (instantaneous acceleration) effects caused by ground pound" />
-	<_field_real name="Base Value" />
-	<_field_real_bounds name="Value Bounds" />
-	<_field_char_enum name="Combiner">
-		<item Name="sequential#applies the percentages one after another on the base" />
-		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
-		<item Name="addition#adds on all of the modifiers to the base" />
-		<item Name="product#multiplies the values one after another on to the base" />
-	</_field_char_enum>
-	<_field_pad name="padEnd" length="3" />
-	<_field_custom name="pound ground damage scalar#scales damage caused by pound object and pound ground damage effects" />
-	<_field_struct name="pound ground damage scalar#scales damage caused by pound object and pound ground damage effects" />
-	<_field_real name="Base Value" />
-	<_field_real_bounds name="Value Bounds" />
-	<_field_char_enum name="Combiner">
-		<item Name="sequential#applies the percentages one after another on the base" />
-		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
-		<item Name="addition#adds on all of the modifiers to the base" />
-		<item Name="product#multiplies the values one after another on to the base" />
-	</_field_char_enum>
-	<_field_pad name="padEnd" length="3" />
-	<_field_custom name="pound ground aoe radius scalar#scales the aoe radius of the pound ground damage effect" />
-	<_field_struct name="pound ground aoe radius scalar#scales the aoe radius of the pound ground damage effect" />
-	<_field_real name="Base Value" />
-	<_field_real_bounds name="Value Bounds" />
-	<_field_char_enum name="Combiner">
-		<item Name="sequential#applies the percentages one after another on the base" />
-		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
-		<item Name="addition#adds on all of the modifiers to the base" />
-		<item Name="product#multiplies the values one after another on to the base" />
-	</_field_char_enum>
-	<_field_pad name="padEnd" length="3" />
-	<_field_explanation name="Damage effects (regular)" />
-	<_field_tag_reference_64 name="pound object damage effect#Damage effect applied to an object that gets pounded" />
-	<_field_tag_reference_64 name="pound object clang damage effect#Damage effect applied to an object that gets pounded" />
-	<_field_tag_reference_64 name="pound ground damage effect#Damage effect applied when character pounds ground" />
-	<_field_tag_reference_64 name="pound ground clang damage effect#Damage effect applied when character pounds ground" />
-	<_field_tag_reference_64 name="pound object instigator effect#applied to character that performed the ground pound to generate rumble and other such effects when hitting an object" />
-	<_field_tag_reference_64 name="pound ground instigator effect#applied to character that performed the ground pound to generate rumble and other such effects when hitting the ground" />
-	<_field_explanation name="Damage effects (weak)" />
-	<_field_tag_reference_64 name="pound object damage effect (weak)#Damage effect applied to an object that gets pounded" />
-	<_field_tag_reference_64 name="pound object clang damage effect (weak)#Damage effect applied to an object that gets pounded" />
-	<_field_tag_reference_64 name="pound ground damage effect (weak)#Damage effect applied when character pounds ground" />
-	<_field_tag_reference_64 name="pound ground clang damage effect (weak)#Damage effect applied when character pounds ground" />
-	<_field_tag_reference_64 name="pound object instigator effect (weak)#applied to character that performed the ground pound to generate rumble and other such effects when hitting an object" />
-	<_field_tag_reference_64 name="pound ground instigator effect (weak)#applied to character that performed the ground pound to generate rumble and other such effects when hitting the ground" />
-	<_field_real name="time to switch from weak to regular:seconds#switch to regular damage from weak after flying for this long (set to zero to disable this feature)" />
-	<_field_explanation name="Animations" />
-	<_field_string_id name="pound fall animation#animation played when the Ground Pound is triggered" />
-	<_field_string_id name="pound fall exit animation#animation played when ground pound fall duration times out or player goes below fall speed maintenance)" />
-	<_field_string_id name="pound hit animation#animation played when the character pounds something" />
-	<_field_string_id name="pound hit exit animation#animation played when the character exits pound hit" />
-	<_field_short_enum name="pound hit AI sound level#intensity of AI sound notification">
-		<item Name="silent#ai will not respond to this sound" />
-		<item Name="quiet" />
-		<item Name="medium" />
-		<item Name="shout" />
-		<item Name="loud#ai can hear this sound at any range" />
-	</_field_short_enum>
-	<_field_pad name="pad0" length="2" />
-	<_field_explanation name="Aim Assist" />
-	<_field_angle name="auto aim angle:degrees#the maximum angle that auto aim works at full strength" />
-	<_field_real name="auto aim range:world units#the maximum distance that auto aim works at full strength" />
-	<_field_real name="auto aim falloff range:world units#at what point the auto aim starts falling off" />
-	<_field_real name="auto aim near falloff range:world units#at what point the auto aim reaches full power" />
-	<_field_angle name="magnetism angle:degrees#the maximum angle that magnetism works at full strength" />
-	<_field_real name="magnetism range:world units#the maximum distance that magnetism works at full strength" />
-	<_field_real name="magnetism falloff range:world units#at what point magnetism starts falling off" />
-	<_field_real name="magnetism near falloff range:world units#at what point magnetism reaches full power" />
-	<_field_angle name="maximum assist angular velocity:degrees/second#maximum angular velocity that can be introduced by the assist system" />
-	<_field_explanation name="FOV delta function (charge up)">Use this curve to define how the FOV is modified while the character is charging up ground pound. The x axis measures time from the beginning of the charge up to the min charge up time. Y axis is the amount (in degrees) that the FOV is modified at the given time. Remember that you want a negative number to shrink the FOV.</_field_explanation>
-	<_field_struct name="FOV delta function charge up" />
-	<_field_data_64 name="data" />
-	<_field_real_fraction name="looks speed scalar (charge up)" />
-	<_field_real_fraction name="looks speed scalar (launched)" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_struct name="data" srcguid="7adc9e70-4eae-8162-991e-6e94c1b25cc9">
+		<_field_struct name="common ability parameters" srcguid="a0b1eff4-483c-d954-d47d-f188cdebb4f0">
+			<_field_long_flags name="flags">
+				<item Name="Use 3rd Person Camera When Active" />
+				<item Name="Hide Reticle When Active" />
+				<item Name="Is Motion Tracked (By Enemies) When Active" />
+				<item Name="One-Shot Activation Effect#Effect kills itself rather than being explicitly killed when the ability deactivates" />
+				<item Name="Can be activated when weapon state is relaxed" />
+				<item Name="Does Not Appear In Extended Motion Tracker Range" />
+			</_field_long_flags>
+			<_field_real_fraction name="activation energy cost#amount of energy required to activate the ability" />
+			<_field_real name="active energy consumption:energy/second#amount of energy consumed continuously while the ability is active" />
+			<_field_tag_reference_64 name="activation effect#effects triggered when player activates ability" validtags="effe" />
+		</_field_struct>
+		<_field_long_flags name="ground pound flags">
+			<item Name="Limit Aim Vector Pitch When Charging" />
+			<item Name="Limit Aim Vector Pitch When Launching" />
+			<item Name="Limit Aim Vector Pitch When Exiting" />
+			<item Name="Aim At Biped Head" />
+			<item Name="Evading Breaks Aim Assist" />
+			<item Name="No Third Person Camera Until Valid Launch Position" />
+			<item Name="Must Land Again After Activating" />
+			<item Name="Always Cause AoE Damage" />
+			<item Name="Ignore AoE Damage If Direct Damage Applied" />
+			<item Name="Disable Soft Contacts" />
+			<item Name="Enable Weak Attacks" />
+			<item Name="Don't Render Aim Effect If RayCast Fails" />
+		</_field_long_flags>
+		<_field_real name="minimum height above floor#set to negative value to disable as 0 is used in the tag post-process to set a default" />
+		<_field_explanation name="Stabilization/Charge up">Parameters used for the charge up phase. Note that some fields are not used (energy related ones and the cooldown timer)</_field_explanation>
+		<_field_struct name="stabilizer definition" srcguid="6e6506a6-45d5-6d23-5d7e-fa8e5babfafb">
+			<_field_struct name="common ability parameters" srcguid="a0b1eff4-483c-d954-d47d-f188cdebb4f0">
+				<_field_long_flags name="flags">
+					<item Name="Use 3rd Person Camera When Active" />
+					<item Name="Hide Reticle When Active" />
+					<item Name="Is Motion Tracked (By Enemies) When Active" />
+					<item Name="One-Shot Activation Effect#Effect kills itself rather than being explicitly killed when the ability deactivates" />
+					<item Name="Can be activated when weapon state is relaxed" />
+					<item Name="Does Not Appear In Extended Motion Tracker Range" />
+				</_field_long_flags>
+				<_field_real_fraction name="activation energy cost#amount of energy required to activate the ability" />
+				<_field_real name="active energy consumption:energy/second#amount of energy consumed continuously while the ability is active" />
+				<_field_tag_reference_64 name="activation effect#effects triggered when player activates ability" validtags="effe" />
+			</_field_struct>
+			<_field_long_flags name="flags">
+				<item Name="Toggle stabilizer off if activated with ADS active" />
+				<item Name="Must land again after activating" />
+				<item Name="Auto activate only if already in the air" />
+			</_field_long_flags>
+			<_field_real name="minimum height above floor#set to negative value to disable as 0 is used in the tag post-process to set a default" />
+			<_field_real name="activation deceleration:[0.01,+inf] wu/s per sec#Rate at which the player decelerates after activating the stabilizer" />
+			<_field_real name="stall duration:[0.01,+inf] seconds#Duration that the player remains completely stalled in mid air before starting to fall again" />
+			<_field_real name="time limit:seconds#Max time Stabilizer can remain active for a single burst.  Set to 0.0 if you want infinite." />
+			<_field_custom name="malleable time limit::seconds#Max time stabilizer can remain active for a single burst. Set to 0.0 if you want infinite. Ensure that the activation effect can persist for this duration." />
+			<_field_struct name="malleable time limit::seconds#Max time stabilizer can remain active for a single burst. Set to 0.0 if you want infinite. Ensure that the activation effect can persist for this duration." srcguid="f8d8b4a1-40e6-db63-bb8c-ea978b2eae63">
+				<_field_real name="Base Value" />
+				<_field_real_bounds name="Value Bounds" />
+				<_field_char_enum name="Combiner">
+					<item Name="sequential#applies the percentages one after another on the base" />
+					<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+					<item Name="addition#adds on all of the modifiers to the base" />
+					<item Name="product#multiplies the values one after another on to the base" />
+				</_field_char_enum>
+				<_field_pad name="padEnd" length="3" />
+			</_field_struct>
+			<_field_real name="cooldown:seconds#How much time must pass after deactivation before you can activate again." />
+			<_field_real name="time scale#Time scale applied to velocity after stall duration" />
+			<_field_custom name="malleable time scale#Time scale applied to velocity after stall duration" />
+			<_field_struct name="malleable time scale#Time scale applied to velocity after stall duration" srcguid="f8d8b4a1-40e6-db63-bb8c-ea978b2eae63">
+				<_field_real name="Base Value" />
+				<_field_real_bounds name="Value Bounds" />
+				<_field_char_enum name="Combiner">
+					<item Name="sequential#applies the percentages one after another on the base" />
+					<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+					<item Name="addition#adds on all of the modifiers to the base" />
+					<item Name="product#multiplies the values one after another on to the base" />
+				</_field_char_enum>
+				<_field_pad name="padEnd" length="3" />
+			</_field_struct>
+			<_field_real name="max horizontal speed:wu/s [0,+inf]#max horizontal speed while stabilizer is active" />
+			<_field_struct name="vertical speed boost at exit:wu/s#adds this on to the player vertical velocity, based on normalized time spent stabilizing" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+				<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+					<_field_data_64 name="data" />
+				</_field_struct>
+			</_field_struct>
+			<_field_tag_reference_64 name="rumble" validtags="rmbl" />
+		</_field_struct>
+		<_field_explanation name="Charge Up Settings" />
+		<_field_real name="charge up delay:seconds#how long to hold the button before activation and the stabilizer kicks in" />
+		<_field_real name="charge up min time:seconds#must charge for longer than this to initiate ground pound" />
+		<_field_real name="charge up auto release time:seconds#once the charge up reaches this time, the ground pound will automatically trigger (use 0 for infinite hold)" />
+		<_field_custom name="charge up min time scale#scales the charge up min time" />
+		<_field_struct name="charge up min time scale#scales the charge up min time" srcguid="f8d8b4a1-40e6-db63-bb8c-ea978b2eae63">
+			<_field_real name="Base Value" />
+			<_field_real_bounds name="Value Bounds" />
+			<_field_char_enum name="Combiner">
+				<item Name="sequential#applies the percentages one after another on the base" />
+				<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+				<item Name="addition#adds on all of the modifiers to the base" />
+				<item Name="product#multiplies the values one after another on to the base" />
+			</_field_char_enum>
+			<_field_pad name="padEnd" length="3" />
+		</_field_struct>
+		<_field_custom name="charge up auto release time scale#scales the charge up auto release time" />
+		<_field_struct name="charge up auto release time scale#scales the charge up auto release time" srcguid="f8d8b4a1-40e6-db63-bb8c-ea978b2eae63">
+			<_field_real name="Base Value" />
+			<_field_real_bounds name="Value Bounds" />
+			<_field_char_enum name="Combiner">
+				<item Name="sequential#applies the percentages one after another on the base" />
+				<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+				<item Name="addition#adds on all of the modifiers to the base" />
+				<item Name="product#multiplies the values one after another on to the base" />
+			</_field_char_enum>
+			<_field_pad name="padEnd" length="3" />
+		</_field_struct>
+		<_field_real_fraction name="charge up damage acceleration scalar#reduces the amount of acceleration applied when stabilizing during the charge up stage (default is 0.5)" />
+		<_field_explanation name="Launch" />
+		<_field_tag_reference_64 name="launch ready effect#played as soon as the player is able to launch" validtags="effe" />
+		<_field_tag_reference_64 name="launch post ready effect#played between the launch ready and the launch (see fraction below)" validtags="effe" />
+		<_field_real_fraction name="launch post ready effect activation fraction#how far between ready and auto-launch to play this effect" />
+		<_field_real_fraction name="launch activation energy cost#amount of energy required to activate the ability (need this much to start even charging up)" />
+		<_field_tag_reference_64 name="launch effect#this obeys the one-shot flag in the common ability parameters at the top" validtags="effe" />
+		<_field_tag_reference_64 name="launch fail effect#used in latch mode if the fail flag is set when trying tp launch" validtags="effe" />
+		<_field_real name="launch continuous rumble loop time#continuous rumble fraction = (flight_time % loop_time) / loop_time" />
+		<_field_tag_reference_64 name="launch continuous rumble" validtags="rmbl" />
+		<_field_explanation name="Aiming" />
+		<_field_tag_reference_64 name="aim effect" validtags="effe" />
+		<_field_long_enum name="aim vector fail selector">
+			<item Name="Off" />
+			<item Name="DistanceXYZ" />
+			<item Name="DistanceZ" />
+		</_field_long_enum>
+		<_field_real name="aim effect min fail display time:seconds" />
+		<_field_real name="aim vector fail distance:world units#depends on the selector above" />
+		<_field_real name="aim vector fail early time:seconds#if &gt; 0 then having a fail reticle for longer than this will cause a fail and exit early" />
+		<_field_real name="aim vector ray cast distance:world units" />
+		<_field_angle name="aim vector camera pitch limit:[-90,90]#allows us to control the camera pitch limit independently from the actual aim vector pitch limit" />
+		<_field_angle name="aim vector pitch limit{pound aim vector pitch required}:[-90,90]#this defines the cone at which the pound direction can be aimed at" />
+		<_field_angle name="aim vector pitch adjustment limit:[-90,90]#'aim vector pitch limit' will be adjusted to account for gravity after which do not let the new value go above this" />
+		<_field_real name="aim vector interpolation seconds (charging):seconds#Used if the 'Limit Aim Vector Pitch When Charging' flag is set." />
+		<_field_real name="aim vector interpolation seconds (launching):seconds#Used if the 'Limit Aim Vector Pitch When Launching' flag is set." />
+		<_field_real name="aim vector interpolation seconds (exiting):seconds#Used if the 'Limit Aim Vector Pitch When Exiting' flag is set." />
+		<_field_real name="aim vector interpolation exit stage time limit:seconds#If &gt; 0 will stop applying the limit after this amount of time in the exit stage to give player control back earlier." />
+		<_field_explanation name="Collision" />
+		<_field_real name="hit sphere initial offset z:wu#adjusts the start position above the biped origin by this much before offsetting along the pound direction (default = 0.2)" />
+		<_field_real name="hit sphere offset:wu#how much further long the pound direction the hit sphere should be placed relative to the character origin (default = 0.25)" />
+		<_field_real name="hit sphere radius:wu#(default = 0.2)" />
+		<_field_real name="hit sphere start point offset:wu#how far back from the sphere position to start the moving sphere hit test (should be positive, default = 0.25)" />
+		<_field_explanation name="Motion" />
+		<_field_angle name="max slope angle:degrees#the maximum floor plane angle that will be considered to allow a switch from falling to pounding" />
+		<_field_angle name="max opposing contact angle:degrees#pound if the angle between the negated pound direction and the contact normal is less than this" />
+		<_field_real name="pound fall speed:wu/s [0.01,+inf]#Speed at which the character moves during the Ground Pound" />
+		<_field_custom name="pound fall speed (malleable):wu/s#Speed at which the character moves during the Ground Pound" />
+		<_field_struct name="pound fall speed (malleable):wu/s#Speed at which the character moves during the Ground Pound" srcguid="f8d8b4a1-40e6-db63-bb8c-ea978b2eae63">
+			<_field_real name="Base Value" />
+			<_field_real_bounds name="Value Bounds" />
+			<_field_char_enum name="Combiner">
+				<item Name="sequential#applies the percentages one after another on the base" />
+				<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+				<item Name="addition#adds on all of the modifiers to the base" />
+				<item Name="product#multiplies the values one after another on to the base" />
+			</_field_char_enum>
+			<_field_pad name="padEnd" length="3" />
+		</_field_struct>
+		<_field_real name="pound fall duration:seconds [0.01,+inf]#Duration that the Ground Pound fall will last" />
+		<_field_real name="pound hit duration:seconds [0.0,+inf]#Duration that the Ground Pound hit will last" />
+		<_field_real name="pound exit no collision damage duration:seconds [0.0,+inf]#How long to prevent collision damage (most likely as a result of the pound) during the exit (default = 0.3)" />
+		<_field_explanation name="Impact" />
+		<_field_real name="aoe contact offset:wu#How much to lift the contact point up from the normal (too close to the floor can cause the line of sight checks to fail)" />
+		<_field_real name="aoe force offset z:wu#How much to adjust the source position for determining the aoe force direction (applied after the line of sight checks, negative value will cause objects to fly up more)" />
+		<_field_custom name="knockback scalar#scales knockback (instantaneous acceleration) effects caused by ground pound" />
+		<_field_struct name="knockback scalar#scales knockback (instantaneous acceleration) effects caused by ground pound" srcguid="f8d8b4a1-40e6-db63-bb8c-ea978b2eae63">
+			<_field_real name="Base Value" />
+			<_field_real_bounds name="Value Bounds" />
+			<_field_char_enum name="Combiner">
+				<item Name="sequential#applies the percentages one after another on the base" />
+				<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+				<item Name="addition#adds on all of the modifiers to the base" />
+				<item Name="product#multiplies the values one after another on to the base" />
+			</_field_char_enum>
+			<_field_pad name="padEnd" length="3" />
+		</_field_struct>
+		<_field_custom name="pound ground damage scalar#scales damage caused by pound object and pound ground damage effects" />
+		<_field_struct name="pound ground damage scalar#scales damage caused by pound object and pound ground damage effects" srcguid="f8d8b4a1-40e6-db63-bb8c-ea978b2eae63">
+			<_field_real name="Base Value" />
+			<_field_real_bounds name="Value Bounds" />
+			<_field_char_enum name="Combiner">
+				<item Name="sequential#applies the percentages one after another on the base" />
+				<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+				<item Name="addition#adds on all of the modifiers to the base" />
+				<item Name="product#multiplies the values one after another on to the base" />
+			</_field_char_enum>
+			<_field_pad name="padEnd" length="3" />
+		</_field_struct>
+		<_field_custom name="pound ground aoe radius scalar#scales the aoe radius of the pound ground damage effect" />
+		<_field_struct name="pound ground aoe radius scalar#scales the aoe radius of the pound ground damage effect" srcguid="f8d8b4a1-40e6-db63-bb8c-ea978b2eae63">
+			<_field_real name="Base Value" />
+			<_field_real_bounds name="Value Bounds" />
+			<_field_char_enum name="Combiner">
+				<item Name="sequential#applies the percentages one after another on the base" />
+				<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+				<item Name="addition#adds on all of the modifiers to the base" />
+				<item Name="product#multiplies the values one after another on to the base" />
+			</_field_char_enum>
+			<_field_pad name="padEnd" length="3" />
+		</_field_struct>
+		<_field_explanation name="Damage effects (regular)" />
+		<_field_tag_reference_64 name="pound object damage effect#Damage effect applied to an object that gets pounded" validtags="jpt!" />
+		<_field_tag_reference_64 name="pound object clang damage effect#Damage effect applied to an object that gets pounded" validtags="jpt!" />
+		<_field_tag_reference_64 name="pound ground damage effect#Damage effect applied when character pounds ground" validtags="jpt!" />
+		<_field_tag_reference_64 name="pound ground clang damage effect#Damage effect applied when character pounds ground" validtags="jpt!" />
+		<_field_tag_reference_64 name="pound object instigator effect#applied to character that performed the ground pound to generate rumble and other such effects when hitting an object" validtags="effe" />
+		<_field_tag_reference_64 name="pound ground instigator effect#applied to character that performed the ground pound to generate rumble and other such effects when hitting the ground" validtags="effe" />
+		<_field_explanation name="Damage effects (weak)" />
+		<_field_tag_reference_64 name="pound object damage effect (weak)#Damage effect applied to an object that gets pounded" validtags="jpt!" />
+		<_field_tag_reference_64 name="pound object clang damage effect (weak)#Damage effect applied to an object that gets pounded" validtags="jpt!" />
+		<_field_tag_reference_64 name="pound ground damage effect (weak)#Damage effect applied when character pounds ground" validtags="jpt!" />
+		<_field_tag_reference_64 name="pound ground clang damage effect (weak)#Damage effect applied when character pounds ground" validtags="jpt!" />
+		<_field_tag_reference_64 name="pound object instigator effect (weak)#applied to character that performed the ground pound to generate rumble and other such effects when hitting an object" validtags="effe" />
+		<_field_tag_reference_64 name="pound ground instigator effect (weak)#applied to character that performed the ground pound to generate rumble and other such effects when hitting the ground" validtags="effe" />
+		<_field_real name="time to switch from weak to regular:seconds#switch to regular damage from weak after flying for this long (set to zero to disable this feature)" />
+		<_field_explanation name="Animations" />
+		<_field_string_id name="pound fall animation#animation played when the Ground Pound is triggered" />
+		<_field_string_id name="pound fall exit animation#animation played when ground pound fall duration times out or player goes below fall speed maintenance)" />
+		<_field_string_id name="pound hit animation#animation played when the character pounds something" />
+		<_field_string_id name="pound hit exit animation#animation played when the character exits pound hit" />
+		<_field_short_enum name="pound hit AI sound level#intensity of AI sound notification">
+			<item Name="silent#ai will not respond to this sound" />
+			<item Name="quiet" />
+			<item Name="medium" />
+			<item Name="shout" />
+			<item Name="loud#ai can hear this sound at any range" />
+		</_field_short_enum>
+		<_field_pad name="pad0" length="2" />
+		<_field_explanation name="Aim Assist" />
+		<_field_angle name="auto aim angle:degrees#the maximum angle that auto aim works at full strength" />
+		<_field_real name="auto aim range:world units#the maximum distance that auto aim works at full strength" />
+		<_field_real name="auto aim falloff range:world units#at what point the auto aim starts falling off" />
+		<_field_real name="auto aim near falloff range:world units#at what point the auto aim reaches full power" />
+		<_field_angle name="magnetism angle:degrees#the maximum angle that magnetism works at full strength" />
+		<_field_real name="magnetism range:world units#the maximum distance that magnetism works at full strength" />
+		<_field_real name="magnetism falloff range:world units#at what point magnetism starts falling off" />
+		<_field_real name="magnetism near falloff range:world units#at what point magnetism reaches full power" />
+		<_field_angle name="maximum assist angular velocity:degrees/second#maximum angular velocity that can be introduced by the assist system" />
+		<_field_explanation name="FOV delta function (charge up)">Use this curve to define how the FOV is modified while the character is charging up ground pound. The x axis measures time from the beginning of the charge up to the min charge up time. Y axis is the amount (in degrees) that the FOV is modified at the given time. Remember that you want a negative number to shrink the FOV.</_field_explanation>
+		<_field_struct name="FOV delta function charge up" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+		<_field_real_fraction name="looks speed scalar (charge up)" />
+		<_field_real_fraction name="looks speed scalar (launched)" />
+	</_field_struct>
 </plugin>

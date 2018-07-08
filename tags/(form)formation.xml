@@ -1,12 +1,13 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_string_id name="name^" />
-	<_field_block_64 name="primitives" max="4" guid="8fa0d708-4f88-b9f3-2281-45853321cacc">
+	<_field_block_64 name="primitives" max="4" srcguid="8fa0d708-4f88-b9f3-2281-45853321cacc" srcName="formation_primitive_definition">
 		<_field_word_flags name="flags">
 			<item Name="radial" />
 			<item Name="leader" />
@@ -18,7 +19,7 @@
 		<_field_real name="dist backwards" />
 		<_field_real name="rank spacing" />
 		<_field_real name="file spacing" />
-		<_field_block_64 name="points" max="8" guid="23abaab1-407e-a504-42a8-2ea083647b82">
+		<_field_block_64 name="points" max="8" srcguid="23abaab1-407e-a504-42a8-2ea083647b82" srcName="formation_point_definition">
 			<_field_angle name="angle" />
 			<_field_real name="offset" />
 		</_field_block_64>

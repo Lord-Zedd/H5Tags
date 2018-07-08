@@ -1,20 +1,22 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_pad name="pad" length="8" />
-	<_field_struct name="vehicle" />
-	<_field_string_id name="Variant name" />
-	<_field_block_64 name="generic attachments" max="2" guid="6d2a5a9c-430a-643f-cbdc-6bb98a17adff">
-		<_field_tag_reference_64 name="attachment" />
-	</_field_block_64>
-	<_field_block_64 name="weapon configurations" max="4" guid="1bca1da1-42d2-50aa-1edd-9ca53f0fe85d">
-		<_field_tag_reference_64 name="weapon configuration" />
-		<_field_string_id name="Weapon name#Corresponds with weapon in model tag" />
-	</_field_block_64>
-	<_field_tag_reference_64 name="UI Display Info" />
+	<_field_struct name="vehicle" srcguid="fed24fd5-425b-8a44-6fc5-a2a13e287cd2">
+		<_field_string_id name="Variant name" />
+		<_field_block_64 name="generic attachments" max="2" srcguid="6d2a5a9c-430a-643f-cbdc-6bb98a17adff" srcName="VehicleAttachmentReferenceDefinition">
+			<_field_tag_reference_64 name="attachment" validtags="vatc" />
+		</_field_block_64>
+		<_field_block_64 name="weapon configurations" max="4" srcguid="1bca1da1-42d2-50aa-1edd-9ca53f0fe85d" srcName="VehicleWeaponConfiguration">
+			<_field_tag_reference_64 name="weapon configuration" validtags="wcfg" />
+			<_field_string_id name="Weapon name#Corresponds with weapon in model tag" />
+		</_field_block_64>
+		<_field_tag_reference_64 name="UI Display Info" validtags="uivi" />
+	</_field_struct>
 	<_field_pad name="pad0" length="4" />
 </plugin>

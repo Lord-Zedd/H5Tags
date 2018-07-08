@@ -1,338 +1,385 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_string_id name="name#screen name" />
 	<_field_string name="class#class name" />
-	<_field_struct name="resources" />
-	<_field_block_64 name="entries" max="1024" guid="1cf6f98f-4945-2722-1237-48ac2663b239">
-		<_field_string_id name="name" />
-		<_field_struct name="handle" />
-		<_field_dword_integer name="resource type" />
-		<_field_long_integer name="resource index" />
-	</_field_block_64>
-	<_field_block_64 name="booleans" max="1024" guid="69dfec9b-43bf-0db1-194d-8c9176d5aaea">
-		<_field_byte_flags name="value">
-			<item Name="Enabled" />
-		</_field_byte_flags>
-	</_field_block_64>
-	<_field_block_64 name="ints" max="1024" guid="1d4961fa-4881-e32a-6d57-d6835c161349">
-		<_field_long_integer name="value" />
-	</_field_block_64>
-	<_field_block_64 name="floats" max="1024" guid="39ca8679-4956-2c99-754c-59a09521c2b9">
-		<_field_real name="value" />
-	</_field_block_64>
-	<_field_block_64 name="colors" max="1024" guid="d44661b9-4997-730d-0fe0-84a8a313dfce">
-		<_field_struct name="value" />
-		<_field_string_id name="name" />
-		<_field_real_argb_color name="value" />
-		<_field_real_argb_color name="value old {value}" />
-	</_field_block_64>
-	<_field_block_64 name="point2fs" max="1024" guid="f753a545-444c-d2c2-be10-359a03069be9">
-		<_field_real_point_2d name="value" />
-	</_field_block_64>
-	<_field_block_64 name="string ids" max="1024" guid="ba60308e-4251-4c82-ed99-4aa1f9c5ccb6">
-		<_field_string_id name="value" />
-	</_field_block_64>
-	<_field_block_64 name="bitmaps" max="1024" guid="0d604741-40df-c271-5360-bf8e99172c26">
-		<_field_tag_reference_64 name="asset reference" />
-		<_field_word_integer name="sprite index#the index of the sprite within the bitmap to use" />
-		<_field_pad name="pad" length="2" />
-	</_field_block_64>
-	<_field_block_64 name="floatanimations" max="1024" guid="eb7efa38-4ac0-cd4e-1a96-75b9d4bd8e52">
-		<_field_struct name="animation base" />
-		<_field_string_id name="target" />
-		<_field_struct name="repeat behavior" />
-		<_field_dword_integer name="resource type" />
-		<_field_long_integer name="resource index" />
-		<_field_byte_flags name="flags">
-			<item Name="From valid" />
-			<item Name="To valid" />
-		</_field_byte_flags>
-		<_field_pad name="pad0" length="3" />
-		<_field_real name="from" />
-		<_field_real name="to" />
-		<_field_real name="duration" />
-	</_field_block_64>
-	<_field_block_64 name="coloranimations" max="1024" guid="7394baa0-445a-950a-dec9-53a734bf85db">
-		<_field_struct name="animation base" />
-		<_field_string_id name="target" />
-		<_field_struct name="repeat behavior" />
-		<_field_dword_integer name="resource type" />
-		<_field_long_integer name="resource index" />
-		<_field_byte_flags name="flags">
-			<item Name="From valid" />
-			<item Name="To valid" />
-		</_field_byte_flags>
-		<_field_pad name="pad0" length="3" />
-		<_field_struct name="from" />
-		<_field_string_id name="name" />
-		<_field_real_argb_color name="value" />
-		<_field_real_argb_color name="from old {from}" />
-		<_field_struct name="to" />
-		<_field_string_id name="name" />
-		<_field_real_argb_color name="value" />
-		<_field_real_argb_color name="to old {to}" />
-		<_field_real name="duration" />
-	</_field_block_64>
-	<_field_block_64 name="point2fanimations" max="1024" guid="9042c91f-4c74-9c72-c5be-f884c27a7e22">
-		<_field_struct name="animation base" />
-		<_field_string_id name="target" />
-		<_field_struct name="repeat behavior" />
-		<_field_dword_integer name="resource type" />
-		<_field_long_integer name="resource index" />
-		<_field_byte_flags name="flags">
-			<item Name="From valid" />
-			<item Name="To valid" />
-		</_field_byte_flags>
-		<_field_pad name="pad0" length="3" />
-		<_field_real_point_2d name="from" />
-		<_field_real_point_2d name="to" />
-		<_field_real name="duration" />
-	</_field_block_64>
-	<_field_block_64 name="integeranimations" max="1024" guid="3013a82b-48c8-654e-fae1-c4832c5e56c5">
-		<_field_struct name="animation base" />
-		<_field_string_id name="target" />
-		<_field_struct name="repeat behavior" />
-		<_field_dword_integer name="resource type" />
-		<_field_long_integer name="resource index" />
-		<_field_byte_flags name="flags">
-			<item Name="From valid" />
-			<item Name="To valid" />
-		</_field_byte_flags>
-		<_field_pad name="pad0" length="3" />
-		<_field_long_integer name="from" />
-		<_field_long_integer name="to" />
-		<_field_real name="duration" />
-	</_field_block_64>
-	<_field_block_64 name="storyboards" max="1024" guid="f5e4db30-4a06-02e1-2887-a79e28f0b7ca">
-		<_field_block_64 name="timelines" max="1024" guid="424e4fa2-4e72-7bd3-cb6a-a1bbdee69eb8">
-			<_field_struct name="handle" />
-			<_field_dword_integer name="resource type" />
-			<_field_long_integer name="resource index" />
+	<_field_struct name="resources" srcguid="5aed9575-46a6-75a5-5fa5-488da028a692">
+		<_field_block_64 name="entries" max="1024" srcguid="1cf6f98f-4945-2722-1237-48ac2663b239" srcName="NamedResourceHandleDefinitionBlock">
+			<_field_string_id name="name" />
+			<_field_struct name="handle" srcguid="301fc7c5-42c8-5525-e7c2-44a9895e6969">
+				<_field_dword_integer name="resource type" />
+				<_field_long_integer name="resource index" />
+			</_field_struct>
 		</_field_block_64>
-	</_field_block_64>
-	<_field_block_64 name="numericdisplay" max="1024" guid="f183bc66-4e9c-4d5a-4000-aca7aa4e1545">
-		<_field_string name="extra characters used in display in addition to 0 to 9#must be in order that they appear in bitmap tag" />
-		<_field_tag_reference_64 name="asset reference" />
-		<_field_struct name="tint color of the numeric display" />
-		<_field_string_id name="name" />
-		<_field_real_argb_color name="value" />
-		<_field_real_argb_color name="tint color old {tint color of the numeric display}" />
-		<_field_real_point_2d name="alignment point on screen#top-left, top-center, or top-right corner depending on text alignment" />
-		<_field_short_enum name="numeric display alignment based on alignment point given">
-			<item Name="left alignment" />
-			<item Name="right alignment" />
-			<item Name="center alignment" />
-		</_field_short_enum>
-		<_field_byte_flags name="flags">
-			<item Name="Use additive blend" />
-		</_field_byte_flags>
-		<_field_pad name="padBase" length="1" />
-	</_field_block_64>
-	<_field_block_64 name="visualstates" max="1024" guid="61610eef-4199-b103-9713-c4b47d61289d">
-		<_field_string_id name="name" />
-		<_field_struct name="storyboard" />
-		<_field_dword_integer name="resource type" />
-		<_field_long_integer name="resource index" />
-	</_field_block_64>
-	<_field_block_64 name="visualstategroups" max="1024" guid="cc7d572e-44c1-362f-fc84-399d3ad8ba2e">
-		<_field_block_64 name="visual states" max="1024" guid="424e4fa2-4e72-7bd3-cb6a-a1bbdee69eb8">
-			<_field_struct name="handle" />
-			<_field_dword_integer name="resource type" />
-			<_field_long_integer name="resource index" />
+		<_field_block_64 name="booleans" max="1024" srcguid="69dfec9b-43bf-0db1-194d-8c9176d5aaea" srcName="BooleanDefinitionBlock">
+			<_field_byte_flags name="value">
+				<item Name="Enabled" />
+			</_field_byte_flags>
 		</_field_block_64>
-	</_field_block_64>
-	<_field_block_64 name="floatanimationusingkeyframes" max="1024" guid="3578cbf5-4046-ae2c-e22e-4dac4eea02d2">
-		<_field_struct name="animation base" />
-		<_field_string_id name="target" />
-		<_field_struct name="repeat behavior" />
-		<_field_dword_integer name="resource type" />
-		<_field_long_integer name="resource index" />
-		<_field_block_64 name="key frames" max="1024" guid="424e4fa2-4e72-7bd3-cb6a-a1bbdee69eb8">
-			<_field_struct name="handle" />
-			<_field_dword_integer name="resource type" />
-			<_field_long_integer name="resource index" />
+		<_field_block_64 name="ints" max="1024" srcguid="1d4961fa-4881-e32a-6d57-d6835c161349" srcName="IntegerDefinitionBlock">
+			<_field_long_integer name="value" />
 		</_field_block_64>
-	</_field_block_64>
-	<_field_block_64 name="linearfloatkeyframes" max="1024" guid="dcd3a942-43e9-228c-d1d5-e4a9ac4a466a">
-		<_field_struct name="keyframebase" />
-		<_field_real name="key time" />
-		<_field_real name="key value" />
-	</_field_block_64>
-	<_field_block_64 name="discretefloatkeyframes" max="1024" guid="4ae20ca3-42d3-108f-43e8-a88e7bc04b15">
-		<_field_struct name="keyframebase" />
-		<_field_real name="key time" />
-		<_field_real name="key value" />
-	</_field_block_64>
-	<_field_block_64 name="coloranimationusingkeyframes" max="1024" guid="02f7563a-49a3-586e-218d-f9b321d8de78">
-		<_field_struct name="animation base" />
-		<_field_string_id name="target" />
-		<_field_struct name="repeat behavior" />
-		<_field_dword_integer name="resource type" />
-		<_field_long_integer name="resource index" />
-		<_field_block_64 name="key frames" max="1024" guid="424e4fa2-4e72-7bd3-cb6a-a1bbdee69eb8">
-			<_field_struct name="handle" />
-			<_field_dword_integer name="resource type" />
-			<_field_long_integer name="resource index" />
+		<_field_block_64 name="floats" max="1024" srcguid="39ca8679-4956-2c99-754c-59a09521c2b9" srcName="FloatDefinitionBlock">
+			<_field_real name="value" />
 		</_field_block_64>
-	</_field_block_64>
-	<_field_block_64 name="linearcolorkeyframes" max="1024" guid="b33ca403-42d7-7d84-1073-c4aa066aab14">
-		<_field_struct name="keyframebase" />
-		<_field_real name="key time" />
-		<_field_struct name="key value" />
-		<_field_string_id name="name" />
-		<_field_real_argb_color name="value" />
-		<_field_real_argb_color name="key value old {key value}" />
-	</_field_block_64>
-	<_field_block_64 name="discretecolorkeyframes" max="1024" guid="1ec40c82-4814-92c7-d2fd-0ab82e1b3033">
-		<_field_struct name="keyframebase" />
-		<_field_real name="key time" />
-		<_field_struct name="key value" />
-		<_field_string_id name="name" />
-		<_field_real_argb_color name="value" />
-		<_field_real_argb_color name="key value old {key value}" />
-	</_field_block_64>
-	<_field_block_64 name="booleananimationusingkeyframes" max="1024" guid="b2281cac-45ac-0143-051e-2a9a2c1bac96">
-		<_field_struct name="animation base" />
-		<_field_string_id name="target" />
-		<_field_struct name="repeat behavior" />
-		<_field_dword_integer name="resource type" />
-		<_field_long_integer name="resource index" />
-		<_field_block_64 name="key frames" max="1024" guid="424e4fa2-4e72-7bd3-cb6a-a1bbdee69eb8">
-			<_field_struct name="handle" />
-			<_field_dword_integer name="resource type" />
-			<_field_long_integer name="resource index" />
+		<_field_block_64 name="colors" max="1024" srcguid="d44661b9-4997-730d-0fe0-84a8a313dfce" srcName="ColorDefinitionBlock">
+			<_field_struct name="value" srcguid="35ddd212-4a9e-b550-a758-f69f0d9f0e68">
+				<_field_string_id name="name" />
+				<_field_real_argb_color name="value" />
+			</_field_struct>
+			<_field_real_argb_color name="value old {value}" />
 		</_field_block_64>
-	</_field_block_64>
-	<_field_block_64 name="discretebooleankeyframes" max="1024" guid="93247c24-4dfc-8652-0ab9-528afe1da873">
-		<_field_struct name="keyframebase" />
-		<_field_real name="key time" />
-		<_field_byte_flags name="key value">
-			<item Name="Enabled" />
-		</_field_byte_flags>
-		<_field_pad name="pad" length="3" />
-	</_field_block_64>
-	<_field_block_64 name="point2fanimationusingkeyframes" max="1024" guid="f7578499-47c0-8841-6d0f-f7b5799c9834">
-		<_field_struct name="animation base" />
-		<_field_string_id name="target" />
-		<_field_struct name="repeat behavior" />
-		<_field_dword_integer name="resource type" />
-		<_field_long_integer name="resource index" />
-		<_field_block_64 name="key frames" max="1024" guid="424e4fa2-4e72-7bd3-cb6a-a1bbdee69eb8">
-			<_field_struct name="handle" />
-			<_field_dword_integer name="resource type" />
-			<_field_long_integer name="resource index" />
+		<_field_block_64 name="point2fs" max="1024" srcguid="f753a545-444c-d2c2-be10-359a03069be9" srcName="Point2FDefinitionBlock">
+			<_field_real_point_2d name="value" />
 		</_field_block_64>
-	</_field_block_64>
-	<_field_block_64 name="linearpoint2fkeyframes" max="1024" guid="36a4dc16-4a67-f76f-4220-69b92309f53c">
-		<_field_struct name="keyframebase" />
-		<_field_real name="key time" />
-		<_field_real_point_2d name="key value" />
-	</_field_block_64>
-	<_field_block_64 name="discretepoint2fkeyframes" max="1024" guid="137ad475-4f6d-6358-dd17-88b82e39d8a8">
-		<_field_struct name="keyframebase" />
-		<_field_real name="key time" />
-		<_field_real_point_2d name="key value" />
-	</_field_block_64>
-	<_field_block_64 name="integeranimationusingkeyframes" max="1024" guid="ebbba21a-4cb9-6433-9da0-81ad034a71d5">
-		<_field_struct name="animation base" />
-		<_field_string_id name="target" />
-		<_field_struct name="repeat behavior" />
-		<_field_dword_integer name="resource type" />
-		<_field_long_integer name="resource index" />
-		<_field_block_64 name="key frames" max="1024" guid="424e4fa2-4e72-7bd3-cb6a-a1bbdee69eb8">
-			<_field_struct name="handle" />
-			<_field_dword_integer name="resource type" />
-			<_field_long_integer name="resource index" />
+		<_field_block_64 name="string ids" max="1024" srcguid="ba60308e-4251-4c82-ed99-4aa1f9c5ccb6" srcName="StringIdDefinitionBlock">
+			<_field_string_id name="value" />
 		</_field_block_64>
-	</_field_block_64>
-	<_field_block_64 name="linearintegerkeyframes" max="1024" guid="a1526795-45d4-0638-4a64-3b8d3f649653">
-		<_field_struct name="keyframebase" />
-		<_field_real name="key time" />
-		<_field_long_integer name="key value" />
-	</_field_block_64>
-	<_field_block_64 name="discreteintegerkeyframes" max="1024" guid="4e07c457-4dff-f1ee-142d-62afe9be7152">
-		<_field_struct name="keyframebase" />
-		<_field_real name="key time" />
-		<_field_long_integer name="key value" />
-	</_field_block_64>
-	<_field_block_64 name="repeatbehaviors" max="1024" guid="a1d4120e-447f-29f3-c940-db861b6948f6">
-		<_field_byte_flags name="flags">
-			<item Name="Count valid" />
-			<item Name="Duration valid" />
-		</_field_byte_flags>
-		<_field_pad name="pad0" length="3" />
-		<_field_long_integer name="count" />
-		<_field_real name="duration" />
-	</_field_block_64>
-	<_field_block_64 name="sound" max="1024" guid="4f97e55e-4e05-9cd5-0d63-dab358e62e26">
-		<_field_tag_reference_64 name="asset reference" />
-	</_field_block_64>
-	<_field_block_64 name="soundloop" max="1024" guid="56e132bf-4fa1-5e20-48f2-3eb67179c6c1">
-		<_field_tag_reference_64 name="asset reference" />
-	</_field_block_64>
-	<_field_block_64 name="navpointlayouts" max="1024" guid="501d6b54-4250-3f5b-0064-9c9e186c03df">
-		<_field_tag_reference_64 name="tag reference" />
-	</_field_block_64>
-	<_field_block_64 name="navpointanimations" max="1024" guid="4f2eb06b-4705-01a6-d8af-dca11f7ff543">
-		<_field_tag_reference_64 name="tag reference" />
-	</_field_block_64>
-	<_field_block_64 name="stringtables" max="1024" guid="3ced8fcb-40d3-d306-980a-0b8201982cfa">
-		<_field_block_64 name="entires" max="1024" guid="2085ec3b-4359-3b38-cf09-eaa98be55834">
-			<_field_tag_reference_64 name="data" />
+		<_field_block_64 name="bitmaps" max="1024" srcguid="0d604741-40df-c271-5360-bf8e99172c26" srcName="BitmapGroupReferenceDefinitionBlock">
+			<_field_tag_reference_64 name="asset reference" validtags="bitm" />
+			<_field_word_integer name="sprite index#the index of the sprite within the bitmap to use" />
+			<_field_pad name="pad" length="2" />
 		</_field_block_64>
-	</_field_block_64>
-	<_field_block_64 name="subcomponents" max="1024" guid="e0b4a3d7-4b80-6f9a-ba77-208297e40dad">
-		<_field_tag_reference_64 name="sub component reference" />
-	</_field_block_64>
-	<_field_block_64 name="hudtwotonegradient" max="1024" guid="a7440290-4a9c-ff1b-68a7-0282f683d3c4">
-		<_field_struct name="left color" />
-		<_field_string_id name="name" />
-		<_field_real_argb_color name="value" />
-		<_field_real_argb_color name="left color old {left color}" />
-		<_field_struct name="right color" />
-		<_field_string_id name="name" />
-		<_field_real_argb_color name="value" />
-		<_field_real_argb_color name="right color old {right color}" />
-		<_field_real name="edge filter amount" />
-		<_field_real name="current meter value" />
-		<_field_real name="min meter value" />
-		<_field_real name="max meter value" />
-		<_field_byte_flags name="additive blend toggle">
-			<item Name="Enabled" />
-		</_field_byte_flags>
-		<_field_pad name="pad" length="3" />
-	</_field_block_64>
-	<_field_block_64 name="font" max="1024" guid="a8239500-4dc3-5168-df43-e9a4c73fb602">
-		<_field_long_string name="font family name" />
-		<_field_struct name="tint color" />
-		<_field_string_id name="name" />
-		<_field_real_argb_color name="value" />
-		<_field_real_argb_color name="tint color old {tint color}" />
-		<_field_real name="font size" />
-	</_field_block_64>
-	<_field_block_64 name="highcontrastadditive" max="1024" guid="0beba20d-4ce7-c78b-ab72-9b8152c71e0f">
-		<_field_real name="dynamic threshold min" />
-		<_field_real name="dynamic threshold max" />
-		<_field_real name="dynamic threshold clamp" />
-		<_field_byte_flags name="high contrast enable">
-			<item Name="Enabled" />
-		</_field_byte_flags>
-		<_field_pad name="pad" length="3" />
-	</_field_block_64>
-	<_field_block_64 name="vertexwarp" max="1024" guid="e3969a76-4815-bc44-d85e-738712aa7b63">
-		<_field_real_point_3d name="ellipsoid scale" />
-		<_field_real_point_3d name="ellipsoid center" />
-		<_field_real_point_3d name="output offset" />
-		<_field_long_integer name="tessellation X" />
-		<_field_long_integer name="tessellation Y" />
-		<_field_byte_flags name="warp enabled">
-			<item Name="Enabled" />
-		</_field_byte_flags>
-		<_field_pad name="pad" length="3" />
-	</_field_block_64>
+		<_field_block_64 name="floatanimations" max="1024" srcguid="eb7efa38-4ac0-cd4e-1a96-75b9d4bd8e52" srcName="FloatAnimationDefinitionBlock">
+			<_field_struct name="animation base" srcguid="8e6b2e8d-4451-cf28-fd73-19a502acc9ba">
+				<_field_string_id name="target" />
+				<_field_struct name="repeat behavior" srcguid="301fc7c5-42c8-5525-e7c2-44a9895e6969">
+					<_field_dword_integer name="resource type" />
+					<_field_long_integer name="resource index" />
+				</_field_struct>
+			</_field_struct>
+			<_field_byte_flags name="flags">
+				<item Name="From valid" />
+				<item Name="To valid" />
+			</_field_byte_flags>
+			<_field_pad name="pad0" length="3" />
+			<_field_real name="from" />
+			<_field_real name="to" />
+			<_field_real name="duration" />
+		</_field_block_64>
+		<_field_block_64 name="coloranimations" max="1024" srcguid="7394baa0-445a-950a-dec9-53a734bf85db" srcName="ColorAnimationDefinitionBlock">
+			<_field_struct name="animation base" srcguid="8e6b2e8d-4451-cf28-fd73-19a502acc9ba">
+				<_field_string_id name="target" />
+				<_field_struct name="repeat behavior" srcguid="301fc7c5-42c8-5525-e7c2-44a9895e6969">
+					<_field_dword_integer name="resource type" />
+					<_field_long_integer name="resource index" />
+				</_field_struct>
+			</_field_struct>
+			<_field_byte_flags name="flags">
+				<item Name="From valid" />
+				<item Name="To valid" />
+			</_field_byte_flags>
+			<_field_pad name="pad0" length="3" />
+			<_field_struct name="from" srcguid="35ddd212-4a9e-b550-a758-f69f0d9f0e68">
+				<_field_string_id name="name" />
+				<_field_real_argb_color name="value" />
+			</_field_struct>
+			<_field_real_argb_color name="from old {from}" />
+			<_field_struct name="to" srcguid="35ddd212-4a9e-b550-a758-f69f0d9f0e68">
+				<_field_string_id name="name" />
+				<_field_real_argb_color name="value" />
+			</_field_struct>
+			<_field_real_argb_color name="to old {to}" />
+			<_field_real name="duration" />
+		</_field_block_64>
+		<_field_block_64 name="point2fanimations" max="1024" srcguid="9042c91f-4c74-9c72-c5be-f884c27a7e22" srcName="Point2FAnimationDefinitionBlock">
+			<_field_struct name="animation base" srcguid="8e6b2e8d-4451-cf28-fd73-19a502acc9ba">
+				<_field_string_id name="target" />
+				<_field_struct name="repeat behavior" srcguid="301fc7c5-42c8-5525-e7c2-44a9895e6969">
+					<_field_dword_integer name="resource type" />
+					<_field_long_integer name="resource index" />
+				</_field_struct>
+			</_field_struct>
+			<_field_byte_flags name="flags">
+				<item Name="From valid" />
+				<item Name="To valid" />
+			</_field_byte_flags>
+			<_field_pad name="pad0" length="3" />
+			<_field_real_point_2d name="from" />
+			<_field_real_point_2d name="to" />
+			<_field_real name="duration" />
+		</_field_block_64>
+		<_field_block_64 name="integeranimations" max="1024" srcguid="3013a82b-48c8-654e-fae1-c4832c5e56c5" srcName="IntegerAnimationDefinitionBlock">
+			<_field_struct name="animation base" srcguid="8e6b2e8d-4451-cf28-fd73-19a502acc9ba">
+				<_field_string_id name="target" />
+				<_field_struct name="repeat behavior" srcguid="301fc7c5-42c8-5525-e7c2-44a9895e6969">
+					<_field_dword_integer name="resource type" />
+					<_field_long_integer name="resource index" />
+				</_field_struct>
+			</_field_struct>
+			<_field_byte_flags name="flags">
+				<item Name="From valid" />
+				<item Name="To valid" />
+			</_field_byte_flags>
+			<_field_pad name="pad0" length="3" />
+			<_field_long_integer name="from" />
+			<_field_long_integer name="to" />
+			<_field_real name="duration" />
+		</_field_block_64>
+		<_field_block_64 name="storyboards" max="1024" srcguid="f5e4db30-4a06-02e1-2887-a79e28f0b7ca" srcName="StoryboardDefinitionBlock">
+			<_field_block_64 name="timelines" max="1024" srcguid="424e4fa2-4e72-7bd3-cb6a-a1bbdee69eb8" srcName="ResourceHandleDefinitionBlock">
+				<_field_struct name="handle" srcguid="301fc7c5-42c8-5525-e7c2-44a9895e6969">
+					<_field_dword_integer name="resource type" />
+					<_field_long_integer name="resource index" />
+				</_field_struct>
+			</_field_block_64>
+		</_field_block_64>
+		<_field_block_64 name="numericdisplay" max="1024" srcguid="f183bc66-4e9c-4d5a-4000-aca7aa4e1545" srcName="NumericDisplayDefinitionBlock">
+			<_field_string name="extra characters used in display in addition to 0 to 9#must be in order that they appear in bitmap tag" />
+			<_field_tag_reference_64 name="asset reference" validtags="bitm" />
+			<_field_struct name="tint color of the numeric display" srcguid="35ddd212-4a9e-b550-a758-f69f0d9f0e68">
+				<_field_string_id name="name" />
+				<_field_real_argb_color name="value" />
+			</_field_struct>
+			<_field_real_argb_color name="tint color old {tint color of the numeric display}" />
+			<_field_real_point_2d name="alignment point on screen#top-left, top-center, or top-right corner depending on text alignment" />
+			<_field_short_enum name="numeric display alignment based on alignment point given">
+				<item Name="left alignment" />
+				<item Name="right alignment" />
+				<item Name="center alignment" />
+			</_field_short_enum>
+			<_field_byte_flags name="flags">
+				<item Name="Use additive blend" />
+			</_field_byte_flags>
+			<_field_pad name="padBase" length="1" />
+		</_field_block_64>
+		<_field_block_64 name="visualstates" max="1024" srcguid="61610eef-4199-b103-9713-c4b47d61289d" srcName="VisualStateDefinitionBlock">
+			<_field_string_id name="name" />
+			<_field_struct name="storyboard" srcguid="301fc7c5-42c8-5525-e7c2-44a9895e6969">
+				<_field_dword_integer name="resource type" />
+				<_field_long_integer name="resource index" />
+			</_field_struct>
+		</_field_block_64>
+		<_field_block_64 name="visualstategroups" max="1024" srcguid="cc7d572e-44c1-362f-fc84-399d3ad8ba2e" srcName="VisualStateGroupDefinitionBlock">
+			<_field_block_64 name="visual states" max="1024" srcguid="424e4fa2-4e72-7bd3-cb6a-a1bbdee69eb8" srcName="ResourceHandleDefinitionBlock">
+				<_field_struct name="handle" srcguid="301fc7c5-42c8-5525-e7c2-44a9895e6969">
+					<_field_dword_integer name="resource type" />
+					<_field_long_integer name="resource index" />
+				</_field_struct>
+			</_field_block_64>
+		</_field_block_64>
+		<_field_block_64 name="floatanimationusingkeyframes" max="1024" srcguid="3578cbf5-4046-ae2c-e22e-4dac4eea02d2" srcName="FloatAnimationUsingKeyFramesDefinitionBlock">
+			<_field_struct name="animation base" srcguid="8e6b2e8d-4451-cf28-fd73-19a502acc9ba">
+				<_field_string_id name="target" />
+				<_field_struct name="repeat behavior" srcguid="301fc7c5-42c8-5525-e7c2-44a9895e6969">
+					<_field_dword_integer name="resource type" />
+					<_field_long_integer name="resource index" />
+				</_field_struct>
+			</_field_struct>
+			<_field_block_64 name="key frames" max="1024" srcguid="424e4fa2-4e72-7bd3-cb6a-a1bbdee69eb8" srcName="ResourceHandleDefinitionBlock">
+				<_field_struct name="handle" srcguid="301fc7c5-42c8-5525-e7c2-44a9895e6969">
+					<_field_dword_integer name="resource type" />
+					<_field_long_integer name="resource index" />
+				</_field_struct>
+			</_field_block_64>
+		</_field_block_64>
+		<_field_block_64 name="linearfloatkeyframes" max="1024" srcguid="dcd3a942-43e9-228c-d1d5-e4a9ac4a466a" srcName="LinearFloatKeyFrameDefinitionBlock">
+			<_field_struct name="keyframebase" srcguid="1b6c5403-4450-c6a1-e1c1-9aa2b331d310">
+				<_field_real name="key time" />
+				<_field_real name="key value" />
+			</_field_struct>
+		</_field_block_64>
+		<_field_block_64 name="discretefloatkeyframes" max="1024" srcguid="4ae20ca3-42d3-108f-43e8-a88e7bc04b15" srcName="DiscreteFloatKeyFrameDefinitionBlock">
+			<_field_struct name="keyframebase" srcguid="1b6c5403-4450-c6a1-e1c1-9aa2b331d310">
+				<_field_real name="key time" />
+				<_field_real name="key value" />
+			</_field_struct>
+		</_field_block_64>
+		<_field_block_64 name="coloranimationusingkeyframes" max="1024" srcguid="02f7563a-49a3-586e-218d-f9b321d8de78" srcName="ColorAnimationUsingKeyFramesDefinitionBlock">
+			<_field_struct name="animation base" srcguid="8e6b2e8d-4451-cf28-fd73-19a502acc9ba">
+				<_field_string_id name="target" />
+				<_field_struct name="repeat behavior" srcguid="301fc7c5-42c8-5525-e7c2-44a9895e6969">
+					<_field_dword_integer name="resource type" />
+					<_field_long_integer name="resource index" />
+				</_field_struct>
+			</_field_struct>
+			<_field_block_64 name="key frames" max="1024" srcguid="424e4fa2-4e72-7bd3-cb6a-a1bbdee69eb8" srcName="ResourceHandleDefinitionBlock">
+				<_field_struct name="handle" srcguid="301fc7c5-42c8-5525-e7c2-44a9895e6969">
+					<_field_dword_integer name="resource type" />
+					<_field_long_integer name="resource index" />
+				</_field_struct>
+			</_field_block_64>
+		</_field_block_64>
+		<_field_block_64 name="linearcolorkeyframes" max="1024" srcguid="b33ca403-42d7-7d84-1073-c4aa066aab14" srcName="LinearColorKeyFrameDefinitionBlock">
+			<_field_struct name="keyframebase" srcguid="94ead44e-4522-ddb8-65c1-7da178a0ff9a">
+				<_field_real name="key time" />
+				<_field_struct name="key value" srcguid="35ddd212-4a9e-b550-a758-f69f0d9f0e68">
+					<_field_string_id name="name" />
+					<_field_real_argb_color name="value" />
+				</_field_struct>
+				<_field_real_argb_color name="key value old {key value}" />
+			</_field_struct>
+		</_field_block_64>
+		<_field_block_64 name="discretecolorkeyframes" max="1024" srcguid="1ec40c82-4814-92c7-d2fd-0ab82e1b3033" srcName="DiscreteColorKeyFrameDefinitionBlock">
+			<_field_struct name="keyframebase" srcguid="94ead44e-4522-ddb8-65c1-7da178a0ff9a">
+				<_field_real name="key time" />
+				<_field_struct name="key value" srcguid="35ddd212-4a9e-b550-a758-f69f0d9f0e68">
+					<_field_string_id name="name" />
+					<_field_real_argb_color name="value" />
+				</_field_struct>
+				<_field_real_argb_color name="key value old {key value}" />
+			</_field_struct>
+		</_field_block_64>
+		<_field_block_64 name="booleananimationusingkeyframes" max="1024" srcguid="b2281cac-45ac-0143-051e-2a9a2c1bac96" srcName="BooleanAnimationUsingKeyFramesDefinitionBlock">
+			<_field_struct name="animation base" srcguid="8e6b2e8d-4451-cf28-fd73-19a502acc9ba">
+				<_field_string_id name="target" />
+				<_field_struct name="repeat behavior" srcguid="301fc7c5-42c8-5525-e7c2-44a9895e6969">
+					<_field_dword_integer name="resource type" />
+					<_field_long_integer name="resource index" />
+				</_field_struct>
+			</_field_struct>
+			<_field_block_64 name="key frames" max="1024" srcguid="424e4fa2-4e72-7bd3-cb6a-a1bbdee69eb8" srcName="ResourceHandleDefinitionBlock">
+				<_field_struct name="handle" srcguid="301fc7c5-42c8-5525-e7c2-44a9895e6969">
+					<_field_dword_integer name="resource type" />
+					<_field_long_integer name="resource index" />
+				</_field_struct>
+			</_field_block_64>
+		</_field_block_64>
+		<_field_block_64 name="discretebooleankeyframes" max="1024" srcguid="93247c24-4dfc-8652-0ab9-528afe1da873" srcName="DiscreteBooleanKeyFrameDefinitionBlock">
+			<_field_struct name="keyframebase" srcguid="5b52c694-4b04-31a1-7de1-038d6486252c">
+				<_field_real name="key time" />
+				<_field_byte_flags name="key value">
+					<item Name="Enabled" />
+				</_field_byte_flags>
+				<_field_pad name="pad" length="3" />
+			</_field_struct>
+		</_field_block_64>
+		<_field_block_64 name="point2fanimationusingkeyframes" max="1024" srcguid="f7578499-47c0-8841-6d0f-f7b5799c9834" srcName="Point2FAnimationUsingKeyFramesDefinitionBlock">
+			<_field_struct name="animation base" srcguid="8e6b2e8d-4451-cf28-fd73-19a502acc9ba">
+				<_field_string_id name="target" />
+				<_field_struct name="repeat behavior" srcguid="301fc7c5-42c8-5525-e7c2-44a9895e6969">
+					<_field_dword_integer name="resource type" />
+					<_field_long_integer name="resource index" />
+				</_field_struct>
+			</_field_struct>
+			<_field_block_64 name="key frames" max="1024" srcguid="424e4fa2-4e72-7bd3-cb6a-a1bbdee69eb8" srcName="ResourceHandleDefinitionBlock">
+				<_field_struct name="handle" srcguid="301fc7c5-42c8-5525-e7c2-44a9895e6969">
+					<_field_dword_integer name="resource type" />
+					<_field_long_integer name="resource index" />
+				</_field_struct>
+			</_field_block_64>
+		</_field_block_64>
+		<_field_block_64 name="linearpoint2fkeyframes" max="1024" srcguid="36a4dc16-4a67-f76f-4220-69b92309f53c" srcName="LinearPoint2FKeyFrameDefinitionBlock">
+			<_field_struct name="keyframebase" srcguid="9a7cbb7d-46b2-964f-8beb-aa8ca0776b78">
+				<_field_real name="key time" />
+				<_field_real_point_2d name="key value" />
+			</_field_struct>
+		</_field_block_64>
+		<_field_block_64 name="discretepoint2fkeyframes" max="1024" srcguid="137ad475-4f6d-6358-dd17-88b82e39d8a8" srcName="DiscretePoint2FKeyFrameDefinitionBlock">
+			<_field_struct name="keyframebase" srcguid="9a7cbb7d-46b2-964f-8beb-aa8ca0776b78">
+				<_field_real name="key time" />
+				<_field_real_point_2d name="key value" />
+			</_field_struct>
+		</_field_block_64>
+		<_field_block_64 name="integeranimationusingkeyframes" max="1024" srcguid="ebbba21a-4cb9-6433-9da0-81ad034a71d5" srcName="IntegerAnimationUsingKeyFramesDefinitionBlock">
+			<_field_struct name="animation base" srcguid="8e6b2e8d-4451-cf28-fd73-19a502acc9ba">
+				<_field_string_id name="target" />
+				<_field_struct name="repeat behavior" srcguid="301fc7c5-42c8-5525-e7c2-44a9895e6969">
+					<_field_dword_integer name="resource type" />
+					<_field_long_integer name="resource index" />
+				</_field_struct>
+			</_field_struct>
+			<_field_block_64 name="key frames" max="1024" srcguid="424e4fa2-4e72-7bd3-cb6a-a1bbdee69eb8" srcName="ResourceHandleDefinitionBlock">
+				<_field_struct name="handle" srcguid="301fc7c5-42c8-5525-e7c2-44a9895e6969">
+					<_field_dword_integer name="resource type" />
+					<_field_long_integer name="resource index" />
+				</_field_struct>
+			</_field_block_64>
+		</_field_block_64>
+		<_field_block_64 name="linearintegerkeyframes" max="1024" srcguid="a1526795-45d4-0638-4a64-3b8d3f649653" srcName="LinearIntegerKeyFrameDefinitionBlock">
+			<_field_struct name="keyframebase" srcguid="235c2188-47dc-bcc0-dbb8-12a608ced824">
+				<_field_real name="key time" />
+				<_field_long_integer name="key value" />
+			</_field_struct>
+		</_field_block_64>
+		<_field_block_64 name="discreteintegerkeyframes" max="1024" srcguid="4e07c457-4dff-f1ee-142d-62afe9be7152" srcName="DiscreteIntegerKeyFrameDefinitionBlock">
+			<_field_struct name="keyframebase" srcguid="235c2188-47dc-bcc0-dbb8-12a608ced824">
+				<_field_real name="key time" />
+				<_field_long_integer name="key value" />
+			</_field_struct>
+		</_field_block_64>
+		<_field_block_64 name="repeatbehaviors" max="1024" srcguid="a1d4120e-447f-29f3-c940-db861b6948f6" srcName="RepeatBehaviorDefinitionBlock">
+			<_field_byte_flags name="flags">
+				<item Name="Count valid" />
+				<item Name="Duration valid" />
+			</_field_byte_flags>
+			<_field_pad name="pad0" length="3" />
+			<_field_long_integer name="count" />
+			<_field_real name="duration" />
+		</_field_block_64>
+		<_field_block_64 name="sound" max="1024" srcguid="4f97e55e-4e05-9cd5-0d63-dab358e62e26" srcName="SoundDefinitionBlock">
+			<_field_tag_reference_64 name="asset reference" validtags="snd!" />
+		</_field_block_64>
+		<_field_block_64 name="soundloop" max="1024" srcguid="56e132bf-4fa1-5e20-48f2-3eb67179c6c1" srcName="SoundLoopDefinitionBlock">
+			<_field_tag_reference_64 name="asset reference" validtags="lsnd" />
+		</_field_block_64>
+		<_field_block_64 name="navpointlayouts" max="1024" srcguid="501d6b54-4250-3f5b-0064-9c9e186c03df" srcName="NavPointLayoutDefinitionBlock">
+			<_field_tag_reference_64 name="tag reference" validtags="navl" />
+		</_field_block_64>
+		<_field_block_64 name="navpointanimations" max="1024" srcguid="4f2eb06b-4705-01a6-d8af-dca11f7ff543" srcName="NavPointAnimationDefinitionBlock">
+			<_field_tag_reference_64 name="tag reference" validtags="nava" />
+		</_field_block_64>
+		<_field_block_64 name="stringtables" max="1024" srcguid="3ced8fcb-40d3-d306-980a-0b8201982cfa" srcName="StringTableDefinitionBlock">
+			<_field_block_64 name="entires" max="1024" srcguid="2085ec3b-4359-3b38-cf09-eaa98be55834" srcName="StringTableEntryDefinitionBlock">
+				<_field_tag_reference_64 name="data" validtags="unic" />
+			</_field_block_64>
+		</_field_block_64>
+		<_field_block_64 name="subcomponents" max="1024" srcguid="e0b4a3d7-4b80-6f9a-ba77-208297e40dad" srcName="SubComponentDefinitionBlock">
+			<_field_tag_reference_64 name="sub component reference" validtags="fuic" />
+		</_field_block_64>
+		<_field_block_64 name="hudtwotonegradient" max="1024" srcguid="a7440290-4a9c-ff1b-68a7-0282f683d3c4" srcName="HudTwoToneGradientDefinitionBlock">
+			<_field_struct name="left color" srcguid="35ddd212-4a9e-b550-a758-f69f0d9f0e68">
+				<_field_string_id name="name" />
+				<_field_real_argb_color name="value" />
+			</_field_struct>
+			<_field_real_argb_color name="left color old {left color}" />
+			<_field_struct name="right color" srcguid="35ddd212-4a9e-b550-a758-f69f0d9f0e68">
+				<_field_string_id name="name" />
+				<_field_real_argb_color name="value" />
+			</_field_struct>
+			<_field_real_argb_color name="right color old {right color}" />
+			<_field_real name="edge filter amount" />
+			<_field_real name="current meter value" />
+			<_field_real name="min meter value" />
+			<_field_real name="max meter value" />
+			<_field_byte_flags name="additive blend toggle">
+				<item Name="Enabled" />
+			</_field_byte_flags>
+			<_field_pad name="pad" length="3" />
+		</_field_block_64>
+		<_field_block_64 name="font" max="1024" srcguid="a8239500-4dc3-5168-df43-e9a4c73fb602" srcName="FontDefinitionBlock">
+			<_field_long_string name="font family name" />
+			<_field_struct name="tint color" srcguid="35ddd212-4a9e-b550-a758-f69f0d9f0e68">
+				<_field_string_id name="name" />
+				<_field_real_argb_color name="value" />
+			</_field_struct>
+			<_field_real_argb_color name="tint color old {tint color}" />
+			<_field_real name="font size" />
+		</_field_block_64>
+		<_field_block_64 name="highcontrastadditive" max="1024" srcguid="0beba20d-4ce7-c78b-ab72-9b8152c71e0f" srcName="HighContrastAdditiveDefinitionBlock">
+			<_field_real name="dynamic threshold min" />
+			<_field_real name="dynamic threshold max" />
+			<_field_real name="dynamic threshold clamp" />
+			<_field_byte_flags name="high contrast enable">
+				<item Name="Enabled" />
+			</_field_byte_flags>
+			<_field_pad name="pad" length="3" />
+		</_field_block_64>
+		<_field_block_64 name="vertexwarp" max="1024" srcguid="e3969a76-4815-bc44-d85e-738712aa7b63" srcName="VertexWarpDefinitionBlock">
+			<_field_real_point_3d name="ellipsoid scale" />
+			<_field_real_point_3d name="ellipsoid center" />
+			<_field_real_point_3d name="output offset" />
+			<_field_long_integer name="tessellation X" />
+			<_field_long_integer name="tessellation Y" />
+			<_field_byte_flags name="warp enabled">
+				<item Name="Enabled" />
+			</_field_byte_flags>
+			<_field_pad name="pad" length="3" />
+		</_field_block_64>
+	</_field_struct>
 </plugin>

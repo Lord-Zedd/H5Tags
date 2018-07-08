@@ -1,148 +1,142 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="string references" max="64" guid="f35ba8a6-4cec-4ca5-2270-709422e51721">
-		<_field_tag_reference_64 name="string list" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="string references" max="64" srcguid="f35ba8a6-4cec-4ca5-2270-709422e51721" srcName="string_file_references">
+		<_field_tag_reference_64 name="string list" validtags="unic" />
 	</_field_block_64>
-	<_field_tag_reference_64 name="logic" />
-	<_field_struct name="system" />
-	<_field_block_64 name="template instantiations" max="8192" guid="147959fc-43bb-bee9-e461-e5bb8f08818e">
-		<_field_tag_reference_64 name="screen reference" />
-	</_field_block_64>
-	<_field_block_64 name="components" max="8192" guid="bd11bc6f-4a69-1329-c5d2-05a3fa325109">
-		<_field_string_id name="type" />
-		<_field_string_id name="name^" />
-		<_field_string_id name="parent" />
-		<_field_word_flags name="flags">
-			<item Name="hidden to tools user" />
-		</_field_word_flags>
-		<_field_short_block_index name="template instantiation index" srcguid="147959fc-43bb-bee9-e461-e5bb8f08818e" />
-	</_field_block_64>
-	<_field_block_64 name="component indices" max="8192" guid="a6d04b81-4188-5074-3127-e9859e1129cd">
-		<_field_string_id name="name^" />
-		<_field_short_block_index name="component definition index" srcguid="bd11bc6f-4a69-1329-c5d2-05a3fa325109" />
-		<_field_pad name="pad0" length="2" />
-	</_field_block_64>
-	<_field_block_64 name="overlays" max="24" guid="8836d58b-6f0a-4a6a-a33d-7366f95acb9b">
-		<_field_string_id name="resolution" />
-		<_field_string_id name="theme" />
-		<_field_block_64 name="components" max="8192" guid="8420f7cf-8c23-438c-9c91-c7faf7fee1f4">
+	<_field_tag_reference_64 name="logic" validtags="culo" />
+	<_field_struct name="system" srcguid="923e721c-4f87-fe15-f31f-088ce5e8e02c">
+		<_field_block_64 name="template instantiations" max="8192" srcguid="147959fc-43bb-bee9-e461-e5bb8f08818e" srcName="template_instantiation_block_definition">
+			<_field_tag_reference_64 name="screen reference" validtags="cusc" />
+		</_field_block_64>
+		<_field_block_64 name="components" max="8192" srcguid="bd11bc6f-4a69-1329-c5d2-05a3fa325109" srcName="component_definition">
+			<_field_string_id name="type" />
 			<_field_string_id name="name^" />
-			<_field_struct name="property values" />
-			<_field_block_64 name="long properties" max="8192" guid="63dd2829-4d14-d1f1-5279-3896fc1fcc8f">
+			<_field_string_id name="parent" />
+			<_field_word_flags name="flags">
+				<item Name="hidden to tools user" />
+			</_field_word_flags>
+			<_field_short_block_index name="template instantiation index" targetGuid="147959fc-43bb-bee9-e461-e5bb8f08818e" targetName="template_instantiation_block_definition" />
+		</_field_block_64>
+		<_field_block_64 name="component indices" max="8192" srcguid="a6d04b81-4188-5074-3127-e9859e1129cd" srcName="component_index_block_definition">
+			<_field_string_id name="name^" />
+			<_field_short_block_index name="component definition index" targetGuid="bd11bc6f-4a69-1329-c5d2-05a3fa325109" targetName="component_definition" />
+			<_field_pad name="pad0" length="2" />
+		</_field_block_64>
+		<_field_block_64 name="overlays" max="24" srcguid="8836d58b-6f0a-4a6a-a33d-7366f95acb9b" srcName="overlay_definition">
+			<_field_string_id name="resolution" />
+			<_field_string_id name="theme" />
+			<_field_block_64 name="components" max="8192" srcguid="8420f7cf-8c23-438c-9c91-c7faf7fee1f4" srcName="component_properties_definition">
 				<_field_string_id name="name^" />
-				<_field_long_integer name="value" />
+				<_field_struct name="property values" srcguid="b1a7ec45-439e-bc3d-a4f1-d9a6af5709a3">
+					<_field_block_64 name="long properties" max="8192" srcguid="63dd2829-4d14-d1f1-5279-3896fc1fcc8f" srcName="property_long_value">
+						<_field_string_id name="name^" />
+						<_field_long_integer name="value" />
+					</_field_block_64>
+					<_field_block_64 name="real properties" max="8192" srcguid="758da8a4-4090-5912-6254-fba1693c45d2" srcName="property_real_value">
+						<_field_string_id name="name^" />
+						<_field_real name="value" />
+					</_field_block_64>
+					<_field_block_64 name="string_id properties" max="8192" srcguid="63caf970-4ea9-0faf-2cb1-feb315007ca4" srcName="property_string_id_value">
+						<_field_string_id name="name^" />
+						<_field_string_id name="value" />
+					</_field_block_64>
+					<_field_block_64 name="component ptr properties" max="8192" srcguid="b824c8c9-44af-9fe4-0e33-aaa4b60e0b97" srcName="propertyComponentPtrValue">
+						<_field_string_id name="name^" />
+						<_field_string_id name="value" />
+						<_field_byte_flags name="flags">
+							<item Name="source is in external system" />
+						</_field_byte_flags>
+						<_field_pad name="pad0" length="3" />
+					</_field_block_64>
+					<_field_block_64 name="tag reference properties" max="8192" srcguid="caa80a14-45b5-9b12-f540-3aa52e4ca4ff" srcName="property_tag_reference_value">
+						<_field_string_id name="name^" />
+						<_field_tag_reference_64 name="value" />
+					</_field_block_64>
+					<_field_block_64 name="string properties" max="8192" srcguid="9b80dcd3-4f46-d0f8-4360-7aafda9d5497" srcName="property_text_value">
+						<_field_string_id name="name^" />
+						<_field_long_string name="value" />
+					</_field_block_64>
+					<_field_block_64 name="argb color properties" max="8192" srcguid="a86fc89b-4bac-478a-446b-ed97b89a09c3" srcName="property_argb_color_value">
+						<_field_string_id name="name^" />
+						<_field_real_argb_color name="value" />
+					</_field_block_64>
+				</_field_struct>
 			</_field_block_64>
-			<_field_block_64 name="real properties" max="8192" guid="758da8a4-4090-5912-6254-fba1693c45d2">
+			<_field_block_64 name="animations" max="8192" srcguid="28c2d946-3940-4818-9778-322850a4c019" srcName="animation_definition">
 				<_field_string_id name="name^" />
-				<_field_real name="value" />
-			</_field_block_64>
-			<_field_block_64 name="string_id properties" max="8192" guid="63caf970-4ea9-0faf-2cb1-feb315007ca4">
-				<_field_string_id name="name^" />
-				<_field_string_id name="value" />
-			</_field_block_64>
-			<_field_block_64 name="component ptr properties" max="8192" guid="b824c8c9-44af-9fe4-0e33-aaa4b60e0b97">
-				<_field_string_id name="name^" />
-				<_field_string_id name="value" />
-				<_field_byte_flags name="flags">
-					<item Name="source is in external system" />
-				</_field_byte_flags>
+				<_field_real name="time base offset" />
+				<_field_real name="time exponential offset" />
+				<_field_char_enum name="animation input">
+					<item Name="time" />
+					<item Name="binding" />
+				</_field_char_enum>
 				<_field_pad name="pad0" length="3" />
-			</_field_block_64>
-			<_field_block_64 name="tag reference properties" max="8192" guid="caa80a14-45b5-9b12-f540-3aa52e4ca4ff">
-				<_field_string_id name="name^" />
-				<_field_tag_reference_64 name="value" />
-			</_field_block_64>
-			<_field_block_64 name="string properties" max="8192" guid="9b80dcd3-4f46-d0f8-4360-7aafda9d5497">
-				<_field_string_id name="name^" />
-				<_field_long_string name="value" />
-			</_field_block_64>
-			<_field_block_64 name="argb color properties" max="8192" guid="a86fc89b-4bac-478a-446b-ed97b89a09c3">
-				<_field_string_id name="name^" />
-				<_field_real_argb_color name="value" />
+				<_field_block_64 name="components" max="8192" srcguid="37944a2f-b916-45b1-8b52-723e392682be" srcName="animation_component_definition">
+					<_field_string_id name="name^" />
+					<_field_long_integer name="total milliseconds" />
+					<_field_block_64 name="real properties" max="8192" srcguid="ad69e811-6a19-433f-a8c3-7d38891bda5f" srcName="animation_component_real_property">
+						<_field_string_id name="name^" />
+						<_field_short_enum name="composition">
+							<item Name="relative to current" />
+							<item Name="absolute to screen" />
+							<item Name="absolute to parent" />
+						</_field_short_enum>
+						<_field_byte_flags name="flags">
+							<item Name="loop" />
+						</_field_byte_flags>
+						<_field_pad name="pad0" length="1" />
+						<_field_long_integer name="total milliseconds" />
+						<_field_block_64 name="real keyframes" max="8192" srcguid="b0607499-06c2-47b4-8cf6-3ab2fe7a143d" srcName="animation_property_keyframe_real_value">
+							<_field_long_integer name="duration:milliseconds#the amount of time from the previous keyframe to this keyframe" />
+							<_field_real name="value#the value when the current time is on this keyframe" />
+							<_field_struct name="transition function" srcguid="93df7492-1688-416a-ae91-9c60ee87d1c3">
+								<_field_struct name="scalar function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+									<_field_data_64 name="data" />
+								</_field_struct>
+							</_field_struct>
+						</_field_block_64>
+					</_field_block_64>
+					<_field_block_64 name="argb color properties" max="8192" srcguid="f78ae30c-15b4-4001-af85-f680ec811ae1" srcName="animation_component_argb_color_property">
+						<_field_string_id name="name^" />
+						<_field_short_enum name="composition">
+							<item Name="relative to current" />
+							<item Name="absolute to screen" />
+							<item Name="absolute to parent" />
+						</_field_short_enum>
+						<_field_byte_flags name="flags">
+							<item Name="loop" />
+						</_field_byte_flags>
+						<_field_pad name="pad0" length="1" />
+						<_field_long_integer name="total milliseconds" />
+						<_field_block_64 name="argb color keyframes" max="8192" srcguid="f1eb2044-54ea-455a-b271-37856111cc0e" srcName="animation_property_keyframe_argb_color_value">
+							<_field_long_integer name="duration:milliseconds#the amount of time from the previous keyframe to this keyframe" />
+							<_field_real_argb_color name="color#the value when the current time is on this keyframe" />
+							<_field_struct name="transition function" srcguid="93df7492-1688-416a-ae91-9c60ee87d1c3">
+								<_field_struct name="scalar function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+									<_field_data_64 name="data" />
+								</_field_struct>
+							</_field_struct>
+						</_field_block_64>
+					</_field_block_64>
+				</_field_block_64>
 			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="animations" max="8192" guid="28c2d946-3940-4818-9778-322850a4c019">
-			<_field_string_id name="name^" />
-			<_field_real name="time base offset" />
-			<_field_real name="time exponential offset" />
-			<_field_char_enum name="animation input">
-				<item Name="time" />
-				<item Name="binding" />
-			</_field_char_enum>
+		<_field_block_64 name="overlays editor only" max="24" srcguid="e972b73f-3e11-4678-abea-165d97b8d1c2" srcName="overlay_editor_only_definition">
+			<_field_string_id name="resolution" />
+			<_field_string_id name="theme" />
+			<_field_byte_flags name="flags">
+				<item Name="exclude overlay" />
+			</_field_byte_flags>
 			<_field_pad name="pad0" length="3" />
-			<_field_block_64 name="components" max="8192" guid="37944a2f-b916-45b1-8b52-723e392682be">
+			<_field_block_64 name="components editor only" max="8192" srcguid="6f53bef3-a37e-4ab6-bf15-c8f038edde45" srcName="component_editor_only_definition">
 				<_field_string_id name="name^" />
-				<_field_long_integer name="total milliseconds" />
-				<_field_block_64 name="real properties" max="8192" guid="ad69e811-6a19-433f-a8c3-7d38891bda5f">
-					<_field_string_id name="name^" />
-					<_field_short_enum name="composition">
-						<item Name="relative to current" />
-						<item Name="absolute to screen" />
-						<item Name="absolute to parent" />
-					</_field_short_enum>
-					<_field_byte_flags name="flags">
-						<item Name="loop" />
-					</_field_byte_flags>
-					<_field_pad name="pad0" length="1" />
-					<_field_long_integer name="total milliseconds" />
-					<_field_block_64 name="real keyframes" max="8192" guid="b0607499-06c2-47b4-8cf6-3ab2fe7a143d">
-						<_field_long_integer name="duration:milliseconds#the amount of time from the previous keyframe to this keyframe" />
-						<_field_real name="value#the value when the current time is on this keyframe" />
-						<_field_struct name="transition function" />
-						<_field_struct name="scalar function" />
-						<_field_data_64 name="data" />
-					</_field_block_64>
-				</_field_block_64>
-				<_field_block_64 name="argb color properties" max="8192" guid="f78ae30c-15b4-4001-af85-f680ec811ae1">
-					<_field_string_id name="name^" />
-					<_field_short_enum name="composition">
-						<item Name="relative to current" />
-						<item Name="absolute to screen" />
-						<item Name="absolute to parent" />
-					</_field_short_enum>
-					<_field_byte_flags name="flags">
-						<item Name="loop" />
-					</_field_byte_flags>
-					<_field_pad name="pad0" length="1" />
-					<_field_long_integer name="total milliseconds" />
-					<_field_block_64 name="argb color keyframes" max="8192" guid="f1eb2044-54ea-455a-b271-37856111cc0e">
-						<_field_long_integer name="duration:milliseconds#the amount of time from the previous keyframe to this keyframe" />
-						<_field_real_argb_color name="color#the value when the current time is on this keyframe" />
-						<_field_struct name="transition function" />
-						<_field_struct name="scalar function" />
-						<_field_data_64 name="data" />
-					</_field_block_64>
-				</_field_block_64>
-			</_field_block_64>
-		</_field_block_64>
-	</_field_block_64>
-	<_field_block_64 name="overlays editor only" max="24" guid="e972b73f-3e11-4678-abea-165d97b8d1c2">
-		<_field_string_id name="resolution" />
-		<_field_string_id name="theme" />
-		<_field_byte_flags name="flags">
-			<item Name="exclude overlay" />
-		</_field_byte_flags>
-		<_field_pad name="pad0" length="3" />
-		<_field_block_64 name="components editor only" max="8192" guid="6f53bef3-a37e-4ab6-bf15-c8f038edde45">
-			<_field_string_id name="name^" />
-			<_field_block_64 name="properties editor only" max="8192" guid="4f28b89c-002a-45ce-a9c3-fce2dedd80c0">
-				<_field_string_id name="name^" />
-				<_field_byte_flags name="flags">
-					<item Name="default value" />
-				</_field_byte_flags>
-				<_field_pad name="pad0" length="3" />
-			</_field_block_64>
-		</_field_block_64>
-		<_field_block_64 name="animations editor only" max="8192" guid="c40bec36-65d3-4c90-bec5-9261f689ae9c">
-			<_field_string_id name="name^" />
-			<_field_block_64 name="components editor only" max="8192" guid="6f53bef3-a37e-4ab6-bf15-c8f038edde45">
-				<_field_string_id name="name^" />
-				<_field_block_64 name="properties editor only" max="8192" guid="4f28b89c-002a-45ce-a9c3-fce2dedd80c0">
+				<_field_block_64 name="properties editor only" max="8192" srcguid="4f28b89c-002a-45ce-a9c3-fce2dedd80c0" srcName="property_editor_only_definition">
 					<_field_string_id name="name^" />
 					<_field_byte_flags name="flags">
 						<item Name="default value" />
@@ -150,151 +144,165 @@
 					<_field_pad name="pad0" length="3" />
 				</_field_block_64>
 			</_field_block_64>
+			<_field_block_64 name="animations editor only" max="8192" srcguid="c40bec36-65d3-4c90-bec5-9261f689ae9c" srcName="animation_editor_only_definition">
+				<_field_string_id name="name^" />
+				<_field_block_64 name="components editor only" max="8192" srcguid="6f53bef3-a37e-4ab6-bf15-c8f038edde45" srcName="component_editor_only_definition">
+					<_field_string_id name="name^" />
+					<_field_block_64 name="properties editor only" max="8192" srcguid="4f28b89c-002a-45ce-a9c3-fce2dedd80c0" srcName="property_editor_only_definition">
+						<_field_string_id name="name^" />
+						<_field_byte_flags name="flags">
+							<item Name="default value" />
+						</_field_byte_flags>
+						<_field_pad name="pad0" length="3" />
+					</_field_block_64>
+				</_field_block_64>
+			</_field_block_64>
 		</_field_block_64>
-	</_field_block_64>
-	<_field_block_64 name="property bindings" max="1024" guid="4888cd37-410f-f2ef-c9c0-bbb02e58f1d9">
-		<_field_word_flags name="flags">
-			<item Name="source is in external screen" />
-			<item Name="source is in external system" />
-			<item Name="target is in external system" />
-		</_field_word_flags>
-		<_field_short_enum name="conversion function">
-			<item Name="none" />
-			<item Name="negate bool" />
-			<item Name="compare long" />
-		</_field_short_enum>
-		<_field_string_id name="source component name" />
-		<_field_string_id name="source property name" />
-		<_field_string_id name="target component name" />
-		<_field_string_id name="target property name" />
-	</_field_block_64>
-	<_field_block_64 name="binding conversion long comparisons" max="1024" guid="6d6e5043-46d7-13d0-53f8-0db490e3c4d5">
-		<_field_string_id name="target component name" />
-		<_field_string_id name="target property name" />
-		<_field_char_enum name="comparison operator">
-			<item Name="equality" />
-			<item Name="inequality" />
-			<item Name="less than" />
-			<item Name="less than or equal" />
-			<item Name="greater than or equal" />
-			<item Name="greater than" />
-		</_field_char_enum>
-		<_field_pad name="pad0" length="3" />
-		<_field_long_integer name="comparison value" />
-	</_field_block_64>
-	<_field_block_64 name="static data tables" max="128" guid="5f2ad34a-4c65-125e-e634-919e7118e6d3">
-		<_field_string_id name="name^" />
-		<_field_string_id name="mock data for component#a component on this screen that gets replaced in simulation with this data table" />
-		<_field_struct name="static data" />
-		<_field_block_64 name="columns" max="128" guid="1fc0b041-4409-cfb9-0693-b2bed14c8905">
-			<_field_string_id name="name^" />
-			<_field_short_enum name="type">
-				<item Name="boolean" />
-				<item Name="long" />
-				<item Name="real" />
-				<item Name="string" />
-				<item Name="component" />
-				<item Name="tag reference" />
-				<item Name="string id" />
-				<item Name="argb color" />
-				<item Name="emblem info" />
+		<_field_block_64 name="property bindings" max="1024" srcguid="4888cd37-410f-f2ef-c9c0-bbb02e58f1d9" srcName="property_binding">
+			<_field_word_flags name="flags">
+				<item Name="source is in external screen" />
+				<item Name="source is in external system" />
+				<item Name="target is in external system" />
+			</_field_word_flags>
+			<_field_short_enum name="conversion function">
+				<item Name="none" />
+				<item Name="negate bool" />
+				<item Name="compare long" />
 			</_field_short_enum>
-			<_field_pad name="pad0" length="2" />
+			<_field_string_id name="source component name" />
+			<_field_string_id name="source property name" />
+			<_field_string_id name="target component name" />
+			<_field_string_id name="target property name" />
 		</_field_block_64>
-		<_field_block_64 name="rows" max="256" guid="b1a7ec45-439e-bc3d-a4f1-d9a6af5709a3">
-			<_field_block_64 name="long properties" max="8192" guid="63dd2829-4d14-d1f1-5279-3896fc1fcc8f">
-				<_field_string_id name="name^" />
-				<_field_long_integer name="value" />
-			</_field_block_64>
-			<_field_block_64 name="real properties" max="8192" guid="758da8a4-4090-5912-6254-fba1693c45d2">
-				<_field_string_id name="name^" />
-				<_field_real name="value" />
-			</_field_block_64>
-			<_field_block_64 name="string_id properties" max="8192" guid="63caf970-4ea9-0faf-2cb1-feb315007ca4">
-				<_field_string_id name="name^" />
-				<_field_string_id name="value" />
-			</_field_block_64>
-			<_field_block_64 name="component ptr properties" max="8192" guid="b824c8c9-44af-9fe4-0e33-aaa4b60e0b97">
-				<_field_string_id name="name^" />
-				<_field_string_id name="value" />
-				<_field_byte_flags name="flags">
-					<item Name="source is in external system" />
-				</_field_byte_flags>
-				<_field_pad name="pad0" length="3" />
-			</_field_block_64>
-			<_field_block_64 name="tag reference properties" max="8192" guid="caa80a14-45b5-9b12-f540-3aa52e4ca4ff">
-				<_field_string_id name="name^" />
-				<_field_tag_reference_64 name="value" />
-			</_field_block_64>
-			<_field_block_64 name="string properties" max="8192" guid="9b80dcd3-4f46-d0f8-4360-7aafda9d5497">
-				<_field_string_id name="name^" />
-				<_field_long_string name="value" />
-			</_field_block_64>
-			<_field_block_64 name="argb color properties" max="8192" guid="a86fc89b-4bac-478a-446b-ed97b89a09c3">
-				<_field_string_id name="name^" />
-				<_field_real_argb_color name="value" />
-			</_field_block_64>
-		</_field_block_64>
-	</_field_block_64>
-	<_field_block_64 name="expressions" max="128" guid="f090b187-4cdd-9d74-527a-3a8c99e86b1d">
-		<_field_string_id name="name^" />
-		<_field_long_string name="expression text" />
-		<_field_block_64 name="steps" max="32" guid="cc3b2db9-4a83-9a25-4f99-a28c2b432ef9">
-			<_field_char_enum name="step type^">
-				<item Name="operator" />
-				<item Name="variable" />
-				<item Name="real value" />
-				<item Name="string id value" />
-			</_field_char_enum>
-			<_field_char_enum name="operator">
-				<item Name="add" />
-				<item Name="subtract" />
-				<item Name="multiply" />
-				<item Name="divide" />
-				<item Name="negate" />
-				<item Name="not" />
+		<_field_block_64 name="binding conversion long comparisons" max="1024" srcguid="6d6e5043-46d7-13d0-53f8-0db490e3c4d5" srcName="binding_conversion_long_comparison_block_definition">
+			<_field_string_id name="target component name" />
+			<_field_string_id name="target property name" />
+			<_field_char_enum name="comparison operator">
+				<item Name="equality" />
+				<item Name="inequality" />
 				<item Name="less than" />
-				<item Name="less than or equal to" />
+				<item Name="less than or equal" />
+				<item Name="greater than or equal" />
 				<item Name="greater than" />
-				<item Name="greater than or equal to" />
-				<item Name="equals" />
-				<item Name="not equals" />
-				<item Name="and" />
-				<item Name="or" />
-				<item Name="mod" />
 			</_field_char_enum>
-			<_field_char_enum name="variable">
-				<item Name="variable a" />
-				<item Name="variable b" />
-				<item Name="variable c" />
-				<item Name="variable d" />
-				<item Name="variable e" />
-				<item Name="variable f" />
-				<item Name="variable g" />
-				<item Name="variable h" />
-			</_field_char_enum>
-			<_field_pad name="pad0" length="1" />
-			<_field_real name="value&amp;real value" />
-			<_field_string_id name="string id value" />
+			<_field_pad name="pad0" length="3" />
+			<_field_long_integer name="comparison value" />
 		</_field_block_64>
-	</_field_block_64>
-	<_field_block_64 name="encapsulated properties" max="64" guid="926e4316-4436-caa2-9d6c-cba481eb9f7e">
-		<_field_string_id name="encapsulation name^" />
-		<_field_block_64 name="properties" max="128" guid="1fc0b041-4409-cfb9-0693-b2bed14c8905">
+		<_field_block_64 name="static data tables" max="128" srcguid="5f2ad34a-4c65-125e-e634-919e7118e6d3" srcName="static_data_table">
 			<_field_string_id name="name^" />
-			<_field_short_enum name="type">
-				<item Name="boolean" />
-				<item Name="long" />
-				<item Name="real" />
-				<item Name="string" />
-				<item Name="component" />
-				<item Name="tag reference" />
-				<item Name="string id" />
-				<item Name="argb color" />
-				<item Name="emblem info" />
-			</_field_short_enum>
-			<_field_pad name="pad0" length="2" />
+			<_field_string_id name="mock data for component#a component on this screen that gets replaced in simulation with this data table" />
+			<_field_struct name="static data" srcguid="2618e512-442b-8ff9-b2ff-939f1f12b890">
+				<_field_block_64 name="columns" max="128" srcguid="1fc0b041-4409-cfb9-0693-b2bed14c8905" srcName="static_data_column">
+					<_field_string_id name="name^" />
+					<_field_short_enum name="type">
+						<item Name="boolean" />
+						<item Name="long" />
+						<item Name="real" />
+						<item Name="string" />
+						<item Name="component" />
+						<item Name="tag reference" />
+						<item Name="string id" />
+						<item Name="argb color" />
+						<item Name="emblem info" />
+					</_field_short_enum>
+					<_field_pad name="pad0" length="2" />
+				</_field_block_64>
+				<_field_block_64 name="rows" max="256" srcguid="b1a7ec45-439e-bc3d-a4f1-d9a6af5709a3" srcName="static_data_row">
+					<_field_block_64 name="long properties" max="8192" srcguid="63dd2829-4d14-d1f1-5279-3896fc1fcc8f" srcName="property_long_value">
+						<_field_string_id name="name^" />
+						<_field_long_integer name="value" />
+					</_field_block_64>
+					<_field_block_64 name="real properties" max="8192" srcguid="758da8a4-4090-5912-6254-fba1693c45d2" srcName="property_real_value">
+						<_field_string_id name="name^" />
+						<_field_real name="value" />
+					</_field_block_64>
+					<_field_block_64 name="string_id properties" max="8192" srcguid="63caf970-4ea9-0faf-2cb1-feb315007ca4" srcName="property_string_id_value">
+						<_field_string_id name="name^" />
+						<_field_string_id name="value" />
+					</_field_block_64>
+					<_field_block_64 name="component ptr properties" max="8192" srcguid="b824c8c9-44af-9fe4-0e33-aaa4b60e0b97" srcName="propertyComponentPtrValue">
+						<_field_string_id name="name^" />
+						<_field_string_id name="value" />
+						<_field_byte_flags name="flags">
+							<item Name="source is in external system" />
+						</_field_byte_flags>
+						<_field_pad name="pad0" length="3" />
+					</_field_block_64>
+					<_field_block_64 name="tag reference properties" max="8192" srcguid="caa80a14-45b5-9b12-f540-3aa52e4ca4ff" srcName="property_tag_reference_value">
+						<_field_string_id name="name^" />
+						<_field_tag_reference_64 name="value" />
+					</_field_block_64>
+					<_field_block_64 name="string properties" max="8192" srcguid="9b80dcd3-4f46-d0f8-4360-7aafda9d5497" srcName="property_text_value">
+						<_field_string_id name="name^" />
+						<_field_long_string name="value" />
+					</_field_block_64>
+					<_field_block_64 name="argb color properties" max="8192" srcguid="a86fc89b-4bac-478a-446b-ed97b89a09c3" srcName="property_argb_color_value">
+						<_field_string_id name="name^" />
+						<_field_real_argb_color name="value" />
+					</_field_block_64>
+				</_field_block_64>
+			</_field_struct>
 		</_field_block_64>
-	</_field_block_64>
+		<_field_block_64 name="expressions" max="128" srcguid="f090b187-4cdd-9d74-527a-3a8c99e86b1d" srcName="expression">
+			<_field_string_id name="name^" />
+			<_field_long_string name="expression text" />
+			<_field_block_64 name="steps" max="32" srcguid="cc3b2db9-4a83-9a25-4f99-a28c2b432ef9" srcName="expression_step">
+				<_field_char_enum name="step type^">
+					<item Name="operator" />
+					<item Name="variable" />
+					<item Name="real value" />
+					<item Name="string id value" />
+				</_field_char_enum>
+				<_field_char_enum name="operator">
+					<item Name="add" />
+					<item Name="subtract" />
+					<item Name="multiply" />
+					<item Name="divide" />
+					<item Name="negate" />
+					<item Name="not" />
+					<item Name="less than" />
+					<item Name="less than or equal to" />
+					<item Name="greater than" />
+					<item Name="greater than or equal to" />
+					<item Name="equals" />
+					<item Name="not equals" />
+					<item Name="and" />
+					<item Name="or" />
+					<item Name="mod" />
+				</_field_char_enum>
+				<_field_char_enum name="variable">
+					<item Name="variable a" />
+					<item Name="variable b" />
+					<item Name="variable c" />
+					<item Name="variable d" />
+					<item Name="variable e" />
+					<item Name="variable f" />
+					<item Name="variable g" />
+					<item Name="variable h" />
+				</_field_char_enum>
+				<_field_pad name="pad0" length="1" />
+				<_field_real name="value&amp;real value" />
+				<_field_string_id name="string id value" />
+			</_field_block_64>
+		</_field_block_64>
+		<_field_block_64 name="encapsulated properties" max="64" srcguid="926e4316-4436-caa2-9d6c-cba481eb9f7e" srcName="encapsulatedProperties">
+			<_field_string_id name="encapsulation name^" />
+			<_field_block_64 name="properties" max="128" srcguid="1fc0b041-4409-cfb9-0693-b2bed14c8905" srcName="static_data_column">
+				<_field_string_id name="name^" />
+				<_field_short_enum name="type">
+					<item Name="boolean" />
+					<item Name="long" />
+					<item Name="real" />
+					<item Name="string" />
+					<item Name="component" />
+					<item Name="tag reference" />
+					<item Name="string id" />
+					<item Name="argb color" />
+					<item Name="emblem info" />
+				</_field_short_enum>
+				<_field_pad name="pad0" length="2" />
+			</_field_block_64>
+		</_field_block_64>
+	</_field_struct>
 	<_field_pad name="pad_tp" length="4" />
 </plugin>

@@ -1,10 +1,11 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_explanation name="Shield Controls">You can use the following variables as inputs to the functions here, in addition to any object variables
     shield_vitality        percentage of shield remaining
     shield_intensity       mixture of recent and current damage (see below)
@@ -33,16 +34,20 @@ You can control separately the inner and outer fades.</_field_explanation>
 	<_field_real name="Outer Fade Radius:[0-1]" />
 	<_field_real name="Center Radius:[0-1]" />
 	<_field_real name="Inner Fade Radius:[0-1]" />
-	<_field_struct name="Edge Glow Color" />
-	<_field_string_id name="Input Variable!" />
-	<_field_string_id name="Range Variable!" />
-	<_field_struct name="Mapping" />
-	<_field_data_64 name="data" />
-	<_field_struct name="Edge Glow Intensity" />
-	<_field_string_id name="Input Variable!" />
-	<_field_string_id name="Range Variable!" />
-	<_field_struct name="Mapping" />
-	<_field_data_64 name="data" />
+	<_field_struct name="Edge Glow Color" srcguid="bdac1b15-4adf-794f-702e-dea49ffabb63">
+		<_field_string_id name="Input Variable!" />
+		<_field_string_id name="Range Variable!" />
+		<_field_struct name="Mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+	</_field_struct>
+	<_field_struct name="Edge Glow Intensity" srcguid="efddc631-4736-eab1-4e73-109ca3199e60">
+		<_field_string_id name="Input Variable!" />
+		<_field_string_id name="Range Variable!" />
+		<_field_struct name="Mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+	</_field_struct>
 	<_field_custom name="Plasma" />
 	<_field_explanation name="Plasma">These controls allow you to define the appearance of the plasma effect.
 The plasma is calculated using the standard formula (1-abs(tex0-tex1))^(sharpness).
@@ -51,8 +56,8 @@ Scroll speed controls how fast the textures scroll on the surface.
 You can specify separate sharpness values for the edge and the center.
 </_field_explanation>
 	<_field_real name="Plasma Depth Fade Range:world units" />
-	<_field_tag_reference_64 name="Plasma Noise Texture 0" />
-	<_field_tag_reference_64 name="Plasma Noise Texture 1" />
+	<_field_tag_reference_64 name="Plasma Noise Texture 0" validtags="bitm" />
+	<_field_tag_reference_64 name="Plasma Noise Texture 1" validtags="bitm" />
 	<_field_real name="Tiling Scale" />
 	<_field_real name="Scroll Speed" />
 	<_field_real name="Edge Sharpness" />
@@ -60,26 +65,34 @@ You can specify separate sharpness values for the edge and the center.
 	<_field_real name="Plasma Outer Fade Radius:[0-1]" />
 	<_field_real name="Plasma Center Radius:[0-1]" />
 	<_field_real name="Plasma Inner Fade Radius:[0-1]" />
-	<_field_struct name="Plasma Center Color" />
-	<_field_string_id name="Input Variable!" />
-	<_field_string_id name="Range Variable!" />
-	<_field_struct name="Mapping" />
-	<_field_data_64 name="data" />
-	<_field_struct name="Plasma Center Intensity" />
-	<_field_string_id name="Input Variable!" />
-	<_field_string_id name="Range Variable!" />
-	<_field_struct name="Mapping" />
-	<_field_data_64 name="data" />
-	<_field_struct name="Plasma Edge Color" />
-	<_field_string_id name="Input Variable!" />
-	<_field_string_id name="Range Variable!" />
-	<_field_struct name="Mapping" />
-	<_field_data_64 name="data" />
-	<_field_struct name="Plasma Edge Intensity" />
-	<_field_string_id name="Input Variable!" />
-	<_field_string_id name="Range Variable!" />
-	<_field_struct name="Mapping" />
-	<_field_data_64 name="data" />
+	<_field_struct name="Plasma Center Color" srcguid="bdac1b15-4adf-794f-702e-dea49ffabb63">
+		<_field_string_id name="Input Variable!" />
+		<_field_string_id name="Range Variable!" />
+		<_field_struct name="Mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+	</_field_struct>
+	<_field_struct name="Plasma Center Intensity" srcguid="efddc631-4736-eab1-4e73-109ca3199e60">
+		<_field_string_id name="Input Variable!" />
+		<_field_string_id name="Range Variable!" />
+		<_field_struct name="Mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+	</_field_struct>
+	<_field_struct name="Plasma Edge Color" srcguid="bdac1b15-4adf-794f-702e-dea49ffabb63">
+		<_field_string_id name="Input Variable!" />
+		<_field_string_id name="Range Variable!" />
+		<_field_struct name="Mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+	</_field_struct>
+	<_field_struct name="Plasma Edge Intensity" srcguid="efddc631-4736-eab1-4e73-109ca3199e60">
+		<_field_string_id name="Input Variable!" />
+		<_field_string_id name="Range Variable!" />
+		<_field_struct name="Mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+	</_field_struct>
 	<_field_custom name="Extrusion Oscillation" />
 	<_field_explanation name="Extrusion Oscillation">These controls allow you to define the oscillation in the extrusion.
 These textures are tiled and scrolled in the xy and yz planes, and their red channel is applied as an offset to the extrusion
@@ -87,42 +100,52 @@ Tiling scale controls the spatial tiling of the plasma textures.
 Scroll speed controls how fast the textures scroll on the surface.
 You can specify separate sharpness values for the edge and the center.
 </_field_explanation>
-	<_field_tag_reference_64 name="Oscillation Texture 0" />
-	<_field_tag_reference_64 name="Oscillation Texture 1" />
+	<_field_tag_reference_64 name="Oscillation Texture 0" validtags="bitm" />
+	<_field_tag_reference_64 name="Oscillation Texture 1" validtags="bitm" />
 	<_field_real name="Oscillation Tiling Scale" />
 	<_field_real name="Oscillation Scroll Speed" />
-	<_field_struct name="Extrusion Amount" />
-	<_field_string_id name="Input Variable!" />
-	<_field_string_id name="Range Variable!" />
-	<_field_struct name="Mapping" />
-	<_field_data_64 name="data" />
-	<_field_struct name="Oscillation Amplitude" />
-	<_field_string_id name="Input Variable!" />
-	<_field_string_id name="Range Variable!" />
-	<_field_struct name="Mapping" />
-	<_field_data_64 name="data" />
+	<_field_struct name="Extrusion Amount" srcguid="efddc631-4736-eab1-4e73-109ca3199e60">
+		<_field_string_id name="Input Variable!" />
+		<_field_string_id name="Range Variable!" />
+		<_field_struct name="Mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+	</_field_struct>
+	<_field_struct name="Oscillation Amplitude" srcguid="efddc631-4736-eab1-4e73-109ca3199e60">
+		<_field_string_id name="Input Variable!" />
+		<_field_string_id name="Range Variable!" />
+		<_field_struct name="Mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+	</_field_struct>
 	<_field_custom name="Hit Response" />
 	<_field_explanation name="Hit Response">These controls allow you to define the color variation in the area surrounding projectile impacts.
 You can control the color, and the size of the colored area.
 The default input is time since impact.
 </_field_explanation>
 	<_field_real name="Hit Time:seconds" />
-	<_field_struct name="Hit Color" />
-	<_field_string_id name="Input Variable!" />
-	<_field_string_id name="Range Variable!" />
-	<_field_struct name="Mapping" />
-	<_field_data_64 name="data" />
-	<_field_struct name="Hit Intensity" />
-	<_field_string_id name="Input Variable!" />
-	<_field_string_id name="Range Variable!" />
-	<_field_struct name="Mapping" />
-	<_field_data_64 name="data" />
-	<_field_struct name="Hit Radius" />
-	<_field_string_id name="Input Variable!" />
-	<_field_string_id name="Range Variable!" />
-	<_field_struct name="Mapping" />
-	<_field_data_64 name="data" />
-	<_field_tag_reference_64 name="hit blob texture (adds significant cost)" />
+	<_field_struct name="Hit Color" srcguid="bdac1b15-4adf-794f-702e-dea49ffabb63">
+		<_field_string_id name="Input Variable!" />
+		<_field_string_id name="Range Variable!" />
+		<_field_struct name="Mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+	</_field_struct>
+	<_field_struct name="Hit Intensity" srcguid="efddc631-4736-eab1-4e73-109ca3199e60">
+		<_field_string_id name="Input Variable!" />
+		<_field_string_id name="Range Variable!" />
+		<_field_struct name="Mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+	</_field_struct>
+	<_field_struct name="Hit Radius" srcguid="efddc631-4736-eab1-4e73-109ca3199e60">
+		<_field_string_id name="Input Variable!" />
+		<_field_string_id name="Range Variable!" />
+		<_field_struct name="Mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+	</_field_struct>
+	<_field_tag_reference_64 name="hit blob texture (adds significant cost)" validtags="bitm" />
 	<_field_real_quaternion name="edge_scales!" />
 	<_field_real_quaternion name="edge_offsets!" />
 	<_field_real_quaternion name="plasma_scales!" />

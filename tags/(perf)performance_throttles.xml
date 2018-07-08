@@ -1,10 +1,11 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_explanation name="Performance Throttles">Split-screen throttle settings should be more aggressive than non-local co-op settings
 block index 0:	default non split screen
 block index 1: two way split screen
@@ -15,7 +16,7 @@ block index 5: two additional non-local players
 block index 6: three additional non-local players
 
 </_field_explanation>
-	<_field_block_64 name="Performance Throttles" max="7" guid="85d15105-40b3-8b67-88fd-82a3e37ca3d1">
+	<_field_block_64 name="Performance Throttles" max="7" srcguid="85d15105-40b3-8b67-88fd-82a3e37ca3d1" srcName="performane_throttle_block">
 		<_field_long_flags name="flags">
 			<item Name="disable object attachment lights" />
 			<item Name="disable first person shadow" />

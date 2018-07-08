@@ -1,10 +1,11 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_custom name="Sorting" />
 	<_field_real name="distance weight" />
 	<_field_real name="blended weight" />
@@ -22,21 +23,21 @@
 	<_field_real name="outline fade duration:(0...) seconds - 0 or less defaults to 0.33" />
 	<_field_real name="interaction target outline intensity scale:[1...) - less than 1 defaults to 2#overall intensity will be capped at 1" />
 	<_field_real name="interaction target outline thickness scale:[1...) - less than 1 defaults to 2.5#overall thickness will be capped at 1" />
-	<_field_block_64 name="Ping Globals" max="2" guid="11d2d209-4197-8d25-d316-70b4fc430d25">
+	<_field_block_64 name="Ping Globals" max="2" srcguid="11d2d209-4197-8d25-d316-70b4fc430d25" srcName="SpartanTrackingPingGlobalsBlockDefinition">
 		<_field_real name="ping display time:seconds#how long tracked objects are marked" />
-		<_field_explanation name="Per Priority Default Ranges">The following list defines the default ranges at which objects can be hit with a ping. The list contains one default, per priority.  They are ordered by increasing priority, from low to critical, so for example, the range for highest priority trackables should be entered under &quot;0. DefaultRangeBlock&quot;.</_field_explanation>
-		<_field_block_64 name="default range per priority" max="4" guid="5e064f45-4175-c0af-887f-f38d14540631">
+		<_field_explanation name="Per Priority Default Ranges">The following list defines the default ranges at which objects can be hit with a ping. The list contains one default, per priority.  They are ordered by increasing priority, from low to critical, so for example, the range for highest priority trackables should be entered under "0. DefaultRangeBlock".</_field_explanation>
+		<_field_block_64 name="default range per priority" max="4" srcguid="5e064f45-4175-c0af-887f-f38d14540631" srcName="DefaultRangeBlock">
 			<_field_real name="default range" />
 		</_field_block_64>
-		<_field_explanation name="Per Priority Tracking Limits">The following list defines the maximum number of objects to be tracked per priority.  Limits are ordered by increasing priority, from low to critical, so for example, the limit for highest priority trackables should be entered under &quot;0. DisplayMaximumsBlock&quot;.</_field_explanation>
-		<_field_block_64 name="max tracked per priority" max="4" guid="a7c0ed68-4498-a743-477e-a99f9e5dcee9">
+		<_field_explanation name="Per Priority Tracking Limits">The following list defines the maximum number of objects to be tracked per priority.  Limits are ordered by increasing priority, from low to critical, so for example, the limit for highest priority trackables should be entered under "0. DisplayMaximumsBlock".</_field_explanation>
+		<_field_block_64 name="max tracked per priority" max="4" srcguid="a7c0ed68-4498-a743-477e-a99f9e5dcee9" srcName="DisplayMaximumsBlock">
 			<_field_byte_integer name="maximum number of tracked objects displayed" />
 		</_field_block_64>
 		<_field_custom name="active ping properties" />
 		<_field_explanation name="The following fields only apply to active tracking." />
-		<_field_tag_reference_64 name="ping effect 0&amp;team Chief active ping effect#this effect is used when the spartan uses their tracking device" />
-		<_field_tag_reference_64 name="ping effect 1{ping effect}&amp;team Locke active ping effect#this effect is used when the spartan uses their tracking device" />
-		<_field_tag_reference_64 name="ping effect 2&amp;team Chief (cracked visor) active ping effect#this effect is used when the spartan uses their tracking device" />
+		<_field_tag_reference_64 name="ping effect 0&amp;team Chief active ping effect#this effect is used when the spartan uses their tracking device" validtags="effe" />
+		<_field_tag_reference_64 name="ping effect 1{ping effect}&amp;team Locke active ping effect#this effect is used when the spartan uses their tracking device" validtags="effe" />
+		<_field_tag_reference_64 name="ping effect 2&amp;team Chief (cracked visor) active ping effect#this effect is used when the spartan uses their tracking device" validtags="effe" />
 		<_field_real name="ping recharge time&amp;active ping recharge time:seconds#minimum time (in seconds) between successive pings" />
 		<_field_real name="ping travel rate&amp;active ping travel rate:world units per second#approximation of how fast the active ping effect travels so we can synchronize when things show up in the UI" />
 	</_field_block_64>

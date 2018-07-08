@@ -1,7 +1,7 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
-	<_field_block_64 name="group_members" max="4096" guid="f84a790e-4c5c-bb49-125b-d8a52ca15897">
+	<_field_block_64 name="group_members" max="4096" srcguid="f84a790e-4c5c-bb49-125b-d8a52ca15897" srcName="model_animation_tag_resource_member">
 		<_field_string_id name="name^" />
 		<_field_dword_integer name="animation_checksum" />
 		<_field_short_integer name="frame count*" />
@@ -15,8 +15,8 @@
 			<item Name="x,y,z - absolute" />
 			<item Name="auto" />
 		</_field_char_enum>
-		<_field_struct name="data blocks*!" />
-		<_field_explanation name="a!">IMPORTANT NOTES ABOUT FRAME EVENTS
+		<_field_struct name="data blocks*!" srcguid="e35a164d-45a0-525d-3e52-a4834f61263f">
+			<_field_explanation name="a!">IMPORTANT NOTES ABOUT FRAME EVENTS
 1) The following four fields (hidden except in expert mode) are legacy Halo3-style tag blocks.
 2) New frame events (attached to animations in Maya) will automagically be exported to
    the frame_event_list any time a model sidecar is imported with the tool import command.
@@ -26,200 +26,206 @@
 4) The only time you should be editing the following hidden fields is to remove legacy
    frame events that have been replaced by events generated in Maya.
 </_field_explanation>
-		<_field_block_64 name="frame events|ABCDCC!*#Legacy field - please edit in new frame event tag below" max="512" guid="4b542454-4540-0863-469d-8994e131f57c">
-			<_field_short_enum name="type">
-				<item Name="none" />
-				<item Name="primary keyframe{primary_keyframe}" />
-				<item Name="secondary keyframe{secondary_keyframe}" />
-				<item Name="tertiary keyframe" />
-				<item Name="left foot{left_foot}" />
-				<item Name="right foot{right_foot}" />
-				<item Name="allow interruption{allow_interruption}" />
-				<item Name="do not allow interruption" />
-				<item Name="both-feet shuffle" />
-				<item Name="body impact" />
-				<item Name="left foot lock" />
-				<item Name="left foot unlock" />
-				<item Name="right foot lock" />
-				<item Name="right foot unlock" />
-				<item Name="blend range marker" />
-				<item Name="stride expansion" />
-				<item Name="stride contraction" />
-				<item Name="ragdoll keyframe" />
-				<item Name="drop weapon keyframe" />
-				<item Name="match a" />
-				<item Name="match b" />
-				<item Name="match c" />
-				<item Name="match d" />
-				<item Name="jetpack closed" />
-				<item Name="jetpack open" />
-				<item Name="sound event" />
-				<item Name="effect event" />
-				<item Name="left_hand" />
-				<item Name="right_hand" />
-				<item Name="start_bamf" />
-				<item Name="end_bamf" />
-				<item Name="hide" />
-			</_field_short_enum>
-			<_field_short_integer name="frame" />
-		</_field_block_64>
-		<_field_block_64 name="sound events|ABCDCC!*#Legacy field - please edit in new frame event tag below" max="512" guid="b35bc4a2-4535-13e8-b04b-dc992fee7a8c">
-			<_field_short_block_index name="sound" srcguid="44ff5ad9-4fbf-62ba-29db-b48b1d39cdca" />
-			<_field_short_integer name="frame" />
-			<_field_string_id name="marker name" />
-		</_field_block_64>
-		<_field_block_64 name="effect events|ABCDCC!*#Legacy field - please edit in new frame event tag below" max="512" guid="e4cd0730-42c9-8a83-0bee-a8b1c941e473">
-			<_field_short_block_index name="effect" srcguid="bdb82602-4e87-dc34-6195-91a9c7c8e0fa" />
-			<_field_short_integer name="frame" />
-			<_field_string_id name="marker name" />
-		</_field_block_64>
-		<_field_block_64 name="dialogue events|ABCDCC!*#Legacy field - please edit in new frame event tag below" max="512" guid="2a844863-473c-9aad-3e5c-a7930e6fbfd1">
-			<_field_short_enum name="dialogue event">
-				<item Name="bump" />
-				<item Name="dive" />
-				<item Name="evade" />
-				<item Name="lift" />
-				<item Name="sigh" />
-				<item Name="contempt" />
-				<item Name="anger" />
-				<item Name="fear" />
-				<item Name="relief" />
-				<item Name="sprint" />
-				<item Name="sprint_end" />
-				<item Name="ass_grabber" />
-				<item Name="kill_ass" />
-				<item Name="ass_grabbed" />
-				<item Name="die_ass" />
-			</_field_short_enum>
-			<_field_short_integer name="frame" />
-		</_field_block_64>
-		<_field_explanation name="b!" />
-		<_field_block_64 name="object-space parent nodes|ABCDCC" max="255" guid="27bccd47-47a1-04c1-774a-4d9d02e716fa">
-			<_field_short_block_index name="node index{node_index}^" srcguid="a1bc3ec9-454c-a8a1-2d3f-898c6813ac2c" />
-			<_field_word_flags name="flags*">
-				<item Name="rotation" />
-				<item Name="translation" />
-				<item Name="scale" />
-				<item Name="motion root" />
-			</_field_word_flags>
-			<_field_struct name="parent orientation{orientation}*" />
-			<_field_short_integer name="rotation x*" />
-			<_field_short_integer name="rotation y*" />
-			<_field_short_integer name="rotation z*" />
-			<_field_short_integer name="rotation w*" />
-			<_field_real_point_3d name="default translation*" />
-			<_field_real name="default scale*" />
-		</_field_block_64>
-		<_field_block_64 name="object space offset nodes|ABCDCC" max="16" guid="f10fb882-4f22-0015-2f94-f88b8aaeebbb">
-			<_field_short_block_index name="object space offset node^" srcguid="a1bc3ec9-454c-a8a1-2d3f-898c6813ac2c" />
-			<_field_pad name="wsonbp" length="2" />
-		</_field_block_64>
-		<_field_block_64 name="forward-invert kinetic anchor nodes|ABCDCC" max="5" guid="34216e16-414b-b26a-5c51-c0a0ff5c6f92">
-			<_field_short_block_index name="anchor node^" srcguid="a1bc3ec9-454c-a8a1-2d3f-898c6813ac2c" />
-			<_field_pad name="dse" length="2" />
-		</_field_block_64>
-		<_field_block_64 name="ik chain events*!" max="32" guid="093101e5-4d5e-2c2b-def5-1ab716e49b69">
-			<_field_explanation name="REFERENCE IK CHAIN INFO" />
-			<_field_string_id name="chain name" />
-			<_field_short_enum name="chain type">
-				<item Name="standard" />
-				<item Name="spine" />
-				<item Name="spline driven spine" />
-			</_field_short_enum>
-			<_field_short_block_index name="chain start node" srcguid="a1bc3ec9-454c-a8a1-2d3f-898c6813ac2c" />
-			<_field_short_block_index name="chain effector node" srcguid="a1bc3ec9-454c-a8a1-2d3f-898c6813ac2c" />
-			<_field_explanation name="IMPORTED IK CHAIN INFO" />
-			<_field_short_enum name="chain usage">
-				<item Name="none" />
-				<item Name="world" />
-				<item Name="self" />
-				<item Name="parent" />
-				<item Name="primary weapon" />
-				<item Name="secondary weapon" />
-				<item Name="assassination" />
-			</_field_short_enum>
-			<_field_string_id name="proxy marker" />
-			<_field_long_integer name="proxy id" />
-			<_field_char_enum name="event type">
-				<item Name="active" />
-				<item Name="passive" />
-			</_field_char_enum>
-			<_field_byte_integer name="effector transform data index" />
-			<_field_byte_integer name="effector weight data index" />
-			<_field_byte_integer name="pole point data index" />
-			<_field_explanation name="POST PROCESS IK CHAIN INFO" />
-			<_field_byte_integer name="chain index" />
-			<_field_pad name="aikcep" length="3" />
-		</_field_block_64>
-		<_field_block_64 name="ik chain proxies*!" max="16" guid="cc1a00c4-4fbb-038d-5130-1f8fe04796a1">
-			<_field_long_integer name="id" />
-			<_field_string_id name="target marker" />
-			<_field_byte_integer name="proxy transform data index" />
-			<_field_pad name="aikcpp" length="3" />
-		</_field_block_64>
-		<_field_block_64 name="facial wrinkle events*!" max="32" guid="5d78b2ba-4c75-4120-5442-c2aae13d38a7">
-			<_field_explanation name="REFERENCE FACIAL WRINKLE EVENT INFO" />
-			<_field_string_id name="wrinkle name" />
-			<_field_real name="default value" />
-			<_field_explanation name="IMPORTED FACIAL WRINKLE INFO" />
-			<_field_short_integer name="start frame" />
-			<_field_short_integer name="frame count" />
-			<_field_char_enum name="region">
-				<item Name="Upper Brow" />
-				<item Name="Center Brow" />
-				<item Name="Left Squint" />
-				<item Name="Right Squint" />
-				<item Name="Left Smile" />
-				<item Name="Right Smile" />
-				<item Name="Left Sneer" />
-				<item Name="Right Sneer" />
-			</_field_char_enum>
-			<_field_pad name="PADDNG" length="3" />
-			<_field_explanation name="POST PROCESS WRINKLE EVENT INFO" />
-			<_field_short_integer name="wrinkle data index" />
-			<_field_pad name="aikcep" length="2" />
-		</_field_block_64>
-		<_field_block_64 name="extended data events*!" max="32" guid="20b7f541-4fa9-876b-ac76-5fadfab46726">
-			<_field_explanation name="IMPORTED EXTENDED DATA EVENT INFO" />
-			<_field_string_id name="name" />
-			<_field_short_integer name="start frame" />
-			<_field_short_integer name="frame count" />
-			<_field_real name="default value" />
-			<_field_short_integer name="data index" />
-			<_field_pad name="pants" length="2" />
-		</_field_block_64>
-		<_field_block_64 name="animation object functions" max="4" guid="2c6b2ee2-4c48-fc97-f0f7-279114e9f8eb">
-			<_field_string_id name="real_name!*" />
-			<_field_long_enum name="name">
-				<item Name="animation_object_function_a" />
-				<item Name="animation_object_function_b" />
-				<item Name="animation_object_function_c" />
-				<item Name="animation_object_function_d" />
-			</_field_long_enum>
-			<_field_short_integer name="start frame" />
-			<_field_short_integer name="frame count" />
-			<_field_struct name="function curve" />
-			<_field_data_64 name="data" />
-		</_field_block_64>
-		<_field_struct name="data sizes*!" />
-		<_field_long_integer name="static_node_flags!" />
-		<_field_long_integer name="animated_node_flags!" />
-		<_field_long_integer name="movement_data!" />
-		<_field_long_integer name="pill_offset_data!" />
-		<_field_long_integer name="default_data!" />
-		<_field_long_integer name="uncompressed_data!" />
-		<_field_long_integer name="compressed_data!" />
-		<_field_long_integer name="blend_screen_data!" />
-		<_field_long_integer name="object_space_offset_data!" />
-		<_field_long_integer name="ik_chain_event_data!" />
-		<_field_long_integer name="ik_chain_control_data!" />
-		<_field_long_integer name="ik_chain_proxy_data!" />
-		<_field_long_integer name="ik_chain_pole_vector_data!" />
-		<_field_long_integer name="uncompressed_object_space_data!" />
-		<_field_long_integer name="fik_anchor_data!" />
-		<_field_long_integer name="uncompressed_object_space_node_flags!" />
-		<_field_long_integer name="compressed_event_curve!" />
-		<_field_long_integer name="compressed_static_pose!" />
+			<_field_block_64 name="frame events|ABCDCC!*#Legacy field - please edit in new frame event tag below" max="512" srcguid="4b542454-4540-0863-469d-8994e131f57c" srcName="animation_frame_event_block">
+				<_field_short_enum name="type">
+					<item Name="none" />
+					<item Name="primary keyframe{primary_keyframe}" />
+					<item Name="secondary keyframe{secondary_keyframe}" />
+					<item Name="tertiary keyframe" />
+					<item Name="left foot{left_foot}" />
+					<item Name="right foot{right_foot}" />
+					<item Name="allow interruption{allow_interruption}" />
+					<item Name="do not allow interruption" />
+					<item Name="both-feet shuffle" />
+					<item Name="body impact" />
+					<item Name="left foot lock" />
+					<item Name="left foot unlock" />
+					<item Name="right foot lock" />
+					<item Name="right foot unlock" />
+					<item Name="blend range marker" />
+					<item Name="stride expansion" />
+					<item Name="stride contraction" />
+					<item Name="ragdoll keyframe" />
+					<item Name="drop weapon keyframe" />
+					<item Name="match a" />
+					<item Name="match b" />
+					<item Name="match c" />
+					<item Name="match d" />
+					<item Name="jetpack closed" />
+					<item Name="jetpack open" />
+					<item Name="sound event" />
+					<item Name="effect event" />
+					<item Name="left_hand" />
+					<item Name="right_hand" />
+					<item Name="start_bamf" />
+					<item Name="end_bamf" />
+					<item Name="hide" />
+				</_field_short_enum>
+				<_field_short_integer name="frame" />
+			</_field_block_64>
+			<_field_block_64 name="sound events|ABCDCC!*#Legacy field - please edit in new frame event tag below" max="512" srcguid="b35bc4a2-4535-13e8-b04b-dc992fee7a8c" srcName="animation_sound_event_block">
+				<_field_short_block_index name="sound" targetGuid="44ff5ad9-4fbf-62ba-29db-b48b1d39cdca" targetName="SoundEventReferenceSetBlock" />
+				<_field_short_integer name="frame" />
+				<_field_string_id name="marker name" />
+			</_field_block_64>
+			<_field_block_64 name="effect events|ABCDCC!*#Legacy field - please edit in new frame event tag below" max="512" srcguid="e4cd0730-42c9-8a83-0bee-a8b1c941e473" srcName="animation_effect_event_block">
+				<_field_short_block_index name="effect" targetGuid="bdb82602-4e87-dc34-6195-91a9c7c8e0fa" targetName="EffectEventReferenceSetBlock" />
+				<_field_short_integer name="frame" />
+				<_field_string_id name="marker name" />
+			</_field_block_64>
+			<_field_block_64 name="dialogue events|ABCDCC!*#Legacy field - please edit in new frame event tag below" max="512" srcguid="2a844863-473c-9aad-3e5c-a7930e6fbfd1" srcName="animation_dialogue_event_block">
+				<_field_short_enum name="dialogue event">
+					<item Name="bump" />
+					<item Name="dive" />
+					<item Name="evade" />
+					<item Name="lift" />
+					<item Name="sigh" />
+					<item Name="contempt" />
+					<item Name="anger" />
+					<item Name="fear" />
+					<item Name="relief" />
+					<item Name="sprint" />
+					<item Name="sprint_end" />
+					<item Name="ass_grabber" />
+					<item Name="kill_ass" />
+					<item Name="ass_grabbed" />
+					<item Name="die_ass" />
+				</_field_short_enum>
+				<_field_short_integer name="frame" />
+			</_field_block_64>
+			<_field_explanation name="b!" />
+			<_field_block_64 name="object-space parent nodes|ABCDCC" max="255" srcguid="27bccd47-47a1-04c1-774a-4d9d02e716fa" srcName="object_space_node_data_block">
+				<_field_short_block_index name="node index{node_index}^" targetGuid="a1bc3ec9-454c-a8a1-2d3f-898c6813ac2c" targetName="animation_graph_node_block" />
+				<_field_word_flags name="flags*">
+					<item Name="rotation" />
+					<item Name="translation" />
+					<item Name="scale" />
+					<item Name="motion root" />
+				</_field_word_flags>
+				<_field_struct name="parent orientation{orientation}*" srcguid="214a3836-45dd-146c-225d-31915deecb78">
+					<_field_short_integer name="rotation x*" />
+					<_field_short_integer name="rotation y*" />
+					<_field_short_integer name="rotation z*" />
+					<_field_short_integer name="rotation w*" />
+					<_field_real_point_3d name="default translation*" />
+					<_field_real name="default scale*" />
+				</_field_struct>
+			</_field_block_64>
+			<_field_block_64 name="object space offset nodes|ABCDCC" max="16" srcguid="f10fb882-4f22-0015-2f94-f88b8aaeebbb" srcName="object_space_offset_node_block">
+				<_field_short_block_index name="object space offset node^" targetGuid="a1bc3ec9-454c-a8a1-2d3f-898c6813ac2c" targetName="animation_graph_node_block" />
+				<_field_pad name="wsonbp" length="2" />
+			</_field_block_64>
+			<_field_block_64 name="forward-invert kinetic anchor nodes|ABCDCC" max="5" srcguid="34216e16-414b-b26a-5c51-c0a0ff5c6f92" srcName="fik_anchor_node_block">
+				<_field_short_block_index name="anchor node^" targetGuid="a1bc3ec9-454c-a8a1-2d3f-898c6813ac2c" targetName="animation_graph_node_block" />
+				<_field_pad name="dse" length="2" />
+			</_field_block_64>
+			<_field_block_64 name="ik chain events*!" max="32" srcguid="093101e5-4d5e-2c2b-def5-1ab716e49b69" srcName="animation_ik_chain_events">
+				<_field_explanation name="REFERENCE IK CHAIN INFO" />
+				<_field_string_id name="chain name" />
+				<_field_short_enum name="chain type">
+					<item Name="standard" />
+					<item Name="spine" />
+					<item Name="spline driven spine" />
+				</_field_short_enum>
+				<_field_short_block_index name="chain start node" targetGuid="a1bc3ec9-454c-a8a1-2d3f-898c6813ac2c" targetName="animation_graph_node_block" />
+				<_field_short_block_index name="chain effector node" targetGuid="a1bc3ec9-454c-a8a1-2d3f-898c6813ac2c" targetName="animation_graph_node_block" />
+				<_field_explanation name="IMPORTED IK CHAIN INFO" />
+				<_field_short_enum name="chain usage">
+					<item Name="none" />
+					<item Name="world" />
+					<item Name="self" />
+					<item Name="parent" />
+					<item Name="primary weapon" />
+					<item Name="secondary weapon" />
+					<item Name="assassination" />
+				</_field_short_enum>
+				<_field_string_id name="proxy marker" />
+				<_field_long_integer name="proxy id" />
+				<_field_char_enum name="event type">
+					<item Name="active" />
+					<item Name="passive" />
+				</_field_char_enum>
+				<_field_byte_integer name="effector transform data index" />
+				<_field_byte_integer name="effector weight data index" />
+				<_field_byte_integer name="pole point data index" />
+				<_field_explanation name="POST PROCESS IK CHAIN INFO" />
+				<_field_byte_integer name="chain index" />
+				<_field_pad name="aikcep" length="3" />
+			</_field_block_64>
+			<_field_block_64 name="ik chain proxies*!" max="16" srcguid="cc1a00c4-4fbb-038d-5130-1f8fe04796a1" srcName="animation_ik_chain_proxies">
+				<_field_long_integer name="id" />
+				<_field_string_id name="target marker" />
+				<_field_byte_integer name="proxy transform data index" />
+				<_field_pad name="aikcpp" length="3" />
+			</_field_block_64>
+			<_field_block_64 name="facial wrinkle events*!" max="32" srcguid="5d78b2ba-4c75-4120-5442-c2aae13d38a7" srcName="animation_facial_wrinkle_events">
+				<_field_explanation name="REFERENCE FACIAL WRINKLE EVENT INFO" />
+				<_field_string_id name="wrinkle name" />
+				<_field_real name="default value" />
+				<_field_explanation name="IMPORTED FACIAL WRINKLE INFO" />
+				<_field_short_integer name="start frame" />
+				<_field_short_integer name="frame count" />
+				<_field_char_enum name="region">
+					<item Name="Upper Brow" />
+					<item Name="Center Brow" />
+					<item Name="Left Squint" />
+					<item Name="Right Squint" />
+					<item Name="Left Smile" />
+					<item Name="Right Smile" />
+					<item Name="Left Sneer" />
+					<item Name="Right Sneer" />
+				</_field_char_enum>
+				<_field_pad name="PADDNG" length="3" />
+				<_field_explanation name="POST PROCESS WRINKLE EVENT INFO" />
+				<_field_short_integer name="wrinkle data index" />
+				<_field_pad name="aikcep" length="2" />
+			</_field_block_64>
+			<_field_block_64 name="extended data events*!" max="32" srcguid="20b7f541-4fa9-876b-ac76-5fadfab46726" srcName="animation_extended_events">
+				<_field_explanation name="IMPORTED EXTENDED DATA EVENT INFO" />
+				<_field_string_id name="name" />
+				<_field_short_integer name="start frame" />
+				<_field_short_integer name="frame count" />
+				<_field_real name="default value" />
+				<_field_short_integer name="data index" />
+				<_field_pad name="pants" length="2" />
+			</_field_block_64>
+			<_field_block_64 name="animation object functions" max="4" srcguid="2c6b2ee2-4c48-fc97-f0f7-279114e9f8eb" srcName="animation_object_functions">
+				<_field_string_id name="real_name!*" />
+				<_field_long_enum name="name">
+					<item Name="animation_object_function_a" />
+					<item Name="animation_object_function_b" />
+					<item Name="animation_object_function_c" />
+					<item Name="animation_object_function_d" />
+				</_field_long_enum>
+				<_field_short_integer name="start frame" />
+				<_field_short_integer name="frame count" />
+				<_field_struct name="function curve" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+					<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+						<_field_data_64 name="data" />
+					</_field_struct>
+				</_field_struct>
+			</_field_block_64>
+		</_field_struct>
+		<_field_struct name="data sizes*!" srcguid="1fbe28a2-41f2-8406-1e14-52882e4ad502">
+			<_field_long_integer name="static_node_flags!" />
+			<_field_long_integer name="animated_node_flags!" />
+			<_field_long_integer name="movement_data!" />
+			<_field_long_integer name="pill_offset_data!" />
+			<_field_long_integer name="default_data!" />
+			<_field_long_integer name="uncompressed_data!" />
+			<_field_long_integer name="compressed_data!" />
+			<_field_long_integer name="blend_screen_data!" />
+			<_field_long_integer name="object_space_offset_data!" />
+			<_field_long_integer name="ik_chain_event_data!" />
+			<_field_long_integer name="ik_chain_control_data!" />
+			<_field_long_integer name="ik_chain_proxy_data!" />
+			<_field_long_integer name="ik_chain_pole_vector_data!" />
+			<_field_long_integer name="uncompressed_object_space_data!" />
+			<_field_long_integer name="fik_anchor_data!" />
+			<_field_long_integer name="uncompressed_object_space_node_flags!" />
+			<_field_long_integer name="compressed_event_curve!" />
+			<_field_long_integer name="compressed_static_pose!" />
+		</_field_struct>
 		<_field_data_64 name="animation_data*" />
 	</_field_block_64>
 </plugin>

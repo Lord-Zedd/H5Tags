@@ -1,11 +1,12 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_tag_reference_64 name="area of effect behavior equipment#if a reference is here, area of effect damage will attach the equipment to the target" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_tag_reference_64 name="area of effect behavior equipment#if a reference is here, area of effect damage will attach the equipment to the target" validtags="obje" />
 	<_field_real_bounds name="radius:world units" />
 	<_field_real_fraction name="cutoff scale:[0,1]" />
 	<_field_long_flags name="effect flags">
@@ -16,8 +17,9 @@
 	</_field_long_flags>
 	<_field_explanation name="damage" />
 	<_field_explanation name="Damage Type">Type of damage caused by this damage effect.</_field_explanation>
-	<_field_struct name="damageType" />
-	<_field_string_id name="Damage Type Name" />
+	<_field_struct name="damageType" srcguid="92ab3d78-4f3f-8951-8cde-4989c2f6e056">
+		<_field_string_id name="Damage Type Name" />
+	</_field_struct>
 	<_field_short_enum name="side effect">
 		<item Name="none" />
 		<item Name="harmless" />
@@ -105,11 +107,15 @@ otherwise, makes headshot not instantly lethal, but multiplies damage done to he
 	<_field_real name="AOE core radius:world units#if &gt;0 then higher fidelity obstruction collision checks are preformed. This field has no other ramifications." />
 	<_field_real name="damage lower bound" />
 	<_field_real_bounds name="damage upper bound" />
-	<_field_struct name="damage falloff function" />
-	<_field_data_64 name="data" />
+	<_field_struct name="damage falloff function" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+		<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+	</_field_struct>
 	<_field_angle name="dmg inner cone angle" />
-	<_field_struct name="blah" />
-	<_field_angle name="dmg outer cone angle" />
+	<_field_struct name="blah" srcguid="728a16dc-403b-5ef1-447f-3b87f2a941c7">
+		<_field_angle name="dmg outer cone angle" />
+	</_field_struct>
 	<_field_real name="active camouflage damage:[0,1]#how much more visible this damage makes a player who is active camouflaged" />
 	<_field_real name="stun:[0,1]#amount of stun added to damaged unit" />
 	<_field_real name="maximum stun:[0,1]#damaged unit's stun will never exceed this amount" />
@@ -126,7 +132,7 @@ otherwise, makes headshot not instantly lethal, but multiplies damage done to he
 	<_field_real_fraction name="soft ping pain screen scale:[0,1]#The maximum amount to apply the pain screen pose overlay" />
 	<_field_string_id name="general_damage" />
 	<_field_string_id name="specific_damage" />
-	<_field_block_64 name="custom response labels" max="8" guid="26ea92bd-40f2-e58b-d434-d3915629a8e8">
+	<_field_block_64 name="custom response labels" max="8" srcguid="26ea92bd-40f2-e58b-d434-d3915629a8e8" srcName="custom_damage_response_label_block">
 		<_field_string_id name="custom label#label used to control what damage response will fire.^" />
 	</_field_block_64>
 	<_field_real name="AI stun radius:world units" />
@@ -138,10 +144,10 @@ otherwise, makes headshot not instantly lethal, but multiplies damage done to he
 	<_field_real name="shield render effects scale" />
 	<_field_real name="equipment hack time:seconds" />
 	<_field_explanation name="damage response" />
-	<_field_tag_reference_64 name="damage response" />
+	<_field_tag_reference_64 name="damage response" validtags="drdf" />
 	<_field_explanation name="sound" />
 	<_field_tag_reference_64 name="old melee sound{sound}" validtags="snd!" />
-	<_field_block_64 name="damage sounds" max="4" guid="98e29191-4a13-66fd-3415-13bd3f0a1668">
+	<_field_block_64 name="damage sounds" max="4" srcguid="98e29191-4a13-66fd-3415-13bd3f0a1668" srcName="damage_effect_sound_block">
 		<_field_tag_reference_64 name="sound" validtags="snd!" />
 		<_field_word_flags name="damage types">
 			<item Name="none!" />
@@ -188,21 +194,22 @@ damage direction, they get kick away from the damage epicenter.</_field_explanat
 	<_field_real name="Damage dealt SFX cooldown time#Time between dealing attacks before we reset the timer" />
 	<_field_real name="Damage received SFX cooldown time#Time between receiving attacks before we reset the timer" />
 	<_field_custom name="player damage additive sounds" />
-	<_field_tag_reference_64 name="deprecated player dealt damage additive sound{player dealt damage additive sound}*!#sound played when a local player deals damage to another player or an AI" />
-	<_field_tag_reference_64 name="deprecated player dealt AOE damage additive sound{player dealt AOE damage additive sound}*!#sound played when a local player deals AoE damage to another player or an AI" />
-	<_field_tag_reference_64 name="deprecated player dealt friendly fire additive sound{player dealt friendly fire additive sound}*!#sound played when a local player deals friendly fire to another player or an AI" />
-	<_field_struct name="player additive sound deal damage" />
-	<_field_tag_reference_64 name="player additive sound deal damage regular#sound played when a local player deals damage to another player or an AI" />
-	<_field_tag_reference_64 name="player additive sound deal damage aoe#sound played when a local player deals AoE damage to another player or an AI" />
-	<_field_tag_reference_64 name="player additive sound deal damage friendly fire#sound played when a local player deals friendly fire to another player or an AI" />
-	<_field_tag_reference_64 name="player additive sound deal damage weak spot" />
-	<_field_tag_reference_64 name="player additive sound deal damage headshot" />
-	<_field_tag_reference_64 name="player additive sound deal damage kill" />
-	<_field_tag_reference_64 name="player additive sound deal damage headshot kill" />
-	<_field_tag_reference_64 name="player received damage additive sound (default)#sound played when a local player receives damage and is in normal first-person view" />
-	<_field_tag_reference_64 name="player received damage additive sound (third person)#sound played when a local player receives damage and is in third-person view" />
-	<_field_tag_reference_64 name="player received damage additive sound (in vehicle)#sound played when the vehicle that a local player is riding in receives damage" />
-	<_field_tag_reference_64 name="player received AOE damage additive sound (default)#sound played when a local player receives AOE damage and is in normal first-person view" />
-	<_field_tag_reference_64 name="player received AOE damage additive sound (third person)#sound played when a local player receives AOE damage and is in third-person view" />
-	<_field_tag_reference_64 name="player received AOE damage additive sound (in vehicle)#sound played when the vehicle that a local player is riding in receives AOE damage" />
+	<_field_tag_reference_64 name="deprecated player dealt damage additive sound{player dealt damage additive sound}*!#sound played when a local player deals damage to another player or an AI" validtags="snd!" />
+	<_field_tag_reference_64 name="deprecated player dealt AOE damage additive sound{player dealt AOE damage additive sound}*!#sound played when a local player deals AoE damage to another player or an AI" validtags="snd!" />
+	<_field_tag_reference_64 name="deprecated player dealt friendly fire additive sound{player dealt friendly fire additive sound}*!#sound played when a local player deals friendly fire to another player or an AI" validtags="snd!" />
+	<_field_struct name="player additive sound deal damage" srcguid="b3f8389f-4bef-1998-cdb6-30b52491dec2">
+		<_field_tag_reference_64 name="player additive sound deal damage regular#sound played when a local player deals damage to another player or an AI" validtags="snd!" />
+		<_field_tag_reference_64 name="player additive sound deal damage aoe#sound played when a local player deals AoE damage to another player or an AI" validtags="snd!" />
+		<_field_tag_reference_64 name="player additive sound deal damage friendly fire#sound played when a local player deals friendly fire to another player or an AI" validtags="snd!" />
+		<_field_tag_reference_64 name="player additive sound deal damage weak spot" validtags="snd!" />
+		<_field_tag_reference_64 name="player additive sound deal damage headshot" validtags="snd!" />
+		<_field_tag_reference_64 name="player additive sound deal damage kill" validtags="snd!" />
+		<_field_tag_reference_64 name="player additive sound deal damage headshot kill" validtags="snd!" />
+	</_field_struct>
+	<_field_tag_reference_64 name="player received damage additive sound (default)#sound played when a local player receives damage and is in normal first-person view" validtags="snd!" />
+	<_field_tag_reference_64 name="player received damage additive sound (third person)#sound played when a local player receives damage and is in third-person view" validtags="snd!" />
+	<_field_tag_reference_64 name="player received damage additive sound (in vehicle)#sound played when the vehicle that a local player is riding in receives damage" validtags="snd!" />
+	<_field_tag_reference_64 name="player received AOE damage additive sound (default)#sound played when a local player receives AOE damage and is in normal first-person view" validtags="snd!" />
+	<_field_tag_reference_64 name="player received AOE damage additive sound (third person)#sound played when a local player receives AOE damage and is in third-person view" validtags="snd!" />
+	<_field_tag_reference_64 name="player received AOE damage additive sound (in vehicle)#sound played when the vehicle that a local player is riding in receives AOE damage" validtags="snd!" />
 </plugin>

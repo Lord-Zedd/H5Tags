@@ -1,10 +1,11 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_custom name="CREATURE" />
 	<_field_long_flags name="flags">
 		<item Name="unused" />
@@ -32,244 +33,252 @@
 	<_field_angle name="turning acceleration maximum (ground creatures only):degrees per second squared" />
 	<_field_real_fraction name="casual turning modifier (ground creatures only):[0,1]" />
 	<_field_real name="autoaim width:world units" />
-	<_field_struct name="physics" />
-	<_field_long_flags name="flags">
-		<item Name="centered_at_origin" />
-		<item Name="shape spherical" />
-		<item Name="use player physics" />
-		<item Name="climb any surface" />
-		<item Name="flying" />
-		<item Name="not physical" />
-		<item Name="dead character collision group" />
-		<item Name="suppress ground planes on bipeds" />
-		<item Name="physical ragdoll" />
-		<item Name="do not resize dead spheres" />
-		<item Name="multiple Mantis shapes" />
-		<item Name="I am an Extreme Slipsurface" />
-		<item Name="slips off movers" />
-		<item Name="aligns with ground" />
-	</_field_long_flags>
-	<_field_real name="height standing" />
-	<_field_real name="height crouching" />
-	<_field_real name="radius" />
-	<_field_real name="mass" />
-	<_field_real name="revive downed player mass" />
-	<_field_char_enum name="maximum rigid body size override">
-		<item Name="default" />
-		<item Name="tiny" />
-		<item Name="small" />
-		<item Name="medium" />
-		<item Name="large" />
-		<item Name="huge" />
-		<item Name="extra huge" />
-	</_field_char_enum>
-	<_field_pad name="pad1" length="3" />
-	<_field_string_id name="living material name#collision material used when character is alive" />
-	<_field_string_id name="dead material name#collision material used when character is dead" />
-	<_field_short_integer name="runtime global material type!" />
-	<_field_short_integer name="runtime dead global material type!" />
-	<_field_block_64 name="dead sphere shapes*#don't edit!" max="16384" guid="80c5709c-4180-37da-8a27-8fa8ee3e942f">
-		<_field_int64_integer name="field pointer skip!~" />
-		<_field_block_64 name="primitive^*!" max="16384" guid="c9ec3299-40e7-2886-36f5-2697b1dc2c04">
-			<_field_string_id name="name^*!" />
-			<_field_real name="relative mass scale" />
-			<_field_real_fraction name="friction" />
-			<_field_real_fraction name="restitution" />
-			<_field_real name="volume *" />
-			<_field_real name="mass*!" />
-			<_field_long_block_index name="phantom*" srcguid="80c5709c-4180-37da-8a27-8fa8ee3e942f" />
-			<_field_short_integer name="runtime material type*~!" />
-			<_field_char_block_index name="material*" srcguid="b42ceadd-4c5c-135a-3b6f-e7b913a951fb" />
-			<_field_byte_flags name="material flags*">
-				<item Name="supresses effects" />
-				<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
-			</_field_byte_flags>
-			<_field_short_integer name="mass distribution index!" />
-			<_field_short_integer name="should use" />
-			<_field_explanation name="collision layer override">This value overrides the default, model, and rigid body layer.</_field_explanation>
-			<_field_string_id name="collision layer" />
+	<_field_struct name="physics" srcguid="2be93f54-4be6-2cb8-0dcb-d7a2c16c2599">
+		<_field_long_flags name="flags">
+			<item Name="centered_at_origin" />
+			<item Name="shape spherical" />
+			<item Name="use player physics" />
+			<item Name="climb any surface" />
+			<item Name="flying" />
+			<item Name="not physical" />
+			<item Name="dead character collision group" />
+			<item Name="suppress ground planes on bipeds" />
+			<item Name="physical ragdoll" />
+			<item Name="do not resize dead spheres" />
+			<item Name="multiple Mantis shapes" />
+			<item Name="I am an Extreme Slipsurface" />
+			<item Name="slips off movers" />
+			<item Name="aligns with ground" />
+		</_field_long_flags>
+		<_field_real name="height standing" />
+		<_field_real name="height crouching" />
+		<_field_real name="radius" />
+		<_field_real name="mass" />
+		<_field_real name="revive downed player mass" />
+		<_field_char_enum name="maximum rigid body size override">
+			<item Name="default" />
+			<item Name="tiny" />
+			<item Name="small" />
+			<item Name="medium" />
+			<item Name="large" />
+			<item Name="huge" />
+			<item Name="extra huge" />
+		</_field_char_enum>
+		<_field_pad name="pad1" length="3" />
+		<_field_string_id name="living material name#collision material used when character is alive" />
+		<_field_string_id name="dead material name#collision material used when character is dead" />
+		<_field_short_integer name="runtime global material type!" />
+		<_field_short_integer name="runtime dead global material type!" />
+		<_field_block_64 name="dead sphere shapes*#don't edit!" max="16384" srcguid="80c5709c-4180-37da-8a27-8fa8ee3e942f" srcName="havok_shapes_block">
+			<_field_int64_integer name="field pointer skip!~" />
+			<_field_block_64 name="primitive^*!" max="16384" srcguid="c9ec3299-40e7-2886-36f5-2697b1dc2c04" srcName="havok_primitive_block">
+				<_field_string_id name="name^*!" />
+				<_field_real name="relative mass scale" />
+				<_field_real_fraction name="friction" />
+				<_field_real_fraction name="restitution" />
+				<_field_real name="volume *" />
+				<_field_real name="mass*!" />
+				<_field_long_block_index name="phantom*" targetGuid="80c5709c-4180-37da-8a27-8fa8ee3e942f" targetName="havok_shapes_block" />
+				<_field_short_integer name="runtime material type*~!" />
+				<_field_char_block_index name="material*" targetGuid="b42ceadd-4c5c-135a-3b6f-e7b913a951fb" targetName="materials_block" />
+				<_field_byte_flags name="material flags*">
+					<item Name="supresses effects" />
+					<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
+				</_field_byte_flags>
+				<_field_short_integer name="mass distribution index!" />
+				<_field_short_integer name="should use" />
+				<_field_explanation name="collision layer override">This value overrides the default, model, and rigid body layer.</_field_explanation>
+				<_field_string_id name="collision layer" />
+			</_field_block_64>
+			<_field_data_64 name="Packfile Data*!" />
+			<_field_data_64 name="TagFile Data*!" />
+			<_field_pad name="pad" length="4" />
 		</_field_block_64>
-		<_field_data_64 name="Packfile Data*!" />
-		<_field_data_64 name="TagFile Data*!" />
-		<_field_pad name="pad" length="4" />
-	</_field_block_64>
-	<_field_block_64 name="transformed dead sphere shapes*#don't edit!" max="16384" guid="80c5709c-4180-37da-8a27-8fa8ee3e942f">
-		<_field_int64_integer name="field pointer skip!~" />
-		<_field_block_64 name="primitive^*!" max="16384" guid="c9ec3299-40e7-2886-36f5-2697b1dc2c04">
-			<_field_string_id name="name^*!" />
-			<_field_real name="relative mass scale" />
-			<_field_real_fraction name="friction" />
-			<_field_real_fraction name="restitution" />
-			<_field_real name="volume *" />
-			<_field_real name="mass*!" />
-			<_field_long_block_index name="phantom*" srcguid="80c5709c-4180-37da-8a27-8fa8ee3e942f" />
-			<_field_short_integer name="runtime material type*~!" />
-			<_field_char_block_index name="material*" srcguid="b42ceadd-4c5c-135a-3b6f-e7b913a951fb" />
-			<_field_byte_flags name="material flags*">
-				<item Name="supresses effects" />
-				<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
-			</_field_byte_flags>
-			<_field_short_integer name="mass distribution index!" />
-			<_field_short_integer name="should use" />
-			<_field_explanation name="collision layer override">This value overrides the default, model, and rigid body layer.</_field_explanation>
-			<_field_string_id name="collision layer" />
+		<_field_block_64 name="transformed dead sphere shapes*#don't edit!" max="16384" srcguid="80c5709c-4180-37da-8a27-8fa8ee3e942f" srcName="havok_shapes_block">
+			<_field_int64_integer name="field pointer skip!~" />
+			<_field_block_64 name="primitive^*!" max="16384" srcguid="c9ec3299-40e7-2886-36f5-2697b1dc2c04" srcName="havok_primitive_block">
+				<_field_string_id name="name^*!" />
+				<_field_real name="relative mass scale" />
+				<_field_real_fraction name="friction" />
+				<_field_real_fraction name="restitution" />
+				<_field_real name="volume *" />
+				<_field_real name="mass*!" />
+				<_field_long_block_index name="phantom*" targetGuid="80c5709c-4180-37da-8a27-8fa8ee3e942f" targetName="havok_shapes_block" />
+				<_field_short_integer name="runtime material type*~!" />
+				<_field_char_block_index name="material*" targetGuid="b42ceadd-4c5c-135a-3b6f-e7b913a951fb" targetName="materials_block" />
+				<_field_byte_flags name="material flags*">
+					<item Name="supresses effects" />
+					<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
+				</_field_byte_flags>
+				<_field_short_integer name="mass distribution index!" />
+				<_field_short_integer name="should use" />
+				<_field_explanation name="collision layer override">This value overrides the default, model, and rigid body layer.</_field_explanation>
+				<_field_string_id name="collision layer" />
+			</_field_block_64>
+			<_field_data_64 name="Packfile Data*!" />
+			<_field_data_64 name="TagFile Data*!" />
+			<_field_pad name="pad" length="4" />
 		</_field_block_64>
-		<_field_data_64 name="Packfile Data*!" />
-		<_field_data_64 name="TagFile Data*!" />
-		<_field_pad name="pad" length="4" />
-	</_field_block_64>
-	<_field_block_64 name="pill shapes*#don't edit!" max="16384" guid="80c5709c-4180-37da-8a27-8fa8ee3e942f">
-		<_field_int64_integer name="field pointer skip!~" />
-		<_field_block_64 name="primitive^*!" max="16384" guid="c9ec3299-40e7-2886-36f5-2697b1dc2c04">
-			<_field_string_id name="name^*!" />
-			<_field_real name="relative mass scale" />
-			<_field_real_fraction name="friction" />
-			<_field_real_fraction name="restitution" />
-			<_field_real name="volume *" />
-			<_field_real name="mass*!" />
-			<_field_long_block_index name="phantom*" srcguid="80c5709c-4180-37da-8a27-8fa8ee3e942f" />
-			<_field_short_integer name="runtime material type*~!" />
-			<_field_char_block_index name="material*" srcguid="b42ceadd-4c5c-135a-3b6f-e7b913a951fb" />
-			<_field_byte_flags name="material flags*">
-				<item Name="supresses effects" />
-				<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
-			</_field_byte_flags>
-			<_field_short_integer name="mass distribution index!" />
-			<_field_short_integer name="should use" />
-			<_field_explanation name="collision layer override">This value overrides the default, model, and rigid body layer.</_field_explanation>
-			<_field_string_id name="collision layer" />
+		<_field_block_64 name="pill shapes*#don't edit!" max="16384" srcguid="80c5709c-4180-37da-8a27-8fa8ee3e942f" srcName="havok_shapes_block">
+			<_field_int64_integer name="field pointer skip!~" />
+			<_field_block_64 name="primitive^*!" max="16384" srcguid="c9ec3299-40e7-2886-36f5-2697b1dc2c04" srcName="havok_primitive_block">
+				<_field_string_id name="name^*!" />
+				<_field_real name="relative mass scale" />
+				<_field_real_fraction name="friction" />
+				<_field_real_fraction name="restitution" />
+				<_field_real name="volume *" />
+				<_field_real name="mass*!" />
+				<_field_long_block_index name="phantom*" targetGuid="80c5709c-4180-37da-8a27-8fa8ee3e942f" targetName="havok_shapes_block" />
+				<_field_short_integer name="runtime material type*~!" />
+				<_field_char_block_index name="material*" targetGuid="b42ceadd-4c5c-135a-3b6f-e7b913a951fb" targetName="materials_block" />
+				<_field_byte_flags name="material flags*">
+					<item Name="supresses effects" />
+					<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
+				</_field_byte_flags>
+				<_field_short_integer name="mass distribution index!" />
+				<_field_short_integer name="should use" />
+				<_field_explanation name="collision layer override">This value overrides the default, model, and rigid body layer.</_field_explanation>
+				<_field_string_id name="collision layer" />
+			</_field_block_64>
+			<_field_data_64 name="Packfile Data*!" />
+			<_field_data_64 name="TagFile Data*!" />
+			<_field_pad name="pad" length="4" />
 		</_field_block_64>
-		<_field_data_64 name="Packfile Data*!" />
-		<_field_data_64 name="TagFile Data*!" />
-		<_field_pad name="pad" length="4" />
-	</_field_block_64>
-	<_field_block_64 name="sphere shapes*#don't edit!" max="16384" guid="80c5709c-4180-37da-8a27-8fa8ee3e942f">
-		<_field_int64_integer name="field pointer skip!~" />
-		<_field_block_64 name="primitive^*!" max="16384" guid="c9ec3299-40e7-2886-36f5-2697b1dc2c04">
-			<_field_string_id name="name^*!" />
-			<_field_real name="relative mass scale" />
-			<_field_real_fraction name="friction" />
-			<_field_real_fraction name="restitution" />
-			<_field_real name="volume *" />
-			<_field_real name="mass*!" />
-			<_field_long_block_index name="phantom*" srcguid="80c5709c-4180-37da-8a27-8fa8ee3e942f" />
-			<_field_short_integer name="runtime material type*~!" />
-			<_field_char_block_index name="material*" srcguid="b42ceadd-4c5c-135a-3b6f-e7b913a951fb" />
-			<_field_byte_flags name="material flags*">
-				<item Name="supresses effects" />
-				<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
-			</_field_byte_flags>
-			<_field_short_integer name="mass distribution index!" />
-			<_field_short_integer name="should use" />
-			<_field_explanation name="collision layer override">This value overrides the default, model, and rigid body layer.</_field_explanation>
-			<_field_string_id name="collision layer" />
+		<_field_block_64 name="sphere shapes*#don't edit!" max="16384" srcguid="80c5709c-4180-37da-8a27-8fa8ee3e942f" srcName="havok_shapes_block">
+			<_field_int64_integer name="field pointer skip!~" />
+			<_field_block_64 name="primitive^*!" max="16384" srcguid="c9ec3299-40e7-2886-36f5-2697b1dc2c04" srcName="havok_primitive_block">
+				<_field_string_id name="name^*!" />
+				<_field_real name="relative mass scale" />
+				<_field_real_fraction name="friction" />
+				<_field_real_fraction name="restitution" />
+				<_field_real name="volume *" />
+				<_field_real name="mass*!" />
+				<_field_long_block_index name="phantom*" targetGuid="80c5709c-4180-37da-8a27-8fa8ee3e942f" targetName="havok_shapes_block" />
+				<_field_short_integer name="runtime material type*~!" />
+				<_field_char_block_index name="material*" targetGuid="b42ceadd-4c5c-135a-3b6f-e7b913a951fb" targetName="materials_block" />
+				<_field_byte_flags name="material flags*">
+					<item Name="supresses effects" />
+					<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
+				</_field_byte_flags>
+				<_field_short_integer name="mass distribution index!" />
+				<_field_short_integer name="should use" />
+				<_field_explanation name="collision layer override">This value overrides the default, model, and rigid body layer.</_field_explanation>
+				<_field_string_id name="collision layer" />
+			</_field_block_64>
+			<_field_data_64 name="Packfile Data*!" />
+			<_field_data_64 name="TagFile Data*!" />
+			<_field_pad name="pad" length="4" />
 		</_field_block_64>
-		<_field_data_64 name="Packfile Data*!" />
-		<_field_data_64 name="TagFile Data*!" />
-		<_field_pad name="pad" length="4" />
-	</_field_block_64>
-	<_field_block_64 name="compund sphere shapes*#don't edit!" max="16384" guid="80c5709c-4180-37da-8a27-8fa8ee3e942f">
-		<_field_int64_integer name="field pointer skip!~" />
-		<_field_block_64 name="primitive^*!" max="16384" guid="c9ec3299-40e7-2886-36f5-2697b1dc2c04">
-			<_field_string_id name="name^*!" />
-			<_field_real name="relative mass scale" />
-			<_field_real_fraction name="friction" />
-			<_field_real_fraction name="restitution" />
-			<_field_real name="volume *" />
-			<_field_real name="mass*!" />
-			<_field_long_block_index name="phantom*" srcguid="80c5709c-4180-37da-8a27-8fa8ee3e942f" />
-			<_field_short_integer name="runtime material type*~!" />
-			<_field_char_block_index name="material*" srcguid="b42ceadd-4c5c-135a-3b6f-e7b913a951fb" />
-			<_field_byte_flags name="material flags*">
-				<item Name="supresses effects" />
-				<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
-			</_field_byte_flags>
-			<_field_short_integer name="mass distribution index!" />
-			<_field_short_integer name="should use" />
-			<_field_explanation name="collision layer override">This value overrides the default, model, and rigid body layer.</_field_explanation>
-			<_field_string_id name="collision layer" />
+		<_field_block_64 name="compund sphere shapes*#don't edit!" max="16384" srcguid="80c5709c-4180-37da-8a27-8fa8ee3e942f" srcName="havok_shapes_block">
+			<_field_int64_integer name="field pointer skip!~" />
+			<_field_block_64 name="primitive^*!" max="16384" srcguid="c9ec3299-40e7-2886-36f5-2697b1dc2c04" srcName="havok_primitive_block">
+				<_field_string_id name="name^*!" />
+				<_field_real name="relative mass scale" />
+				<_field_real_fraction name="friction" />
+				<_field_real_fraction name="restitution" />
+				<_field_real name="volume *" />
+				<_field_real name="mass*!" />
+				<_field_long_block_index name="phantom*" targetGuid="80c5709c-4180-37da-8a27-8fa8ee3e942f" targetName="havok_shapes_block" />
+				<_field_short_integer name="runtime material type*~!" />
+				<_field_char_block_index name="material*" targetGuid="b42ceadd-4c5c-135a-3b6f-e7b913a951fb" targetName="materials_block" />
+				<_field_byte_flags name="material flags*">
+					<item Name="supresses effects" />
+					<item Name="force enable collision with player#enables collision with the player regardless of the collision group" />
+				</_field_byte_flags>
+				<_field_short_integer name="mass distribution index!" />
+				<_field_short_integer name="should use" />
+				<_field_explanation name="collision layer override">This value overrides the default, model, and rigid body layer.</_field_explanation>
+				<_field_string_id name="collision layer" />
+			</_field_block_64>
+			<_field_data_64 name="Packfile Data*!" />
+			<_field_data_64 name="TagFile Data*!" />
+			<_field_pad name="pad" length="4" />
 		</_field_block_64>
-		<_field_data_64 name="Packfile Data*!" />
-		<_field_data_64 name="TagFile Data*!" />
-		<_field_pad name="pad" length="4" />
-	</_field_block_64>
-	<_field_explanation name="ground" />
-	<_field_struct name="ground physics" />
-	<_field_angle name="maximum slope angle:degrees" />
-	<_field_angle name="downhill falloff angle:degrees" />
-	<_field_angle name="downhill cutoff angle:degrees" />
-	<_field_angle name="uphill falloff angle:degrees" />
-	<_field_angle name="uphill cutoff angle:degrees" />
-	<_field_real name="downhill velocity scale" />
-	<_field_real name="uphill velocity scale" />
-	<_field_real name="runtime_minimum_normal_k!" />
-	<_field_real name="runtime_downhill_k0!" />
-	<_field_real name="runtime_downhill_k1!" />
-	<_field_real name="runtime_uphill_k0!" />
-	<_field_real name="runtime_uphill_k1!" />
-	<_field_angle name="climb inflection angle#angle for bipeds at which climb direction changes between up and down" />
-	<_field_real name="scale airborne reaction time#scale on the time for the entity to realize it is airborne" />
-	<_field_real name="scale ground adhesion velocity#scale on velocity with which the entity is pushed back into its ground plane (set to -1 to lock to ground)" />
-	<_field_real name="gravity scale#scale on gravity for this entity" />
-	<_field_real name="airborne acceleration scale#scale on airborne acceleration maximum" />
-	<_field_real name="successive slide delay:seconds#seconds required to wait after finishing a slide before sliding again" />
-	<_field_real name="minimum slide trigger sprint fraction:wu/s#character must be moving at least this fast to start sliding" />
-	<_field_explanation name="Slide distance function">Determines the distance travelled based on the initial sprint fraction</_field_explanation>
-	<_field_struct name="Slide distance function" />
-	<_field_data_64 name="data" />
-	<_field_real name="forward speed:wu/s#used to determine a normalized value for the slide distance function" />
-	<_field_pad name="pad0" length="4" />
-	<_field_angle name="maximum direction change during slide:degrees#maximum amount that the character's direction of travel can turn about the up axis before the slide is aborted" />
-	<_field_angle name="maximum turn during slide:degrees#maximum amount that the character's aim can turn about the up axis before the slide is aborted" />
-	<_field_explanation name="Slide speed function">Defines the character's speed over the course of a slide to crouch. 1.0 on the y axis is the speed at which the character entered the slide. 0.0 on the y axis is a full stop.</_field_explanation>
-	<_field_struct name="Slide speed function" />
-	<_field_data_64 name="data" />
-	<_field_explanation name="flying" />
-	<_field_struct name="flying physics" />
-	<_field_angle name="bank angle:degrees#angle at which we bank left/right when sidestepping or turning while moving forwards" />
-	<_field_real name="bank apply time:seconds#time it takes us to apply a bank" />
-	<_field_real name="bank decay time:seconds#time it takes us to recover from a bank" />
-	<_field_real name="pitch ratio#amount that we pitch up/down when moving up or down" />
-	<_field_real name="max velocity:world units per second#max velocity when not crouching" />
-	<_field_real name="max sidestep velocity:world units per second#max sideways or up/down velocity when not crouching" />
-	<_field_real name="acceleration:world units per second squared" />
-	<_field_real name="deceleration:world units per second squared" />
-	<_field_angle name="angular velocity maximum:degrees per second#turn rate" />
-	<_field_angle name="angular acceleration maximum:degrees per second squared#turn acceleration rate" />
-	<_field_real name="crouch velocity modifier:[0,1]#how much slower we fly if crouching (zero = same speed)" />
-	<_field_long_flags name="flags">
-		<item Name="use world up" />
-	</_field_long_flags>
-	<_field_explanation name="clambering" />
-	<_field_struct name="clambering parameters" />
-	<_field_real name="horizontal range:world units#maximum distance from character to ledge in xy plane" />
-	<_field_real name="vertical range:world units#maximum distance from top of character's pill to ledge" />
-	<_field_real name="entry point vertical offset to apex:world units#vertical distance from the ideal entry point to the apex" />
-	<_field_real name="entry point adjustment benchmark speed:world units/sec#speed used as a benchmark to determine entry point adjustment based on entry speed" />
-	<_field_real name="entry point horizontal adjustment range:world units#amount that the common entry point can be adjusted horizontally based on entry position and velocity" />
-	<_field_real name="minimum downward speed required to move entry point down:world units/sec#entry point will not be moved down unless the character is falling at least this fast - prevents downward dip at slow fall speed" />
-	<_field_real name="entry point vertical adjustment range:world units#amount that the common entry point can be adjusted vertically based on entry position and velocity" />
-	<_field_pad name="pad" length="4" />
-	<_field_struct name="common parameters" />
-	<_field_real name="initial button press hold time to trigger:seconds#in order to trigger the mobility action with the same button press that triggered the jump, the player must continue to hold the button for this amount of time" />
-	<_field_real_fraction name="minimum forward throttle#throttle must be at least this far forward to trigger the mobility action" />
-	<_field_angle name="maximum ledge slope:degrees#the steepest ledge that can be moved onto by this mobility mode" />
-	<_field_angle name="minimum edge sharpness:degrees#minimum angle between normals of vertical and horizontal faces of ledge" />
-	<_field_real name="maximum backward reach:world units#maximum distance behind the character of the apex of a path up to a ledge" />
-	<_field_real name="apex vertical offset:world units#for paths up to a ledge, the vertical offset of the apex from the destination point on the ledge" />
-	<_field_real name="max exit speed:world units per second#maximum speed at which the character can exit the mobility action" />
-	<_field_real name="min entry time:seconds#minimum time it can take for the entry phase of the mobility action (&quot;catching the ledge&quot;)" />
-	<_field_real name="max entry time:seconds#maximum time it can take for the entry phase of the mobility action (&quot;catching the ledge&quot;)" />
-	<_field_real name="min movement time:seconds#minimum time it can take to perform the mobility action" />
-	<_field_real name="max movement time:seconds#maximum time it can take to perform the mobility action" />
-	<_field_real name="max anchor object relative speed:world units/sec#if an object is moving faster than this relative to us we cannot use it as an anchor for the mobility action" />
-	<_field_struct name="airborne stabilization" />
-	<_field_custom name="airborne stabilization" />
-	<_field_real name="air stabilization duration:seconds#" />
-	<_field_real name="air stabilization recharge duration ground:seconds" />
-	<_field_real name="air stabilization interpolation duration:seconds#time it takes to transition into and out of airborne stabilization" />
-	<_field_real name="air stabilization time scale#slows down time for the character's motion" />
-	<_field_pad name="pad0" length="4" />
+		<_field_explanation name="ground" />
+		<_field_struct name="ground physics" srcguid="e61d5093-453d-77e5-a005-ec908b777b8b">
+			<_field_angle name="maximum slope angle:degrees" />
+			<_field_angle name="downhill falloff angle:degrees" />
+			<_field_angle name="downhill cutoff angle:degrees" />
+			<_field_angle name="uphill falloff angle:degrees" />
+			<_field_angle name="uphill cutoff angle:degrees" />
+			<_field_real name="downhill velocity scale" />
+			<_field_real name="uphill velocity scale" />
+			<_field_real name="runtime_minimum_normal_k!" />
+			<_field_real name="runtime_downhill_k0!" />
+			<_field_real name="runtime_downhill_k1!" />
+			<_field_real name="runtime_uphill_k0!" />
+			<_field_real name="runtime_uphill_k1!" />
+			<_field_angle name="climb inflection angle#angle for bipeds at which climb direction changes between up and down" />
+			<_field_real name="scale airborne reaction time#scale on the time for the entity to realize it is airborne" />
+			<_field_real name="scale ground adhesion velocity#scale on velocity with which the entity is pushed back into its ground plane (set to -1 to lock to ground)" />
+			<_field_real name="gravity scale#scale on gravity for this entity" />
+			<_field_real name="airborne acceleration scale#scale on airborne acceleration maximum" />
+			<_field_real name="successive slide delay:seconds#seconds required to wait after finishing a slide before sliding again" />
+			<_field_real name="minimum slide trigger sprint fraction:wu/s#character must be moving at least this fast to start sliding" />
+			<_field_explanation name="Slide distance function">Determines the distance travelled based on the initial sprint fraction</_field_explanation>
+			<_field_struct name="Slide distance function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+			<_field_real name="forward speed:wu/s#used to determine a normalized value for the slide distance function" />
+			<_field_pad name="pad0" length="4" />
+			<_field_angle name="maximum direction change during slide:degrees#maximum amount that the character's direction of travel can turn about the up axis before the slide is aborted" />
+			<_field_angle name="maximum turn during slide:degrees#maximum amount that the character's aim can turn about the up axis before the slide is aborted" />
+			<_field_explanation name="Slide speed function">Defines the character's speed over the course of a slide to crouch. 1.0 on the y axis is the speed at which the character entered the slide. 0.0 on the y axis is a full stop.</_field_explanation>
+			<_field_struct name="Slide speed function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
+		<_field_explanation name="flying" />
+		<_field_struct name="flying physics" srcguid="692e7bdd-483f-59f4-6d3c-bfaec31e5e64">
+			<_field_angle name="bank angle:degrees#angle at which we bank left/right when sidestepping or turning while moving forwards" />
+			<_field_real name="bank apply time:seconds#time it takes us to apply a bank" />
+			<_field_real name="bank decay time:seconds#time it takes us to recover from a bank" />
+			<_field_real name="pitch ratio#amount that we pitch up/down when moving up or down" />
+			<_field_real name="max velocity:world units per second#max velocity when not crouching" />
+			<_field_real name="max sidestep velocity:world units per second#max sideways or up/down velocity when not crouching" />
+			<_field_real name="acceleration:world units per second squared" />
+			<_field_real name="deceleration:world units per second squared" />
+			<_field_angle name="angular velocity maximum:degrees per second#turn rate" />
+			<_field_angle name="angular acceleration maximum:degrees per second squared#turn acceleration rate" />
+			<_field_real name="crouch velocity modifier:[0,1]#how much slower we fly if crouching (zero = same speed)" />
+			<_field_long_flags name="flags">
+				<item Name="use world up" />
+			</_field_long_flags>
+		</_field_struct>
+		<_field_explanation name="clambering" />
+		<_field_struct name="clambering parameters" srcguid="ec5d0527-43a1-ff31-c6fc-f483f1e4f334">
+			<_field_real name="horizontal range:world units#maximum distance from character to ledge in xy plane" />
+			<_field_real name="vertical range:world units#maximum distance from top of character's pill to ledge" />
+			<_field_real name="entry point vertical offset to apex:world units#vertical distance from the ideal entry point to the apex" />
+			<_field_real name="entry point adjustment benchmark speed:world units/sec#speed used as a benchmark to determine entry point adjustment based on entry speed" />
+			<_field_real name="entry point horizontal adjustment range:world units#amount that the common entry point can be adjusted horizontally based on entry position and velocity" />
+			<_field_real name="minimum downward speed required to move entry point down:world units/sec#entry point will not be moved down unless the character is falling at least this fast - prevents downward dip at slow fall speed" />
+			<_field_real name="entry point vertical adjustment range:world units#amount that the common entry point can be adjusted vertically based on entry position and velocity" />
+			<_field_pad name="pad" length="4" />
+			<_field_struct name="common parameters" srcguid="b72fd7a9-414c-7ff2-914a-95a6c1499c86">
+				<_field_real name="initial button press hold time to trigger:seconds#in order to trigger the mobility action with the same button press that triggered the jump, the player must continue to hold the button for this amount of time" />
+				<_field_real_fraction name="minimum forward throttle#throttle must be at least this far forward to trigger the mobility action" />
+				<_field_angle name="maximum ledge slope:degrees#the steepest ledge that can be moved onto by this mobility mode" />
+				<_field_angle name="minimum edge sharpness:degrees#minimum angle between normals of vertical and horizontal faces of ledge" />
+				<_field_real name="maximum backward reach:world units#maximum distance behind the character of the apex of a path up to a ledge" />
+				<_field_real name="apex vertical offset:world units#for paths up to a ledge, the vertical offset of the apex from the destination point on the ledge" />
+				<_field_real name="max exit speed:world units per second#maximum speed at which the character can exit the mobility action" />
+				<_field_real name="min entry time:seconds#minimum time it can take for the entry phase of the mobility action (&amp;quot;catching the ledge&amp;quot;)" />
+				<_field_real name="max entry time:seconds#maximum time it can take for the entry phase of the mobility action (&amp;quot;catching the ledge&amp;quot;)" />
+				<_field_real name="min movement time:seconds#minimum time it can take to perform the mobility action" />
+				<_field_real name="max movement time:seconds#maximum time it can take to perform the mobility action" />
+				<_field_real name="max anchor object relative speed:world units/sec#if an object is moving faster than this relative to us we cannot use it as an anchor for the mobility action" />
+			</_field_struct>
+		</_field_struct>
+		<_field_struct name="airborne stabilization" srcguid="e02b276b-4e20-28ab-7c75-0d99e662d7df">
+			<_field_custom name="airborne stabilization" />
+			<_field_real name="air stabilization duration:seconds#" />
+			<_field_real name="air stabilization recharge duration ground:seconds" />
+			<_field_real name="air stabilization interpolation duration:seconds#time it takes to transition into and out of airborne stabilization" />
+			<_field_real name="air stabilization time scale#slows down time for the character's motion" />
+		</_field_struct>
+		<_field_pad name="pad0" length="4" />
+	</_field_struct>
 	<_field_explanation name="New creature flying physics">Will only be used by creatures with no animation</_field_explanation>
 	<_field_angle name="yaw acceleration:degrees per second squared" />
 	<_field_angle name="yaw max velocity:degrees per second" />
@@ -283,9 +292,9 @@
 	<_field_real name="max non directional vertical velocity:wu per second" />
 	<_field_real name="forward acceleration:wu per second squared" />
 	<_field_real name="non directional vertical acceleration:wu per second squared" />
-	<_field_tag_reference_64 name="impact damage" />
-	<_field_tag_reference_64 name="impact shield damage#if not specified, uses 'impact damage'" />
-	<_field_block_64 name="campaign metagame bucket" max="1" guid="63d7ee66-4d6f-cfe4-718e-5abc62e52871">
+	<_field_tag_reference_64 name="impact damage" validtags="jpt!" />
+	<_field_tag_reference_64 name="impact shield damage#if not specified, uses 'impact damage'" validtags="jpt!" />
+	<_field_block_64 name="campaign metagame bucket" max="1" srcguid="63d7ee66-4d6f-cfe4-718e-5abc62e52871" srcName="campaign_metagame_bucket_block">
 		<_field_byte_flags name="flags">
 			<item Name="only counts with riders" />
 		</_field_byte_flags>
@@ -352,8 +361,8 @@
 		<_field_short_integer name="point count" />
 		<_field_pad name="pad1" length="2" />
 	</_field_block_64>
-	<_field_block_64 name="Sound RTPCs" max="32" guid="6edcfd78-4177-1147-644d-27b8b574d61d">
-		<_field_long_block_index name="Attachment Index#Sound attachment to affect" srcguid="11097257-429c-4775-33d9-75a73f4575ee" />
+	<_field_block_64 name="Sound RTPCs" max="32" srcguid="6edcfd78-4177-1147-644d-27b8b574d61d" srcName="SoundRTPCBlock">
+		<_field_long_block_index name="Attachment Index#Sound attachment to affect" targetGuid="11097257-429c-4775-33d9-75a73f4575ee" targetName="global_object_attachment_block" />
 		<_field_string_id name="Function#Function to drive the RTPC" />
 		<_field_string_id name="RTPC Name#WWise RTPC string name" />
 		<_field_long_integer name="RTPC name hash value*!" />
@@ -366,16 +375,19 @@
 		<item Name="boids fly with no pitch#flying boids will always stay level when changing altitude" />
 		<item Name="boids fly non-directionally#flying boids will move like helicopters" />
 	</_field_long_flags>
-	<_field_tag_reference_64 name="big battle weapon emitter" />
+	<_field_tag_reference_64 name="big battle weapon emitter" validtags="cpem" />
 	<_field_real_point_3d name="big battle weapon offset" />
-	<_field_tag_reference_64 name="big battle weapon emitter 2#if you leave this empty, only the first emitter will fire" />
+	<_field_tag_reference_64 name="big battle weapon emitter 2#if you leave this empty, only the first emitter will fire" validtags="cpem" />
 	<_field_real_point_3d name="big battle weapon offset 2" />
-	<_field_block_64 name="big battle weapon fire timing" max="1" guid="3bf7e066-44f4-d7b2-e592-a3a9cf91c10b">
-		<_field_struct name="function_curve" />
-		<_field_data_64 name="data" />
+	<_field_block_64 name="big battle weapon fire timing" max="1" srcguid="3bf7e066-44f4-d7b2-e592-a3a9cf91c10b" srcName="creature_scalar_timing_block">
+		<_field_struct name="function_curve" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+			<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
 	</_field_block_64>
-	<_field_tag_reference_64 name="big battle expensive weapon effect#this fires a full effect from location up, oriented along vehicle's forward and up axes" />
+	<_field_tag_reference_64 name="big battle expensive weapon effect#this fires a full effect from location up, oriented along vehicle's forward and up axes" validtags="effe" />
 	<_field_real_bounds name="expensive weapon fire time:seconds" />
-	<_field_tag_reference_64 name="big battle death effect" />
+	<_field_tag_reference_64 name="big battle death effect" validtags="effe" />
 	<_field_pad name="PAD" length="4" />
 </plugin>

@@ -1,10 +1,11 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_array name="array test!">
 		<_field_string_id name="test array string" />
 		<_field_string_id name="test array string" />
@@ -16,7 +17,7 @@
 	</_field_array>
 	<_field_string_id name="material" />
 	<_field_explanation name="test|FF0080" />
-	<_field_block_64 name="all fields|pink" max="7" guid="290e7263-4667-68df-94da-d59733105f20">
+	<_field_block_64 name="all fields|pink" max="7" srcguid="290e7263-4667-68df-94da-d59733105f20" srcName="all_field_block">
 		<_field_pageable_resource_64 name="test resource^" />
 		<_field_pageable_resource_64 name="test resource2" />
 		<_field_array name="blah">
@@ -89,42 +90,45 @@
 		<_field_angle_bounds name="_field_angle_bounds" />
 		<_field_real_bounds name="_field_real_bounds" />
 		<_field_fraction_bounds name="_field_real_fraction_bounds" />
-		<_field_tag_reference_64 name="_field_tag_reference" />
-		<_field_block_64 name="_field_block" max="7" guid="28c582e0-4f8a-5b66-441c-36ba0985b50d">
-			<_field_char_block_index name="_field_char_block_index" srcguid="290e7263-4667-68df-94da-d59733105f20" />
-			<_field_short_block_index name="_field_short_block_index" srcguid="290e7263-4667-68df-94da-d59733105f20" />
-			<_field_long_block_index name="_field_long_block_index" srcguid="290e7263-4667-68df-94da-d59733105f20" />
+		<_field_tag_reference_64 name="_field_tag_reference" validtags="acme" />
+		<_field_block_64 name="_field_block" max="7" srcguid="28c582e0-4f8a-5b66-441c-36ba0985b50d" srcName="all_block_fields_block">
+			<_field_char_block_index name="_field_char_block_index" targetGuid="290e7263-4667-68df-94da-d59733105f20" targetName="all_field_block" />
+			<_field_short_block_index name="_field_short_block_index" targetGuid="290e7263-4667-68df-94da-d59733105f20" targetName="all_field_block" />
+			<_field_long_block_index name="_field_long_block_index" targetGuid="290e7263-4667-68df-94da-d59733105f20" targetName="all_field_block" />
 		</_field_block_64>
 		<_field_long_integer name="look at me!" />
-		<_field_struct name="ugh foo ugh" />
-		<_field_string name="e" />
+		<_field_struct name="ugh foo ugh" srcguid="ca1fabd1-4ab8-6220-5cd9-5fa8b5cf0ace">
+			<_field_string name="e" />
+		</_field_struct>
 		<_field_string name="sentinel" />
 		<_field_string_id name="bleh" />
-		<_field_struct name="function crap" />
-		<_field_short_enum name="Input Variable">
-			<item Name="alpha_blah{alpha}" />
-			<item Name="beta" />
-			<item Name="gamma" />
-			<item Name="delta" />
-			<item Name="epsilon" />
-			<item Name="zeta" />
-			<item Name="eta" />
-		</_field_short_enum>
-		<_field_short_enum name="Range Variable">
-			<item Name="alpha_blah{alpha}" />
-			<item Name="beta" />
-			<item Name="gamma" />
-			<item Name="delta" />
-			<item Name="epsilon" />
-			<item Name="zeta" />
-			<item Name="eta" />
-		</_field_short_enum>
-		<_field_struct name="Mapping" />
-		<_field_data_64 name="data" />
-		<_field_block_64 name="block2" max="7" guid="28c582e0-4f8a-5b66-441c-36ba0985b50d">
-			<_field_char_block_index name="_field_char_block_index" srcguid="290e7263-4667-68df-94da-d59733105f20" />
-			<_field_short_block_index name="_field_short_block_index" srcguid="290e7263-4667-68df-94da-d59733105f20" />
-			<_field_long_block_index name="_field_long_block_index" srcguid="290e7263-4667-68df-94da-d59733105f20" />
+		<_field_struct name="function crap" srcguid="bf0343fe-4c03-e6c3-6f31-c8ad70b4ed17">
+			<_field_short_enum name="Input Variable">
+				<item Name="alpha_blah{alpha}" />
+				<item Name="beta" />
+				<item Name="gamma" />
+				<item Name="delta" />
+				<item Name="epsilon" />
+				<item Name="zeta" />
+				<item Name="eta" />
+			</_field_short_enum>
+			<_field_short_enum name="Range Variable">
+				<item Name="alpha_blah{alpha}" />
+				<item Name="beta" />
+				<item Name="gamma" />
+				<item Name="delta" />
+				<item Name="epsilon" />
+				<item Name="zeta" />
+				<item Name="eta" />
+			</_field_short_enum>
+			<_field_struct name="Mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
+		<_field_block_64 name="block2" max="7" srcguid="28c582e0-4f8a-5b66-441c-36ba0985b50d" srcName="all_block_fields_block">
+			<_field_char_block_index name="_field_char_block_index" targetGuid="290e7263-4667-68df-94da-d59733105f20" targetName="all_field_block" />
+			<_field_short_block_index name="_field_short_block_index" targetGuid="290e7263-4667-68df-94da-d59733105f20" targetName="all_field_block" />
+			<_field_long_block_index name="_field_long_block_index" targetGuid="290e7263-4667-68df-94da-d59733105f20" targetName="all_field_block" />
 		</_field_block_64>
 		<_field_long_enum name="ugh">
 			<item Name="alpha_blah{alpha}" />
@@ -135,14 +139,14 @@
 			<item Name="zeta" />
 			<item Name="eta" />
 		</_field_long_enum>
-		<_field_block_64 name="block3" max="1" guid="ed5fb6bd-4d35-f029-be2a-cea252d55038">
+		<_field_block_64 name="block3" max="1" srcguid="ed5fb6bd-4d35-f029-be2a-cea252d55038" srcName="test_block_count_1">
 			<_field_long_integer name="can you see me???^" />
 		</_field_block_64>
-		<_field_block_64 name="block4" max="3" guid="ed5fb6bd-4d35-f029-be2a-cea252d55038">
+		<_field_block_64 name="block4" max="3" srcguid="ed5fb6bd-4d35-f029-be2a-cea252d55038" srcName="test_block_count_4">
 			<_field_long_integer name="can you see me???^" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="custom fields" max="4" guid="f514520f-42af-fc88-2447-efbb3ad1ddb0">
+	<_field_block_64 name="custom fields" max="4" srcguid="f514520f-42af-fc88-2447-efbb3ad1ddb0" srcName="custom_field_block">
 		<_field_long_integer name="more blah" />
 		<_field_char_enum name="_field_char_enum">
 			<item Name="alpha_blah{alpha}" />

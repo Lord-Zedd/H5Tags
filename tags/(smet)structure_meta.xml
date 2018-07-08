@@ -1,17 +1,18 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="Effects markers*" max="1024" guid="025d71c3-4bf1-5053-991c-33b151a5ea25">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="Effects markers*" max="1024" srcguid="025d71c3-4bf1-5053-991c-33b151a5ea25" srcName="structureBspFxMarkerBlock">
 		<_field_string name="marker name^" />
 		<_field_real_quaternion name="rotation*" />
 		<_field_real_point_3d name="position*" />
 		<_field_tag_reference_64 name="optional attached effect" validtags="effe, lens" />
 	</_field_block_64>
-	<_field_block_64 name="Light Cones*" max="1024" guid="54973095-44dd-6f23-4d51-12a0f7a5c23d">
+	<_field_block_64 name="Light Cones*" max="1024" srcguid="54973095-44dd-6f23-4d51-12a0f7a5c23d" srcName="structureMetadataLightConeMarkerBlock">
 		<_field_string name="marker name^" />
 		<_field_real_quaternion name="rotation" />
 		<_field_real_point_3d name="position" />
@@ -19,19 +20,19 @@
 		<_field_real name="width" />
 		<_field_real name="intensity" />
 		<_field_real_argb_color name="light color" />
-		<_field_tag_reference_64 name="light cone tag" />
+		<_field_tag_reference_64 name="light cone tag" validtags="licn" />
 	</_field_block_64>
-	<_field_block_64 name="Object Palette*" max="1024" guid="37d2fc4a-43f8-2e62-debe-35b211be7677">
-		<_field_tag_reference_64 name="definition^" />
-		<_field_tag_reference_64 name="model" />
+	<_field_block_64 name="Object Palette*" max="1024" srcguid="37d2fc4a-43f8-2e62-debe-35b211be7677" srcName="structure_bsp_environment_object_palette_block">
+		<_field_tag_reference_64 name="definition^" validtags="obje" />
+		<_field_tag_reference_64 name="model" validtags="mode" />
 		<_field_long_integer name="GVEYN!" />
 	</_field_block_64>
-	<_field_block_64 name="Objects*" max="16384" guid="1cdf634d-476f-fd90-daf1-33917f241bcc">
+	<_field_block_64 name="Objects*" max="16384" srcguid="1cdf634d-476f-fd90-daf1-33917f241bcc" srcName="structure_bsp_environment_object_block">
 		<_field_string name="name^" />
 		<_field_real_quaternion name="rotation" />
 		<_field_real_point_3d name="translation" />
 		<_field_real name="scale" />
-		<_field_short_block_index name="palette_index" srcguid="37d2fc4a-43f8-2e62-debe-35b211be7677" />
+		<_field_short_block_index name="palette_index" targetGuid="37d2fc4a-43f8-2e62-debe-35b211be7677" targetName="structure_bsp_environment_object_palette_block" />
 		<_field_byte_flags name="flags">
 			<item Name="scripts always run" />
 		</_field_byte_flags>

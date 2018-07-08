@@ -1,11 +1,12 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_tag_reference_64 name="template" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_tag_reference_64 name="template" validtags="pmov" />
 	<_field_word_flags name="flags">
 		<item Name="physics" />
 		<item Name="collide with structure" />
@@ -24,7 +25,7 @@
 	<_field_char_integer name="turbulence controller index!" />
 	<_field_char_integer name="global force controller index!" />
 	<_field_pad name="pphys" length="3" />
-	<_field_block_64 name="movements" max="8" guid="ffdf1eea-416f-e003-7f5c-e8bb10fa6aa0">
+	<_field_block_64 name="movements" max="8" srcguid="ffdf1eea-416f-e003-7f5c-e8bb10fa6aa0" srcName="particle_controller">
 		<_field_short_enum name="type">
 			<item Name="physics" />
 			<item Name="collider" />
@@ -37,98 +38,100 @@
 			<item Name="properties fully indexed" />
 		</_field_byte_flags>
 		<_field_pad name="KNTXOMS" length="1" />
-		<_field_block_64 name="parameters" max="9" guid="ac90ed63-4ce1-7fcf-40a1-dead957f139c">
+		<_field_block_64 name="parameters" max="9" srcguid="ac90ed63-4ce1-7fcf-40a1-dead957f139c" srcName="particle_controller_parameters">
 			<_field_long_integer name="parameter id" />
-			<_field_struct name="property" />
-			<_field_char_enum name="Input Variable">
-				<item Name="particle age" />
-				<item Name="system age{emitter age}" />
-				<item Name="particle random" />
-				<item Name="system random{emitter random}" />
-				<item Name="particle correlation 1{particle random 1}" />
-				<item Name="particle correlation 2{particle random 2}" />
-				<item Name="particle correlation 3{particle random 3}" />
-				<item Name="particle correlation 4{particle random 4}" />
-				<item Name="system correlation 1{emitter correlation 1}{emitter random 1}" />
-				<item Name="system correlation 2{emitter correlation 2}{emitter random 2}" />
-				<item Name="particle emission time{emitter time}{particle emit time}" />
-				<item Name="location lod{system lod}" />
-				<item Name="game time" />
-				<item Name="effect a scale" />
-				<item Name="effect b scale" />
-				<item Name="particle rotation{physics rotation}" />
-				<item Name="location random" />
-				<item Name="distance from emitter" />
-				<item Name="particle simulation a" />
-				<item Name="particle simulation b" />
-				<item Name="particle velocity" />
-				<item Name="invalid state --- please set again" />
-			</_field_char_enum>
-			<_field_char_enum name="Range Variable">
-				<item Name="particle age" />
-				<item Name="system age{emitter age}" />
-				<item Name="particle random" />
-				<item Name="system random{emitter random}" />
-				<item Name="particle correlation 1{particle random 1}" />
-				<item Name="particle correlation 2{particle random 2}" />
-				<item Name="particle correlation 3{particle random 3}" />
-				<item Name="particle correlation 4{particle random 4}" />
-				<item Name="system correlation 1{emitter correlation 1}{emitter random 1}" />
-				<item Name="system correlation 2{emitter correlation 2}{emitter random 2}" />
-				<item Name="particle emission time{emitter time}{particle emit time}" />
-				<item Name="location lod{system lod}" />
-				<item Name="game time" />
-				<item Name="effect a scale" />
-				<item Name="effect b scale" />
-				<item Name="particle rotation{physics rotation}" />
-				<item Name="location random" />
-				<item Name="distance from emitter" />
-				<item Name="particle simulation a" />
-				<item Name="particle simulation b" />
-				<item Name="particle velocity" />
-				<item Name="invalid state --- please set again" />
-			</_field_char_enum>
-			<_field_char_enum name="Output Modifier">
-				<item Name=" " />
-				<item Name="Plus" />
-				<item Name="Times" />
-			</_field_char_enum>
-			<_field_char_enum name="Output Modifier Input">
-				<item Name="particle age" />
-				<item Name="system age{emitter age}" />
-				<item Name="particle random" />
-				<item Name="system random{emitter random}" />
-				<item Name="particle correlation 1{particle random 1}" />
-				<item Name="particle correlation 2{particle random 2}" />
-				<item Name="particle correlation 3{particle random 3}" />
-				<item Name="particle correlation 4{particle random 4}" />
-				<item Name="system correlation 1{emitter correlation 1}{emitter random 1}" />
-				<item Name="system correlation 2{emitter correlation 2}{emitter random 2}" />
-				<item Name="particle emission time{emitter time}{particle emit time}" />
-				<item Name="location lod{system lod}" />
-				<item Name="game time" />
-				<item Name="effect a scale" />
-				<item Name="effect b scale" />
-				<item Name="particle rotation{physics rotation}" />
-				<item Name="location random" />
-				<item Name="distance from emitter" />
-				<item Name="particle simulation a" />
-				<item Name="particle simulation b" />
-				<item Name="particle velocity" />
-				<item Name="invalid state --- please set again" />
-			</_field_char_enum>
-			<_field_struct name="Mapping" />
-			<_field_data_64 name="data" />
-			<_field_real name="runtime m_constant_value!" />
-			<_field_word_integer name="runtime m_flags!" />
-			<_field_byte_flags name="force flags!">
-				<item Name="force constant" />
-			</_field_byte_flags>
-			<_field_pad name="DSFDSGLKJ" length="1" />
+			<_field_struct name="property" srcguid="64607252-4e37-e808-9d40-47843c481194">
+				<_field_char_enum name="Input Variable">
+					<item Name="particle age" />
+					<item Name="system age{emitter age}" />
+					<item Name="particle random" />
+					<item Name="system random{emitter random}" />
+					<item Name="particle correlation 1{particle random 1}" />
+					<item Name="particle correlation 2{particle random 2}" />
+					<item Name="particle correlation 3{particle random 3}" />
+					<item Name="particle correlation 4{particle random 4}" />
+					<item Name="system correlation 1{emitter correlation 1}{emitter random 1}" />
+					<item Name="system correlation 2{emitter correlation 2}{emitter random 2}" />
+					<item Name="particle emission time{emitter time}{particle emit time}" />
+					<item Name="location lod{system lod}" />
+					<item Name="game time" />
+					<item Name="effect a scale" />
+					<item Name="effect b scale" />
+					<item Name="particle rotation{physics rotation}" />
+					<item Name="location random" />
+					<item Name="distance from emitter" />
+					<item Name="particle simulation a" />
+					<item Name="particle simulation b" />
+					<item Name="particle velocity" />
+					<item Name="invalid state --- please set again" />
+				</_field_char_enum>
+				<_field_char_enum name="Range Variable">
+					<item Name="particle age" />
+					<item Name="system age{emitter age}" />
+					<item Name="particle random" />
+					<item Name="system random{emitter random}" />
+					<item Name="particle correlation 1{particle random 1}" />
+					<item Name="particle correlation 2{particle random 2}" />
+					<item Name="particle correlation 3{particle random 3}" />
+					<item Name="particle correlation 4{particle random 4}" />
+					<item Name="system correlation 1{emitter correlation 1}{emitter random 1}" />
+					<item Name="system correlation 2{emitter correlation 2}{emitter random 2}" />
+					<item Name="particle emission time{emitter time}{particle emit time}" />
+					<item Name="location lod{system lod}" />
+					<item Name="game time" />
+					<item Name="effect a scale" />
+					<item Name="effect b scale" />
+					<item Name="particle rotation{physics rotation}" />
+					<item Name="location random" />
+					<item Name="distance from emitter" />
+					<item Name="particle simulation a" />
+					<item Name="particle simulation b" />
+					<item Name="particle velocity" />
+					<item Name="invalid state --- please set again" />
+				</_field_char_enum>
+				<_field_char_enum name="Output Modifier">
+					<item Name=" " />
+					<item Name="Plus" />
+					<item Name="Times" />
+				</_field_char_enum>
+				<_field_char_enum name="Output Modifier Input">
+					<item Name="particle age" />
+					<item Name="system age{emitter age}" />
+					<item Name="particle random" />
+					<item Name="system random{emitter random}" />
+					<item Name="particle correlation 1{particle random 1}" />
+					<item Name="particle correlation 2{particle random 2}" />
+					<item Name="particle correlation 3{particle random 3}" />
+					<item Name="particle correlation 4{particle random 4}" />
+					<item Name="system correlation 1{emitter correlation 1}{emitter random 1}" />
+					<item Name="system correlation 2{emitter correlation 2}{emitter random 2}" />
+					<item Name="particle emission time{emitter time}{particle emit time}" />
+					<item Name="location lod{system lod}" />
+					<item Name="game time" />
+					<item Name="effect a scale" />
+					<item Name="effect b scale" />
+					<item Name="particle rotation{physics rotation}" />
+					<item Name="location random" />
+					<item Name="distance from emitter" />
+					<item Name="particle simulation a" />
+					<item Name="particle simulation b" />
+					<item Name="particle velocity" />
+					<item Name="invalid state --- please set again" />
+				</_field_char_enum>
+				<_field_struct name="Mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+					<_field_data_64 name="data" />
+				</_field_struct>
+				<_field_real name="runtime m_constant_value!" />
+				<_field_word_integer name="runtime m_flags!" />
+				<_field_byte_flags name="force flags!">
+					<item Name="force constant" />
+				</_field_byte_flags>
+				<_field_pad name="DSFDSGLKJ" length="1" />
+			</_field_struct>
 		</_field_block_64>
 		<_field_long_integer name="runtime m_constant_parameters!" />
 		<_field_long_integer name="runtime m_used_particle_states!" />
 	</_field_block_64>
-	<_field_tag_reference_64 name="turbulence texture" />
+	<_field_tag_reference_64 name="turbulence texture" validtags="bitm" />
 	<_field_pad name="pad_tp" length="4" />
 </plugin>

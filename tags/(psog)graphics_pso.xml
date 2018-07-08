@@ -1,12 +1,13 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_custom name="Shader references" />
-	<_field_tag_reference_64 name="Shader bank" />
+	<_field_tag_reference_64 name="Shader bank" validtags="mtsb" />
 	<_field_long_integer name="Vertex shader" />
 	<_field_long_integer name="Pixel shader" />
 	<_field_long_integer name="Geometry shader" />
@@ -15,150 +16,166 @@
 	<_field_custom name="Input layout" />
 	<_field_dword_integer name="Input element count" />
 	<_field_array name="Input elements">
-		<_field_struct name="Input element" />
-		<_field_custom name="Input element" />
-		<_field_long_string name="Semantic name" />
-		<_field_dword_integer name="Semantic index" />
-		<_field_dword_integer name="DXGI Format" />
-		<_field_dword_integer name="Input slot" />
-		<_field_dword_integer name="Aligned offset" />
-		<_field_dword_integer name="Input slot class" />
-		<_field_dword_integer name="Instance data step rate" />
-		<_field_struct name="Input element" />
-		<_field_custom name="Input element" />
-		<_field_long_string name="Semantic name" />
-		<_field_dword_integer name="Semantic index" />
-		<_field_dword_integer name="DXGI Format" />
-		<_field_dword_integer name="Input slot" />
-		<_field_dword_integer name="Aligned offset" />
-		<_field_dword_integer name="Input slot class" />
-		<_field_dword_integer name="Instance data step rate" />
-		<_field_struct name="Input element" />
-		<_field_custom name="Input element" />
-		<_field_long_string name="Semantic name" />
-		<_field_dword_integer name="Semantic index" />
-		<_field_dword_integer name="DXGI Format" />
-		<_field_dword_integer name="Input slot" />
-		<_field_dword_integer name="Aligned offset" />
-		<_field_dword_integer name="Input slot class" />
-		<_field_dword_integer name="Instance data step rate" />
-		<_field_struct name="Input element" />
-		<_field_custom name="Input element" />
-		<_field_long_string name="Semantic name" />
-		<_field_dword_integer name="Semantic index" />
-		<_field_dword_integer name="DXGI Format" />
-		<_field_dword_integer name="Input slot" />
-		<_field_dword_integer name="Aligned offset" />
-		<_field_dword_integer name="Input slot class" />
-		<_field_dword_integer name="Instance data step rate" />
-		<_field_struct name="Input element" />
-		<_field_custom name="Input element" />
-		<_field_long_string name="Semantic name" />
-		<_field_dword_integer name="Semantic index" />
-		<_field_dword_integer name="DXGI Format" />
-		<_field_dword_integer name="Input slot" />
-		<_field_dword_integer name="Aligned offset" />
-		<_field_dword_integer name="Input slot class" />
-		<_field_dword_integer name="Instance data step rate" />
-		<_field_struct name="Input element" />
-		<_field_custom name="Input element" />
-		<_field_long_string name="Semantic name" />
-		<_field_dword_integer name="Semantic index" />
-		<_field_dword_integer name="DXGI Format" />
-		<_field_dword_integer name="Input slot" />
-		<_field_dword_integer name="Aligned offset" />
-		<_field_dword_integer name="Input slot class" />
-		<_field_dword_integer name="Instance data step rate" />
-		<_field_struct name="Input element" />
-		<_field_custom name="Input element" />
-		<_field_long_string name="Semantic name" />
-		<_field_dword_integer name="Semantic index" />
-		<_field_dword_integer name="DXGI Format" />
-		<_field_dword_integer name="Input slot" />
-		<_field_dword_integer name="Aligned offset" />
-		<_field_dword_integer name="Input slot class" />
-		<_field_dword_integer name="Instance data step rate" />
-		<_field_struct name="Input element" />
-		<_field_custom name="Input element" />
-		<_field_long_string name="Semantic name" />
-		<_field_dword_integer name="Semantic index" />
-		<_field_dword_integer name="DXGI Format" />
-		<_field_dword_integer name="Input slot" />
-		<_field_dword_integer name="Aligned offset" />
-		<_field_dword_integer name="Input slot class" />
-		<_field_dword_integer name="Instance data step rate" />
-		<_field_struct name="Input element" />
-		<_field_custom name="Input element" />
-		<_field_long_string name="Semantic name" />
-		<_field_dword_integer name="Semantic index" />
-		<_field_dword_integer name="DXGI Format" />
-		<_field_dword_integer name="Input slot" />
-		<_field_dword_integer name="Aligned offset" />
-		<_field_dword_integer name="Input slot class" />
-		<_field_dword_integer name="Instance data step rate" />
-		<_field_struct name="Input element" />
-		<_field_custom name="Input element" />
-		<_field_long_string name="Semantic name" />
-		<_field_dword_integer name="Semantic index" />
-		<_field_dword_integer name="DXGI Format" />
-		<_field_dword_integer name="Input slot" />
-		<_field_dword_integer name="Aligned offset" />
-		<_field_dword_integer name="Input slot class" />
-		<_field_dword_integer name="Instance data step rate" />
-		<_field_struct name="Input element" />
-		<_field_custom name="Input element" />
-		<_field_long_string name="Semantic name" />
-		<_field_dword_integer name="Semantic index" />
-		<_field_dword_integer name="DXGI Format" />
-		<_field_dword_integer name="Input slot" />
-		<_field_dword_integer name="Aligned offset" />
-		<_field_dword_integer name="Input slot class" />
-		<_field_dword_integer name="Instance data step rate" />
-		<_field_struct name="Input element" />
-		<_field_custom name="Input element" />
-		<_field_long_string name="Semantic name" />
-		<_field_dword_integer name="Semantic index" />
-		<_field_dword_integer name="DXGI Format" />
-		<_field_dword_integer name="Input slot" />
-		<_field_dword_integer name="Aligned offset" />
-		<_field_dword_integer name="Input slot class" />
-		<_field_dword_integer name="Instance data step rate" />
-		<_field_struct name="Input element" />
-		<_field_custom name="Input element" />
-		<_field_long_string name="Semantic name" />
-		<_field_dword_integer name="Semantic index" />
-		<_field_dword_integer name="DXGI Format" />
-		<_field_dword_integer name="Input slot" />
-		<_field_dword_integer name="Aligned offset" />
-		<_field_dword_integer name="Input slot class" />
-		<_field_dword_integer name="Instance data step rate" />
-		<_field_struct name="Input element" />
-		<_field_custom name="Input element" />
-		<_field_long_string name="Semantic name" />
-		<_field_dword_integer name="Semantic index" />
-		<_field_dword_integer name="DXGI Format" />
-		<_field_dword_integer name="Input slot" />
-		<_field_dword_integer name="Aligned offset" />
-		<_field_dword_integer name="Input slot class" />
-		<_field_dword_integer name="Instance data step rate" />
-		<_field_struct name="Input element" />
-		<_field_custom name="Input element" />
-		<_field_long_string name="Semantic name" />
-		<_field_dword_integer name="Semantic index" />
-		<_field_dword_integer name="DXGI Format" />
-		<_field_dword_integer name="Input slot" />
-		<_field_dword_integer name="Aligned offset" />
-		<_field_dword_integer name="Input slot class" />
-		<_field_dword_integer name="Instance data step rate" />
-		<_field_struct name="Input element" />
-		<_field_custom name="Input element" />
-		<_field_long_string name="Semantic name" />
-		<_field_dword_integer name="Semantic index" />
-		<_field_dword_integer name="DXGI Format" />
-		<_field_dword_integer name="Input slot" />
-		<_field_dword_integer name="Aligned offset" />
-		<_field_dword_integer name="Input slot class" />
-		<_field_dword_integer name="Instance data step rate" />
+		<_field_struct name="Input element" srcguid="616e9289-5ff5-3949-5a0e-02f140e80e9d">
+			<_field_custom name="Input element" />
+			<_field_long_string name="Semantic name" />
+			<_field_dword_integer name="Semantic index" />
+			<_field_dword_integer name="DXGI Format" />
+			<_field_dword_integer name="Input slot" />
+			<_field_dword_integer name="Aligned offset" />
+			<_field_dword_integer name="Input slot class" />
+			<_field_dword_integer name="Instance data step rate" />
+		</_field_struct>
+		<_field_struct name="Input element" srcguid="616e9289-5ff5-3949-5a0e-02f140e80e9d">
+			<_field_custom name="Input element" />
+			<_field_long_string name="Semantic name" />
+			<_field_dword_integer name="Semantic index" />
+			<_field_dword_integer name="DXGI Format" />
+			<_field_dword_integer name="Input slot" />
+			<_field_dword_integer name="Aligned offset" />
+			<_field_dword_integer name="Input slot class" />
+			<_field_dword_integer name="Instance data step rate" />
+		</_field_struct>
+		<_field_struct name="Input element" srcguid="616e9289-5ff5-3949-5a0e-02f140e80e9d">
+			<_field_custom name="Input element" />
+			<_field_long_string name="Semantic name" />
+			<_field_dword_integer name="Semantic index" />
+			<_field_dword_integer name="DXGI Format" />
+			<_field_dword_integer name="Input slot" />
+			<_field_dword_integer name="Aligned offset" />
+			<_field_dword_integer name="Input slot class" />
+			<_field_dword_integer name="Instance data step rate" />
+		</_field_struct>
+		<_field_struct name="Input element" srcguid="616e9289-5ff5-3949-5a0e-02f140e80e9d">
+			<_field_custom name="Input element" />
+			<_field_long_string name="Semantic name" />
+			<_field_dword_integer name="Semantic index" />
+			<_field_dword_integer name="DXGI Format" />
+			<_field_dword_integer name="Input slot" />
+			<_field_dword_integer name="Aligned offset" />
+			<_field_dword_integer name="Input slot class" />
+			<_field_dword_integer name="Instance data step rate" />
+		</_field_struct>
+		<_field_struct name="Input element" srcguid="616e9289-5ff5-3949-5a0e-02f140e80e9d">
+			<_field_custom name="Input element" />
+			<_field_long_string name="Semantic name" />
+			<_field_dword_integer name="Semantic index" />
+			<_field_dword_integer name="DXGI Format" />
+			<_field_dword_integer name="Input slot" />
+			<_field_dword_integer name="Aligned offset" />
+			<_field_dword_integer name="Input slot class" />
+			<_field_dword_integer name="Instance data step rate" />
+		</_field_struct>
+		<_field_struct name="Input element" srcguid="616e9289-5ff5-3949-5a0e-02f140e80e9d">
+			<_field_custom name="Input element" />
+			<_field_long_string name="Semantic name" />
+			<_field_dword_integer name="Semantic index" />
+			<_field_dword_integer name="DXGI Format" />
+			<_field_dword_integer name="Input slot" />
+			<_field_dword_integer name="Aligned offset" />
+			<_field_dword_integer name="Input slot class" />
+			<_field_dword_integer name="Instance data step rate" />
+		</_field_struct>
+		<_field_struct name="Input element" srcguid="616e9289-5ff5-3949-5a0e-02f140e80e9d">
+			<_field_custom name="Input element" />
+			<_field_long_string name="Semantic name" />
+			<_field_dword_integer name="Semantic index" />
+			<_field_dword_integer name="DXGI Format" />
+			<_field_dword_integer name="Input slot" />
+			<_field_dword_integer name="Aligned offset" />
+			<_field_dword_integer name="Input slot class" />
+			<_field_dword_integer name="Instance data step rate" />
+		</_field_struct>
+		<_field_struct name="Input element" srcguid="616e9289-5ff5-3949-5a0e-02f140e80e9d">
+			<_field_custom name="Input element" />
+			<_field_long_string name="Semantic name" />
+			<_field_dword_integer name="Semantic index" />
+			<_field_dword_integer name="DXGI Format" />
+			<_field_dword_integer name="Input slot" />
+			<_field_dword_integer name="Aligned offset" />
+			<_field_dword_integer name="Input slot class" />
+			<_field_dword_integer name="Instance data step rate" />
+		</_field_struct>
+		<_field_struct name="Input element" srcguid="616e9289-5ff5-3949-5a0e-02f140e80e9d">
+			<_field_custom name="Input element" />
+			<_field_long_string name="Semantic name" />
+			<_field_dword_integer name="Semantic index" />
+			<_field_dword_integer name="DXGI Format" />
+			<_field_dword_integer name="Input slot" />
+			<_field_dword_integer name="Aligned offset" />
+			<_field_dword_integer name="Input slot class" />
+			<_field_dword_integer name="Instance data step rate" />
+		</_field_struct>
+		<_field_struct name="Input element" srcguid="616e9289-5ff5-3949-5a0e-02f140e80e9d">
+			<_field_custom name="Input element" />
+			<_field_long_string name="Semantic name" />
+			<_field_dword_integer name="Semantic index" />
+			<_field_dword_integer name="DXGI Format" />
+			<_field_dword_integer name="Input slot" />
+			<_field_dword_integer name="Aligned offset" />
+			<_field_dword_integer name="Input slot class" />
+			<_field_dword_integer name="Instance data step rate" />
+		</_field_struct>
+		<_field_struct name="Input element" srcguid="616e9289-5ff5-3949-5a0e-02f140e80e9d">
+			<_field_custom name="Input element" />
+			<_field_long_string name="Semantic name" />
+			<_field_dword_integer name="Semantic index" />
+			<_field_dword_integer name="DXGI Format" />
+			<_field_dword_integer name="Input slot" />
+			<_field_dword_integer name="Aligned offset" />
+			<_field_dword_integer name="Input slot class" />
+			<_field_dword_integer name="Instance data step rate" />
+		</_field_struct>
+		<_field_struct name="Input element" srcguid="616e9289-5ff5-3949-5a0e-02f140e80e9d">
+			<_field_custom name="Input element" />
+			<_field_long_string name="Semantic name" />
+			<_field_dword_integer name="Semantic index" />
+			<_field_dword_integer name="DXGI Format" />
+			<_field_dword_integer name="Input slot" />
+			<_field_dword_integer name="Aligned offset" />
+			<_field_dword_integer name="Input slot class" />
+			<_field_dword_integer name="Instance data step rate" />
+		</_field_struct>
+		<_field_struct name="Input element" srcguid="616e9289-5ff5-3949-5a0e-02f140e80e9d">
+			<_field_custom name="Input element" />
+			<_field_long_string name="Semantic name" />
+			<_field_dword_integer name="Semantic index" />
+			<_field_dword_integer name="DXGI Format" />
+			<_field_dword_integer name="Input slot" />
+			<_field_dword_integer name="Aligned offset" />
+			<_field_dword_integer name="Input slot class" />
+			<_field_dword_integer name="Instance data step rate" />
+		</_field_struct>
+		<_field_struct name="Input element" srcguid="616e9289-5ff5-3949-5a0e-02f140e80e9d">
+			<_field_custom name="Input element" />
+			<_field_long_string name="Semantic name" />
+			<_field_dword_integer name="Semantic index" />
+			<_field_dword_integer name="DXGI Format" />
+			<_field_dword_integer name="Input slot" />
+			<_field_dword_integer name="Aligned offset" />
+			<_field_dword_integer name="Input slot class" />
+			<_field_dword_integer name="Instance data step rate" />
+		</_field_struct>
+		<_field_struct name="Input element" srcguid="616e9289-5ff5-3949-5a0e-02f140e80e9d">
+			<_field_custom name="Input element" />
+			<_field_long_string name="Semantic name" />
+			<_field_dword_integer name="Semantic index" />
+			<_field_dword_integer name="DXGI Format" />
+			<_field_dword_integer name="Input slot" />
+			<_field_dword_integer name="Aligned offset" />
+			<_field_dword_integer name="Input slot class" />
+			<_field_dword_integer name="Instance data step rate" />
+		</_field_struct>
+		<_field_struct name="Input element" srcguid="616e9289-5ff5-3949-5a0e-02f140e80e9d">
+			<_field_custom name="Input element" />
+			<_field_long_string name="Semantic name" />
+			<_field_dword_integer name="Semantic index" />
+			<_field_dword_integer name="DXGI Format" />
+			<_field_dword_integer name="Input slot" />
+			<_field_dword_integer name="Aligned offset" />
+			<_field_dword_integer name="Input slot class" />
+			<_field_dword_integer name="Instance data step rate" />
+		</_field_struct>
 	</_field_array>
 	<_field_data_64 name="PSO descriptor" />
 	<_field_pad name="pad" length="4" />

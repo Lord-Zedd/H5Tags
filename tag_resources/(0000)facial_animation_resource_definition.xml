@@ -1,12 +1,12 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
-	<_field_block_64 name="facial animation permutations" max="544" guid="0efe0f99-4871-36ec-a514-79a861ce5165">
+	<_field_block_64 name="facial animation permutations" max="544" srcguid="0efe0f99-4871-36ec-a514-79a861ce5165" srcName="facial_animation_permutation_block">
 		<_field_real name="start time" />
 		<_field_real name="end time" />
 		<_field_real name="blend in" />
 		<_field_real name="blend out" />
-		<_field_block_64 name="facial animation curves" max="34" guid="a566493b-409f-9431-b2f9-e0abc8b5d519">
+		<_field_block_64 name="facial animation curves" max="34" srcguid="a566493b-409f-9431-b2f9-e0abc8b5d519" srcName="facial_animation_curve_block">
 			<_field_long_enum name="facial animation track">
 				<item Name="Silence" />
 				<item Name="Eat" />

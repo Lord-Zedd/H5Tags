@@ -1,22 +1,24 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_struct name="dof" />
-	<_field_explanation name="depth of field">We do not apply any blur past the focus distance.  We use two different depth of fields: one for the world and one for the first person weapon.</_field_explanation>
-	<_field_real name="world blur aperture#Aperture is size of camera pinhole.  The larger the aperture the shallower the depth of field.  0 defaults to 0.7" />
-	<_field_real name="world blur focus max distance:wu#Maximum allowable focus distance (everything past the focus distance is always in focus anyway)" />
-	<_field_real_fraction name="World blur focus smoothing value: 0-1# 1 is unsmoothed, lower values are heavier smoothing" />
-	<_field_real_fraction name="World blur trend smoothing value: 0-1# 1 is unsmoothed, lower values are heavier smoothing" />
-	<_field_real_fraction name="world blur half width ratio:0-1#The wider the half width, the bigger the range of distances that are in focus" />
-	<_field_real name="weapon blur aperture#Aperture is size of camera pinhole.  The larger the aperture the narrower the depth of field.  0 defaults to 0.7" />
-	<_field_real name="weapon blur focus distance:wu#where dof focus is for the weapon (dof for weapon different than world)" />
-	<_field_real name="weapon blur half width:wu#wider the width, the bigger the range of distances that are in focus (dof for weapon different than world)" />
-	<_field_explanation name="vignette" />
-	<_field_fraction_bounds name="vignette radius bounds:0-1#Everything inside the min radius is clear, everything outside the max radius is fully darkened (to the intensity specified), interpolate between them" />
-	<_field_real_fraction name="vignette intensity:0-1#0 is no vignetting 1 maximum darkness" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_struct name="dof" srcguid="077565fb-47e8-c73c-1766-43b3e1e10026">
+		<_field_explanation name="depth of field">We do not apply any blur past the focus distance.  We use two different depth of fields: one for the world and one for the first person weapon.</_field_explanation>
+		<_field_real name="world blur aperture#Aperture is size of camera pinhole.  The larger the aperture the shallower the depth of field.  0 defaults to 0.7" />
+		<_field_real name="world blur focus max distance:wu#Maximum allowable focus distance (everything past the focus distance is always in focus anyway)" />
+		<_field_real_fraction name="World blur focus smoothing value: 0-1# 1 is unsmoothed, lower values are heavier smoothing" />
+		<_field_real_fraction name="World blur trend smoothing value: 0-1# 1 is unsmoothed, lower values are heavier smoothing" />
+		<_field_real_fraction name="world blur half width ratio:0-1#The wider the half width, the bigger the range of distances that are in focus" />
+		<_field_real name="weapon blur aperture#Aperture is size of camera pinhole.  The larger the aperture the narrower the depth of field.  0 defaults to 0.7" />
+		<_field_real name="weapon blur focus distance:wu#where dof focus is for the weapon (dof for weapon different than world)" />
+		<_field_real name="weapon blur half width:wu#wider the width, the bigger the range of distances that are in focus (dof for weapon different than world)" />
+		<_field_explanation name="vignette" />
+		<_field_fraction_bounds name="vignette radius bounds:0-1#Everything inside the min radius is clear, everything outside the max radius is fully darkened (to the intensity specified), interpolate between them" />
+		<_field_real_fraction name="vignette intensity:0-1#0 is no vignetting 1 maximum darkness" />
+	</_field_struct>
 	<_field_pad name="endPad" length="4" />
 </plugin>

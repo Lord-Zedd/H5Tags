@@ -1,10 +1,11 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_explanation name="default bitmaps:">0:  ............... default 2D texture (white)
 1:  ............... default normal map (no bump)
 2:  ............... default cube map (error pattern)
@@ -29,17 +30,17 @@
 21: ............... foam texture
 22: ............... extra pc colorgrade for xbone compat
 </_field_explanation>
-	<_field_block_64 name="default bitmaps" max="32" guid="7b0790d8-47c8-d39d-8910-728528f1808a">
+	<_field_block_64 name="default bitmaps" max="32" srcguid="7b0790d8-47c8-d39d-8910-728528f1808a" srcName="default_textures_refs_block">
 		<_field_long_flags name="options">
 			<item Name="don't load bitmap by default" />
 		</_field_long_flags>
-		<_field_tag_reference_64 name="default bitmaps" />
+		<_field_tag_reference_64 name="default bitmaps" validtags="bitm" />
 	</_field_block_64>
 	<_field_explanation name="material textures:">0: ............... lightmap falloff sharpening
 6: ............... Approximate specular curve
 </_field_explanation>
-	<_field_block_64 name="material textures" max="16" guid="0f4db844-48cd-fd9f-47aa-dcb9d4cc472d">
-		<_field_tag_reference_64 name="material textures" />
+	<_field_block_64 name="material textures" max="16" srcguid="0f4db844-48cd-fd9f-47aa-dcb9d4cc472d" srcName="material_textures_refs_block">
+		<_field_tag_reference_64 name="material textures" validtags="bitm" />
 	</_field_block_64>
 	<_field_explanation name="explicit shaders:">0: ............... debug
 1: ............... debug2d
@@ -188,7 +189,7 @@
 238: ............. Fast Hud Textured Drop Shadow SustainDec
 239: ............. Fast Hud Text
 </_field_explanation>
-	<_field_block_64 name="explicit shaders" max="1024" guid="d3d3046b-4cab-f192-7b11-bc956f84cd3c">
+	<_field_block_64 name="explicit shaders" max="1024" srcguid="d3d3046b-4cab-f192-7b11-bc956f84cd3c" srcName="explicit_shader_refs_block">
 		<_field_string_id name="name" />
 		<_field_tag_reference_64 name="shader{explicit vertex shader}^" validtags="mat , mats" />
 	</_field_block_64>
@@ -202,15 +203,15 @@
 7:  ............... outline_order
 8:  ............... phased object color
 </_field_explanation>
-	<_field_block_64 name="global materials" max="32" guid="d8faf27a-458e-9e49-130f-e2914beec1d7">
+	<_field_block_64 name="global materials" max="32" srcguid="d8faf27a-458e-9e49-130f-e2914beec1d7" srcName="globalMaterialsBlock">
 		<_field_string_id name="name" />
-		<_field_tag_reference_64 name="material^" />
+		<_field_tag_reference_64 name="material^" validtags="mat " />
 	</_field_block_64>
-	<_field_tag_reference_64 name="Active Camo Distortion Texture" />
-	<_field_tag_reference_64 name="default performance throttles" />
-	<_field_tag_reference_64 name="Logo Texture" />
-	<_field_tag_reference_64 name="default scenario render data" />
-	<_field_tag_reference_64 name="Cheap Particle Type Library" />
+	<_field_tag_reference_64 name="Active Camo Distortion Texture" validtags="bitm" />
+	<_field_tag_reference_64 name="default performance throttles" validtags="perf" />
+	<_field_tag_reference_64 name="Logo Texture" validtags="bitm" />
+	<_field_tag_reference_64 name="default scenario render data" validtags="sred" />
+	<_field_tag_reference_64 name="Cheap Particle Type Library" validtags="cptl" />
 	<_field_explanation name="Motion blur parameters:">max blur:............  max amount to blur, as a percentage of the screen
 blur scale:..........  scales blur for a given velocity
 center falloff:....... reduces motion blur around the screen center (larger values give smaller reduction regions...)
@@ -220,13 +221,13 @@ expected dt:.......... expected time per tick, in seconds (used to correct motio
 	<_field_real name="blur scale{blur scale x}:[0 - 0.5]#scales blur for a given velocity" />
 	<_field_real name="center falloff x:[0 - 20]#larger values make smaller areas of no blur" />
 	<_field_real name="center falloff y:[0 - 20]#larger values make smaller areas of no blur" />
-	<_field_tag_reference_64 name="Hologram Camera FX" />
+	<_field_tag_reference_64 name="Hologram Camera FX" validtags="cfxs" />
 	<_field_explanation name="lighting debug parameters:" />
-	<_field_tag_reference_64 name="airprobe render model" />
+	<_field_tag_reference_64 name="airprobe render model" validtags="mode" />
 	<_field_real name="debug lighting value#we will replace the albedo with this value across RGB" />
 	<_field_real name="albedo clip min#pixels that have an albedo below this value will get colorized blue in the albedo clip debug display" />
 	<_field_real name="albedo clip max#pixels that have an albedo above this value will get colorized red in the albedo clip debug display" />
 	<_field_explanation name="Ausar: DX12 Pipeline state objects globals tag" />
-	<_field_tag_reference_64 name="pso globals" />
+	<_field_tag_reference_64 name="pso globals" validtags="gpso" />
 	<_field_pad name="pad" length="4" />
 </plugin>

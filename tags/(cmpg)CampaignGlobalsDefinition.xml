@@ -1,12 +1,13 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="campaign globals" max="15" guid="f61ec9e0-42c7-5d9f-9e6b-779a345339c9">
-		<_field_block_64 name="maps" max="3" guid="087bef9f-4144-6634-0fc7-5b97bde82fe4">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="campaign globals" max="15" srcguid="f61ec9e0-42c7-5d9f-9e6b-779a345339c9" srcName="campaign_globals_block">
+		<_field_block_64 name="maps" max="3" srcguid="087bef9f-4144-6634-0fc7-5b97bde82fe4" srcName="campaign_globals_map_block">
 			<_field_long_integer name="map id" />
 			<_field_string_id name="map name" />
 		</_field_block_64>
@@ -16,6 +17,6 @@
 		<_field_string_id name="mission CMS guid" />
 		<_field_string_id name="mission team" />
 	</_field_block_64>
-	<_field_tag_reference_64 name="Influencer default spawn settings" />
+	<_field_tag_reference_64 name="Influencer default spawn settings" validtags="ssdf" />
 	<_field_pad name="pad" length="4" />
 </plugin>

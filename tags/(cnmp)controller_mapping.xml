@@ -1,16 +1,19 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_explanation name="Left Analog Stick Clench Protection Settings">Relevant only if the player has the clench protection option turned on in their settings. Make sure that the settings make sense for the action that is mapped to left stick click in this controller configuration.</_field_explanation>
-	<_field_struct name="leftStickClenchProtectionSettings" />
-	<_field_real name="clench detection time:seconds#if the player holds the stick click for longer than this amount of time it is considered a clench rather than an intentional press" />
+	<_field_struct name="leftStickClenchProtectionSettings" srcguid="ddb2feb7-4e7b-3290-2867-8bb43edf82f9">
+		<_field_real name="clench detection time:seconds#if the player holds the stick click for longer than this amount of time it is considered a clench rather than an intentional press" />
+	</_field_struct>
 	<_field_explanation name="Right Analog Stick Clench Protection Settings">Relevant only if the player has the clench protection option turned on in their settings. Make sure that the settings make sense for the action that is mapped to right stick click in this controller configuration.</_field_explanation>
-	<_field_struct name="rightStickClenchProtectionSettings" />
-	<_field_real name="clench detection time:seconds#if the player holds the stick click for longer than this amount of time it is considered a clench rather than an intentional press" />
+	<_field_struct name="rightStickClenchProtectionSettings" srcguid="ddb2feb7-4e7b-3290-2867-8bb43edf82f9">
+		<_field_real name="clench detection time:seconds#if the player holds the stick click for longer than this amount of time it is considered a clench rather than an intentional press" />
+	</_field_struct>
 	<_field_explanation name="Start/Back">Start and Back buttons are not remappable and do not appear in this list.</_field_explanation>
 	<_field_short_enum name="jump">
 		<item Name="left trigger" />

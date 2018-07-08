@@ -1,17 +1,18 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_explanation name="PARTICLE POINTS">Explanation goes here.
 Woo....
 </_field_explanation>
-	<_field_tag_reference_64 name="source reference!" />
+	<_field_tag_reference_64 name="source reference!" validtags="pmdf" />
 	<_field_real_vector_3d name="compression scale" />
 	<_field_real_vector_3d name="compression offset" />
-	<_field_block_64 name="points" max="32768" guid="705d9ddc-4bbc-1586-4412-8a89aebc2584">
+	<_field_block_64 name="points" max="32768" srcguid="705d9ddc-4bbc-1586-4412-8a89aebc2584" srcName="particle_emitter_custom_point_block">
 		<_field_short_integer name="position_x" />
 		<_field_short_integer name="position_y" />
 		<_field_short_integer name="position_z" />

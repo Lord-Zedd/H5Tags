@@ -1,17 +1,18 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_custom name="import" />
-	<_field_block_64 name="vertices*" max="32768" guid="1f0b2e3d-4309-aac4-b253-3abf775dbd30">
+	<_field_block_64 name="vertices*" max="32768" srcguid="1f0b2e3d-4309-aac4-b253-3abf775dbd30" srcName="wpfPolyartVertexBlock">
 		<_field_real_point_3d name="position*" />
 		<_field_real_point_3d name="normal*" />
 		<_field_real_point_2d name="texture coordinate*" />
 	</_field_block_64>
-	<_field_block_64 name="indices*" max="32768" guid="27dbbddf-4520-d250-559b-879298d7e020">
+	<_field_block_64 name="indices*" max="32768" srcguid="27dbbddf-4520-d250-559b-879298d7e020" srcName="wpfPolyartIndexBlock">
 		<_field_short_integer name="index*" />
 	</_field_block_64>
 </plugin>

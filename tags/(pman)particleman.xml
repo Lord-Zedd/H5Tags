@@ -1,10 +1,11 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_explanation name="Particleize Settings">Defines a particular particleize effect
 
 Density modifies how many particles are made
@@ -23,8 +24,10 @@ Curve defines how the shape evolves over time
 	<_field_real name="Duration:sec" />
 	<_field_real name="Density" />
 	<_field_real name="Size:world units" />
-	<_field_struct name="Curve" />
-	<_field_struct name="Mapping" />
-	<_field_data_64 name="data" />
+	<_field_struct name="Curve" srcguid="c1cb3a69-489c-25f9-76e2-5fb42b3b3400">
+		<_field_struct name="Mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+	</_field_struct>
 	<_field_pad name="pad_tp" length="4" />
 </plugin>

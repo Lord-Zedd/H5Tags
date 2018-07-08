@@ -1,11 +1,12 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="Music action list#List of music actions to perform. All will be performed when the tag is called." max="16" guid="ba6c3a66-40c5-f2b2-0ae0-b38dbfdc2961">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="Music action list#List of music actions to perform. All will be performed when the tag is called." max="16" srcguid="ba6c3a66-40c5-f2b2-0ae0-b38dbfdc2961" srcName="MusicActionBlock">
 		<_field_long_enum name="Music action">
 			<item Name="NoAction#Take no action" />
 			<item Name="StartEvent#Saved  event to start music. Will call a wwise event. Restored on load" />

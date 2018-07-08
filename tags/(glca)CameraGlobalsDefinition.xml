@@ -1,15 +1,19 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="camera" max="1" guid="5544fb06-4476-f3d0-5762-1fa5e234a66b">
-		<_field_tag_reference_64 name="default unit camera track" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="camera" max="1" srcguid="5544fb06-4476-f3d0-5762-1fa5e234a66b" srcName="camera_block">
+		<_field_tag_reference_64 name="default unit camera track" validtags="trak" />
 		<_field_explanation name="SANDBOX" />
-		<_field_struct name="pitch to vertical offset" />
-		<_field_data_64 name="data" />
+		<_field_struct name="pitch to vertical offset" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+			<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
 		<_field_explanation name="CAMERA UNIVERSALS" />
 		<_field_real name="field of view:degrees" />
 		<_field_real name="yaw scale" />
@@ -80,15 +84,18 @@
 		<_field_real name="enter vehicle transition time:seconds#how long it takes the camera to move from first to third person when entering a vehicle" />
 		<_field_real name="exit vehicle transition time:seconds#see above" />
 		<_field_explanation name="CAMERA OBSTRUCTION" />
-		<_field_struct name="obstruction" />
-		<_field_real_fraction name="cylinder fraction#controls how far from the focus point the outer raycasts start.  0 == cone, 1 == cylinder" />
-		<_field_angle name="obstruction test angle:degrees#how wide of a cone to test" />
-		<_field_real name="obstruction max inward accel:1.0/s/s#how quickly the camera moves inward when it anticipates a collision" />
-		<_field_real name="obstruction max outward accel:1.0/s/s#how quickly the camera returns to a normal position when its anticipated distance is further than its current" />
-		<_field_real name="obstruction max velocity:1.0/s#maximum speed the camera can move" />
-		<_field_real name="obstruction return delay:s#when the camera wants to start moving back out, wait this long before doing so" />
+		<_field_struct name="obstruction" srcguid="3a9d370f-4b3b-5774-2fae-3c86cca8f293">
+			<_field_real_fraction name="cylinder fraction#controls how far from the focus point the outer raycasts start.  0 == cone, 1 == cylinder" />
+			<_field_angle name="obstruction test angle:degrees#how wide of a cone to test" />
+			<_field_real name="obstruction max inward accel:1.0/s/s#how quickly the camera moves inward when it anticipates a collision" />
+			<_field_real name="obstruction max outward accel:1.0/s/s#how quickly the camera returns to a normal position when its anticipated distance is further than its current" />
+			<_field_real name="obstruction max velocity:1.0/s#maximum speed the camera can move" />
+			<_field_real name="obstruction return delay:s#when the camera wants to start moving back out, wait this long before doing so" />
+		</_field_struct>
 	</_field_block_64>
-	<_field_block_64 name="camera impulse" max="1" guid="57f39345-4565-0b82-b0c4-43a3479aadfd">
-		<_field_data_64 name="data" />
+	<_field_block_64 name="camera impulse" max="1" srcguid="57f39345-4565-0b82-b0c4-43a3479aadfd" srcName="global_camera_impulse_block">
+		<_field_struct name="mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
 	</_field_block_64>
 </plugin>

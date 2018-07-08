@@ -1,23 +1,25 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="Lightmap Priority Volumes" max="16384" guid="9d0b0b83-42ac-3daa-4af1-afb1f9c040e5">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="Lightmap Priority Volumes" max="16384" srcguid="9d0b0b83-42ac-3daa-4af1-afb1f9c040e5" srcName="lightmapPriVolumesBlock">
 		<_field_string_id name="Name" />
 		<_field_custom name="Volume settings" />
-		<_field_struct name="Volume" />
-		<_field_block_64 name="Points" max="32" guid="66dd021f-42b7-67e4-69b7-44af5c73a047">
-			<_field_real_point_3d name="position" />
-			<_field_real_euler_angles_2d name="normal" />
-		</_field_block_64>
-		<_field_real name="height" />
-		<_field_real name="sink" />
-		<_field_real_point_3d name="center point!" />
-		<_field_real name="trivial cull radius squared!" />
-		<_field_pad name="gvolpad" length="4" />
+		<_field_struct name="Volume" srcguid="879af445-458c-5fd8-2be1-c39216d26f81">
+			<_field_block_64 name="Points" max="32" srcguid="66dd021f-42b7-67e4-69b7-44af5c73a047" srcName="genericVolumePointBlock">
+				<_field_real_point_3d name="position" />
+				<_field_real_euler_angles_2d name="normal" />
+			</_field_block_64>
+			<_field_real name="height" />
+			<_field_real name="sink" />
+			<_field_real_point_3d name="center point!" />
+			<_field_real name="trivial cull radius squared!" />
+			<_field_pad name="gvolpad" length="4" />
+		</_field_struct>
 		<_field_real name="Volume Priority" />
 		<_field_real name="Lightmap Priority" />
 		<_field_short_enum name="Exclude Shadow Geometry">
@@ -36,7 +38,7 @@
 			<item Name="No" />
 			<item Name="Yes" />
 		</_field_short_enum>
-		<_field_block_64 name="Editor Metadata!" max="1024" guid="49566d10-3ee6-efbe-6d8c-8eb1db3d0368">
+		<_field_block_64 name="Editor Metadata!" max="1024" srcguid="49566d10-3ee6-efbe-6d8c-8eb1db3d0368" srcName="editorMetadataBlock">
 			<_field_long_string name="data name" />
 			<_field_long_enum name="data type">
 				<item Name="class" />
@@ -49,21 +51,22 @@
 			<_field_long_string name="data value" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="Air Probe Density Volumes" max="16384" guid="a564e868-4a15-1faf-4fa0-dd99a6214c35">
+	<_field_block_64 name="Air Probe Density Volumes" max="16384" srcguid="a564e868-4a15-1faf-4fa0-dd99a6214c35" srcName="airProbeDensityVolumesBlock">
 		<_field_string_id name="Name" />
 		<_field_custom name="Volume settings" />
-		<_field_struct name="Volume" />
-		<_field_block_64 name="Points" max="32" guid="66dd021f-42b7-67e4-69b7-44af5c73a047">
-			<_field_real_point_3d name="position" />
-			<_field_real_euler_angles_2d name="normal" />
-		</_field_block_64>
-		<_field_real name="height" />
-		<_field_real name="sink" />
-		<_field_real_point_3d name="center point!" />
-		<_field_real name="trivial cull radius squared!" />
-		<_field_pad name="gvolpad" length="4" />
+		<_field_struct name="Volume" srcguid="879af445-458c-5fd8-2be1-c39216d26f81">
+			<_field_block_64 name="Points" max="32" srcguid="66dd021f-42b7-67e4-69b7-44af5c73a047" srcName="genericVolumePointBlock">
+				<_field_real_point_3d name="position" />
+				<_field_real_euler_angles_2d name="normal" />
+			</_field_block_64>
+			<_field_real name="height" />
+			<_field_real name="sink" />
+			<_field_real_point_3d name="center point!" />
+			<_field_real name="trivial cull radius squared!" />
+			<_field_pad name="gvolpad" length="4" />
+		</_field_struct>
 		<_field_real name="Air Probe Density" />
-		<_field_block_64 name="Editor Metadata!" max="1024" guid="49566d10-3ee6-efbe-6d8c-8eb1db3d0368">
+		<_field_block_64 name="Editor Metadata!" max="1024" srcguid="49566d10-3ee6-efbe-6d8c-8eb1db3d0368" srcName="editorMetadataBlock">
 			<_field_long_string name="data name" />
 			<_field_long_enum name="data type">
 				<item Name="class" />
@@ -76,20 +79,21 @@
 			<_field_long_string name="data value" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="Air Probe Region Volumes" max="4" guid="531729e8-4fa0-b942-df8b-54962472edf4">
+	<_field_block_64 name="Air Probe Region Volumes" max="4" srcguid="531729e8-4fa0-b942-df8b-54962472edf4" srcName="airProbeRegionVolumesBlock">
 		<_field_string_id name="Name" />
 		<_field_custom name="Volume settings" />
-		<_field_struct name="Volume" />
-		<_field_block_64 name="Points" max="32" guid="66dd021f-42b7-67e4-69b7-44af5c73a047">
-			<_field_real_point_3d name="position" />
-			<_field_real_euler_angles_2d name="normal" />
-		</_field_block_64>
-		<_field_real name="height" />
-		<_field_real name="sink" />
-		<_field_real_point_3d name="center point!" />
-		<_field_real name="trivial cull radius squared!" />
-		<_field_pad name="gvolpad" length="4" />
-		<_field_block_64 name="Editor Metadata!" max="1024" guid="49566d10-3ee6-efbe-6d8c-8eb1db3d0368">
+		<_field_struct name="Volume" srcguid="879af445-458c-5fd8-2be1-c39216d26f81">
+			<_field_block_64 name="Points" max="32" srcguid="66dd021f-42b7-67e4-69b7-44af5c73a047" srcName="genericVolumePointBlock">
+				<_field_real_point_3d name="position" />
+				<_field_real_euler_angles_2d name="normal" />
+			</_field_block_64>
+			<_field_real name="height" />
+			<_field_real name="sink" />
+			<_field_real_point_3d name="center point!" />
+			<_field_real name="trivial cull radius squared!" />
+			<_field_pad name="gvolpad" length="4" />
+		</_field_struct>
+		<_field_block_64 name="Editor Metadata!" max="1024" srcguid="49566d10-3ee6-efbe-6d8c-8eb1db3d0368" srcName="editorMetadataBlock">
 			<_field_long_string name="data name" />
 			<_field_long_enum name="data type">
 				<item Name="class" />
@@ -102,30 +106,31 @@
 			<_field_long_string name="data value" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="Cubemap Volumes" max="64" guid="ba187d43-481a-d1ce-8b9c-6cbc3c5171be">
+	<_field_block_64 name="Cubemap Volumes" max="64" srcguid="ba187d43-481a-d1ce-8b9c-6cbc3c5171be" srcName="cubemapVolumesBlock">
 		<_field_string_id name="Name" />
 		<_field_long_flags name="Flags">
 			<item Name="Enable Intensity Correction" />
 			<item Name="Capture With Effects" />
 			<item Name="Affects Adjacent Bsps" />
 		</_field_long_flags>
-		<_field_struct name="Dumpling" />
-		<_field_block_64 name="inner points" max="32" guid="5b797cb1-4931-9aad-827f-d6a4efb8e03a">
-			<_field_real_point_3d name="position" />
-			<_field_real_euler_angles_2d name="normal" />
-		</_field_block_64>
-		<_field_block_64 name="outer points" max="32" guid="5b797cb1-4931-9aad-827f-d6a4efb8e03a">
-			<_field_real_point_3d name="position" />
-			<_field_real_euler_angles_2d name="normal" />
-		</_field_block_64>
-		<_field_real name="height" />
-		<_field_real name="sink" />
-		<_field_real name="inner value" />
-		<_field_real name="outer value" />
-		<_field_real_point_3d name="center point!" />
-		<_field_real name="trivial cull radius squared!" />
-		<_field_real name="bound volume" />
-		<_field_tag_reference_64 name="Cubemap Bitmap" />
+		<_field_struct name="Dumpling" srcguid="2ff9a01b-4eda-b376-fe64-0bb7ad957f1e">
+			<_field_block_64 name="inner points" max="32" srcguid="5b797cb1-4931-9aad-827f-d6a4efb8e03a" srcName="dumpling_point_block">
+				<_field_real_point_3d name="position" />
+				<_field_real_euler_angles_2d name="normal" />
+			</_field_block_64>
+			<_field_block_64 name="outer points" max="32" srcguid="5b797cb1-4931-9aad-827f-d6a4efb8e03a" srcName="dumpling_point_block">
+				<_field_real_point_3d name="position" />
+				<_field_real_euler_angles_2d name="normal" />
+			</_field_block_64>
+			<_field_real name="height" />
+			<_field_real name="sink" />
+			<_field_real name="inner value" />
+			<_field_real name="outer value" />
+			<_field_real_point_3d name="center point!" />
+			<_field_real name="trivial cull radius squared!" />
+			<_field_real name="bound volume" />
+		</_field_struct>
+		<_field_tag_reference_64 name="Cubemap Bitmap" validtags="bitm" />
 		<_field_short_enum name="Enable Parallax Correction">
 			<item Name="Off" />
 			<item Name="On" />
@@ -145,7 +150,7 @@
 		</_field_short_enum>
 		<_field_real_point_3d name="Intensity" />
 		<_field_real name="Self-illum Scale Down" />
-		<_field_block_64 name="Editor Metadata!" max="1024" guid="49566d10-3ee6-efbe-6d8c-8eb1db3d0368">
+		<_field_block_64 name="Editor Metadata!" max="1024" srcguid="49566d10-3ee6-efbe-6d8c-8eb1db3d0368" srcName="editorMetadataBlock">
 			<_field_long_string name="data name" />
 			<_field_long_enum name="data type">
 				<item Name="class" />

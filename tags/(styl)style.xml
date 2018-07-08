@@ -1,10 +1,11 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_string name="name^" />
 	<_field_explanation name="Combat status decay options">Controls how combat status is allowed to be automatically reduced in the absence of combat stimuli. 'Latch at X' means that once the level of x is attained (and/or surpassed) the combat status never falls below it. Not applicable when style is applied to a character tag.</_field_explanation>
 	<_field_short_enum name="Combat status decay options">
@@ -266,7 +267,7 @@
 		<item Name="MusketeerAvoidPlayerBehavior" />
 		<item Name="MusketeerCureIsolationBehavior" />
 	</_field_long_flags>
-	<_field_block_64 name="Special movement" max="1" guid="5af31295-42ab-e49d-bc9d-9aa4c3496b8b">
+	<_field_block_64 name="Special movement" max="1" srcguid="5af31295-42ab-e49d-bc9d-9aa4c3496b8b" srcName="special_movement_block">
 		<_field_long_flags name="Special movement 1">
 			<item Name="jump" />
 			<item Name="climb" />
@@ -276,7 +277,7 @@
 			<item Name="wall jump" />
 		</_field_long_flags>
 	</_field_block_64>
-	<_field_block_64 name="Behavior list" max="256" guid="3b1809cc-4135-71be-0eeb-09a5508e3542">
+	<_field_block_64 name="Behavior list" max="256" srcguid="3b1809cc-4135-71be-0eeb-09a5508e3542" srcName="behavior_names_block">
 		<_field_string name="behavior name*^" />
 	</_field_block_64>
 </plugin>

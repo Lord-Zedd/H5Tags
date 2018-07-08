@@ -1,17 +1,18 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="affected files" max="32" guid="b8af34f9-4d97-991c-70e8-93a5d6f52f17">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="affected files" max="32" srcguid="b8af34f9-4d97-991c-70e8-93a5d6f52f17" srcName="affectedFileBlock">
 		<_field_tag_reference_64 name="file to touch^" />
 	</_field_block_64>
-	<_field_block_64 name="shared variables" max="32" guid="a75976d3-44d5-a694-8971-118277c2d8f8">
+	<_field_block_64 name="shared variables" max="32" srcguid="a75976d3-44d5-a694-8971-118277c2d8f8" srcName="sharedVariableBlock">
 		<_field_string name="name^" />
-		<_field_block_64 name="touches" max="32" guid="69dbf3f9-4630-8f9c-300a-54b0cc49dd43">
-			<_field_long_block_index name="file to touch" srcguid="b8af34f9-4d97-991c-70e8-93a5d6f52f17" />
+		<_field_block_64 name="touches" max="32" srcguid="69dbf3f9-4630-8f9c-300a-54b0cc49dd43" srcName="sharedVariableTouchBlock">
+			<_field_long_block_index name="file to touch" targetGuid="b8af34f9-4d97-991c-70e8-93a5d6f52f17" targetName="affectedFileBlock" />
 			<_field_long_string name="field to touch" />
 		</_field_block_64>
 		<_field_real name="numerical value" />

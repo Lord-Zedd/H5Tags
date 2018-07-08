@@ -1,31 +1,32 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_explanation name="Shared Globals">This is a reference to the ui shared globals tag</_field_explanation>
-	<_field_tag_reference_64 name="shared globals" />
+	<_field_tag_reference_64 name="shared globals" validtags="wigl" />
 	<_field_explanation name="Multiplayer Variant Settings Interface">This blob defines the ui for setting multiplayer game variant parameters</_field_explanation>
-	<_field_tag_reference_64 name="mp variant settings ui" />
+	<_field_tag_reference_64 name="mp variant settings ui" validtags="goof" />
 	<_field_explanation name="Game Hopper Localization Strings">This is for the loc game hopper strings</_field_explanation>
-	<_field_tag_reference_64 name="game hopper descriptions" />
+	<_field_tag_reference_64 name="game hopper descriptions" validtags="unic" />
 	<_field_explanation name="Screen Widgets">These are the HaloX screen widgets</_field_explanation>
-	<_field_block_64 name="node graphs" max="256" guid="064ae50c-430d-3a4d-c4d9-6b8170436678">
-		<_field_tag_reference_64 name="node graph tag" />
+	<_field_block_64 name="node graphs" max="256" srcguid="064ae50c-430d-3a4d-c4d9-6b8170436678" srcName="node_graph_reference_block_definition">
+		<_field_tag_reference_64 name="node graph tag" validtags="ngst" />
 	</_field_block_64>
-	<_field_block_64 name="wpf fonts" max="256" guid="39753fd6-4ad2-f3da-c89f-599ce1b140df">
-		<_field_tag_reference_64 name="wpf font set tag" />
+	<_field_block_64 name="wpf fonts" max="256" srcguid="39753fd6-4ad2-f3da-c89f-599ce1b140df" srcName="font_set_reference_block_definition">
+		<_field_tag_reference_64 name="wpf font set tag" validtags="fnts" />
 	</_field_block_64>
-	<_field_block_64 name="bitmap dictionaries#allow bitmap tags to be referenced using ampersand notation in HaloTextBlocks" max="256" guid="cd4a6b7f-4148-d3c9-1ee9-0887f0c7c745">
-		<_field_tag_reference_64 name="bitmap dictionary" />
+	<_field_block_64 name="bitmap dictionaries#allow bitmap tags to be referenced using ampersand notation in HaloTextBlocks" max="256" srcguid="cd4a6b7f-4148-d3c9-1ee9-0887f0c7c745" srcName="bitmap_dictionary_reference_block_definition">
+		<_field_tag_reference_64 name="bitmap dictionary" validtags="bitd" />
 	</_field_block_64>
-	<_field_block_64 name="cui screen widgets" max="256" guid="5760e7a0-4769-4c3b-783d-f1864287287b">
+	<_field_block_64 name="cui screen widgets" max="256" srcguid="5760e7a0-4769-4c3b-783d-f1864287287b" srcName="cui_component_screen_reference_block_definition">
 		<_field_string_id name="name^#for use in code" />
-		<_field_tag_reference_64 name="cui screen tag" />
+		<_field_tag_reference_64 name="cui screen tag" validtags="cusc" />
 	</_field_block_64>
-	<_field_block_64 name="cui overlay cameras" max="24" guid="83781bd0-418e-054d-59ce-9488e0265695">
+	<_field_block_64 name="cui overlay cameras" max="24" srcguid="83781bd0-418e-054d-59ce-9488e0265695" srcName="cui_overlay_camera_block_definition">
 		<_field_string_id name="resolution name" />
 		<_field_char_enum name="pivot corner">
 			<item Name="top left" />
@@ -39,7 +40,7 @@
 		<_field_real name="X angle degrees#camera angle around the X axis" />
 		<_field_real name="Y angle degrees#camera angle around the Y axis" />
 	</_field_block_64>
-	<_field_block_64 name="player model camera settings" max="32" guid="73f77a8a-08be-d544-babd-b685efb872f8">
+	<_field_block_64 name="player model camera settings" max="32" srcguid="73f77a8a-08be-d544-babd-b685efb872f8" srcName="cui_player_model_camera_settings_definition">
 		<_field_explanation name="Camera Settings">These are model-viewing camera parameters that you can control
 * FOV is the field of view used by the texture camera
   if left 0, a suitable default FOV is used
@@ -64,36 +65,39 @@
 		<_field_real name="initial zoom:[0,1]" />
 		<_field_real name="fov:degrees" />
 	</_field_block_64>
-	<_field_block_64 name="player model input settings" max="32" guid="5d1bd5fe-14d2-e2c8-f7f4-be82fe82a043">
+	<_field_block_64 name="player model input settings" max="32" srcguid="5d1bd5fe-14d2-e2c8-f7f4-be82fe82a043" srcName="cui_player_model_controller_settings_definition">
 		<_field_string_id name="name" />
 		<_field_real name="zoom speed:wu per tick" />
-		<_field_struct name="zoom transition function" />
-		<_field_data_64 name="data" />
+		<_field_struct name="zoom transition function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
 		<_field_real_euler_angles_2d name="initial rotation:degrees" />
 		<_field_real_euler_angles_2d name="minimum rotation:degrees" />
 		<_field_real_euler_angles_2d name="maximum rotation:degrees" />
 		<_field_real name="rotation speed:degrees per tick" />
 	</_field_block_64>
-	<_field_block_64 name="player model camera transition settings" max="1" guid="20e2fa5b-4706-22e5-621f-ccb4adace040">
-		<_field_struct name="camera transition function" />
-		<_field_data_64 name="data" />
+	<_field_block_64 name="player model camera transition settings" max="1" srcguid="20e2fa5b-4706-22e5-621f-ccb4adace040" srcName="cui_player_model_transition_settings_definition">
+		<_field_struct name="camera transition function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
 	</_field_block_64>
-	<_field_block_64 name="active roster settings" max="1" guid="53a07740-4ca2-597d-bc33-01bde6166518">
-		<_field_struct name="analog scroll function" />
-		<_field_data_64 name="data" />
+	<_field_block_64 name="active roster settings" max="1" srcguid="53a07740-4ca2-597d-bc33-01bde6166518" srcName="cui_active_roster_settings_block">
+		<_field_struct name="analog scroll function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
 	</_field_block_64>
 	<_field_explanation name="PGCR Categories Definitions">This is a reference to the tag storing the categories we want to display in the PGCR</_field_explanation>
-	<_field_tag_reference_64 name="pgcr categories definitions" />
+	<_field_tag_reference_64 name="pgcr categories definitions" validtags="pcec" />
 	<_field_explanation name="PGCR Damage Types Definitions">This is a reference to the tag storing details about damage types for display in the PGCR</_field_explanation>
-	<_field_tag_reference_64 name="pgcr damage types definitions" />
+	<_field_tag_reference_64 name="pgcr damage types definitions" validtags="pdti" />
 	<_field_explanation name="Campaign State Screen Scripts">Contains a mapping of campaign map IDs and screen scripts used to implement lobby backgrounds that track campaign state. This block should only be non-empty for the main menu.</_field_explanation>
-	<_field_block_64 name="campaign state screen scripts" max="64" guid="94a0c938-49a6-2b65-0315-54bd58bd3bc7">
+	<_field_block_64 name="campaign state screen scripts" max="64" srcguid="94a0c938-49a6-2b65-0315-54bd58bd3bc7" srcName="campaign_state_screen_script_block_definition">
 		<_field_long_integer name="map ID" />
 		<_field_string_id name="screen script name" />
-		<_field_tag_reference_64 name="music override" />
+		<_field_tag_reference_64 name="music override" validtags="lsnd" />
 	</_field_block_64>
 	<_field_real name="spawn-timer countdown rate:counts/sec" />
-	<_field_block_64 name="game intro sequence" max="5" guid="790fa350-4de5-a494-ad32-7b83a40c6252">
+	<_field_block_64 name="game intro sequence" max="5" srcguid="790fa350-4de5-a494-ad32-7b83a40c6252" srcName="UserInterfaceGameScreenSequenceStepDefinition">
 		<_field_byte_flags name="flags">
 			<item Name="show loadout menu" />
 			<item Name="loadout menu close ends sequence" />
@@ -107,7 +111,7 @@
 		<_field_short_integer name="startTime:ticks" />
 		<_field_short_integer name="endTime:ticks" />
 	</_field_block_64>
-	<_field_block_64 name="game round end sequence" max="5" guid="790fa350-4de5-a494-ad32-7b83a40c6252">
+	<_field_block_64 name="game round end sequence" max="5" srcguid="790fa350-4de5-a494-ad32-7b83a40c6252" srcName="UserInterfaceGameScreenSequenceStepDefinition">
 		<_field_byte_flags name="flags">
 			<item Name="show loadout menu" />
 			<item Name="loadout menu close ends sequence" />
@@ -121,7 +125,7 @@
 		<_field_short_integer name="startTime:ticks" />
 		<_field_short_integer name="endTime:ticks" />
 	</_field_block_64>
-	<_field_block_64 name="game round end with killcam sequence" max="5" guid="790fa350-4de5-a494-ad32-7b83a40c6252">
+	<_field_block_64 name="game round end with killcam sequence" max="5" srcguid="790fa350-4de5-a494-ad32-7b83a40c6252" srcName="UserInterfaceGameScreenSequenceStepDefinition">
 		<_field_byte_flags name="flags">
 			<item Name="show loadout menu" />
 			<item Name="loadout menu close ends sequence" />
@@ -135,7 +139,7 @@
 		<_field_short_integer name="startTime:ticks" />
 		<_field_short_integer name="endTime:ticks" />
 	</_field_block_64>
-	<_field_block_64 name="game next round sequence" max="5" guid="790fa350-4de5-a494-ad32-7b83a40c6252">
+	<_field_block_64 name="game next round sequence" max="5" srcguid="790fa350-4de5-a494-ad32-7b83a40c6252" srcName="UserInterfaceGameScreenSequenceStepDefinition">
 		<_field_byte_flags name="flags">
 			<item Name="show loadout menu" />
 			<item Name="loadout menu close ends sequence" />
@@ -149,7 +153,7 @@
 		<_field_short_integer name="startTime:ticks" />
 		<_field_short_integer name="endTime:ticks" />
 	</_field_block_64>
-	<_field_block_64 name="game end sequence" max="5" guid="790fa350-4de5-a494-ad32-7b83a40c6252">
+	<_field_block_64 name="game end sequence" max="5" srcguid="790fa350-4de5-a494-ad32-7b83a40c6252" srcName="UserInterfaceGameScreenSequenceStepDefinition">
 		<_field_byte_flags name="flags">
 			<item Name="show loadout menu" />
 			<item Name="loadout menu close ends sequence" />
@@ -163,7 +167,7 @@
 		<_field_short_integer name="startTime:ticks" />
 		<_field_short_integer name="endTime:ticks" />
 	</_field_block_64>
-	<_field_block_64 name="game end with killcam sequence" max="5" guid="790fa350-4de5-a494-ad32-7b83a40c6252">
+	<_field_block_64 name="game end with killcam sequence" max="5" srcguid="790fa350-4de5-a494-ad32-7b83a40c6252" srcName="UserInterfaceGameScreenSequenceStepDefinition">
 		<_field_byte_flags name="flags">
 			<item Name="show loadout menu" />
 			<item Name="loadout menu close ends sequence" />
@@ -177,7 +181,7 @@
 		<_field_short_integer name="startTime:ticks" />
 		<_field_short_integer name="endTime:ticks" />
 	</_field_block_64>
-	<_field_block_64 name="in game sequence" max="5" guid="790fa350-4de5-a494-ad32-7b83a40c6252">
+	<_field_block_64 name="in game sequence" max="5" srcguid="790fa350-4de5-a494-ad32-7b83a40c6252" srcName="UserInterfaceGameScreenSequenceStepDefinition">
 		<_field_byte_flags name="flags">
 			<item Name="show loadout menu" />
 			<item Name="loadout menu close ends sequence" />
@@ -191,12 +195,12 @@
 		<_field_short_integer name="startTime:ticks" />
 		<_field_short_integer name="endTime:ticks" />
 	</_field_block_64>
-	<_field_tag_reference_64 name="HUD globals#global settings for the HUD. Set this for ingame globals." />
-	<_field_tag_reference_64 name="portrait poses" />
-	<_field_block_64 name="swap tags" max="128" guid="60312daa-4ab4-faeb-27fc-d8b8a82751ed">
+	<_field_tag_reference_64 name="HUD globals#global settings for the HUD. Set this for ingame globals." validtags="uihg" />
+	<_field_tag_reference_64 name="portrait poses" validtags="ppod" />
+	<_field_block_64 name="swap tags" max="128" srcguid="60312daa-4ab4-faeb-27fc-d8b8a82751ed" srcName="SwapTagReferenceDefinition">
 		<_field_tag_reference_64 name="original tag^" />
 		<_field_tag_reference_64 name="replacement tag" />
 	</_field_block_64>
-	<_field_tag_reference_64 name="resolution texture map" />
+	<_field_tag_reference_64 name="resolution texture map" validtags="retm" />
 	<_field_pad name="pad0" length="4" />
 </plugin>

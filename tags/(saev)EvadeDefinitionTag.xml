@@ -1,73 +1,85 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_struct name="data" />
-	<_field_struct name="common ability parameters" />
-	<_field_long_flags name="flags">
-		<item Name="Use 3rd Person Camera When Active" />
-		<item Name="Hide Reticle When Active" />
-		<item Name="Is Motion Tracked (By Enemies) When Active" />
-		<item Name="One-Shot Activation Effect#Effect kills itself rather than being explicitly killed when the ability deactivates" />
-		<item Name="Can be activated when weapon state is relaxed" />
-		<item Name="Does Not Appear In Extended Motion Tracker Range" />
-	</_field_long_flags>
-	<_field_real_fraction name="activation energy cost#amount of energy required to activate the ability" />
-	<_field_real name="active energy consumption:energy/second#amount of energy consumed continuously while the ability is active" />
-	<_field_tag_reference_64 name="activation effect#effects triggered when player activates ability" />
-	<_field_long_flags name="evade flags">
-		<item Name="Can cancel when using charge up" />
-	</_field_long_flags>
-	<_field_real_fraction name="throttle dead zone#stick must be pressed at least this much in any direction to consider non-forward Evade" />
-	<_field_string_id name="evade left animation" />
-	<_field_string_id name="evade right animation" />
-	<_field_string_id name="evade forward animation" />
-	<_field_string_id name="evade backward animation" />
-	<_field_real name="evade duration:seconds#the amount of time that elapses from the beginning of the evade to the end" />
-	<_field_real_fraction name="evade exit sprint fraction:[0,1]#Player will exit the Evade action at this sprint fraction" />
-	<_field_real_fraction name="evade melee interrupt fraction:[0,1]#Player will be able to interrupt to perform a melee at this fraction through the evade" />
-	<_field_explanation name="speed function">Use this curve to define the character's speed over the course of an evade performed while the character is on the ground. The x axis measures time from the beginning of the evade to the end. Y axis is the speed of the character (wu/s) in the evade direction at the given time.</_field_explanation>
-	<_field_struct name="speed function" />
-	<_field_data_64 name="data" />
-	<_field_explanation name="speed function scalar">malleable property scale applied to the result of the speed function</_field_explanation>
-	<_field_custom name="speed function scalar#scale applied to the result of the speed function" />
-	<_field_struct name="speed function scalar#scale applied to the result of the speed function" />
-	<_field_real name="Base Value" />
-	<_field_real_bounds name="Value Bounds" />
-	<_field_char_enum name="Combiner">
-		<item Name="sequential#applies the percentages one after another on the base" />
-		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
-		<item Name="addition#adds on all of the modifiers to the base" />
-		<item Name="product#multiplies the values one after another on to the base" />
-	</_field_char_enum>
-	<_field_pad name="padEnd" length="3" />
-	<_field_pad name="FCOEFALIGN" length="4" />
-	<_field_real name="forward speed modifier:percentage#used to define additional boost for evading forward (1.0 = normal speed, 2.0 = double speed, etc...)" />
-	<_field_real_bounds name="speed modifier values:wu/s#Used to map values onto ground and air speed modifier functions below." />
-	<_field_explanation name="ground speed modifier function">Use this curve to define a modifier on the 'speed function' above when evading on the ground. The x axis measures the players entry speed in direction of the evade, clamped to the floor/ceiling defined above. Y axis is the percent of 'speed function' to use.</_field_explanation>
-	<_field_struct name="ground speed modifier function" />
-	<_field_data_64 name="data" />
-	<_field_explanation name="air speed modifier function">Use this curve to define a speed modifier on the 'speed function' above when evading in the air. The x axis measures the players entry speed in direction of the evade, clamped to the floor/ceiling defined above. Y axis is the percent of 'speed function' to use.</_field_explanation>
-	<_field_struct name="air speed modifier function" />
-	<_field_data_64 name="data" />
-	<_field_explanation name="horizontal camera offset function">Use this curve to define how the camera moves horizontally while the character is evading left or right. The x axis measures time from the beginning of the evade to the end. Y axis is the distance that the camera is offset horizontally from the center of the pill at the given time.</_field_explanation>
-	<_field_struct name="horizontal camera offset function" />
-	<_field_data_64 name="data" />
-	<_field_explanation name="camera tilt ROLL function">Use these curves to define how the camera tilts when the character evades left/right. The x axis measures time from the beginning of the evade to the end. Y axis is angle (in degrees) that the camera is tilted in the direction of the evade at the given time</_field_explanation>
-	<_field_struct name="camera tilt ROLL function" />
-	<_field_data_64 name="data" />
-	<_field_explanation name="camera tilt PITCH function">Use these curves to define how the camera tilts when the character evades forward/backward. The x axis measures time from the beginning of the evade to the end. Y axis is angle (in degrees) that the camera is tilted in the direction of the evade at the given time</_field_explanation>
-	<_field_struct name="camera tilt PITCH function" />
-	<_field_data_64 name="data" />
-	<_field_explanation name="FOV delta function">Use this curve to define how the FOV is modified while the character is evading forward or backward. The x axis measures time from the beginning of the evade to the end. Y axis is the amount (in degrees) that the FOV is modified at the given time. Remember that you want a negative number to shrink the FOV.</_field_explanation>
-	<_field_struct name="FOV delta function" />
-	<_field_data_64 name="data" />
-	<_field_explanation name="overlay animation function">Use this curve to define the blend weight of the evade overlay animation over the course of the evade. The x axis measures time from the beginning of the evade to the end. The Y axis measures the blend weight of the overlay animation at the given time.</_field_explanation>
-	<_field_struct name="overlay animation function" />
-	<_field_data_64 name="data" />
-	<_field_real name="maximum vertical impulse:world units/second# applied when evade is triggered while airborne - applied upwards if moving upwards at time activation, downwards if moving downwards at time of activation." />
-	<_field_real name="maximum vertical impulse speed threshold:world units/second#Threshold speed used to scale vertical impulse; max impulse is applied at or above this speed." />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_struct name="data" srcguid="87d9002e-4ac3-37df-5596-46b66b28bf87">
+		<_field_struct name="common ability parameters" srcguid="a0b1eff4-483c-d954-d47d-f188cdebb4f0">
+			<_field_long_flags name="flags">
+				<item Name="Use 3rd Person Camera When Active" />
+				<item Name="Hide Reticle When Active" />
+				<item Name="Is Motion Tracked (By Enemies) When Active" />
+				<item Name="One-Shot Activation Effect#Effect kills itself rather than being explicitly killed when the ability deactivates" />
+				<item Name="Can be activated when weapon state is relaxed" />
+				<item Name="Does Not Appear In Extended Motion Tracker Range" />
+			</_field_long_flags>
+			<_field_real_fraction name="activation energy cost#amount of energy required to activate the ability" />
+			<_field_real name="active energy consumption:energy/second#amount of energy consumed continuously while the ability is active" />
+			<_field_tag_reference_64 name="activation effect#effects triggered when player activates ability" validtags="effe" />
+		</_field_struct>
+		<_field_long_flags name="evade flags">
+			<item Name="Can cancel when using charge up" />
+		</_field_long_flags>
+		<_field_real_fraction name="throttle dead zone#stick must be pressed at least this much in any direction to consider non-forward Evade" />
+		<_field_string_id name="evade left animation" />
+		<_field_string_id name="evade right animation" />
+		<_field_string_id name="evade forward animation" />
+		<_field_string_id name="evade backward animation" />
+		<_field_real name="evade duration:seconds#the amount of time that elapses from the beginning of the evade to the end" />
+		<_field_real_fraction name="evade exit sprint fraction:[0,1]#Player will exit the Evade action at this sprint fraction" />
+		<_field_real_fraction name="evade melee interrupt fraction:[0,1]#Player will be able to interrupt to perform a melee at this fraction through the evade" />
+		<_field_explanation name="speed function">Use this curve to define the character's speed over the course of an evade performed while the character is on the ground. The x axis measures time from the beginning of the evade to the end. Y axis is the speed of the character (wu/s) in the evade direction at the given time.</_field_explanation>
+		<_field_struct name="speed function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+		<_field_explanation name="speed function scalar">malleable property scale applied to the result of the speed function</_field_explanation>
+		<_field_custom name="speed function scalar#scale applied to the result of the speed function" />
+		<_field_struct name="speed function scalar#scale applied to the result of the speed function" srcguid="f8d8b4a1-40e6-db63-bb8c-ea978b2eae63">
+			<_field_real name="Base Value" />
+			<_field_real_bounds name="Value Bounds" />
+			<_field_char_enum name="Combiner">
+				<item Name="sequential#applies the percentages one after another on the base" />
+				<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+				<item Name="addition#adds on all of the modifiers to the base" />
+				<item Name="product#multiplies the values one after another on to the base" />
+			</_field_char_enum>
+			<_field_pad name="padEnd" length="3" />
+		</_field_struct>
+		<_field_pad name="FCOEFALIGN" length="4" />
+		<_field_real name="forward speed modifier:percentage#used to define additional boost for evading forward (1.0 = normal speed, 2.0 = double speed, etc...)" />
+		<_field_real_bounds name="speed modifier values:wu/s#Used to map values onto ground and air speed modifier functions below." />
+		<_field_explanation name="ground speed modifier function">Use this curve to define a modifier on the 'speed function' above when evading on the ground. The x axis measures the players entry speed in direction of the evade, clamped to the floor/ceiling defined above. Y axis is the percent of 'speed function' to use.</_field_explanation>
+		<_field_struct name="ground speed modifier function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+		<_field_explanation name="air speed modifier function">Use this curve to define a speed modifier on the 'speed function' above when evading in the air. The x axis measures the players entry speed in direction of the evade, clamped to the floor/ceiling defined above. Y axis is the percent of 'speed function' to use.</_field_explanation>
+		<_field_struct name="air speed modifier function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+		<_field_explanation name="horizontal camera offset function">Use this curve to define how the camera moves horizontally while the character is evading left or right. The x axis measures time from the beginning of the evade to the end. Y axis is the distance that the camera is offset horizontally from the center of the pill at the given time.</_field_explanation>
+		<_field_struct name="horizontal camera offset function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+		<_field_explanation name="camera tilt ROLL function">Use these curves to define how the camera tilts when the character evades left/right. The x axis measures time from the beginning of the evade to the end. Y axis is angle (in degrees) that the camera is tilted in the direction of the evade at the given time</_field_explanation>
+		<_field_struct name="camera tilt ROLL function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+		<_field_explanation name="camera tilt PITCH function">Use these curves to define how the camera tilts when the character evades forward/backward. The x axis measures time from the beginning of the evade to the end. Y axis is angle (in degrees) that the camera is tilted in the direction of the evade at the given time</_field_explanation>
+		<_field_struct name="camera tilt PITCH function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+		<_field_explanation name="FOV delta function">Use this curve to define how the FOV is modified while the character is evading forward or backward. The x axis measures time from the beginning of the evade to the end. Y axis is the amount (in degrees) that the FOV is modified at the given time. Remember that you want a negative number to shrink the FOV.</_field_explanation>
+		<_field_struct name="FOV delta function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+		<_field_explanation name="overlay animation function">Use this curve to define the blend weight of the evade overlay animation over the course of the evade. The x axis measures time from the beginning of the evade to the end. The Y axis measures the blend weight of the overlay animation at the given time.</_field_explanation>
+		<_field_struct name="overlay animation function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+		<_field_real name="maximum vertical impulse:world units/second# applied when evade is triggered while airborne - applied upwards if moving upwards at time activation, downwards if moving downwards at time of activation." />
+		<_field_real name="maximum vertical impulse speed threshold:world units/second#Threshold speed used to scale vertical impulse; max impulse is applied at or above this speed." />
+	</_field_struct>
 </plugin>

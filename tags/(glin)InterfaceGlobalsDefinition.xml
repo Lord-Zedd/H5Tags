@@ -1,38 +1,39 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="interface tags" max="1" guid="eafcbd42-4dfb-2726-c124-269c3c0d8b92">
-		<_field_tag_reference_64 name="spinner bitmap" />
-		<_field_tag_reference_64 name="obsolete2" />
-		<_field_tag_reference_64 name="screen color table" />
-		<_field_tag_reference_64 name="hud color table" />
-		<_field_tag_reference_64 name="editor color table" />
-		<_field_tag_reference_64 name="dialog color table" />
-		<_field_tag_reference_64 name="motion sensor sweep bitmap" />
-		<_field_tag_reference_64 name="motion sensor sweep bitmap mask" />
-		<_field_tag_reference_64 name="multiplayer hud bitmap" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="interface tags" max="1" srcguid="eafcbd42-4dfb-2726-c124-269c3c0d8b92" srcName="interface_tag_references">
+		<_field_tag_reference_64 name="spinner bitmap" validtags="bitm" />
+		<_field_tag_reference_64 name="obsolete2" validtags="bitm" />
+		<_field_tag_reference_64 name="screen color table" validtags="colo" />
+		<_field_tag_reference_64 name="hud color table" validtags="colo" />
+		<_field_tag_reference_64 name="editor color table" validtags="colo" />
+		<_field_tag_reference_64 name="dialog color table" validtags="colo" />
+		<_field_tag_reference_64 name="motion sensor sweep bitmap" validtags="bitm" />
+		<_field_tag_reference_64 name="motion sensor sweep bitmap mask" validtags="bitm" />
+		<_field_tag_reference_64 name="multiplayer hud bitmap" validtags="bitm" />
 		<_field_tag_reference_64 name="unused!" />
-		<_field_tag_reference_64 name="motion sensor blip bitmap" />
-		<_field_tag_reference_64 name="interface goo map1" />
-		<_field_tag_reference_64 name="interface goo map2" />
-		<_field_tag_reference_64 name="interface goo map3" />
-		<_field_tag_reference_64 name="revive damage response" />
+		<_field_tag_reference_64 name="motion sensor blip bitmap" validtags="bitm" />
+		<_field_tag_reference_64 name="interface goo map1" validtags="bitm" />
+		<_field_tag_reference_64 name="interface goo map2" validtags="bitm" />
+		<_field_tag_reference_64 name="interface goo map3" validtags="bitm" />
+		<_field_tag_reference_64 name="revive damage response" validtags="drdf" />
 		<_field_custom name="mainmenu" />
-		<_field_tag_reference_64 name="mainmenu ui globals" />
+		<_field_tag_reference_64 name="mainmenu ui globals" validtags="wgtz" />
 		<_field_custom name="singleplayer" />
-		<_field_tag_reference_64 name="singleplayer ui globals" />
+		<_field_tag_reference_64 name="singleplayer ui globals" validtags="wgtz" />
 		<_field_custom name="multiplayer" />
-		<_field_tag_reference_64 name="multiplayer ui globals" />
+		<_field_tag_reference_64 name="multiplayer ui globals" validtags="wgtz" />
 		<_field_custom name="firefight" />
-		<_field_tag_reference_64 name="firefight ui globals" />
-		<_field_tag_reference_64 name="style sheet globals" />
-		<_field_tag_reference_64 name="spartan rendering scenario" />
-		<_field_tag_reference_64 name="damage reporting display globals#tag that defines content for display damage stats" />
-		<_field_tag_reference_64 name="level display globals" />
+		<_field_tag_reference_64 name="firefight ui globals" validtags="wgtz" />
+		<_field_tag_reference_64 name="style sheet globals" validtags="uiss" />
+		<_field_tag_reference_64 name="spartan rendering scenario" validtags="scnr" />
+		<_field_tag_reference_64 name="damage reporting display globals#tag that defines content for display damage stats" validtags="drdg" />
+		<_field_tag_reference_64 name="level display globals" validtags="ludg" />
 	</_field_block_64>
 	<_field_pad name="pad" length="4" />
 </plugin>

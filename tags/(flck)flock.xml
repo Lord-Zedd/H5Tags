@@ -1,10 +1,11 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_explanation name="Simple flocking" />
 	<_field_real name="forward weight{forward scale}:[0..1]#weight given to boid's desire to fly straight ahead" />
 	<_field_real name="leveling force weight{leveling force scale}:[0..1]#weight given to boids desire to fly level" />
@@ -34,10 +35,10 @@
 	<_field_real name="position weight{position scale}:[0..1]#weight given to boid's desire to be near flock center" />
 	<_field_real name="position min radius:wus#distance to flock center beyond which an attracting force is applied" />
 	<_field_real name="position max radius:wus#distance to flock center at which the maximum attracting force is applied" />
-	<_field_tag_reference_64 name="looping sound for idle" />
+	<_field_tag_reference_64 name="looping sound for idle" validtags="lsnd" />
 	<_field_tag_reference_64 name="single shot sound for idle (randomly plays)" validtags="snd!" />
 	<_field_real_bounds name="time between one off idle sounds per boid (lower to upper bound)" />
-	<_field_tag_reference_64 name="looping sound for moving" />
+	<_field_tag_reference_64 name="looping sound for moving" validtags="lsnd" />
 	<_field_tag_reference_64 name="single shot sound for moving (randomly plays)" validtags="snd!" />
 	<_field_real_bounds name="time between one off moving sounds per boid (lower to upper bound)" />
 	<_field_tag_reference_64 name="single shot sound for reacting to danger" validtags="snd!" />

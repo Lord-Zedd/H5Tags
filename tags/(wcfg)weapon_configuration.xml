@@ -1,23 +1,25 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_pad name="pad" length="8" />
-	<_field_struct name="weapon" />
-	<_field_string_id name="variant name#variant name will get propagated to all attachments" />
-	<_field_block_64 name="generic attachments" max="2" guid="6dd1d13d-42c5-d1c4-7d41-01a250bce220">
-		<_field_tag_reference_64 name="attachment" />
-	</_field_block_64>
-	<_field_tag_reference_64 name="barrel attachment" />
-	<_field_tag_reference_64 name="magazine attachment" />
-	<_field_tag_reference_64 name="melee attachment" />
-	<_field_tag_reference_64 name="sight attachment" />
-	<_field_tag_reference_64 name="target tracking attachment" />
-	<_field_tag_reference_64 name="trigger attachment" />
-	<_field_explanation name="WARNING">&quot;unit modifier set&quot; This has unresponsive networking.  Only exposed for special/rare weapons.  Do not use in standard tuning of a weapon</_field_explanation>
-	<_field_tag_reference_64 name="unit modifier set" />
-	<_field_tag_reference_64 name="UI Display Info" />
+	<_field_struct name="weapon" srcguid="d71bdb81-4b29-7427-8628-da9b90718539">
+		<_field_string_id name="variant name#variant name will get propagated to all attachments" />
+		<_field_block_64 name="generic attachments" max="2" srcguid="6dd1d13d-42c5-d1c4-7d41-01a250bce220" srcName="WeaponGenericAttachment">
+			<_field_tag_reference_64 name="attachment" validtags="weat" />
+		</_field_block_64>
+		<_field_tag_reference_64 name="barrel attachment" validtags="weab" />
+		<_field_tag_reference_64 name="magazine attachment" validtags="weam" />
+		<_field_tag_reference_64 name="melee attachment" validtags="weme" />
+		<_field_tag_reference_64 name="sight attachment" validtags="west" />
+		<_field_tag_reference_64 name="target tracking attachment" validtags="wett" />
+		<_field_tag_reference_64 name="trigger attachment" validtags="wetr" />
+		<_field_explanation name="WARNING">"unit modifier set" This has unresponsive networking.  Only exposed for special/rare weapons.  Do not use in standard tuning of a weapon</_field_explanation>
+		<_field_tag_reference_64 name="unit modifier set" validtags="gmpm" />
+		<_field_tag_reference_64 name="UI Display Info" validtags="uiwi" />
+	</_field_struct>
 </plugin>

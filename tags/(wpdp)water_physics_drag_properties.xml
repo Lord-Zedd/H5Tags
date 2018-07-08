@@ -1,21 +1,27 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_struct name="drag" />
-	<_field_custom name="Pressure" />
-	<_field_struct name="pressure" />
-	<_field_struct name="velocity to pressure" />
-	<_field_data_64 name="data" />
-	<_field_real name="max velocity:wu/s" />
-	<_field_custom name="Suction" />
-	<_field_struct name="suction" />
-	<_field_struct name="velocity to pressure" />
-	<_field_data_64 name="data" />
-	<_field_real name="max velocity:wu/s" />
-	<_field_real name="linear damping" />
-	<_field_real name="angular damping" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_struct name="drag" srcguid="fce5eaf2-4059-3e2d-c28b-4c8cd683564f">
+		<_field_custom name="Pressure" />
+		<_field_struct name="pressure" srcguid="c5e705f1-4e01-aa0c-5340-1b98dc22cc44">
+			<_field_struct name="velocity to pressure" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+			<_field_real name="max velocity:wu/s" />
+		</_field_struct>
+		<_field_custom name="Suction" />
+		<_field_struct name="suction" srcguid="c5e705f1-4e01-aa0c-5340-1b98dc22cc44">
+			<_field_struct name="velocity to pressure" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+			<_field_real name="max velocity:wu/s" />
+		</_field_struct>
+		<_field_real name="linear damping" />
+		<_field_real name="angular damping" />
+	</_field_struct>
 </plugin>

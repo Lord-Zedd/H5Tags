@@ -1,13 +1,14 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_tag_reference_64 name="game engine settings" />
-	<_field_block_64 name="game engine text" max="16" guid="20c34820-4771-d84a-667d-a19bb077b0dc">
-		<_field_tag_reference_64 name="text source" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_tag_reference_64 name="game engine settings" validtags="wezr" />
+	<_field_block_64 name="game engine text" max="16" srcguid="20c34820-4771-d84a-667d-a19bb077b0dc" srcName="gameEngineTextBlock">
+		<_field_tag_reference_64 name="text source" validtags="unic" />
 	</_field_block_64>
 	<_field_pad name="pad0" length="4" />
 </plugin>

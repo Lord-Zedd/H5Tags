@@ -1,11 +1,12 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="achievement" max="256" guid="7549688b-4edf-d7d7-ef71-ac92f5943d57">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="achievement" max="256" srcguid="7549688b-4edf-d7d7-ef71-ac92f5943d57" srcName="single_achievement_definition_block">
 		<_field_string_id name="name^" />
 		<_field_char_enum name="type">
 			<item Name="m10_complete" />
@@ -73,7 +74,7 @@
 			<item Name="legendary" />
 		</_field_byte_flags>
 		<_field_pad name="VJNOSNJER" length="2" />
-		<_field_block_64 name="restricted levels" max="5" guid="55cef750-4598-5141-432f-6b96e5236c4a">
+		<_field_block_64 name="restricted levels" max="5" srcguid="55cef750-4598-5141-432f-6b96e5236c4a" srcName="single_achievement_restricted_level_block">
 			<_field_string_id name="level name^#Compared to map name in scenario" />
 		</_field_block_64>
 	</_field_block_64>

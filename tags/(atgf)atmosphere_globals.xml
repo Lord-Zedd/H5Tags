@@ -1,12 +1,13 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_struct name="volume texture fog globals" />
-	<_field_explanation name="Volume Texture Fog Non-blending Parameters">NOTE: The parameters below do not interpolate across lighting volumes. If you do not fade out
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_struct name="volume texture fog globals" srcguid="3ebf8817-4916-c94c-d390-c9b316f63970">
+		<_field_explanation name="Volume Texture Fog Non-blending Parameters">NOTE: The parameters below do not interpolate across lighting volumes. If you do not fade out
 the volume texture fog to 0, and do not transition from 0 to a new value in a different lighting
 volume but rather simply specify a different value directly, you will see a pop
 
@@ -23,21 +24,25 @@ Disable Texture Rotation..When checked, fog texture will not rotate, i.e. fog's 
 wind strength across distance..Multiplies the wind strength based upon distance from player
 
 </_field_explanation>
-	<_field_tag_reference_64 name="Fog Bitmap" />
-	<_field_real name="Texture repeat rate" />
-	<_field_real name="Distance between sheets" />
-	<_field_real name="Depth fade factor" />
-	<_field_real name="Transparent sort distance" />
-	<_field_char_enum name="Transparent sort layer">
-		<item Name="invalid" />
-		<item Name="pre-pass" />
-		<item Name="normal" />
-		<item Name="post-pass" />
-	</_field_char_enum>
-	<_field_byte_flags name="Flags">
-		<item Name="Disable Texture Rotation" />
-	</_field_byte_flags>
-	<_field_pad name="UNdfdfdSED" length="2" />
-	<_field_struct name="wind strength across distance" />
-	<_field_data_64 name="data" />
+		<_field_tag_reference_64 name="Fog Bitmap" validtags="bitm" />
+		<_field_real name="Texture repeat rate" />
+		<_field_real name="Distance between sheets" />
+		<_field_real name="Depth fade factor" />
+		<_field_real name="Transparent sort distance" />
+		<_field_char_enum name="Transparent sort layer">
+			<item Name="invalid" />
+			<item Name="pre-pass" />
+			<item Name="normal" />
+			<item Name="post-pass" />
+		</_field_char_enum>
+		<_field_byte_flags name="Flags">
+			<item Name="Disable Texture Rotation" />
+		</_field_byte_flags>
+		<_field_pad name="UNdfdfdSED" length="2" />
+		<_field_struct name="wind strength across distance" srcguid="384eba00-4534-2aa9-43d0-11ad26ef234a">
+			<_field_struct name="function" srcguid="9019aba5-4a1a-4c5a-34f0-1aadada1fd11">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
+	</_field_struct>
 </plugin>

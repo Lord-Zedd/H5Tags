@@ -1,10 +1,11 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_long_flags name="flags">
 		<item Name="deafening to AIs#when used as a background stereo track, causes nearby AIs to be unable to hear" />
 		<item Name="not a loop#this is a collection of permutations strung together that should play once then stop." />
@@ -32,8 +33,8 @@
 	<_field_string_id name="Fallback Stop Event." />
 	<_field_string_id name="Fallback Player Start Event." />
 	<_field_string_id name="Fallback Player Stop Event." />
-	<_field_tag_reference_64 name="Sound bank#Reference to the sound bank tag this event is in. Can be empty." />
-	<_field_tag_reference_64 name="Player sound bank#Reference to the player sound bank tag this event is in. Can be empty." />
+	<_field_tag_reference_64 name="Sound bank#Reference to the sound bank tag this event is in. Can be empty." validtags="sbnk" />
+	<_field_tag_reference_64 name="Player sound bank#Reference to the player sound bank tag this event is in. Can be empty." validtags="sbnk" />
 	<_field_real_bounds name="runtime distance bounds!" />
 	<_field_real name="maximum flyby range distance" />
 	<_field_short_enum name="runtime sound class!">

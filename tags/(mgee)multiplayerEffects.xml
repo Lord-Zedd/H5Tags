@@ -1,13 +1,14 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="effects" max="2048" guid="f6e8b719-4d13-c1ee-9c94-4aaadc8c4c28">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="effects" max="2048" srcguid="f6e8b719-4d13-c1ee-9c94-4aaadc8c4c28" srcName="multiplayerEffectsBlock">
 		<_field_string_id name="name^" />
-		<_field_tag_reference_64 name="effect" />
+		<_field_tag_reference_64 name="effect" validtags="effe" />
 	</_field_block_64>
 	<_field_pad name="pad_tp" length="4" />
 </plugin>

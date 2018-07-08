@@ -1,12 +1,13 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="effects" max="30" guid="b0032d67-41b8-821d-ac37-3fae16fdc06c">
-		<_field_block_64 name="sounds" max="500" guid="8fce6765-435c-945c-33de-419287d88edc">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="effects" max="30" srcguid="b0032d67-41b8-821d-ac37-3fae16fdc06c" srcName="material_effect_block_v2">
+		<_field_block_64 name="sounds" max="500" srcguid="8fce6765-435c-945c-33de-419287d88edc" srcName="material_effect_material_block">
 			<_field_tag_reference_64 name="tag (effect or sound)" validtags="lsnd, snd!, effe" />
 			<_field_tag_reference_64 name="secondary tag (effect or sound)" validtags="lsnd, snd!, effe" />
 			<_field_string_id name="material name^" />
@@ -19,7 +20,7 @@
 			<_field_pad name="L" length="1" />
 			<_field_real name="max_visibility_distance#manual override for the max distance this effect can be from the camera and still be rendered (not valid for sounds)." />
 		</_field_block_64>
-		<_field_block_64 name="effects" max="500" guid="8fce6765-435c-945c-33de-419287d88edc">
+		<_field_block_64 name="effects" max="500" srcguid="8fce6765-435c-945c-33de-419287d88edc" srcName="material_effect_material_block">
 			<_field_tag_reference_64 name="tag (effect or sound)" validtags="lsnd, snd!, effe" />
 			<_field_tag_reference_64 name="secondary tag (effect or sound)" validtags="lsnd, snd!, effe" />
 			<_field_string_id name="material name^" />

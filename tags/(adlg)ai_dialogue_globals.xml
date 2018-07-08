@@ -1,10 +1,11 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_explanation name="Global timing" />
 	<_field_real_bounds name="strike delay bounds:secs" />
 	<_field_real name="remind delay:secs" />
@@ -18,7 +19,7 @@
 	<_field_explanation name="Face friendly player distance">when talking to friendly players within this distance, if not in combat, we will turn to face them.</_field_explanation>
 	<_field_real name="face friendly player distance:wu#0: disable facing behavior" />
 	<_field_explanation name="Space dialogue effect">at some point this will be moved into the patterns block...</_field_explanation>
-	<_field_string_id name="space dialogue effect#used for dialog lines started by a pattern with &quot;speaker in space&quot; set" />
+	<_field_string_id name="space dialogue effect#used for dialog lines started by a pattern with &amp;quot;speaker in space&amp;quot; set" />
 	<_field_explanation name="Speaker distance restrictions">minimum distance two speakers must be from one another to speak simultaneously (AI chatter)</_field_explanation>
 	<_field_real name="speaker min distance:wu" />
 	<_field_real name="multiplayer speaker min distance:wu" />
@@ -31,13 +32,13 @@
 	<_field_real name="player shield damage threshold:[0,1]#Damage greater than threshold is considered 'extended'" />
 	<_field_real name="player body damage threshold:[0,1]#Damage greater than threshold is considered 'extended'" />
 	<_field_explanation name="Default stimulus suppressors">when these stimuli are active on an actor, default stimulus permutations will be suppressed.</_field_explanation>
-	<_field_block_64 name="default stimulus suppressors" max="4" guid="48735579-49b0-26b8-6d96-8bb0b055eeb3">
+	<_field_block_64 name="default stimulus suppressors" max="4" srcguid="48735579-49b0-26b8-6d96-8bb0b055eeb3" srcName="default_stimulus_suppressor_block">
 		<_field_string_id name="stimulus^" />
 	</_field_block_64>
 	<_field_explanation name="Imported Data. Don't touch me." />
-	<_field_block_64 name="vocalizations" max="4096" guid="efa010a4-48e6-3ea1-e041-4ca4d551a17f">
+	<_field_block_64 name="vocalizations" max="4096" srcguid="efa010a4-48e6-3ea1-e041-4ca4d551a17f" srcName="vocalization_definitions_block">
 		<_field_string_id name="vocalization^" />
-		<_field_short_block_index name="parent index*" srcguid="efa010a4-48e6-3ea1-e041-4ca4d551a17f" />
+		<_field_short_block_index name="parent index*" targetGuid="efa010a4-48e6-3ea1-e041-4ca4d551a17f" targetName="vocalization_definitions_block" />
 		<_field_short_enum name="priority">
 			<item Name="none" />
 			<item Name="autonomic" />
@@ -153,7 +154,7 @@
 		<_field_short_integer name="mission min value#The lowest mission id that we play this line in" />
 		<_field_short_integer name="mission max value#The highest mission id that we play this line in" />
 		<_field_string_id name="Sample line" />
-		<_field_block_64 name="reponses" max="20" guid="0d94f560-4446-7a58-a4de-46836a20088a">
+		<_field_block_64 name="reponses" max="20" srcguid="0d94f560-4446-7a58-a4de-46836a20088a" srcName="response_block">
 			<_field_string_id name="vocalization name" />
 			<_field_word_flags name="flags">
 				<item Name="nonexclusive" />
@@ -172,7 +173,7 @@
 			<_field_short_integer name="dialogue index (import)*" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="patterns" max="4096" guid="d957fa41-43a7-cd6c-b7a7-2b9d8ccbecc3">
+	<_field_block_64 name="patterns" max="4096" srcguid="d957fa41-43a7-cd6c-b7a7-2b9d8ccbecc3" srcName="vocalization_patterns_block">
 		<_field_short_enum name="dialogue type">
 			<item Name="NONE" />
 			<item Name="death" />
@@ -838,14 +839,16 @@
 		</_field_short_enum>
 		<_field_custom name="damage type" />
 		<_field_explanation name="Explanation">Type of the damage for this event</_field_explanation>
-		<_field_struct name="damage type" />
-		<_field_explanation name="NOTE">If the dropdown menu is empty, run the &quot;build damage reporting table&quot; tool command (build-damage-reporting-table from the command line) in order to generate the xml file used to populate the menu. If you added a new damage type you will need to run this command in order for the type to show up in the menu.</_field_explanation>
-		<_field_string_id name="Damage Type Name" />
+		<_field_struct name="damage type" srcguid="bb9b9488-4096-c2aa-ae76-608081711e6f">
+			<_field_explanation name="NOTE">If the dropdown menu is empty, run the "build damage reporting table" tool command (build-damage-reporting-table from the command line) in order to generate the xml file used to populate the menu. If you added a new damage type you will need to run this command in order for the type to show up in the menu.</_field_explanation>
+			<_field_string_id name="Damage Type Name" />
+		</_field_struct>
 		<_field_custom name="damage source name" />
 		<_field_explanation name="Explanation">Name of the damage's source</_field_explanation>
-		<_field_struct name="damage source name" />
-		<_field_explanation name="NOTE">If the dropdown menu is empty, run the &quot;build damage reporting table&quot; tool command (build-damage-reporting-table from the command line) in order to generate the xml file used to populate the menu. If you added a new damage source you will need to run this command in order for the source to show up in the menu.</_field_explanation>
-		<_field_string_id name="Damage Source Name" />
+		<_field_struct name="damage source name" srcguid="fb19cd2f-4e62-491e-2c71-5b8fcdcaa19d">
+			<_field_explanation name="NOTE">If the dropdown menu is empty, run the "build damage reporting table" tool command (build-damage-reporting-table from the command line) in order to generate the xml file used to populate the menu. If you added a new damage source you will need to run this command in order for the source to show up in the menu.</_field_explanation>
+			<_field_string_id name="Damage Source Name" />
+		</_field_struct>
 		<_field_short_enum name="game type">
 			<item Name="none" />
 			<item Name="campaign" />
@@ -938,15 +941,15 @@
 		<_field_short_integer name="subject max team count" />
 		<_field_pad name="pad-for-isValidInThisLevel" length="4" />
 	</_field_block_64>
-	<_field_block_64 name="dialogue data" max="277" guid="fcf21c42-4d90-169b-4364-f0981ec7eac4">
+	<_field_block_64 name="dialogue data" max="277" srcguid="fcf21c42-4d90-169b-4364-f0981ec7eac4" srcName="dialogue_data_block">
 		<_field_short_integer name="start index (postprocess)*" />
 		<_field_short_integer name="length (postprocess)*" />
 	</_field_block_64>
-	<_field_block_64 name="involuntary data" max="100" guid="208cdc38-4456-0802-bac9-f28640f23ba7">
+	<_field_block_64 name="involuntary data" max="100" srcguid="208cdc38-4456-0802-bac9-f28640f23ba7" srcName="involuntary_data_block">
 		<_field_short_integer name="involuntary vocalization index*" />
 		<_field_pad name="JXIFX" length="2" />
 	</_field_block_64>
-	<_field_block_64 name="predicted vocalizations" max="32" guid="6bb73155-4b00-9e88-81c8-86a9a3ae52da">
+	<_field_block_64 name="predicted vocalizations" max="32" srcguid="6bb73155-4b00-9e88-81c8-86a9a3ae52da" srcName="predicted_data_block">
 		<_field_long_integer name="predicted vocalization index*" />
 	</_field_block_64>
 </plugin>

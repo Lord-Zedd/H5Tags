@@ -1,56 +1,61 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_struct name="modifiers" />
-	<_field_block_64 name="modifiers float" max="32" guid="c3cff96c-4710-3a0b-7f8f-8d92d4a9f47a">
-		<_field_struct name="modifier float" />
-		<_field_string_id name="property" />
-		<_field_char_enum name="scope">
-			<item Name="global" />
-			<item Name="object" />
-			<item Name="player" />
-			<item Name="team" />
-			<item Name="mount" />
-		</_field_char_enum>
-		<_field_pad name="pad0" length="3" />
-		<_field_real name="duration" />
-		<_field_real name="modifier" />
-	</_field_block_64>
-	<_field_block_64 name="modifiers int" max="32" guid="c6ffe4bd-4331-c703-06f5-22ba3ff67f6b">
-		<_field_struct name="modifier int" />
-		<_field_string_id name="property" />
-		<_field_char_enum name="scope">
-			<item Name="global" />
-			<item Name="object" />
-			<item Name="player" />
-			<item Name="team" />
-			<item Name="mount" />
-		</_field_char_enum>
-		<_field_pad name="pad0" length="3" />
-		<_field_real name="duration" />
-		<_field_long_integer name="modifier" />
-	</_field_block_64>
-	<_field_block_64 name="modifiers bool" max="32" guid="e157ed27-4d21-6d30-dc6b-66a4fb27f16e">
-		<_field_struct name="modifier bool" />
-		<_field_string_id name="property" />
-		<_field_char_enum name="scope">
-			<item Name="global" />
-			<item Name="object" />
-			<item Name="player" />
-			<item Name="team" />
-			<item Name="mount" />
-		</_field_char_enum>
-		<_field_pad name="pad0" length="3" />
-		<_field_real name="duration" />
-		<_field_char_enum name="modifier">
-			<item Name="false" />
-			<item Name="true" />
-		</_field_char_enum>
-		<_field_pad name="pad00" length="3" />
-	</_field_block_64>
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_struct name="modifiers" srcguid="bdb8bc95-47ff-0356-e6ae-40876ef7a998">
+		<_field_block_64 name="modifiers float" max="32" srcguid="c3cff96c-4710-3a0b-7f8f-8d92d4a9f47a" srcName="genericModifierDefinitionFloatBlock">
+			<_field_struct name="modifier float" srcguid="7c092e8a-4f1c-1bbc-8c41-f98528157f27">
+				<_field_string_id name="property" />
+				<_field_char_enum name="scope">
+					<item Name="global" />
+					<item Name="object" />
+					<item Name="player" />
+					<item Name="team" />
+					<item Name="mount" />
+				</_field_char_enum>
+				<_field_pad name="pad0" length="3" />
+				<_field_real name="duration" />
+				<_field_real name="modifier" />
+			</_field_struct>
+		</_field_block_64>
+		<_field_block_64 name="modifiers int" max="32" srcguid="c6ffe4bd-4331-c703-06f5-22ba3ff67f6b" srcName="genericModifierDefinitionIntBlock">
+			<_field_struct name="modifier int" srcguid="c3a8a762-42e8-504f-0b30-e5926f906b27">
+				<_field_string_id name="property" />
+				<_field_char_enum name="scope">
+					<item Name="global" />
+					<item Name="object" />
+					<item Name="player" />
+					<item Name="team" />
+					<item Name="mount" />
+				</_field_char_enum>
+				<_field_pad name="pad0" length="3" />
+				<_field_real name="duration" />
+				<_field_long_integer name="modifier" />
+			</_field_struct>
+		</_field_block_64>
+		<_field_block_64 name="modifiers bool" max="32" srcguid="e157ed27-4d21-6d30-dc6b-66a4fb27f16e" srcName="genericModifierDefinitionBoolBlock">
+			<_field_struct name="modifier bool" srcguid="271f35ff-4954-3760-6387-1ba5cc43aac9">
+				<_field_string_id name="property" />
+				<_field_char_enum name="scope">
+					<item Name="global" />
+					<item Name="object" />
+					<item Name="player" />
+					<item Name="team" />
+					<item Name="mount" />
+				</_field_char_enum>
+				<_field_pad name="pad0" length="3" />
+				<_field_real name="duration" />
+				<_field_char_enum name="modifier">
+					<item Name="false" />
+					<item Name="true" />
+				</_field_char_enum>
+				<_field_pad name="pad00" length="3" />
+			</_field_struct>
+		</_field_block_64>
+	</_field_struct>
 	<_field_pad name="pad0" length="4" />
 </plugin>

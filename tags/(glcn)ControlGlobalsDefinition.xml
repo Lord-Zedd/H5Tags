@@ -1,23 +1,24 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="controller input (Xbox360){controller input}" max="1" guid="056079c5-4d1c-bd19-8241-54b7add2a4d8">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="controller input (Xbox360){controller input}" max="1" srcguid="056079c5-4d1c-bd19-8241-54b7add2a4d8" srcName="controller_input_block">
 		<_field_real name="axial dead zone" />
 		<_field_real name="radial dead zone" />
 	</_field_block_64>
-	<_field_block_64 name="controller input (Xbone)" max="1" guid="056079c5-4d1c-bd19-8241-54b7add2a4d8">
+	<_field_block_64 name="controller input (Xbone)" max="1" srcguid="056079c5-4d1c-bd19-8241-54b7add2a4d8" srcName="controller_input_block">
 		<_field_real name="axial dead zone" />
 		<_field_real name="radial dead zone" />
 	</_field_block_64>
-	<_field_block_64 name="player control" max="1" guid="afad7414-4a96-08fe-f6bc-e494fceec239">
-		<_field_block_64 name="controller button mappings" max="10" guid="6d1c4d66-4c4e-921c-c3f6-a0b2bfac6aec">
-			<_field_tag_reference_64 name="mapping" />
+	<_field_block_64 name="player control" max="1" srcguid="afad7414-4a96-08fe-f6bc-e494fceec239" srcName="player_control_block">
+		<_field_block_64 name="controller button mappings" max="10" srcguid="6d1c4d66-4c4e-921c-c3f6-a0b2bfac6aec" srcName="controller_mapping_reference_block">
+			<_field_tag_reference_64 name="mapping" validtags="cnmp" />
 		</_field_block_64>
-		<_field_block_64 name="move stick info (Xbox360){move stick info}" max="1" guid="d3417406-4b5f-f47e-157c-3c95abbe64d3">
+		<_field_block_64 name="move stick info (Xbox360){move stick info}" max="1" srcguid="d3417406-4b5f-f47e-157c-3c95abbe64d3" srcName="gamepad_stick_info_block">
 			<_field_char_enum name="input shape">
 				<item Name="none" />
 				<item Name="unit_circle" />
@@ -28,11 +29,15 @@
 			<_field_real_point_2d name="pegged time#time for a pegged look to reach maximum effect" />
 			<_field_real_point_2d name="pegged scale#the maximum effect achieved over the duration of the pegged time." />
 			<_field_angle name="peg max angular velocity:degrees per sec#the maximum turning speed during peg" />
-			<_field_block_64 name="input mapping function" max="1" guid="aaeebf63-4553-6aa0-1ba3-daa517373760">
-				<_field_data_64 name="data" />
+			<_field_block_64 name="input mapping function" max="1" srcguid="aaeebf63-4553-6aa0-1ba3-daa517373760" srcName="input_mapping_function_block">
+				<_field_struct name="function" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+					<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+						<_field_data_64 name="data" />
+					</_field_struct>
+				</_field_struct>
 			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="look stick info (Xbox360){look stick info}" max="1" guid="d3417406-4b5f-f47e-157c-3c95abbe64d3">
+		<_field_block_64 name="look stick info (Xbox360){look stick info}" max="1" srcguid="d3417406-4b5f-f47e-157c-3c95abbe64d3" srcName="gamepad_stick_info_block">
 			<_field_char_enum name="input shape">
 				<item Name="none" />
 				<item Name="unit_circle" />
@@ -43,11 +48,15 @@
 			<_field_real_point_2d name="pegged time#time for a pegged look to reach maximum effect" />
 			<_field_real_point_2d name="pegged scale#the maximum effect achieved over the duration of the pegged time." />
 			<_field_angle name="peg max angular velocity:degrees per sec#the maximum turning speed during peg" />
-			<_field_block_64 name="input mapping function" max="1" guid="aaeebf63-4553-6aa0-1ba3-daa517373760">
-				<_field_data_64 name="data" />
+			<_field_block_64 name="input mapping function" max="1" srcguid="aaeebf63-4553-6aa0-1ba3-daa517373760" srcName="input_mapping_function_block">
+				<_field_struct name="function" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+					<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+						<_field_data_64 name="data" />
+					</_field_struct>
+				</_field_struct>
 			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="move stick info (Xbone)" max="1" guid="d3417406-4b5f-f47e-157c-3c95abbe64d3">
+		<_field_block_64 name="move stick info (Xbone)" max="1" srcguid="d3417406-4b5f-f47e-157c-3c95abbe64d3" srcName="gamepad_stick_info_block">
 			<_field_char_enum name="input shape">
 				<item Name="none" />
 				<item Name="unit_circle" />
@@ -58,11 +67,15 @@
 			<_field_real_point_2d name="pegged time#time for a pegged look to reach maximum effect" />
 			<_field_real_point_2d name="pegged scale#the maximum effect achieved over the duration of the pegged time." />
 			<_field_angle name="peg max angular velocity:degrees per sec#the maximum turning speed during peg" />
-			<_field_block_64 name="input mapping function" max="1" guid="aaeebf63-4553-6aa0-1ba3-daa517373760">
-				<_field_data_64 name="data" />
+			<_field_block_64 name="input mapping function" max="1" srcguid="aaeebf63-4553-6aa0-1ba3-daa517373760" srcName="input_mapping_function_block">
+				<_field_struct name="function" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+					<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+						<_field_data_64 name="data" />
+					</_field_struct>
+				</_field_struct>
 			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="look stick info (Xbone)" max="1" guid="d3417406-4b5f-f47e-157c-3c95abbe64d3">
+		<_field_block_64 name="look stick info (Xbone)" max="1" srcguid="d3417406-4b5f-f47e-157c-3c95abbe64d3" srcName="gamepad_stick_info_block">
 			<_field_char_enum name="input shape">
 				<item Name="none" />
 				<item Name="unit_circle" />
@@ -73,8 +86,12 @@
 			<_field_real_point_2d name="pegged time#time for a pegged look to reach maximum effect" />
 			<_field_real_point_2d name="pegged scale#the maximum effect achieved over the duration of the pegged time." />
 			<_field_angle name="peg max angular velocity:degrees per sec#the maximum turning speed during peg" />
-			<_field_block_64 name="input mapping function" max="1" guid="aaeebf63-4553-6aa0-1ba3-daa517373760">
-				<_field_data_64 name="data" />
+			<_field_block_64 name="input mapping function" max="1" srcguid="aaeebf63-4553-6aa0-1ba3-daa517373760" srcName="input_mapping_function_block">
+				<_field_struct name="function" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+					<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+						<_field_data_64 name="data" />
+					</_field_struct>
+				</_field_struct>
 			</_field_block_64>
 		</_field_block_64>
 		<_field_real_fraction name="magnetism friction#how much the crosshair slows over enemies" />

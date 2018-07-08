@@ -1,17 +1,19 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="data" max="1" guid="1d0f80a0-4a1b-a5bd-180b-079a116c70a8">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="data" max="1" srcguid="1d0f80a0-4a1b-a5bd-180b-079a116c70a8" srcName="ai_globals_data_block">
 		<_field_real name="AI infantry-on-AI weapon damage scale:[0,1]#Global scale on weapon damage made by AI on other AI" />
 		<_field_real name="AI vehicle-on-AI weapon damage scale:[0,1]#Global scale on weapon damage made by AI in a vehicle on other AI" />
 		<_field_real name="AI player vehicle-on-AI weapon damage scale:[0,1]#Global scale on weapon damage made by AI in a vehicle with the player on other AI" />
 		<_field_explanation name="AI Suicide Damage Source">Damage source used when AI commit suicide.</_field_explanation>
-		<_field_struct name="aiSuicideDamageSource" />
-		<_field_string_id name="Damage Source Name" />
+		<_field_struct name="aiSuicideDamageSource" srcguid="c31a245d-433d-ff87-27bb-e58fe63e1849">
+			<_field_string_id name="Damage Source Name" />
+		</_field_struct>
 		<_field_real name="danger broadly facing" />
 		<_field_real name="danger shooting near" />
 		<_field_real name="danger shooting at" />
@@ -20,7 +22,7 @@
 		<_field_real name="danger exetended shield damage" />
 		<_field_real name="danger body damage" />
 		<_field_real name="danger extended body damage" />
-		<_field_tag_reference_64 name="global dialogue tag" />
+		<_field_tag_reference_64 name="global dialogue tag" validtags="adlg" />
 		<_field_string_id name="default mission dialogue sound effect" />
 		<_field_real name="jump down:wu/tick" />
 		<_field_real name="jump step:wu/tick" />
@@ -48,7 +50,7 @@
 		<_field_real name="search range giant:wus" />
 		<_field_real name="AI seat cooldown:seconds#Seconds until an AI can consider a seat open after eviction" />
 		<_field_pad name="AI seat pad" length="4" />
-		<_field_block_64 name="gravemind properties" max="1" guid="5d6b3b9d-47fe-1fc0-e719-df8c56da87a2">
+		<_field_block_64 name="gravemind properties" max="1" srcguid="5d6b3b9d-47fe-1fc0-e719-df8c56da87a2" srcName="ai_globals_gravemind_block">
 			<_field_real name="min retreat time:secs" />
 			<_field_real name="ideal retreat time:secs" />
 			<_field_real name="max retreat time:secs" />
@@ -67,22 +69,22 @@
 		<_field_explanation name="TELEPORTATION">A few properties to help define when it is safe for a mission critical character to teleport.</_field_explanation>
 		<_field_real name="cover search duration:seconds#The number of seconds that must elapse before we try to look for a firing point behind cover to teleport to." />
 		<_field_real name="task direction search duration:seconds#The number of seconds we try to look for a firing point that aligns us with the actor's task direction." />
-		<_field_block_64 name="spawn formations" max="128" guid="33fddab4-42ab-3b85-1aa8-c89f98a8454e">
-			<_field_tag_reference_64 name="formation^" />
+		<_field_block_64 name="spawn formations" max="128" srcguid="33fddab4-42ab-3b85-1aa8-c89f98a8454e" srcName="ai_globals_formation_block">
+			<_field_tag_reference_64 name="formation^" validtags="form" />
 		</_field_block_64>
-		<_field_block_64 name="squad template folders" max="32" guid="fca99de5-4c0f-f2f5-9874-f4b49207393b">
+		<_field_block_64 name="squad template folders" max="32" srcguid="fca99de5-4c0f-f2f5-9874-f4b49207393b" srcName="ai_globals_squad_template_folder_block">
 			<_field_string_id name="folder name^" />
-			<_field_block_64 name="sub folders" max="32" guid="411a7443-4d55-dc4a-7b6b-e3b4e0727e01">
+			<_field_block_64 name="sub folders" max="32" srcguid="411a7443-4d55-dc4a-7b6b-e3b4e0727e01" srcName="ai_globals_squad_template_sub_folder_block">
 				<_field_string_id name="sub folder name^" />
-				<_field_block_64 name="templates" max="128" guid="b77ac649-4ca5-5b2e-cb56-aca71b9ec982">
-					<_field_tag_reference_64 name="squad_template^" />
+				<_field_block_64 name="templates" max="128" srcguid="b77ac649-4ca5-5b2e-cb56-aca71b9ec982" srcName="ai_globals_squad_template_block">
+					<_field_tag_reference_64 name="squad_template^" validtags="sqtm" />
 				</_field_block_64>
 			</_field_block_64>
-			<_field_block_64 name="templates" max="128" guid="b77ac649-4ca5-5b2e-cb56-aca71b9ec982">
-				<_field_tag_reference_64 name="squad_template^" />
+			<_field_block_64 name="templates" max="128" srcguid="b77ac649-4ca5-5b2e-cb56-aca71b9ec982" srcName="ai_globals_squad_template_block">
+				<_field_tag_reference_64 name="squad_template^" validtags="sqtm" />
 			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="custom stimuli" max="128" guid="a198b553-42e7-7bc9-bec6-3bbddff5867d">
+		<_field_block_64 name="custom stimuli" max="128" srcguid="a198b553-42e7-7bc9-bec6-3bbddff5867d" srcName="ai_globals_custom_stimuli_block">
 			<_field_string_id name="name^" />
 		</_field_block_64>
 		<_field_explanation name="CLUMP THROTTLING">Some values to help you control how much guys will throttle when they want to stick with the rest of their squad.</_field_explanation>
@@ -110,16 +112,16 @@
 		<_field_short_integer name="investigate count" />
 		<_field_short_integer name="search by fire count" />
 		<_field_pad name="napoleon" length="2" />
-		<_field_block_64 name="vision traits" max="3" guid="5e1b04ef-4cbb-590f-5ad7-089af80b86c4">
+		<_field_block_64 name="vision traits" max="3" srcguid="5e1b04ef-4cbb-590f-5ad7-089af80b86c4" srcName="ai_trait_vision_block">
 			<_field_explanation name="Vision Traits">Traits that affect the AI's vision</_field_explanation>
 			<_field_real name="vision distance scale#Scale the distance at which an AI can see their target." />
 			<_field_real name="vision angle scale#Scale the angles of the AI's vision cone." />
 		</_field_block_64>
-		<_field_block_64 name="sound traits" max="2" guid="fc75461e-4506-a827-59a3-d291d6b72b1b">
+		<_field_block_64 name="sound traits" max="2" srcguid="fc75461e-4506-a827-59a3-d291d6b72b1b" srcName="ai_trait_sound_block">
 			<_field_explanation name="Sound Traits">Traits that affect the AI's sound awareness</_field_explanation>
 			<_field_real name="hearing distance scale#Scale the character's hearing distance." />
 		</_field_block_64>
-		<_field_block_64 name="luck traits" max="3" guid="b158b95f-4cf9-f7da-fdd0-3fbcb2d19d8a">
+		<_field_block_64 name="luck traits" max="3" srcguid="b158b95f-4cf9-f7da-fdd0-3fbcb2d19d8a" srcName="ai_trait_luck_block">
 			<_field_explanation name="Luck Traits">Traits that affect the AI's luck</_field_explanation>
 			<_field_real name="evasion chance scale#Scale the chance of evading fire." />
 			<_field_real name="grenade dive chance scale#Scale the chance of diving from grenades." />
@@ -133,7 +135,7 @@
 			<_field_real name="melee leap delay timer scale#Scale the delay for performing melee leaps." />
 			<_field_real name="throw grenade delay scale#Scale the time between grenade throws." />
 		</_field_block_64>
-		<_field_block_64 name="grenade traits" max="2" guid="0b0f3099-4756-3f95-f3f6-e0839657e874">
+		<_field_block_64 name="grenade traits" max="2" srcguid="0b0f3099-4756-3f95-f3f6-e0839657e874" srcName="ai_trait_grenade_block">
 			<_field_explanation name="Grenade Traits">Traits that affect the AI's grenade use</_field_explanation>
 			<_field_real name="velocity scale#Scale the velocity at which AI throws grenades" />
 			<_field_real name="throw grenade delay scale#Scale the time between grenade throws." />
@@ -163,14 +165,14 @@
 		<_field_real name="Positional discrepancy below which throttle fixups are NOT used if authority is stopped:world units#if authority is not moving and positional discrepancy is below this value, bump or blend rather than using throttle fixups" />
 		<_field_real name="Predict ahead time:seconds#used to project the authoritative position into the future when calculating predicted throttle. smaller values mean converging on the authority more aggressively" />
 		<_field_explanation name="Interpolation Settings">Interpolation settings determine when and how warping, blending, and velocity bumps are applied to an object in networked games. For AI, we have several different sets of settings that are used depending on what the AI character is doing. When the character is not moving or is moving using regular locomotion, we use the default settings. When the character is executing an action that uses strict interpolation, we use the action interpolation settings.</_field_explanation>
-		<_field_tag_reference_64 name="Simulation interpolation parameters" />
-		<_field_tag_reference_64 name="Action simulation interpolation parameters" />
+		<_field_tag_reference_64 name="Simulation interpolation parameters" validtags="siin" />
+		<_field_tag_reference_64 name="Action simulation interpolation parameters" validtags="siin" />
 		<_field_real name="Jump takeoff warp threshold:world units#if character is this far off from a jump takeoff point at the beginning of the jump, it is warped to the takeoff point" />
 		<_field_real name="default max active camouflage#The default percent change applied to active camo when ai_set_active_camo() is called" />
 		<_field_real name="max player LOF crouch distance#Maximum distance from the player a unit can be to crouch when in its line of fire." />
 		<_field_real name="player LOF crouch time#The time a unit stays in crouch after he has been in the players line of fire." />
 		<_field_custom name="Slip Space Spawning" />
-		<_field_tag_reference_64 name="Slip Space Spawning Effect#effect played at by slip space spawning script functions and character slip space spawning behavior" />
+		<_field_tag_reference_64 name="Slip Space Spawning Effect#effect played at by slip space spawning script functions and character slip space spawning behavior" validtags="effe" />
 	</_field_block_64>
 	<_field_pad name="pad_ag_0" length="4" />
 </plugin>

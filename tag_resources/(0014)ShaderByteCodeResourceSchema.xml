@@ -1,76 +1,80 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
-	<_field_block_64 name="vertex shaders bytecode*" max="10240" guid="f99b344c-4ef5-5a34-eeb1-1f8d82016bfc">
+	<_field_block_64 name="vertex shaders bytecode*" max="10240" srcguid="f99b344c-4ef5-5a34-eeb1-1f8d82016bfc" srcName="rasterizer_compiled_shader_BlockSchema">
 		<_field_data_64 name="dx11 compiled shader{..:dx11 compiled shader}" />
 		<_field_explanation name="dx11 constant table" />
-		<_field_struct name="dx11 constant table*!" />
-		<_field_block_64 name="constants*" max="1024" guid="9eac07ab-43ef-559d-bcf5-ae8855326e65">
-			<_field_string_id name="constant name^" />
-			<_field_word_integer name="buffer offset*" />
-			<_field_word_integer name="buffer size*" />
-			<_field_char_enum name="parameter group*">
-				<item Name="unknown" />
-				<item Name="$globals" />
-				<item Name="material_parameters" />
-				<item Name="skinning" />
-			</_field_char_enum>
-			<_field_char_enum name="parameter type*">
-				<item Name="float" />
-				<item Name="int" />
-				<item Name="bool" />
-				<item Name="texture" />
-			</_field_char_enum>
-			<_field_pad name="qersaui" length="2" />
-		</_field_block_64>
+		<_field_struct name="dx11 constant table*!" srcguid="88225ae9-4892-664a-1908-91a3fbaeca46">
+			<_field_block_64 name="constants*" max="1024" srcguid="9eac07ab-43ef-559d-bcf5-ae8855326e65" srcName="rasterizer_constant_block">
+				<_field_string_id name="constant name^" />
+				<_field_word_integer name="buffer offset*" />
+				<_field_word_integer name="buffer size*" />
+				<_field_char_enum name="parameter group*">
+					<item Name="unknown" />
+					<item Name="$globals" />
+					<item Name="material_parameters" />
+					<item Name="skinning" />
+				</_field_char_enum>
+				<_field_char_enum name="parameter type*">
+					<item Name="float" />
+					<item Name="int" />
+					<item Name="bool" />
+					<item Name="texture" />
+				</_field_char_enum>
+				<_field_pad name="qersaui" length="2" />
+			</_field_block_64>
+		</_field_struct>
 	</_field_block_64>
-	<_field_block_64 name="pixel shaders bytecode*" max="10240" guid="f99b344c-4ef5-5a34-eeb1-1f8d82016bfc">
+	<_field_block_64 name="pixel shaders bytecode*" max="10240" srcguid="f99b344c-4ef5-5a34-eeb1-1f8d82016bfc" srcName="rasterizer_compiled_shader_BlockSchema">
 		<_field_data_64 name="dx11 compiled shader{..:dx11 compiled shader}" />
 		<_field_explanation name="dx11 constant table" />
-		<_field_struct name="dx11 constant table*!" />
-		<_field_block_64 name="constants*" max="1024" guid="9eac07ab-43ef-559d-bcf5-ae8855326e65">
-			<_field_string_id name="constant name^" />
-			<_field_word_integer name="buffer offset*" />
-			<_field_word_integer name="buffer size*" />
-			<_field_char_enum name="parameter group*">
-				<item Name="unknown" />
-				<item Name="$globals" />
-				<item Name="material_parameters" />
-				<item Name="skinning" />
-			</_field_char_enum>
-			<_field_char_enum name="parameter type*">
-				<item Name="float" />
-				<item Name="int" />
-				<item Name="bool" />
-				<item Name="texture" />
-			</_field_char_enum>
-			<_field_pad name="qersaui" length="2" />
-		</_field_block_64>
+		<_field_struct name="dx11 constant table*!" srcguid="88225ae9-4892-664a-1908-91a3fbaeca46">
+			<_field_block_64 name="constants*" max="1024" srcguid="9eac07ab-43ef-559d-bcf5-ae8855326e65" srcName="rasterizer_constant_block">
+				<_field_string_id name="constant name^" />
+				<_field_word_integer name="buffer offset*" />
+				<_field_word_integer name="buffer size*" />
+				<_field_char_enum name="parameter group*">
+					<item Name="unknown" />
+					<item Name="$globals" />
+					<item Name="material_parameters" />
+					<item Name="skinning" />
+				</_field_char_enum>
+				<_field_char_enum name="parameter type*">
+					<item Name="float" />
+					<item Name="int" />
+					<item Name="bool" />
+					<item Name="texture" />
+				</_field_char_enum>
+				<_field_pad name="qersaui" length="2" />
+			</_field_block_64>
+		</_field_struct>
 	</_field_block_64>
-	<_field_block_64 name="geometry shaders bytecode*" max="10240" guid="47cd60ee-44f0-f505-ddbf-779e63cfbbfd">
-		<_field_struct name="base compiled shader" />
-		<_field_data_64 name="dx11 compiled shader{..:dx11 compiled shader}" />
-		<_field_explanation name="dx11 constant table" />
-		<_field_struct name="dx11 constant table*!" />
-		<_field_block_64 name="constants*" max="1024" guid="9eac07ab-43ef-559d-bcf5-ae8855326e65">
-			<_field_string_id name="constant name^" />
-			<_field_word_integer name="buffer offset*" />
-			<_field_word_integer name="buffer size*" />
-			<_field_char_enum name="parameter group*">
-				<item Name="unknown" />
-				<item Name="$globals" />
-				<item Name="material_parameters" />
-				<item Name="skinning" />
-			</_field_char_enum>
-			<_field_char_enum name="parameter type*">
-				<item Name="float" />
-				<item Name="int" />
-				<item Name="bool" />
-				<item Name="texture" />
-			</_field_char_enum>
-			<_field_pad name="qersaui" length="2" />
-		</_field_block_64>
-		<_field_block_64 name="shader passes*" max="1024" guid="7d6d7f4f-4b1f-720c-e9d7-fb8be053e2f0">
+	<_field_block_64 name="geometry shaders bytecode*" max="10240" srcguid="47cd60ee-44f0-f505-ddbf-779e63cfbbfd" srcName="RasterizerCompiledGeometryShaderBlockSchema">
+		<_field_struct name="base compiled shader" srcguid="f99b344c-4ef5-5a34-eeb1-1f8d82016bfc">
+			<_field_data_64 name="dx11 compiled shader{..:dx11 compiled shader}" />
+			<_field_explanation name="dx11 constant table" />
+			<_field_struct name="dx11 constant table*!" srcguid="88225ae9-4892-664a-1908-91a3fbaeca46">
+				<_field_block_64 name="constants*" max="1024" srcguid="9eac07ab-43ef-559d-bcf5-ae8855326e65" srcName="rasterizer_constant_block">
+					<_field_string_id name="constant name^" />
+					<_field_word_integer name="buffer offset*" />
+					<_field_word_integer name="buffer size*" />
+					<_field_char_enum name="parameter group*">
+						<item Name="unknown" />
+						<item Name="$globals" />
+						<item Name="material_parameters" />
+						<item Name="skinning" />
+					</_field_char_enum>
+					<_field_char_enum name="parameter type*">
+						<item Name="float" />
+						<item Name="int" />
+						<item Name="bool" />
+						<item Name="texture" />
+					</_field_char_enum>
+					<_field_pad name="qersaui" length="2" />
+				</_field_block_64>
+			</_field_struct>
+		</_field_struct>
+		<_field_block_64 name="shader passes*" max="1024" srcguid="7d6d7f4f-4b1f-720c-e9d7-fb8be053e2f0" srcName="geometryShaderStreamDeclarationBlock">
 			<_field_long_integer name="stream out stride 0*" />
 			<_field_data_64 name="semantic name*" />
 			<_field_long_integer name="semantic index*" />
@@ -85,96 +89,100 @@
 		<_field_long_integer name="stream out stride 3*" />
 		<_field_pad name="pad_tp" length="4" />
 	</_field_block_64>
-	<_field_block_64 name="compute shaders bytecode*" max="10240" guid="9576ff28-4ed3-cb56-0527-dd8051ce3cbb">
-		<_field_struct name="base compiled shader" />
-		<_field_data_64 name="dx11 compiled shader{..:dx11 compiled shader}" />
-		<_field_explanation name="dx11 constant table" />
-		<_field_struct name="dx11 constant table*!" />
-		<_field_block_64 name="constants*" max="1024" guid="9eac07ab-43ef-559d-bcf5-ae8855326e65">
-			<_field_string_id name="constant name^" />
-			<_field_word_integer name="buffer offset*" />
-			<_field_word_integer name="buffer size*" />
-			<_field_char_enum name="parameter group*">
-				<item Name="unknown" />
-				<item Name="$globals" />
-				<item Name="material_parameters" />
-				<item Name="skinning" />
-			</_field_char_enum>
-			<_field_char_enum name="parameter type*">
-				<item Name="float" />
-				<item Name="int" />
-				<item Name="bool" />
-				<item Name="texture" />
-			</_field_char_enum>
-			<_field_pad name="qersaui" length="2" />
-		</_field_block_64>
+	<_field_block_64 name="compute shaders bytecode*" max="10240" srcguid="9576ff28-4ed3-cb56-0527-dd8051ce3cbb" srcName="RasterizerCompiledComputeShaderBlockSchema">
+		<_field_struct name="base compiled shader" srcguid="f99b344c-4ef5-5a34-eeb1-1f8d82016bfc">
+			<_field_data_64 name="dx11 compiled shader{..:dx11 compiled shader}" />
+			<_field_explanation name="dx11 constant table" />
+			<_field_struct name="dx11 constant table*!" srcguid="88225ae9-4892-664a-1908-91a3fbaeca46">
+				<_field_block_64 name="constants*" max="1024" srcguid="9eac07ab-43ef-559d-bcf5-ae8855326e65" srcName="rasterizer_constant_block">
+					<_field_string_id name="constant name^" />
+					<_field_word_integer name="buffer offset*" />
+					<_field_word_integer name="buffer size*" />
+					<_field_char_enum name="parameter group*">
+						<item Name="unknown" />
+						<item Name="$globals" />
+						<item Name="material_parameters" />
+						<item Name="skinning" />
+					</_field_char_enum>
+					<_field_char_enum name="parameter type*">
+						<item Name="float" />
+						<item Name="int" />
+						<item Name="bool" />
+						<item Name="texture" />
+					</_field_char_enum>
+					<_field_pad name="qersaui" length="2" />
+				</_field_block_64>
+			</_field_struct>
+		</_field_struct>
 		<_field_long_integer name="thread group size X*" />
 		<_field_long_integer name="thread group size Y*" />
 		<_field_long_integer name="thread group size Z*" />
 		<_field_long_integer name="thread count*" />
 	</_field_block_64>
-	<_field_block_64 name="hull shaders bytecode*" max="10240" guid="f99b344c-4ef5-5a34-eeb1-1f8d82016bfc">
+	<_field_block_64 name="hull shaders bytecode*" max="10240" srcguid="f99b344c-4ef5-5a34-eeb1-1f8d82016bfc" srcName="rasterizer_compiled_shader_BlockSchema">
 		<_field_data_64 name="dx11 compiled shader{..:dx11 compiled shader}" />
 		<_field_explanation name="dx11 constant table" />
-		<_field_struct name="dx11 constant table*!" />
-		<_field_block_64 name="constants*" max="1024" guid="9eac07ab-43ef-559d-bcf5-ae8855326e65">
-			<_field_string_id name="constant name^" />
-			<_field_word_integer name="buffer offset*" />
-			<_field_word_integer name="buffer size*" />
-			<_field_char_enum name="parameter group*">
-				<item Name="unknown" />
-				<item Name="$globals" />
-				<item Name="material_parameters" />
-				<item Name="skinning" />
-			</_field_char_enum>
-			<_field_char_enum name="parameter type*">
-				<item Name="float" />
-				<item Name="int" />
-				<item Name="bool" />
-				<item Name="texture" />
-			</_field_char_enum>
-			<_field_pad name="qersaui" length="2" />
-		</_field_block_64>
+		<_field_struct name="dx11 constant table*!" srcguid="88225ae9-4892-664a-1908-91a3fbaeca46">
+			<_field_block_64 name="constants*" max="1024" srcguid="9eac07ab-43ef-559d-bcf5-ae8855326e65" srcName="rasterizer_constant_block">
+				<_field_string_id name="constant name^" />
+				<_field_word_integer name="buffer offset*" />
+				<_field_word_integer name="buffer size*" />
+				<_field_char_enum name="parameter group*">
+					<item Name="unknown" />
+					<item Name="$globals" />
+					<item Name="material_parameters" />
+					<item Name="skinning" />
+				</_field_char_enum>
+				<_field_char_enum name="parameter type*">
+					<item Name="float" />
+					<item Name="int" />
+					<item Name="bool" />
+					<item Name="texture" />
+				</_field_char_enum>
+				<_field_pad name="qersaui" length="2" />
+			</_field_block_64>
+		</_field_struct>
 	</_field_block_64>
-	<_field_block_64 name="domain shaders bytecode*" max="10240" guid="f99b344c-4ef5-5a34-eeb1-1f8d82016bfc">
+	<_field_block_64 name="domain shaders bytecode*" max="10240" srcguid="f99b344c-4ef5-5a34-eeb1-1f8d82016bfc" srcName="rasterizer_compiled_shader_BlockSchema">
 		<_field_data_64 name="dx11 compiled shader{..:dx11 compiled shader}" />
 		<_field_explanation name="dx11 constant table" />
-		<_field_struct name="dx11 constant table*!" />
-		<_field_block_64 name="constants*" max="1024" guid="9eac07ab-43ef-559d-bcf5-ae8855326e65">
-			<_field_string_id name="constant name^" />
-			<_field_word_integer name="buffer offset*" />
-			<_field_word_integer name="buffer size*" />
-			<_field_char_enum name="parameter group*">
-				<item Name="unknown" />
-				<item Name="$globals" />
-				<item Name="material_parameters" />
-				<item Name="skinning" />
-			</_field_char_enum>
-			<_field_char_enum name="parameter type*">
-				<item Name="float" />
-				<item Name="int" />
-				<item Name="bool" />
-				<item Name="texture" />
-			</_field_char_enum>
-			<_field_pad name="qersaui" length="2" />
-		</_field_block_64>
+		<_field_struct name="dx11 constant table*!" srcguid="88225ae9-4892-664a-1908-91a3fbaeca46">
+			<_field_block_64 name="constants*" max="1024" srcguid="9eac07ab-43ef-559d-bcf5-ae8855326e65" srcName="rasterizer_constant_block">
+				<_field_string_id name="constant name^" />
+				<_field_word_integer name="buffer offset*" />
+				<_field_word_integer name="buffer size*" />
+				<_field_char_enum name="parameter group*">
+					<item Name="unknown" />
+					<item Name="$globals" />
+					<item Name="material_parameters" />
+					<item Name="skinning" />
+				</_field_char_enum>
+				<_field_char_enum name="parameter type*">
+					<item Name="float" />
+					<item Name="int" />
+					<item Name="bool" />
+					<item Name="texture" />
+				</_field_char_enum>
+				<_field_pad name="qersaui" length="2" />
+			</_field_block_64>
+		</_field_struct>
 	</_field_block_64>
-	<_field_block_64 name="vertex shader hashes*" max="10240" guid="ec4ec556-48bc-0492-9c5d-faac9a3a703a">
+	<_field_block_64 name="vertex shader hashes*" max="10240" srcguid="ec4ec556-48bc-0492-9c5d-faac9a3a703a" srcName="shaderHashBlock">
 		<_field_long_integer name="hash*" />
 	</_field_block_64>
-	<_field_block_64 name="pixel shader hashes*" max="10240" guid="ec4ec556-48bc-0492-9c5d-faac9a3a703a">
+	<_field_block_64 name="pixel shader hashes*" max="10240" srcguid="ec4ec556-48bc-0492-9c5d-faac9a3a703a" srcName="shaderHashBlock">
 		<_field_long_integer name="hash*" />
 	</_field_block_64>
-	<_field_block_64 name="geometry shader hashes*" max="10240" guid="ec4ec556-48bc-0492-9c5d-faac9a3a703a">
+	<_field_block_64 name="geometry shader hashes*" max="10240" srcguid="ec4ec556-48bc-0492-9c5d-faac9a3a703a" srcName="shaderHashBlock">
 		<_field_long_integer name="hash*" />
 	</_field_block_64>
-	<_field_block_64 name="compute shader hashes*" max="10240" guid="ec4ec556-48bc-0492-9c5d-faac9a3a703a">
+	<_field_block_64 name="compute shader hashes*" max="10240" srcguid="ec4ec556-48bc-0492-9c5d-faac9a3a703a" srcName="shaderHashBlock">
 		<_field_long_integer name="hash*" />
 	</_field_block_64>
-	<_field_block_64 name="hull shader hashes*" max="10240" guid="ec4ec556-48bc-0492-9c5d-faac9a3a703a">
+	<_field_block_64 name="hull shader hashes*" max="10240" srcguid="ec4ec556-48bc-0492-9c5d-faac9a3a703a" srcName="shaderHashBlock">
 		<_field_long_integer name="hash*" />
 	</_field_block_64>
-	<_field_block_64 name="domain shader hashes*" max="10240" guid="ec4ec556-48bc-0492-9c5d-faac9a3a703a">
+	<_field_block_64 name="domain shader hashes*" max="10240" srcguid="ec4ec556-48bc-0492-9c5d-faac9a3a703a" srcName="shaderHashBlock">
 		<_field_long_integer name="hash*" />
 	</_field_block_64>
 </plugin>

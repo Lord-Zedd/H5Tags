@@ -1,10 +1,11 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_long_enum name="parameter">
 		<item Name="game misc score to win round" />
 		<item Name="game misc teams" />
@@ -204,10 +205,10 @@
 		<item Name="real" />
 	</_field_char_enum>
 	<_field_pad name="shrug" length="3" />
-	<_field_block_64 name="text value pairs" max="100" guid="f7ae82b9-4d49-cea5-9f2f-c0ab191eb05a">
+	<_field_block_64 name="text value pairs" max="100" srcguid="f7ae82b9-4d49-cea5-9f2f-c0ab191eb05a" srcName="text_value_pair_reference_block">
 		<_field_byte_flags name="flags">
 			<item Name="default setting" />
-			<item Name="real value &quot;unchanged&quot;" />
+			<item Name="real value &amp;quot;unchanged&amp;quot;" />
 		</_field_byte_flags>
 		<_field_pad name="grug" length="3" />
 		<_field_long_integer name="enumerated value" />

@@ -1,24 +1,29 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_explanation name="Active Camo Controls" />
 	<_field_word_flags name="Flags">
 		<item Name="also apply to object children" />
 	</_field_word_flags>
 	<_field_pad name="KKHKKHKKL" length="2" />
-	<_field_struct name="Active Camo Amount" />
-	<_field_string_id name="Input Variable!" />
-	<_field_string_id name="Range Variable!" />
-	<_field_struct name="Mapping" />
-	<_field_data_64 name="data" />
-	<_field_struct name="Shadow Amount" />
-	<_field_string_id name="Input Variable!" />
-	<_field_string_id name="Range Variable!" />
-	<_field_struct name="Mapping" />
-	<_field_data_64 name="data" />
+	<_field_struct name="Active Camo Amount" srcguid="d6e8140f-4278-b16b-26a7-699bac94b495">
+		<_field_string_id name="Input Variable!" />
+		<_field_string_id name="Range Variable!" />
+		<_field_struct name="Mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+	</_field_struct>
+	<_field_struct name="Shadow Amount" srcguid="d6e8140f-4278-b16b-26a7-699bac94b495">
+		<_field_string_id name="Input Variable!" />
+		<_field_string_id name="Range Variable!" />
+		<_field_struct name="Mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+	</_field_struct>
 	<_field_pad name="pad_ced_0" length="4" />
 </plugin>

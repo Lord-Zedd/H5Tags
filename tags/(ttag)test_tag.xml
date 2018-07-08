@@ -1,10 +1,11 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_string name="string" />
 	<_field_long_string name="long string" />
 	<_field_string_id name="hashstring global namespace" />
@@ -78,24 +79,25 @@
 	<_field_angle_bounds name="angle bounds" />
 	<_field_real_bounds name="real bounds" />
 	<_field_fraction_bounds name="fraction bounds" />
-	<_field_tag_reference_64 name="tag reference" />
-	<_field_block_64 name="basic block" max="8" guid="0a4bf989-5315-41b3-adc6-a0e0cc2b78f7">
+	<_field_tag_reference_64 name="tag reference" validtags="ttag" />
+	<_field_block_64 name="basic block" max="8" srcguid="0a4bf989-5315-41b3-adc6-a0e0cc2b78f7" srcName="basic_block_use_once">
 		<_field_long_string name="name^" />
 	</_field_block_64>
-	<_field_byte_block_flags name="byte block flags" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" />
+	<_field_byte_block_flags name="byte block flags" targetGuid="a197fb9a-0530-4815-a08c-b1f967ac6332" targetName="basic_block" />
 	<_field_pad name="pad byte block flags" length="1" />
-	<_field_word_block_flags name="word block flags" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" />
-	<_field_long_block_flags name="dword block flags" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" />
-	<_field_char_block_index name="char block index" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" />
+	<_field_word_block_flags name="word block flags" targetGuid="a197fb9a-0530-4815-a08c-b1f967ac6332" targetName="basic_block" />
+	<_field_long_block_flags name="dword block flags" targetGuid="a197fb9a-0530-4815-a08c-b1f967ac6332" targetName="basic_block" />
+	<_field_char_block_index name="char block index" targetGuid="a197fb9a-0530-4815-a08c-b1f967ac6332" targetName="basic_block" />
 	<_field_pad name="pad char block index" length="1" />
-	<_field_short_block_index name="short block index" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" />
-	<_field_long_block_index name="long block index" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" />
+	<_field_short_block_index name="short block index" targetGuid="a197fb9a-0530-4815-a08c-b1f967ac6332" targetName="basic_block" />
+	<_field_long_block_index name="long block index" targetGuid="a197fb9a-0530-4815-a08c-b1f967ac6332" targetName="basic_block" />
 	<_field_data_64 name="data" />
 	<_field_explanation name="explanation">explanation info text
 info text line 2
 info text line 3</_field_explanation>
-	<_field_struct name="basic struct" />
-	<_field_long_integer name="long in struct" />
+	<_field_struct name="basic struct" srcguid="c39fb862-38c0-4e30-b6b4-98deecac2eb3">
+		<_field_long_integer name="long in struct" />
+	</_field_struct>
 	<_field_array name="basic array">
 		<_field_long_integer name="long in array" />
 		<_field_long_integer name="long in array" />
@@ -106,403 +108,423 @@ info text line 3</_field_explanation>
 		<_field_long_integer name="long in array" />
 		<_field_long_integer name="long in array" />
 	</_field_array>
-	<_field_block_64 name="block with struct" max="8" guid="e4454f73-473b-48a9-be2e-659bbc601313">
-		<_field_struct name="struct in block" />
-		<_field_long_integer name="long in struct" />
+	<_field_block_64 name="block with struct" max="8" srcguid="e4454f73-473b-48a9-be2e-659bbc601313" srcName="block_with_struct">
+		<_field_struct name="struct in block" srcguid="c39fb862-38c0-4e30-b6b4-98deecac2eb3">
+			<_field_long_integer name="long in struct" />
+		</_field_struct>
 	</_field_block_64>
-	<_field_block_64 name="complex block" max="1024" guid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd">
-		<_field_block_64 name="foo" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+	<_field_block_64 name="complex block" max="1024" srcguid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd" srcName="complex_block">
+		<_field_block_64 name="foo" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 			<_field_long_string name="name^" />
 		</_field_block_64>
-		<_field_block_64 name="bar" max="8" guid="40aa5814-fcb7-4227-8c35-502fe569decf">
-			<_field_tag_reference_64 name="reference" />
-			<_field_block_64 name="raz" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+		<_field_block_64 name="bar" max="8" srcguid="40aa5814-fcb7-4227-8c35-502fe569decf" srcName="complex_sub_block">
+			<_field_tag_reference_64 name="reference" validtags="ttag" />
+			<_field_block_64 name="raz" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 				<_field_long_string name="name^" />
 			</_field_block_64>
 		</_field_block_64>
 	</_field_block_64>
-	<_field_struct name="complex struct" />
-	<_field_block_64 name="basic block" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-		<_field_long_string name="name^" />
-	</_field_block_64>
-	<_field_real_argb_color name="color" />
-	<_field_block_64 name="complex block" max="1024" guid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd">
-		<_field_block_64 name="foo" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+	<_field_struct name="complex struct" srcguid="35ce4f80-b9e3-4eda-87d9-c8dd433a7ba9">
+		<_field_block_64 name="basic block" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 			<_field_long_string name="name^" />
 		</_field_block_64>
-		<_field_block_64 name="bar" max="8" guid="40aa5814-fcb7-4227-8c35-502fe569decf">
-			<_field_tag_reference_64 name="reference" />
-			<_field_block_64 name="raz" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+		<_field_real_argb_color name="color" />
+		<_field_block_64 name="complex block" max="1024" srcguid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd" srcName="complex_block">
+			<_field_block_64 name="foo" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 				<_field_long_string name="name^" />
 			</_field_block_64>
+			<_field_block_64 name="bar" max="8" srcguid="40aa5814-fcb7-4227-8c35-502fe569decf" srcName="complex_sub_block">
+				<_field_tag_reference_64 name="reference" validtags="ttag" />
+				<_field_block_64 name="raz" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+					<_field_long_string name="name^" />
+				</_field_block_64>
+			</_field_block_64>
 		</_field_block_64>
-	</_field_block_64>
+	</_field_struct>
 	<_field_array name="complex array">
 		<_field_string name="string in array" />
-		<_field_block_64 name="basic block in array" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+		<_field_block_64 name="basic block in array" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 			<_field_long_string name="name^" />
 		</_field_block_64>
 		<_field_point_2d name="point 2d in array" />
-		<_field_struct name="complex struct in array" />
-		<_field_block_64 name="basic block" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-			<_field_long_string name="name^" />
-		</_field_block_64>
-		<_field_real_argb_color name="color" />
-		<_field_block_64 name="complex block" max="1024" guid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd">
-			<_field_block_64 name="foo" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+		<_field_struct name="complex struct in array" srcguid="35ce4f80-b9e3-4eda-87d9-c8dd433a7ba9">
+			<_field_block_64 name="basic block" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 				<_field_long_string name="name^" />
 			</_field_block_64>
-			<_field_block_64 name="bar" max="8" guid="40aa5814-fcb7-4227-8c35-502fe569decf">
-				<_field_tag_reference_64 name="reference" />
-				<_field_block_64 name="raz" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+			<_field_real_argb_color name="color" />
+			<_field_block_64 name="complex block" max="1024" srcguid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd" srcName="complex_block">
+				<_field_block_64 name="foo" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 					<_field_long_string name="name^" />
 				</_field_block_64>
+				<_field_block_64 name="bar" max="8" srcguid="40aa5814-fcb7-4227-8c35-502fe569decf" srcName="complex_sub_block">
+					<_field_tag_reference_64 name="reference" validtags="ttag" />
+					<_field_block_64 name="raz" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+						<_field_long_string name="name^" />
+					</_field_block_64>
+				</_field_block_64>
 			</_field_block_64>
-		</_field_block_64>
+		</_field_struct>
 		<_field_string name="string in array" />
-		<_field_block_64 name="basic block in array" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+		<_field_block_64 name="basic block in array" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 			<_field_long_string name="name^" />
 		</_field_block_64>
 		<_field_point_2d name="point 2d in array" />
-		<_field_struct name="complex struct in array" />
-		<_field_block_64 name="basic block" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-			<_field_long_string name="name^" />
-		</_field_block_64>
-		<_field_real_argb_color name="color" />
-		<_field_block_64 name="complex block" max="1024" guid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd">
-			<_field_block_64 name="foo" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+		<_field_struct name="complex struct in array" srcguid="35ce4f80-b9e3-4eda-87d9-c8dd433a7ba9">
+			<_field_block_64 name="basic block" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 				<_field_long_string name="name^" />
 			</_field_block_64>
-			<_field_block_64 name="bar" max="8" guid="40aa5814-fcb7-4227-8c35-502fe569decf">
-				<_field_tag_reference_64 name="reference" />
-				<_field_block_64 name="raz" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+			<_field_real_argb_color name="color" />
+			<_field_block_64 name="complex block" max="1024" srcguid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd" srcName="complex_block">
+				<_field_block_64 name="foo" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 					<_field_long_string name="name^" />
 				</_field_block_64>
+				<_field_block_64 name="bar" max="8" srcguid="40aa5814-fcb7-4227-8c35-502fe569decf" srcName="complex_sub_block">
+					<_field_tag_reference_64 name="reference" validtags="ttag" />
+					<_field_block_64 name="raz" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+						<_field_long_string name="name^" />
+					</_field_block_64>
+				</_field_block_64>
 			</_field_block_64>
-		</_field_block_64>
+		</_field_struct>
 		<_field_string name="string in array" />
-		<_field_block_64 name="basic block in array" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+		<_field_block_64 name="basic block in array" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 			<_field_long_string name="name^" />
 		</_field_block_64>
 		<_field_point_2d name="point 2d in array" />
-		<_field_struct name="complex struct in array" />
-		<_field_block_64 name="basic block" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-			<_field_long_string name="name^" />
-		</_field_block_64>
-		<_field_real_argb_color name="color" />
-		<_field_block_64 name="complex block" max="1024" guid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd">
-			<_field_block_64 name="foo" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+		<_field_struct name="complex struct in array" srcguid="35ce4f80-b9e3-4eda-87d9-c8dd433a7ba9">
+			<_field_block_64 name="basic block" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 				<_field_long_string name="name^" />
 			</_field_block_64>
-			<_field_block_64 name="bar" max="8" guid="40aa5814-fcb7-4227-8c35-502fe569decf">
-				<_field_tag_reference_64 name="reference" />
-				<_field_block_64 name="raz" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+			<_field_real_argb_color name="color" />
+			<_field_block_64 name="complex block" max="1024" srcguid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd" srcName="complex_block">
+				<_field_block_64 name="foo" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 					<_field_long_string name="name^" />
 				</_field_block_64>
+				<_field_block_64 name="bar" max="8" srcguid="40aa5814-fcb7-4227-8c35-502fe569decf" srcName="complex_sub_block">
+					<_field_tag_reference_64 name="reference" validtags="ttag" />
+					<_field_block_64 name="raz" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+						<_field_long_string name="name^" />
+					</_field_block_64>
+				</_field_block_64>
 			</_field_block_64>
-		</_field_block_64>
+		</_field_struct>
 		<_field_string name="string in array" />
-		<_field_block_64 name="basic block in array" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+		<_field_block_64 name="basic block in array" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 			<_field_long_string name="name^" />
 		</_field_block_64>
 		<_field_point_2d name="point 2d in array" />
-		<_field_struct name="complex struct in array" />
-		<_field_block_64 name="basic block" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-			<_field_long_string name="name^" />
-		</_field_block_64>
-		<_field_real_argb_color name="color" />
-		<_field_block_64 name="complex block" max="1024" guid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd">
-			<_field_block_64 name="foo" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+		<_field_struct name="complex struct in array" srcguid="35ce4f80-b9e3-4eda-87d9-c8dd433a7ba9">
+			<_field_block_64 name="basic block" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 				<_field_long_string name="name^" />
 			</_field_block_64>
-			<_field_block_64 name="bar" max="8" guid="40aa5814-fcb7-4227-8c35-502fe569decf">
-				<_field_tag_reference_64 name="reference" />
-				<_field_block_64 name="raz" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+			<_field_real_argb_color name="color" />
+			<_field_block_64 name="complex block" max="1024" srcguid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd" srcName="complex_block">
+				<_field_block_64 name="foo" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 					<_field_long_string name="name^" />
 				</_field_block_64>
+				<_field_block_64 name="bar" max="8" srcguid="40aa5814-fcb7-4227-8c35-502fe569decf" srcName="complex_sub_block">
+					<_field_tag_reference_64 name="reference" validtags="ttag" />
+					<_field_block_64 name="raz" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+						<_field_long_string name="name^" />
+					</_field_block_64>
+				</_field_block_64>
 			</_field_block_64>
-		</_field_block_64>
+		</_field_struct>
 		<_field_string name="string in array" />
-		<_field_block_64 name="basic block in array" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+		<_field_block_64 name="basic block in array" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 			<_field_long_string name="name^" />
 		</_field_block_64>
 		<_field_point_2d name="point 2d in array" />
-		<_field_struct name="complex struct in array" />
-		<_field_block_64 name="basic block" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-			<_field_long_string name="name^" />
-		</_field_block_64>
-		<_field_real_argb_color name="color" />
-		<_field_block_64 name="complex block" max="1024" guid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd">
-			<_field_block_64 name="foo" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+		<_field_struct name="complex struct in array" srcguid="35ce4f80-b9e3-4eda-87d9-c8dd433a7ba9">
+			<_field_block_64 name="basic block" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 				<_field_long_string name="name^" />
 			</_field_block_64>
-			<_field_block_64 name="bar" max="8" guid="40aa5814-fcb7-4227-8c35-502fe569decf">
-				<_field_tag_reference_64 name="reference" />
-				<_field_block_64 name="raz" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+			<_field_real_argb_color name="color" />
+			<_field_block_64 name="complex block" max="1024" srcguid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd" srcName="complex_block">
+				<_field_block_64 name="foo" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 					<_field_long_string name="name^" />
 				</_field_block_64>
+				<_field_block_64 name="bar" max="8" srcguid="40aa5814-fcb7-4227-8c35-502fe569decf" srcName="complex_sub_block">
+					<_field_tag_reference_64 name="reference" validtags="ttag" />
+					<_field_block_64 name="raz" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+						<_field_long_string name="name^" />
+					</_field_block_64>
+				</_field_block_64>
 			</_field_block_64>
-		</_field_block_64>
+		</_field_struct>
 		<_field_string name="string in array" />
-		<_field_block_64 name="basic block in array" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+		<_field_block_64 name="basic block in array" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 			<_field_long_string name="name^" />
 		</_field_block_64>
 		<_field_point_2d name="point 2d in array" />
-		<_field_struct name="complex struct in array" />
-		<_field_block_64 name="basic block" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-			<_field_long_string name="name^" />
-		</_field_block_64>
-		<_field_real_argb_color name="color" />
-		<_field_block_64 name="complex block" max="1024" guid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd">
-			<_field_block_64 name="foo" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+		<_field_struct name="complex struct in array" srcguid="35ce4f80-b9e3-4eda-87d9-c8dd433a7ba9">
+			<_field_block_64 name="basic block" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 				<_field_long_string name="name^" />
 			</_field_block_64>
-			<_field_block_64 name="bar" max="8" guid="40aa5814-fcb7-4227-8c35-502fe569decf">
-				<_field_tag_reference_64 name="reference" />
-				<_field_block_64 name="raz" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+			<_field_real_argb_color name="color" />
+			<_field_block_64 name="complex block" max="1024" srcguid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd" srcName="complex_block">
+				<_field_block_64 name="foo" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 					<_field_long_string name="name^" />
 				</_field_block_64>
+				<_field_block_64 name="bar" max="8" srcguid="40aa5814-fcb7-4227-8c35-502fe569decf" srcName="complex_sub_block">
+					<_field_tag_reference_64 name="reference" validtags="ttag" />
+					<_field_block_64 name="raz" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+						<_field_long_string name="name^" />
+					</_field_block_64>
+				</_field_block_64>
 			</_field_block_64>
-		</_field_block_64>
+		</_field_struct>
 		<_field_string name="string in array" />
-		<_field_block_64 name="basic block in array" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+		<_field_block_64 name="basic block in array" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 			<_field_long_string name="name^" />
 		</_field_block_64>
 		<_field_point_2d name="point 2d in array" />
-		<_field_struct name="complex struct in array" />
-		<_field_block_64 name="basic block" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-			<_field_long_string name="name^" />
-		</_field_block_64>
-		<_field_real_argb_color name="color" />
-		<_field_block_64 name="complex block" max="1024" guid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd">
-			<_field_block_64 name="foo" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+		<_field_struct name="complex struct in array" srcguid="35ce4f80-b9e3-4eda-87d9-c8dd433a7ba9">
+			<_field_block_64 name="basic block" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 				<_field_long_string name="name^" />
 			</_field_block_64>
-			<_field_block_64 name="bar" max="8" guid="40aa5814-fcb7-4227-8c35-502fe569decf">
-				<_field_tag_reference_64 name="reference" />
-				<_field_block_64 name="raz" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+			<_field_real_argb_color name="color" />
+			<_field_block_64 name="complex block" max="1024" srcguid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd" srcName="complex_block">
+				<_field_block_64 name="foo" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 					<_field_long_string name="name^" />
 				</_field_block_64>
+				<_field_block_64 name="bar" max="8" srcguid="40aa5814-fcb7-4227-8c35-502fe569decf" srcName="complex_sub_block">
+					<_field_tag_reference_64 name="reference" validtags="ttag" />
+					<_field_block_64 name="raz" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+						<_field_long_string name="name^" />
+					</_field_block_64>
+				</_field_block_64>
 			</_field_block_64>
-		</_field_block_64>
+		</_field_struct>
 		<_field_string name="string in array" />
-		<_field_block_64 name="basic block in array" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+		<_field_block_64 name="basic block in array" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 			<_field_long_string name="name^" />
 		</_field_block_64>
 		<_field_point_2d name="point 2d in array" />
-		<_field_struct name="complex struct in array" />
-		<_field_block_64 name="basic block" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-			<_field_long_string name="name^" />
-		</_field_block_64>
-		<_field_real_argb_color name="color" />
-		<_field_block_64 name="complex block" max="1024" guid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd">
-			<_field_block_64 name="foo" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+		<_field_struct name="complex struct in array" srcguid="35ce4f80-b9e3-4eda-87d9-c8dd433a7ba9">
+			<_field_block_64 name="basic block" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 				<_field_long_string name="name^" />
 			</_field_block_64>
-			<_field_block_64 name="bar" max="8" guid="40aa5814-fcb7-4227-8c35-502fe569decf">
-				<_field_tag_reference_64 name="reference" />
-				<_field_block_64 name="raz" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+			<_field_real_argb_color name="color" />
+			<_field_block_64 name="complex block" max="1024" srcguid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd" srcName="complex_block">
+				<_field_block_64 name="foo" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 					<_field_long_string name="name^" />
 				</_field_block_64>
+				<_field_block_64 name="bar" max="8" srcguid="40aa5814-fcb7-4227-8c35-502fe569decf" srcName="complex_sub_block">
+					<_field_tag_reference_64 name="reference" validtags="ttag" />
+					<_field_block_64 name="raz" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+						<_field_long_string name="name^" />
+					</_field_block_64>
+				</_field_block_64>
 			</_field_block_64>
-		</_field_block_64>
+		</_field_struct>
 	</_field_array>
-	<_field_struct name="motherload struct" />
-	<_field_struct name="struct" />
-	<_field_block_64 name="basic block" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-		<_field_long_string name="name^" />
-	</_field_block_64>
-	<_field_real_argb_color name="color" />
-	<_field_block_64 name="complex block" max="1024" guid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd">
-		<_field_block_64 name="foo" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-			<_field_long_string name="name^" />
-		</_field_block_64>
-		<_field_block_64 name="bar" max="8" guid="40aa5814-fcb7-4227-8c35-502fe569decf">
-			<_field_tag_reference_64 name="reference" />
-			<_field_block_64 name="raz" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+	<_field_struct name="motherload struct" srcguid="ed2c2b01-d6cb-4191-ba3b-80f6f16f59ff">
+		<_field_struct name="struct" srcguid="35ce4f80-b9e3-4eda-87d9-c8dd433a7ba9">
+			<_field_block_64 name="basic block" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 				<_field_long_string name="name^" />
 			</_field_block_64>
-		</_field_block_64>
-	</_field_block_64>
-	<_field_array name="array">
-		<_field_string name="string in array" />
-		<_field_block_64 name="basic block in array" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-			<_field_long_string name="name^" />
-		</_field_block_64>
-		<_field_point_2d name="point 2d in array" />
-		<_field_struct name="complex struct in array" />
-		<_field_block_64 name="basic block" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-			<_field_long_string name="name^" />
-		</_field_block_64>
-		<_field_real_argb_color name="color" />
-		<_field_block_64 name="complex block" max="1024" guid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd">
-			<_field_block_64 name="foo" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+			<_field_real_argb_color name="color" />
+			<_field_block_64 name="complex block" max="1024" srcguid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd" srcName="complex_block">
+				<_field_block_64 name="foo" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+					<_field_long_string name="name^" />
+				</_field_block_64>
+				<_field_block_64 name="bar" max="8" srcguid="40aa5814-fcb7-4227-8c35-502fe569decf" srcName="complex_sub_block">
+					<_field_tag_reference_64 name="reference" validtags="ttag" />
+					<_field_block_64 name="raz" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+						<_field_long_string name="name^" />
+					</_field_block_64>
+				</_field_block_64>
+			</_field_block_64>
+		</_field_struct>
+		<_field_array name="array">
+			<_field_string name="string in array" />
+			<_field_block_64 name="basic block in array" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 				<_field_long_string name="name^" />
 			</_field_block_64>
-			<_field_block_64 name="bar" max="8" guid="40aa5814-fcb7-4227-8c35-502fe569decf">
-				<_field_tag_reference_64 name="reference" />
-				<_field_block_64 name="raz" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
+			<_field_point_2d name="point 2d in array" />
+			<_field_struct name="complex struct in array" srcguid="35ce4f80-b9e3-4eda-87d9-c8dd433a7ba9">
+				<_field_block_64 name="basic block" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+					<_field_long_string name="name^" />
+				</_field_block_64>
+				<_field_real_argb_color name="color" />
+				<_field_block_64 name="complex block" max="1024" srcguid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd" srcName="complex_block">
+					<_field_block_64 name="foo" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+						<_field_long_string name="name^" />
+					</_field_block_64>
+					<_field_block_64 name="bar" max="8" srcguid="40aa5814-fcb7-4227-8c35-502fe569decf" srcName="complex_sub_block">
+						<_field_tag_reference_64 name="reference" validtags="ttag" />
+						<_field_block_64 name="raz" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+							<_field_long_string name="name^" />
+						</_field_block_64>
+					</_field_block_64>
+				</_field_block_64>
+			</_field_struct>
+			<_field_string name="string in array" />
+			<_field_block_64 name="basic block in array" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+				<_field_long_string name="name^" />
+			</_field_block_64>
+			<_field_point_2d name="point 2d in array" />
+			<_field_struct name="complex struct in array" srcguid="35ce4f80-b9e3-4eda-87d9-c8dd433a7ba9">
+				<_field_block_64 name="basic block" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+					<_field_long_string name="name^" />
+				</_field_block_64>
+				<_field_real_argb_color name="color" />
+				<_field_block_64 name="complex block" max="1024" srcguid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd" srcName="complex_block">
+					<_field_block_64 name="foo" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+						<_field_long_string name="name^" />
+					</_field_block_64>
+					<_field_block_64 name="bar" max="8" srcguid="40aa5814-fcb7-4227-8c35-502fe569decf" srcName="complex_sub_block">
+						<_field_tag_reference_64 name="reference" validtags="ttag" />
+						<_field_block_64 name="raz" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+							<_field_long_string name="name^" />
+						</_field_block_64>
+					</_field_block_64>
+				</_field_block_64>
+			</_field_struct>
+			<_field_string name="string in array" />
+			<_field_block_64 name="basic block in array" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+				<_field_long_string name="name^" />
+			</_field_block_64>
+			<_field_point_2d name="point 2d in array" />
+			<_field_struct name="complex struct in array" srcguid="35ce4f80-b9e3-4eda-87d9-c8dd433a7ba9">
+				<_field_block_64 name="basic block" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+					<_field_long_string name="name^" />
+				</_field_block_64>
+				<_field_real_argb_color name="color" />
+				<_field_block_64 name="complex block" max="1024" srcguid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd" srcName="complex_block">
+					<_field_block_64 name="foo" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+						<_field_long_string name="name^" />
+					</_field_block_64>
+					<_field_block_64 name="bar" max="8" srcguid="40aa5814-fcb7-4227-8c35-502fe569decf" srcName="complex_sub_block">
+						<_field_tag_reference_64 name="reference" validtags="ttag" />
+						<_field_block_64 name="raz" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+							<_field_long_string name="name^" />
+						</_field_block_64>
+					</_field_block_64>
+				</_field_block_64>
+			</_field_struct>
+			<_field_string name="string in array" />
+			<_field_block_64 name="basic block in array" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+				<_field_long_string name="name^" />
+			</_field_block_64>
+			<_field_point_2d name="point 2d in array" />
+			<_field_struct name="complex struct in array" srcguid="35ce4f80-b9e3-4eda-87d9-c8dd433a7ba9">
+				<_field_block_64 name="basic block" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+					<_field_long_string name="name^" />
+				</_field_block_64>
+				<_field_real_argb_color name="color" />
+				<_field_block_64 name="complex block" max="1024" srcguid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd" srcName="complex_block">
+					<_field_block_64 name="foo" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+						<_field_long_string name="name^" />
+					</_field_block_64>
+					<_field_block_64 name="bar" max="8" srcguid="40aa5814-fcb7-4227-8c35-502fe569decf" srcName="complex_sub_block">
+						<_field_tag_reference_64 name="reference" validtags="ttag" />
+						<_field_block_64 name="raz" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+							<_field_long_string name="name^" />
+						</_field_block_64>
+					</_field_block_64>
+				</_field_block_64>
+			</_field_struct>
+			<_field_string name="string in array" />
+			<_field_block_64 name="basic block in array" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+				<_field_long_string name="name^" />
+			</_field_block_64>
+			<_field_point_2d name="point 2d in array" />
+			<_field_struct name="complex struct in array" srcguid="35ce4f80-b9e3-4eda-87d9-c8dd433a7ba9">
+				<_field_block_64 name="basic block" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+					<_field_long_string name="name^" />
+				</_field_block_64>
+				<_field_real_argb_color name="color" />
+				<_field_block_64 name="complex block" max="1024" srcguid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd" srcName="complex_block">
+					<_field_block_64 name="foo" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+						<_field_long_string name="name^" />
+					</_field_block_64>
+					<_field_block_64 name="bar" max="8" srcguid="40aa5814-fcb7-4227-8c35-502fe569decf" srcName="complex_sub_block">
+						<_field_tag_reference_64 name="reference" validtags="ttag" />
+						<_field_block_64 name="raz" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+							<_field_long_string name="name^" />
+						</_field_block_64>
+					</_field_block_64>
+				</_field_block_64>
+			</_field_struct>
+			<_field_string name="string in array" />
+			<_field_block_64 name="basic block in array" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+				<_field_long_string name="name^" />
+			</_field_block_64>
+			<_field_point_2d name="point 2d in array" />
+			<_field_struct name="complex struct in array" srcguid="35ce4f80-b9e3-4eda-87d9-c8dd433a7ba9">
+				<_field_block_64 name="basic block" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+					<_field_long_string name="name^" />
+				</_field_block_64>
+				<_field_real_argb_color name="color" />
+				<_field_block_64 name="complex block" max="1024" srcguid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd" srcName="complex_block">
+					<_field_block_64 name="foo" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+						<_field_long_string name="name^" />
+					</_field_block_64>
+					<_field_block_64 name="bar" max="8" srcguid="40aa5814-fcb7-4227-8c35-502fe569decf" srcName="complex_sub_block">
+						<_field_tag_reference_64 name="reference" validtags="ttag" />
+						<_field_block_64 name="raz" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+							<_field_long_string name="name^" />
+						</_field_block_64>
+					</_field_block_64>
+				</_field_block_64>
+			</_field_struct>
+			<_field_string name="string in array" />
+			<_field_block_64 name="basic block in array" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+				<_field_long_string name="name^" />
+			</_field_block_64>
+			<_field_point_2d name="point 2d in array" />
+			<_field_struct name="complex struct in array" srcguid="35ce4f80-b9e3-4eda-87d9-c8dd433a7ba9">
+				<_field_block_64 name="basic block" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+					<_field_long_string name="name^" />
+				</_field_block_64>
+				<_field_real_argb_color name="color" />
+				<_field_block_64 name="complex block" max="1024" srcguid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd" srcName="complex_block">
+					<_field_block_64 name="foo" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+						<_field_long_string name="name^" />
+					</_field_block_64>
+					<_field_block_64 name="bar" max="8" srcguid="40aa5814-fcb7-4227-8c35-502fe569decf" srcName="complex_sub_block">
+						<_field_tag_reference_64 name="reference" validtags="ttag" />
+						<_field_block_64 name="raz" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+							<_field_long_string name="name^" />
+						</_field_block_64>
+					</_field_block_64>
+				</_field_block_64>
+			</_field_struct>
+			<_field_string name="string in array" />
+			<_field_block_64 name="basic block in array" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+				<_field_long_string name="name^" />
+			</_field_block_64>
+			<_field_point_2d name="point 2d in array" />
+			<_field_struct name="complex struct in array" srcguid="35ce4f80-b9e3-4eda-87d9-c8dd433a7ba9">
+				<_field_block_64 name="basic block" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+					<_field_long_string name="name^" />
+				</_field_block_64>
+				<_field_real_argb_color name="color" />
+				<_field_block_64 name="complex block" max="1024" srcguid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd" srcName="complex_block">
+					<_field_block_64 name="foo" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+						<_field_long_string name="name^" />
+					</_field_block_64>
+					<_field_block_64 name="bar" max="8" srcguid="40aa5814-fcb7-4227-8c35-502fe569decf" srcName="complex_sub_block">
+						<_field_tag_reference_64 name="reference" validtags="ttag" />
+						<_field_block_64 name="raz" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+							<_field_long_string name="name^" />
+						</_field_block_64>
+					</_field_block_64>
+				</_field_block_64>
+			</_field_struct>
+		</_field_array>
+		<_field_block_64 name="block" max="1024" srcguid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd" srcName="complex_block">
+			<_field_block_64 name="foo" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
+				<_field_long_string name="name^" />
+			</_field_block_64>
+			<_field_block_64 name="bar" max="8" srcguid="40aa5814-fcb7-4227-8c35-502fe569decf" srcName="complex_sub_block">
+				<_field_tag_reference_64 name="reference" validtags="ttag" />
+				<_field_block_64 name="raz" max="8" srcguid="a197fb9a-0530-4815-a08c-b1f967ac6332" srcName="basic_block">
 					<_field_long_string name="name^" />
 				</_field_block_64>
 			</_field_block_64>
 		</_field_block_64>
-		<_field_string name="string in array" />
-		<_field_block_64 name="basic block in array" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-			<_field_long_string name="name^" />
-		</_field_block_64>
-		<_field_point_2d name="point 2d in array" />
-		<_field_struct name="complex struct in array" />
-		<_field_block_64 name="basic block" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-			<_field_long_string name="name^" />
-		</_field_block_64>
-		<_field_real_argb_color name="color" />
-		<_field_block_64 name="complex block" max="1024" guid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd">
-			<_field_block_64 name="foo" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-				<_field_long_string name="name^" />
-			</_field_block_64>
-			<_field_block_64 name="bar" max="8" guid="40aa5814-fcb7-4227-8c35-502fe569decf">
-				<_field_tag_reference_64 name="reference" />
-				<_field_block_64 name="raz" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-					<_field_long_string name="name^" />
-				</_field_block_64>
-			</_field_block_64>
-		</_field_block_64>
-		<_field_string name="string in array" />
-		<_field_block_64 name="basic block in array" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-			<_field_long_string name="name^" />
-		</_field_block_64>
-		<_field_point_2d name="point 2d in array" />
-		<_field_struct name="complex struct in array" />
-		<_field_block_64 name="basic block" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-			<_field_long_string name="name^" />
-		</_field_block_64>
-		<_field_real_argb_color name="color" />
-		<_field_block_64 name="complex block" max="1024" guid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd">
-			<_field_block_64 name="foo" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-				<_field_long_string name="name^" />
-			</_field_block_64>
-			<_field_block_64 name="bar" max="8" guid="40aa5814-fcb7-4227-8c35-502fe569decf">
-				<_field_tag_reference_64 name="reference" />
-				<_field_block_64 name="raz" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-					<_field_long_string name="name^" />
-				</_field_block_64>
-			</_field_block_64>
-		</_field_block_64>
-		<_field_string name="string in array" />
-		<_field_block_64 name="basic block in array" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-			<_field_long_string name="name^" />
-		</_field_block_64>
-		<_field_point_2d name="point 2d in array" />
-		<_field_struct name="complex struct in array" />
-		<_field_block_64 name="basic block" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-			<_field_long_string name="name^" />
-		</_field_block_64>
-		<_field_real_argb_color name="color" />
-		<_field_block_64 name="complex block" max="1024" guid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd">
-			<_field_block_64 name="foo" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-				<_field_long_string name="name^" />
-			</_field_block_64>
-			<_field_block_64 name="bar" max="8" guid="40aa5814-fcb7-4227-8c35-502fe569decf">
-				<_field_tag_reference_64 name="reference" />
-				<_field_block_64 name="raz" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-					<_field_long_string name="name^" />
-				</_field_block_64>
-			</_field_block_64>
-		</_field_block_64>
-		<_field_string name="string in array" />
-		<_field_block_64 name="basic block in array" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-			<_field_long_string name="name^" />
-		</_field_block_64>
-		<_field_point_2d name="point 2d in array" />
-		<_field_struct name="complex struct in array" />
-		<_field_block_64 name="basic block" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-			<_field_long_string name="name^" />
-		</_field_block_64>
-		<_field_real_argb_color name="color" />
-		<_field_block_64 name="complex block" max="1024" guid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd">
-			<_field_block_64 name="foo" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-				<_field_long_string name="name^" />
-			</_field_block_64>
-			<_field_block_64 name="bar" max="8" guid="40aa5814-fcb7-4227-8c35-502fe569decf">
-				<_field_tag_reference_64 name="reference" />
-				<_field_block_64 name="raz" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-					<_field_long_string name="name^" />
-				</_field_block_64>
-			</_field_block_64>
-		</_field_block_64>
-		<_field_string name="string in array" />
-		<_field_block_64 name="basic block in array" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-			<_field_long_string name="name^" />
-		</_field_block_64>
-		<_field_point_2d name="point 2d in array" />
-		<_field_struct name="complex struct in array" />
-		<_field_block_64 name="basic block" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-			<_field_long_string name="name^" />
-		</_field_block_64>
-		<_field_real_argb_color name="color" />
-		<_field_block_64 name="complex block" max="1024" guid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd">
-			<_field_block_64 name="foo" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-				<_field_long_string name="name^" />
-			</_field_block_64>
-			<_field_block_64 name="bar" max="8" guid="40aa5814-fcb7-4227-8c35-502fe569decf">
-				<_field_tag_reference_64 name="reference" />
-				<_field_block_64 name="raz" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-					<_field_long_string name="name^" />
-				</_field_block_64>
-			</_field_block_64>
-		</_field_block_64>
-		<_field_string name="string in array" />
-		<_field_block_64 name="basic block in array" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-			<_field_long_string name="name^" />
-		</_field_block_64>
-		<_field_point_2d name="point 2d in array" />
-		<_field_struct name="complex struct in array" />
-		<_field_block_64 name="basic block" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-			<_field_long_string name="name^" />
-		</_field_block_64>
-		<_field_real_argb_color name="color" />
-		<_field_block_64 name="complex block" max="1024" guid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd">
-			<_field_block_64 name="foo" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-				<_field_long_string name="name^" />
-			</_field_block_64>
-			<_field_block_64 name="bar" max="8" guid="40aa5814-fcb7-4227-8c35-502fe569decf">
-				<_field_tag_reference_64 name="reference" />
-				<_field_block_64 name="raz" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-					<_field_long_string name="name^" />
-				</_field_block_64>
-			</_field_block_64>
-		</_field_block_64>
-		<_field_string name="string in array" />
-		<_field_block_64 name="basic block in array" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-			<_field_long_string name="name^" />
-		</_field_block_64>
-		<_field_point_2d name="point 2d in array" />
-		<_field_struct name="complex struct in array" />
-		<_field_block_64 name="basic block" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-			<_field_long_string name="name^" />
-		</_field_block_64>
-		<_field_real_argb_color name="color" />
-		<_field_block_64 name="complex block" max="1024" guid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd">
-			<_field_block_64 name="foo" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-				<_field_long_string name="name^" />
-			</_field_block_64>
-			<_field_block_64 name="bar" max="8" guid="40aa5814-fcb7-4227-8c35-502fe569decf">
-				<_field_tag_reference_64 name="reference" />
-				<_field_block_64 name="raz" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-					<_field_long_string name="name^" />
-				</_field_block_64>
-			</_field_block_64>
-		</_field_block_64>
-	</_field_array>
-	<_field_block_64 name="block" max="1024" guid="4e888658-4ec5-4cc4-a160-4d30bda3c0bd">
-		<_field_block_64 name="foo" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-			<_field_long_string name="name^" />
-		</_field_block_64>
-		<_field_block_64 name="bar" max="8" guid="40aa5814-fcb7-4227-8c35-502fe569decf">
-			<_field_tag_reference_64 name="reference" />
-			<_field_block_64 name="raz" max="8" guid="a197fb9a-0530-4815-a08c-b1f967ac6332">
-				<_field_long_string name="name^" />
-			</_field_block_64>
-		</_field_block_64>
-	</_field_block_64>
+	</_field_struct>
 </plugin>

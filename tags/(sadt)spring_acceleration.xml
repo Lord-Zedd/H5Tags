@@ -1,24 +1,31 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="linear acceleartions" max="3" guid="1c23aaac-4449-1323-8310-abae8a0d17d9">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="linear acceleartions" max="3" srcguid="1c23aaac-4449-1323-8310-abae8a0d17d9" srcName="spring_linear_acceleration_block">
 		<_field_real name="acceleration range:world units" />
 		<_field_real name="inverse acceleration range:world units*!" />
 		<_field_real name="world acceleration scale#0 defaults to 1, scale the acceleration the object itself applies on this system." />
 		<_field_explanation name="damping">feed velocity into this function and damp by the value that comes out</_field_explanation>
-		<_field_struct name="spring damping" />
-		<_field_data_64 name="data" />
+		<_field_struct name="spring damping" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+			<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
 		<_field_real name="velocity domain" />
-		<_field_struct name="spring acceleration" />
-		<_field_data_64 name="data" />
+		<_field_struct name="spring acceleration" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+			<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
 	</_field_block_64>
-	<_field_short_block_index name="x-axis" srcguid="1c23aaac-4449-1323-8310-abae8a0d17d9" />
-	<_field_short_block_index name="y-axis" srcguid="1c23aaac-4449-1323-8310-abae8a0d17d9" />
-	<_field_short_block_index name="z-axis" srcguid="1c23aaac-4449-1323-8310-abae8a0d17d9" />
+	<_field_short_block_index name="x-axis" targetGuid="1c23aaac-4449-1323-8310-abae8a0d17d9" targetName="spring_linear_acceleration_block" />
+	<_field_short_block_index name="y-axis" targetGuid="1c23aaac-4449-1323-8310-abae8a0d17d9" targetName="spring_linear_acceleration_block" />
+	<_field_short_block_index name="z-axis" targetGuid="1c23aaac-4449-1323-8310-abae8a0d17d9" targetName="spring_linear_acceleration_block" />
 	<_field_pad name="pad" length="2" />
 	<_field_pad name="pad_tp" length="4" />
 </plugin>

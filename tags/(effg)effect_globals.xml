@@ -1,10 +1,11 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_explanation name="EFFECT HOLDBACKS">ALLOCATIONS ON THE MAIN THREAD
 type_effect:                     Number of effect slots
 type_event:                      Number of event slots
@@ -43,7 +44,7 @@ SPAWNS TO THE GPU
 type_particle_queue              Number of particles created in a frame (includes cpu particles)
 tracer queue		              Number of tracer profiles created in a frame
 </_field_explanation>
-	<_field_block_64 name="holdbacks" max="27" guid="8caddbff-43fa-c0e8-ebff-25b2da056db2">
+	<_field_block_64 name="holdbacks" max="27" srcguid="8caddbff-43fa-c0e8-ebff-25b2da056db2" srcName="effect_component_holdbacks_block">
 		<_field_long_enum name="holdback type^*">
 			<item Name="type_effect" />
 			<item Name="type_event" />
@@ -74,7 +75,7 @@ tracer queue		              Number of tracer profiles created in a frame
 			<item Name="track decal system" />
 		</_field_long_enum>
 		<_field_dword_integer name="overall budget*#from code" />
-		<_field_block_64 name="priorities" max="6" guid="f1f9fece-482e-db96-5366-8a8884cdacca">
+		<_field_block_64 name="priorities" max="6" srcguid="f1f9fece-482e-db96-5366-8a8884cdacca" srcName="effect_component_holdback_block">
 			<_field_long_enum name="priority type^*">
 				<item Name="low" />
 				<item Name="normal" />
@@ -89,20 +90,20 @@ tracer queue		              Number of tracer profiles created in a frame
 			<_field_dword_integer name="How many available at this priority*!" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_tag_reference_64 name="grunt birthday effect" />
+	<_field_tag_reference_64 name="grunt birthday effect" validtags="effe" />
 	<_field_explanation name="Spawn Effects">Effect played when an object of this type spawns in during each game mode.
 Can be overridden per-object in the object definition tag</_field_explanation>
-	<_field_block_64 name="multiplayer" max="1" guid="43548fdc-4ed6-178a-d12b-ea88be2bb0c0">
-		<_field_tag_reference_64 name="biped spawn effect" />
-		<_field_tag_reference_64 name="vehicle spawn effect" />
-		<_field_tag_reference_64 name="weapon spawn effect" />
-		<_field_tag_reference_64 name="first person player spawn effect" />
+	<_field_block_64 name="multiplayer" max="1" srcguid="43548fdc-4ed6-178a-d12b-ea88be2bb0c0" srcName="effect_global_spawn_effects_block">
+		<_field_tag_reference_64 name="biped spawn effect" validtags="effe" />
+		<_field_tag_reference_64 name="vehicle spawn effect" validtags="effe" />
+		<_field_tag_reference_64 name="weapon spawn effect" validtags="effe" />
+		<_field_tag_reference_64 name="first person player spawn effect" validtags="effe" />
 	</_field_block_64>
-	<_field_block_64 name="campaign" max="1" guid="43548fdc-4ed6-178a-d12b-ea88be2bb0c0">
-		<_field_tag_reference_64 name="biped spawn effect" />
-		<_field_tag_reference_64 name="vehicle spawn effect" />
-		<_field_tag_reference_64 name="weapon spawn effect" />
-		<_field_tag_reference_64 name="first person player spawn effect" />
+	<_field_block_64 name="campaign" max="1" srcguid="43548fdc-4ed6-178a-d12b-ea88be2bb0c0" srcName="effect_global_spawn_effects_block">
+		<_field_tag_reference_64 name="biped spawn effect" validtags="effe" />
+		<_field_tag_reference_64 name="vehicle spawn effect" validtags="effe" />
+		<_field_tag_reference_64 name="weapon spawn effect" validtags="effe" />
+		<_field_tag_reference_64 name="first person player spawn effect" validtags="effe" />
 	</_field_block_64>
 	<_field_pad name="pad_tp" length="4" />
 </plugin>

@@ -1,17 +1,17 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_real_point_2d name="resource subregion AABB min" />
 	<_field_real_vector_2d name="resource subregion block size" />
-	<_field_block_64 name="streaming resource ids" max="4096" guid="b75f1e6a-4ea3-c740-40d4-87984044a719">
-		<_field_tag_reference_64 name="streaming_reference_tag" />
+	<_field_block_64 name="streaming resource ids" max="4096" srcguid="b75f1e6a-4ea3-c740-40d4-87984044a719" srcName="StreamingZoneSetResourceIdBlock">
+		<_field_tag_reference_64 name="streaming_reference_tag" validtags="bitm" />
 	</_field_block_64>
-	<_field_block_64 name="streaming resource subregions" max="65536" guid="34f0cb14-494c-c289-a89f-8ba88b91d1e8">
+	<_field_block_64 name="streaming resource subregions" max="65536" srcguid="34f0cb14-494c-c289-a89f-8ba88b91d1e8" srcName="StreamingZoneSetResourceSubregionDataBlock">
 		<_field_long_integer name="block offset X" />
 		<_field_long_integer name="block offset Y" />
 		<_field_real name="min Z" />
 		<_field_real name="max Z" />
-		<_field_block_64 name="resource levels" max="4096" guid="7d16a871-4215-2eee-a39c-3990c45bc8de">
+		<_field_block_64 name="resource levels" max="4096" srcguid="7d16a871-4215-2eee-a39c-3990c45bc8de" srcName="StreamingZoneSetResourceLevelsBlockPacked">
 			<_field_short_integer name="requested width" />
 		</_field_block_64>
 	</_field_block_64>

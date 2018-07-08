@@ -1,15 +1,16 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_tag_reference_64 name="spartan render model#used for string list generation" />
-	<_field_tag_reference_64 name="elite render model!" />
-	<_field_block_64 name="helmet selections" max="96" guid="2c058397-4b24-039b-5de7-a393d4c6964e">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_tag_reference_64 name="spartan render model#used for string list generation" validtags="mode" />
+	<_field_tag_reference_64 name="elite render model!" validtags="mode" />
+	<_field_block_64 name="helmet selections" max="96" srcguid="2c058397-4b24-039b-5de7-a393d4c6964e" srcName="customized_model_selection_block">
 		<_field_string_id name="selection name^" />
-		<_field_block_64 name="customized bits" max="32" guid="3aaa47ec-4ce5-b8f2-9279-428be223df05">
+		<_field_block_64 name="customized bits" max="32" srcguid="3aaa47ec-4ce5-b8f2-9279-428be223df05" srcName="customized_model_player_bits_block">
 			<_field_string_id name="region name^" />
 			<_field_string_id name="permutation name" />
 			<_field_byte_flags name="flags">
@@ -19,9 +20,9 @@
 			<_field_pad name="pad1" length="3" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="chest selections" max="96" guid="2c058397-4b24-039b-5de7-a393d4c6964e">
+	<_field_block_64 name="chest selections" max="96" srcguid="2c058397-4b24-039b-5de7-a393d4c6964e" srcName="customized_model_selection_block">
 		<_field_string_id name="selection name^" />
-		<_field_block_64 name="customized bits" max="32" guid="3aaa47ec-4ce5-b8f2-9279-428be223df05">
+		<_field_block_64 name="customized bits" max="32" srcguid="3aaa47ec-4ce5-b8f2-9279-428be223df05" srcName="customized_model_player_bits_block">
 			<_field_string_id name="region name^" />
 			<_field_string_id name="permutation name" />
 			<_field_byte_flags name="flags">
@@ -31,9 +32,9 @@
 			<_field_pad name="pad1" length="3" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="elite selections!" max="96" guid="2c058397-4b24-039b-5de7-a393d4c6964e">
+	<_field_block_64 name="elite selections!" max="96" srcguid="2c058397-4b24-039b-5de7-a393d4c6964e" srcName="customized_model_selection_block">
 		<_field_string_id name="selection name^" />
-		<_field_block_64 name="customized bits" max="32" guid="3aaa47ec-4ce5-b8f2-9279-428be223df05">
+		<_field_block_64 name="customized bits" max="32" srcguid="3aaa47ec-4ce5-b8f2-9279-428be223df05" srcName="customized_model_player_bits_block">
 			<_field_string_id name="region name^" />
 			<_field_string_id name="permutation name" />
 			<_field_byte_flags name="flags">
@@ -43,9 +44,9 @@
 			<_field_pad name="pad1" length="3" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="left shoulder" max="96" guid="2c058397-4b24-039b-5de7-a393d4c6964e">
+	<_field_block_64 name="left shoulder" max="96" srcguid="2c058397-4b24-039b-5de7-a393d4c6964e" srcName="customized_model_selection_block">
 		<_field_string_id name="selection name^" />
-		<_field_block_64 name="customized bits" max="32" guid="3aaa47ec-4ce5-b8f2-9279-428be223df05">
+		<_field_block_64 name="customized bits" max="32" srcguid="3aaa47ec-4ce5-b8f2-9279-428be223df05" srcName="customized_model_player_bits_block">
 			<_field_string_id name="region name^" />
 			<_field_string_id name="permutation name" />
 			<_field_byte_flags name="flags">
@@ -55,9 +56,9 @@
 			<_field_pad name="pad1" length="3" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="right shoulder" max="96" guid="2c058397-4b24-039b-5de7-a393d4c6964e">
+	<_field_block_64 name="right shoulder" max="96" srcguid="2c058397-4b24-039b-5de7-a393d4c6964e" srcName="customized_model_selection_block">
 		<_field_string_id name="selection name^" />
-		<_field_block_64 name="customized bits" max="32" guid="3aaa47ec-4ce5-b8f2-9279-428be223df05">
+		<_field_block_64 name="customized bits" max="32" srcguid="3aaa47ec-4ce5-b8f2-9279-428be223df05" srcName="customized_model_player_bits_block">
 			<_field_string_id name="region name^" />
 			<_field_string_id name="permutation name" />
 			<_field_byte_flags name="flags">
@@ -67,9 +68,9 @@
 			<_field_pad name="pad1" length="3" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="arms" max="96" guid="2c058397-4b24-039b-5de7-a393d4c6964e">
+	<_field_block_64 name="arms" max="96" srcguid="2c058397-4b24-039b-5de7-a393d4c6964e" srcName="customized_model_selection_block">
 		<_field_string_id name="selection name^" />
-		<_field_block_64 name="customized bits" max="32" guid="3aaa47ec-4ce5-b8f2-9279-428be223df05">
+		<_field_block_64 name="customized bits" max="32" srcguid="3aaa47ec-4ce5-b8f2-9279-428be223df05" srcName="customized_model_player_bits_block">
 			<_field_string_id name="region name^" />
 			<_field_string_id name="permutation name" />
 			<_field_byte_flags name="flags">
@@ -79,9 +80,9 @@
 			<_field_pad name="pad1" length="3" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="legs" max="96" guid="2c058397-4b24-039b-5de7-a393d4c6964e">
+	<_field_block_64 name="legs" max="96" srcguid="2c058397-4b24-039b-5de7-a393d4c6964e" srcName="customized_model_selection_block">
 		<_field_string_id name="selection name^" />
-		<_field_block_64 name="customized bits" max="32" guid="3aaa47ec-4ce5-b8f2-9279-428be223df05">
+		<_field_block_64 name="customized bits" max="32" srcguid="3aaa47ec-4ce5-b8f2-9279-428be223df05" srcName="customized_model_player_bits_block">
 			<_field_string_id name="region name^" />
 			<_field_string_id name="permutation name" />
 			<_field_byte_flags name="flags">
@@ -91,9 +92,9 @@
 			<_field_pad name="pad1" length="3" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="unused 5!" max="96" guid="2c058397-4b24-039b-5de7-a393d4c6964e">
+	<_field_block_64 name="unused 5!" max="96" srcguid="2c058397-4b24-039b-5de7-a393d4c6964e" srcName="customized_model_selection_block">
 		<_field_string_id name="selection name^" />
-		<_field_block_64 name="customized bits" max="32" guid="3aaa47ec-4ce5-b8f2-9279-428be223df05">
+		<_field_block_64 name="customized bits" max="32" srcguid="3aaa47ec-4ce5-b8f2-9279-428be223df05" srcName="customized_model_player_bits_block">
 			<_field_string_id name="region name^" />
 			<_field_string_id name="permutation name" />
 			<_field_byte_flags name="flags">
@@ -103,9 +104,9 @@
 			<_field_pad name="pad1" length="3" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="spartan armor effect selections" max="96" guid="2c058397-4b24-039b-5de7-a393d4c6964e">
+	<_field_block_64 name="spartan armor effect selections" max="96" srcguid="2c058397-4b24-039b-5de7-a393d4c6964e" srcName="customized_model_selection_block">
 		<_field_string_id name="selection name^" />
-		<_field_block_64 name="customized bits" max="32" guid="3aaa47ec-4ce5-b8f2-9279-428be223df05">
+		<_field_block_64 name="customized bits" max="32" srcguid="3aaa47ec-4ce5-b8f2-9279-428be223df05" srcName="customized_model_player_bits_block">
 			<_field_string_id name="region name^" />
 			<_field_string_id name="permutation name" />
 			<_field_byte_flags name="flags">
@@ -115,9 +116,9 @@
 			<_field_pad name="pad1" length="3" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="elite armor effect selections!" max="96" guid="2c058397-4b24-039b-5de7-a393d4c6964e">
+	<_field_block_64 name="elite armor effect selections!" max="96" srcguid="2c058397-4b24-039b-5de7-a393d4c6964e" srcName="customized_model_selection_block">
 		<_field_string_id name="selection name^" />
-		<_field_block_64 name="customized bits" max="32" guid="3aaa47ec-4ce5-b8f2-9279-428be223df05">
+		<_field_block_64 name="customized bits" max="32" srcguid="3aaa47ec-4ce5-b8f2-9279-428be223df05" srcName="customized_model_player_bits_block">
 			<_field_string_id name="region name^" />
 			<_field_string_id name="permutation name" />
 			<_field_byte_flags name="flags">
@@ -127,7 +128,7 @@
 			<_field_pad name="pad1" length="3" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="male spartan selections" max="32" guid="3aaa47ec-4ce5-b8f2-9279-428be223df05">
+	<_field_block_64 name="male spartan selections" max="32" srcguid="3aaa47ec-4ce5-b8f2-9279-428be223df05" srcName="customized_model_player_bits_block">
 		<_field_string_id name="region name^" />
 		<_field_string_id name="permutation name" />
 		<_field_byte_flags name="flags">
@@ -136,7 +137,7 @@
 		</_field_byte_flags>
 		<_field_pad name="pad1" length="3" />
 	</_field_block_64>
-	<_field_block_64 name="female spartan selections" max="32" guid="3aaa47ec-4ce5-b8f2-9279-428be223df05">
+	<_field_block_64 name="female spartan selections" max="32" srcguid="3aaa47ec-4ce5-b8f2-9279-428be223df05" srcName="customized_model_player_bits_block">
 		<_field_string_id name="region name^" />
 		<_field_string_id name="permutation name" />
 		<_field_byte_flags name="flags">
@@ -145,7 +146,7 @@
 		</_field_byte_flags>
 		<_field_pad name="pad1" length="3" />
 	</_field_block_64>
-	<_field_block_64 name="spartan model defaults" max="32" guid="3aaa47ec-4ce5-b8f2-9279-428be223df05">
+	<_field_block_64 name="spartan model defaults" max="32" srcguid="3aaa47ec-4ce5-b8f2-9279-428be223df05" srcName="customized_model_player_bits_block">
 		<_field_string_id name="region name^" />
 		<_field_string_id name="permutation name" />
 		<_field_byte_flags name="flags">
@@ -154,7 +155,7 @@
 		</_field_byte_flags>
 		<_field_pad name="pad1" length="3" />
 	</_field_block_64>
-	<_field_block_64 name="elite model defaults!" max="32" guid="3aaa47ec-4ce5-b8f2-9279-428be223df05">
+	<_field_block_64 name="elite model defaults!" max="32" srcguid="3aaa47ec-4ce5-b8f2-9279-428be223df05" srcName="customized_model_player_bits_block">
 		<_field_string_id name="region name^" />
 		<_field_string_id name="permutation name" />
 		<_field_byte_flags name="flags">

@@ -1,24 +1,40 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_angle_bounds name="gunkick yaw mapping bounds:degrees#applies the curve during the range.  Values outside the range get moved to the closest side of the curve" />
-	<_field_struct name="gunkick yaw to roll" />
-	<_field_data_64 name="data" />
+	<_field_struct name="gunkick yaw to roll" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+		<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+	</_field_struct>
 	<_field_angle_bounds name="viewkick yaw mapping bounds{gunkick pitch mapping bounds}:degrees#applies the curve during the range.  Values outside the range get moved to the closest side of the curve" />
-	<_field_struct name="viewkick yaw to roll" />
-	<_field_data_64 name="data" />
+	<_field_struct name="viewkick yaw to roll" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+		<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+	</_field_struct>
 	<_field_real name="max player additive velocity for flag throw#This is used to scale the players velocity between 0 and 1 to apply to the throw velocity curve." />
-	<_field_struct name="flag throw forward additive velocity " />
-	<_field_data_64 name="data" />
-	<_field_struct name="flag throw backward additive velocity " />
-	<_field_data_64 name="data" />
-	<_field_struct name="flag throw pitch#The z axis additive value depending on the players aim vector z value" />
-	<_field_data_64 name="data" />
-	<_field_block_64 name="ads reticle movement thresholds" max="8" guid="83614930-4df6-2be4-3789-aaae9bd34cd3">
+	<_field_struct name="flag throw forward additive velocity " srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+		<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+	</_field_struct>
+	<_field_struct name="flag throw backward additive velocity " srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+		<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+	</_field_struct>
+	<_field_struct name="flag throw pitch#The z axis additive value depending on the players aim vector z value" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+		<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+	</_field_struct>
+	<_field_block_64 name="ads reticle movement thresholds" max="8" srcguid="83614930-4df6-2be4-3789-aaae9bd34cd3" srcName="WeaponAdsReticleMovementThresholds">
 		<_field_string name="ads reticle movement threshold name^" />
 		<_field_angle name="ads reticle movement threshold angle:degrees" />
 		<_field_real_rgb_color name="ads reticle movement threshold color" />

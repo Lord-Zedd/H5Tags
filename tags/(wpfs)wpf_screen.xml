@@ -1,30 +1,31 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_custom name="import - directory" />
 	<_field_custom name="import - single file" />
 	<_field_string_id name="xamlName" />
-	<_field_block_64 name="xamlReferences" max="512" guid="51ec2a11-4262-d003-6e6d-47a35f7adeaf">
-		<_field_tag_reference_64 name="xaml reference" />
+	<_field_block_64 name="xamlReferences" max="512" srcguid="51ec2a11-4262-d003-6e6d-47a35f7adeaf" srcName="WPFScreenTemplateInstantiationBlock">
+		<_field_tag_reference_64 name="xaml reference" validtags="wpfs" />
 	</_field_block_64>
-	<_field_block_64 name="imageListReferences" max="512" guid="c9881e5b-4268-4201-3d15-eb9e774ccd3d">
-		<_field_tag_reference_64 name="asset reference" />
+	<_field_block_64 name="imageListReferences" max="512" srcguid="c9881e5b-4268-4201-3d15-eb9e774ccd3d" srcName="WPFBitmapGroupReferencesBlock">
+		<_field_tag_reference_64 name="asset reference" validtags="bitm" />
 	</_field_block_64>
-	<_field_block_64 name="string references" max="64" guid="f35ba8a6-4cec-4ca5-2270-709422e51721">
-		<_field_tag_reference_64 name="string list" />
+	<_field_block_64 name="string references" max="64" srcguid="f35ba8a6-4cec-4ca5-2270-709422e51721" srcName="string_file_references">
+		<_field_tag_reference_64 name="string list" validtags="unic" />
 	</_field_block_64>
-	<_field_block_64 name="sound references" max="512" guid="e2ac6567-4cc7-5648-5741-21b0999d1785">
+	<_field_block_64 name="sound references" max="512" srcguid="e2ac6567-4cc7-5648-5741-21b0999d1785" srcName="WPFSoundGroupReferencesDefinition">
 		<_field_tag_reference_64 name="asset reference" validtags="snd!, lsnd, musc" />
 	</_field_block_64>
-	<_field_block_64 name="obj references" max="512" guid="2c4ecd0e-4ef7-4f4c-83c2-688cf26ae077">
-		<_field_tag_reference_64 name="asset reference" />
+	<_field_block_64 name="obj references" max="512" srcguid="2c4ecd0e-4ef7-4f4c-83c2-688cf26ae077" srcName="WPFObjReferencesDefinition">
+		<_field_tag_reference_64 name="asset reference" validtags="wpat" />
 	</_field_block_64>
 	<_field_data_64 name="xamlfiledata*" />
-	<_field_tag_reference_64 name="LuaScriptReference" />
+	<_field_tag_reference_64 name="LuaScriptReference" validtags="luas" />
 	<_field_long_flags name="flags">
 		<item Name="converted to 1080p" />
 	</_field_long_flags>

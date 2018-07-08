@@ -1,10 +1,11 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_string_id name="name" />
 	<_field_byte_flags name="flags">
 		<item Name="starts active" />
@@ -16,13 +17,14 @@
 		<item Name="grammar disabled in ui shell" />
 	</_field_byte_flags>
 	<_field_pad name="pad_tp1" length="3" />
-	<_field_block_64 name="spotted objects load#Only load if one of these objects are found (when flag above checked)" max="8" guid="ff0502a1-404e-2c56-4050-ada0dbbadbd0">
-		<_field_tag_reference_64 name="Spotted Object" />
+	<_field_block_64 name="spotted objects load#Only load if one of these objects are found (when flag above checked)" max="8" srcguid="ff0502a1-404e-2c56-4050-ada0dbbadbd0" srcName="SpottedObjectBlock">
+		<_field_tag_reference_64 name="Spotted Object" validtags="obje" />
 	</_field_block_64>
 	<_field_explanation name="load grammar condition: this condition can force of the grammar if it is defined" />
-	<_field_struct name="script condition" />
-	<_field_long_integer name="script name!~" />
-	<_field_long_string name="script source" />
+	<_field_struct name="script condition" srcguid="2284fe8e-4559-471c-84ce-ad91db94b507">
+		<_field_long_integer name="script name!~" />
+		<_field_long_string name="script source" />
+	</_field_struct>
 	<_field_byte_flags name="run time flags!">
 		<item Name="runtime load" />
 		<item Name="callBack script contion result" />
@@ -30,19 +32,21 @@
 	</_field_byte_flags>
 	<_field_pad name="pad_tp3" length="1" />
 	<_field_short_integer name="absolute dynamic grammar index!" />
-	<_field_block_64 name="lync'ed grammars#when this grammar is loaded load these grammars too" max="256" guid="fc828af6-4e08-806e-09d0-6184b486f845">
-		<_field_tag_reference_64 name="Speech Grammar" />
+	<_field_block_64 name="lync'ed grammars#when this grammar is loaded load these grammars too" max="256" srcguid="fc828af6-4e08-806e-09d0-6184b486f845" srcName="SpeechGrammarBlock">
+		<_field_tag_reference_64 name="Speech Grammar" validtags="sggg" />
 	</_field_block_64>
-	<_field_block_64 name="Speech Phrases" max="256" guid="976e10c5-4c17-9b83-8d18-fb9e87bd52e8">
+	<_field_block_64 name="Speech Phrases" max="256" srcguid="976e10c5-4c17-9b83-8d18-fb9e87bd52e8" srcName="SpeechGrammarPhraseBlock">
 		<_field_string_id name="VUI ID# this is a string ID it is used to reference the localized display name in said list.  It is also used to reference the phrases that link to this VUI element in the phrases list" />
 		<_field_explanation name="Script Action" />
-		<_field_struct name="Script Action" />
-		<_field_long_integer name="script name!~" />
-		<_field_long_string name="script source" />
+		<_field_struct name="Script Action" srcguid="2284fe8e-4559-471c-84ce-ad91db94b507">
+			<_field_long_integer name="script name!~" />
+			<_field_long_string name="script source" />
+		</_field_struct>
 		<_field_explanation name="Script Condition" />
-		<_field_struct name="Script Condition" />
-		<_field_long_integer name="script name!~" />
-		<_field_long_string name="script source" />
+		<_field_struct name="Script Condition" srcguid="2284fe8e-4559-471c-84ce-ad91db94b507">
+			<_field_long_integer name="script name!~" />
+			<_field_long_string name="script source" />
+		</_field_struct>
 		<_field_data_64 name="Command{ }" />
 		<_field_real name="weight" />
 		<_field_byte_flags name="flags">
@@ -52,11 +56,12 @@
 		<_field_short_integer name="user level" />
 		<_field_pad name="pad_tp2" length="2" />
 	</_field_block_64>
-	<_field_block_64 name="Speech Nodes" max="256" guid="8740dc25-46ca-48db-6f7f-4b8e82fc005c">
+	<_field_block_64 name="Speech Nodes" max="256" srcguid="8740dc25-46ca-48db-6f7f-4b8e82fc005c" srcName="SpeechGrammarNodeBlock">
 		<_field_data_64 name="Command{ }" />
 		<_field_explanation name="Script Condition~" />
-		<_field_struct name="Script Condition" />
-		<_field_long_integer name="script name!~" />
-		<_field_long_string name="script source" />
+		<_field_struct name="Script Condition" srcguid="2284fe8e-4559-471c-84ce-ad91db94b507">
+			<_field_long_integer name="script name!~" />
+			<_field_long_string name="script source" />
+		</_field_struct>
 	</_field_block_64>
 </plugin>

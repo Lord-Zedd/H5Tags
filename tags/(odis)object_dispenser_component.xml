@@ -1,45 +1,47 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_struct name="object dispenser component" />
-	<_field_block_64 name="dispense slots" max="2" guid="2dd3032b-4e2b-f022-dd81-7d93ac1686a1">
-		<_field_string_id name="slot name" />
-		<_field_string_id name="slot marker" />
-	</_field_block_64>
-	<_field_tag_reference_64 name="incoming creation effect" />
-	<_field_tag_reference_64 name="ready effect" />
-	<_field_string_id name="action string incoming" />
-	<_field_char_enum name="respawn type">
-		<item Name="frequency#respawns ever x seconds" />
-		<item Name="on object removed" />
-		<item Name="script controlled#game script will reset the respawn time" />
-	</_field_char_enum>
-	<_field_byte_flags name="flags">
-		<item Name="disable collision for readied objects" />
-	</_field_byte_flags>
-	<_field_pad name="pad0" length="2" />
-	<_field_real name="respawn time#set to &gt; 0 to enable automatic spawning and respawning" />
-	<_field_real name="incoming time mark#shows that the object is incoming when the respawn time remaining is this value" />
-	<_field_real name="constructing time mark#shows that the object is constructing when the respawn time remaining is this value" />
-	<_field_real name="damage acceleration scale horizontal" />
-	<_field_real name="damage acceleration scale vertical" />
-	<_field_real name="damage acceleration min horizontal:wu/s#applied after all scales" />
-	<_field_real name="damage acceleration min vertical:wu/s#applied after all scales" />
-	<_field_string_id name="incoming navpoint UI screen" />
-	<_field_real name="navpoint visibility distance#distance that the navpoint is visibile from (&lt;= 0 is infinite)" />
-	<_field_custom name="Terminal" />
-	<_field_real name="interaction radius:world units#radius that player is able to interact with this object" />
-	<_field_long_flags name="Requisition Card Dispensable Types">
-		<item Name="Boost" />
-		<item Name="Prototype" />
-		<item Name="Power-up" />
-		<item Name="Vehicle" />
-		<item Name="Weapon" />
-	</_field_long_flags>
-	<_field_string_id name="terminal navpoint UI screen" />
-	<_field_pad name="pad1" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_struct name="object dispenser component" srcguid="f5015a2a-4168-aee7-3006-20bebbf04ec9">
+		<_field_block_64 name="dispense slots" max="2" srcguid="2dd3032b-4e2b-f022-dd81-7d93ac1686a1" srcName="dispense_slot">
+			<_field_string_id name="slot name" />
+			<_field_string_id name="slot marker" />
+		</_field_block_64>
+		<_field_tag_reference_64 name="incoming creation effect" validtags="effe" />
+		<_field_tag_reference_64 name="ready effect" validtags="effe" />
+		<_field_string_id name="action string incoming" />
+		<_field_char_enum name="respawn type">
+			<item Name="frequency#respawns ever x seconds" />
+			<item Name="on object removed" />
+			<item Name="script controlled#game script will reset the respawn time" />
+		</_field_char_enum>
+		<_field_byte_flags name="flags">
+			<item Name="disable collision for readied objects" />
+		</_field_byte_flags>
+		<_field_pad name="pad0" length="2" />
+		<_field_real name="respawn time#set to &gt; 0 to enable automatic spawning and respawning" />
+		<_field_real name="incoming time mark#shows that the object is incoming when the respawn time remaining is this value" />
+		<_field_real name="constructing time mark#shows that the object is constructing when the respawn time remaining is this value" />
+		<_field_real name="damage acceleration scale horizontal" />
+		<_field_real name="damage acceleration scale vertical" />
+		<_field_real name="damage acceleration min horizontal:wu/s#applied after all scales" />
+		<_field_real name="damage acceleration min vertical:wu/s#applied after all scales" />
+		<_field_string_id name="incoming navpoint UI screen" />
+		<_field_real name="navpoint visibility distance#distance that the navpoint is visibile from (&lt;= 0 is infinite)" />
+		<_field_custom name="Terminal" />
+		<_field_real name="interaction radius:world units#radius that player is able to interact with this object" />
+		<_field_long_flags name="Requisition Card Dispensable Types">
+			<item Name="Boost" />
+			<item Name="Prototype" />
+			<item Name="Power-up" />
+			<item Name="Vehicle" />
+			<item Name="Weapon" />
+		</_field_long_flags>
+		<_field_string_id name="terminal navpoint UI screen" />
+		<_field_pad name="pad1" length="4" />
+	</_field_struct>
 </plugin>

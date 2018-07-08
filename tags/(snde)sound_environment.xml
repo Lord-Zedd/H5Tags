@@ -1,26 +1,29 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_explanation name="Reverb Settings" />
-	<_field_struct name="reverb settings" />
-	<_field_explanation name="WWise Environment">Use these values for WWise reverb.</_field_explanation>
-	<_field_string_id name="Environment name#Name of the environment from WWise. This will be a DSP effect with Environmental Effect checked." />
-	<_field_string_id name="Environment name player#Name of the environment from WWise. This will be a DSP effect with Environmental Effect checked." />
-	<_field_custom name="Dry mix value#0 to 1 with 0 being none, and 1 being full." />
-	<_field_real name="Dry mix value#0 to 1 with 0 being none, and 1 being full." />
-	<_field_custom name="Wet mix value#0 to 1 with 0 being none, and 1 being full." />
-	<_field_real name="Wet mix value#0 to 1 with 0 being none, and 1 being full." />
-	<_field_custom name="Player wet mix value#0 to 1 with 0 being none, and 1 being full." />
-	<_field_real name="Player wet mix value#0 to 1 with 0 being none, and 1 being full." />
-	<_field_explanation name="Forced Lowpass">This will override obstruction and occlusion if you set the cutoff frequency to a non-zero value. Use the individual classes' &quot;forced lowpass wet mix&quot; value to alter the mix.</_field_explanation>
-	<_field_struct name="lowpass settings" />
-	<_field_custom name="cutoff frequency:Hz" />
-	<_field_real name="cutoff frequency:Hz" />
-	<_field_custom name="output gain:dB" />
-	<_field_real name="output gain:dB" />
+	<_field_struct name="reverb settings" srcguid="e4b31e1d-4c51-c5a7-6cd8-02ae068b3f2b">
+		<_field_explanation name="WWise Environment">Use these values for WWise reverb.</_field_explanation>
+		<_field_string_id name="Environment name#Name of the environment from WWise. This will be a DSP effect with Environmental Effect checked." />
+		<_field_string_id name="Environment name player#Name of the environment from WWise. This will be a DSP effect with Environmental Effect checked." />
+		<_field_custom name="Dry mix value#0 to 1 with 0 being none, and 1 being full." />
+		<_field_real name="Dry mix value#0 to 1 with 0 being none, and 1 being full." />
+		<_field_custom name="Wet mix value#0 to 1 with 0 being none, and 1 being full." />
+		<_field_real name="Wet mix value#0 to 1 with 0 being none, and 1 being full." />
+		<_field_custom name="Player wet mix value#0 to 1 with 0 being none, and 1 being full." />
+		<_field_real name="Player wet mix value#0 to 1 with 0 being none, and 1 being full." />
+	</_field_struct>
+	<_field_explanation name="Forced Lowpass">This will override obstruction and occlusion if you set the cutoff frequency to a non-zero value. Use the individual classes' "forced lowpass wet mix" value to alter the mix.</_field_explanation>
+	<_field_struct name="lowpass settings" srcguid="f38f05d9-4f33-f9bb-fed7-ea95258f5861">
+		<_field_custom name="cutoff frequency:Hz" />
+		<_field_real name="cutoff frequency:Hz" />
+		<_field_custom name="output gain:dB" />
+		<_field_real name="output gain:dB" />
+	</_field_struct>
 	<_field_pad name="pad_tp" length="4" />
 </plugin>

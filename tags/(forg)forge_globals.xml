@@ -1,21 +1,22 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="forge colors" max="128" guid="5f309018-11e1-93f6-b1f9-d197189be5ba">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="forge colors" max="128" srcguid="5f309018-11e1-93f6-b1f9-d197189be5ba" srcName="forge_color_block">
 		<_field_string_id name="name^" />
 		<_field_real_rgb_color name="color" />
 	</_field_block_64>
-	<_field_block_64 name="Forge Color References" max="32" guid="03bc8448-474c-2669-c6a4-26a185405f40">
-		<_field_char_block_index name="Default Value" srcguid="5f309018-11e1-93f6-b1f9-d197189be5ba" />
+	<_field_block_64 name="Forge Color References" max="32" srcguid="03bc8448-474c-2669-c6a4-26a185405f40" srcName="ForgeColorReferenceBlock">
+		<_field_char_block_index name="Default Value" targetGuid="5f309018-11e1-93f6-b1f9-d197189be5ba" targetName="forge_color_block" />
 		<_field_pad name="pad0" length="3" />
 		<_field_string_id name="name" />
 	</_field_block_64>
 	<_field_explanation name="Magnets">Forge magnet parameters</_field_explanation>
-	<_field_tag_reference_64 name="magnet effect scenery" />
+	<_field_tag_reference_64 name="magnet effect scenery" validtags="efsc" />
 	<_field_string_id name="parent magnet marker name" />
 	<_field_string_id name="child magnet marker name" />
 	<_field_real_fraction name="deprecated, delete me when systems team says it's okay (1)" />
@@ -38,7 +39,7 @@
 	<_field_real name="grab-cam outward spring constant#these control camera springiness for restoring position when we get blocked from our object" />
 	<_field_real name="camera-object distance threshold#How far the camera can get from expected distance to object before we force camera position" />
 	<_field_real name="translating-objects speed multiplier#When you're grabbing and translating objects, monitor speed is x this" />
-	<_field_block_64 name="monitor speed multipliers" max="8" guid="f5f194ba-4242-9889-b985-dcba5d8957e4">
+	<_field_block_64 name="monitor speed multipliers" max="8" srcguid="f5f194ba-4242-9889-b985-dcba5d8957e4" srcName="monitor_move_speed_block">
 		<_field_string_id name="name^" />
 		<_field_real name="translation speed" />
 		<_field_real name="rotation speed" />
@@ -46,61 +47,63 @@
 	<_field_string_id name="monitor boost name^" />
 	<_field_real name="monitor boost translation speed" />
 	<_field_real name="monitor boost rotation speed" />
-	<_field_block_64 name="jumbotron UI element#This is the UI NodeGraphStack that'll be drawn in-game for Jumbotrons" max="4" guid="f35e9924-458d-ed91-4bb4-93874dcae7a9">
-		<_field_tag_reference_64 name="jumbotron UI element#This is the UI NodeGraphStack that'll be drawn in-game for Jumbotrons" />
+	<_field_block_64 name="jumbotron UI element#This is the UI NodeGraphStack that'll be drawn in-game for Jumbotrons" max="4" srcguid="f35e9924-458d-ed91-4bb4-93874dcae7a9" srcName="JumbotronReferenceBlock">
+		<_field_tag_reference_64 name="jumbotron UI element#This is the UI NodeGraphStack that'll be drawn in-game for Jumbotrons" validtags="ngst" />
 		<_field_string_id name="name^#this is the name that'll display for the jumbotron in-menu" />
 	</_field_block_64>
-	<_field_block_64 name="forge gobo definitions" max="32" guid="f74cbe7e-c7c9-eea8-81bb-78ecd29f4f16">
-		<_field_tag_reference_64 name="gobo setting" />
+	<_field_block_64 name="forge gobo definitions" max="32" srcguid="f74cbe7e-c7c9-eea8-81bb-78ecd29f4f16" srcName="ForgeGoboDefinitionsBlock">
+		<_field_tag_reference_64 name="gobo setting" validtags="GobS" />
 		<_field_string_id name="name^#this is the name that'll display for the gobo in-menu" />
 	</_field_block_64>
-	<_field_block_64 name="forge light intensity function definitions" max="32" guid="3c749b1d-31f2-4572-d2b8-6412383720cc">
-		<_field_struct name="Intensity Function" />
-		<_field_string_id name="Input Variable!" />
-		<_field_string_id name="Range Variable!" />
-		<_field_short_enum name="Output Modifier!">
-			<item Name=" " />
-			<item Name="Plus" />
-			<item Name="Times" />
-		</_field_short_enum>
-		<_field_pad name="BVCG" length="2" />
-		<_field_string_id name="Output Modifier Input!" />
-		<_field_struct name="Mapping" />
-		<_field_data_64 name="data" />
+	<_field_block_64 name="forge light intensity function definitions" max="32" srcguid="3c749b1d-31f2-4572-d2b8-6412383720cc" srcName="ForgeLightIntensityFunctionDefinitionsBlock">
+		<_field_struct name="Intensity Function" srcguid="26aa4a83-434a-42b4-cba3-ac93cd20a908">
+			<_field_string_id name="Input Variable!" />
+			<_field_string_id name="Range Variable!" />
+			<_field_short_enum name="Output Modifier!">
+				<item Name=" " />
+				<item Name="Plus" />
+				<item Name="Times" />
+			</_field_short_enum>
+			<_field_pad name="BVCG" length="2" />
+			<_field_string_id name="Output Modifier Input!" />
+			<_field_struct name="Mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
 		<_field_string_id name="name^#this is the name that'll display for the function in-menu" />
 	</_field_block_64>
-	<_field_block_64 name="forge area screen effect definitions" max="32" guid="a5e33ac9-a4bd-10cf-78dc-f30188da3220">
-		<_field_tag_reference_64 name="area screen effect" />
+	<_field_block_64 name="forge area screen effect definitions" max="32" srcguid="a5e33ac9-a4bd-10cf-78dc-f30188da3220" srcName="ForgeAreaScreenEffectsBlock">
+		<_field_tag_reference_64 name="area screen effect" validtags="sefc" />
 		<_field_string_id name="name^#this is the name that'll display for the screen effect in-menu" />
 	</_field_block_64>
-	<_field_block_64 name="forge patchy fog bitmaps" max="32" guid="de4249b8-11b1-26fd-fcbd-b2d73d8a9806">
-		<_field_tag_reference_64 name="bitmap" />
+	<_field_block_64 name="forge patchy fog bitmaps" max="32" srcguid="de4249b8-11b1-26fd-fcbd-b2d73d8a9806" srcName="ForgeBitmapsBlock">
+		<_field_tag_reference_64 name="bitmap" validtags="bitm" />
 		<_field_string_id name="name^#this is the name that'll display for the bitmap in-menu" />
 	</_field_block_64>
-	<_field_block_64 name="forge cloud bitmaps" max="32" guid="de4249b8-11b1-26fd-fcbd-b2d73d8a9806">
-		<_field_tag_reference_64 name="bitmap" />
+	<_field_block_64 name="forge cloud bitmaps" max="32" srcguid="de4249b8-11b1-26fd-fcbd-b2d73d8a9806" srcName="ForgeBitmapsBlock">
+		<_field_tag_reference_64 name="bitmap" validtags="bitm" />
 		<_field_string_id name="name^#this is the name that'll display for the bitmap in-menu" />
 	</_field_block_64>
-	<_field_block_64 name="forge lens flares" max="32" guid="b7fe2c67-6850-5d8d-dfd9-8ab7be6ccfd7">
-		<_field_tag_reference_64 name="lens flare" />
+	<_field_block_64 name="forge lens flares" max="32" srcguid="b7fe2c67-6850-5d8d-dfd9-8ab7be6ccfd7" srcName="ForgeLensFlaresBlock">
+		<_field_tag_reference_64 name="lens flare" validtags="lens" />
 		<_field_string_id name="name^#this is the name that'll display for the lens flare in-menu" />
 	</_field_block_64>
-	<_field_block_64 name="forge light cones" max="32" guid="e650e52c-1daa-4952-ed29-b12ca3840529">
-		<_field_tag_reference_64 name="light cone" />
+	<_field_block_64 name="forge light cones" max="32" srcguid="e650e52c-1daa-4952-ed29-b12ca3840529" srcName="ForgeLightConesBlock">
+		<_field_tag_reference_64 name="light cone" validtags="licn" />
 		<_field_string_id name="name^#this is the name that'll display for the light cone in-menu" />
 	</_field_block_64>
-	<_field_block_64 name="rotation snap values#These are the rotation snaps the user can set to" max="16" guid="8c032762-4cf2-0b16-e0e7-04b646915428">
+	<_field_block_64 name="rotation snap values#These are the rotation snaps the user can set to" max="16" srcguid="8c032762-4cf2-0b16-e0e7-04b646915428" srcName="RotationSnapBlock">
 		<_field_string_id name="name^" />
 		<_field_real name="rotation snap amount (degrees)" />
 	</_field_block_64>
-	<_field_block_64 name="translation snap values#These are the translation snaps the user can set to" max="16" guid="151d8c26-4310-a06f-f49c-83a595a455f8">
+	<_field_block_64 name="translation snap values#These are the translation snaps the user can set to" max="16" srcguid="151d8c26-4310-a06f-f49c-83a595a455f8" srcName="TranslationSnapBlock">
 		<_field_string_id name="name^" />
 		<_field_real name="translation snap amount (world units)" />
 	</_field_block_64>
-	<_field_tag_reference_64 name="forge required resources#This is a list of Forge object tags that'll be force-loaded in Forge game types" />
-	<_field_tag_reference_64 name="rotation handle shader#used on programatically-generated rotation handle rings" />
-	<_field_tag_reference_64 name="path preview shader#used on programatically-generated path previews (like for mancannon paths)" />
-	<_field_block_64 name="global label values#These are the global megalo labels that provide limited scripting functionality to objects" max="64" guid="e1eb3bc1-4d0e-b205-7d97-95b19fbccbad">
+	<_field_tag_reference_64 name="forge required resources#This is a list of Forge object tags that'll be force-loaded in Forge game types" validtags="sdzg" />
+	<_field_tag_reference_64 name="rotation handle shader#used on programatically-generated rotation handle rings" validtags="mat " />
+	<_field_tag_reference_64 name="path preview shader#used on programatically-generated path previews (like for mancannon paths)" validtags="mat " />
+	<_field_block_64 name="global label values#These are the global megalo labels that provide limited scripting functionality to objects" max="64" srcguid="e1eb3bc1-4d0e-b205-7d97-95b19fbccbad" srcName="ForgeLabelBlock">
 		<_field_string_id name="name^#this is the string id of the actual Megalo label" />
 		<_field_string_id name="label display name^#this is the string id of the friendlier display name for the label" />
 		<_field_string_id name="label display description^#this is the string id of the display description of what this label does" />
@@ -118,20 +121,20 @@
 		</_field_byte_flags>
 		<_field_pad name="pad0" length="2" />
 	</_field_block_64>
-	<_field_block_64 name="outline shaders#Shaders for different Forge outline types (&quot;grabbed + deleting&quot;, &quot;highlighted by networked player&quot;, etc.)" max="32" guid="9fe6fe49-4963-5ea4-da93-b38c637dbe85">
+	<_field_block_64 name="outline shaders#Shaders for different Forge outline types (&amp;quot;grabbed + deleting&amp;quot;, &amp;quot;highlighted by networked player&amp;quot;, etc.)" max="32" srcguid="9fe6fe49-4963-5ea4-da93-b38c637dbe85" srcName="ForgeOutlineShadersBlock">
 		<_field_string_id name="name" />
-		<_field_tag_reference_64 name="material^" />
+		<_field_tag_reference_64 name="material^" validtags="mat " />
 	</_field_block_64>
 	<_field_string_id name="Forge Intro Composition Name" />
-	<_field_block_64 name="Forge Intro Compositions#Since we generate composition at runtime we only need one CompositionDefinition in this block" max="16" guid="72139956-44a6-33fd-ece4-ddb22d010a14">
-		<_field_tag_reference_64 name="Composition Reference" />
+	<_field_block_64 name="Forge Intro Compositions#Since we generate composition at runtime we only need one CompositionDefinition in this block" max="16" srcguid="72139956-44a6-33fd-ece4-ddb22d010a14" srcName="CompositionDefinitionReferenceBlock">
+		<_field_tag_reference_64 name="Composition Reference" validtags="comp" />
 	</_field_block_64>
-	<_field_tag_reference_64 name="Forge Outro Composition Template#We'll write camera and player positions into this template for Forge outros" />
-	<_field_tag_reference_64 name="Forge Static View Composition Template#We'll write camera positions into this template for previewing static views" />
-	<_field_block_64 name="Game Type Cinematic Names#Cinematic objects can specify that they only should be used in certain game types by name (i.e. only the CTF intro cinematic)" max="32" guid="d692fe0d-4c77-d639-29e0-00af2f163532">
+	<_field_tag_reference_64 name="Forge Outro Composition Template#We'll write camera and player positions into this template for Forge outros" validtags="comp" />
+	<_field_tag_reference_64 name="Forge Static View Composition Template#We'll write camera positions into this template for previewing static views" validtags="comp" />
+	<_field_block_64 name="Game Type Cinematic Names#Cinematic objects can specify that they only should be used in certain game types by name (i.e. only the CTF intro cinematic)" max="32" srcguid="d692fe0d-4c77-d639-29e0-00af2f163532" srcName="GameTypeCinematicNameBlock">
 		<_field_string_id name="name" />
 	</_field_block_64>
-	<_field_block_64 name="Cinematic Player Animations#We lookup here to decide which animation to use for a given player in Forge intros/outros" max="64" guid="29488d21-420a-bbfe-16ab-11ada7a8b890">
+	<_field_block_64 name="Cinematic Player Animations#We lookup here to decide which animation to use for a given player in Forge intros/outros" max="64" srcguid="29488d21-420a-bbfe-16ab-11ada7a8b890" srcName="CinematicPlayerAnimationBlock">
 		<_field_char_integer name="Player Index In Team#This animation will only be used for the player with this index in their team" />
 		<_field_char_enum name="Team Size#This animation will only be used if animating player's team size matches this rule">
 			<item Name="FourPlayerTeamSize" />
@@ -147,8 +150,8 @@
 			<item Name="Outro" />
 			<item Name="StaticView" />
 		</_field_char_enum>
-		<_field_tag_reference_64 name="Model Animation Graph" />
+		<_field_tag_reference_64 name="Model Animation Graph" validtags="jmad" />
 		<_field_string_id name="Animation Name#We lookup this animation name in the animation graph referenced above" />
 	</_field_block_64>
-	<_field_tag_reference_64 name="Default Boundary Shader#If we're rendering a boundary and it doesn't have an object-specific boundary override, use this" />
+	<_field_tag_reference_64 name="Default Boundary Shader#If we're rendering a boundary and it doesn't have an object-specific boundary override, use this" validtags="mat " />
 </plugin>

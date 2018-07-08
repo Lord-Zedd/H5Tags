@@ -1,11 +1,12 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="template collection" max="8" guid="5c8458f8-4560-94b8-6fb5-eb93026e7ea6">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="template collection" max="8" srcguid="5c8458f8-4560-94b8-6fb5-eb93026e7ea6" srcName="sound_effect_templates_block">
 		<_field_string_id name="dsp effect" />
 		<_field_explanation name="WARNING">DON'T MODIFY THIS TAG UNLESS YOU KNOW WHAT YOU ARE DOING</_field_explanation>
 		<_field_data_64 name="explanation" />
@@ -15,7 +16,7 @@
 		</_field_long_flags>
 		<_field_short_integer name="dsp state offset!" />
 		<_field_short_integer name="dsp state size!" />
-		<_field_block_64 name="parameters" max="128" guid="0c097b16-427a-12df-2e40-70a14f8ed4bf">
+		<_field_block_64 name="parameters" max="128" srcguid="0c097b16-427a-12df-2e40-70a14f8ed4bf" srcName="sound_effect_template_parameter_block">
 			<_field_string_id name="name" />
 			<_field_short_enum name="type">
 				<item Name="integer" />
@@ -28,17 +29,19 @@
 			<_field_long_integer name="hardware offset" />
 			<_field_long_integer name="default enum integer value" />
 			<_field_real name="default scalar value" />
-			<_field_struct name="default function" />
-			<_field_data_64 name="data" />
+			<_field_struct name="default function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
 			<_field_real name="minimum scalar value" />
 			<_field_real name="maximum scalar value" />
 		</_field_block_64>
 	</_field_block_64>
 	<_field_string_id name="internal dsp effect name{input effect name}" />
-	<_field_block_64 name="additional sound inputs" max="1" guid="c146fb4e-4229-4445-67c6-30b8f0319f1a">
+	<_field_block_64 name="additional sound inputs" max="1" srcguid="c146fb4e-4229-4445-67c6-30b8f0319f1a" srcName="sound_effect_template_additional_sound_input_block">
 		<_field_string_id name="dsp effect" />
-		<_field_struct name="low frequency sound" />
-		<_field_data_64 name="data" />
+		<_field_struct name="low frequency sound" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
 		<_field_real name="time period: seconds" />
 	</_field_block_64>
 	<_field_pad name="pad_set_0" length="4" />

@@ -1,15 +1,16 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="lines" max="500" guid="b95bd27f-45a1-5b65-9400-3db837332d92">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="lines" max="500" srcguid="b95bd27f-45a1-5b65-9400-3db837332d92" srcName="mission_dialogue_lines_block">
 		<_field_string_id name="name^" />
-		<_field_block_64 name="variants" max="10" guid="5de3b90c-4de3-abbb-07fc-0e8780aab27b">
+		<_field_block_64 name="variants" max="10" srcguid="5de3b90c-4de3-abbb-07fc-0e8780aab27b" srcName="mission_dialogue_variants_block">
 			<_field_string_id name="variant designation#3-letter designation for the character^" />
-			<_field_tag_reference_64 name="sound" />
+			<_field_tag_reference_64 name="sound" validtags="snd!" />
 			<_field_string_id name="sound effect" />
 		</_field_block_64>
 		<_field_string_id name="default sound effect" />

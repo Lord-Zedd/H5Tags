@@ -1,16 +1,18 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_explanation name="underwater propagation globals" />
-	<_field_struct name="underwater propagation" />
-	<_field_tag_reference_64 name="sound environment" />
-	<_field_tag_reference_64 name="background sound" />
-	<_field_real name="background sound gain#scale for fog background sound:dB" />
-	<_field_real name="environment ducking#scales the surrounding background sound by this much:dB" />
-	<_field_tag_reference_64 name="entry sound" validtags="snd!" />
-	<_field_tag_reference_64 name="exit sound" validtags="snd!" />
+	<_field_struct name="underwater propagation" srcguid="de42e807-4952-9f17-6922-62a271306655">
+		<_field_tag_reference_64 name="sound environment" validtags="snde" />
+		<_field_tag_reference_64 name="background sound" validtags="lsnd" />
+		<_field_real name="background sound gain#scale for fog background sound:dB" />
+		<_field_real name="environment ducking#scales the surrounding background sound by this much:dB" />
+		<_field_tag_reference_64 name="entry sound" validtags="snd!" />
+		<_field_tag_reference_64 name="exit sound" validtags="snd!" />
+	</_field_struct>
 </plugin>

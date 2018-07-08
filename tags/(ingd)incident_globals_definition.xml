@@ -1,11 +1,12 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="incidents" max="1000" guid="ae3fffe9-415e-c8f4-1c45-9c8ee9aadcc8">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="incidents" max="1000" srcguid="ae3fffe9-415e-c8f4-1c45-9c8ee9aadcc8" srcName="incident_definition_block">
 		<_field_string_id name="name^" />
 		<_field_custom name="PROPERTIES" />
 		<_field_byte_flags name="flags">
@@ -15,384 +16,7 @@
 		</_field_byte_flags>
 		<_field_pad name="JKOPEIE" length="3" />
 		<_field_custom name="DISALLOWED GAME MODES" />
-		<_field_struct name="disallowed game modes" />
-		<_field_byte_flags name="game mode">
-			<item Name="campaign" />
-			<item Name="firefight" />
-			<item Name="multiplayer" />
-		</_field_byte_flags>
-		<_field_byte_flags name="matchmaking type">
-			<item Name="custom game" />
-			<item Name="matchmaking" />
-		</_field_byte_flags>
-		<_field_byte_flags name="difficulty">
-			<item Name="easy" />
-			<item Name="normal" />
-			<item Name="heroic" />
-			<item Name="legendary" />
-		</_field_byte_flags>
-		<_field_char_enum name="player count">
-			<item Name="any" />
-			<item Name="1 player only" />
-			<item Name="4 players only" />
-			<item Name="more than one player" />
-		</_field_char_enum>
-		<_field_block_64 name="suppressed incidents" max="1000" guid="cb9d3072-469e-c3a1-71ae-fa95e1e3a333">
-			<_field_string_id name="incident name^" />
-			<_field_byte_flags name="suppression type">
-				<item Name="suppress cause player game engine event{suppress game engine event}" />
-				<item Name="suppress effect player game engine event" />
-				<item Name="suppress cause team game engine event" />
-				<item Name="suppress effect team game engine event" />
-				<item Name="suppress medal display{suppress display}" />
-				<item Name="suppress medal stats{suppress stats}" />
-				<item Name="suppress fanfare" />
-				<item Name="suppress audio" />
-			</_field_byte_flags>
-			<_field_pad name="VNJESHFHV" length="3" />
-		</_field_block_64>
-		<_field_block_64 name="suppressed incident blocks" max="8" guid="6bb34f94-411a-60a4-a76e-a79ba8d9d191">
-			<_field_tag_reference_64 name="suppression block" />
-		</_field_block_64>
-		<_field_custom name="CREATION" />
-		<_field_block_64 name="specialized incidents" max="1" guid="c1f3c060-4a72-bf5b-8bbc-e89c6be88cf9">
-			<_field_string_id name="base incident^" />
-			<_field_block_64 name="cause object" max="10" guid="4d1fde04-4b60-8907-b075-48943eccac8d">
-				<_field_long_flags name="flags">
-					<item Name="player" />
-					<item Name="ai" />
-					<item Name="343i employee{bungie employee}" />
-					<item Name="hologram" />
-					<item Name="airborne" />
-					<item Name="sprinting" />
-					<item Name="crouched" />
-					<item Name="reloading" />
-					<item Name="not fancy assassinating" />
-					<item Name="fancy assassinating" />
-					<item Name="being fancy assassinated" />
-					<item Name="low health" />
-					<item Name="unshielded" />
-					<item Name="active camouflage active" />
-					<item Name="hologram active" />
-					<item Name="jetpack active{jetpacking}" />
-					<item Name="portable automated turret active" />
-					<item Name="reflective shield active" />
-					<item Name="thruster pack active" />
-					<item Name="active camouflage active and effective" />
-					<item Name="hologram recently activated" />
-					<item Name="thruster pack recently activated" />
-					<item Name="hologram took damage from other player" />
-					<item Name="hologram did not take damage from other player" />
-					<item Name="active shield recently activated" />
-					<item Name="in a full vehicle" />
-					<item Name="scoped in" />
-					<item Name="not scoped in" />
-					<item Name="jacking vehicle" />
-					<item Name="airsassination" />
-				</_field_long_flags>
-				<_field_char_enum name="bucket type^">
-					<item Name="any" />
-					<item Name="brute" />
-					<item Name="grunt" />
-					<item Name="jackal" />
-					<item Name="skirmisher" />
-					<item Name="marine" />
-					<item Name="spartan" />
-					<item Name="bugger" />
-					<item Name="hunter" />
-					<item Name="flood_infection" />
-					<item Name="flood_carrier" />
-					<item Name="flood_combat" />
-					<item Name="flood_pure" />
-					<item Name="sentinel" />
-					<item Name="elite" />
-					<item Name="engineer" />
-					<item Name="mule" />
-					<item Name="turret" />
-					<item Name="mongoose" />
-					<item Name="warthog" />
-					<item Name="scorpion" />
-					<item Name="hornet" />
-					<item Name="pelican" />
-					<item Name="revenant" />
-					<item Name="seraph" />
-					<item Name="shade" />
-					<item Name="watchtower" />
-					<item Name="ghost" />
-					<item Name="chopper" />
-					<item Name="mauler" />
-					<item Name="wraith" />
-					<item Name="banshee" />
-					<item Name="phantom" />
-					<item Name="scarab" />
-					<item Name="guntower" />
-					<item Name="tuning_fork" />
-					<item Name="broadsword" />
-					<item Name="mammoth" />
-					<item Name="lich" />
-					<item Name="mantis" />
-					<item Name="wasp" />
-					<item Name="phaeton" />
-					<item Name="bishop" />
-					<item Name="knight" />
-					<item Name="pawn" />
-					<item Name="soldier" />
-					<item Name="packmaster" />
-					<item Name="cavalier" />
-				</_field_char_enum>
-				<_field_char_enum name="bucket class^">
-					<item Name="any" />
-					<item Name="infantry" />
-					<item Name="leader" />
-					<item Name="hero" />
-					<item Name="specialist" />
-					<item Name="light vehicle" />
-					<item Name="heavy vehicle" />
-					<item Name="giant vehicle" />
-					<item Name="standard vehicle" />
-				</_field_char_enum>
-				<_field_word_flags name="secondary flags">
-					<item Name="launched from man-cannon" />
-					<item Name="in airborne vehicle" />
-					<item Name="not in vehicle" />
-				</_field_word_flags>
-				<_field_string name="gamertag" />
-				<_field_block_64 name="riding in vehicles" max="10" guid="0f5bb51f-4a01-a1e1-8ed1-5e83fe29979b">
-					<_field_long_enum name="vehicle type">
-						<item Name="vehicle_type_human_tank" />
-						<item Name="vehicle_type_human_jeep" />
-						<item Name="vehicle_type_human_plane" />
-						<item Name="vehicle_type_alien_scout" />
-						<item Name="vehicle_type_alien_fighter" />
-						<item Name="vehicle_type_turret" />
-						<item Name="vehicle_type_vtol" />
-						<item Name="vehicle_type_chopper" />
-						<item Name="vehicle_type_guardian" />
-						<item Name="vehicle_type_jackal_glider" />
-						<item Name="vehicle_type_boat" />
-						<item Name="vehicle_type_space_fighter" />
-						<item Name="vehicle_type_revenant" />
-						<item Name="vehicle_type_sphere" />
-					</_field_long_enum>
-				</_field_block_64>
-			</_field_block_64>
-			<_field_block_64 name="effect object{kill bucket}" max="10" guid="4d1fde04-4b60-8907-b075-48943eccac8d">
-				<_field_long_flags name="flags">
-					<item Name="player" />
-					<item Name="ai" />
-					<item Name="343i employee{bungie employee}" />
-					<item Name="hologram" />
-					<item Name="airborne" />
-					<item Name="sprinting" />
-					<item Name="crouched" />
-					<item Name="reloading" />
-					<item Name="not fancy assassinating" />
-					<item Name="fancy assassinating" />
-					<item Name="being fancy assassinated" />
-					<item Name="low health" />
-					<item Name="unshielded" />
-					<item Name="active camouflage active" />
-					<item Name="hologram active" />
-					<item Name="jetpack active{jetpacking}" />
-					<item Name="portable automated turret active" />
-					<item Name="reflective shield active" />
-					<item Name="thruster pack active" />
-					<item Name="active camouflage active and effective" />
-					<item Name="hologram recently activated" />
-					<item Name="thruster pack recently activated" />
-					<item Name="hologram took damage from other player" />
-					<item Name="hologram did not take damage from other player" />
-					<item Name="active shield recently activated" />
-					<item Name="in a full vehicle" />
-					<item Name="scoped in" />
-					<item Name="not scoped in" />
-					<item Name="jacking vehicle" />
-					<item Name="airsassination" />
-				</_field_long_flags>
-				<_field_char_enum name="bucket type^">
-					<item Name="any" />
-					<item Name="brute" />
-					<item Name="grunt" />
-					<item Name="jackal" />
-					<item Name="skirmisher" />
-					<item Name="marine" />
-					<item Name="spartan" />
-					<item Name="bugger" />
-					<item Name="hunter" />
-					<item Name="flood_infection" />
-					<item Name="flood_carrier" />
-					<item Name="flood_combat" />
-					<item Name="flood_pure" />
-					<item Name="sentinel" />
-					<item Name="elite" />
-					<item Name="engineer" />
-					<item Name="mule" />
-					<item Name="turret" />
-					<item Name="mongoose" />
-					<item Name="warthog" />
-					<item Name="scorpion" />
-					<item Name="hornet" />
-					<item Name="pelican" />
-					<item Name="revenant" />
-					<item Name="seraph" />
-					<item Name="shade" />
-					<item Name="watchtower" />
-					<item Name="ghost" />
-					<item Name="chopper" />
-					<item Name="mauler" />
-					<item Name="wraith" />
-					<item Name="banshee" />
-					<item Name="phantom" />
-					<item Name="scarab" />
-					<item Name="guntower" />
-					<item Name="tuning_fork" />
-					<item Name="broadsword" />
-					<item Name="mammoth" />
-					<item Name="lich" />
-					<item Name="mantis" />
-					<item Name="wasp" />
-					<item Name="phaeton" />
-					<item Name="bishop" />
-					<item Name="knight" />
-					<item Name="pawn" />
-					<item Name="soldier" />
-					<item Name="packmaster" />
-					<item Name="cavalier" />
-				</_field_char_enum>
-				<_field_char_enum name="bucket class^">
-					<item Name="any" />
-					<item Name="infantry" />
-					<item Name="leader" />
-					<item Name="hero" />
-					<item Name="specialist" />
-					<item Name="light vehicle" />
-					<item Name="heavy vehicle" />
-					<item Name="giant vehicle" />
-					<item Name="standard vehicle" />
-				</_field_char_enum>
-				<_field_word_flags name="secondary flags">
-					<item Name="launched from man-cannon" />
-					<item Name="in airborne vehicle" />
-					<item Name="not in vehicle" />
-				</_field_word_flags>
-				<_field_string name="gamertag" />
-				<_field_block_64 name="riding in vehicles" max="10" guid="0f5bb51f-4a01-a1e1-8ed1-5e83fe29979b">
-					<_field_long_enum name="vehicle type">
-						<item Name="vehicle_type_human_tank" />
-						<item Name="vehicle_type_human_jeep" />
-						<item Name="vehicle_type_human_plane" />
-						<item Name="vehicle_type_alien_scout" />
-						<item Name="vehicle_type_alien_fighter" />
-						<item Name="vehicle_type_turret" />
-						<item Name="vehicle_type_vtol" />
-						<item Name="vehicle_type_chopper" />
-						<item Name="vehicle_type_guardian" />
-						<item Name="vehicle_type_jackal_glider" />
-						<item Name="vehicle_type_boat" />
-						<item Name="vehicle_type_space_fighter" />
-						<item Name="vehicle_type_revenant" />
-						<item Name="vehicle_type_sphere" />
-					</_field_long_enum>
-				</_field_block_64>
-			</_field_block_64>
-			<_field_block_64 name="special kill type" max="10" guid="98e84edd-4eff-6c44-7e08-29ad19bb16b3">
-				<_field_char_enum name="special kill type^">
-					<item Name="headshot" />
-					<item Name="grenade stick" />
-					<item Name="stealth kill" />
-					<item Name="fancy assassination" />
-					<item Name="superdetonation" />
-					<item Name="emp kill" />
-					<item Name="melee" />
-					<item Name="collision#vehicular splatter" />
-					<item Name="leader killed#killed the player in 1st place" />
-					<item Name="team elimination kill#killed the last surviving player on a team in team game" />
-					<item Name="ffa elimination kill#killed the last surviving player in a ffa game" />
-				</_field_char_enum>
-				<_field_pad name="CVUIHEN" length="3" />
-			</_field_block_64>
-			<_field_block_64 name="game over filter" max="1" guid="897b0508-426f-aacf-53b0-2b8620d4a870">
-				<_field_word_flags name="flags">
-					<item Name="killed all enemies#only looks at the enemies in-game at the end" />
-					<item Name="highest score#had the highest score" />
-					<item Name="top 3 score#one of the top three scorers" />
-					<item Name="winner#individual winner or on the winning team" />
-					<item Name="hosted#was the host of the game at the end" />
-					<item Name="loser" />
-					<item Name="tied" />
-					<item Name="not tied" />
-				</_field_word_flags>
-				<_field_short_integer name="minimum game length:seconds" />
-			</_field_block_64>
-			<_field_block_64 name="custom data filter" max="1" guid="fea8c235-4a7b-959d-92e5-99a3fc5ffe8c">
-				<_field_byte_flags name="flags">
-					<item Name="equal to" />
-					<item Name="greater than" />
-					<item Name="less than" />
-				</_field_byte_flags>
-				<_field_pad name="PAD1" length="3" />
-				<_field_long_integer name="value" />
-			</_field_block_64>
-			<_field_block_64 name="distance filter" max="1" guid="ae5c724e-4261-4529-0074-789b3ae7bd52">
-				<_field_byte_flags name="flags">
-					<item Name="equal to" />
-					<item Name="greater than" />
-					<item Name="less than" />
-				</_field_byte_flags>
-				<_field_pad name="PAD1" length="3" />
-				<_field_long_integer name="distance between effect and cause player: wu" />
-			</_field_block_64>
-		</_field_block_64>
-		<_field_block_64 name="accumulator incidents" max="1" guid="7c9f1078-4d20-549d-610b-5a92e26570d0">
-			<_field_char_enum name="aggregation type">
-				<item Name="all" />
-				<item Name="any" />
-			</_field_char_enum>
-			<_field_char_enum name="resets on">
-				<item Name="four seconds since last event" />
-				<item Name="player death" />
-				<item Name="round over" />
-				<item Name="game over" />
-				<item Name="on incident" />
-			</_field_char_enum>
-			<_field_pad name="VJIOEJNLKS" length="2" />
-			<_field_block_64 name="child incidents" max="60" guid="c4843bbe-47ac-fb7b-0c6c-8d8c10af7abf">
-				<_field_byte_flags name="flags">
-					<item Name="equal to" />
-					<item Name="greater than" />
-					<item Name="less than" />
-				</_field_byte_flags>
-				<_field_pad name="VLHSJNRE" length="3" />
-				<_field_long_integer name="count" />
-				<_field_string_id name="incident name" />
-				<_field_string_id name="reset incident name" />
-				<_field_real name="reset timeout" />
-			</_field_block_64>
-		</_field_block_64>
-		<_field_block_64 name="sum accumulator incidents" max="1" guid="6cdce224-4dc0-e8b6-ba97-a485a1478300">
-			<_field_char_enum name="resets on">
-				<item Name="four seconds since last event" />
-				<item Name="player death" />
-				<item Name="round over" />
-				<item Name="game over" />
-				<item Name="on incident" />
-			</_field_char_enum>
-			<_field_byte_flags name="flags">
-				<item Name="equal to" />
-				<item Name="greater than" />
-				<item Name="less than" />
-			</_field_byte_flags>
-			<_field_pad name="XSEXEC" length="2" />
-			<_field_long_integer name="count" />
-			<_field_block_64 name="child incidents" max="60" guid="3d98bf85-46e2-a9bf-5ffd-a9a4b348977f">
-				<_field_string_id name="incident name" />
-				<_field_string_id name="reset incident name" />
-				<_field_real name="reset timeout" />
-			</_field_block_64>
-		</_field_block_64>
-		<_field_block_64 name="response" max="32" guid="2cd0cd80-4be0-1a09-b3b3-a6be165d2068">
-			<_field_custom name="allowed game modes" />
-			<_field_struct name="allowed game modes" />
+		<_field_struct name="disallowed game modes" srcguid="a7f78373-4d1a-6e91-f66a-80a0a04ec2fd">
 			<_field_byte_flags name="game mode">
 				<item Name="campaign" />
 				<item Name="firefight" />
@@ -414,6 +38,385 @@
 				<item Name="4 players only" />
 				<item Name="more than one player" />
 			</_field_char_enum>
+		</_field_struct>
+		<_field_block_64 name="suppressed incidents" max="1000" srcguid="cb9d3072-469e-c3a1-71ae-fa95e1e3a333" srcName="suppressed_incident_block">
+			<_field_string_id name="incident name^" />
+			<_field_byte_flags name="suppression type">
+				<item Name="suppress cause player game engine event{suppress game engine event}" />
+				<item Name="suppress effect player game engine event" />
+				<item Name="suppress cause team game engine event" />
+				<item Name="suppress effect team game engine event" />
+				<item Name="suppress medal display{suppress display}" />
+				<item Name="suppress medal stats{suppress stats}" />
+				<item Name="suppress fanfare" />
+				<item Name="suppress audio" />
+			</_field_byte_flags>
+			<_field_pad name="VNJESHFHV" length="3" />
+		</_field_block_64>
+		<_field_block_64 name="suppressed incident blocks" max="8" srcguid="6bb34f94-411a-60a4-a76e-a79ba8d9d191" srcName="SuppressedIncidentBlockReferenceDefinition">
+			<_field_tag_reference_64 name="suppression block" validtags="sigd" />
+		</_field_block_64>
+		<_field_custom name="CREATION" />
+		<_field_block_64 name="specialized incidents" max="1" srcguid="c1f3c060-4a72-bf5b-8bbc-e89c6be88cf9" srcName="specialized_incident_block">
+			<_field_string_id name="base incident^" />
+			<_field_block_64 name="cause object" max="10" srcguid="4d1fde04-4b60-8907-b075-48943eccac8d" srcName="specialized_incident_object_properties_block">
+				<_field_long_flags name="flags">
+					<item Name="player" />
+					<item Name="ai" />
+					<item Name="343i employee{bungie employee}" />
+					<item Name="hologram" />
+					<item Name="airborne" />
+					<item Name="sprinting" />
+					<item Name="crouched" />
+					<item Name="reloading" />
+					<item Name="not fancy assassinating" />
+					<item Name="fancy assassinating" />
+					<item Name="being fancy assassinated" />
+					<item Name="low health" />
+					<item Name="unshielded" />
+					<item Name="active camouflage active" />
+					<item Name="hologram active" />
+					<item Name="jetpack active{jetpacking}" />
+					<item Name="portable automated turret active" />
+					<item Name="reflective shield active" />
+					<item Name="thruster pack active" />
+					<item Name="active camouflage active and effective" />
+					<item Name="hologram recently activated" />
+					<item Name="thruster pack recently activated" />
+					<item Name="hologram took damage from other player" />
+					<item Name="hologram did not take damage from other player" />
+					<item Name="active shield recently activated" />
+					<item Name="in a full vehicle" />
+					<item Name="scoped in" />
+					<item Name="not scoped in" />
+					<item Name="jacking vehicle" />
+					<item Name="airsassination" />
+				</_field_long_flags>
+				<_field_char_enum name="bucket type^">
+					<item Name="any" />
+					<item Name="brute" />
+					<item Name="grunt" />
+					<item Name="jackal" />
+					<item Name="skirmisher" />
+					<item Name="marine" />
+					<item Name="spartan" />
+					<item Name="bugger" />
+					<item Name="hunter" />
+					<item Name="flood_infection" />
+					<item Name="flood_carrier" />
+					<item Name="flood_combat" />
+					<item Name="flood_pure" />
+					<item Name="sentinel" />
+					<item Name="elite" />
+					<item Name="engineer" />
+					<item Name="mule" />
+					<item Name="turret" />
+					<item Name="mongoose" />
+					<item Name="warthog" />
+					<item Name="scorpion" />
+					<item Name="hornet" />
+					<item Name="pelican" />
+					<item Name="revenant" />
+					<item Name="seraph" />
+					<item Name="shade" />
+					<item Name="watchtower" />
+					<item Name="ghost" />
+					<item Name="chopper" />
+					<item Name="mauler" />
+					<item Name="wraith" />
+					<item Name="banshee" />
+					<item Name="phantom" />
+					<item Name="scarab" />
+					<item Name="guntower" />
+					<item Name="tuning_fork" />
+					<item Name="broadsword" />
+					<item Name="mammoth" />
+					<item Name="lich" />
+					<item Name="mantis" />
+					<item Name="wasp" />
+					<item Name="phaeton" />
+					<item Name="bishop" />
+					<item Name="knight" />
+					<item Name="pawn" />
+					<item Name="soldier" />
+					<item Name="packmaster" />
+					<item Name="cavalier" />
+				</_field_char_enum>
+				<_field_char_enum name="bucket class^">
+					<item Name="any" />
+					<item Name="infantry" />
+					<item Name="leader" />
+					<item Name="hero" />
+					<item Name="specialist" />
+					<item Name="light vehicle" />
+					<item Name="heavy vehicle" />
+					<item Name="giant vehicle" />
+					<item Name="standard vehicle" />
+				</_field_char_enum>
+				<_field_word_flags name="secondary flags">
+					<item Name="launched from man-cannon" />
+					<item Name="in airborne vehicle" />
+					<item Name="not in vehicle" />
+				</_field_word_flags>
+				<_field_string name="gamertag" />
+				<_field_block_64 name="riding in vehicles" max="10" srcguid="0f5bb51f-4a01-a1e1-8ed1-5e83fe29979b" srcName="specialized_incident_object_riding_in_vehicle_properties_block">
+					<_field_long_enum name="vehicle type">
+						<item Name="vehicle_type_human_tank" />
+						<item Name="vehicle_type_human_jeep" />
+						<item Name="vehicle_type_human_plane" />
+						<item Name="vehicle_type_alien_scout" />
+						<item Name="vehicle_type_alien_fighter" />
+						<item Name="vehicle_type_turret" />
+						<item Name="vehicle_type_vtol" />
+						<item Name="vehicle_type_chopper" />
+						<item Name="vehicle_type_guardian" />
+						<item Name="vehicle_type_jackal_glider" />
+						<item Name="vehicle_type_boat" />
+						<item Name="vehicle_type_space_fighter" />
+						<item Name="vehicle_type_revenant" />
+						<item Name="vehicle_type_sphere" />
+					</_field_long_enum>
+				</_field_block_64>
+			</_field_block_64>
+			<_field_block_64 name="effect object{kill bucket}" max="10" srcguid="4d1fde04-4b60-8907-b075-48943eccac8d" srcName="specialized_incident_object_properties_block">
+				<_field_long_flags name="flags">
+					<item Name="player" />
+					<item Name="ai" />
+					<item Name="343i employee{bungie employee}" />
+					<item Name="hologram" />
+					<item Name="airborne" />
+					<item Name="sprinting" />
+					<item Name="crouched" />
+					<item Name="reloading" />
+					<item Name="not fancy assassinating" />
+					<item Name="fancy assassinating" />
+					<item Name="being fancy assassinated" />
+					<item Name="low health" />
+					<item Name="unshielded" />
+					<item Name="active camouflage active" />
+					<item Name="hologram active" />
+					<item Name="jetpack active{jetpacking}" />
+					<item Name="portable automated turret active" />
+					<item Name="reflective shield active" />
+					<item Name="thruster pack active" />
+					<item Name="active camouflage active and effective" />
+					<item Name="hologram recently activated" />
+					<item Name="thruster pack recently activated" />
+					<item Name="hologram took damage from other player" />
+					<item Name="hologram did not take damage from other player" />
+					<item Name="active shield recently activated" />
+					<item Name="in a full vehicle" />
+					<item Name="scoped in" />
+					<item Name="not scoped in" />
+					<item Name="jacking vehicle" />
+					<item Name="airsassination" />
+				</_field_long_flags>
+				<_field_char_enum name="bucket type^">
+					<item Name="any" />
+					<item Name="brute" />
+					<item Name="grunt" />
+					<item Name="jackal" />
+					<item Name="skirmisher" />
+					<item Name="marine" />
+					<item Name="spartan" />
+					<item Name="bugger" />
+					<item Name="hunter" />
+					<item Name="flood_infection" />
+					<item Name="flood_carrier" />
+					<item Name="flood_combat" />
+					<item Name="flood_pure" />
+					<item Name="sentinel" />
+					<item Name="elite" />
+					<item Name="engineer" />
+					<item Name="mule" />
+					<item Name="turret" />
+					<item Name="mongoose" />
+					<item Name="warthog" />
+					<item Name="scorpion" />
+					<item Name="hornet" />
+					<item Name="pelican" />
+					<item Name="revenant" />
+					<item Name="seraph" />
+					<item Name="shade" />
+					<item Name="watchtower" />
+					<item Name="ghost" />
+					<item Name="chopper" />
+					<item Name="mauler" />
+					<item Name="wraith" />
+					<item Name="banshee" />
+					<item Name="phantom" />
+					<item Name="scarab" />
+					<item Name="guntower" />
+					<item Name="tuning_fork" />
+					<item Name="broadsword" />
+					<item Name="mammoth" />
+					<item Name="lich" />
+					<item Name="mantis" />
+					<item Name="wasp" />
+					<item Name="phaeton" />
+					<item Name="bishop" />
+					<item Name="knight" />
+					<item Name="pawn" />
+					<item Name="soldier" />
+					<item Name="packmaster" />
+					<item Name="cavalier" />
+				</_field_char_enum>
+				<_field_char_enum name="bucket class^">
+					<item Name="any" />
+					<item Name="infantry" />
+					<item Name="leader" />
+					<item Name="hero" />
+					<item Name="specialist" />
+					<item Name="light vehicle" />
+					<item Name="heavy vehicle" />
+					<item Name="giant vehicle" />
+					<item Name="standard vehicle" />
+				</_field_char_enum>
+				<_field_word_flags name="secondary flags">
+					<item Name="launched from man-cannon" />
+					<item Name="in airborne vehicle" />
+					<item Name="not in vehicle" />
+				</_field_word_flags>
+				<_field_string name="gamertag" />
+				<_field_block_64 name="riding in vehicles" max="10" srcguid="0f5bb51f-4a01-a1e1-8ed1-5e83fe29979b" srcName="specialized_incident_object_riding_in_vehicle_properties_block">
+					<_field_long_enum name="vehicle type">
+						<item Name="vehicle_type_human_tank" />
+						<item Name="vehicle_type_human_jeep" />
+						<item Name="vehicle_type_human_plane" />
+						<item Name="vehicle_type_alien_scout" />
+						<item Name="vehicle_type_alien_fighter" />
+						<item Name="vehicle_type_turret" />
+						<item Name="vehicle_type_vtol" />
+						<item Name="vehicle_type_chopper" />
+						<item Name="vehicle_type_guardian" />
+						<item Name="vehicle_type_jackal_glider" />
+						<item Name="vehicle_type_boat" />
+						<item Name="vehicle_type_space_fighter" />
+						<item Name="vehicle_type_revenant" />
+						<item Name="vehicle_type_sphere" />
+					</_field_long_enum>
+				</_field_block_64>
+			</_field_block_64>
+			<_field_block_64 name="special kill type" max="10" srcguid="98e84edd-4eff-6c44-7e08-29ad19bb16b3" srcName="specialized_incident_special_kill_type_block">
+				<_field_char_enum name="special kill type^">
+					<item Name="headshot" />
+					<item Name="grenade stick" />
+					<item Name="stealth kill" />
+					<item Name="fancy assassination" />
+					<item Name="superdetonation" />
+					<item Name="emp kill" />
+					<item Name="melee" />
+					<item Name="collision#vehicular splatter" />
+					<item Name="leader killed#killed the player in 1st place" />
+					<item Name="team elimination kill#killed the last surviving player on a team in team game" />
+					<item Name="ffa elimination kill#killed the last surviving player in a ffa game" />
+				</_field_char_enum>
+				<_field_pad name="CVUIHEN" length="3" />
+			</_field_block_64>
+			<_field_block_64 name="game over filter" max="1" srcguid="897b0508-426f-aacf-53b0-2b8620d4a870" srcName="specializedIncidentGameOverBlock">
+				<_field_word_flags name="flags">
+					<item Name="killed all enemies#only looks at the enemies in-game at the end" />
+					<item Name="highest score#had the highest score" />
+					<item Name="top 3 score#one of the top three scorers" />
+					<item Name="winner#individual winner or on the winning team" />
+					<item Name="hosted#was the host of the game at the end" />
+					<item Name="loser" />
+					<item Name="tied" />
+					<item Name="not tied" />
+				</_field_word_flags>
+				<_field_short_integer name="minimum game length:seconds" />
+			</_field_block_64>
+			<_field_block_64 name="custom data filter" max="1" srcguid="fea8c235-4a7b-959d-92e5-99a3fc5ffe8c" srcName="specializedIncidentCustomDataFilterBlock">
+				<_field_byte_flags name="flags">
+					<item Name="equal to" />
+					<item Name="greater than" />
+					<item Name="less than" />
+				</_field_byte_flags>
+				<_field_pad name="PAD1" length="3" />
+				<_field_long_integer name="value" />
+			</_field_block_64>
+			<_field_block_64 name="distance filter" max="1" srcguid="ae5c724e-4261-4529-0074-789b3ae7bd52" srcName="specializedIncidentDistanceFilterBlock">
+				<_field_byte_flags name="flags">
+					<item Name="equal to" />
+					<item Name="greater than" />
+					<item Name="less than" />
+				</_field_byte_flags>
+				<_field_pad name="PAD1" length="3" />
+				<_field_long_integer name="distance between effect and cause player: wu" />
+			</_field_block_64>
+		</_field_block_64>
+		<_field_block_64 name="accumulator incidents" max="1" srcguid="7c9f1078-4d20-549d-610b-5a92e26570d0" srcName="incident_accumulator_block">
+			<_field_char_enum name="aggregation type">
+				<item Name="all" />
+				<item Name="any" />
+			</_field_char_enum>
+			<_field_char_enum name="resets on">
+				<item Name="four seconds since last event" />
+				<item Name="player death" />
+				<item Name="round over" />
+				<item Name="game over" />
+				<item Name="on incident" />
+			</_field_char_enum>
+			<_field_pad name="VJIOEJNLKS" length="2" />
+			<_field_block_64 name="child incidents" max="60" srcguid="c4843bbe-47ac-fb7b-0c6c-8d8c10af7abf" srcName="incident_accumulator_child_incident_block">
+				<_field_byte_flags name="flags">
+					<item Name="equal to" />
+					<item Name="greater than" />
+					<item Name="less than" />
+				</_field_byte_flags>
+				<_field_pad name="VLHSJNRE" length="3" />
+				<_field_long_integer name="count" />
+				<_field_string_id name="incident name" />
+				<_field_string_id name="reset incident name" />
+				<_field_real name="reset timeout" />
+			</_field_block_64>
+		</_field_block_64>
+		<_field_block_64 name="sum accumulator incidents" max="1" srcguid="6cdce224-4dc0-e8b6-ba97-a485a1478300" srcName="incident_sum_accumulator_block">
+			<_field_char_enum name="resets on">
+				<item Name="four seconds since last event" />
+				<item Name="player death" />
+				<item Name="round over" />
+				<item Name="game over" />
+				<item Name="on incident" />
+			</_field_char_enum>
+			<_field_byte_flags name="flags">
+				<item Name="equal to" />
+				<item Name="greater than" />
+				<item Name="less than" />
+			</_field_byte_flags>
+			<_field_pad name="XSEXEC" length="2" />
+			<_field_long_integer name="count" />
+			<_field_block_64 name="child incidents" max="60" srcguid="3d98bf85-46e2-a9bf-5ffd-a9a4b348977f" srcName="incident_sum_accumulator_child_incident_block">
+				<_field_string_id name="incident name" />
+				<_field_string_id name="reset incident name" />
+				<_field_real name="reset timeout" />
+			</_field_block_64>
+		</_field_block_64>
+		<_field_block_64 name="response" max="32" srcguid="2cd0cd80-4be0-1a09-b3b3-a6be165d2068" srcName="game_incident_response_block">
+			<_field_custom name="allowed game modes" />
+			<_field_struct name="allowed game modes" srcguid="a7f78373-4d1a-6e91-f66a-80a0a04ec2fd">
+				<_field_byte_flags name="game mode">
+					<item Name="campaign" />
+					<item Name="firefight" />
+					<item Name="multiplayer" />
+				</_field_byte_flags>
+				<_field_byte_flags name="matchmaking type">
+					<item Name="custom game" />
+					<item Name="matchmaking" />
+				</_field_byte_flags>
+				<_field_byte_flags name="difficulty">
+					<item Name="easy" />
+					<item Name="normal" />
+					<item Name="heroic" />
+					<item Name="legendary" />
+				</_field_byte_flags>
+				<_field_char_enum name="player count">
+					<item Name="any" />
+					<item Name="1 player only" />
+					<item Name="4 players only" />
+					<item Name="more than one player" />
+				</_field_char_enum>
+			</_field_struct>
 			<_field_custom name="allowed campaign and firefight" />
 			<_field_string_id name="allowed level name#Can only be triggered on this level." />
 			<_field_long_flags name="required skulls#These skulls must be enabled to trigger.">
@@ -437,7 +440,7 @@
 			<_field_long_integer name="heat award" />
 			<_field_string_id name="medal" />
 			<_field_string_id name="achievement" />
-			<_field_block_64 name="fanfare" max="1" guid="bdadbdb5-4ffe-3a93-85d3-cf9a12d697b1">
+			<_field_block_64 name="fanfare" max="1" srcguid="bdadbdb5-4ffe-3a93-85d3-cf9a12d697b1" srcName="specialized_incident_fanfare_block">
 				<_field_long_integer name="priority#0 is highest prioroty" />
 				<_field_char_enum name="queue type">
 					<item Name="personal score" />
@@ -461,11 +464,11 @@
 				<_field_string_id name="fanfare string" />
 				<_field_short_integer name="fanfare sprite index" />
 				<_field_short_integer name="display time in seconds" />
-				<_field_tag_reference_64 name="hud screen reference" />
-				<_field_tag_reference_64 name="sound response" />
+				<_field_tag_reference_64 name="hud screen reference" validtags="cusc" />
+				<_field_tag_reference_64 name="sound response" validtags="sgrp" />
 				<_field_string_id name="carried object type" />
 			</_field_block_64>
-			<_field_tag_reference_64 name="sound response" />
+			<_field_tag_reference_64 name="sound response" validtags="sirg" />
 		</_field_block_64>
 	</_field_block_64>
 	<_field_pad name="pad_tp" length="4" />

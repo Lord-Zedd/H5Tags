@@ -1,12 +1,13 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_explanation name="Reactive Scenery">Scenery object that plays client-side animations in reaction to simple events.</_field_explanation>
-	<_field_block_64 name="Animations#The animations this object will play in reaction to events." max="8" guid="c2ef79c0-4f20-0800-1355-289984c2c463">
+	<_field_block_64 name="Animations#The animations this object will play in reaction to events." max="8" srcguid="c2ef79c0-4f20-0800-1355-289984c2c463" srcName="reactive_animation">
 		<_field_string_id name="animation name^" />
 		<_field_real name="blend time:seconds" />
 		<_field_real name="wait time:seconds" />

@@ -1,50 +1,51 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_long_flags name="Character flags">
 		<item Name="Flag1" />
 	</_field_long_flags>
-	<_field_tag_reference_64 name="parent character" />
-	<_field_tag_reference_64 name="unit" />
-	<_field_tag_reference_64 name="creature#Creature reference for swarm characters ONLY" />
-	<_field_tag_reference_64 name="style" />
-	<_field_tag_reference_64 name="major character" />
-	<_field_block_64 name="variants" max="64" guid="1de40022-4137-d2e5-a170-9e8f9e69cd0c">
+	<_field_tag_reference_64 name="parent character" validtags="char" />
+	<_field_tag_reference_64 name="unit" validtags="unit" />
+	<_field_tag_reference_64 name="creature#Creature reference for swarm characters ONLY" validtags="crea" />
+	<_field_tag_reference_64 name="style" validtags="styl" />
+	<_field_tag_reference_64 name="major character" validtags="char" />
+	<_field_block_64 name="variants" max="64" srcguid="1de40022-4137-d2e5-a170-9e8f9e69cd0c" srcName="character_variants_block">
 		<_field_string_id name="variant name^" />
 		<_field_short_integer name="variant index*" />
 		<_field_pad name="VN" length="2" />
-		<_field_block_64 name="voices" max="64" guid="0e9694ae-47c8-3ecd-2e6f-f099eaf18c3c">
-			<_field_tag_reference_64 name="dialogue^" />
+		<_field_block_64 name="voices" max="64" srcguid="0e9694ae-47c8-3ecd-2e6f-f099eaf18c3c" srcName="character_voice_block">
+			<_field_tag_reference_64 name="dialogue^" validtags="udlg" />
 			<_field_string_id name="designator*" />
 			<_field_real name="weight" />
-			<_field_block_64 name="region filters" max="32" guid="ccc4d9d2-4b90-cc24-4e55-e6bc99d8cba3">
+			<_field_block_64 name="region filters" max="32" srcguid="ccc4d9d2-4b90-cc24-4e55-e6bc99d8cba3" srcName="character_voice_region_filter_block">
 				<_field_string_id name="region name^" />
-				<_field_block_64 name="permutation filters" max="1023" guid="34a689d6-4aed-e1a6-9f1a-9e8180a413ad">
+				<_field_block_64 name="permutation filters" max="1023" srcguid="34a689d6-4aed-e1a6-9f1a-9e8180a413ad" srcName="character_voice_region_permutation_filter_block">
 					<_field_string_id name="permutation name^" />
 				</_field_block_64>
 			</_field_block_64>
 		</_field_block_64>
 		<_field_string_id name="default dialogue effect id#gets applied if the vocalization has no dialogue effect id." />
 	</_field_block_64>
-	<_field_block_64 name="voice" max="1" guid="7759d0ce-482f-3966-61a1-71afc035b926">
-		<_field_block_64 name="voices" max="64" guid="0e9694ae-47c8-3ecd-2e6f-f099eaf18c3c">
-			<_field_tag_reference_64 name="dialogue^" />
+	<_field_block_64 name="voice" max="1" srcguid="7759d0ce-482f-3966-61a1-71afc035b926" srcName="character_voice_properties_block">
+		<_field_block_64 name="voices" max="64" srcguid="0e9694ae-47c8-3ecd-2e6f-f099eaf18c3c" srcName="character_voice_block">
+			<_field_tag_reference_64 name="dialogue^" validtags="udlg" />
 			<_field_string_id name="designator*" />
 			<_field_real name="weight" />
-			<_field_block_64 name="region filters" max="32" guid="ccc4d9d2-4b90-cc24-4e55-e6bc99d8cba3">
+			<_field_block_64 name="region filters" max="32" srcguid="ccc4d9d2-4b90-cc24-4e55-e6bc99d8cba3" srcName="character_voice_region_filter_block">
 				<_field_string_id name="region name^" />
-				<_field_block_64 name="permutation filters" max="1023" guid="34a689d6-4aed-e1a6-9f1a-9e8180a413ad">
+				<_field_block_64 name="permutation filters" max="1023" srcguid="34a689d6-4aed-e1a6-9f1a-9e8180a413ad" srcName="character_voice_region_permutation_filter_block">
 					<_field_string_id name="permutation name^" />
 				</_field_block_64>
 			</_field_block_64>
 		</_field_block_64>
 		<_field_string_id name="default dialogue effect id#gets applied if the vocalization has no dialogue effect id." />
 	</_field_block_64>
-	<_field_block_64 name="Development Status" max="1" guid="d4acd1d5-4ea3-d72a-8eaf-fe9940ef9a87">
+	<_field_block_64 name="Development Status" max="1" srcguid="d4acd1d5-4ea3-d72a-8eaf-fe9940ef9a87" srcName="character_development_status_block">
 		<_field_short_enum name="Stage">
 			<item Name="Unknown" />
 			<item Name="Prototype" />
@@ -53,7 +54,7 @@
 		</_field_short_enum>
 		<_field_pad name="padding1" length="2" />
 	</_field_block_64>
-	<_field_block_64 name="general properties" max="1" guid="7ba5643f-43b7-6ce8-ff97-b7bfbccabfcc">
+	<_field_block_64 name="general properties" max="1" srcguid="7ba5643f-43b7-6ce8-ff97-b7bfbccabfcc" srcName="character_general_block">
 		<_field_long_flags name="general flags">
 			<item Name="swarm" />
 			<item Name="flying" />
@@ -130,16 +131,16 @@
 			<item Name="Default" />
 			<item Name="Flying" />
 		</_field_short_enum>
-		<_field_block_64 name="disallowed weapons from trading" max="32" guid="a61e00d6-4ea4-b48e-3a51-fd84ce8a9d92">
-			<_field_tag_reference_64 name="weapon" />
+		<_field_block_64 name="disallowed weapons from trading" max="32" srcguid="a61e00d6-4ea4-b48e-3a51-fd84ce8a9d92" srcName="disallowed_weapons_for_trading_block">
+			<_field_tag_reference_64 name="weapon" validtags="weap" />
 		</_field_block_64>
-		<_field_tag_reference_64 name="Initial Primary Weapon #Overrides initial primary weapon set in unit tag." />
-		<_field_tag_reference_64 name="Primary Weapon Configuration" />
-		<_field_tag_reference_64 name="Initial Secondary Weapon #Overrides initial secondary weapon set in unit tag." />
-		<_field_tag_reference_64 name="Secondary Weapon Configuration" />
-		<_field_tag_reference_64 name="Initial Equipment #Fallback used if initial equipment not specified as drop item or in scenario." />
+		<_field_tag_reference_64 name="Initial Primary Weapon #Overrides initial primary weapon set in unit tag." validtags="weap" />
+		<_field_tag_reference_64 name="Primary Weapon Configuration" validtags="wcfg" />
+		<_field_tag_reference_64 name="Initial Secondary Weapon #Overrides initial secondary weapon set in unit tag." validtags="weap" />
+		<_field_tag_reference_64 name="Secondary Weapon Configuration" validtags="wcfg" />
+		<_field_tag_reference_64 name="Initial Equipment #Fallback used if initial equipment not specified as drop item or in scenario." validtags="eqip" />
 	</_field_block_64>
-	<_field_block_64 name="proto spawn properties" max="1" guid="23fcf6c5-4d26-6894-7e8a-e19f899e508d">
+	<_field_block_64 name="proto spawn properties" max="1" srcguid="23fcf6c5-4d26-6894-7e8a-e19f899e508d" srcName="character_proto_spawn_block">
 		<_field_short_enum name="Proto Spawn Type #Can be used to automatically setup a character to be spawned by another character.">
 			<item Name="None" />
 			<item Name="Limbo" />
@@ -148,11 +149,11 @@
 		</_field_short_enum>
 		<_field_pad name="post-proto-spawn-padding" length="2" />
 	</_field_block_64>
-	<_field_block_64 name="interact properties" max="1" guid="b806ecfb-457c-d1e5-57e7-5abfeb931a52">
+	<_field_block_64 name="interact properties" max="1" srcguid="b806ecfb-457c-d1e5-57e7-5abfeb931a52" srcName="character_interact_block">
 		<_field_real name="default maximum object interact range:wu" />
 	</_field_block_64>
-	<_field_block_64 name="emotion properties" max="1" guid="70004598-45aa-cc05-d326-e6a480e27d94">
-		<_field_block_64 name="situational danger" max="14" guid="0179c04a-4e17-3df5-3342-45820c952e23">
+	<_field_block_64 name="emotion properties" max="1" srcguid="70004598-45aa-cc05-d326-e6a480e27d94" srcName="character_emotions_block">
+		<_field_block_64 name="situational danger" max="14" srcguid="0179c04a-4e17-3df5-3342-45820c952e23" srcName="character_emotions_situational_danger_block">
 			<_field_short_enum name="highest prop class^#The prop class that this block is describing">
 				<item Name="none - actor has no targets whatsoever" />
 				<item Name="dead enemy- my only target is a dead enemy" />
@@ -175,7 +176,7 @@
 		<_field_real name="perceived danger increase half-life:seconds#How many seconds until it rises up to half between its current and target value" />
 		<_field_real name="perceived danger decay half-life:seconds#How many seconds until it decays to half between its current and target values" />
 	</_field_block_64>
-	<_field_block_64 name="vitality properties" max="1" guid="c3d6238d-437d-f974-314c-36a9f32e7eb3">
+	<_field_block_64 name="vitality properties" max="1" srcguid="c3d6238d-437d-f974-314c-36a9f32e7eb3" srcName="character_vitality_block">
 		<_field_long_flags name="vitality flags">
 			<item Name="auto resurrect" />
 		</_field_long_flags>
@@ -198,11 +199,11 @@
 		<_field_real name="suicide radius#when I die and explode, I damage stuff within this distance of me." />
 		<_field_real name="runtime_body_recharge_velocity!" />
 		<_field_real name="runtime_shield_recharge_velocity!" />
-		<_field_tag_reference_64 name="resurrect weapon#If I'm being automatically resurrected then I pull out a ..." />
+		<_field_tag_reference_64 name="resurrect weapon#If I'm being automatically resurrected then I pull out a ..." validtags="weap" />
 		<_field_real name="player damage_scale:[0-1]#If the player is hurting me, scale the damage by this amount. (0 value defaults to 1)" />
 		<_field_real name="projectile attached detonation time scale" />
 	</_field_block_64>
-	<_field_block_64 name="placement properties" max="1" guid="da6187af-4914-2ac1-7a1d-6ab308f0ea5b">
+	<_field_block_64 name="placement properties" max="1" srcguid="da6187af-4914-2ac1-7a1d-6ab308f0ea5b" srcName="character_placement_block">
 		<_field_pad name="YJQV" length="4" />
 		<_field_real name="few upgrade chance (easy)" />
 		<_field_real name="few upgrade chance (normal)" />
@@ -217,7 +218,7 @@
 		<_field_real name="many upgrade chance (heroic)" />
 		<_field_real name="many upgrade chance (legendary)" />
 	</_field_block_64>
-	<_field_block_64 name="perception properties" max="8" guid="d7957270-46c7-1cf1-064e-03a0b96ad82b">
+	<_field_block_64 name="perception properties" max="8" srcguid="d7957270-46c7-1cf1-064e-03a0b96ad82b" srcName="character_perception_block">
 		<_field_short_enum name="perception_mode^">
 			<item Name="idle" />
 			<item Name="alert" />
@@ -257,28 +258,32 @@
 		<_field_real name="hologram ignore timer shot penalty:seconds#The number of seconds taken off of the ignore timer each time the hologram is shot" />
 		<_field_real name="camouflaged enemy visible distance (normal):wu#Distance below which the AI becomes aware of you even if you are camouflaged, normal difficulty" />
 		<_field_real name="camouflaged enemy visible distance (legendary):wu#Distance below which the AI becomes aware of you even if you are camouflaged, lengendary difficulty" />
-		<_field_data_64 name="data" />
+		<_field_struct name="mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
 		<_field_custom name="Normal active-camo perception" />
-		<_field_struct name="normal active camo perception" />
-		<_field_real_fraction name="partial invis amount:[0,1]#this amount of active camouflage makes a target 'partially invisible'" />
-		<_field_real name="partial invis vision distance:world units#maximum vision distance for partially invisible targets. 0= unlimited" />
-		<_field_real name="partial invis awareness multiplier:[0,1]#multiplier on our awareness speed for partially invisible targets. 0= no change. Should be in (0, 1]." />
-		<_field_real_fraction name="full invis amount:[0,1]#this amount of active camouflage makes a target 'fully invisible'" />
-		<_field_real name="full invis vision distance:world units#maximum vision distance for fully invisible targets. 0= unlimited" />
-		<_field_real name="full invis awareness multiplier:[0,1]#multiplier on our awareness speed for fully invisible targets. 0= no change. Should be in (0, 1]." />
+		<_field_struct name="normal active camo perception" srcguid="2171e4a2-48d7-bbd0-c39b-518098555aa6">
+			<_field_real_fraction name="partial invis amount:[0,1]#this amount of active camouflage makes a target 'partially invisible'" />
+			<_field_real name="partial invis vision distance:world units#maximum vision distance for partially invisible targets. 0= unlimited" />
+			<_field_real name="partial invis awareness multiplier:[0,1]#multiplier on our awareness speed for partially invisible targets. 0= no change. Should be in (0, 1]." />
+			<_field_real_fraction name="full invis amount:[0,1]#this amount of active camouflage makes a target 'fully invisible'" />
+			<_field_real name="full invis vision distance:world units#maximum vision distance for fully invisible targets. 0= unlimited" />
+			<_field_real name="full invis awareness multiplier:[0,1]#multiplier on our awareness speed for fully invisible targets. 0= no change. Should be in (0, 1]." />
+		</_field_struct>
 		<_field_custom name="Legendary active-camo perception" />
-		<_field_struct name="legendary active camo perception" />
-		<_field_real_fraction name="partial invis amount:[0,1]#this amount of active camouflage makes a target 'partially invisible'" />
-		<_field_real name="partial invis vision distance:world units#maximum vision distance for partially invisible targets. 0= unlimited" />
-		<_field_real name="partial invis awareness multiplier:[0,1]#multiplier on our awareness speed for partially invisible targets. 0= no change. Should be in (0, 1]." />
-		<_field_real_fraction name="full invis amount:[0,1]#this amount of active camouflage makes a target 'fully invisible'" />
-		<_field_real name="full invis vision distance:world units#maximum vision distance for fully invisible targets. 0= unlimited" />
-		<_field_real name="full invis awareness multiplier:[0,1]#multiplier on our awareness speed for fully invisible targets. 0= no change. Should be in (0, 1]." />
+		<_field_struct name="legendary active camo perception" srcguid="2171e4a2-48d7-bbd0-c39b-518098555aa6">
+			<_field_real_fraction name="partial invis amount:[0,1]#this amount of active camouflage makes a target 'partially invisible'" />
+			<_field_real name="partial invis vision distance:world units#maximum vision distance for partially invisible targets. 0= unlimited" />
+			<_field_real name="partial invis awareness multiplier:[0,1]#multiplier on our awareness speed for partially invisible targets. 0= no change. Should be in (0, 1]." />
+			<_field_real_fraction name="full invis amount:[0,1]#this amount of active camouflage makes a target 'fully invisible'" />
+			<_field_real name="full invis vision distance:world units#maximum vision distance for fully invisible targets. 0= unlimited" />
+			<_field_real name="full invis awareness multiplier:[0,1]#multiplier on our awareness speed for fully invisible targets. 0= no change. Should be in (0, 1]." />
+		</_field_struct>
 	</_field_block_64>
-	<_field_block_64 name="target properties" max="1" guid="6e370abf-4e42-12a8-27f9-5a99ae303a54">
+	<_field_block_64 name="target properties" max="1" srcguid="6e370abf-4e42-12a8-27f9-5a99ae303a54" srcName="character_target_block">
 		<_field_real name="player preference:[0-1]#How interested in the player I am on a scale of 0-1" />
 	</_field_block_64>
-	<_field_block_64 name="look properties" max="1" guid="6dc12d24-4151-206e-4e3a-c994b369bf24">
+	<_field_block_64 name="look properties" max="1" srcguid="6dc12d24-4151-206e-4e3a-c994b369bf24" srcName="character_look_block">
 		<_field_real_euler_angles_2d name="maximum aiming deviation:degrees#how far we can turn our weapon" />
 		<_field_real_euler_angles_2d name="maximum looking deviation:degrees#how far we can turn our head" />
 		<_field_real_euler_angles_2d name="runtime aiming deviation cosines!" />
@@ -292,74 +297,80 @@
 		<_field_real_bounds name="combat idle looking:seconds#rate at which we change look around randomly when searching or in combat" />
 		<_field_real_bounds name="combat idle aiming:seconds#rate at which we change aiming directions when looking around randomly when searching or in combat" />
 	</_field_block_64>
-	<_field_block_64 name="hopping properties" max="1" guid="93390cfa-48cb-5573-a626-54bfa2220143">
+	<_field_block_64 name="hopping properties" max="1" srcguid="93390cfa-48cb-5573-a626-54bfa2220143" srcName="character_hopping_block">
 		<_field_long_flags name="Hopping Flags">
 			<item Name="to cover path segements" />
 			<item Name="to end of path" />
 			<item Name="forward only" />
 		</_field_long_flags>
-		<_field_block_64 name="Hopping Definition" max="1" guid="2467a7f3-4f12-2eeb-794f-7592eb2cc1e2">
+		<_field_block_64 name="Hopping Definition" max="1" srcguid="2467a7f3-4f12-2eeb-794f-7592eb2cc1e2" srcName="characterHopDefinitionBlock">
 			<_field_custom name="Default" />
-			<_field_struct name="Default" />
-			<_field_real name="Min hop distance#Pathing shorter than this, no hopping" />
-			<_field_real name="Min hop distance to path end#Pathing shorter than this, no hopping to end of path" />
-			<_field_real_bounds name="Hop wait timer min/max#Character will wait this random ranged timer before hopping again.(Seconds)" />
-			<_field_real name="Max hop distance#Pathing longer than this, no hopping." />
-			<_field_real name="pad!" />
+			<_field_struct name="Default" srcguid="cc9f15f6-4a2e-8462-b1a6-8badcda9a28f">
+				<_field_real name="Min hop distance#Pathing shorter than this, no hopping" />
+				<_field_real name="Min hop distance to path end#Pathing shorter than this, no hopping to end of path" />
+				<_field_real_bounds name="Hop wait timer min/max#Character will wait this random ranged timer before hopping again.(Seconds)" />
+				<_field_real name="Max hop distance#Pathing longer than this, no hopping." />
+				<_field_real name="pad!" />
+			</_field_struct>
 			<_field_custom name="Passive" />
-			<_field_struct name="Passive" />
-			<_field_real name="Min hop distance#Pathing shorter than this, no hopping" />
-			<_field_real name="Min hop distance to path end#Pathing shorter than this, no hopping to end of path" />
-			<_field_real_bounds name="Hop wait timer min/max#Character will wait this random ranged timer before hopping again.(Seconds)" />
-			<_field_real name="Max hop distance#Pathing longer than this, no hopping." />
-			<_field_real name="pad!" />
+			<_field_struct name="Passive" srcguid="cc9f15f6-4a2e-8462-b1a6-8badcda9a28f">
+				<_field_real name="Min hop distance#Pathing shorter than this, no hopping" />
+				<_field_real name="Min hop distance to path end#Pathing shorter than this, no hopping to end of path" />
+				<_field_real_bounds name="Hop wait timer min/max#Character will wait this random ranged timer before hopping again.(Seconds)" />
+				<_field_real name="Max hop distance#Pathing longer than this, no hopping." />
+				<_field_real name="pad!" />
+			</_field_struct>
 			<_field_custom name="Aggressive" />
-			<_field_struct name="Aggressive" />
-			<_field_real name="Min hop distance#Pathing shorter than this, no hopping" />
-			<_field_real name="Min hop distance to path end#Pathing shorter than this, no hopping to end of path" />
-			<_field_real_bounds name="Hop wait timer min/max#Character will wait this random ranged timer before hopping again.(Seconds)" />
-			<_field_real name="Max hop distance#Pathing longer than this, no hopping." />
-			<_field_real name="pad!" />
+			<_field_struct name="Aggressive" srcguid="cc9f15f6-4a2e-8462-b1a6-8badcda9a28f">
+				<_field_real name="Min hop distance#Pathing shorter than this, no hopping" />
+				<_field_real name="Min hop distance to path end#Pathing shorter than this, no hopping to end of path" />
+				<_field_real_bounds name="Hop wait timer min/max#Character will wait this random ranged timer before hopping again.(Seconds)" />
+				<_field_real name="Max hop distance#Pathing longer than this, no hopping." />
+				<_field_real name="pad!" />
+			</_field_struct>
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="warp properties" max="1" guid="d94441dd-4c36-8f3a-eea7-a0895feef793">
-		<_field_block_64 name="Warp Definition" max="1" guid="864dae31-45d2-951a-ced3-e1a0b0715a39">
+	<_field_block_64 name="warp properties" max="1" srcguid="d94441dd-4c36-8f3a-eea7-a0895feef793" srcName="character_warp_block">
+		<_field_block_64 name="Warp Definition" max="1" srcguid="864dae31-45d2-951a-ced3-e1a0b0715a39" srcName="characterWarpDefinitionBlock">
 			<_field_custom name="Default" />
-			<_field_struct name="Default" />
-			<_field_real name="min warp distance" />
-			<_field_real name="max warp distance" />
-			<_field_real name="warp speed:wu/s" />
-			<_field_real name="run up distance#must run this far before warping" />
-			<_field_real name="linear distance until cooldown#must cool down after this much warping" />
-			<_field_real name="cooldown duration:seconds" />
-			<_field_real name="min jump distance:wu" />
+			<_field_struct name="Default" srcguid="74943571-41ee-78f1-3af3-6fb069f6e3d8">
+				<_field_real name="min warp distance" />
+				<_field_real name="max warp distance" />
+				<_field_real name="warp speed:wu/s" />
+				<_field_real name="run up distance#must run this far before warping" />
+				<_field_real name="linear distance until cooldown#must cool down after this much warping" />
+				<_field_real name="cooldown duration:seconds" />
+				<_field_real name="min jump distance:wu" />
+			</_field_struct>
 			<_field_custom name="Passive" />
-			<_field_struct name="Passive" />
-			<_field_real name="min warp distance" />
-			<_field_real name="max warp distance" />
-			<_field_real name="warp speed:wu/s" />
-			<_field_real name="run up distance#must run this far before warping" />
-			<_field_real name="linear distance until cooldown#must cool down after this much warping" />
-			<_field_real name="cooldown duration:seconds" />
-			<_field_real name="min jump distance:wu" />
+			<_field_struct name="Passive" srcguid="74943571-41ee-78f1-3af3-6fb069f6e3d8">
+				<_field_real name="min warp distance" />
+				<_field_real name="max warp distance" />
+				<_field_real name="warp speed:wu/s" />
+				<_field_real name="run up distance#must run this far before warping" />
+				<_field_real name="linear distance until cooldown#must cool down after this much warping" />
+				<_field_real name="cooldown duration:seconds" />
+				<_field_real name="min jump distance:wu" />
+			</_field_struct>
 			<_field_custom name="Aggressive" />
-			<_field_struct name="Aggressive" />
-			<_field_real name="min warp distance" />
-			<_field_real name="max warp distance" />
-			<_field_real name="warp speed:wu/s" />
-			<_field_real name="run up distance#must run this far before warping" />
-			<_field_real name="linear distance until cooldown#must cool down after this much warping" />
-			<_field_real name="cooldown duration:seconds" />
-			<_field_real name="min jump distance:wu" />
+			<_field_struct name="Aggressive" srcguid="74943571-41ee-78f1-3af3-6fb069f6e3d8">
+				<_field_real name="min warp distance" />
+				<_field_real name="max warp distance" />
+				<_field_real name="warp speed:wu/s" />
+				<_field_real name="run up distance#must run this far before warping" />
+				<_field_real name="linear distance until cooldown#must cool down after this much warping" />
+				<_field_real name="cooldown duration:seconds" />
+				<_field_real name="min jump distance:wu" />
+			</_field_struct>
 		</_field_block_64>
-		<_field_tag_reference_64 name="Intro Effect" />
-		<_field_tag_reference_64 name="Travel Effect" />
-		<_field_tag_reference_64 name="Outro Effect" />
+		<_field_tag_reference_64 name="Intro Effect" validtags="effe" />
+		<_field_tag_reference_64 name="Travel Effect" validtags="effe" />
+		<_field_tag_reference_64 name="Outro Effect" validtags="effe" />
 	</_field_block_64>
-	<_field_block_64 name="fire buddy properties" max="1" guid="4a547dcd-4386-69aa-debb-32b0199605b3">
+	<_field_block_64 name="fire buddy properties" max="1" srcguid="4a547dcd-4386-69aa-debb-32b0199605b3" srcName="fireBuddyBlock">
 		<_field_short_integer name="Team Size#Total number of team members (leader + followers)" />
 		<_field_pad name="pad0" length="2" />
-		<_field_block_64 name="buddy firing point query" max="1" guid="45e55b29-4ed9-f337-6b19-3dad41afde24">
+		<_field_block_64 name="buddy firing point query" max="1" srcguid="45e55b29-4ed9-f337-6b19-3dad41afde24" srcName="FiringPointQueryBlock">
 			<_field_char_enum name="shape type">
 				<item Name="Circle" />
 				<item Name="Triangle" />
@@ -382,7 +393,7 @@
 			<_field_real name="roll#degrees" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="movement properties" max="1" guid="5cd8b49c-4173-a6b7-794e-1ca6cff86b2f">
+	<_field_block_64 name="movement properties" max="1" srcguid="5cd8b49c-4173-a6b7-794e-1ca6cff86b2f" srcName="character_movement_block">
 		<_field_long_flags name="movement flags">
 			<item Name="danger crouch allow movement" />
 			<item Name="no side-step" />
@@ -494,14 +505,14 @@
 		<_field_custom name="Throttle and inertia" />
 		<_field_long_integer name="minimum movement ticks:ticks#We will move at least this long in a single direction when starting movement" />
 		<_field_real name="minimum movement ticks reset angle:degrees#If the character changes movement direction by more than this angle, he will have to move for at least minimum movement ticks until he can change his mind." />
-		<_field_block_64 name="change direction pause" max="8" guid="cd24a769-456e-416f-fb5c-33b23728baea">
+		<_field_block_64 name="change direction pause" max="8" srcguid="cd24a769-456e-416f-fb5c-33b23728baea" srcName="movement_stationary_pause_block">
 			<_field_explanation name="Inertial pause settings">These values tell the actor to remain stationary for the specified number of ticks if he changes his direction of movement by at least 'change angle'. Specifying an angle of 0 means pause this much every time you get to your destination.</_field_explanation>
 			<_field_angle name="direction change angle:degrees" />
 			<_field_long_integer name="stationary change:ticks" />
 		</_field_block_64>
 		<_field_real name="maximum throttle:[0-1]#The character will never throttle beyond this value" />
 		<_field_real name="minimum throttle:[0-1]#The character will not throttle below this value" />
-		<_field_block_64 name="movement throttle control" max="10" guid="82a12886-485f-a634-bff2-a3b8236c088c">
+		<_field_block_64 name="movement throttle control" max="10" srcguid="82a12886-485f-a634-bff2-a3b8236c088c" srcName="movement_throttle_control_block">
 			<_field_short_enum name="combat status#When combat status is bigger or equal to this combat status, use the throttle settings below.">
 				<item Name="asleep" />
 				<item Name="idle" />
@@ -515,7 +526,7 @@
 				<item Name="dangerous enemy" />
 			</_field_short_enum>
 			<_field_pad name="deprecated_flags" length="2" />
-			<_field_block_64 name="throttle settings" max="16" guid="471a7d90-407e-ee01-897b-f7a117ea3554">
+			<_field_block_64 name="throttle settings" max="16" srcguid="471a7d90-407e-ee01-897b-f7a117ea3554" srcName="movement_throttle_block">
 				<_field_real name="distance:wus#If AI needs to move at greater or equal to this distance, they will move at the given throttle" />
 				<_field_real name="throttle scale:[0-1]#Throttle scale between minimum and maximum throttle" />
 			</_field_block_64>
@@ -542,46 +553,54 @@
 		<_field_real name="Arrival Distance Min#min distance from destination point where facing should be aligned with aim" />
 		<_field_real name="Arrival Distance Range#max distance from destination point where facing should be aligned with heading" />
 		<_field_angle name="Maximum Deviation Angle#how far we will allow the facing to deviate from the preference." />
-		<_field_struct name="smooth throttle#Allows characters to be smooth throttle changes." />
-		<_field_custom name="Smooth Throttle" />
-		<_field_short_enum name="settings options">
-			<item Name="Use Engine Default Settings" />
-			<item Name="Use Override Settings Below" />
-			<item Name="Disable" />
-		</_field_short_enum>
-		<_field_explanation name="Override Settings">The following setting are applied when the Override option is chosen</_field_explanation>
-		<_field_pad name="csts_pad_2" length="2" />
-		<_field_real name="Starting Rate:(0.0 to 1.0)#interpolation weight used for the first frame of movement from a stopped position." />
-		<_field_real name="Stopping Rate:(0.0 to 1.0)#interpolation weight used for transitioning to a zero (stopped) throttle." />
-		<_field_real name="Max Linear Acceleration:throttle units per second#maximum linear acceleration limit for throttle magnitude during regular movement." />
-		<_field_real name="Max Linear Deceleration:throttle units per second#maximum linear deceleration limit for throttle magnitude during regular movement." />
-		<_field_angle name="Max Angular Acceleration:degrees per second#maximum angular acceleration/deceleration limit for throttle changes." />
-		<_field_real name="Max Reversal Linear Acceleration:throttle units per second#maximum linear Accel/Decel limit for throttle magnitude when reversing direction." />
-		<_field_angle name="Max Reversal Angular Acceleration:degrees per second#maximum angular Accel/Decel limit for throttle heading when reversing direction." />
-		<_field_struct name="locomotion settings#Controls how the throttle changes along a path." />
-		<_field_custom name="Locomotion Settings" />
-		<_field_real_fraction name="Sharp Turn Throttle:(0.0 to 1.0)#lowest throttle to use when passing through a sharp turn" />
-		<_field_angle name="Sharp Turn Angle#angle that denotes a sharp turn" />
-		<_field_real name="Max Accel Time#seconds to go from 0 to full throttle." />
-		<_field_real name="Max Decel Time#seconds to go from full throttle to 0." />
+		<_field_struct name="smooth throttle#Allows characters to be smooth throttle changes." srcguid="4c6cba31-44f7-cac4-5567-ccbc89052fe7">
+			<_field_custom name="Smooth Throttle" />
+			<_field_short_enum name="settings options">
+				<item Name="Use Engine Default Settings" />
+				<item Name="Use Override Settings Below" />
+				<item Name="Disable" />
+			</_field_short_enum>
+			<_field_explanation name="Override Settings">The following setting are applied when the Override option is chosen</_field_explanation>
+			<_field_pad name="csts_pad_2" length="2" />
+			<_field_real name="Starting Rate:(0.0 to 1.0)#interpolation weight used for the first frame of movement from a stopped position." />
+			<_field_real name="Stopping Rate:(0.0 to 1.0)#interpolation weight used for transitioning to a zero (stopped) throttle." />
+			<_field_real name="Max Linear Acceleration:throttle units per second#maximum linear acceleration limit for throttle magnitude during regular movement." />
+			<_field_real name="Max Linear Deceleration:throttle units per second#maximum linear deceleration limit for throttle magnitude during regular movement." />
+			<_field_angle name="Max Angular Acceleration:degrees per second#maximum angular acceleration/deceleration limit for throttle changes." />
+			<_field_real name="Max Reversal Linear Acceleration:throttle units per second#maximum linear Accel/Decel limit for throttle magnitude when reversing direction." />
+			<_field_angle name="Max Reversal Angular Acceleration:degrees per second#maximum angular Accel/Decel limit for throttle heading when reversing direction." />
+		</_field_struct>
+		<_field_struct name="locomotion settings#Controls how the throttle changes along a path." srcguid="6cc78b04-4de4-9ade-f920-1590a5e23550">
+			<_field_custom name="Locomotion Settings" />
+			<_field_real_fraction name="Sharp Turn Throttle:(0.0 to 1.0)#lowest throttle to use when passing through a sharp turn" />
+			<_field_angle name="Sharp Turn Angle#angle that denotes a sharp turn" />
+			<_field_real name="Max Accel Time#seconds to go from 0 to full throttle." />
+			<_field_real name="Max Decel Time#seconds to go from full throttle to 0." />
+		</_field_struct>
 		<_field_real name="wall climb cost multiplier # values below 1.0 will cause the character to prefer to path along wals.  Tune carefully." />
 		<_field_real name="bound forward distance# Total distance character will bound forward to shortcut path." />
 		<_field_real name="bound forward sidestep# Distance character moves to the side during bounding." />
 	</_field_block_64>
-	<_field_block_64 name="throttle styles" max="256" guid="d90e6017-4c37-e54e-b9e7-d28789de676b">
+	<_field_block_64 name="throttle styles" max="256" srcguid="d90e6017-4c37-e54e-b9e7-d28789de676b" srcName="character_throttle_style_block">
 		<_field_string_id name="style name^" />
 		<_field_real_fraction name="desired throttle:[0,1]" />
 		<_field_real name="acceleration time:seconds" />
-		<_field_struct name="acceleration function#Defines throttle as a function of time from start of style application" />
-		<_field_data_64 name="data" />
+		<_field_struct name="acceleration function#Defines throttle as a function of time from start of style application" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+			<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
 		<_field_real name="deceleration distance:wu" />
-		<_field_struct name="deceleration function#Defines throttle as a function of distance from the goal" />
-		<_field_data_64 name="data" />
+		<_field_struct name="deceleration function#Defines throttle as a function of distance from the goal" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+			<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
 		<_field_string_id name="stance" />
 	</_field_block_64>
-	<_field_block_64 name="movement sets" max="8" guid="8aace34c-4221-2179-7cc6-f6a82d5d52c7">
+	<_field_block_64 name="movement sets" max="8" srcguid="8aace34c-4221-2179-7cc6-f6a82d5d52c7" srcName="character_movement_set_block">
 		<_field_string_id name="name^" />
-		<_field_block_64 name="variants" max="8" guid="2d4f623e-4628-ef30-a47d-8dbae7c247d7">
+		<_field_block_64 name="variants" max="8" srcguid="2d4f623e-4628-ef30-a47d-8dbae7c247d7" srcName="movement_mapping_block">
 			<_field_real name="chance" />
 			<_field_explanation name="MAPPING">Movement type -&gt; stance</_field_explanation>
 			<_field_string_id name="idle" />
@@ -601,7 +620,7 @@
 			<_field_string_id name="custom_4" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="flocking properties" max="1" guid="d497ef97-41a5-721c-556c-cf8b8a93c49e">
+	<_field_block_64 name="flocking properties" max="1" srcguid="d497ef97-41a5-721c-556c-cf8b8a93c49e" srcName="character_flocking_block">
 		<_field_explanation name="Jaime, don't touch this">Ever.</_field_explanation>
 		<_field_real name="deceleration distance" />
 		<_field_real name="normalized speed" />
@@ -609,7 +628,7 @@
 		<_field_real_bounds name="throttle threshold bounds" />
 		<_field_real name="deceleration stop time" />
 	</_field_block_64>
-	<_field_block_64 name="swarm properties" max="1" guid="ae465fc2-4d3a-8cac-0795-21bf5ade3419">
+	<_field_block_64 name="swarm properties" max="1" srcguid="ae465fc2-4d3a-8cac-0795-21bf5ade3419" srcName="character_swarm_block">
 		<_field_short_integer name="scatter killed count#After the given number of deaths, the swarm scatters" />
 		<_field_pad name="PEVUDXUKY" length="2" />
 		<_field_real name="scatter radius#the distance from the target that the swarm scatters" />
@@ -624,10 +643,10 @@
 		<_field_real name="stuck time#how long we have to move (stuck distance) before we get deleted" />
 		<_field_real name="stuck distance#how far we have to move in (stuck time) to not get deleted" />
 	</_field_block_64>
-	<_field_block_64 name="ready properties" max="1" guid="978647f9-401c-7640-b5ad-c992e9029cef">
+	<_field_block_64 name="ready properties" max="1" srcguid="978647f9-401c-7640-b5ad-c992e9029cef" srcName="character_ready_block">
 		<_field_real_bounds name="ready time bounds#Character will pause for given time before engaging threat" />
 	</_field_block_64>
-	<_field_block_64 name="engage properties" max="1" guid="ffa4e45d-4f2f-1002-2271-98b465983e21">
+	<_field_block_64 name="engage properties" max="1" srcguid="ffa4e45d-4f2f-1002-2271-98b465983e21" srcName="character_engage_block">
 		<_field_long_flags name="flags">
 			<item Name="defend threat axis #low value character puts himself between danger and defendable point" />
 			<item Name="fight constant movement" />
@@ -648,7 +667,7 @@
 		<_field_real name="Fight danger move threshold#When danger goes above given level, this actor switches firing positions" />
 		<_field_short_integer_bounds name="Fight danger move threshold cooldown:ticks#Wait at least this many ticks before relocating due to danger" />
 		<_field_real name="fight flank chance:[0-1]#Chance of flanking when fighting someone who isn't paying attention to me" />
-		<_field_tag_reference_64 name="override grenade projectile#when I throw a grenade, forget what type I officially have: throw this type of projectile instead" />
+		<_field_tag_reference_64 name="override grenade projectile#when I throw a grenade, forget what type I officially have: throw this type of projectile instead" validtags="proj" />
 		<_field_real name="minimum throw distance#Targets closer than this distance will not be attacked with a throw" />
 		<_field_real name="maximum throw distance#Targets beyond this distance will not be attacked with a throw" />
 		<_field_real name="throw search radius#How far does actor search for throwable items" />
@@ -666,7 +685,7 @@
 		<_field_real name="Enemy avoid distance#Distance we'll try to pick from all enemies." />
 		<_field_real name="Scary enemy avoid distance#Distance we'll try to pick from all scary enemies." />
 	</_field_block_64>
-	<_field_block_64 name="charge properties" max="1" guid="37963e71-4b51-b54c-f661-9782ceeae6f4">
+	<_field_block_64 name="charge properties" max="1" srcguid="37963e71-4b51-b54c-f661-9782ceeae6f4" srcName="character_charge_block">
 		<_field_long_flags name="Charge flags">
 			<item Name="offhand melee allowed" />
 			<item Name="berserk whenever charge" />
@@ -700,7 +719,7 @@
 		<_field_real name="friendly killed max berserk distance:wu#The max range at which we will go berserk if we see a friendly AI of the same type (brute, etc) get killed" />
 		<_field_real_fraction name="peer killed berserk chance:[0,1]#Chance that we will go berserk if we see a friendly AI of the same type (brute, etc) with the same or lower standing get killed" />
 		<_field_real_fraction name="leader killed berserk chance:[0,1]#Chance that we will go berserk if we see a friendly AI of the same type (brute, etc) with higher standing get killed" />
-		<_field_tag_reference_64 name="berserk weapon#when I berserk, I pull out a ..." />
+		<_field_tag_reference_64 name="berserk weapon#when I berserk, I pull out a ..." validtags="weap" />
 		<_field_real_fraction name="Play Berserk Anim Chance When Stuck #Chance that AI will play berserk anim after getting stuck with a grenade.  Zero is 50%" />
 		<_field_real_fraction name="Berserk melee chance:[0,1]#Should generally be set to 1.0 unless 'permanent berserk once initiated' is checked" />
 		<_field_real name="Berserk melee cooldown:sec#Should generally be set to 0.0 unless 'permanent berserk once initiated' is checked" />
@@ -715,17 +734,17 @@
 		<_field_real name="Perimeter Range Close#How far we will melee charge outside our firing points before starting perimeter when the target is close to me (within 3wu) (defaults to 9wu)" />
 		<_field_real name="Perimeter Damage Timeout:secs#How long will we take damage from our target before either seeking cover or berserking (defaults to 3secs)" />
 		<_field_real name="Max target scariness#Maximum scariness value of the target for allowing a charge attack." />
-		<_field_block_64 name="difficulty limits" max="4" guid="7aa4ad54-4e3b-fa81-7ccb-55a4a905c8cc">
+		<_field_block_64 name="difficulty limits" max="4" srcguid="7aa4ad54-4e3b-fa81-7ccb-55a4a905c8cc" srcName="character_charge_difficulty_limits_block">
 			<_field_explanation name="Difficulty Limits">Per difficulty values to limit the number of guys in particular behaviours</_field_explanation>
 			<_field_short_integer name="max kamikaze count#How many guys in a single clump can be kamikazing at one time" />
 			<_field_short_integer name="max berserk count#How many guys in a single clump can be berserking at one time" />
 			<_field_short_integer name="min berserk count#We'd like at least this number of guys in a single clump can be berserking at one time (primarily combat forms)" />
 		</_field_block_64>
-		<_field_block_64 name="Combo Definitions" max="16" guid="aecd66c9-48b6-e46c-e6db-edba08f15f36">
+		<_field_block_64 name="Combo Definitions" max="16" srcguid="aecd66c9-48b6-e46c-e6db-edba08f15f36" srcName="MeleeComboDefinitionBlock">
 			<_field_long_flags name="Combo Flags">
 			</_field_long_flags>
 			<_field_real name="Weight Modifier" />
-			<_field_block_64 name="Attacks" max="8" guid="acb45ece-47ce-ed56-61ad-dca032e66a3d">
+			<_field_block_64 name="Attacks" max="8" srcguid="acb45ece-47ce-ed56-61ad-dca032e66a3d" srcName="MeleeAttackDefinitionBlock">
 				<_field_long_flags name="Direction Flags">
 					<item Name="Front" />
 					<item Name="Left" />
@@ -733,19 +752,19 @@
 					<item Name="Back" />
 				</_field_long_flags>
 				<_field_string_id name="Animation Name" />
-				<_field_tag_reference_64 name="Damage Override" />
+				<_field_tag_reference_64 name="Damage Override" validtags="jpt!" />
 			</_field_block_64>
 		</_field_block_64>
 	</_field_block_64>
 	<_field_explanation name="Danger Values">Danger values can be found in the ai-globals section of the globals tag.</_field_explanation>
-	<_field_block_64 name="evasion properties" max="1" guid="9687ec75-4108-6029-ce6d-4fad35eda56c">
+	<_field_block_64 name="evasion properties" max="1" srcguid="9687ec75-4108-6029-ce6d-4fad35eda56c" srcName="character_evasion_block">
 		<_field_real name="Evasion danger threshold#Consider evading when immediate danger surpasses threshold" />
 		<_field_real name="Evasion delay timer#Wait at least this delay between evasions" />
 		<_field_real name="Evasion chance#If danger is above threshold, the chance that we will evade. Expressed as chance of evading within a 1 second time period" />
 		<_field_real name="Evasion proximity threshold#If target is within given proximity, possibly evade" />
 		<_field_real name="dive retreat chance#Chance of retreating (fleeing) after danger avoidance dive" />
 	</_field_block_64>
-	<_field_block_64 name="cover properties" max="1" guid="1d0e6bc9-471c-2e39-2d15-5ba38a4ec543">
+	<_field_block_64 name="cover properties" max="1" srcguid="1d0e6bc9-471c-2e39-2d15-5ba38a4ec543" srcName="character_cover_block">
 		<_field_long_flags name="cover flags">
 			<item Name="FLAG_DELETED" />
 			<item Name="Use Phasing" />
@@ -775,7 +794,7 @@
 		<_field_real name="Recent damage shield equipment#Must have less than this amount of recent body damage before we can deploy our equipped shield equipment." />
 		<_field_real name="Minimum enemy distance#Minimum distance to enemy before we are forced to break out of cover" />
 	</_field_block_64>
-	<_field_block_64 name="retreat properties" max="1" guid="f0f699b8-4ddc-2cc1-6662-d29701268c96">
+	<_field_block_64 name="retreat properties" max="1" srcguid="f0f699b8-4ddc-2cc1-6662-d29701268c96" srcName="character_retreat_block">
 		<_field_long_flags name="Retreat flags">
 			<item Name="Zig-zag when fleeing" />
 			<item Name="Unused1" />
@@ -795,9 +814,9 @@
 		<_field_angle name="zig-zag angle:degrees#The angle from the intended destination direction that a zig-zag will cause" />
 		<_field_real name="zig-zag period:seconds#How long it takes to zig left and then zag right." />
 		<_field_real name="retreat grenade chance#The likelihood of throwing down a grenade to cover our retreat" />
-		<_field_tag_reference_64 name="backup weapon#If I want to flee and I don't have flee animations with my current weapon, throw it away and try a ..." />
+		<_field_tag_reference_64 name="backup weapon#If I want to flee and I don't have flee animations with my current weapon, throw it away and try a ..." validtags="weap" />
 	</_field_block_64>
-	<_field_block_64 name="search properties" max="1" guid="541f9730-457b-87d3-d31a-10aef6588b7b">
+	<_field_block_64 name="search properties" max="1" srcguid="541f9730-457b-87d3-d31a-10aef6588b7b" srcName="character_search_block">
 		<_field_long_flags name="Search flags">
 			<item Name="crouch on investigate" />
 			<item Name="walk on pursuit" />
@@ -816,7 +835,7 @@
 		<_field_explanation name="Performances" />
 		<_field_real name="Performance Cool-down Time#The number of seconds that must elapse before an actor will consider a search-performance again" />
 	</_field_block_64>
-	<_field_block_64 name="pre-search properties" max="1" guid="4e5e33e3-452d-bd02-0d50-84aa42c772a9">
+	<_field_block_64 name="pre-search properties" max="1" srcguid="4e5e33e3-452d-bd02-0d50-84aa42c772a9" srcName="character_presearch_block">
 		<_field_long_flags name="Pre-search flags">
 			<item Name="Flag1" />
 		</_field_long_flags>
@@ -836,12 +855,12 @@
 		<_field_real name="investigate weight" />
 		<_field_real name="search by fire weight" />
 	</_field_block_64>
-	<_field_block_64 name="idle properties" max="1" guid="6c8bcfdb-42ab-68e9-57d1-eea9eae11cfc">
+	<_field_block_64 name="idle properties" max="1" srcguid="6c8bcfdb-42ab-68e9-57d1-eea9eae11cfc" srcName="character_idle_block">
 		<_field_pad name="ZTG" length="4" />
 		<_field_real_bounds name="idle pose delay time:seconds#time range for delays between idle poses" />
 		<_field_real_bounds name="wander delay time:seconds#time to pause at a point while wandering" />
 	</_field_block_64>
-	<_field_block_64 name="vocalization properties" max="1" guid="62f8205d-40fd-9e10-08cd-1aad1d20f29d">
+	<_field_block_64 name="vocalization properties" max="1" srcguid="62f8205d-40fd-9e10-08cd-1aad1d20f29d" srcName="character_vocalization_block">
 		<_field_explanation name="Skip Fraction">For vocalization with priority &lt; react, multiplies the skip fraction in the dialogue globals tag.
 For priorities &gt; react, multiplies the vocalization WEIGHT (i.e. the desire of that character to vocalize RELATIVE to other characters in the scene).
 Thus if you hurt the arbiter, say, he's still going to yell at you, no matter what, and if you kill somebody and nobody else is there to witness it, he will yell at you.
@@ -851,7 +870,7 @@ As always, 0 means speak normally, 1 means skip everything (don't say lindquist)
 		<_field_real name="look comment time:s#How long does the player look at an AI before the AI responds?" />
 		<_field_real name="look long comment time:s#How long does the player look at the AI before he responds with his 'long look' comment?" />
 	</_field_block_64>
-	<_field_block_64 name="boarding properties" max="1" guid="e8176f59-413a-5987-483e-ad97fcf98f13">
+	<_field_block_64 name="boarding properties" max="1" srcguid="e8176f59-413a-5987-483e-ad97fcf98f13" srcName="character_boarding_block">
 		<_field_long_flags name="flags">
 			<item Name="airborne boarding" />
 		</_field_long_flags>
@@ -860,74 +879,79 @@ As always, 0 means speak normally, 1 means skip everything (don't say lindquist)
 		<_field_real name="max speed:wu/s#maximum speed at which we will consider boarding" />
 		<_field_real name="board time:seconds#maximum time we will melee board for" />
 		<_field_real_bounds name="boarding timeout:seconds#The amount of time after boarding before we'll consider boarding again" />
-		<_field_block_64 name="vehicle specific properties" max="32" guid="86521b2c-4d0b-1dc3-f35e-d387908c5487">
-			<_field_tag_reference_64 name="vehicle^" />
+		<_field_block_64 name="vehicle specific properties" max="32" srcguid="86521b2c-4d0b-1dc3-f35e-d387908c5487" srcName="character_vehicle_boarding_block">
+			<_field_tag_reference_64 name="vehicle^" validtags="unit" />
 			<_field_long_flags name="flags">
 				<item Name="boarding does not enter seat" />
 			</_field_long_flags>
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="kungfu properties" max="1" guid="e2da6f85-4373-15e2-79b3-bfa3f8fabd32">
+	<_field_block_64 name="kungfu properties" max="1" srcguid="e2da6f85-4373-15e2-79b3-bfa3f8fabd32" srcName="character_kungfu_block">
 		<_field_real name="kungfu override distance:wus#If the player is within this distance, open fire, even if your task is kungfu-fight disallowed" />
 		<_field_real name="kungfu cover danger threshold#If you are kungfu disallowed and your danger is above this level, take cover" />
 		<_field_real name="Min Allowed Time# Minimum time spent firing at a player." />
 		<_field_real name="Min Disallowed Time# Minimum time spent not firing at a player." />
 	</_field_block_64>
-	<_field_block_64 name="bunker properties" max="1" guid="8edf6b9e-4802-32ea-bc5c-a280616abe72">
+	<_field_block_64 name="bunker properties" max="1" srcguid="8edf6b9e-4802-32ea-bc5c-a280616abe72" srcName="character_bunker_block">
 		<_field_long_flags name="Flags">
 			<item Name="No Bunker During Guard" />
 		</_field_long_flags>
 		<_field_explanation name="DEFAULT TIMINGS" />
-		<_field_struct name="default" />
-		<_field_real_bounds name="open time:seconds#How long we should open for" />
-		<_field_real name="closed min time:seconds#How long we must stay closed for before opening or peeking again" />
-		<_field_real name="close danger level#Force close at this danger level" />
-		<_field_real name="open chance:chance per second#What chance we have of opening per second" />
-		<_field_real name="peek chance:chance per second#What chance we have of peeking per second" />
+		<_field_struct name="default" srcguid="4c18982b-437a-8faf-dabc-d9a9852d0bad">
+			<_field_real_bounds name="open time:seconds#How long we should open for" />
+			<_field_real name="closed min time:seconds#How long we must stay closed for before opening or peeking again" />
+			<_field_real name="close danger level#Force close at this danger level" />
+			<_field_real name="open chance:chance per second#What chance we have of opening per second" />
+			<_field_real name="peek chance:chance per second#What chance we have of peeking per second" />
+		</_field_struct>
 		<_field_explanation name="FIGHT TIMINGS" />
-		<_field_struct name="fight" />
-		<_field_real_bounds name="open time:seconds#How long we should open for" />
-		<_field_real name="closed min time:seconds#How long we must stay closed for before opening or peeking again" />
-		<_field_real name="close danger level#Force close at this danger level" />
-		<_field_real name="open chance:chance per second#What chance we have of opening per second" />
-		<_field_real name="peek chance:chance per second#What chance we have of peeking per second" />
+		<_field_struct name="fight" srcguid="4c18982b-437a-8faf-dabc-d9a9852d0bad">
+			<_field_real_bounds name="open time:seconds#How long we should open for" />
+			<_field_real name="closed min time:seconds#How long we must stay closed for before opening or peeking again" />
+			<_field_real name="close danger level#Force close at this danger level" />
+			<_field_real name="open chance:chance per second#What chance we have of opening per second" />
+			<_field_real name="peek chance:chance per second#What chance we have of peeking per second" />
+		</_field_struct>
 		<_field_explanation name="COVER TIMINGS" />
-		<_field_struct name="cover" />
-		<_field_real_bounds name="open time:seconds#How long we should open for" />
-		<_field_real name="closed min time:seconds#How long we must stay closed for before opening or peeking again" />
-		<_field_real name="close danger level#Force close at this danger level" />
-		<_field_real name="open chance:chance per second#What chance we have of opening per second" />
-		<_field_real name="peek chance:chance per second#What chance we have of peeking per second" />
+		<_field_struct name="cover" srcguid="4c18982b-437a-8faf-dabc-d9a9852d0bad">
+			<_field_real_bounds name="open time:seconds#How long we should open for" />
+			<_field_real name="closed min time:seconds#How long we must stay closed for before opening or peeking again" />
+			<_field_real name="close danger level#Force close at this danger level" />
+			<_field_real name="open chance:chance per second#What chance we have of opening per second" />
+			<_field_real name="peek chance:chance per second#What chance we have of peeking per second" />
+		</_field_struct>
 		<_field_explanation name="GUARD TIMINGS" />
-		<_field_struct name="guard" />
-		<_field_real_bounds name="open time:seconds#How long we should open for" />
-		<_field_real name="closed min time:seconds#How long we must stay closed for before opening or peeking again" />
-		<_field_real name="close danger level#Force close at this danger level" />
-		<_field_real name="open chance:chance per second#What chance we have of opening per second" />
-		<_field_real name="peek chance:chance per second#What chance we have of peeking per second" />
+		<_field_struct name="guard" srcguid="4c18982b-437a-8faf-dabc-d9a9852d0bad">
+			<_field_real_bounds name="open time:seconds#How long we should open for" />
+			<_field_real name="closed min time:seconds#How long we must stay closed for before opening or peeking again" />
+			<_field_real name="close danger level#Force close at this danger level" />
+			<_field_real name="open chance:chance per second#What chance we have of opening per second" />
+			<_field_real name="peek chance:chance per second#What chance we have of peeking per second" />
+		</_field_struct>
 	</_field_block_64>
-	<_field_block_64 name="shield wall properties" max="1" guid="34e85670-4e2d-d223-a10b-eba5245de028">
+	<_field_block_64 name="shield wall properties" max="1" srcguid="34e85670-4e2d-d223-a10b-eba5245de028" srcName="character_shield_wall_block">
 		<_field_real name="Raise Shield Delay:seconds# Time after coming to a stop before character raises his shield." />
 		<_field_real name="Relocate Delay:seconds# Delay between searching for a new firing point." />
 		<_field_custom name="Formation" />
-		<_field_struct name="Formation Description" />
-		<_field_explanation name="Procedural">Formations procedurally generated from simple shapes.</_field_explanation>
-		<_field_long_enum name="Shape# Defines structure of procedural formation.">
-			<item Name="Line" />
-			<item Name="Rectangle" />
-			<item Name="Wedge" />
-			<item Name="Circle" />
-		</_field_long_enum>
-		<_field_angle name="Yaw:Degrees# Rotates shape while maintaining facing." />
-		<_field_real name="Spacing# Minimum distance between formation positions." />
-		<_field_long_integer name="Max Rectangle Width# Limits width of Rectangle shaped formations." />
-		<_field_explanation name="Custom">Override Procedural settings with a custom formation defined in a separate tag.</_field_explanation>
-		<_field_tag_reference_64 name="Formation Reference" />
-		<_field_explanation name="Common">Common parameters that apply to both Procedural and Custom formations.</_field_explanation>
-		<_field_real name="Max Speed:World Units# Max speed that formation, as a whole, can move." />
-		<_field_angle name="Max Yaw Rate:Degrees Per Second# Max rate that formation, as a whole, can rotate." />
+		<_field_struct name="Formation Description" srcguid="df419eba-429a-e106-46bf-34a4e097ab5b">
+			<_field_explanation name="Procedural">Formations procedurally generated from simple shapes.</_field_explanation>
+			<_field_long_enum name="Shape# Defines structure of procedural formation.">
+				<item Name="Line" />
+				<item Name="Rectangle" />
+				<item Name="Wedge" />
+				<item Name="Circle" />
+			</_field_long_enum>
+			<_field_angle name="Yaw:Degrees# Rotates shape while maintaining facing." />
+			<_field_real name="Spacing# Minimum distance between formation positions." />
+			<_field_long_integer name="Max Rectangle Width# Limits width of Rectangle shaped formations." />
+			<_field_explanation name="Custom">Override Procedural settings with a custom formation defined in a separate tag.</_field_explanation>
+			<_field_tag_reference_64 name="Formation Reference" validtags="form" />
+			<_field_explanation name="Common">Common parameters that apply to both Procedural and Custom formations.</_field_explanation>
+			<_field_real name="Max Speed:World Units# Max speed that formation, as a whole, can move." />
+			<_field_angle name="Max Yaw Rate:Degrees Per Second# Max rate that formation, as a whole, can rotate." />
+		</_field_struct>
 	</_field_block_64>
-	<_field_block_64 name="firing wall properties" max="1" guid="331a598b-4a9b-242d-f5e3-7aafb843a893">
+	<_field_block_64 name="firing wall properties" max="1" srcguid="331a598b-4a9b-242d-f5e3-7aafb843a893" srcName="character_firing_wall_block">
 		<_field_real_fraction name="Activation Chance (easy)#Chance to initate per sec on easy difficulty" />
 		<_field_real_fraction name="Activation Chance (normal)#Chance to initate per sec on normal difficulty" />
 		<_field_real_fraction name="Activation Chance (heroic)#Chance to initate per sec on heroic difficulty" />
@@ -945,33 +969,34 @@ As always, 0 means speak normally, 1 means skip everything (don't say lindquist)
 		<_field_real name="Max Departure Time Variation:seconds#maximum amount of variance in departure time from time first character departs" />
 		<_field_angle name="Max Angle Between Formation and Target:degrees#formation does not rotate; if angle between formation facing and vector to target is above this threshold, wall is abandoned" />
 		<_field_custom name="Formation" />
-		<_field_struct name="Formation Description" />
-		<_field_explanation name="Procedural">Formations procedurally generated from simple shapes.</_field_explanation>
-		<_field_long_enum name="Shape# Defines structure of procedural formation.">
-			<item Name="Line" />
-			<item Name="Rectangle" />
-			<item Name="Wedge" />
-			<item Name="Circle" />
-		</_field_long_enum>
-		<_field_angle name="Yaw:Degrees# Rotates shape while maintaining facing." />
-		<_field_real name="Spacing# Minimum distance between formation positions." />
-		<_field_long_integer name="Max Rectangle Width# Limits width of Rectangle shaped formations." />
-		<_field_explanation name="Custom">Override Procedural settings with a custom formation defined in a separate tag.</_field_explanation>
-		<_field_tag_reference_64 name="Formation Reference" />
-		<_field_explanation name="Common">Common parameters that apply to both Procedural and Custom formations.</_field_explanation>
-		<_field_real name="Max Speed:World Units# Max speed that formation, as a whole, can move." />
-		<_field_angle name="Max Yaw Rate:Degrees Per Second# Max rate that formation, as a whole, can rotate." />
+		<_field_struct name="Formation Description" srcguid="df419eba-429a-e106-46bf-34a4e097ab5b">
+			<_field_explanation name="Procedural">Formations procedurally generated from simple shapes.</_field_explanation>
+			<_field_long_enum name="Shape# Defines structure of procedural formation.">
+				<item Name="Line" />
+				<item Name="Rectangle" />
+				<item Name="Wedge" />
+				<item Name="Circle" />
+			</_field_long_enum>
+			<_field_angle name="Yaw:Degrees# Rotates shape while maintaining facing." />
+			<_field_real name="Spacing# Minimum distance between formation positions." />
+			<_field_long_integer name="Max Rectangle Width# Limits width of Rectangle shaped formations." />
+			<_field_explanation name="Custom">Override Procedural settings with a custom formation defined in a separate tag.</_field_explanation>
+			<_field_tag_reference_64 name="Formation Reference" validtags="form" />
+			<_field_explanation name="Common">Common parameters that apply to both Procedural and Custom formations.</_field_explanation>
+			<_field_real name="Max Speed:World Units# Max speed that formation, as a whole, can move." />
+			<_field_angle name="Max Yaw Rate:Degrees Per Second# Max rate that formation, as a whole, can rotate." />
+		</_field_struct>
 	</_field_block_64>
-	<_field_block_64 name="bounding properties" max="1" guid="a70bcfe3-421a-d2c1-2848-949e31a6977a">
+	<_field_block_64 name="bounding properties" max="1" srcguid="a70bcfe3-421a-d2c1-2848-949e31a6977a" srcName="character_bounding_block">
 		<_field_real name="Max Wait Time:seconds# Max time I will wait before moving without any covering fire." />
 		<_field_real name="Advance Time:seconds# Time spent moving to destination before pausing." />
 		<_field_real name="Reposition Search Range:wu# Max distance character will search for nearby position once destination is reached." />
 		<_field_real name="Max Destination Age:seconds# Max time between destination updates." />
 		<_field_long_integer name="Max Cover Agents# Maximum number of characters that are allowed to respond to Cover Me task request." />
 	</_field_block_64>
-	<_field_block_64 name="projectile deflection properties" max="1" guid="153c94f4-47e5-f823-0b9d-30998364f117">
+	<_field_block_64 name="projectile deflection properties" max="1" srcguid="153c94f4-47e5-f823-0b9d-30998364f117" srcName="character_deflection_block">
 		<_field_real name="Extra Check Radius#Use if the deflection actions need to know about the projectile sooner" />
-		<_field_block_64 name="Target Areas" max="10" guid="e341b4c6-4338-6e63-267c-daae96cbd93b">
+		<_field_block_64 name="Target Areas" max="10" srcguid="e341b4c6-4338-6e63-267c-daae96cbd93b" srcName="ProjectileDeflectionZoneBlock">
 			<_field_real_bounds name="Time to Target Window:seconds#Only swing if the projectile is detected between these two times" />
 			<_field_real_vector_3d name="Target Offset#Offset from the center of mass of the 'strike zone'" />
 			<_field_real name="Target Radius#Size of the 'strike zone'" />
@@ -979,7 +1004,7 @@ As always, 0 means speak normally, 1 means skip everything (don't say lindquist)
 			<_field_string_id name="Animation Name#Which deflection animation to play in this zone" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="guardian properties" max="1" guid="5124d50f-4ee9-1896-aafe-60bfb829beb4">
+	<_field_block_64 name="guardian properties" max="1" srcguid="5124d50f-4ee9-1896-aafe-60bfb829beb4" srcName="character_guardian_block">
 		<_field_real name="surge time:seconds#length of time for which the guardian surges" />
 		<_field_real name="surge delay time:seconds#minimum enforced delay between surges" />
 		<_field_real name="proximity surge distance:wu#surge when our target gets closer than this to me (0 value defaults to 2wu)" />
@@ -987,11 +1012,11 @@ As always, 0 means speak normally, 1 means skip everything (don't say lindquist)
 		<_field_real name="current position distance:wu#Minimum distance that I will consider phasing" />
 		<_field_real name="target position distance:wu#Minimum distance from my target that I will phase to" />
 	</_field_block_64>
-	<_field_block_64 name="combatform properties" max="1" guid="d530990f-4e9c-0293-acf9-98b6ce251a35">
+	<_field_block_64 name="combatform properties" max="1" srcguid="d530990f-4e9c-0293-acf9-98b6ce251a35" srcName="character_combatform_block">
 		<_field_real name="berserk distance:wu#distance at which combatform will be forced into berserk" />
 		<_field_real name="berserk chance#chance of berserking this second" />
 	</_field_block_64>
-	<_field_block_64 name="engineer properties" max="1" guid="de4c5ee8-4e9a-0a6b-145d-4091ed5db9e4">
+	<_field_block_64 name="engineer properties" max="1" srcguid="de4c5ee8-4e9a-0a6b-145d-4091ed5db9e4" srcName="character_engineer_block">
 		<_field_real name="death height:wu#try and rise this amount before dying" />
 		<_field_real name="death rise time:seconds#spend this time rising" />
 		<_field_real name="death detonation time:seconds#spend this time detonating" />
@@ -1003,14 +1028,14 @@ As always, 0 means speak normally, 1 means skip everything (don't say lindquist)
 		<_field_real name="detonation body vitality" />
 		<_field_real name="proximity radius:wus#if target enters within this radius, either detonate or deploy equipment" />
 		<_field_real name="proximity detonation chance#chance of detonating if target enters the drain radius radius" />
-		<_field_tag_reference_64 name="proximity equipment#if target enters radius and detonation is not chosen, deploy this equipment." />
+		<_field_tag_reference_64 name="proximity equipment#if target enters radius and detonation is not chosen, deploy this equipment." validtags="eqip" />
 	</_field_block_64>
-	<_field_block_64 name="inspect properties" max="1" guid="e542b59f-47c3-2afb-c34f-2dad073a97f3">
+	<_field_block_64 name="inspect properties" max="1" srcguid="e542b59f-47c3-2afb-c34f-2dad073a97f3" srcName="character_inspect_block">
 		<_field_real name="stop distance:wu#distance from object at which to stop and turn on the inspection light" />
 		<_field_real_bounds name="inspect time:seconds#time which we should inspect each object for" />
 		<_field_real_bounds name="search range:wu#range in which we should search for objects to inspect" />
 	</_field_block_64>
-	<_field_block_64 name="weapons properties" max="256" guid="7046e89d-4ddb-e594-7c66-f3a329f65daa">
+	<_field_block_64 name="weapons properties" max="256" srcguid="7046e89d-4ddb-e594-7c66-f3a329f65daa" srcName="character_weapons_block">
 		<_field_long_flags name="weapons flags">
 			<item Name="bursting inhibits movement" />
 			<item Name="must crouch to shoot" />
@@ -1024,7 +1049,7 @@ As always, 0 means speak normally, 1 means skip everything (don't say lindquist)
 			<item Name="Favored Special Weapon (Class Specific weapon marker)" />
 			<item Name="bursting inhibits evasion#Disable evasion while bursting" />
 		</_field_long_flags>
-		<_field_tag_reference_64 name="weapon^" />
+		<_field_tag_reference_64 name="weapon^" validtags="weap" />
 		<_field_explanation name="Combat ranges" />
 		<_field_real name="maximum firing range:world units#we can only fire our weapon at targets within this distance" />
 		<_field_real name="minimum firing range#weapon will not be fired at target closer than given distance" />
@@ -1080,11 +1105,11 @@ between, all the values are linearly interpolated</_field_explanation>
 		<_field_real name="heroic accuracy time#The amount of time it takes the accuracy to go from starting to ending" />
 		<_field_real_bounds name="legendary accuracy bounds#Indicates starting and ending accuracies at legendary difficulty" />
 		<_field_real name="legendary accuracy time#The amount of time it takes the accuracy to go from starting to ending" />
-		<_field_tag_reference_64 name="weapon melee damage" />
+		<_field_tag_reference_64 name="weapon melee damage" validtags="jpt!" />
 	</_field_block_64>
-	<_field_block_64 name="firing pattern properties" max="256" guid="4e8188e8-447a-5675-fda9-a08b55a57f60">
-		<_field_tag_reference_64 name="weapon^" />
-		<_field_block_64 name="firing patterns" max="4" guid="fdc8c8f2-4195-93ea-c595-17b3e68ebd1e">
+	<_field_block_64 name="firing pattern properties" max="256" srcguid="4e8188e8-447a-5675-fda9-a08b55a57f60" srcName="character_firing_pattern_properties_block">
+		<_field_tag_reference_64 name="weapon^" validtags="weap" />
+		<_field_block_64 name="firing patterns" max="4" srcguid="fdc8c8f2-4195-93ea-c595-17b3e68ebd1e" srcName="character_firing_pattern_block">
 			<_field_real name="rate of fire#how many times per second we pull the trigger (zero = continuously held down)" />
 			<_field_real name="target tracking:[0,1]#how well our bursts track moving targets. 0.0= fire at the position they were standing when we started the burst. 1.0= fire at current position" />
 			<_field_real name="target leading:[0,1]#how much we lead moving targets. 0.0= no prediction. 1.0= predict completely." />
@@ -1106,9 +1131,9 @@ for example if the burst origin angle and the burst return angle were both zero,
 			<_field_angle name="maximum error angle:degrees#cap on the maximum angle by which we will miss target (restriction on burst origin radius" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="extreme range firing pattern properties" max="256" guid="4e8188e8-447a-5675-fda9-a08b55a57f60">
-		<_field_tag_reference_64 name="weapon^" />
-		<_field_block_64 name="firing patterns" max="4" guid="fdc8c8f2-4195-93ea-c595-17b3e68ebd1e">
+	<_field_block_64 name="extreme range firing pattern properties" max="256" srcguid="4e8188e8-447a-5675-fda9-a08b55a57f60" srcName="character_firing_pattern_properties_block">
+		<_field_tag_reference_64 name="weapon^" validtags="weap" />
+		<_field_block_64 name="firing patterns" max="4" srcguid="fdc8c8f2-4195-93ea-c595-17b3e68ebd1e" srcName="character_firing_pattern_block">
 			<_field_real name="rate of fire#how many times per second we pull the trigger (zero = continuously held down)" />
 			<_field_real name="target tracking:[0,1]#how well our bursts track moving targets. 0.0= fire at the position they were standing when we started the burst. 1.0= fire at current position" />
 			<_field_real name="target leading:[0,1]#how much we lead moving targets. 0.0= no prediction. 1.0= predict completely." />
@@ -1130,8 +1155,8 @@ for example if the burst origin angle and the burst return angle were both zero,
 			<_field_angle name="maximum error angle:degrees#cap on the maximum angle by which we will miss target (restriction on burst origin radius" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="special fire properties" max="256" guid="dfdf31f6-45b5-152c-3d68-31abf3845a40">
-		<_field_tag_reference_64 name="weapon^" />
+	<_field_block_64 name="special fire properties" max="256" srcguid="dfdf31f6-45b5-152c-3d68-31abf3845a40" srcName="character_special_fire_properties_block">
+		<_field_tag_reference_64 name="weapon^" validtags="weap" />
 		<_field_long_flags name="Initiators">
 			<item Name="Target Biped" />
 			<item Name="Target Vehicle" />
@@ -1162,7 +1187,7 @@ for example if the burst origin angle and the burst return angle were both zero,
 			<item Name="Disabled" />
 		</_field_char_enum>
 		<_field_pad name="pad0" length="3" />
-		<_field_block_64 name="weapon properties" max="256" guid="7046e89d-4ddb-e594-7c66-f3a329f65daa">
+		<_field_block_64 name="weapon properties" max="256" srcguid="7046e89d-4ddb-e594-7c66-f3a329f65daa" srcName="character_weapons_block">
 			<_field_long_flags name="weapons flags">
 				<item Name="bursting inhibits movement" />
 				<item Name="must crouch to shoot" />
@@ -1176,7 +1201,7 @@ for example if the burst origin angle and the burst return angle were both zero,
 				<item Name="Favored Special Weapon (Class Specific weapon marker)" />
 				<item Name="bursting inhibits evasion#Disable evasion while bursting" />
 			</_field_long_flags>
-			<_field_tag_reference_64 name="weapon^" />
+			<_field_tag_reference_64 name="weapon^" validtags="weap" />
 			<_field_explanation name="Combat ranges" />
 			<_field_real name="maximum firing range:world units#we can only fire our weapon at targets within this distance" />
 			<_field_real name="minimum firing range#weapon will not be fired at target closer than given distance" />
@@ -1232,9 +1257,9 @@ between, all the values are linearly interpolated</_field_explanation>
 			<_field_real name="heroic accuracy time#The amount of time it takes the accuracy to go from starting to ending" />
 			<_field_real_bounds name="legendary accuracy bounds#Indicates starting and ending accuracies at legendary difficulty" />
 			<_field_real name="legendary accuracy time#The amount of time it takes the accuracy to go from starting to ending" />
-			<_field_tag_reference_64 name="weapon melee damage" />
+			<_field_tag_reference_64 name="weapon melee damage" validtags="jpt!" />
 		</_field_block_64>
-		<_field_block_64 name="firing patterns" max="4" guid="fdc8c8f2-4195-93ea-c595-17b3e68ebd1e">
+		<_field_block_64 name="firing patterns" max="4" srcguid="fdc8c8f2-4195-93ea-c595-17b3e68ebd1e" srcName="character_firing_pattern_block">
 			<_field_real name="rate of fire#how many times per second we pull the trigger (zero = continuously held down)" />
 			<_field_real name="target tracking:[0,1]#how well our bursts track moving targets. 0.0= fire at the position they were standing when we started the burst. 1.0= fire at current position" />
 			<_field_real name="target leading:[0,1]#how much we lead moving targets. 0.0= no prediction. 1.0= predict completely." />
@@ -1256,7 +1281,7 @@ for example if the burst origin angle and the burst return angle were both zero,
 			<_field_angle name="maximum error angle:degrees#cap on the maximum angle by which we will miss target (restriction on burst origin radius" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="grenades properties" max="10" guid="a92d1adc-499a-8092-7b3a-d0bd8300f0d2">
+	<_field_block_64 name="grenades properties" max="10" srcguid="a92d1adc-499a-8092-7b3a-d0bd8300f0d2" srcName="character_grenades_block">
 		<_field_long_flags name="grenades flags">
 			<item Name="do not throw while bunkering" />
 			<item Name="allow while berserking" />
@@ -1292,9 +1317,9 @@ for example if the burst origin angle and the burst return angle were both zero,
 		<_field_short_integer_bounds name="grenade count#number of grenades that we start with" />
 		<_field_real name="dont drop grenades chance:[0,1]#how likely we are not to drop any grenades when we die, even if we still have some" />
 	</_field_block_64>
-	<_field_block_64 name="vehicle properties" max="100" guid="503f6e32-4df9-1044-6481-8baafab494b9">
-		<_field_tag_reference_64 name="unit^" />
-		<_field_tag_reference_64 name="style^" />
+	<_field_block_64 name="vehicle properties" max="100" srcguid="503f6e32-4df9-1044-6481-8baafab494b9" srcName="character_vehicle_block">
+		<_field_tag_reference_64 name="unit^" validtags="unit" />
+		<_field_tag_reference_64 name="style^" validtags="styl" />
 		<_field_explanation name="Flying Avoidance" />
 		<_field_real name="lookahead_time:seconds# How much in the future should we estimate a collision (affects collision ray length)" />
 		<_field_real name="roll change magnitude:degrees#How fast to control the roll avoidance" />
@@ -1404,8 +1429,8 @@ for example if the burst origin angle and the burst return angle were both zero,
 		<_field_short_integer name="max vehicle charge#max number of this type of vehicle in a task who can vehicle charge at once" />
 		<_field_short_integer name="min vehicle charge#min number of this type of vehicle in a task who can vehicle charge at once (soft limit, just a desired number)" />
 	</_field_block_64>
-	<_field_block_64 name="flying movement properties" max="32" guid="4e812719-4f46-bfbb-054a-bab4dc704fd3">
-		<_field_tag_reference_64 name="vehicle^" />
+	<_field_block_64 name="flying movement properties" max="32" srcguid="4e812719-4f46-bfbb-054a-bab4dc704fd3" srcName="character_flying_movement_block">
+		<_field_tag_reference_64 name="vehicle^" validtags="unit" />
 		<_field_explanation name="Vector Weights">Think of this as firing point evaluation; how much do we want to weight each of the various vectors affecting our movement in space.</_field_explanation>
 		<_field_real name="facing#How much our current movement vector affects our new vector selection." />
 		<_field_real name="perturbation#How much random deviation is applied to our vector selection." />
@@ -1463,13 +1488,13 @@ for example if the burst origin angle and the burst return angle were both zero,
 		<_field_real_fraction name="missile dodge change:percentage#The chance that an AI will dodge incoming missiles." />
 		<_field_real name="ideal missile dodge distance:wu#The ideal distance a trick should take you away from danger." />
 	</_field_block_64>
-	<_field_block_64 name="morph properties" max="1" guid="91634acb-45ad-5584-779f-96ba4c1c5ea5">
-		<_field_tag_reference_64 name="ranged character" />
-		<_field_tag_reference_64 name="tank character" />
-		<_field_tag_reference_64 name="stealth character" />
-		<_field_tag_reference_64 name="ranged weapon" />
-		<_field_tag_reference_64 name="tank weapon" />
-		<_field_tag_reference_64 name="stealth weapon" />
+	<_field_block_64 name="morph properties" max="1" srcguid="91634acb-45ad-5584-779f-96ba4c1c5ea5" srcName="character_morph_block">
+		<_field_tag_reference_64 name="ranged character" validtags="char" />
+		<_field_tag_reference_64 name="tank character" validtags="char" />
+		<_field_tag_reference_64 name="stealth character" validtags="char" />
+		<_field_tag_reference_64 name="ranged weapon" validtags="weap" />
+		<_field_tag_reference_64 name="tank weapon" validtags="weap" />
+		<_field_tag_reference_64 name="stealth weapon" validtags="weap" />
 		<_field_explanation name="Tank guy" />
 		<_field_real name="distance damage outer radius#Considered damaging-outside-range when you START firing from outside this distance" />
 		<_field_real name="distance damage inner radius#Considered damaging-outside-range when you CONTINUE firing from outside this distance" />
@@ -1478,7 +1503,7 @@ for example if the burst origin angle and the burst return angle were both zero,
 		<_field_real_bounds name="throttle distance#Throttle the tank from running (far) to walking (near) across this range of distances. (defaults to 5 and 3)" />
 		<_field_real name="protect damage amount#Once current damage reaches this amount, protect your special parts until no recent damage" />
 		<_field_real name="protect time:seconds#How long should we protect our special parts for?" />
-		<_field_tag_reference_64 name="spew infection character#What character should I throw up all over my target? Carrots?" />
+		<_field_tag_reference_64 name="spew infection character#What character should I throw up all over my target? Carrots?" validtags="char" />
 		<_field_real name="spew chance#Probability of throwing up a bunch of infection forms when perimeterising" />
 		<_field_string_id name="spew marker#From whence should the infection forms cometh?" />
 		<_field_real_bounds name="spew frequency:seconds#Min/max time between spawning each infection form during spew. (defaults to 0.1 and 0.3)" />
@@ -1498,14 +1523,14 @@ for example if the burst origin angle and the burst return angle were both zero,
 		<_field_explanation name="General" />
 		<_field_real name="group morph range#Follow the morph of any other form within this distance" />
 	</_field_block_64>
-	<_field_block_64 name="equipment definitions" max="8" guid="a874bcdc-4667-b16e-a752-278f2c61398b">
+	<_field_block_64 name="equipment definitions" max="8" srcguid="a874bcdc-4667-b16e-a752-278f2c61398b" srcName="character_equipment_block">
 		<_field_explanation name="Equipment">Create one of these for each equipment type that you would like a character to be able to use. If you specify a relative drop chance of greater than zero then the character will use and drop this type of equipment with that (relative) chance. If you leave the equipment field empty, then there will be that (relative) chance of using and dropping no equipment at all.</_field_explanation>
-		<_field_tag_reference_64 name="equipment#The equipment item that is to be usable" />
+		<_field_tag_reference_64 name="equipment#The equipment item that is to be usable" validtags="eqip" />
 		<_field_long_flags name="flags">
 			<item Name="Stop If No Energy" />
 		</_field_long_flags>
 		<_field_real name="relative drop chance#The relative chance of this equipment being dropped with respect to the other pieces of equipment specified in this block" />
-		<_field_block_64 name="equipment use" max="8" guid="939edfac-484c-d412-fcda-11a1be8f7dfd">
+		<_field_block_64 name="equipment use" max="8" srcguid="939edfac-484c-d412-fcda-11a1be8f7dfd" srcName="character_equipment_usage_block">
 			<_field_explanation name="Equipment Use">How should I use this equipment?</_field_explanation>
 			<_field_short_enum name="use when^#When should we use this equipment?">
 				<item Name="combat" />
@@ -1529,13 +1554,13 @@ for example if the burst origin angle and the burst return angle were both zero,
 			<_field_real name="legendary:0-1#" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="stimuli responses" max="16" guid="82b4b105-4ce8-4f3e-ec38-d4918565a207">
+	<_field_block_64 name="stimuli responses" max="16" srcguid="82b4b105-4ce8-4f3e-ec38-d4918565a207" srcName="character_stimuli_response_block">
 		<_field_explanation name="Stimulus Response">Here you can define a character tag which will be applied on top of this one when the named stimulus is present on a character.In the case of multiple stimulus with character tag responses being present, the first listed will be used.</_field_explanation>
 		<_field_string_id name="stimulus name^" />
-		<_field_tag_reference_64 name="override character" />
+		<_field_tag_reference_64 name="override character" validtags="char" />
 		<_field_skip name="Resolved Stimulus" length="8" />
 	</_field_block_64>
-	<_field_block_64 name="campaign metagame bucket" max="1" guid="63d7ee66-4d6f-cfe4-718e-5abc62e52871">
+	<_field_block_64 name="campaign metagame bucket" max="1" srcguid="63d7ee66-4d6f-cfe4-718e-5abc62e52871" srcName="campaign_metagame_bucket_block">
 		<_field_byte_flags name="flags">
 			<item Name="only counts with riders" />
 		</_field_byte_flags>
@@ -1602,13 +1627,13 @@ for example if the burst origin angle and the burst return angle were both zero,
 		<_field_short_integer name="point count" />
 		<_field_pad name="pad1" length="2" />
 	</_field_block_64>
-	<_field_block_64 name="activity objects" max="32" guid="63d73a39-4fd1-8574-adf1-2f815ac5eea8">
+	<_field_block_64 name="activity objects" max="32" srcguid="63d73a39-4fd1-8574-adf1-2f815ac5eea8" srcName="character_activity_object_block">
 		<_field_string_id name="activity name" />
-		<_field_tag_reference_64 name="crate" />
+		<_field_tag_reference_64 name="crate" validtags="bloc" />
 		<_field_string_id name="crate marker name" />
 		<_field_string_id name="unit marker name" />
 	</_field_block_64>
-	<_field_block_64 name="pain screen properties" max="1" guid="4d243c14-45c3-8fba-0820-d6b6b1a962ab">
+	<_field_block_64 name="pain screen properties" max="1" srcguid="4d243c14-45c3-8fba-0820-d6b6b1a962ab" srcName="character_pain_screen_block">
 		<_field_explanation name="Pain Reactions" />
 		<_field_real name="pain screen duration:seconds#The duration of the pain function
 0 defaults to 0.5" />
@@ -1621,15 +1646,15 @@ for example if the burst origin angle and the burst return angle were both zero,
 0 defaults to 2.0" />
 		<_field_real_fraction name="defensive screen scrub fallback fraction:[0,1]#When receiving multiple pings, this is the min percentage of the defensive screen scrub value will fallback to." />
 	</_field_block_64>
-	<_field_block_64 name="bishop properties" max="1" guid="f351d027-4f25-d01d-4cc8-35a8e31dbd6b">
+	<_field_block_64 name="bishop properties" max="1" srcguid="f351d027-4f25-d01d-4cc8-35a8e31dbd6b" srcName="character_bishop_block">
 		<_field_explanation name="Junk Attack" />
-		<_field_tag_reference_64 name="junk collect effect" />
-		<_field_tag_reference_64 name="junk attack effect" />
+		<_field_tag_reference_64 name="junk collect effect" validtags="effe" />
+		<_field_tag_reference_64 name="junk attack effect" validtags="effe" />
 		<_field_real_bounds name="junk attack prep time min / max (in seconds)" />
 		<_field_real_bounds name="junk attack recharge time min / max (in seconds)" />
 		<_field_explanation name="Shielding" />
-		<_field_tag_reference_64 name="shield effect" />
-		<_field_tag_reference_64 name="shield crate" />
+		<_field_tag_reference_64 name="shield effect" validtags="effe" />
+		<_field_tag_reference_64 name="shield crate" validtags="bloc" />
 		<_field_real_bounds name="shield lifetime min / max (in seconds)" />
 		<_field_real_bounds name="shield recharge time min / max (in seconds)" />
 		<_field_real name="shield range max (in world units)" />
@@ -1637,8 +1662,8 @@ for example if the burst origin angle and the burst return angle were both zero,
 		<_field_explanation name="Repair" />
 		<_field_real_bounds name="repair prep time min / max (in seconds)" />
 		<_field_real_bounds name="repair recharge time min / max (in seconds)" />
-		<_field_tag_reference_64 name="repair beam effect" />
-		<_field_tag_reference_64 name="repair crate" />
+		<_field_tag_reference_64 name="repair beam effect" validtags="effe" />
+		<_field_tag_reference_64 name="repair crate" validtags="bloc" />
 		<_field_explanation name="Protect Allies" />
 		<_field_real_bounds name="Orbit Distance #Min/Max distance that bishop will try to maintain orbit in." />
 		<_field_real name="Min Follow Distance #Distance at which bishop will stop orbiting and try to catch up to allies." />
@@ -1654,48 +1679,50 @@ for example if the burst origin angle and the burst return angle were both zero,
 		<_field_real name="Resurrection Initiation Delay Time (seconds) #Time Bishop waits upon arriving at resurrection target before activating resurrection beam." />
 		<_field_real name="Resurrection Charge Up Time (seconds) #Time from resurrection beam activation until actual resurrection is triggered." />
 		<_field_real name="Resurrection Give Up Time (seconds) #If the resurrection target is not reached in this amount of time, the resurrection attempt is aborted." />
-		<_field_tag_reference_64 name="Resurrection Ground Effect #The effect created on the ground when resurrecting a dead ally." />
-		<_field_tag_reference_64 name="Res. Area Scan Start Effect #The effect created on the ground when scanning for a clear area before resurrection." />
-		<_field_tag_reference_64 name="Res. Area Scan Success Effect #The effect created on the ground when area scan succeeds." />
-		<_field_tag_reference_64 name="Res. Area Scan Failure Effect #The effect created on the ground when area scan fails." />
+		<_field_tag_reference_64 name="Resurrection Ground Effect #The effect created on the ground when resurrecting a dead ally." validtags="effe" />
+		<_field_tag_reference_64 name="Res. Area Scan Start Effect #The effect created on the ground when scanning for a clear area before resurrection." validtags="effe" />
+		<_field_tag_reference_64 name="Res. Area Scan Success Effect #The effect created on the ground when area scan succeeds." validtags="effe" />
+		<_field_tag_reference_64 name="Res. Area Scan Failure Effect #The effect created on the ground when area scan fails." validtags="effe" />
 		<_field_explanation name="Shard Spawning" />
-		<_field_tag_reference_64 name="Shard Spawn Ground Effect #The effect created on the ground when spawning shards (pawns)." />
+		<_field_tag_reference_64 name="Shard Spawn Ground Effect #The effect created on the ground when spawning shards (pawns)." validtags="effe" />
 		<_field_real name="Shard Creation Delay (seconds) #Time it takes for bishop to place shards after arriving at destination." />
 		<_field_real_bounds name="Spawn Delay (seconds) #Min/max time it takes for shards to spawn actors." />
 		<_field_explanation name="Healing Allies" />
 		<_field_real name="Healing Time:seconds #Time it takes to trigger healing." />
 	</_field_block_64>
-	<_field_block_64 name="cavalier properties" max="1" guid="71444655-4291-527d-1906-10aba1cc232a">
+	<_field_block_64 name="cavalier properties" max="1" srcguid="71444655-4291-527d-1906-10aba1cc232a" srcName="character_cavalier_block">
 		<_field_real name="Hostiles too close dist" />
-		<_field_struct name="Close Quarters Defense Blast" />
-		<_field_custom name="Close Quarters Defense Blast Parameters" />
-		<_field_real_fraction name="Activation Chance (easy)#Chance to initiate per sec on easy difficulty" />
-		<_field_real_fraction name="Activation Chance (normal)#Chance to initiate per sec on normal difficulty" />
-		<_field_real_fraction name="Activation Chance (heroic)#Chance to initiate per sec on heroic difficulty" />
-		<_field_real_fraction name="Activation Chance (legendary)#Chance to initiate per sec on legendary difficulty" />
-		<_field_real name="cooldown:seconds#time that must elapse between uses of behavior" />
-		<_field_string_id name="animation#animation that is played during the blast attack. attack fires on primary keyframe" />
-		<_field_string_id name="marker#marker used as origin for damage and effects - defaults to character origin if nothing specified" />
-		<_field_tag_reference_64 name="damage effect#blast damage" />
-		<_field_tag_reference_64 name="effect#should be used for visuals/audio only - any damage attached to this effect will also hurt the character" />
-		<_field_struct name="Gravity Bomb Attack" />
-		<_field_custom name="Gravity Bomb Attack Parameters" />
-		<_field_real_fraction name="activation Chance (easy)#Chance to initiate on easy difficulty" />
-		<_field_real_fraction name="activation Chance (normal)#Chance to initiate on normal difficulty" />
-		<_field_real_fraction name="activation Chance (heroic)#Chance to initiate on heroic difficulty" />
-		<_field_real_fraction name="activation Chance (legendary)#Chance to initiate on legendary difficulty" />
-		<_field_real_bounds name="attack range#The current target must be within this range to activate" />
-		<_field_real name="cooldown:seconds#Time until the gravity bomb can activate again" />
+		<_field_struct name="Close Quarters Defense Blast" srcguid="ecc50011-4c5f-82db-a927-86bf40e72635">
+			<_field_custom name="Close Quarters Defense Blast Parameters" />
+			<_field_real_fraction name="Activation Chance (easy)#Chance to initiate per sec on easy difficulty" />
+			<_field_real_fraction name="Activation Chance (normal)#Chance to initiate per sec on normal difficulty" />
+			<_field_real_fraction name="Activation Chance (heroic)#Chance to initiate per sec on heroic difficulty" />
+			<_field_real_fraction name="Activation Chance (legendary)#Chance to initiate per sec on legendary difficulty" />
+			<_field_real name="cooldown:seconds#time that must elapse between uses of behavior" />
+			<_field_string_id name="animation#animation that is played during the blast attack. attack fires on primary keyframe" />
+			<_field_string_id name="marker#marker used as origin for damage and effects - defaults to character origin if nothing specified" />
+			<_field_tag_reference_64 name="damage effect#blast damage" validtags="jpt!" />
+			<_field_tag_reference_64 name="effect#should be used for visuals/audio only - any damage attached to this effect will also hurt the character" validtags="effe" />
+		</_field_struct>
+		<_field_struct name="Gravity Bomb Attack" srcguid="3af0a7de-4d4b-e012-e473-39bb5aa02c0b">
+			<_field_custom name="Gravity Bomb Attack Parameters" />
+			<_field_real_fraction name="activation Chance (easy)#Chance to initiate on easy difficulty" />
+			<_field_real_fraction name="activation Chance (normal)#Chance to initiate on normal difficulty" />
+			<_field_real_fraction name="activation Chance (heroic)#Chance to initiate on heroic difficulty" />
+			<_field_real_fraction name="activation Chance (legendary)#Chance to initiate on legendary difficulty" />
+			<_field_real_bounds name="attack range#The current target must be within this range to activate" />
+			<_field_real name="cooldown:seconds#Time until the gravity bomb can activate again" />
+		</_field_struct>
 		<_field_real name="Melee allowed range# an attacker this close means I can melee" />
 		<_field_real name="shard gate facing range:units#How close to spawning position to turn and face the gate" />
 		<_field_string name="shard gate spawn script function#takes an AI as its parameter" />
 		<_field_long_integer name="number of armor pieces destroyed to trigger G-Sink attack#G-Sink attack cannot be triggered until this many of the cavalier's tracked armor pieces are destroyed" />
 		<_field_real name="gsink attack delay:sec #min time between loss of last shard and gsink attack" />
 	</_field_block_64>
-	<_field_block_64 name="packmaster properties" max="1" guid="4a34985d-491a-6be7-6a16-40b89c38c316">
-		<_field_tag_reference_64 name="Force Quadruped Behaviors" />
-		<_field_tag_reference_64 name="Ban Quadruped Behaviors" />
-		<_field_tag_reference_64 name="Pack Character Ancestor #type of charcter I can command. (and descendents)" />
+	<_field_block_64 name="packmaster properties" max="1" srcguid="4a34985d-491a-6be7-6a16-40b89c38c316" srcName="character_packmaster_block">
+		<_field_tag_reference_64 name="Force Quadruped Behaviors" validtags="styl" />
+		<_field_tag_reference_64 name="Ban Quadruped Behaviors" validtags="styl" />
+		<_field_tag_reference_64 name="Pack Character Ancestor #type of charcter I can command. (and descendents)" validtags="char" />
 		<_field_real name="command radius" />
 		<_field_long_integer name="group fire min count#How many pack members are needed for a group fire-does not include packmaster" />
 		<_field_long_integer name="group fire max count#The most pack members that can participate-does not include packmaster" />
@@ -1718,37 +1745,37 @@ for example if the burst origin angle and the burst return angle were both zero,
 		<_field_real name="pack charge distance# dangerous target this close will trigger charge" />
 		<_field_real name="pack charge cooldown# min time between pack charge commands" />
 	</_field_block_64>
-	<_field_block_64 name="combotron parent properties" max="1" guid="5d43e27b-4da3-83b0-8098-328208e418d1">
+	<_field_block_64 name="combotron parent properties" max="1" srcguid="5d43e27b-4da3-83b0-8098-328208e418d1" srcName="character_combotron_parent_block">
 		<_field_explanation name="combotron parent props" />
 		<_field_real_bounds name="socket cooldown (seconds)#for each socket, this is the time to wait after desocketing before socketing something else into it" />
 		<_field_real name="child scale#use this value to set scaling for child objects / etc..." />
 		<_field_real name="shield scale#if a socketed child creates a shield for me, how big should it be?" />
 		<_field_string_id name="shield location (marker name)#when bishop is attached and shielding, where should the shield go?" />
-		<_field_tag_reference_64 name="effect socket occupied" />
-		<_field_tag_reference_64 name="effect socket cooling" />
-		<_field_tag_reference_64 name="effect socket available" />
+		<_field_tag_reference_64 name="effect socket occupied" validtags="effe" />
+		<_field_tag_reference_64 name="effect socket cooling" validtags="effe" />
+		<_field_tag_reference_64 name="effect socket available" validtags="effe" />
 	</_field_block_64>
-	<_field_block_64 name="combotron child properties" max="1" guid="55418195-4a78-a98e-8e99-feaf161a1fee">
+	<_field_block_64 name="combotron child properties" max="1" srcguid="55418195-4a78-a98e-8e99-feaf161a1fee" srcName="character_combotron_child_block">
 		<_field_explanation name="combotron child props (anything that can socket into a rook)" />
 		<_field_long_flags name="flags">
 			<item Name="active while socketed" />
 		</_field_long_flags>
-		<_field_tag_reference_64 name="socket weapon#When socketed, this guy turns into a weapon of the type referenced here" />
-		<_field_tag_reference_64 name="socket child#When socketed, this guy turns into a child of the type referenced here" />
-		<_field_tag_reference_64 name="socket character definition#Parent adopts this character definition when this guy is socketed" />
+		<_field_tag_reference_64 name="socket weapon#When socketed, this guy turns into a weapon of the type referenced here" validtags="weap" />
+		<_field_tag_reference_64 name="socket child#When socketed, this guy turns into a child of the type referenced here" validtags="obje" />
+		<_field_tag_reference_64 name="socket character definition#Parent adopts this character definition when this guy is socketed" validtags="char" />
 		<_field_real name="damage threshold when socketed#How much damage does this guy absorb before de-socketing" />
 		<_field_real_bounds name="socketing cooldown (seconds)#After being de-socketed, wait this long before re-socketing" />
 		<_field_real_bounds name="socketing attach distance (world units)#at what distance does the client particleize and attach to socket" />
-		<_field_tag_reference_64 name="effect socketing#this effect plays while a child is socketing into a parent" />
+		<_field_tag_reference_64 name="effect socketing#this effect plays while a child is socketing into a parent" validtags="effe" />
 	</_field_block_64>
-	<_field_block_64 name="handle dismemberment properties" max="1" guid="72bbed20-4fdb-6a4d-f9c4-84a913c301b0">
+	<_field_block_64 name="handle dismemberment properties" max="1" srcguid="72bbed20-4fdb-6a4d-f9c4-84a913c301b0" srcName="character_handle_dismemberment_block">
 		<_field_explanation name="dismemberment props" />
 		<_field_string_id name="headshot freakout animation (animation string)" />
 		<_field_string_id name="limb dismembered animation (animation string)" />
-		<_field_tag_reference_64 name="berserk persistent melee effect" />
-		<_field_tag_reference_64 name="alternate weapon#If I lose my firing arm then I pull out a ..." />
+		<_field_tag_reference_64 name="berserk persistent melee effect" validtags="effe" />
+		<_field_tag_reference_64 name="alternate weapon#If I lose my firing arm then I pull out a ..." validtags="weap" />
 	</_field_block_64>
-	<_field_block_64 name="Fight From Cover" max="1" guid="8097eed1-4913-ab98-520f-53b1e67185b2">
+	<_field_block_64 name="Fight From Cover" max="1" srcguid="8097eed1-4913-ab98-520f-53b1e67185b2" srcName="character_cover_fight_block">
 		<_field_real_bounds name="Cover fight min / max (in world units)#Character will prefer to use cover fighting between min/max distances" />
 		<_field_real_bounds name="Wanted cover time(in seconds)#How much time do we want to spend before assessing other actions/spots." />
 		<_field_real_bounds name="Wanted kneeling time(in seconds)#How long do we want to kneel." />
@@ -1764,16 +1791,16 @@ for example if the burst origin angle and the burst return angle were both zero,
 		<_field_real name="Chance of exiting cover fight when too close#Chance of exiting cover fight when too close." />
 		<_field_real name="Balling interrupt damage#Damage delta when to interrupt balling." />
 		<_field_string_id name="balling interrupt animation (animation string)" />
-		<_field_tag_reference_64 name="Into ball transition effect" />
-		<_field_tag_reference_64 name="Out of ball transition effect" />
-		<_field_tag_reference_64 name="Ball moving effect" />
-		<_field_tag_reference_64 name="Ball interrupted effect" />
+		<_field_tag_reference_64 name="Into ball transition effect" validtags="effe" />
+		<_field_tag_reference_64 name="Out of ball transition effect" validtags="effe" />
+		<_field_tag_reference_64 name="Ball moving effect" validtags="effe" />
+		<_field_tag_reference_64 name="Ball interrupted effect" validtags="effe" />
 	</_field_block_64>
-	<_field_block_64 name="Emerge" max="1" guid="27c20fef-4c27-f3e6-71a3-449427864f14">
-		<_field_tag_reference_64 name="Wall effect" />
-		<_field_tag_reference_64 name="Floor effect" />
+	<_field_block_64 name="Emerge" max="1" srcguid="27c20fef-4c27-f3e6-71a3-449427864f14" srcName="character_emerge_block">
+		<_field_tag_reference_64 name="Wall effect" validtags="effe" />
+		<_field_tag_reference_64 name="Floor effect" validtags="effe" />
 	</_field_block_64>
-	<_field_block_64 name="Dynamic Task" max="1" guid="ec3cb964-4066-c1bb-0029-f0b6e39eed9e">
+	<_field_block_64 name="Dynamic Task" max="1" srcguid="ec3cb964-4066-c1bb-0029-f0b6e39eed9e" srcName="dynamic_task_block">
 		<_field_long_flags name="Agent Filter Flags #Limits dynamic tasks that can be assigned to this AI.">
 			<item Name="Companion" />
 			<item Name="Protector" />
@@ -1794,11 +1821,11 @@ for example if the burst origin angle and the burst return angle were both zero,
 		<_field_real_bounds name="Protect Task Priorities (Min Health - Max Health) #Priority levels of Protect task as health drops." />
 		<_field_real name="Resurrection Task Priority #Priority level of Resurrection task generated by this character." />
 		<_field_real name="Shield During Resurrection Task Priority #Priority of the shield task generated while being resurrected." />
-		<_field_tag_reference_64 name="Shield Crate Override #Crate created to represent projected shield." />
+		<_field_tag_reference_64 name="Shield Crate Override #Crate created to represent projected shield." validtags="bloc" />
 		<_field_real name="Heal Request Shield Level #Shield vitality must be less than or equal to this level before AI will post Heal Me task." />
 		<_field_real name="Heal Request Body Level #Body vitality must be less than or equal to this level before AI will post Heal Me task." />
 	</_field_block_64>
-	<_field_block_64 name="Advance Properties" max="1" guid="3116db0b-4553-2682-4365-fbbeecd7f1cb">
+	<_field_block_64 name="Advance Properties" max="1" srcguid="3116db0b-4553-2682-4365-fbbeecd7f1cb" srcName="character_advance_block">
 		<_field_real_fraction name="Activation Chance (easy)#Chance to initate for sec on easy difficulty" />
 		<_field_real_fraction name="Activation Chance (normal)#Chance to initate for sec on normal difficulty" />
 		<_field_real_fraction name="Activation Chance (heroic)#Chance to initate for sec on heroic difficulty" />
@@ -1830,10 +1857,10 @@ for example if the burst origin angle and the burst return angle were both zero,
 		<_field_real name="Teleport cooldown time #Time after attack before trying to get away" />
 		<_field_real name="Teleport tracking distance #How far the landing point can move between jumps" />
 		<_field_real name="Teleport tracking lockdown dist #How far from the target do we stop tracking" />
-		<_field_tag_reference_64 name="Teleport Launch FX #Effect to play at teleport launch point" />
-		<_field_tag_reference_64 name="Teleport Land FX #Effect to play at teleport destination point" />
+		<_field_tag_reference_64 name="Teleport Launch FX #Effect to play at teleport launch point" validtags="effe" />
+		<_field_tag_reference_64 name="Teleport Land FX #Effect to play at teleport destination point" validtags="effe" />
 	</_field_block_64>
-	<_field_block_64 name="Cover Evasion" max="1" guid="081efcc7-4d04-28a3-db70-f0b5d5be6c73">
+	<_field_block_64 name="Cover Evasion" max="1" srcguid="081efcc7-4d04-28a3-db70-f0b5d5be6c73" srcName="character_cover_evasion_block">
 		<_field_real name="Initiate Danger Threshold #Danger level needed to trigger behavior." />
 		<_field_real name="Abort Danger Threshold #Danger level that will cause behavior to be aborted." />
 		<_field_real name="Cooldown #Seconds that must pass before behavior can trigger again." />
@@ -1844,13 +1871,13 @@ for example if the burst origin angle and the burst return angle were both zero,
 		<_field_real name="Step Out Danger Threshold #Danger must be below this value before character can step out of cover." />
 		<_field_real name="Step Out Chance #Chance per second that character will step out of cover." />
 	</_field_block_64>
-	<_field_block_64 name="Pack Stalk" max="1" guid="9dc1dcd2-4b6d-4e0f-36fc-c585b909f445">
+	<_field_block_64 name="Pack Stalk" max="1" srcguid="9dc1dcd2-4b6d-4e0f-36fc-c585b909f445" srcName="character_pack_stalk_block">
 		<_field_real name="Min Wander Distance #Minimum distance pack must move when search for new cover position." />
 		<_field_real name="Outside Area Border #Distance target must be from pack's assigned area before stalk triggers." />
 		<_field_real_bounds name="Position Update Delay #Random time each member will wait before following leader." />
 		<_field_real_fraction name="Throttle In Cover #Throttle used when slowing down behind cover." />
 	</_field_block_64>
-	<_field_block_64 name="Fight Circle" max="1" guid="a53b9a5e-455a-1632-f874-799aa88902de">
+	<_field_block_64 name="Fight Circle" max="1" srcguid="a53b9a5e-455a-1632-f874-799aa88902de" srcName="character_fight_circle_block">
 		<_field_real_bounds name="Strafe Time #Time spent facing the player and strafing after reaching a position." />
 		<_field_real_bounds name="Extra Firing Time #Time after strafe that trigger is held down." />
 		<_field_real name="Target Patience Time #Time allowed for turning back onto target at FP, not always counted against firing time." />
@@ -1860,7 +1887,7 @@ for example if the burst origin angle and the burst return angle were both zero,
 		<_field_string_id name="strafe throttle style #Throttle used in slow strafe mode" />
 		<_field_string_id name="move throttle style #Throttle used moving to next firing point" />
 	</_field_block_64>
-	<_field_block_64 name="Hamstring" max="1" guid="827b35c7-4d0e-10da-79ce-3db7e3c3639c">
+	<_field_block_64 name="Hamstring" max="1" srcguid="827b35c7-4d0e-10da-79ce-3db7e3c3639c" srcName="character_hamstring_charge_block">
 		<_field_angle name="Flank Angle #Angle from player facing where charge will begin." />
 		<_field_real name="Flank Distance #Distance from player before dropping into charge." />
 		<_field_real name="Outer Engage Distance #Close to this distance before picking target-relative flanking position." />
@@ -1871,7 +1898,7 @@ for example if the burst origin angle and the burst return angle were both zero,
 		<_field_real name="Melee Attack Time Max #Maximum time for terminal melee attack." />
 		<_field_real name="Max Charge Range# How far out of area will charge go" />
 	</_field_block_64>
-	<_field_block_64 name="Forerunner" max="1" guid="c635622b-4a2b-79cb-a887-43b8048d1e76">
+	<_field_block_64 name="Forerunner" max="1" srcguid="c635622b-4a2b-79cb-a887-43b8048d1e76" srcName="character_forerunner_block">
 		<_field_long_flags name="forerunner flags">
 			<item Name="charge on command" />
 			<item Name="Teleport to combat pos" />
@@ -1884,21 +1911,22 @@ for example if the burst origin angle and the burst return angle were both zero,
 		<_field_real_bounds name="Phase To Position distance bounds #Below min, no phase. as distance moves from low to high, chance moves from low to high probabilities" />
 		<_field_real_bounds name="Phase To Position Probability range #As distance moves from low to high, chance to phase moves from low to high values" />
 	</_field_block_64>
-	<_field_block_64 name="Gravity Jump" max="1" guid="6e887ebf-4576-fc95-6505-8e98423ae5b0">
+	<_field_block_64 name="Gravity Jump" max="1" srcguid="6e887ebf-4576-fc95-6505-8e98423ae5b0" srcName="character_gravity_jump_block">
 		<_field_real_fraction name="Activation Chance (easy)#Chance to initate per sec on easy difficulty" />
 		<_field_real_fraction name="Activation Chance (normal)#Chance to initate per sec on normal difficulty" />
 		<_field_real_fraction name="Activation Chance (heroic)#Chance to initate per sec on heroic difficulty" />
 		<_field_real_fraction name="Activation Chance (legendary)#Chance to initate per sec on legendary difficulty" />
 		<_field_real name="Float Time #Time spent at top of leap." />
 		<_field_real name="Float Gravity Scale#Gravity multiplier while floating" />
-		<_field_struct name="descendGravityScaleFunction" />
-		<_field_data_64 name="data" />
+		<_field_struct name="descendGravityScaleFunction" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
 		<_field_real name="Slow descend time #Time spent before full gravity returns - progress through this duration is input to descent grav scale fu." />
 		<_field_real name="Jump Target Height #How high to attempt to jump for shot." />
 		<_field_real name="Cooldown #Time before this character can gravjump again." />
 		<_field_real name="Trigger Distance #How close your enemy has to be to trigger the jump." />
 	</_field_block_64>
-	<_field_block_64 name="Co-op Modifiers" max="1" guid="d64fbe79-4145-93cd-7d4b-d3ba8e11657a">
+	<_field_block_64 name="Co-op Modifiers" max="1" srcguid="d64fbe79-4145-93cd-7d4b-d3ba8e11657a" srcName="character_coop_modifiers_block">
 		<_field_real name="Body Vitality Scale for 2-3 Players" />
 		<_field_real name="Body Vitality Scale for 4 Players" />
 		<_field_real name="Shield Vitality Scale for 2-3 Players" />

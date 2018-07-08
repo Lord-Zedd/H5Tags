@@ -1,10 +1,11 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_explanation name="Audio" />
 	<_field_tag_reference_64 name="on downed sound#one shot when downed state is entered" validtags="snd!" />
 	<_field_tag_reference_64 name="on stunned sound#one shot when stunned state is entered" validtags="snd!" />
@@ -13,20 +14,20 @@
 	<_field_tag_reference_64 name="entire team is downed#2d one shot when final teammate enters downed state" validtags="snd!" />
 	<_field_tag_reference_64 name="on dead sound#one shot when dead after stunned too many times, or after bleed out" validtags="snd!" />
 	<_field_tag_reference_64 name="on revive requested#confirmation sounds for press X for revive" validtags="snd!" />
-	<_field_tag_reference_64 name="reviving#loop target plays while being revived" />
+	<_field_tag_reference_64 name="reviving#loop target plays while being revived" validtags="lsnd" />
 	<_field_explanation name="Effects" />
-	<_field_tag_reference_64 name="downed" />
-	<_field_tag_reference_64 name="downed loop" />
-	<_field_tag_reference_64 name="stunned" />
-	<_field_tag_reference_64 name="stunned loop" />
-	<_field_tag_reference_64 name="bleed out" />
-	<_field_tag_reference_64 name="revive#player being revived" />
-	<_field_tag_reference_64 name="revive success#player being revived" />
-	<_field_tag_reference_64 name="revive interrupted#player being revived" />
-	<_field_tag_reference_64 name="reviver#player performing revive" />
-	<_field_tag_reference_64 name="reviver success#player performing revive" />
-	<_field_tag_reference_64 name="reviver interrupted#player performing revive" />
-	<_field_tag_reference_64 name="reward overshield#applied to both players" />
+	<_field_tag_reference_64 name="downed" validtags="effe" />
+	<_field_tag_reference_64 name="downed loop" validtags="effe" />
+	<_field_tag_reference_64 name="stunned" validtags="effe" />
+	<_field_tag_reference_64 name="stunned loop" validtags="effe" />
+	<_field_tag_reference_64 name="bleed out" validtags="effe" />
+	<_field_tag_reference_64 name="revive#player being revived" validtags="effe" />
+	<_field_tag_reference_64 name="revive success#player being revived" validtags="effe" />
+	<_field_tag_reference_64 name="revive interrupted#player being revived" validtags="effe" />
+	<_field_tag_reference_64 name="reviver#player performing revive" validtags="effe" />
+	<_field_tag_reference_64 name="reviver success#player performing revive" validtags="effe" />
+	<_field_tag_reference_64 name="reviver interrupted#player performing revive" validtags="effe" />
+	<_field_tag_reference_64 name="reward overshield#applied to both players" validtags="pugm" />
 	<_field_explanation name="Tuning" />
 	<_field_real name="cancel revive damage threshold#amount of damage taken that will cancel revive" />
 	<_field_real name="revive action duration#time the act of reviving takes" />

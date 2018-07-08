@@ -1,24 +1,26 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="squad specifications" max="16" guid="55990120-4544-2780-6feb-4591a3a0a6bf">
-		<_field_tag_reference_64 name="squad template^" />
-		<_field_struct name="spawn conditions" />
-		<_field_word_flags name="difficulty flags">
-			<item Name="easy" />
-			<item Name="normal" />
-			<item Name="heroic" />
-			<item Name="legendary" />
-		</_field_word_flags>
-		<_field_pad name="post-difficulty-flags-padding" length="2" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="squad specifications" max="16" srcguid="55990120-4544-2780-6feb-4591a3a0a6bf" srcName="wave_squad_specification_struct">
+		<_field_tag_reference_64 name="squad template^" validtags="sqtm" />
+		<_field_struct name="spawn conditions" srcguid="f95bf66a-4415-4676-112f-c5b6cf15deef">
+			<_field_word_flags name="difficulty flags">
+				<item Name="easy" />
+				<item Name="normal" />
+				<item Name="heroic" />
+				<item Name="legendary" />
+			</_field_word_flags>
+			<_field_pad name="post-difficulty-flags-padding" length="2" />
+		</_field_struct>
 		<_field_short_integer name="weight#The relative weight given to this squad spawning" />
 		<_field_explanation name="std::min/std::max SPAWN COUNTS">When spawning a number of squads from this wave template, try and spawn at least the minimum number, and at most the maximum number. Once these min/max bounds have been met, probabilistic distribution will continue.</_field_explanation>
-		<_field_char_integer name="min spawn#Spawn AT LEAST this number of squads. Value of 0 means &quot;no minimum&quot;" />
-		<_field_char_integer name="max spawn#Spawn NO MORE THAN this number of squads. Value of 0 means &quot;no maximum&quot;" />
+		<_field_char_integer name="min spawn#Spawn AT LEAST this number of squads. Value of 0 means &amp;quot;no minimum&amp;quot;" />
+		<_field_char_integer name="max spawn#Spawn NO MORE THAN this number of squads. Value of 0 means &amp;quot;no maximum&amp;quot;" />
 		<_field_long_enum name="placement filter#Filter where this squad specification can spawn by matching this value with the values in squad definitions in the scenario">
 			<item Name="None" />
 			<item Name="Heavy Infantry" />

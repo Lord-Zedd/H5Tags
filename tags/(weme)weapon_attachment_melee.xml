@@ -1,120 +1,124 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_struct name="weapon attachment component" />
-	<_field_custom name="Weapon Attachment" />
-	<_field_string_id name="variant region name" />
-	<_field_string_id name="variant permutation name" />
-	<_field_block_64 name="attachments" max="48" guid="11097257-429c-4775-33d9-75a73f4575ee">
-		<_field_tag_reference_64 name="type^" validtags="ligh, gldf, ltvl, effe, lsnd, lens, cpem, egfd, decs" />
-		<_field_tag_reference_64 name="override type#this attachment will override the attachment on the object that shares this " validtags="ligh, gldf, ltvl, effe, lsnd, lens, cpem, egfd, decs" />
-		<_field_string_id name="marker" />
-		<_field_char_enum name="change color">
-			<item Name="none" />
-			<item Name="primary" />
-			<item Name="secondary" />
-			<item Name="tertiary" />
-			<item Name="quaternary" />
-		</_field_char_enum>
-		<_field_byte_flags name="flags">
-			<item Name="force always on#when this flag is clear we only create the attachment when the function object function is active or set to empty string" />
-			<item Name="effect size scale from object scale" />
-		</_field_byte_flags>
-		<_field_pad name="DPKP" length="2" />
-		<_field_string_id name="primary scale" />
-		<_field_string_id name="secondary scale" />
-	</_field_block_64>
-	<_field_pad name="attachmentPad" length="4" />
-	<_field_explanation name="Attachment Name">Used for damage reporting - we want to know what attachments something has when it deals damage</_field_explanation>
-	<_field_struct name="attachmentName" />
-	<_field_string_id name="Attachment Name" />
-	<_field_block_64 name="attachment object" max="1" guid="69a0d818-4a18-977c-2ec5-2c9c5c788d2a">
-		<_field_tag_reference_64 name="object" />
-		<_field_string_id name="weapon marker" />
-		<_field_string_id name="attachment marker" />
-	</_field_block_64>
-	<_field_block_64 name="accuracy modifiers" max="1" guid="da887998-4a0f-4ed5-7912-3c8f4048154f">
-		<_field_real name="accuracy spread{Accuracy Bloom}:percent" />
-	</_field_block_64>
-	<_field_block_64 name="precision aim modifiers" max="1" guid="80940841-4624-313b-546f-658e2d588e96">
-		<_field_real name="precision transition in time modifier:percent" />
-		<_field_real name="precision transition out time modifier:percent" />
-	</_field_block_64>
-	<_field_block_64 name="unit modifiers" max="1" guid="c17f9f40-4926-9ffe-bbb7-7b8e2ad9a775">
-		<_field_real name="move speed scale modifier:percent" />
-		<_field_real name="turn rate scale modifier:percent" />
-		<_field_real name="simulated input scale modifier:percent" />
-	</_field_block_64>
-	<_field_block_64 name="aim assist modifiers" max="1" guid="2cb7ba74-4814-28a0-0d7d-2a93c4188131">
-		<_field_real name="autoaim angle:percent#the maximum angle that autoaim works at full strength" />
-		<_field_real name="prioritization angle:percent#angle used to select model targets based on priority" />
-		<_field_real name="autoaim range:percent#autoaim only has an effect along this distance" />
-		<_field_real name="autoaim falloff range:percent#at what point the autoaim starts falling off.  Fully falls off at autoaim range." />
-		<_field_real name="autoaim near falloff range:percent#at what point the autoaim reaches full power" />
-		<_field_real name="magnetism angle:percent#at what point the autoaim reaches full power" />
-		<_field_real name="magnetism range:percent#magnetism only has an effect along this distance" />
-		<_field_real name="magnetism falloff range:percent#at what point magnetism starts falling off.  Fully falls off at magnetism range." />
-		<_field_real name="magnetism near falloff range:percent#at what point magnetism reaches full power" />
-		<_field_real name="deviation angle:percent#the maximum angle that a projectile is allowed to deviate from the gun barrel due to autoaim OR network lead vector reconstruction" />
-	</_field_block_64>
-	<_field_block_64 name="recoil view kick modifiers" max="1" guid="867b6ceb-45ee-09b7-3487-0c94b40a00b6">
-		<_field_real name="view kick deceleration modifier:percent" />
-		<_field_real name="view kick return to center modifier:percent" />
-	</_field_block_64>
-	<_field_block_64 name="recoil gunkick modifiers" max="1" guid="c0b6345a-4408-0b16-986b-de88c03694a1">
-		<_field_real name="gunkick spring constant modifier:percent" />
-	</_field_block_64>
-	<_field_block_64 name="animation modifiers" max="1" guid="f921d36c-4356-b5f6-5bb1-efae74b1566b">
-		<_field_real name="ready playback speed modifier:percent" />
-		<_field_real name="ready initial playback modifier:percent" />
-		<_field_real name="put away playback speed modifier:percent" />
-		<_field_real name="reload playback speed modifier:percent" />
-		<_field_real name="reload while empty playback speed modifier:percent" />
-	</_field_block_64>
-	<_field_block_64 name="heat modifiers" max="1" guid="4a20a34a-469c-b8b1-bdb0-6aa633975ec0">
-		<_field_real name="heat loss per second modifier:percent" />
-		<_field_real name="overheated heat loss per second modifier:percent" />
-		<_field_real name="heat generated per round modifier:percent" />
-	</_field_block_64>
-	<_field_block_64 name="UI display info" max="1" guid="6bb873fd-472b-52c6-7790-9b90d0074580">
-		<_field_string_id name="name^#short name for the item" />
-		<_field_string_id name="display name#friendly name for the item" />
-		<_field_string_id name="description#general in-universe item description" />
-		<_field_string_id name="help text#verbose usage info for use during gameplay" />
-		<_field_string_id name="icon string id#legacy, from when we embedded the sprites into the font to get streaming behaviour" />
-		<_field_tag_reference_64 name="sprite#bitmap file representing this item" />
-		<_field_long_integer name="sprite index#frame inside the item's image strip which shows this item " />
-		<_field_tag_reference_64 name="alt sprite#secondary bitmap file representing this item. for detail images, overlays etc." />
-		<_field_long_integer name="alt sprite index#alt sprite's frame" />
-		<_field_tag_reference_64 name="ui vehicle screen reference" />
-		<_field_pad name="pad0" length="4" />
-	</_field_block_64>
-	<_field_pad name="endPad" length="4" />
-	<_field_struct name="weapon melee component" />
-	<_field_custom name="Weapon Melee" />
-	<_field_block_64 name="melee damage parameters" max="2" guid="b9eba02e-a76c-e895-74ea-8baba5c19c40">
-		<_field_explanation name="melee damage parameters">damage pyramid angles: defines the frustum from the camera that the melee-attack uses to find targets
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_struct name="weapon attachment component" srcguid="128b8f41-4ede-8918-8573-0099d6c4f5c1">
+		<_field_custom name="Weapon Attachment" />
+		<_field_string_id name="variant region name" />
+		<_field_string_id name="variant permutation name" />
+		<_field_block_64 name="attachments" max="48" srcguid="11097257-429c-4775-33d9-75a73f4575ee" srcName="global_object_attachment_block">
+			<_field_tag_reference_64 name="type^" validtags="ligh, gldf, ltvl, effe, lsnd, lens, cpem, egfd, decs" />
+			<_field_tag_reference_64 name="override type#this attachment will override the attachment on the object that shares this " validtags="ligh, gldf, ltvl, effe, lsnd, lens, cpem, egfd, decs" />
+			<_field_string_id name="marker" />
+			<_field_char_enum name="change color">
+				<item Name="none" />
+				<item Name="primary" />
+				<item Name="secondary" />
+				<item Name="tertiary" />
+				<item Name="quaternary" />
+			</_field_char_enum>
+			<_field_byte_flags name="flags">
+				<item Name="force always on#when this flag is clear we only create the attachment when the function object function is active or set to empty string" />
+				<item Name="effect size scale from object scale" />
+			</_field_byte_flags>
+			<_field_pad name="DPKP" length="2" />
+			<_field_string_id name="primary scale" />
+			<_field_string_id name="secondary scale" />
+		</_field_block_64>
+		<_field_pad name="attachmentPad" length="4" />
+		<_field_explanation name="Attachment Name">Used for damage reporting - we want to know what attachments something has when it deals damage</_field_explanation>
+		<_field_struct name="attachmentName" srcguid="7166d96b-4090-60fc-1c2e-bf9c91f0157d">
+			<_field_string_id name="Attachment Name" />
+		</_field_struct>
+		<_field_block_64 name="attachment object" max="1" srcguid="69a0d818-4a18-977c-2ec5-2c9c5c788d2a" srcName="WeaponAttachmentObjectBlock">
+			<_field_tag_reference_64 name="object" validtags="obje" />
+			<_field_string_id name="weapon marker" />
+			<_field_string_id name="attachment marker" />
+		</_field_block_64>
+		<_field_block_64 name="accuracy modifiers" max="1" srcguid="da887998-4a0f-4ed5-7912-3c8f4048154f" srcName="WeaponAccuracyModifiers">
+			<_field_real name="accuracy spread{Accuracy Bloom}:percent" />
+		</_field_block_64>
+		<_field_block_64 name="precision aim modifiers" max="1" srcguid="80940841-4624-313b-546f-658e2d588e96" srcName="WeaponPrecisionAimModifiers">
+			<_field_real name="precision transition in time modifier:percent" />
+			<_field_real name="precision transition out time modifier:percent" />
+		</_field_block_64>
+		<_field_block_64 name="unit modifiers" max="1" srcguid="c17f9f40-4926-9ffe-bbb7-7b8e2ad9a775" srcName="WeaponUnitPropertyModifiers">
+			<_field_real name="move speed scale modifier:percent" />
+			<_field_real name="turn rate scale modifier:percent" />
+			<_field_real name="simulated input scale modifier:percent" />
+		</_field_block_64>
+		<_field_block_64 name="aim assist modifiers" max="1" srcguid="2cb7ba74-4814-28a0-0d7d-2a93c4188131" srcName="WeaponAimAssistPropertyModifiers">
+			<_field_real name="autoaim angle:percent#the maximum angle that autoaim works at full strength" />
+			<_field_real name="prioritization angle:percent#angle used to select model targets based on priority" />
+			<_field_real name="autoaim range:percent#autoaim only has an effect along this distance" />
+			<_field_real name="autoaim falloff range:percent#at what point the autoaim starts falling off.  Fully falls off at autoaim range." />
+			<_field_real name="autoaim near falloff range:percent#at what point the autoaim reaches full power" />
+			<_field_real name="magnetism angle:percent#at what point the autoaim reaches full power" />
+			<_field_real name="magnetism range:percent#magnetism only has an effect along this distance" />
+			<_field_real name="magnetism falloff range:percent#at what point magnetism starts falling off.  Fully falls off at magnetism range." />
+			<_field_real name="magnetism near falloff range:percent#at what point magnetism reaches full power" />
+			<_field_real name="deviation angle:percent#the maximum angle that a projectile is allowed to deviate from the gun barrel due to autoaim OR network lead vector reconstruction" />
+		</_field_block_64>
+		<_field_block_64 name="recoil view kick modifiers" max="1" srcguid="867b6ceb-45ee-09b7-3487-0c94b40a00b6" srcName="weapon_recoil_view_kick_modifiers">
+			<_field_real name="view kick deceleration modifier:percent" />
+			<_field_real name="view kick return to center modifier:percent" />
+		</_field_block_64>
+		<_field_block_64 name="recoil gunkick modifiers" max="1" srcguid="c0b6345a-4408-0b16-986b-de88c03694a1" srcName="WeaponRecoilGunkickModifiers">
+			<_field_real name="gunkick spring constant modifier:percent" />
+		</_field_block_64>
+		<_field_block_64 name="animation modifiers" max="1" srcguid="f921d36c-4356-b5f6-5bb1-efae74b1566b" srcName="WeaponAnimationModifiers">
+			<_field_real name="ready playback speed modifier:percent" />
+			<_field_real name="ready initial playback modifier:percent" />
+			<_field_real name="put away playback speed modifier:percent" />
+			<_field_real name="reload playback speed modifier:percent" />
+			<_field_real name="reload while empty playback speed modifier:percent" />
+		</_field_block_64>
+		<_field_block_64 name="heat modifiers" max="1" srcguid="4a20a34a-469c-b8b1-bdb0-6aa633975ec0" srcName="WeaponHeatModifiers">
+			<_field_real name="heat loss per second modifier:percent" />
+			<_field_real name="overheated heat loss per second modifier:percent" />
+			<_field_real name="heat generated per round modifier:percent" />
+		</_field_block_64>
+		<_field_block_64 name="UI display info" max="1" srcguid="6bb873fd-472b-52c6-7790-9b90d0074580" srcName="UIItemInfoBlock">
+			<_field_string_id name="name^#short name for the item" />
+			<_field_string_id name="display name#friendly name for the item" />
+			<_field_string_id name="description#general in-universe item description" />
+			<_field_string_id name="help text#verbose usage info for use during gameplay" />
+			<_field_string_id name="icon string id#legacy, from when we embedded the sprites into the font to get streaming behaviour" />
+			<_field_tag_reference_64 name="sprite#bitmap file representing this item" validtags="bitm" />
+			<_field_long_integer name="sprite index#frame inside the item's image strip which shows this item " />
+			<_field_tag_reference_64 name="alt sprite#secondary bitmap file representing this item. for detail images, overlays etc." validtags="bitm" />
+			<_field_long_integer name="alt sprite index#alt sprite's frame" />
+			<_field_tag_reference_64 name="ui vehicle screen reference" validtags="wpfs" />
+			<_field_pad name="pad0" length="4" />
+		</_field_block_64>
+		<_field_pad name="endPad" length="4" />
+	</_field_struct>
+	<_field_struct name="weapon melee component" srcguid="9acd2da9-4e8f-704f-cbe3-4089c30e45ff">
+		<_field_custom name="Weapon Melee" />
+		<_field_block_64 name="melee damage parameters" max="2" srcguid="b9eba02e-a76c-e895-74ea-8baba5c19c40" srcName="melee_damage_parameters_block">
+			<_field_explanation name="melee damage parameters">damage pyramid angles: defines the frustum from the camera that the melee-attack uses to find targets
 damage pyramid depth: how far the melee attack searches for a target</_field_explanation>
-		<_field_real_euler_angles_2d name="damage pyramid angles" />
-		<_field_real name="damage pyramid depth:wu#0 defaults to k_default_player_melee_distance" />
-		<_field_real name="maximum lunge range:wu#0 defaults to k_default_player_melee_lunge_distance" />
-		<_field_real name="damage lunge explosive depth:wu#the distance out from the pyramid center to spawn explosive effects.  This value will be clamped to the damage pyramid depth. 0 defaults to the damage pyramid depth" />
-		<_field_real name="runtime damage lunge explosive fraction*!" />
-		<_field_tag_reference_64 name="melee damage" />
-		<_field_tag_reference_64 name="melee response" validtags="jpt!, drdf" />
-		<_field_tag_reference_64 name="lunge melee damage#this is only important for the energy sword" />
-		<_field_tag_reference_64 name="lunge melee response#this is only important for the energy sword" validtags="jpt!, drdf" />
-		<_field_tag_reference_64 name="empty melee damage#this is only important for the energy sword" />
-		<_field_tag_reference_64 name="empty melee response#this is only important for the energy sword" validtags="jpt!, drdf" />
-		<_field_tag_reference_64 name="clang melee damage#this is only important for the energy sword" />
-		<_field_tag_reference_64 name="clang melee response#this is only important for the energy sword" validtags="jpt!, drdf" />
-		<_field_tag_reference_64 name="clang melee against melee weapon damage#e.g. used by AR to damage sword guy when clanging sword attack" />
-		<_field_tag_reference_64 name="clang melee against melee weapon damage response#e.g. used by AR to damage sword guy when clanging sword attack" validtags="jpt!, drdf" />
-		<_field_tag_reference_64 name="lunge melee explosive damage" />
-	</_field_block_64>
-	<_field_string_id name="melee animation set" />
+			<_field_real_euler_angles_2d name="damage pyramid angles" />
+			<_field_real name="damage pyramid depth:wu#0 defaults to k_default_player_melee_distance" />
+			<_field_real name="maximum lunge range:wu#0 defaults to k_default_player_melee_lunge_distance" />
+			<_field_real name="damage lunge explosive depth:wu#the distance out from the pyramid center to spawn explosive effects.  This value will be clamped to the damage pyramid depth. 0 defaults to the damage pyramid depth" />
+			<_field_real name="runtime damage lunge explosive fraction*!" />
+			<_field_tag_reference_64 name="melee damage" validtags="jpt!" />
+			<_field_tag_reference_64 name="melee response" validtags="jpt!, drdf" />
+			<_field_tag_reference_64 name="lunge melee damage#this is only important for the energy sword" validtags="jpt!" />
+			<_field_tag_reference_64 name="lunge melee response#this is only important for the energy sword" validtags="jpt!, drdf" />
+			<_field_tag_reference_64 name="empty melee damage#this is only important for the energy sword" validtags="jpt!" />
+			<_field_tag_reference_64 name="empty melee response#this is only important for the energy sword" validtags="jpt!, drdf" />
+			<_field_tag_reference_64 name="clang melee damage#this is only important for the energy sword" validtags="jpt!" />
+			<_field_tag_reference_64 name="clang melee response#this is only important for the energy sword" validtags="jpt!, drdf" />
+			<_field_tag_reference_64 name="clang melee against melee weapon damage#e.g. used by AR to damage sword guy when clanging sword attack" validtags="jpt!" />
+			<_field_tag_reference_64 name="clang melee against melee weapon damage response#e.g. used by AR to damage sword guy when clanging sword attack" validtags="jpt!, drdf" />
+			<_field_tag_reference_64 name="lunge melee explosive damage" validtags="effe" />
+		</_field_block_64>
+		<_field_string_id name="melee animation set" />
+	</_field_struct>
 </plugin>

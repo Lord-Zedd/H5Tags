@@ -1,30 +1,32 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="Animations" max="1024" guid="85220017-4ce5-7276-ae01-8a8b0b83d37e">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="Animations" max="1024" srcguid="85220017-4ce5-7276-ae01-8a8b0b83d37e" srcName="cameraTrackAnimationBlock">
 		<_field_string_id name="Name^" />
-		<_field_struct name="Track" />
-		<_field_byte_flags name="Flags">
-			<item Name="Lens Enabled" />
-		</_field_byte_flags>
-		<_field_pad name="PAD1!" length="3" />
-		<_field_block_64 name="Control Points" max="2000" guid="cd7602fd-4e94-e438-b85a-47b9e207f745">
-			<_field_real_vector_3d name="position" />
-			<_field_real_quaternion name="orientation" />
-		</_field_block_64>
-		<_field_block_64 name="Lenses" max="2000" guid="38defdd9-40ba-91f4-9d02-fea1c0cd72c9">
+		<_field_struct name="Track" srcguid="6968aa00-4bea-4b75-2778-08808f4f4201">
 			<_field_byte_flags name="Flags">
-				<item Name="Depth Of Field Enabled" />
+				<item Name="Lens Enabled" />
 			</_field_byte_flags>
 			<_field_pad name="PAD1!" length="3" />
-			<_field_real name="Focal Length" />
-			<_field_real name="Focus Distance" />
-			<_field_real name="FStop" />
-		</_field_block_64>
+			<_field_block_64 name="Control Points" max="2000" srcguid="cd7602fd-4e94-e438-b85a-47b9e207f745" srcName="cameraTrackControlPointBlock">
+				<_field_real_vector_3d name="position" />
+				<_field_real_quaternion name="orientation" />
+			</_field_block_64>
+			<_field_block_64 name="Lenses" max="2000" srcguid="38defdd9-40ba-91f4-9d02-fea1c0cd72c9" srcName="cameraTrackLensBlock">
+				<_field_byte_flags name="Flags">
+					<item Name="Depth Of Field Enabled" />
+				</_field_byte_flags>
+				<_field_pad name="PAD1!" length="3" />
+				<_field_real name="Focal Length" />
+				<_field_real name="Focus Distance" />
+				<_field_real name="FStop" />
+			</_field_block_64>
+		</_field_struct>
 	</_field_block_64>
 	<_field_pad name="EXPLICIT_PAD!" length="4" />
 </plugin>

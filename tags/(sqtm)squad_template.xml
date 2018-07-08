@@ -1,21 +1,23 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_string_id name="name^" />
-	<_field_block_64 name="cell templates" max="10" guid="84753568-4d62-2bd1-fdc1-f8b1689c89be">
+	<_field_block_64 name="cell templates" max="10" srcguid="84753568-4d62-2bd1-fdc1-f8b1689c89be" srcName="cell_template_block">
 		<_field_string_id name="name^" />
-		<_field_struct name="place on" />
-		<_field_word_flags name="difficulty flags">
-			<item Name="easy" />
-			<item Name="normal" />
-			<item Name="heroic" />
-			<item Name="legendary" />
-		</_field_word_flags>
-		<_field_pad name="post-difficulty-flags-padding" length="2" />
+		<_field_struct name="place on" srcguid="f95bf66a-4415-4676-112f-c5b6cf15deef">
+			<_field_word_flags name="difficulty flags">
+				<item Name="easy" />
+				<item Name="normal" />
+				<item Name="heroic" />
+				<item Name="legendary" />
+			</_field_word_flags>
+			<_field_pad name="post-difficulty-flags-padding" length="2" />
+		</_field_struct>
 		<_field_short_integer name="normal diff count#initial number of actors on normal difficulty" />
 		<_field_short_enum name="major upgrade">
 			<item Name="normal" />
@@ -25,55 +27,59 @@
 			<item Name="all" />
 		</_field_short_enum>
 		<_field_explanation name="Character Build">Specify the distribution of characters and weapons in the following blocks</_field_explanation>
-		<_field_block_64 name="character type" max="8" guid="01e52f15-4df8-71c3-67ea-8fa501f63d4e">
-			<_field_struct name="place on" />
-			<_field_word_flags name="difficulty flags">
-				<item Name="easy" />
-				<item Name="normal" />
-				<item Name="heroic" />
-				<item Name="legendary" />
-			</_field_word_flags>
-			<_field_pad name="post-difficulty-flags-padding" length="2" />
-			<_field_tag_reference_64 name="character type^" />
+		<_field_block_64 name="character type" max="8" srcguid="01e52f15-4df8-71c3-67ea-8fa501f63d4e" srcName="character_ref_choice_block">
+			<_field_struct name="place on" srcguid="f95bf66a-4415-4676-112f-c5b6cf15deef">
+				<_field_word_flags name="difficulty flags">
+					<item Name="easy" />
+					<item Name="normal" />
+					<item Name="heroic" />
+					<item Name="legendary" />
+				</_field_word_flags>
+				<_field_pad name="post-difficulty-flags-padding" length="2" />
+			</_field_struct>
+			<_field_tag_reference_64 name="character type^" validtags="char" />
 			<_field_short_integer name="chance" />
 			<_field_pad name="post-chance" length="2" />
 		</_field_block_64>
-		<_field_block_64 name="initial weapon" max="8" guid="75ee0928-4fc6-d53e-8e2a-da834fc9df7c">
-			<_field_struct name="place on" />
-			<_field_word_flags name="difficulty flags">
-				<item Name="easy" />
-				<item Name="normal" />
-				<item Name="heroic" />
-				<item Name="legendary" />
-			</_field_word_flags>
-			<_field_pad name="post-difficulty-flags-padding" length="2" />
-			<_field_tag_reference_64 name="weapon type^" />
+		<_field_block_64 name="initial weapon" max="8" srcguid="75ee0928-4fc6-d53e-8e2a-da834fc9df7c" srcName="weapon_ref_choice_block">
+			<_field_struct name="place on" srcguid="f95bf66a-4415-4676-112f-c5b6cf15deef">
+				<_field_word_flags name="difficulty flags">
+					<item Name="easy" />
+					<item Name="normal" />
+					<item Name="heroic" />
+					<item Name="legendary" />
+				</_field_word_flags>
+				<_field_pad name="post-difficulty-flags-padding" length="2" />
+			</_field_struct>
+			<_field_tag_reference_64 name="weapon type^" validtags="weap" />
 			<_field_short_integer name="chance" />
 			<_field_pad name="post-chance" length="2" />
 		</_field_block_64>
-		<_field_block_64 name="initial secondary weapon" max="8" guid="75ee0928-4fc6-d53e-8e2a-da834fc9df7c">
-			<_field_struct name="place on" />
-			<_field_word_flags name="difficulty flags">
-				<item Name="easy" />
-				<item Name="normal" />
-				<item Name="heroic" />
-				<item Name="legendary" />
-			</_field_word_flags>
-			<_field_pad name="post-difficulty-flags-padding" length="2" />
-			<_field_tag_reference_64 name="weapon type^" />
+		<_field_block_64 name="initial secondary weapon" max="8" srcguid="75ee0928-4fc6-d53e-8e2a-da834fc9df7c" srcName="weapon_ref_choice_block">
+			<_field_struct name="place on" srcguid="f95bf66a-4415-4676-112f-c5b6cf15deef">
+				<_field_word_flags name="difficulty flags">
+					<item Name="easy" />
+					<item Name="normal" />
+					<item Name="heroic" />
+					<item Name="legendary" />
+				</_field_word_flags>
+				<_field_pad name="post-difficulty-flags-padding" length="2" />
+			</_field_struct>
+			<_field_tag_reference_64 name="weapon type^" validtags="weap" />
 			<_field_short_integer name="chance" />
 			<_field_pad name="post-chance" length="2" />
 		</_field_block_64>
-		<_field_block_64 name="initial equipment" max="8" guid="adf3a9b8-4ea7-faca-316d-2caa394970df">
-			<_field_struct name="place on" />
-			<_field_word_flags name="difficulty flags">
-				<item Name="easy" />
-				<item Name="normal" />
-				<item Name="heroic" />
-				<item Name="legendary" />
-			</_field_word_flags>
-			<_field_pad name="post-difficulty-flags-padding" length="2" />
-			<_field_tag_reference_64 name="equipment type^" />
+		<_field_block_64 name="initial equipment" max="8" srcguid="adf3a9b8-4ea7-faca-316d-2caa394970df" srcName="equipment_ref_choice_block">
+			<_field_struct name="place on" srcguid="f95bf66a-4415-4676-112f-c5b6cf15deef">
+				<_field_word_flags name="difficulty flags">
+					<item Name="easy" />
+					<item Name="normal" />
+					<item Name="heroic" />
+					<item Name="legendary" />
+				</_field_word_flags>
+				<_field_pad name="post-difficulty-flags-padding" length="2" />
+			</_field_struct>
+			<_field_tag_reference_64 name="equipment type^" validtags="eqip" />
 			<_field_short_integer name="chance" />
 			<_field_pad name="post-chance" length="2" />
 		</_field_block_64>
@@ -85,7 +91,7 @@
 			<item Name="Firebomb" />
 		</_field_short_enum>
 		<_field_pad name="post-grenade" length="2" />
-		<_field_tag_reference_64 name="vehicle type" />
+		<_field_tag_reference_64 name="vehicle type" validtags="vehi" />
 		<_field_string_id name="vehicle variant" />
 		<_field_string_id name="activity name" />
 	</_field_block_64>

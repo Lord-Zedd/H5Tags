@@ -1,13 +1,14 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_explanation name="Links">links to the tags this data is associated with. These will be set by the importer, you don't need to do it manually</_field_explanation>
-	<_field_tag_reference_64 name="RenderModel*" />
-	<_field_tag_reference_64 name="AnimationGraph*" />
+	<_field_tag_reference_64 name="RenderModel*" validtags="mode" />
+	<_field_tag_reference_64 name="AnimationGraph*" validtags="jmad" />
 	<_field_long_flags name="pcaFlags*">
 		<item Name="lookup table ready" />
 		<item Name="resources generated" />
@@ -16,10 +17,10 @@
 	<_field_long_integer name="PCA Animation Count*!" />
 	<_field_long_integer name="PCA Checksum*!" />
 	<_field_explanation name="Imported Data">imported data</_field_explanation>
-	<_field_block_64 name="frame data*" max="67108864" guid="e5333434-4f48-0655-f8f6-1a82b5b36f55">
+	<_field_block_64 name="frame data*" max="67108864" srcguid="e5333434-4f48-0655-f8f6-1a82b5b36f55" srcName="PCAImportedFrameDatablock">
 		<_field_data_64 name="Coefficients" />
 	</_field_block_64>
-	<_field_block_64 name="mesh data*" max="8191" guid="3f7a00d0-442a-1fe3-34fe-d7ae47055926">
+	<_field_block_64 name="mesh data*" max="8191" srcguid="3f7a00d0-442a-1fe3-34fe-d7ae47055926" srcName="PCAImportedMeshDataBlock">
 		<_field_long_integer name="render mesh index*" />
 		<_field_long_integer name="vertices per shape*" />
 		<_field_long_integer name="vertex buffer index*" />
@@ -32,7 +33,7 @@
 		<_field_real_vector_3d name="normal offset*" />
 		<_field_real name="stretch offset*" />
 		<_field_explanation name="Animations">all imported animations for this mesh</_field_explanation>
-		<_field_block_64 name="animations*" max="4096" guid="959fd2f8-4296-bbc1-1c7d-cdad1c568a12">
+		<_field_block_64 name="animations*" max="4096" srcguid="959fd2f8-4296-bbc1-1c7d-cdad1c568a12" srcName="PCAImportedAnimationDataBlock">
 			<_field_string_id name="Name^*" />
 			<_field_long_integer name="Offset*" />
 			<_field_long_integer name="Count*" />
@@ -42,7 +43,7 @@
 			<_field_pageable_resource_64 name="CoefficientResource*" />
 		</_field_block_64>
 		<_field_explanation name="Vertices">all imported blend shape vertices for this mesh</_field_explanation>
-		<_field_block_64 name="raw blendshape verts*" max="16777216" guid="7d5e5593-4db9-f97e-00bc-978ee95cec72">
+		<_field_block_64 name="raw blendshape verts*" max="16777216" srcguid="7d5e5593-4db9-f97e-00bc-978ee95cec72" srcName="raw_blendshape_block">
 			<_field_real_vector_3d name="position*" />
 			<_field_real_vector_3d name="normal*" />
 			<_field_real_argb_color name="tension and ambient occlusion*" />

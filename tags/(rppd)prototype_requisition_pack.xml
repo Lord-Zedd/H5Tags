@@ -1,24 +1,25 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_string name="name" />
 	<_field_long_string name="description" />
-	<_field_tag_reference_64 name="icon bitmap" />
+	<_field_tag_reference_64 name="icon bitmap" validtags="bitm" />
 	<_field_long_integer name="icon sprite index" />
-	<_field_block_64 name="slots" max="64" guid="56aacae2-4385-b179-7539-e7abfa533710">
-		<_field_block_64 name="cards" max="64" guid="f7541eb8-4e3d-ed06-7f11-efbd6133a76d">
+	<_field_block_64 name="slots" max="64" srcguid="56aacae2-4385-b179-7539-e7abfa533710" srcName="prototype_requisition_pack_slot_definition">
+		<_field_block_64 name="cards" max="64" srcguid="f7541eb8-4e3d-ed06-7f11-efbd6133a76d" srcName="prototype_requisition_pack_card_entry">
 			<_field_real name="weight" />
-			<_field_tag_reference_64 name="card" />
+			<_field_tag_reference_64 name="card" validtags="rpcd" />
 			<_field_char_integer name="count" />
 			<_field_pad name="pad0" length="3" />
 		</_field_block_64>
-		<_field_block_64 name="pools" max="64" guid="7d249fd2-4d7c-f497-f31f-56afcf97005e">
+		<_field_block_64 name="pools" max="64" srcguid="7d249fd2-4d7c-f497-f31f-56afcf97005e" srcName="prototype_requisition_pack_card_pool_entry">
 			<_field_real name="weight" />
-			<_field_tag_reference_64 name="pool" />
+			<_field_tag_reference_64 name="pool" validtags="rpcp" />
 			<_field_char_integer name="count" />
 			<_field_pad name="pad0" length="3" />
 		</_field_block_64>

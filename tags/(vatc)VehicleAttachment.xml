@@ -1,17 +1,20 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_struct name="properties" />
-	<_field_custom name="Vehicle Attachment" />
-	<_field_block_64 name="maximum vitality" max="1" guid="72fad036-492a-22b7-137a-9a80e9200afe">
-		<_field_real name="health scalar#0 means no changes, 1 means double" />
-		<_field_pad name="pad" length="4" />
-	</_field_block_64>
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_struct name="properties" srcguid="99c9f070-4bb8-5074-b236-39ad020c989b">
+		<_field_custom name="Vehicle Attachment" />
+		<_field_block_64 name="maximum vitality" max="1" srcguid="72fad036-492a-22b7-137a-9a80e9200afe" srcName="VehicleVitalityPropertyModifiers">
+			<_field_real name="health scalar#0 means no changes, 1 means double" />
+			<_field_pad name="pad" length="4" />
+		</_field_block_64>
+	</_field_struct>
 	<_field_explanation name="Attachment Name">Used for damage reporting - we want to know what attachments something has when it deals damage</_field_explanation>
-	<_field_struct name="attachmentName" />
-	<_field_string_id name="Attachment Name" />
+	<_field_struct name="attachmentName" srcguid="7166d96b-4090-60fc-1c2e-bf9c91f0157d">
+		<_field_string_id name="Attachment Name" />
+	</_field_struct>
 </plugin>

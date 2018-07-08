@@ -1,12 +1,13 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_explanation name="Gobos" />
-	<_field_block_64 name="Gobos" max="4" guid="094ea2e1-c126-09db-deca-ca09ee99df09">
+	<_field_block_64 name="Gobos" max="4" srcguid="094ea2e1-c126-09db-deca-ca09ee99df09" srcName="goboBlock">
 		<_field_char_enum name="bitmap address mode">
 			<item Name="wrap" />
 			<item Name="clamp" />
@@ -24,8 +25,8 @@
 			<item Name="mirroronce border" />
 		</_field_char_enum>
 		<_field_pad name="gobo_pad_0" length="2" />
-		<_field_tag_reference_64 name="Bitmap" />
-		<_field_block_64 name="animation parameters" max="32767" guid="0295746e-ee71-7e12-de0c-bcba6bc39979">
+		<_field_tag_reference_64 name="Bitmap" validtags="bitm" />
+		<_field_block_64 name="animation parameters" max="32767" srcguid="0295746e-ee71-7e12-de0c-bcba6bc39979" srcName="goboAnimationParameterBlock">
 			<_field_long_enum name="type^">
 				<item Name="offset u" />
 				<item Name="offset v" />
@@ -36,21 +37,24 @@
 			</_field_long_enum>
 			<_field_real name="origin x:normalized#for rotations" />
 			<_field_real name="origin y:normalized#for rotations" />
-			<_field_explanation name="Gobo Parameters" />
-			<_field_string_id name="Input Variable!" />
-			<_field_string_id name="Range Variable!" />
-			<_field_short_enum name="Output Modifier!">
-				<item Name=" " />
-				<item Name="Plus" />
-				<item Name="Times" />
-			</_field_short_enum>
-			<_field_pad name="BVCG" length="2" />
-			<_field_string_id name="Output Modifier Input!" />
-			<_field_struct name="Mapping" />
-			<_field_data_64 name="data" />
+			<_field_struct name="function" srcguid="26aa4a94-4bba-42b4-dba3-ac93cd31a908">
+				<_field_explanation name="Gobo Parameters" />
+				<_field_string_id name="Input Variable!" />
+				<_field_string_id name="Range Variable!" />
+				<_field_short_enum name="Output Modifier!">
+					<item Name=" " />
+					<item Name="Plus" />
+					<item Name="Times" />
+				</_field_short_enum>
+				<_field_pad name="BVCG" length="2" />
+				<_field_string_id name="Output Modifier Input!" />
+				<_field_struct name="Mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+					<_field_data_64 name="data" />
+				</_field_struct>
+			</_field_struct>
 		</_field_block_64>
-		<_field_tag_reference_64 name="Displacement Bitmap" />
-		<_field_block_64 name="displacement animation parameters" max="32767" guid="0295746e-ee71-7e12-de0c-bcba6bc39979">
+		<_field_tag_reference_64 name="Displacement Bitmap" validtags="bitm" />
+		<_field_block_64 name="displacement animation parameters" max="32767" srcguid="0295746e-ee71-7e12-de0c-bcba6bc39979" srcName="goboAnimationParameterBlock">
 			<_field_long_enum name="type^">
 				<item Name="offset u" />
 				<item Name="offset v" />
@@ -61,18 +65,21 @@
 			</_field_long_enum>
 			<_field_real name="origin x:normalized#for rotations" />
 			<_field_real name="origin y:normalized#for rotations" />
-			<_field_explanation name="Gobo Parameters" />
-			<_field_string_id name="Input Variable!" />
-			<_field_string_id name="Range Variable!" />
-			<_field_short_enum name="Output Modifier!">
-				<item Name=" " />
-				<item Name="Plus" />
-				<item Name="Times" />
-			</_field_short_enum>
-			<_field_pad name="BVCG" length="2" />
-			<_field_string_id name="Output Modifier Input!" />
-			<_field_struct name="Mapping" />
-			<_field_data_64 name="data" />
+			<_field_struct name="function" srcguid="26aa4a94-4bba-42b4-dba3-ac93cd31a908">
+				<_field_explanation name="Gobo Parameters" />
+				<_field_string_id name="Input Variable!" />
+				<_field_string_id name="Range Variable!" />
+				<_field_short_enum name="Output Modifier!">
+					<item Name=" " />
+					<item Name="Plus" />
+					<item Name="Times" />
+				</_field_short_enum>
+				<_field_pad name="BVCG" length="2" />
+				<_field_string_id name="Output Modifier Input!" />
+				<_field_struct name="Mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+					<_field_data_64 name="data" />
+				</_field_struct>
+			</_field_struct>
 		</_field_block_64>
 	</_field_block_64>
 	<_field_long_integer name="Resolution" />

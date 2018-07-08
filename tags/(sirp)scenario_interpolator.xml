@@ -1,18 +1,23 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="interpolators" max="32" guid="2fa4af3d-4c1d-658e-5911-568b51109aee">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="interpolators" max="32" srcguid="2fa4af3d-4c1d-658e-5911-568b51109aee" srcName="scenario_interpolator_data_block">
 		<_field_word_flags name="flags">
 			<item Name="loops#will continue to play until stopped.  if checked, no wrap should also be checked" />
 			<item Name="always active#will be started when the map loads.  good for looping interpolators" />
 		</_field_word_flags>
 		<_field_pad name="SCBP1" length="2" />
 		<_field_string_id name="name^" />
-		<_field_data_64 name="data" />
+		<_field_struct name="function" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+			<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
 		<_field_real name="duration:seconds" />
 		<_field_long_enum name="map reset type">
 			<item Name="initial" />

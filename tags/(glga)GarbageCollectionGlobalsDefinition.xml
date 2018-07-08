@@ -1,14 +1,15 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="havok cleanup resources" max="1" guid="1158b5b8-4d5a-fbfc-5922-86b47beb91cb">
-		<_field_tag_reference_64 name="object cleanup effect" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="havok cleanup resources" max="1" srcguid="1158b5b8-4d5a-fbfc-5922-86b47beb91cb" srcName="havok_cleanup_resources_block">
+		<_field_tag_reference_64 name="object cleanup effect" validtags="effe" />
 	</_field_block_64>
-	<_field_block_64 name="garbage collection" max="1" guid="49b147e0-4847-863c-aa48-13be7e2dc96b">
+	<_field_block_64 name="garbage collection" max="1" srcguid="49b147e0-4847-863c-aa48-13be7e2dc96b" srcName="garbage_collection_block">
 		<_field_explanation name="Garbage Times">time before the game considers that following entities as garbage</_field_explanation>
 		<_field_real name="Dropped item:seconds" />
 		<_field_real name="Dropped special item:seconds" />

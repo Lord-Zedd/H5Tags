@@ -1,10 +1,11 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_long_flags name="flags!">
 		<item Name="collides structure" />
 		<item Name="collides objects" />
@@ -12,7 +13,7 @@
 		<item Name="affected by explosions" />
 	</_field_long_flags>
 	<_field_string_id name="marker attach name" />
-	<_field_tag_reference_64 name="bitmap sprite plate" />
+	<_field_tag_reference_64 name="bitmap sprite plate" validtags="bitm" />
 	<_field_real_bounds name="emission rate#seconds" />
 	<_field_real name="lifetime" />
 	<_field_real_bounds name="wind min/max#default 0,0" />
@@ -23,7 +24,7 @@
 	<_field_real name="movement cylinder radius" />
 	<_field_real name="fade in time!" />
 	<_field_real name="fade out time!" />
-	<_field_block_64 name="leaf types" max="16" guid="9cb09d25-4521-b339-fd82-22bc55ed4afa">
+	<_field_block_64 name="leaf types" max="16" srcguid="9cb09d25-4521-b339-fd82-22bc55ed4afa" srcName="leaf_type_block">
 		<_field_short_integer name="bitmap sprite index#assumes sequence 0. if no sprites uses full bitmap" />
 		<_field_pad name="UNAX" length="2" />
 		<_field_real name="frequency" />

@@ -1,10 +1,11 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_word_flags name="global flags">
 		<item Name="play sequentially - ignore delay settings" />
 		<item Name="debug this screen effect" />
@@ -16,7 +17,7 @@
 		<item Name="update thread" />
 		<item Name="render thread" />
 	</_field_word_flags>
-	<_field_block_64 name="screen effects" max="8" guid="2e559b36-46a7-4e35-291e-aea19f23aa90">
+	<_field_block_64 name="screen effects" max="8" srcguid="2e559b36-46a7-4e35-291e-aea19f23aa90" srcName="single_screen_effect">
 		<_field_string_id name="name^" />
 		<_field_word_flags name="flags">
 			<item Name="debug disable" />
@@ -36,30 +37,38 @@
 		<_field_explanation name="DISTANCE FALLOFF">controls the maximum distance and the distance falloff of this effect
 NOTE: not used for scenario global effects</_field_explanation>
 		<_field_real name="maximum distance:world units#the maximum distance this screen effect will affect" />
-		<_field_struct name="distance falloff" />
-		<_field_struct name="Mapping" />
-		<_field_data_64 name="data" />
+		<_field_struct name="distance falloff" srcguid="d2d2c2b8-4359-a3d2-d87d-128dd8f3b77e">
+			<_field_struct name="Mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
 		<_field_explanation name="TIME EVOLUTION">controls the lifetime and time falloff of this effect
 NOTE: not used for scenario global effects</_field_explanation>
 		<_field_real name="delay:seconds#the effect will start after this many seconds (ignored if the play sequentially flag is set)" />
 		<_field_real name="lifetime:seconds#the effect is destroyed after this many seconds (0 = never dies)" />
-		<_field_struct name="time falloff" />
-		<_field_struct name="Mapping" />
-		<_field_data_64 name="data" />
+		<_field_struct name="time falloff" srcguid="d2d2c2b8-4359-a3d2-d87d-128dd8f3b77e">
+			<_field_struct name="Mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
 		<_field_explanation name="ANGLE FALLOFF">controls the falloff of this effect based on how close you are to looking directly at it
 NOTE: not used for scenario global effects</_field_explanation>
-		<_field_struct name="angle falloff" />
-		<_field_struct name="Mapping" />
-		<_field_data_64 name="data" />
+		<_field_struct name="angle falloff" srcguid="d2d2c2b8-4359-a3d2-d87d-128dd8f3b77e">
+			<_field_struct name="Mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
 		<_field_explanation name="OBJECT FALLOFF">applies a falloff based on an object function - ignored if the effect is not attached to an object</_field_explanation>
-		<_field_struct name="object falloff" />
-		<_field_string_id name="Input Variable!" />
-		<_field_string_id name="Range Variable!" />
-		<_field_struct name="Mapping" />
-		<_field_data_64 name="data" />
+		<_field_struct name="object falloff" srcguid="92c128e6-4665-4b42-7b70-e1801ddb6cce">
+			<_field_string_id name="Input Variable!" />
+			<_field_string_id name="Range Variable!" />
+			<_field_struct name="Mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
 		<_field_explanation name="EFFECTS">a selection of effects to choose from
 in the case of overlapping effects, the maximum will be taken</_field_explanation>
-		<_field_tag_reference_64 name="color grading look-up-texture" />
+		<_field_tag_reference_64 name="color grading look-up-texture" validtags="bitm" />
 		<_field_real name="runtime color grading strength!:[do not edit]#do not edit" />
 		<_field_real name="exposure boost:stops#increase in exposure" />
 		<_field_real name="exposure deboost:stops#decrease in exposure" />
@@ -87,6 +96,6 @@ in the case of overlapping effects, the maximum will be taken</_field_explanatio
 		<_field_real name="fov in:[0-1]#zooms in the field of view" />
 		<_field_real name="fov out:[0-1]#zooms out the field of view" />
 		<_field_real name="screen shake:[0-1]#shakes the entire screen" />
-		<_field_tag_reference_64 name="shader effect#applies this shader to the entire screen" />
+		<_field_tag_reference_64 name="shader effect#applies this shader to the entire screen" validtags="mat " />
 	</_field_block_64>
 </plugin>

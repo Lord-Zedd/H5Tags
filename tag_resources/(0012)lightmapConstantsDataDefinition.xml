@@ -1,16 +1,16 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="perIOLODConstants!~" />
 	<_field_int64_integer name="perPartLODConstants!~" />
 	<_field_int64_integer name="singleProbeConstants!~" />
-	<_field_block_64 name="perIOLODParameters!~" max="33423360" guid="202b2b6c-4913-ea98-de52-1caf2bb34573">
+	<_field_block_64 name="perIOLODParameters!~" max="33423360" srcguid="202b2b6c-4913-ea98-de52-1caf2bb34573" srcName="lightmapConstantBlock">
 		<_field_real_quaternion name="register" />
 	</_field_block_64>
-	<_field_block_64 name="perPartLODParameters!~" max="33423360" guid="202b2b6c-4913-ea98-de52-1caf2bb34573">
+	<_field_block_64 name="perPartLODParameters!~" max="33423360" srcguid="202b2b6c-4913-ea98-de52-1caf2bb34573" srcName="lightmapConstantBlock">
 		<_field_real_quaternion name="register" />
 	</_field_block_64>
-	<_field_block_64 name="singleProbeParameters!~" max="33423360" guid="202b2b6c-4913-ea98-de52-1caf2bb34573">
+	<_field_block_64 name="singleProbeParameters!~" max="33423360" srcguid="202b2b6c-4913-ea98-de52-1caf2bb34573" srcName="lightmapConstantBlock">
 		<_field_real_quaternion name="register" />
 	</_field_block_64>
 	<_field_pad name="lcdd_pad" length="4" />

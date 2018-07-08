@@ -1,17 +1,18 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_custom name="import - directory" />
 	<_field_custom name="import - single file" />
 	<_field_string_id name="luaFileName" />
 	<_field_data_64 name="luaFileData*" />
 	<_field_long_string name="luaFileNameString*" />
-	<_field_block_64 name="referencedScripts*" max="32" guid="9e51f865-470a-5707-6dfb-5e8ed56ebeb2">
-		<_field_tag_reference_64 name="script*" />
+	<_field_block_64 name="referencedScripts*" max="32" srcguid="9e51f865-470a-5707-6dfb-5e8ed56ebeb2" srcName="LuaScriptReferenceBlock">
+		<_field_tag_reference_64 name="script*" validtags="luas" />
 	</_field_block_64>
 	<_field_pad name="pad0" length="4" />
 </plugin>

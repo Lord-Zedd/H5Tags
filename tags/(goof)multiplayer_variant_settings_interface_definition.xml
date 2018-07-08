@@ -1,12 +1,13 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_string_id name="name (unused)" />
-	<_field_block_64 name="game engine settings" max="152" guid="7364a0e9-43f8-967c-b95e-278c6f8c48af">
+	<_field_block_64 name="game engine settings" max="152" srcguid="7364a0e9-43f8-967c-b95e-278c6f8c48af" srcName="variant_setting_edit_reference_block">
 		<_field_string_id name="name" />
 		<_field_long_enum name="setting category^">
 			<item Name="game base misc" />
@@ -162,11 +163,11 @@
 			<item Name="run-time template traits appearance" />
 			<item Name="run-time template traits abilities" />
 		</_field_long_enum>
-		<_field_block_64 name="options" max="16" guid="e174884e-477f-69ad-46c6-79b8a6193002">
+		<_field_block_64 name="options" max="16" srcguid="e174884e-477f-69ad-46c6-79b8a6193002" srcName="variant_option_block">
 			<_field_explanation name="SUB-CATEGORY">If this entry leads to a sub-category of UI, the tag reference to that chain of UI goes here</_field_explanation>
-			<_field_tag_reference_64 name="sub-category" />
+			<_field_tag_reference_64 name="sub-category" validtags="goof" />
 			<_field_explanation name="PLAYER TRAIT">If this entry leads to player-trait UI, you can use a tag reference to player trait template UI and the player trait category here</_field_explanation>
-			<_field_tag_reference_64 name="player trait ui" />
+			<_field_tag_reference_64 name="player trait ui" validtags="goof" />
 			<_field_long_enum name="player trait category">
 				<item Name="game base misc" />
 				<item Name="game base respawn" />
@@ -326,7 +327,7 @@
 			<_field_explanation name="CATEGORY DESCRIPTION">string_id description used for the category description (used for both sub-category and player-trait references)</_field_explanation>
 			<_field_string_id name="category description" />
 			<_field_explanation name="VALUE-PAIRS">If this entry leads to parameter value editing UI, the tag reference to those text-value pairs goes here</_field_explanation>
-			<_field_tag_reference_64 name="value pairs" />
+			<_field_tag_reference_64 name="value pairs" validtags="sily" />
 		</_field_block_64>
 	</_field_block_64>
 </plugin>

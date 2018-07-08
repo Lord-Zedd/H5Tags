@@ -1,10 +1,11 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_explanation name="Motion sensor globals">Misc settings for the motion sensor</_field_explanation>
 	<_field_byte_flags name="flags">
 		<item Name="show scripted pings at any distance" />
@@ -39,15 +40,15 @@
 	<_field_real name="near player distance (metres)#default distance at which we say that a navpoint is in the 'near' state (metres)" />
 	<_field_real_point_2d name="defaultNavPointPosition2d (pixels)# the screen position used for MP navpoints that want to clamp to the hud eg. strongholds capture (pixels)" />
 	<_field_real name="defaultNavPoint2dDelayTime (seconds)#delay before we obey changes between 2d / 3d (seconds)" />
-	<_field_block_64 name="navpoint parameters" max="256" guid="9aa7632f-423f-18d2-f2dc-9e8ed2a364b6">
+	<_field_block_64 name="navpoint parameters" max="256" srcguid="9aa7632f-423f-18d2-f2dc-9e8ed2a364b6" srcName="NavPointParametersTagBlockDefinition">
 		<_field_string_id name="name^" />
-		<_field_tag_reference_64 name="navpoint tag" />
+		<_field_tag_reference_64 name="navpoint tag" validtags="navp" />
 	</_field_block_64>
 	<_field_explanation name="Damage globals">HUD damage settings</_field_explanation>
 	<_field_real name="shield bar recent damage duration#time taken to drain an entire bar of visible damage. less damage drains faster (seconds)" />
 	<_field_real name="damage indicator response duration#duration which the damage indicator icons will show in the HUD (seconds)" />
 	<_field_real name="damage flash response duration#used to determine how long to show the fullscreen damage flash (seconds)" />
-	<_field_tag_reference_64 name="tiled mesh seen when hit in 1st person" />
+	<_field_tag_reference_64 name="tiled mesh seen when hit in 1st person" validtags="bitm" />
 	<_field_real name="number of tiles across the screen" />
 	<_field_real name="total intensity cap (0..1)" />
 	<_field_explanation name="Screen blob globals">Settings for HUD shield impact blob</_field_explanation>
@@ -63,17 +64,26 @@
 	<_field_real name="effect lifetime (in seconds)" />
 	<_field_real name="effect width on first frame (0-1)" />
 	<_field_real name="effect width on last frame (0-1)" />
-	<_field_struct name="opacity-time function#Defines opacity as a function of time" />
-	<_field_data_64 name="data" />
-	<_field_struct name="size-time function#Defines blob screen space size as a function of time" />
-	<_field_data_64 name="data" />
-	<_field_struct name="size-damage function#Defines effect size as a function of damage received" />
-	<_field_data_64 name="data" />
-	<_field_tag_reference_64 name="pattern shield texture" />
-	<_field_tag_reference_64 name="mask 0 texture" />
-	<_field_tag_reference_64 name="mask 1 texture" />
-	<_field_tag_reference_64 name="mask 2 texture" />
-	<_field_tag_reference_64 name="mask 3 texture" />
+	<_field_struct name="opacity-time function#Defines opacity as a function of time" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+		<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+	</_field_struct>
+	<_field_struct name="size-time function#Defines blob screen space size as a function of time" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+		<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+	</_field_struct>
+	<_field_struct name="size-damage function#Defines effect size as a function of damage received" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+		<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+	</_field_struct>
+	<_field_tag_reference_64 name="pattern shield texture" validtags="bitm" />
+	<_field_tag_reference_64 name="mask 0 texture" validtags="bitm" />
+	<_field_tag_reference_64 name="mask 1 texture" validtags="bitm" />
+	<_field_tag_reference_64 name="mask 2 texture" validtags="bitm" />
+	<_field_tag_reference_64 name="mask 3 texture" validtags="bitm" />
 	<_field_explanation name="Reticule globals">Settings for the weapon reticules</_field_explanation>
 	<_field_real name="Reticule maximum spread angle:degrees#Maximum spread for all weapon reticules. This should be set to the largest spread angle of all the weapons." />
 	<_field_explanation name="Sounds">misc global audio stuff</_field_explanation>
@@ -92,8 +102,8 @@
 	<_field_real name="Darken Factor#Opacity of the black layer." />
 	<_field_real name="Brighten Factor#Overbrightness factor to apply to the additive layer." />
 	<_field_explanation name="Text">Text-related settings</_field_explanation>
-	<_field_block_64 name="string references" max="64" guid="f35ba8a6-4cec-4ca5-2270-709422e51721">
-		<_field_tag_reference_64 name="string list" />
+	<_field_block_64 name="string references" max="64" srcguid="f35ba8a6-4cec-4ca5-2270-709422e51721" srcName="string_file_references">
+		<_field_tag_reference_64 name="string list" validtags="unic" />
 	</_field_block_64>
 	<_field_tag_reference_64 name="Interact Message Appear Sound" validtags="snd!" />
 	<_field_tag_reference_64 name="Interact Message Disappear Sound " validtags="snd!" />
@@ -109,7 +119,7 @@
 	<_field_real_argb_color name="enemy kill feed color #The color of the name of a player is NOT on your team" />
 	<_field_real_argb_color name="neutral kill feed color #The color of the name of a player that is neutral towards your team" />
 	<_field_explanation name="Player Training" />
-	<_field_block_64 name="player training data" max="34" guid="02521b32-4819-611c-6a7b-06a1bf773d68">
+	<_field_block_64 name="player training data" max="34" srcguid="02521b32-4819-611c-6a7b-06a1bf773d68" srcName="player_training_entry_data_block">
 		<_field_string_id name="display string#comes out of the HUD text globals" />
 		<_field_word_integer name="max display time#how long the message can be on screen before being hidden" />
 		<_field_word_integer name="display count#how many times a training message will get displayed (0-3 only!)" />
@@ -126,7 +136,7 @@
 	<_field_real name="grenade indicator lifetime dampener #prevents a newly thrown grenade from showing up in the grenade indicator" />
 	<_field_explanation name="Parallax globals">Settings related to parallax</_field_explanation>
 	<_field_real name="vehicle transition time (seconds)#time it takes for parallax to start or stop when entering vehicles" />
-	<_field_block_64 name="parallax params" max="32" guid="272f07a6-4bae-ecc9-22da-e881c780f15a">
+	<_field_block_64 name="parallax params" max="32" srcguid="272f07a6-4bae-ecc9-22da-e881c780f15a" srcName="ParallaxParams">
 		<_field_string_id name="name^" />
 		<_field_real name="parallax falloff time#changes how much influence older frames have vs new ones" />
 		<_field_real name="parallax camera velocity factor#change how much influence camera movement has on parallax movement" />
@@ -138,7 +148,7 @@
 		<_field_real_euler_angles_3d name="parallax angle clamp max" />
 	</_field_block_64>
 	<_field_explanation name="Warp params">Settings related to warp</_field_explanation>
-	<_field_block_64 name="warp params" max="32" guid="743ad28a-4470-0937-c0e0-3bb8bc5dc835">
+	<_field_block_64 name="warp params" max="32" srcguid="743ad28a-4470-0937-c0e0-3bb8bc5dc835" srcName="WarpParams">
 		<_field_string_id name="name^" />
 		<_field_real_point_3d name="ellipsoid scale" />
 		<_field_real_point_3d name="ellipsoid center" />
@@ -151,7 +161,7 @@
 		<_field_pad name="pad0" length="3" />
 	</_field_block_64>
 	<_field_explanation name="Chromatic aberration params">Settings related to chromatic aberration</_field_explanation>
-	<_field_block_64 name="chromatic aberration params" max="32" guid="cb32f419-4c79-9ef5-2458-2d9aa2154e54">
+	<_field_block_64 name="chromatic aberration params" max="32" srcguid="cb32f419-4c79-9ef5-2458-2d9aa2154e54" srcName="ChromaticAberrationParams">
 		<_field_string_id name="name^" />
 		<_field_real name="base mix" />
 		<_field_real_point_2d name="center offset" />
@@ -164,7 +174,7 @@
 		<_field_pad name="pad0" length="3" />
 	</_field_block_64>
 	<_field_explanation name="High contrast globals">Settings related to high contrast</_field_explanation>
-	<_field_block_64 name="high contrast params" max="32" guid="d5b5b159-4364-7549-ff41-eaa3c0fad791">
+	<_field_block_64 name="high contrast params" max="32" srcguid="d5b5b159-4364-7549-ff41-eaa3c0fad791" srcName="HighContrastParams">
 		<_field_string_id name="name^" />
 		<_field_real name="dynamic threshold min" />
 		<_field_real name="dynamic threshold max" />

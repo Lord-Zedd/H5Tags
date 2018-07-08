@@ -1,57 +1,62 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_struct name="Hologram Lighting" />
-	<_field_custom name="HOLOGRAM" />
-	<_field_custom name="Intensity" />
-	<_field_real name="Intensity" />
-	<_field_real name="Intensity Input!" />
-	<_field_char_enum name="Transparency Mode">
-		<item Name="cheap" />
-		<item Name="expensive" />
-	</_field_char_enum>
-	<_field_pad name="PADDING1!" length="3" />
-	<_field_custom name="KEY LIGHT" />
-	<_field_struct name="Key Light" />
-	<_field_custom name="Hologram Light" />
-	<_field_custom name="Direction" />
-	<_field_real name="Direction" />
-	<_field_custom name="Front-Back" />
-	<_field_real name="Front-Back" />
-	<_field_custom name="Intensity" />
-	<_field_real name="Intensity" />
-	<_field_real name="Intensity Input!" />
-	<_field_real name="Forward Input!" />
-	<_field_real name="Right Input!" />
-	<_field_real name="Up Input!" />
-	<_field_custom name="FILL LIGHT" />
-	<_field_struct name="Fill Light" />
-	<_field_custom name="Hologram Light" />
-	<_field_custom name="Direction" />
-	<_field_real name="Direction" />
-	<_field_custom name="Front-Back" />
-	<_field_real name="Front-Back" />
-	<_field_custom name="Intensity" />
-	<_field_real name="Intensity" />
-	<_field_real name="Intensity Input!" />
-	<_field_real name="Forward Input!" />
-	<_field_real name="Right Input!" />
-	<_field_real name="Up Input!" />
-	<_field_custom name="RIM LIGHT" />
-	<_field_struct name="Rim Light" />
-	<_field_custom name="Hologram Light" />
-	<_field_custom name="Direction" />
-	<_field_real name="Direction" />
-	<_field_custom name="Front-Back" />
-	<_field_real name="Front-Back" />
-	<_field_custom name="Intensity" />
-	<_field_real name="Intensity" />
-	<_field_real name="Intensity Input!" />
-	<_field_real name="Forward Input!" />
-	<_field_real name="Right Input!" />
-	<_field_real name="Up Input!" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_struct name="Hologram Lighting" srcguid="797b8137-4053-97b9-95c3-8d92a45d737a">
+		<_field_custom name="HOLOGRAM" />
+		<_field_custom name="Intensity" />
+		<_field_real name="Intensity" />
+		<_field_real name="Intensity Input!" />
+		<_field_char_enum name="Transparency Mode">
+			<item Name="cheap" />
+			<item Name="expensive" />
+		</_field_char_enum>
+		<_field_pad name="PADDING1!" length="3" />
+		<_field_custom name="KEY LIGHT" />
+		<_field_struct name="Key Light" srcguid="3906da32-45a6-fc3c-84c2-edad952c291b">
+			<_field_custom name="Hologram Light" />
+			<_field_custom name="Direction" />
+			<_field_real name="Direction" />
+			<_field_custom name="Front-Back" />
+			<_field_real name="Front-Back" />
+			<_field_custom name="Intensity" />
+			<_field_real name="Intensity" />
+			<_field_real name="Intensity Input!" />
+			<_field_real name="Forward Input!" />
+			<_field_real name="Right Input!" />
+			<_field_real name="Up Input!" />
+		</_field_struct>
+		<_field_custom name="FILL LIGHT" />
+		<_field_struct name="Fill Light" srcguid="3906da32-45a6-fc3c-84c2-edad952c291b">
+			<_field_custom name="Hologram Light" />
+			<_field_custom name="Direction" />
+			<_field_real name="Direction" />
+			<_field_custom name="Front-Back" />
+			<_field_real name="Front-Back" />
+			<_field_custom name="Intensity" />
+			<_field_real name="Intensity" />
+			<_field_real name="Intensity Input!" />
+			<_field_real name="Forward Input!" />
+			<_field_real name="Right Input!" />
+			<_field_real name="Up Input!" />
+		</_field_struct>
+		<_field_custom name="RIM LIGHT" />
+		<_field_struct name="Rim Light" srcguid="3906da32-45a6-fc3c-84c2-edad952c291b">
+			<_field_custom name="Hologram Light" />
+			<_field_custom name="Direction" />
+			<_field_real name="Direction" />
+			<_field_custom name="Front-Back" />
+			<_field_real name="Front-Back" />
+			<_field_custom name="Intensity" />
+			<_field_real name="Intensity" />
+			<_field_real name="Intensity Input!" />
+			<_field_real name="Forward Input!" />
+			<_field_real name="Right Input!" />
+			<_field_real name="Up Input!" />
+		</_field_struct>
+	</_field_struct>
 </plugin>

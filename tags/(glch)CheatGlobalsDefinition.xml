@@ -1,12 +1,13 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="@cheat powerups" max="20" guid="60b57d08-431c-f45f-9347-ffbc18c0283c">
-		<_field_tag_reference_64 name="powerup^" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="@cheat powerups" max="20" srcguid="60b57d08-431c-f45f-9347-ffbc18c0283c" srcName="cheat_powerups_block">
+		<_field_tag_reference_64 name="powerup^" validtags="eqip" />
 	</_field_block_64>
 	<_field_pad name="pad" length="4" />
 </plugin>

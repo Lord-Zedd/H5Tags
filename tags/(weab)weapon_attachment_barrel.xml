@@ -1,319 +1,339 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_struct name="weapon attachment component" />
-	<_field_custom name="Weapon Attachment" />
-	<_field_string_id name="variant region name" />
-	<_field_string_id name="variant permutation name" />
-	<_field_block_64 name="attachments" max="48" guid="11097257-429c-4775-33d9-75a73f4575ee">
-		<_field_tag_reference_64 name="type^" validtags="ligh, gldf, ltvl, effe, lsnd, lens, cpem, egfd, decs" />
-		<_field_tag_reference_64 name="override type#this attachment will override the attachment on the object that shares this " validtags="ligh, gldf, ltvl, effe, lsnd, lens, cpem, egfd, decs" />
-		<_field_string_id name="marker" />
-		<_field_char_enum name="change color">
-			<item Name="none" />
-			<item Name="primary" />
-			<item Name="secondary" />
-			<item Name="tertiary" />
-			<item Name="quaternary" />
-		</_field_char_enum>
-		<_field_byte_flags name="flags">
-			<item Name="force always on#when this flag is clear we only create the attachment when the function object function is active or set to empty string" />
-			<item Name="effect size scale from object scale" />
-		</_field_byte_flags>
-		<_field_pad name="DPKP" length="2" />
-		<_field_string_id name="primary scale" />
-		<_field_string_id name="secondary scale" />
-	</_field_block_64>
-	<_field_pad name="attachmentPad" length="4" />
-	<_field_explanation name="Attachment Name">Used for damage reporting - we want to know what attachments something has when it deals damage</_field_explanation>
-	<_field_struct name="attachmentName" />
-	<_field_string_id name="Attachment Name" />
-	<_field_block_64 name="attachment object" max="1" guid="69a0d818-4a18-977c-2ec5-2c9c5c788d2a">
-		<_field_tag_reference_64 name="object" />
-		<_field_string_id name="weapon marker" />
-		<_field_string_id name="attachment marker" />
-	</_field_block_64>
-	<_field_block_64 name="accuracy modifiers" max="1" guid="da887998-4a0f-4ed5-7912-3c8f4048154f">
-		<_field_real name="accuracy spread{Accuracy Bloom}:percent" />
-	</_field_block_64>
-	<_field_block_64 name="precision aim modifiers" max="1" guid="80940841-4624-313b-546f-658e2d588e96">
-		<_field_real name="precision transition in time modifier:percent" />
-		<_field_real name="precision transition out time modifier:percent" />
-	</_field_block_64>
-	<_field_block_64 name="unit modifiers" max="1" guid="c17f9f40-4926-9ffe-bbb7-7b8e2ad9a775">
-		<_field_real name="move speed scale modifier:percent" />
-		<_field_real name="turn rate scale modifier:percent" />
-		<_field_real name="simulated input scale modifier:percent" />
-	</_field_block_64>
-	<_field_block_64 name="aim assist modifiers" max="1" guid="2cb7ba74-4814-28a0-0d7d-2a93c4188131">
-		<_field_real name="autoaim angle:percent#the maximum angle that autoaim works at full strength" />
-		<_field_real name="prioritization angle:percent#angle used to select model targets based on priority" />
-		<_field_real name="autoaim range:percent#autoaim only has an effect along this distance" />
-		<_field_real name="autoaim falloff range:percent#at what point the autoaim starts falling off.  Fully falls off at autoaim range." />
-		<_field_real name="autoaim near falloff range:percent#at what point the autoaim reaches full power" />
-		<_field_real name="magnetism angle:percent#at what point the autoaim reaches full power" />
-		<_field_real name="magnetism range:percent#magnetism only has an effect along this distance" />
-		<_field_real name="magnetism falloff range:percent#at what point magnetism starts falling off.  Fully falls off at magnetism range." />
-		<_field_real name="magnetism near falloff range:percent#at what point magnetism reaches full power" />
-		<_field_real name="deviation angle:percent#the maximum angle that a projectile is allowed to deviate from the gun barrel due to autoaim OR network lead vector reconstruction" />
-	</_field_block_64>
-	<_field_block_64 name="recoil view kick modifiers" max="1" guid="867b6ceb-45ee-09b7-3487-0c94b40a00b6">
-		<_field_real name="view kick deceleration modifier:percent" />
-		<_field_real name="view kick return to center modifier:percent" />
-	</_field_block_64>
-	<_field_block_64 name="recoil gunkick modifiers" max="1" guid="c0b6345a-4408-0b16-986b-de88c03694a1">
-		<_field_real name="gunkick spring constant modifier:percent" />
-	</_field_block_64>
-	<_field_block_64 name="animation modifiers" max="1" guid="f921d36c-4356-b5f6-5bb1-efae74b1566b">
-		<_field_real name="ready playback speed modifier:percent" />
-		<_field_real name="ready initial playback modifier:percent" />
-		<_field_real name="put away playback speed modifier:percent" />
-		<_field_real name="reload playback speed modifier:percent" />
-		<_field_real name="reload while empty playback speed modifier:percent" />
-	</_field_block_64>
-	<_field_block_64 name="heat modifiers" max="1" guid="4a20a34a-469c-b8b1-bdb0-6aa633975ec0">
-		<_field_real name="heat loss per second modifier:percent" />
-		<_field_real name="overheated heat loss per second modifier:percent" />
-		<_field_real name="heat generated per round modifier:percent" />
-	</_field_block_64>
-	<_field_block_64 name="UI display info" max="1" guid="6bb873fd-472b-52c6-7790-9b90d0074580">
-		<_field_string_id name="name^#short name for the item" />
-		<_field_string_id name="display name#friendly name for the item" />
-		<_field_string_id name="description#general in-universe item description" />
-		<_field_string_id name="help text#verbose usage info for use during gameplay" />
-		<_field_string_id name="icon string id#legacy, from when we embedded the sprites into the font to get streaming behaviour" />
-		<_field_tag_reference_64 name="sprite#bitmap file representing this item" />
-		<_field_long_integer name="sprite index#frame inside the item's image strip which shows this item " />
-		<_field_tag_reference_64 name="alt sprite#secondary bitmap file representing this item. for detail images, overlays etc." />
-		<_field_long_integer name="alt sprite index#alt sprite's frame" />
-		<_field_tag_reference_64 name="ui vehicle screen reference" />
-		<_field_pad name="pad0" length="4" />
-	</_field_block_64>
-	<_field_pad name="endPad" length="4" />
-	<_field_struct name="weapon attachment barrel component" />
-	<_field_custom name="Weapon Barrel" />
-	<_field_block_64 name="primary barrel override" max="1" guid="27c25267-4b95-0511-fe60-a09020b43144">
-		<_field_tag_reference_64 name="projectile" />
-		<_field_block_64 name="firing params" max="1" guid="967315ec-4fc2-df7a-cf75-c6b0261f964d">
-			<_field_struct name="firing params" />
-			<_field_real_bounds name="rounds per second#the number of firing effects created per second.  0 defaults to 60" />
-			<_field_string_id name="rate of fire acceleration#function value sets the current rate of fire when the barrel is firing" />
-			<_field_real name="acceleration time:seconds#the continuous firing time it takes for the weapon to achieve its final rounds per second" />
-			<_field_string_id name="rate of fire deceleration#function value sets the current rate of fire when the barrel is not firing" />
-			<_field_real name="deceleration time:seconds#the continuous idle time it takes for the weapon to return from its final rounds per second to its initial" />
-			<_field_real name="barrel spin scale#scale the barrel spin speed by this amount" />
-			<_field_real_fraction name="blurred rate of fire#a percentage between 0 and 1 which controls how soon in its firing animation the weapon blurs" />
-			<_field_short_integer_bounds name="shots per fire#allows designer caps to the shots you can fire from one firing action" />
-			<_field_real name="fire recovery time:seconds#how long after a set of shots it takes before the barrel can fire again" />
-			<_field_real_fraction name="soft recovery fraction#how much of the recovery allows shots to be queued" />
-			<_field_real name="melee  fire recovery time:seconds#how long after a set of shots it takes before the weapon can melee" />
-			<_field_real_fraction name="melee soft recovery fraction#how much of the melee recovery allows melee to be queued" />
-			<_field_real name="runtime rate of fire acceleration rate!" />
-			<_field_real name="runtime rate of fire deceleration rate!" />
-		</_field_block_64>
-		<_field_block_64 name="firing effects" max="5" guid="28bbfa00-42b0-7568-d15c-e794e6f4e7b8">
-			<_field_short_integer name="shot count lower bound#the minimum number of times this firing effect will be used, once it has been chosen" />
-			<_field_short_integer name="shot count upper bound#the maximum number of times this firing effect will be used, once it has been chosen" />
-			<_field_tag_reference_64 name="firing effect^#this effect is used when the weapon is loaded and fired normally" validtags="snd!, effe" />
-			<_field_tag_reference_64 name="critical effect^#this effect is used when the weapon is loaded and will do critical damage" validtags="snd!, effe" />
-			<_field_tag_reference_64 name="misfire effect#this effect is used when the weapon is loaded but fired while overheated" validtags="snd!, effe" />
-			<_field_tag_reference_64 name="empty effect#this effect is used when the weapon is not loaded" validtags="snd!, effe" />
-			<_field_tag_reference_64 name="optional secondary firing effect#this effect is for later shots of a burst if set" validtags="snd!, effe" />
-			<_field_tag_reference_64 name="firing damage#this effect is used when the weapon is loaded and fired normally" validtags="jpt!, drdf" />
-			<_field_tag_reference_64 name="critical damage^#this effect is used when the weapon is loaded and will do critical damage" validtags="snd!, effe" />
-			<_field_tag_reference_64 name="misfire damage#this effect is used when the weapon is loaded but fired while overheated" validtags="jpt!, drdf" />
-			<_field_tag_reference_64 name="empty damage#this effect is used when the weapon is not loaded" validtags="jpt!, drdf" />
-			<_field_tag_reference_64 name="optional secondary firing damage#this effect is for later shots of a burst if set" validtags="jpt!, drdf" />
-			<_field_tag_reference_64 name="firing rider damage#this effect is used when the weapon is loaded and fired normally" validtags="jpt!, drdf" />
-			<_field_tag_reference_64 name="critical rider damage^#this effect is used when the weapon is loaded and will do critical damage" validtags="snd!, effe" />
-			<_field_tag_reference_64 name="misfire rider damage#this effect is used when the weapon is loaded but fired while overheated" validtags="jpt!, drdf" />
-			<_field_tag_reference_64 name="empty rider damage#this effect is used when the weapon is not loaded" validtags="jpt!, drdf" />
-			<_field_tag_reference_64 name="optional secondary firing rider damage#this effect is for later shots of a burst if set" validtags="jpt!, drdf" />
-		</_field_block_64>
-		<_field_block_64 name="projectile distribution" max="1" guid="1405a8aa-40c0-ff8d-19ef-2a80bc5aac32">
-			<_field_struct name="projectile distribution" />
-			<_field_short_enum name="distribution function">
-				<item Name="point" />
-				<item Name="horizontal fan" />
-				<item Name="custom directions{custom vectors}" />
-				<item Name="custom positions" />
-			</_field_short_enum>
-			<_field_short_integer name="projectiles per shot" />
-			<_field_block_64 name="direction offset#Custom vectors must be set in distribution function above" max="16" guid="cb9e245e-4828-9870-9b82-ffacba57b7b4">
-				<_field_real_euler_angles_2d name="angle offset^:[-90, 90]#yaw +right pitch +up" />
-			</_field_block_64>
-			<_field_block_64 name="position offsets#Custom vectors must be set in distribution function above" max="16" guid="9db02e18-4feb-cd2d-abbd-b7a63c77e884">
-				<_field_real_point_2d name="Point offset^:[-1.1]#x-y offset - +x is right, +y is up" />
-			</_field_block_64>
-			<_field_real name="distribution angle:degrees#used by distribution function 'horizontal fan' above" />
-		</_field_block_64>
-		<_field_block_64 name="projectile error" max="1" guid="01e36411-4fca-8379-be02-c3be867db9d2">
-			<_field_struct name="projectile error" />
-			<_field_real name="deceleration time:seconds#the continuous idle time it would take for a barrel_error of 1.0 to return to its minimum value." />
-			<_field_real name="runtime error deceleration rate!" />
-			<_field_angle name="minimum error:degrees#projectile direction is randomly selected between this and max_error_angle below" />
-			<_field_angle_bounds name="error angle:degrees (max_error_angle)#current barrel_error is linearly interpolated between these to generate max_error_angle" />
-			<_field_real_bounds name="damage error#the range of angles (in degrees) that a damaged weapon will skew fire" />
-		</_field_block_64>
-		<_field_block_64 name="noise" max="1" guid="5f93435e-478d-d9d3-4b13-139d424c236f">
-			<_field_struct name="barrel noise" />
-			<_field_short_enum name="ai noise#how loud this weapon appears to the AI when firing">
-				<item Name="silent#ai will not respond to this sound" />
-				<item Name="quiet" />
-				<item Name="medium" />
-				<item Name="shout" />
-				<item Name="loud#ai can hear this sound at any range" />
-			</_field_short_enum>
-			<_field_short_enum name="motion tracker noise#how far the weapon can be heard on the motion tracker when firing">
-				<item Name="edge" />
-				<item Name="inner" />
-				<item Name="silent" />
-			</_field_short_enum>
-		</_field_block_64>
-		<_field_block_64 name="heat generated per round" max="1" guid="1c9276e1-49b5-3e50-16c3-d1a1060e2a1b">
-			<_field_real_fraction name="heat generated per round:[0,1]#the amount of heat generated each time the barrel fires. Unlike the name suggests, this amount of heat is NOT applied per projectile created." />
-		</_field_block_64>
-		<_field_block_64 name="age generation" max="1" guid="4bd6a610-48d8-06e4-a30d-7d96d68408e3">
-			<_field_struct name="age generation" />
-			<_field_real_fraction name="age generated per round:[0,1]#the amount the weapon ages each time the trigger is fired" />
-			<_field_real_fraction name="CAMPAIGN age generated per round:[0,1]#the amount the weapon ages each time the trigger is fired" />
-		</_field_block_64>
-		<_field_block_64 name="fire sound" max="1" guid="de010cdd-41b6-0d68-6481-c8859e2771f5">
-			<_field_struct name="fire sound" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_struct name="weapon attachment component" srcguid="128b8f41-4ede-8918-8573-0099d6c4f5c1">
+		<_field_custom name="Weapon Attachment" />
+		<_field_string_id name="variant region name" />
+		<_field_string_id name="variant permutation name" />
+		<_field_block_64 name="attachments" max="48" srcguid="11097257-429c-4775-33d9-75a73f4575ee" srcName="global_object_attachment_block">
+			<_field_tag_reference_64 name="type^" validtags="ligh, gldf, ltvl, effe, lsnd, lens, cpem, egfd, decs" />
+			<_field_tag_reference_64 name="override type#this attachment will override the attachment on the object that shares this " validtags="ligh, gldf, ltvl, effe, lsnd, lens, cpem, egfd, decs" />
+			<_field_string_id name="marker" />
+			<_field_char_enum name="change color">
+				<item Name="none" />
+				<item Name="primary" />
+				<item Name="secondary" />
+				<item Name="tertiary" />
+				<item Name="quaternary" />
+			</_field_char_enum>
 			<_field_byte_flags name="flags">
-				<item Name="play once per burst" />
+				<item Name="force always on#when this flag is clear we only create the attachment when the function object function is active or set to empty string" />
+				<item Name="effect size scale from object scale" />
 			</_field_byte_flags>
-			<_field_pad name="pad0" length="3" />
-			<_field_tag_reference_64 name="sound" />
+			<_field_pad name="DPKP" length="2" />
+			<_field_string_id name="primary scale" />
+			<_field_string_id name="secondary scale" />
 		</_field_block_64>
-		<_field_block_64 name="automatic fire sound" max="1" guid="ca8a1273-4fe1-0ff4-074a-77b3decdef3f">
-			<_field_struct name="automatic fire sound" />
-			<_field_tag_reference_64 name="firing loop for automatics" />
-			<_field_block_64 name="automatic fire variations" max="8" guid="df1e4eca-40f6-a183-b2df-23a84795ada6">
-				<_field_tag_reference_64 name="firing loop for automatics" />
+		<_field_pad name="attachmentPad" length="4" />
+		<_field_explanation name="Attachment Name">Used for damage reporting - we want to know what attachments something has when it deals damage</_field_explanation>
+		<_field_struct name="attachmentName" srcguid="7166d96b-4090-60fc-1c2e-bf9c91f0157d">
+			<_field_string_id name="Attachment Name" />
+		</_field_struct>
+		<_field_block_64 name="attachment object" max="1" srcguid="69a0d818-4a18-977c-2ec5-2c9c5c788d2a" srcName="WeaponAttachmentObjectBlock">
+			<_field_tag_reference_64 name="object" validtags="obje" />
+			<_field_string_id name="weapon marker" />
+			<_field_string_id name="attachment marker" />
+		</_field_block_64>
+		<_field_block_64 name="accuracy modifiers" max="1" srcguid="da887998-4a0f-4ed5-7912-3c8f4048154f" srcName="WeaponAccuracyModifiers">
+			<_field_real name="accuracy spread{Accuracy Bloom}:percent" />
+		</_field_block_64>
+		<_field_block_64 name="precision aim modifiers" max="1" srcguid="80940841-4624-313b-546f-658e2d588e96" srcName="WeaponPrecisionAimModifiers">
+			<_field_real name="precision transition in time modifier:percent" />
+			<_field_real name="precision transition out time modifier:percent" />
+		</_field_block_64>
+		<_field_block_64 name="unit modifiers" max="1" srcguid="c17f9f40-4926-9ffe-bbb7-7b8e2ad9a775" srcName="WeaponUnitPropertyModifiers">
+			<_field_real name="move speed scale modifier:percent" />
+			<_field_real name="turn rate scale modifier:percent" />
+			<_field_real name="simulated input scale modifier:percent" />
+		</_field_block_64>
+		<_field_block_64 name="aim assist modifiers" max="1" srcguid="2cb7ba74-4814-28a0-0d7d-2a93c4188131" srcName="WeaponAimAssistPropertyModifiers">
+			<_field_real name="autoaim angle:percent#the maximum angle that autoaim works at full strength" />
+			<_field_real name="prioritization angle:percent#angle used to select model targets based on priority" />
+			<_field_real name="autoaim range:percent#autoaim only has an effect along this distance" />
+			<_field_real name="autoaim falloff range:percent#at what point the autoaim starts falling off.  Fully falls off at autoaim range." />
+			<_field_real name="autoaim near falloff range:percent#at what point the autoaim reaches full power" />
+			<_field_real name="magnetism angle:percent#at what point the autoaim reaches full power" />
+			<_field_real name="magnetism range:percent#magnetism only has an effect along this distance" />
+			<_field_real name="magnetism falloff range:percent#at what point magnetism starts falling off.  Fully falls off at magnetism range." />
+			<_field_real name="magnetism near falloff range:percent#at what point magnetism reaches full power" />
+			<_field_real name="deviation angle:percent#the maximum angle that a projectile is allowed to deviate from the gun barrel due to autoaim OR network lead vector reconstruction" />
+		</_field_block_64>
+		<_field_block_64 name="recoil view kick modifiers" max="1" srcguid="867b6ceb-45ee-09b7-3487-0c94b40a00b6" srcName="weapon_recoil_view_kick_modifiers">
+			<_field_real name="view kick deceleration modifier:percent" />
+			<_field_real name="view kick return to center modifier:percent" />
+		</_field_block_64>
+		<_field_block_64 name="recoil gunkick modifiers" max="1" srcguid="c0b6345a-4408-0b16-986b-de88c03694a1" srcName="WeaponRecoilGunkickModifiers">
+			<_field_real name="gunkick spring constant modifier:percent" />
+		</_field_block_64>
+		<_field_block_64 name="animation modifiers" max="1" srcguid="f921d36c-4356-b5f6-5bb1-efae74b1566b" srcName="WeaponAnimationModifiers">
+			<_field_real name="ready playback speed modifier:percent" />
+			<_field_real name="ready initial playback modifier:percent" />
+			<_field_real name="put away playback speed modifier:percent" />
+			<_field_real name="reload playback speed modifier:percent" />
+			<_field_real name="reload while empty playback speed modifier:percent" />
+		</_field_block_64>
+		<_field_block_64 name="heat modifiers" max="1" srcguid="4a20a34a-469c-b8b1-bdb0-6aa633975ec0" srcName="WeaponHeatModifiers">
+			<_field_real name="heat loss per second modifier:percent" />
+			<_field_real name="overheated heat loss per second modifier:percent" />
+			<_field_real name="heat generated per round modifier:percent" />
+		</_field_block_64>
+		<_field_block_64 name="UI display info" max="1" srcguid="6bb873fd-472b-52c6-7790-9b90d0074580" srcName="UIItemInfoBlock">
+			<_field_string_id name="name^#short name for the item" />
+			<_field_string_id name="display name#friendly name for the item" />
+			<_field_string_id name="description#general in-universe item description" />
+			<_field_string_id name="help text#verbose usage info for use during gameplay" />
+			<_field_string_id name="icon string id#legacy, from when we embedded the sprites into the font to get streaming behaviour" />
+			<_field_tag_reference_64 name="sprite#bitmap file representing this item" validtags="bitm" />
+			<_field_long_integer name="sprite index#frame inside the item's image strip which shows this item " />
+			<_field_tag_reference_64 name="alt sprite#secondary bitmap file representing this item. for detail images, overlays etc." validtags="bitm" />
+			<_field_long_integer name="alt sprite index#alt sprite's frame" />
+			<_field_tag_reference_64 name="ui vehicle screen reference" validtags="wpfs" />
+			<_field_pad name="pad0" length="4" />
+		</_field_block_64>
+		<_field_pad name="endPad" length="4" />
+	</_field_struct>
+	<_field_struct name="weapon attachment barrel component" srcguid="8b2003e8-4250-a10a-78bd-679942e0d5e6">
+		<_field_custom name="Weapon Barrel" />
+		<_field_block_64 name="primary barrel override" max="1" srcguid="27c25267-4b95-0511-fe60-a09020b43144" srcName="weapon_attachment_barrel_override">
+			<_field_tag_reference_64 name="projectile" validtags="proj" />
+			<_field_block_64 name="firing params" max="1" srcguid="967315ec-4fc2-df7a-cf75-c6b0261f964d" srcName="WeaponAttachmentBarrelFiringParamsBlock">
+				<_field_struct name="firing params" srcguid="b9afce9e-494b-8cf8-e687-d69c80e5e636">
+					<_field_real_bounds name="rounds per second#the number of firing effects created per second.  0 defaults to 60" />
+					<_field_string_id name="rate of fire acceleration#function value sets the current rate of fire when the barrel is firing" />
+					<_field_real name="acceleration time:seconds#the continuous firing time it takes for the weapon to achieve its final rounds per second" />
+					<_field_string_id name="rate of fire deceleration#function value sets the current rate of fire when the barrel is not firing" />
+					<_field_real name="deceleration time:seconds#the continuous idle time it takes for the weapon to return from its final rounds per second to its initial" />
+					<_field_real name="barrel spin scale#scale the barrel spin speed by this amount" />
+					<_field_real_fraction name="blurred rate of fire#a percentage between 0 and 1 which controls how soon in its firing animation the weapon blurs" />
+					<_field_short_integer_bounds name="shots per fire#allows designer caps to the shots you can fire from one firing action" />
+					<_field_real name="fire recovery time:seconds#how long after a set of shots it takes before the barrel can fire again" />
+					<_field_real_fraction name="soft recovery fraction#how much of the recovery allows shots to be queued" />
+					<_field_real name="melee  fire recovery time:seconds#how long after a set of shots it takes before the weapon can melee" />
+					<_field_real_fraction name="melee soft recovery fraction#how much of the melee recovery allows melee to be queued" />
+					<_field_real name="runtime rate of fire acceleration rate!" />
+					<_field_real name="runtime rate of fire deceleration rate!" />
+				</_field_struct>
+			</_field_block_64>
+			<_field_block_64 name="firing effects" max="5" srcguid="28bbfa00-42b0-7568-d15c-e794e6f4e7b8" srcName="barrel_firing_effect_block">
+				<_field_short_integer name="shot count lower bound#the minimum number of times this firing effect will be used, once it has been chosen" />
+				<_field_short_integer name="shot count upper bound#the maximum number of times this firing effect will be used, once it has been chosen" />
+				<_field_tag_reference_64 name="firing effect^#this effect is used when the weapon is loaded and fired normally" validtags="snd!, effe" />
+				<_field_tag_reference_64 name="critical effect^#this effect is used when the weapon is loaded and will do critical damage" validtags="snd!, effe" />
+				<_field_tag_reference_64 name="misfire effect#this effect is used when the weapon is loaded but fired while overheated" validtags="snd!, effe" />
+				<_field_tag_reference_64 name="empty effect#this effect is used when the weapon is not loaded" validtags="snd!, effe" />
+				<_field_tag_reference_64 name="optional secondary firing effect#this effect is for later shots of a burst if set" validtags="snd!, effe" />
+				<_field_tag_reference_64 name="firing damage#this effect is used when the weapon is loaded and fired normally" validtags="jpt!, drdf" />
+				<_field_tag_reference_64 name="critical damage^#this effect is used when the weapon is loaded and will do critical damage" validtags="snd!, effe" />
+				<_field_tag_reference_64 name="misfire damage#this effect is used when the weapon is loaded but fired while overheated" validtags="jpt!, drdf" />
+				<_field_tag_reference_64 name="empty damage#this effect is used when the weapon is not loaded" validtags="jpt!, drdf" />
+				<_field_tag_reference_64 name="optional secondary firing damage#this effect is for later shots of a burst if set" validtags="jpt!, drdf" />
+				<_field_tag_reference_64 name="firing rider damage#this effect is used when the weapon is loaded and fired normally" validtags="jpt!, drdf" />
+				<_field_tag_reference_64 name="critical rider damage^#this effect is used when the weapon is loaded and will do critical damage" validtags="snd!, effe" />
+				<_field_tag_reference_64 name="misfire rider damage#this effect is used when the weapon is loaded but fired while overheated" validtags="jpt!, drdf" />
+				<_field_tag_reference_64 name="empty rider damage#this effect is used when the weapon is not loaded" validtags="jpt!, drdf" />
+				<_field_tag_reference_64 name="optional secondary firing rider damage#this effect is for later shots of a burst if set" validtags="jpt!, drdf" />
+			</_field_block_64>
+			<_field_block_64 name="projectile distribution" max="1" srcguid="1405a8aa-40c0-ff8d-19ef-2a80bc5aac32" srcName="WeaponAttachmentBarrelDistributionBlock">
+				<_field_struct name="projectile distribution" srcguid="aa0536ee-4732-df72-5c63-7c925db0ac0b">
+					<_field_short_enum name="distribution function">
+						<item Name="point" />
+						<item Name="horizontal fan" />
+						<item Name="custom directions{custom vectors}" />
+						<item Name="custom positions" />
+					</_field_short_enum>
+					<_field_short_integer name="projectiles per shot" />
+					<_field_block_64 name="direction offset#Custom vectors must be set in distribution function above" max="16" srcguid="cb9e245e-4828-9870-9b82-ffacba57b7b4" srcName="ProjectileDistributionCustomAngleOffset">
+						<_field_real_euler_angles_2d name="angle offset^:[-90, 90]#yaw +right pitch +up" />
+					</_field_block_64>
+					<_field_block_64 name="position offsets#Custom vectors must be set in distribution function above" max="16" srcguid="9db02e18-4feb-cd2d-abbd-b7a63c77e884" srcName="projectileDistributionCustomVector">
+						<_field_real_point_2d name="Point offset^:[-1.1]#x-y offset - +x is right, +y is up" />
+					</_field_block_64>
+					<_field_real name="distribution angle:degrees#used by distribution function 'horizontal fan' above" />
+				</_field_struct>
+			</_field_block_64>
+			<_field_block_64 name="projectile error" max="1" srcguid="01e36411-4fca-8379-be02-c3be867db9d2" srcName="WeaponAttachmentBarrelErrorBlock">
+				<_field_struct name="projectile error" srcguid="6243ece9-4511-7449-ee66-69af2148162c">
+					<_field_real name="deceleration time:seconds#the continuous idle time it would take for a barrel_error of 1.0 to return to its minimum value." />
+					<_field_real name="runtime error deceleration rate!" />
+					<_field_angle name="minimum error:degrees#projectile direction is randomly selected between this and max_error_angle below" />
+					<_field_angle_bounds name="error angle:degrees (max_error_angle)#current barrel_error is linearly interpolated between these to generate max_error_angle" />
+					<_field_real_bounds name="damage error#the range of angles (in degrees) that a damaged weapon will skew fire" />
+				</_field_struct>
+			</_field_block_64>
+			<_field_block_64 name="noise" max="1" srcguid="5f93435e-478d-d9d3-4b13-139d424c236f" srcName="WeaponAttachmentBarrelNoiseBlock">
+				<_field_struct name="barrel noise" srcguid="06f53a29-4f58-a16e-8483-71baff9324fc">
+					<_field_short_enum name="ai noise#how loud this weapon appears to the AI when firing">
+						<item Name="silent#ai will not respond to this sound" />
+						<item Name="quiet" />
+						<item Name="medium" />
+						<item Name="shout" />
+						<item Name="loud#ai can hear this sound at any range" />
+					</_field_short_enum>
+					<_field_short_enum name="motion tracker noise#how far the weapon can be heard on the motion tracker when firing">
+						<item Name="edge" />
+						<item Name="inner" />
+						<item Name="silent" />
+					</_field_short_enum>
+				</_field_struct>
+			</_field_block_64>
+			<_field_block_64 name="heat generated per round" max="1" srcguid="1c9276e1-49b5-3e50-16c3-d1a1060e2a1b" srcName="WeaponAttachmentHeatGeneratedPerRoundOverride">
+				<_field_real_fraction name="heat generated per round:[0,1]#the amount of heat generated each time the barrel fires. Unlike the name suggests, this amount of heat is NOT applied per projectile created." />
+			</_field_block_64>
+			<_field_block_64 name="age generation" max="1" srcguid="4bd6a610-48d8-06e4-a30d-7d96d68408e3" srcName="WeaponAttachmentBarrelAgeGeneratedPerRoundBlock">
+				<_field_struct name="age generation" srcguid="c3520dcb-4fe0-977f-5db6-eb8bac32c509">
+					<_field_real_fraction name="age generated per round:[0,1]#the amount the weapon ages each time the trigger is fired" />
+					<_field_real_fraction name="CAMPAIGN age generated per round:[0,1]#the amount the weapon ages each time the trigger is fired" />
+				</_field_struct>
+			</_field_block_64>
+			<_field_block_64 name="fire sound" max="1" srcguid="de010cdd-41b6-0d68-6481-c8859e2771f5" srcName="WeaponAttachmentBarrelFireSoundBlock">
+				<_field_struct name="fire sound" srcguid="a9f32d50-4bb4-e296-05de-09b9a246587f">
+					<_field_byte_flags name="flags">
+						<item Name="play once per burst" />
+					</_field_byte_flags>
+					<_field_pad name="pad0" length="3" />
+					<_field_tag_reference_64 name="sound" validtags="snd!" />
+				</_field_struct>
+			</_field_block_64>
+			<_field_block_64 name="automatic fire sound" max="1" srcguid="ca8a1273-4fe1-0ff4-074a-77b3decdef3f" srcName="WeaponAttachmentBarrelAutomaticFireSoundBlock">
+				<_field_struct name="automatic fire sound" srcguid="d6b3d376-4d58-d3b0-1ad1-1d91caf71fea">
+					<_field_tag_reference_64 name="firing loop for automatics" validtags="lsnd" />
+					<_field_block_64 name="automatic fire variations" max="8" srcguid="df1e4eca-40f6-a183-b2df-23a84795ada6" srcName="AutomaticFireVariationBlock">
+						<_field_tag_reference_64 name="firing loop for automatics" validtags="lsnd" />
+					</_field_block_64>
+				</_field_struct>
+			</_field_block_64>
+			<_field_block_64 name="fire tail sound" max="1" srcguid="7677e373-4891-01b8-780f-3aa2f10ec32a" srcName="WeaponAttachmentBarrelFireTailSoundDefinitionBlock">
+				<_field_struct name="fire tail sound" srcguid="2db098da-414b-d888-c36e-ab885f82b363">
+					<_field_tag_reference_64 name="tail sounds" validtags="stai" />
+					<_field_string_id name="Tail sounds switch group#this is the switch group this weapon tail class will use" />
+					<_field_long_integer name="Tail sound switch group hash!" />
+					<_field_string_id name="Tail sounds switch value#this is the name of the weapon for this weapon tail class" />
+					<_field_long_integer name="Tail sound switch value hash!" />
+				</_field_struct>
 			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="fire tail sound" max="1" guid="7677e373-4891-01b8-780f-3aa2f10ec32a">
-			<_field_struct name="fire tail sound" />
-			<_field_tag_reference_64 name="tail sounds" />
-			<_field_string_id name="Tail sounds switch group#this is the switch group this weapon tail class will use" />
-			<_field_long_integer name="Tail sound switch group hash!" />
-			<_field_string_id name="Tail sounds switch value#this is the name of the weapon for this weapon tail class" />
-			<_field_long_integer name="Tail sound switch value hash!" />
-		</_field_block_64>
-	</_field_block_64>
-	<_field_block_64 name="secondary barrel override" max="1" guid="27c25267-4b95-0511-fe60-a09020b43144">
-		<_field_tag_reference_64 name="projectile" />
-		<_field_block_64 name="firing params" max="1" guid="967315ec-4fc2-df7a-cf75-c6b0261f964d">
-			<_field_struct name="firing params" />
-			<_field_real_bounds name="rounds per second#the number of firing effects created per second.  0 defaults to 60" />
-			<_field_string_id name="rate of fire acceleration#function value sets the current rate of fire when the barrel is firing" />
-			<_field_real name="acceleration time:seconds#the continuous firing time it takes for the weapon to achieve its final rounds per second" />
-			<_field_string_id name="rate of fire deceleration#function value sets the current rate of fire when the barrel is not firing" />
-			<_field_real name="deceleration time:seconds#the continuous idle time it takes for the weapon to return from its final rounds per second to its initial" />
-			<_field_real name="barrel spin scale#scale the barrel spin speed by this amount" />
-			<_field_real_fraction name="blurred rate of fire#a percentage between 0 and 1 which controls how soon in its firing animation the weapon blurs" />
-			<_field_short_integer_bounds name="shots per fire#allows designer caps to the shots you can fire from one firing action" />
-			<_field_real name="fire recovery time:seconds#how long after a set of shots it takes before the barrel can fire again" />
-			<_field_real_fraction name="soft recovery fraction#how much of the recovery allows shots to be queued" />
-			<_field_real name="melee  fire recovery time:seconds#how long after a set of shots it takes before the weapon can melee" />
-			<_field_real_fraction name="melee soft recovery fraction#how much of the melee recovery allows melee to be queued" />
-			<_field_real name="runtime rate of fire acceleration rate!" />
-			<_field_real name="runtime rate of fire deceleration rate!" />
-		</_field_block_64>
-		<_field_block_64 name="firing effects" max="5" guid="28bbfa00-42b0-7568-d15c-e794e6f4e7b8">
-			<_field_short_integer name="shot count lower bound#the minimum number of times this firing effect will be used, once it has been chosen" />
-			<_field_short_integer name="shot count upper bound#the maximum number of times this firing effect will be used, once it has been chosen" />
-			<_field_tag_reference_64 name="firing effect^#this effect is used when the weapon is loaded and fired normally" validtags="snd!, effe" />
-			<_field_tag_reference_64 name="critical effect^#this effect is used when the weapon is loaded and will do critical damage" validtags="snd!, effe" />
-			<_field_tag_reference_64 name="misfire effect#this effect is used when the weapon is loaded but fired while overheated" validtags="snd!, effe" />
-			<_field_tag_reference_64 name="empty effect#this effect is used when the weapon is not loaded" validtags="snd!, effe" />
-			<_field_tag_reference_64 name="optional secondary firing effect#this effect is for later shots of a burst if set" validtags="snd!, effe" />
-			<_field_tag_reference_64 name="firing damage#this effect is used when the weapon is loaded and fired normally" validtags="jpt!, drdf" />
-			<_field_tag_reference_64 name="critical damage^#this effect is used when the weapon is loaded and will do critical damage" validtags="snd!, effe" />
-			<_field_tag_reference_64 name="misfire damage#this effect is used when the weapon is loaded but fired while overheated" validtags="jpt!, drdf" />
-			<_field_tag_reference_64 name="empty damage#this effect is used when the weapon is not loaded" validtags="jpt!, drdf" />
-			<_field_tag_reference_64 name="optional secondary firing damage#this effect is for later shots of a burst if set" validtags="jpt!, drdf" />
-			<_field_tag_reference_64 name="firing rider damage#this effect is used when the weapon is loaded and fired normally" validtags="jpt!, drdf" />
-			<_field_tag_reference_64 name="critical rider damage^#this effect is used when the weapon is loaded and will do critical damage" validtags="snd!, effe" />
-			<_field_tag_reference_64 name="misfire rider damage#this effect is used when the weapon is loaded but fired while overheated" validtags="jpt!, drdf" />
-			<_field_tag_reference_64 name="empty rider damage#this effect is used when the weapon is not loaded" validtags="jpt!, drdf" />
-			<_field_tag_reference_64 name="optional secondary firing rider damage#this effect is for later shots of a burst if set" validtags="jpt!, drdf" />
-		</_field_block_64>
-		<_field_block_64 name="projectile distribution" max="1" guid="1405a8aa-40c0-ff8d-19ef-2a80bc5aac32">
-			<_field_struct name="projectile distribution" />
-			<_field_short_enum name="distribution function">
-				<item Name="point" />
-				<item Name="horizontal fan" />
-				<item Name="custom directions{custom vectors}" />
-				<item Name="custom positions" />
-			</_field_short_enum>
-			<_field_short_integer name="projectiles per shot" />
-			<_field_block_64 name="direction offset#Custom vectors must be set in distribution function above" max="16" guid="cb9e245e-4828-9870-9b82-ffacba57b7b4">
-				<_field_real_euler_angles_2d name="angle offset^:[-90, 90]#yaw +right pitch +up" />
+		<_field_block_64 name="secondary barrel override" max="1" srcguid="27c25267-4b95-0511-fe60-a09020b43144" srcName="weapon_attachment_barrel_override">
+			<_field_tag_reference_64 name="projectile" validtags="proj" />
+			<_field_block_64 name="firing params" max="1" srcguid="967315ec-4fc2-df7a-cf75-c6b0261f964d" srcName="WeaponAttachmentBarrelFiringParamsBlock">
+				<_field_struct name="firing params" srcguid="b9afce9e-494b-8cf8-e687-d69c80e5e636">
+					<_field_real_bounds name="rounds per second#the number of firing effects created per second.  0 defaults to 60" />
+					<_field_string_id name="rate of fire acceleration#function value sets the current rate of fire when the barrel is firing" />
+					<_field_real name="acceleration time:seconds#the continuous firing time it takes for the weapon to achieve its final rounds per second" />
+					<_field_string_id name="rate of fire deceleration#function value sets the current rate of fire when the barrel is not firing" />
+					<_field_real name="deceleration time:seconds#the continuous idle time it takes for the weapon to return from its final rounds per second to its initial" />
+					<_field_real name="barrel spin scale#scale the barrel spin speed by this amount" />
+					<_field_real_fraction name="blurred rate of fire#a percentage between 0 and 1 which controls how soon in its firing animation the weapon blurs" />
+					<_field_short_integer_bounds name="shots per fire#allows designer caps to the shots you can fire from one firing action" />
+					<_field_real name="fire recovery time:seconds#how long after a set of shots it takes before the barrel can fire again" />
+					<_field_real_fraction name="soft recovery fraction#how much of the recovery allows shots to be queued" />
+					<_field_real name="melee  fire recovery time:seconds#how long after a set of shots it takes before the weapon can melee" />
+					<_field_real_fraction name="melee soft recovery fraction#how much of the melee recovery allows melee to be queued" />
+					<_field_real name="runtime rate of fire acceleration rate!" />
+					<_field_real name="runtime rate of fire deceleration rate!" />
+				</_field_struct>
 			</_field_block_64>
-			<_field_block_64 name="position offsets#Custom vectors must be set in distribution function above" max="16" guid="9db02e18-4feb-cd2d-abbd-b7a63c77e884">
-				<_field_real_point_2d name="Point offset^:[-1.1]#x-y offset - +x is right, +y is up" />
+			<_field_block_64 name="firing effects" max="5" srcguid="28bbfa00-42b0-7568-d15c-e794e6f4e7b8" srcName="barrel_firing_effect_block">
+				<_field_short_integer name="shot count lower bound#the minimum number of times this firing effect will be used, once it has been chosen" />
+				<_field_short_integer name="shot count upper bound#the maximum number of times this firing effect will be used, once it has been chosen" />
+				<_field_tag_reference_64 name="firing effect^#this effect is used when the weapon is loaded and fired normally" validtags="snd!, effe" />
+				<_field_tag_reference_64 name="critical effect^#this effect is used when the weapon is loaded and will do critical damage" validtags="snd!, effe" />
+				<_field_tag_reference_64 name="misfire effect#this effect is used when the weapon is loaded but fired while overheated" validtags="snd!, effe" />
+				<_field_tag_reference_64 name="empty effect#this effect is used when the weapon is not loaded" validtags="snd!, effe" />
+				<_field_tag_reference_64 name="optional secondary firing effect#this effect is for later shots of a burst if set" validtags="snd!, effe" />
+				<_field_tag_reference_64 name="firing damage#this effect is used when the weapon is loaded and fired normally" validtags="jpt!, drdf" />
+				<_field_tag_reference_64 name="critical damage^#this effect is used when the weapon is loaded and will do critical damage" validtags="snd!, effe" />
+				<_field_tag_reference_64 name="misfire damage#this effect is used when the weapon is loaded but fired while overheated" validtags="jpt!, drdf" />
+				<_field_tag_reference_64 name="empty damage#this effect is used when the weapon is not loaded" validtags="jpt!, drdf" />
+				<_field_tag_reference_64 name="optional secondary firing damage#this effect is for later shots of a burst if set" validtags="jpt!, drdf" />
+				<_field_tag_reference_64 name="firing rider damage#this effect is used when the weapon is loaded and fired normally" validtags="jpt!, drdf" />
+				<_field_tag_reference_64 name="critical rider damage^#this effect is used when the weapon is loaded and will do critical damage" validtags="snd!, effe" />
+				<_field_tag_reference_64 name="misfire rider damage#this effect is used when the weapon is loaded but fired while overheated" validtags="jpt!, drdf" />
+				<_field_tag_reference_64 name="empty rider damage#this effect is used when the weapon is not loaded" validtags="jpt!, drdf" />
+				<_field_tag_reference_64 name="optional secondary firing rider damage#this effect is for later shots of a burst if set" validtags="jpt!, drdf" />
 			</_field_block_64>
-			<_field_real name="distribution angle:degrees#used by distribution function 'horizontal fan' above" />
-		</_field_block_64>
-		<_field_block_64 name="projectile error" max="1" guid="01e36411-4fca-8379-be02-c3be867db9d2">
-			<_field_struct name="projectile error" />
-			<_field_real name="deceleration time:seconds#the continuous idle time it would take for a barrel_error of 1.0 to return to its minimum value." />
-			<_field_real name="runtime error deceleration rate!" />
-			<_field_angle name="minimum error:degrees#projectile direction is randomly selected between this and max_error_angle below" />
-			<_field_angle_bounds name="error angle:degrees (max_error_angle)#current barrel_error is linearly interpolated between these to generate max_error_angle" />
-			<_field_real_bounds name="damage error#the range of angles (in degrees) that a damaged weapon will skew fire" />
-		</_field_block_64>
-		<_field_block_64 name="noise" max="1" guid="5f93435e-478d-d9d3-4b13-139d424c236f">
-			<_field_struct name="barrel noise" />
-			<_field_short_enum name="ai noise#how loud this weapon appears to the AI when firing">
-				<item Name="silent#ai will not respond to this sound" />
-				<item Name="quiet" />
-				<item Name="medium" />
-				<item Name="shout" />
-				<item Name="loud#ai can hear this sound at any range" />
-			</_field_short_enum>
-			<_field_short_enum name="motion tracker noise#how far the weapon can be heard on the motion tracker when firing">
-				<item Name="edge" />
-				<item Name="inner" />
-				<item Name="silent" />
-			</_field_short_enum>
-		</_field_block_64>
-		<_field_block_64 name="heat generated per round" max="1" guid="1c9276e1-49b5-3e50-16c3-d1a1060e2a1b">
-			<_field_real_fraction name="heat generated per round:[0,1]#the amount of heat generated each time the barrel fires. Unlike the name suggests, this amount of heat is NOT applied per projectile created." />
-		</_field_block_64>
-		<_field_block_64 name="age generation" max="1" guid="4bd6a610-48d8-06e4-a30d-7d96d68408e3">
-			<_field_struct name="age generation" />
-			<_field_real_fraction name="age generated per round:[0,1]#the amount the weapon ages each time the trigger is fired" />
-			<_field_real_fraction name="CAMPAIGN age generated per round:[0,1]#the amount the weapon ages each time the trigger is fired" />
-		</_field_block_64>
-		<_field_block_64 name="fire sound" max="1" guid="de010cdd-41b6-0d68-6481-c8859e2771f5">
-			<_field_struct name="fire sound" />
-			<_field_byte_flags name="flags">
-				<item Name="play once per burst" />
-			</_field_byte_flags>
-			<_field_pad name="pad0" length="3" />
-			<_field_tag_reference_64 name="sound" />
-		</_field_block_64>
-		<_field_block_64 name="automatic fire sound" max="1" guid="ca8a1273-4fe1-0ff4-074a-77b3decdef3f">
-			<_field_struct name="automatic fire sound" />
-			<_field_tag_reference_64 name="firing loop for automatics" />
-			<_field_block_64 name="automatic fire variations" max="8" guid="df1e4eca-40f6-a183-b2df-23a84795ada6">
-				<_field_tag_reference_64 name="firing loop for automatics" />
+			<_field_block_64 name="projectile distribution" max="1" srcguid="1405a8aa-40c0-ff8d-19ef-2a80bc5aac32" srcName="WeaponAttachmentBarrelDistributionBlock">
+				<_field_struct name="projectile distribution" srcguid="aa0536ee-4732-df72-5c63-7c925db0ac0b">
+					<_field_short_enum name="distribution function">
+						<item Name="point" />
+						<item Name="horizontal fan" />
+						<item Name="custom directions{custom vectors}" />
+						<item Name="custom positions" />
+					</_field_short_enum>
+					<_field_short_integer name="projectiles per shot" />
+					<_field_block_64 name="direction offset#Custom vectors must be set in distribution function above" max="16" srcguid="cb9e245e-4828-9870-9b82-ffacba57b7b4" srcName="ProjectileDistributionCustomAngleOffset">
+						<_field_real_euler_angles_2d name="angle offset^:[-90, 90]#yaw +right pitch +up" />
+					</_field_block_64>
+					<_field_block_64 name="position offsets#Custom vectors must be set in distribution function above" max="16" srcguid="9db02e18-4feb-cd2d-abbd-b7a63c77e884" srcName="projectileDistributionCustomVector">
+						<_field_real_point_2d name="Point offset^:[-1.1]#x-y offset - +x is right, +y is up" />
+					</_field_block_64>
+					<_field_real name="distribution angle:degrees#used by distribution function 'horizontal fan' above" />
+				</_field_struct>
+			</_field_block_64>
+			<_field_block_64 name="projectile error" max="1" srcguid="01e36411-4fca-8379-be02-c3be867db9d2" srcName="WeaponAttachmentBarrelErrorBlock">
+				<_field_struct name="projectile error" srcguid="6243ece9-4511-7449-ee66-69af2148162c">
+					<_field_real name="deceleration time:seconds#the continuous idle time it would take for a barrel_error of 1.0 to return to its minimum value." />
+					<_field_real name="runtime error deceleration rate!" />
+					<_field_angle name="minimum error:degrees#projectile direction is randomly selected between this and max_error_angle below" />
+					<_field_angle_bounds name="error angle:degrees (max_error_angle)#current barrel_error is linearly interpolated between these to generate max_error_angle" />
+					<_field_real_bounds name="damage error#the range of angles (in degrees) that a damaged weapon will skew fire" />
+				</_field_struct>
+			</_field_block_64>
+			<_field_block_64 name="noise" max="1" srcguid="5f93435e-478d-d9d3-4b13-139d424c236f" srcName="WeaponAttachmentBarrelNoiseBlock">
+				<_field_struct name="barrel noise" srcguid="06f53a29-4f58-a16e-8483-71baff9324fc">
+					<_field_short_enum name="ai noise#how loud this weapon appears to the AI when firing">
+						<item Name="silent#ai will not respond to this sound" />
+						<item Name="quiet" />
+						<item Name="medium" />
+						<item Name="shout" />
+						<item Name="loud#ai can hear this sound at any range" />
+					</_field_short_enum>
+					<_field_short_enum name="motion tracker noise#how far the weapon can be heard on the motion tracker when firing">
+						<item Name="edge" />
+						<item Name="inner" />
+						<item Name="silent" />
+					</_field_short_enum>
+				</_field_struct>
+			</_field_block_64>
+			<_field_block_64 name="heat generated per round" max="1" srcguid="1c9276e1-49b5-3e50-16c3-d1a1060e2a1b" srcName="WeaponAttachmentHeatGeneratedPerRoundOverride">
+				<_field_real_fraction name="heat generated per round:[0,1]#the amount of heat generated each time the barrel fires. Unlike the name suggests, this amount of heat is NOT applied per projectile created." />
+			</_field_block_64>
+			<_field_block_64 name="age generation" max="1" srcguid="4bd6a610-48d8-06e4-a30d-7d96d68408e3" srcName="WeaponAttachmentBarrelAgeGeneratedPerRoundBlock">
+				<_field_struct name="age generation" srcguid="c3520dcb-4fe0-977f-5db6-eb8bac32c509">
+					<_field_real_fraction name="age generated per round:[0,1]#the amount the weapon ages each time the trigger is fired" />
+					<_field_real_fraction name="CAMPAIGN age generated per round:[0,1]#the amount the weapon ages each time the trigger is fired" />
+				</_field_struct>
+			</_field_block_64>
+			<_field_block_64 name="fire sound" max="1" srcguid="de010cdd-41b6-0d68-6481-c8859e2771f5" srcName="WeaponAttachmentBarrelFireSoundBlock">
+				<_field_struct name="fire sound" srcguid="a9f32d50-4bb4-e296-05de-09b9a246587f">
+					<_field_byte_flags name="flags">
+						<item Name="play once per burst" />
+					</_field_byte_flags>
+					<_field_pad name="pad0" length="3" />
+					<_field_tag_reference_64 name="sound" validtags="snd!" />
+				</_field_struct>
+			</_field_block_64>
+			<_field_block_64 name="automatic fire sound" max="1" srcguid="ca8a1273-4fe1-0ff4-074a-77b3decdef3f" srcName="WeaponAttachmentBarrelAutomaticFireSoundBlock">
+				<_field_struct name="automatic fire sound" srcguid="d6b3d376-4d58-d3b0-1ad1-1d91caf71fea">
+					<_field_tag_reference_64 name="firing loop for automatics" validtags="lsnd" />
+					<_field_block_64 name="automatic fire variations" max="8" srcguid="df1e4eca-40f6-a183-b2df-23a84795ada6" srcName="AutomaticFireVariationBlock">
+						<_field_tag_reference_64 name="firing loop for automatics" validtags="lsnd" />
+					</_field_block_64>
+				</_field_struct>
+			</_field_block_64>
+			<_field_block_64 name="fire tail sound" max="1" srcguid="7677e373-4891-01b8-780f-3aa2f10ec32a" srcName="WeaponAttachmentBarrelFireTailSoundDefinitionBlock">
+				<_field_struct name="fire tail sound" srcguid="2db098da-414b-d888-c36e-ab885f82b363">
+					<_field_tag_reference_64 name="tail sounds" validtags="stai" />
+					<_field_string_id name="Tail sounds switch group#this is the switch group this weapon tail class will use" />
+					<_field_long_integer name="Tail sound switch group hash!" />
+					<_field_string_id name="Tail sounds switch value#this is the name of the weapon for this weapon tail class" />
+					<_field_long_integer name="Tail sound switch value hash!" />
+				</_field_struct>
 			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="fire tail sound" max="1" guid="7677e373-4891-01b8-780f-3aa2f10ec32a">
-			<_field_struct name="fire tail sound" />
-			<_field_tag_reference_64 name="tail sounds" />
-			<_field_string_id name="Tail sounds switch group#this is the switch group this weapon tail class will use" />
-			<_field_long_integer name="Tail sound switch group hash!" />
-			<_field_string_id name="Tail sounds switch value#this is the name of the weapon for this weapon tail class" />
-			<_field_long_integer name="Tail sound switch value hash!" />
-		</_field_block_64>
-	</_field_block_64>
+	</_field_struct>
 </plugin>

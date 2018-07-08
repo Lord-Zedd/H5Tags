@@ -1,58 +1,59 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_tag_reference_64 name="sound effects" />
-	<_field_tag_reference_64 name="sound mix" />
-	<_field_tag_reference_64 name="sound propagation" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_tag_reference_64 name="sound effects" validtags="sfx+" />
+	<_field_tag_reference_64 name="sound mix" validtags="snmx" />
+	<_field_tag_reference_64 name="sound propagation" validtags="sgp!" />
 	<_field_string_id name="Initial zone set preload event name#Event posted once a scenario's initial zone set has been preloaded." />
 	<_field_string_id name="Level unloaded event name#Event posted once sound is notified of a level unloading." />
-	<_field_tag_reference_64 name="Init sound bank#Init sound bank for WWise." />
-	<_field_block_64 name="Global sound banks#Global sound banks for WWise." max="12" guid="1a2a3aa4-4eb4-0619-c61e-c7b432dffbfd">
-		<_field_tag_reference_64 name="Sound bank" />
+	<_field_tag_reference_64 name="Init sound bank#Init sound bank for WWise." validtags="sbnk" />
+	<_field_block_64 name="Global sound banks#Global sound banks for WWise." max="12" srcguid="1a2a3aa4-4eb4-0619-c61e-c7b432dffbfd" srcName="SoundbanksBlock">
+		<_field_tag_reference_64 name="Sound bank" validtags="sbnk" />
 	</_field_block_64>
-	<_field_block_64 name="Extra sound banks#The other sound banks for WWise." max="12" guid="1a2a3aa4-4eb4-0619-c61e-c7b432dffbfd">
-		<_field_tag_reference_64 name="Sound bank" />
+	<_field_block_64 name="Extra sound banks#The other sound banks for WWise." max="12" srcguid="1a2a3aa4-4eb4-0619-c61e-c7b432dffbfd" srcName="SoundbanksBlock">
+		<_field_tag_reference_64 name="Sound bank" validtags="sbnk" />
 	</_field_block_64>
-	<_field_block_64 name="Campaign sound banks#Extra sound banks for WWise - only loaded for Campaign." max="12" guid="1a2a3aa4-4eb4-0619-c61e-c7b432dffbfd">
-		<_field_tag_reference_64 name="Sound bank" />
+	<_field_block_64 name="Campaign sound banks#Extra sound banks for WWise - only loaded for Campaign." max="12" srcguid="1a2a3aa4-4eb4-0619-c61e-c7b432dffbfd" srcName="SoundbanksBlock">
+		<_field_tag_reference_64 name="Sound bank" validtags="sbnk" />
 	</_field_block_64>
-	<_field_block_64 name="Multiplayer sound banks#Extra sound bank for WWise - only loaded for MP - PVP, for all variants." max="12" guid="1a2a3aa4-4eb4-0619-c61e-c7b432dffbfd">
-		<_field_tag_reference_64 name="Sound bank" />
+	<_field_block_64 name="Multiplayer sound banks#Extra sound bank for WWise - only loaded for MP - PVP, for all variants." max="12" srcguid="1a2a3aa4-4eb4-0619-c61e-c7b432dffbfd" srcName="SoundbanksBlock">
+		<_field_tag_reference_64 name="Sound bank" validtags="sbnk" />
 	</_field_block_64>
-	<_field_block_64 name="Variant sound banks" max="12" guid="f92d5875-4a26-4f72-3088-dab0f621662a">
+	<_field_block_64 name="Variant sound banks" max="12" srcguid="f92d5875-4a26-4f72-3088-dab0f621662a" srcName="GameVariantSoundbankBlock">
 		<_field_string name="Variant Name#Name of the multiplayer variant that matches the Wwise state" />
-		<_field_block_64 name="Sound banks" max="12" guid="1a2a3aa4-4eb4-0619-c61e-c7b432dffbfd">
-			<_field_tag_reference_64 name="Sound bank" />
+		<_field_block_64 name="Sound banks" max="12" srcguid="1a2a3aa4-4eb4-0619-c61e-c7b432dffbfd" srcName="SoundbanksBlock">
+			<_field_tag_reference_64 name="Sound bank" validtags="sbnk" />
 		</_field_block_64>
 		<_field_pad name="pad_tp" length="4" />
 	</_field_block_64>
-	<_field_block_64 name="ADS Busses to EQ" max="12" guid="81b10bed-4049-17a7-895f-58ab8087177b">
+	<_field_block_64 name="ADS Busses to EQ" max="12" srcguid="81b10bed-4049-17a7-895f-58ab8087177b" srcName="ADSBusEQBlock">
 		<_field_string_id name="Bus EQ#Name of the wWise bus to EQ in ADS" />
 		<_field_long_integer name="Bus EQ Hash!" />
 	</_field_block_64>
-	<_field_block_64 name="Streaming pack files" max="20" guid="3d42e3df-4e4a-f0b7-417d-feb9d5b7a68f">
+	<_field_block_64 name="Streaming pack files" max="20" srcguid="3d42e3df-4e4a-f0b7-417d-feb9d5b7a68f" srcName="StreamingPackBlock">
 		<_field_long_flags name="flags">
 			<item Name="Language pack" />
 			<item Name="Sound bank pack" />
 		</_field_long_flags>
 		<_field_string name="Streaming pck file#Name of the stream pack file" />
 	</_field_block_64>
-	<_field_block_64 name="un-spatialized campaign sounds" max="64" guid="56405873-469c-5e06-cdc3-cc865cb83a24">
+	<_field_block_64 name="un-spatialized campaign sounds" max="64" srcguid="56405873-469c-5e06-cdc3-cc865cb83a24" srcName="campaign_unspatialized_sounds_block">
 		<_field_tag_reference_64 name="sound^" validtags="snd!" />
 	</_field_block_64>
 	<_field_real name="Radio For Voice Radius#outside this radius, voice will switch to radio if possible" />
-	<_field_block_64 name="Audio Focus Info" max="6" guid="44a47a1c-4219-c253-d62b-4a820ed329b1">
+	<_field_block_64 name="Audio Focus Info" max="6" srcguid="44a47a1c-4219-c253-d62b-4a820ed329b1" srcName="focus_data_block">
 		<_field_real name="Focus Inner Radius#Sounds within this radius are played back at full volume" />
 		<_field_real name="Focus Outer Radius#Sounds outside of this radius are played back at the adjusted level" />
 		<_field_real name="Focus Inner Cone Angle#Sounds within this cone are played back at full volume" />
 		<_field_real name="Focus Outer Cone Angle#Sound outside of this radius are played back at the adjusted volume" />
 		<_field_real name="Focus Outside Volume Adjustment#percentage value (0.0 to 1.0) determining the volume level when full outside both sphere and cone" />
 	</_field_block_64>
-	<_field_block_64 name="Vehicle Surface Sound Info#RTPC and sweetener info to apply to all surface sounds, regardless of vehicle" max="2" guid="3f995d31-4f88-8a5f-f051-be8587f1016d">
+	<_field_block_64 name="Vehicle Surface Sound Info#RTPC and sweetener info to apply to all surface sounds, regardless of vehicle" max="2" srcguid="3f995d31-4f88-8a5f-f051-be8587f1016d" srcName="g_vehicleSurfaceSoundDataBlock">
 		<_field_string_id name="RTPC name" />
 		<_field_real name="Sweetener threshold#The RTPC value for determining whether to start or stop the sound to trigger the respective sweeteners (as defined by the start and stop events of the looping sound from the appropriate .material_effects tag" />
 	</_field_block_64>
@@ -60,8 +61,8 @@
 	<_field_string_id name="RTPC - enemies near player, weighted#Same as above, but scaled with the sound weight assigned to the enemy's .biped definition" />
 	<_field_string_id name="RTPC - enemies near player targeting friendlies#Subset of the 'enemies near player' above, but this limited to the enemies targeting friendlies" />
 	<_field_string_id name="RTPC - enemies near player targeting friendlies, weighted#Same as the above one, but scaled with the sound weight assigned to the enemy's .biped definition" />
-	<_field_block_64 name="State Groups#State groups we care enough about to have saved and loaded, as well as inherited during campaign player-teleportation" max="256" guid="35da4a68-4dc0-4148-8431-8dbc75986ffc">
-		<_field_tag_reference_64 name="State-group reference" />
+	<_field_block_64 name="State Groups#State groups we care enough about to have saved and loaded, as well as inherited during campaign player-teleportation" max="256" srcguid="35da4a68-4dc0-4148-8431-8dbc75986ffc" srcName="g_stateGroupReferenceBlock">
+		<_field_tag_reference_64 name="State-group reference" validtags="ssgp" />
 	</_field_block_64>
-	<_field_tag_reference_64 name="Forge sound events" />
+	<_field_tag_reference_64 name="Forge sound events" validtags="fsld" />
 </plugin>

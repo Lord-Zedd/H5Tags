@@ -1,10 +1,11 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_word_flags name="flags">
 		<item Name="correlate position and velocity" />
 		<item Name="position texture in local space" />
@@ -15,11 +16,13 @@
 	<_field_word_integer name="version!" />
 	<_field_real name="spawn rate!:particles per second" />
 	<_field_explanation name="SPAWN RATE">how many particles to spawn per second</_field_explanation>
-	<_field_struct name="spawnrate" />
-	<_field_string_id name="Input Variable!" />
-	<_field_string_id name="Range Variable!" />
-	<_field_struct name="Mapping" />
-	<_field_data_64 name="data" />
+	<_field_struct name="spawnrate" srcguid="e439295b-4f7f-ed02-947b-3dba184f3d39">
+		<_field_string_id name="Input Variable!" />
+		<_field_string_id name="Range Variable!" />
+		<_field_struct name="Mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+	</_field_struct>
 	<_field_explanation name="LOD">reduces the number of particles at distance</_field_explanation>
 	<_field_real name="distance fade start:world_units#the distance where the number of spawned particles starts to be reduced" />
 	<_field_real name="distance fade end:world units#the distance where the number of spawned particles is zero" />
@@ -36,10 +39,10 @@
 	<_field_explanation name="LIFETIME">how long the spawned particles will last</_field_explanation>
 	<_field_real_bounds name="lifetime:seconds" />
 	<_field_explanation name="EMITTER PARAMETERS">controls where a particle spawns, and its initial velocity</_field_explanation>
-	<_field_tag_reference_64 name="position texture" />
+	<_field_tag_reference_64 name="position texture" validtags="bitm" />
 	<_field_real name="position scale" />
 	<_field_real name="position flatten" />
-	<_field_tag_reference_64 name="velocity texture" />
+	<_field_tag_reference_64 name="velocity texture" validtags="bitm" />
 	<_field_real_bounds name="directionality:[0-1]#Blends between a random direction and the forward direction" />
 	<_field_real_bounds name="speed scale#scales the initial speed of the particle" />
 	<_field_real_bounds name="subframe offset:frames#spawns particle at subframe time" />
@@ -57,6 +60,6 @@ NOTE: only monochrome lighting is supported in neuticles</_field_explanation>
 	<_field_real_quaternion name="spawn_params2!" />
 	<_field_real_quaternion name="spawn_params3!" />
 	<_field_real_quaternion name="spawn_params4!" />
-	<_field_tag_reference_64 name="global type library!" />
+	<_field_tag_reference_64 name="global type library!" validtags="cptl" />
 	<_field_pad name="pad_tp" length="4" />
 </plugin>

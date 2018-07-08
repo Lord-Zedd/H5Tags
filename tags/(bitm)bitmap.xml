@@ -1,10 +1,11 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_custom name="show bitmap" />
 	<_field_explanation name="IMPORT SETTINGS">The settings here affect how the bitmap is imported.
 Any changes you make will not take effect until you reimport the bitmap.
@@ -86,7 +87,7 @@ Any changes you make will not take effect until you reimport the bitmap.
 		<item Name="tight bounds from alpha channel#unchecked, tight bounds are generated from the color channel" />
 		<item Name="do not generate required section#bitmap will have data split between medium and low optional sections" />
 		<item Name="unused" />
-		<item Name="apply max resolution after slicing#allows use of &quot;max resolution&quot; on bitmaps that have multiple frames, but may be buggy...?" />
+		<item Name="apply max resolution after slicing#allows use of &amp;quot;max resolution&amp;quot; on bitmaps that have multiple frames, but may be buggy...?" />
 		<item Name="generate black-point tight bounds#generate a set of polygonal bounding boxes for various alpha black points" />
 		<item Name="Pre-filter cubemaps#Apply cosine power-weighted cone filter to entire cubemap instead of filtering each face as separate 2D image" />
 	</_field_long_flags>
@@ -168,7 +169,7 @@ Any changes you make will not take effect until you reimport the bitmap.
 		<item Name="8-bit 4-channel Vector" />
 	</_field_short_enum>
 	<_field_real name="tight bounds threshold:[0.0 - 1.0]#This is the level cutoff for tight bounds.  0.0 is monochrome black, 1.0 is monochrome white" />
-	<_field_block_64 name="usage override" max="1" guid="09e0ae90-44d8-64f4-b5fa-c0af57bddc0b">
+	<_field_block_64 name="usage override" max="1" srcguid="09e0ae90-44d8-64f4-b5fa-c0af57bddc0b" srcName="bitmap_usage_block">
 		<_field_real name="source gamma:0.0 to use xenon curve (default)" />
 		<_field_long_enum name="bitmap curve">
 			<item Name="unknown" />
@@ -364,12 +365,12 @@ Any changes you make will not take effect until you reimport the bitmap.
 			<item Name="8-bit 4-channel Vector" />
 		</_field_long_enum>
 	</_field_block_64>
-	<_field_block_64 name="manual_sequences*" max="256" guid="15026732-45ce-9e8b-9b49-53b820937c55">
+	<_field_block_64 name="manual_sequences*" max="256" srcguid="15026732-45ce-9e8b-9b49-53b820937c55" srcName="bitmap_group_sequence_block_def">
 		<_field_string name="name^" />
 		<_field_short_integer name="first bitmap index*" />
 		<_field_short_integer name="bitmap count*" />
 		<_field_pad name="OTXYKQ" length="16" />
-		<_field_block_64 name="sprites*" max="512" guid="bbf4f819-42dc-f00a-2e20-31a752979d28">
+		<_field_block_64 name="sprites*" max="512" srcguid="bbf4f819-42dc-f00a-2e20-31a752979d28" srcName="bitmap_group_sprite_block_def">
 			<_field_short_integer name="bitmap index*" />
 			<_field_pad name="D" length="2" />
 			<_field_pad name="GMLJPJIMC" length="4" />
@@ -415,18 +416,18 @@ Any changes you make below will be lost in the next reimport, and may even cause
 
 
 </_field_explanation>
-	<_field_block_64 name="tight bounds" max="20" guid="999753df-4c19-8ab5-d3b3-edbd0d45832d">
+	<_field_block_64 name="tight bounds" max="20" srcguid="999753df-4c19-8ab5-d3b3-edbd0d45832d" srcName="bitmap_tight_bounds_block_def">
 		<_field_real_point_2d name="uv" />
 	</_field_block_64>
 	<_field_data_64 name="source data*" />
 	<_field_qword_integer name="source checksum*" />
 	<_field_data_64 name="processed pixel data*" />
-	<_field_block_64 name="sequences*" max="256" guid="15026732-45ce-9e8b-9b49-53b820937c55">
+	<_field_block_64 name="sequences*" max="256" srcguid="15026732-45ce-9e8b-9b49-53b820937c55" srcName="bitmap_group_sequence_block_def">
 		<_field_string name="name^" />
 		<_field_short_integer name="first bitmap index*" />
 		<_field_short_integer name="bitmap count*" />
 		<_field_pad name="OTXYKQ" length="16" />
-		<_field_block_64 name="sprites*" max="512" guid="bbf4f819-42dc-f00a-2e20-31a752979d28">
+		<_field_block_64 name="sprites*" max="512" srcguid="bbf4f819-42dc-f00a-2e20-31a752979d28" srcName="bitmap_group_sprite_block_def">
 			<_field_short_integer name="bitmap index*" />
 			<_field_pad name="D" length="2" />
 			<_field_pad name="GMLJPJIMC" length="4" />
@@ -437,7 +438,7 @@ Any changes you make below will be lost in the next reimport, and may even cause
 			<_field_real_point_2d name="registration point*" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="bitmaps*" max="65536" guid="deb0516a-4498-021c-cdc6-419969aa94c2">
+	<_field_block_64 name="bitmaps*" max="65536" srcguid="deb0516a-4498-021c-cdc6-419969aa94c2" srcName="bitmap_data_block_def">
 		<_field_short_integer name="width*:pixels#DO NOT CHANGE" />
 		<_field_short_integer name="height*:pixels#DO NOT CHANGE" />
 		<_field_char_integer name="depth*:pixels#DO NOT CHANGE" />
@@ -536,7 +537,7 @@ Any changes you make below will be lost in the next reimport, and may even cause
 		<_field_pageable_resource_64 name="bitmap resource handle*" />
 	</_field_block_64>
 	<_field_data_64 name="xenon processed pixel data*" />
-	<_field_block_64 name="xenon bitmaps*" max="65536" guid="deb0516a-4498-021c-cdc6-419969aa94c2">
+	<_field_block_64 name="xenon bitmaps*" max="65536" srcguid="deb0516a-4498-021c-cdc6-419969aa94c2" srcName="bitmap_data_block_def">
 		<_field_short_integer name="width*:pixels#DO NOT CHANGE" />
 		<_field_short_integer name="height*:pixels#DO NOT CHANGE" />
 		<_field_char_integer name="depth*:pixels#DO NOT CHANGE" />

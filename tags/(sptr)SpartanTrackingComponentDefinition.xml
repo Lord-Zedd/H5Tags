@@ -1,115 +1,129 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_custom name="Gameplay" />
 	<_field_long_flags name="flags">
 		<item Name="is tracker unequipped upon successful scan" />
 		<item Name="is ping continuously generating data on original strongest signal over duration" />
 		<item Name="is scanning automatic on zoom" />
 	</_field_long_flags>
-	<_field_tag_reference_64 name="weapon#The weapon provides hooks for much of the UI and animation" />
+	<_field_tag_reference_64 name="weapon#The weapon provides hooks for much of the UI and animation" validtags="weap" />
 	<_field_real name="ping max distance:wu#The max distance the volume could be from the player's point of view" />
 	<_field_angle name="ping max view pitch angle:degrees [0, 180]#The max pitch angle the volume could be from the player's point of view" />
 	<_field_angle name="ping max view yaw angle:degrees [0, 180]#The max yaw angle the volume could be from the player's point of view" />
 	<_field_angle name="ping signal view angle:degrees [0, ping max view angle]#The max angle that is rendered in the graph, outside of renders at the farthest side" />
 	<_field_real name="ping signal duration:seconds#The number of seconds the pinged object should emit a signal" />
 	<_field_explanation name="signal strength attenuation function">Determines how the signal strength attenuates over the ping signal duration.</_field_explanation>
-	<_field_struct name="signal strength attenuation function" />
-	<_field_data_64 name="data" />
+	<_field_struct name="signal strength attenuation function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+		<_field_data_64 name="data" />
+	</_field_struct>
 	<_field_explanation name="distance weight function">Maps actual distance weight to a modified distance weight so we can have greater control over strength contrast at close range.</_field_explanation>
-	<_field_struct name="distance weight function" />
-	<_field_data_64 name="data" />
+	<_field_struct name="distance weight function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+		<_field_data_64 name="data" />
+	</_field_struct>
 	<_field_real_fraction name="ping signal angle weight:[0,1]#Honing weight given to the angle towards to the tracking area" />
 	<_field_explanation name="angle weight over distance weight function">Determines pct of the angle weight that can be applied over % of distance weight.  This is used to avoid ugly jumps from no signal to big-ish signal when you move in/out of range of signal looking directly at it.</_field_explanation>
-	<_field_struct name="angle weight over distance weight function" />
-	<_field_data_64 name="data" />
+	<_field_struct name="angle weight over distance weight function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+		<_field_data_64 name="data" />
+	</_field_struct>
 	<_field_custom name="Rumble" />
 	<_field_real_bounds name="ping signal low rumble range:[0,1]#Frequency range for a signal's low rumble" />
 	<_field_real_bounds name="ping signal high rumble range:[0,1]#Frequency range for a signal's high rumble" />
 	<_field_real_bounds name="ping signal trigger rumble range:[0,1]#Frequency range for a signal's trigger rumble" />
 	<_field_explanation name="rumble shape function">Use this curve to define the shape of rumble intensity over ping signal duration.</_field_explanation>
-	<_field_struct name="rumble shape function" />
-	<_field_data_64 name="data" />
+	<_field_struct name="rumble shape function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+		<_field_data_64 name="data" />
+	</_field_struct>
 	<_field_explanation name="trigger rumble intensity function">Use this curve to define the trigger rumble strength as it approaches center.  Consider 0.5 center intensity value, [0,0.5] is not my side &amp; [0.5,1.0] is my side</_field_explanation>
-	<_field_struct name="trigger rumble intensity function" />
-	<_field_data_64 name="data" />
+	<_field_struct name="trigger rumble intensity function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+		<_field_data_64 name="data" />
+	</_field_struct>
 	<_field_custom name="FX" />
-	<_field_tag_reference_64 name="tracking area near ENTER effect#Triggered when player ENTERS tracking area near range. Plays on the player." />
-	<_field_tag_reference_64 name="tracking area near EXIT effect#Triggered when player EXITS tracking area near range. Plays on the player." />
-	<_field_tag_reference_64 name="ping success effect#Triggered when player successfully pings something. Plays at trackable object's location for duration of ping success." />
-	<_field_tag_reference_64 name="scan complete effect#Triggered when player successfully scans a tracking object. Plays on the player." />
-	<_field_tag_reference_64 name="scan fail effect#Triggered when player fails to scans a tracking object. Plays on the player." />
-	<_field_tag_reference_64 name="scan loop effect#Triggered when player is scanning a tracking object. Plays on the player." />
+	<_field_tag_reference_64 name="tracking area near ENTER effect#Triggered when player ENTERS tracking area near range. Plays on the player." validtags="effe" />
+	<_field_tag_reference_64 name="tracking area near EXIT effect#Triggered when player EXITS tracking area near range. Plays on the player." validtags="effe" />
+	<_field_tag_reference_64 name="ping success effect#Triggered when player successfully pings something. Plays at trackable object's location for duration of ping success." validtags="effe" />
+	<_field_tag_reference_64 name="scan complete effect#Triggered when player successfully scans a tracking object. Plays on the player." validtags="effe" />
+	<_field_tag_reference_64 name="scan fail effect#Triggered when player fails to scans a tracking object. Plays on the player." validtags="effe" />
+	<_field_tag_reference_64 name="scan loop effect#Triggered when player is scanning a tracking object. Plays on the player." validtags="effe" />
 	<_field_custom name="Ping Signal Wave" />
-	<_field_struct name="ping signal wave" />
-	<_field_custom name="tracking mode data" />
-	<_field_struct name="tracking mode data" />
-	<_field_long_integer name="number of data columns#number of data columns, must be at least 1 and rows x columns must be less than 10,000" />
-	<_field_long_integer name="number of data rows#number of data rows, must be at least 1 and rows x columns must be less than 10,000" />
-	<_field_real name="depth#the depth of the plane of the signal (regardless of data point size or number)" />
-	<_field_real name="height#the height of the plane of the signal, noise and signal values are calculated against this (regardless of data point size or number)" />
-	<_field_real name="width#the width of the plane of the signal (regardless of data point size or number)" />
-	<_field_real name="data point size#the size of the data point texture" />
-	<_field_real_point_3d name="wave offset#offset of the wave from the marker x+ right, y+ up, z+ forward" />
-	<_field_custom name="ping signal" />
-	<_field_struct name="ping signal" />
-	<_field_real_bounds name="amplitude percentage#Affects the min/max height of ping success peaks in the signal" />
-	<_field_real name="domain half size#defines the domain of the normal distribution: [-size, +size]" />
-	<_field_explanation name="sigma">effects the &quot;pointiness&quot; of the signal.  The low value will be used when really close to the object and you want a spike in the wave form. The high value will be used when far from the object and you want a shallower wave form.  See: http://en.wikipedia.org/wiki/Normal_distribution</_field_explanation>
-	<_field_real_bounds name="sigma effects the &quot;pointyness&quot; of the signal: " />
-	<_field_fraction_bounds name="z axis-min-max percentage#the min max depth the signal will effect the plane (Can be ignored in the shader)" />
-	<_field_custom name="scanning mode data" />
-	<_field_struct name="scanning mode data" />
-	<_field_long_integer name="number of data columns#number of data columns, must be at least 1 and rows x columns must be less than 10,000" />
-	<_field_long_integer name="number of data rows#number of data rows, must be at least 1 and rows x columns must be less than 10,000" />
-	<_field_real name="depth#the depth of the plane of the signal (regardless of data point size or number)" />
-	<_field_real name="height#the height of the plane of the signal, noise and signal values are calculated against this (regardless of data point size or number)" />
-	<_field_real name="width#the width of the plane of the signal (regardless of data point size or number)" />
-	<_field_real name="data point size#the size of the data point texture" />
-	<_field_real_point_3d name="wave offset#offset of the wave from the marker x+ right, y+ up, z+ forward" />
-	<_field_real name="scanning hint amplitude#the distance the particles should move to provide a hint during the scan mode" />
-	<_field_real name="scanning hint frequency#the frequency of the hint during the scan mode" />
-	<_field_real name="the max initial scan particle velocity#the max initial particle velocity towards the hint target" />
-	<_field_real name="noise duration enter#number of seconds over which to linearly scale up the noise after getting near enough to the signal" />
-	<_field_real name="noise duration exit#number of seconds over which to linearly scale down the noise after getting far enough away from the signal" />
-	<_field_custom name="signal noise x 1" />
-	<_field_struct name="signal noise x 1 (left to right)" />
-	<_field_byte_flags name="flags">
-		<item Name="is scaled by distance" />
-	</_field_byte_flags>
-	<_field_pad name="pad0" length="3" />
-	<_field_real name="frequency modulation#Affects wave direction and distance between peaks" />
-	<_field_real_bounds name="amplitude modulation percentage (min to max)#Affects peak heights" />
-	<_field_real name="phase#Affects speed at which waves move across" />
-	<_field_custom name="signal noise x 2" />
-	<_field_struct name="signal noise x 2 (left to right)" />
-	<_field_byte_flags name="flags">
-		<item Name="is scaled by distance" />
-	</_field_byte_flags>
-	<_field_pad name="pad0" length="3" />
-	<_field_real name="frequency modulation#Affects wave direction and distance between peaks" />
-	<_field_real_bounds name="amplitude modulation percentage (min to max)#Affects peak heights" />
-	<_field_real name="phase#Affects speed at which waves move across" />
-	<_field_custom name="signal noise z 1" />
-	<_field_struct name="signal noise z 1 (front to back)" />
-	<_field_byte_flags name="flags">
-		<item Name="is scaled by distance" />
-	</_field_byte_flags>
-	<_field_pad name="pad0" length="3" />
-	<_field_real name="frequency modulation#Affects wave direction and distance between peaks" />
-	<_field_real_bounds name="amplitude modulation percentage (min to max)#Affects peak heights" />
-	<_field_real name="phase#Affects speed at which waves move across" />
-	<_field_custom name="signal noise z 2" />
-	<_field_struct name="signal noise z 2 (front to back)" />
-	<_field_byte_flags name="flags">
-		<item Name="is scaled by distance" />
-	</_field_byte_flags>
-	<_field_pad name="pad0" length="3" />
-	<_field_real name="frequency modulation#Affects wave direction and distance between peaks" />
-	<_field_real_bounds name="amplitude modulation percentage (min to max)#Affects peak heights" />
-	<_field_real name="phase#Affects speed at which waves move across" />
+	<_field_struct name="ping signal wave" srcguid="600dffd5-4c59-cb29-3b2b-99a7ecdf13fb">
+		<_field_custom name="tracking mode data" />
+		<_field_struct name="tracking mode data" srcguid="43c8cf3d-4a9d-9fb3-383d-b5b4ab9d9dea">
+			<_field_long_integer name="number of data columns#number of data columns, must be at least 1 and rows x columns must be less than 10,000" />
+			<_field_long_integer name="number of data rows#number of data rows, must be at least 1 and rows x columns must be less than 10,000" />
+			<_field_real name="depth#the depth of the plane of the signal (regardless of data point size or number)" />
+			<_field_real name="height#the height of the plane of the signal, noise and signal values are calculated against this (regardless of data point size or number)" />
+			<_field_real name="width#the width of the plane of the signal (regardless of data point size or number)" />
+			<_field_real name="data point size#the size of the data point texture" />
+			<_field_real_point_3d name="wave offset#offset of the wave from the marker x+ right, y+ up, z+ forward" />
+		</_field_struct>
+		<_field_custom name="ping signal" />
+		<_field_struct name="ping signal" srcguid="2aef0a9e-41eb-6d96-4f15-468562b36ee2">
+			<_field_real_bounds name="amplitude percentage#Affects the min/max height of ping success peaks in the signal" />
+			<_field_real name="domain half size#defines the domain of the normal distribution: [-size, +size]" />
+			<_field_explanation name="sigma">effects the "pointiness" of the signal.  The low value will be used when really close to the object and you want a spike in the wave form. The high value will be used when far from the object and you want a shallower wave form.  See: http://en.wikipedia.org/wiki/Normal_distribution</_field_explanation>
+			<_field_real_bounds name="sigma effects the &amp;quot;pointyness&amp;quot; of the signal: " />
+			<_field_fraction_bounds name="z axis-min-max percentage#the min max depth the signal will effect the plane (Can be ignored in the shader)" />
+		</_field_struct>
+		<_field_custom name="scanning mode data" />
+		<_field_struct name="scanning mode data" srcguid="43c8cf3d-4a9d-9fb3-383d-b5b4ab9d9dea">
+			<_field_long_integer name="number of data columns#number of data columns, must be at least 1 and rows x columns must be less than 10,000" />
+			<_field_long_integer name="number of data rows#number of data rows, must be at least 1 and rows x columns must be less than 10,000" />
+			<_field_real name="depth#the depth of the plane of the signal (regardless of data point size or number)" />
+			<_field_real name="height#the height of the plane of the signal, noise and signal values are calculated against this (regardless of data point size or number)" />
+			<_field_real name="width#the width of the plane of the signal (regardless of data point size or number)" />
+			<_field_real name="data point size#the size of the data point texture" />
+			<_field_real_point_3d name="wave offset#offset of the wave from the marker x+ right, y+ up, z+ forward" />
+		</_field_struct>
+		<_field_real name="scanning hint amplitude#the distance the particles should move to provide a hint during the scan mode" />
+		<_field_real name="scanning hint frequency#the frequency of the hint during the scan mode" />
+		<_field_real name="the max initial scan particle velocity#the max initial particle velocity towards the hint target" />
+		<_field_real name="noise duration enter#number of seconds over which to linearly scale up the noise after getting near enough to the signal" />
+		<_field_real name="noise duration exit#number of seconds over which to linearly scale down the noise after getting far enough away from the signal" />
+		<_field_custom name="signal noise x 1" />
+		<_field_struct name="signal noise x 1 (left to right)" srcguid="9efcead5-4c53-ed0f-082c-59a6beb2ff8c">
+			<_field_byte_flags name="flags">
+				<item Name="is scaled by distance" />
+			</_field_byte_flags>
+			<_field_pad name="pad0" length="3" />
+			<_field_real name="frequency modulation#Affects wave direction and distance between peaks" />
+			<_field_real_bounds name="amplitude modulation percentage (min to max)#Affects peak heights" />
+			<_field_real name="phase#Affects speed at which waves move across" />
+		</_field_struct>
+		<_field_custom name="signal noise x 2" />
+		<_field_struct name="signal noise x 2 (left to right)" srcguid="9efcead5-4c53-ed0f-082c-59a6beb2ff8c">
+			<_field_byte_flags name="flags">
+				<item Name="is scaled by distance" />
+			</_field_byte_flags>
+			<_field_pad name="pad0" length="3" />
+			<_field_real name="frequency modulation#Affects wave direction and distance between peaks" />
+			<_field_real_bounds name="amplitude modulation percentage (min to max)#Affects peak heights" />
+			<_field_real name="phase#Affects speed at which waves move across" />
+		</_field_struct>
+		<_field_custom name="signal noise z 1" />
+		<_field_struct name="signal noise z 1 (front to back)" srcguid="9efcead5-4c53-ed0f-082c-59a6beb2ff8c">
+			<_field_byte_flags name="flags">
+				<item Name="is scaled by distance" />
+			</_field_byte_flags>
+			<_field_pad name="pad0" length="3" />
+			<_field_real name="frequency modulation#Affects wave direction and distance between peaks" />
+			<_field_real_bounds name="amplitude modulation percentage (min to max)#Affects peak heights" />
+			<_field_real name="phase#Affects speed at which waves move across" />
+		</_field_struct>
+		<_field_custom name="signal noise z 2" />
+		<_field_struct name="signal noise z 2 (front to back)" srcguid="9efcead5-4c53-ed0f-082c-59a6beb2ff8c">
+			<_field_byte_flags name="flags">
+				<item Name="is scaled by distance" />
+			</_field_byte_flags>
+			<_field_pad name="pad0" length="3" />
+			<_field_real name="frequency modulation#Affects wave direction and distance between peaks" />
+			<_field_real_bounds name="amplitude modulation percentage (min to max)#Affects peak heights" />
+			<_field_real name="phase#Affects speed at which waves move across" />
+		</_field_struct>
+	</_field_struct>
 </plugin>

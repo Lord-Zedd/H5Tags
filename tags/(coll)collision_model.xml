@@ -1,12 +1,13 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_long_integer name="import_info_checksum*!" />
-	<_field_block_64 name="errors*" max="512" guid="3cbb78d5-4d83-ca07-1a29-948996f4138e">
+	<_field_block_64 name="errors*" max="512" srcguid="3cbb78d5-4d83-ca07-1a29-948996f4138e" srcName="global_error_report_categories_block">
 		<_field_long_string name="name^*" />
 		<_field_short_enum name="report type*">
 			<item Name="silent" />
@@ -24,7 +25,7 @@
 		<_field_short_integer name="runtime generation flags!" />
 		<_field_pad name="WVTP" length="2" />
 		<_field_long_integer name="runtime something~!" />
-		<_field_block_64 name="reports*" max="1048576" guid="ee6aab20-499f-3227-d608-45919eaafc40">
+		<_field_block_64 name="reports*" max="1048576" srcguid="ee6aab20-499f-3227-d608-45919eaafc40" srcName="error_reports_block">
 			<_field_char_enum name="type*">
 				<item Name="silent" />
 				<item Name="comment" />
@@ -49,200 +50,212 @@
 			<_field_long_integer name="source identifier*" />
 			<_field_string name="source filename*" />
 			<_field_long_integer name="source line number*" />
-			<_field_block_64 name="vertices*" max="1048576" guid="b44d11d1-463d-a884-1325-55b95004390e">
-				<_field_struct name="point" />
-				<_field_real_point_3d name="position*" />
-				<_field_array name="node indices*">
-					<_field_char_integer name="node index*" />
-					<_field_char_integer name="node index*" />
-					<_field_char_integer name="node index*" />
-					<_field_char_integer name="node index*" />
-				</_field_array>
-				<_field_array name="node weights*">
-					<_field_real name="node weight*" />
-					<_field_real name="node weight*" />
-					<_field_real name="node weight*" />
-					<_field_real name="node weight*" />
-				</_field_array>
+			<_field_block_64 name="vertices*" max="1048576" srcguid="b44d11d1-463d-a884-1325-55b95004390e" srcName="error_report_vertices_block">
+				<_field_struct name="point" srcguid="b6c2368c-4a62-7853-0cf4-8298f51e18e2">
+					<_field_real_point_3d name="position*" />
+					<_field_array name="node indices*">
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+					</_field_array>
+					<_field_array name="node weights*">
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+					</_field_array>
+				</_field_struct>
 				<_field_real_argb_color name="color*" />
 				<_field_real name="screen size*" />
 			</_field_block_64>
-			<_field_block_64 name="vectors*" max="1048576" guid="f617e038-4e8d-0b4e-b986-4faf1f5e7402">
-				<_field_struct name="point" />
-				<_field_real_point_3d name="position*" />
-				<_field_array name="node indices*">
-					<_field_char_integer name="node index*" />
-					<_field_char_integer name="node index*" />
-					<_field_char_integer name="node index*" />
-					<_field_char_integer name="node index*" />
-				</_field_array>
-				<_field_array name="node weights*">
-					<_field_real name="node weight*" />
-					<_field_real name="node weight*" />
-					<_field_real name="node weight*" />
-					<_field_real name="node weight*" />
-				</_field_array>
+			<_field_block_64 name="vectors*" max="1048576" srcguid="f617e038-4e8d-0b4e-b986-4faf1f5e7402" srcName="error_report_vectors_block">
+				<_field_struct name="point" srcguid="b6c2368c-4a62-7853-0cf4-8298f51e18e2">
+					<_field_real_point_3d name="position*" />
+					<_field_array name="node indices*">
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+					</_field_array>
+					<_field_array name="node weights*">
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+					</_field_array>
+				</_field_struct>
 				<_field_real_argb_color name="color*" />
 				<_field_real_vector_3d name="normal*" />
 				<_field_real name="screen length*" />
 			</_field_block_64>
-			<_field_block_64 name="lines*" max="1048576" guid="1c172d3c-4356-604a-48de-1b8f8482cae0">
+			<_field_block_64 name="lines*" max="1048576" srcguid="1c172d3c-4356-604a-48de-1b8f8482cae0" srcName="error_report_lines_block">
 				<_field_array name="points*">
-					<_field_struct name="point" />
-					<_field_real_point_3d name="position*" />
-					<_field_array name="node indices*">
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-					</_field_array>
-					<_field_array name="node weights*">
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-					</_field_array>
-					<_field_struct name="point" />
-					<_field_real_point_3d name="position*" />
-					<_field_array name="node indices*">
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-					</_field_array>
-					<_field_array name="node weights*">
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-					</_field_array>
+					<_field_struct name="point" srcguid="b6c2368c-4a62-7853-0cf4-8298f51e18e2">
+						<_field_real_point_3d name="position*" />
+						<_field_array name="node indices*">
+							<_field_char_integer name="node index*" />
+							<_field_char_integer name="node index*" />
+							<_field_char_integer name="node index*" />
+							<_field_char_integer name="node index*" />
+						</_field_array>
+						<_field_array name="node weights*">
+							<_field_real name="node weight*" />
+							<_field_real name="node weight*" />
+							<_field_real name="node weight*" />
+							<_field_real name="node weight*" />
+						</_field_array>
+					</_field_struct>
+					<_field_struct name="point" srcguid="b6c2368c-4a62-7853-0cf4-8298f51e18e2">
+						<_field_real_point_3d name="position*" />
+						<_field_array name="node indices*">
+							<_field_char_integer name="node index*" />
+							<_field_char_integer name="node index*" />
+							<_field_char_integer name="node index*" />
+							<_field_char_integer name="node index*" />
+						</_field_array>
+						<_field_array name="node weights*">
+							<_field_real name="node weight*" />
+							<_field_real name="node weight*" />
+							<_field_real name="node weight*" />
+							<_field_real name="node weight*" />
+						</_field_array>
+					</_field_struct>
 				</_field_array>
 				<_field_real_argb_color name="color*" />
 			</_field_block_64>
-			<_field_block_64 name="triangles*" max="1048576" guid="f926e761-44e3-0012-1631-17857a34962b">
+			<_field_block_64 name="triangles*" max="1048576" srcguid="f926e761-44e3-0012-1631-17857a34962b" srcName="error_report_triangles_block">
 				<_field_array name="points*">
-					<_field_struct name="point" />
-					<_field_real_point_3d name="position*" />
-					<_field_array name="node indices*">
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-					</_field_array>
-					<_field_array name="node weights*">
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-					</_field_array>
-					<_field_struct name="point" />
-					<_field_real_point_3d name="position*" />
-					<_field_array name="node indices*">
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-					</_field_array>
-					<_field_array name="node weights*">
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-					</_field_array>
-					<_field_struct name="point" />
-					<_field_real_point_3d name="position*" />
-					<_field_array name="node indices*">
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-					</_field_array>
-					<_field_array name="node weights*">
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-					</_field_array>
+					<_field_struct name="point" srcguid="b6c2368c-4a62-7853-0cf4-8298f51e18e2">
+						<_field_real_point_3d name="position*" />
+						<_field_array name="node indices*">
+							<_field_char_integer name="node index*" />
+							<_field_char_integer name="node index*" />
+							<_field_char_integer name="node index*" />
+							<_field_char_integer name="node index*" />
+						</_field_array>
+						<_field_array name="node weights*">
+							<_field_real name="node weight*" />
+							<_field_real name="node weight*" />
+							<_field_real name="node weight*" />
+							<_field_real name="node weight*" />
+						</_field_array>
+					</_field_struct>
+					<_field_struct name="point" srcguid="b6c2368c-4a62-7853-0cf4-8298f51e18e2">
+						<_field_real_point_3d name="position*" />
+						<_field_array name="node indices*">
+							<_field_char_integer name="node index*" />
+							<_field_char_integer name="node index*" />
+							<_field_char_integer name="node index*" />
+							<_field_char_integer name="node index*" />
+						</_field_array>
+						<_field_array name="node weights*">
+							<_field_real name="node weight*" />
+							<_field_real name="node weight*" />
+							<_field_real name="node weight*" />
+							<_field_real name="node weight*" />
+						</_field_array>
+					</_field_struct>
+					<_field_struct name="point" srcguid="b6c2368c-4a62-7853-0cf4-8298f51e18e2">
+						<_field_real_point_3d name="position*" />
+						<_field_array name="node indices*">
+							<_field_char_integer name="node index*" />
+							<_field_char_integer name="node index*" />
+							<_field_char_integer name="node index*" />
+							<_field_char_integer name="node index*" />
+						</_field_array>
+						<_field_array name="node weights*">
+							<_field_real name="node weight*" />
+							<_field_real name="node weight*" />
+							<_field_real name="node weight*" />
+							<_field_real name="node weight*" />
+						</_field_array>
+					</_field_struct>
 				</_field_array>
 				<_field_real_argb_color name="color*" />
 			</_field_block_64>
-			<_field_block_64 name="quads*" max="1048576" guid="d1071621-4305-e7d8-cc9f-ea8abf5529c5">
+			<_field_block_64 name="quads*" max="1048576" srcguid="d1071621-4305-e7d8-cc9f-ea8abf5529c5" srcName="error_report_quads_block">
 				<_field_array name="points*">
-					<_field_struct name="point" />
-					<_field_real_point_3d name="position*" />
-					<_field_array name="node indices*">
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-					</_field_array>
-					<_field_array name="node weights*">
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-					</_field_array>
-					<_field_struct name="point" />
-					<_field_real_point_3d name="position*" />
-					<_field_array name="node indices*">
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-					</_field_array>
-					<_field_array name="node weights*">
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-					</_field_array>
-					<_field_struct name="point" />
-					<_field_real_point_3d name="position*" />
-					<_field_array name="node indices*">
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-					</_field_array>
-					<_field_array name="node weights*">
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-					</_field_array>
-					<_field_struct name="point" />
-					<_field_real_point_3d name="position*" />
-					<_field_array name="node indices*">
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-						<_field_char_integer name="node index*" />
-					</_field_array>
-					<_field_array name="node weights*">
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-						<_field_real name="node weight*" />
-					</_field_array>
+					<_field_struct name="point" srcguid="b6c2368c-4a62-7853-0cf4-8298f51e18e2">
+						<_field_real_point_3d name="position*" />
+						<_field_array name="node indices*">
+							<_field_char_integer name="node index*" />
+							<_field_char_integer name="node index*" />
+							<_field_char_integer name="node index*" />
+							<_field_char_integer name="node index*" />
+						</_field_array>
+						<_field_array name="node weights*">
+							<_field_real name="node weight*" />
+							<_field_real name="node weight*" />
+							<_field_real name="node weight*" />
+							<_field_real name="node weight*" />
+						</_field_array>
+					</_field_struct>
+					<_field_struct name="point" srcguid="b6c2368c-4a62-7853-0cf4-8298f51e18e2">
+						<_field_real_point_3d name="position*" />
+						<_field_array name="node indices*">
+							<_field_char_integer name="node index*" />
+							<_field_char_integer name="node index*" />
+							<_field_char_integer name="node index*" />
+							<_field_char_integer name="node index*" />
+						</_field_array>
+						<_field_array name="node weights*">
+							<_field_real name="node weight*" />
+							<_field_real name="node weight*" />
+							<_field_real name="node weight*" />
+							<_field_real name="node weight*" />
+						</_field_array>
+					</_field_struct>
+					<_field_struct name="point" srcguid="b6c2368c-4a62-7853-0cf4-8298f51e18e2">
+						<_field_real_point_3d name="position*" />
+						<_field_array name="node indices*">
+							<_field_char_integer name="node index*" />
+							<_field_char_integer name="node index*" />
+							<_field_char_integer name="node index*" />
+							<_field_char_integer name="node index*" />
+						</_field_array>
+						<_field_array name="node weights*">
+							<_field_real name="node weight*" />
+							<_field_real name="node weight*" />
+							<_field_real name="node weight*" />
+							<_field_real name="node weight*" />
+						</_field_array>
+					</_field_struct>
+					<_field_struct name="point" srcguid="b6c2368c-4a62-7853-0cf4-8298f51e18e2">
+						<_field_real_point_3d name="position*" />
+						<_field_array name="node indices*">
+							<_field_char_integer name="node index*" />
+							<_field_char_integer name="node index*" />
+							<_field_char_integer name="node index*" />
+							<_field_char_integer name="node index*" />
+						</_field_array>
+						<_field_array name="node weights*">
+							<_field_real name="node weight*" />
+							<_field_real name="node weight*" />
+							<_field_real name="node weight*" />
+							<_field_real name="node weight*" />
+						</_field_array>
+					</_field_struct>
 				</_field_array>
 				<_field_real_argb_color name="color*" />
 			</_field_block_64>
-			<_field_block_64 name="comments*" max="1048576" guid="709a9566-4617-dea3-b950-ff8a50e96ddb">
+			<_field_block_64 name="comments*" max="1048576" srcguid="709a9566-4617-dea3-b950-ff8a50e96ddb" srcName="error_report_comments_block">
 				<_field_data_64 name="text*" />
-				<_field_struct name="point" />
-				<_field_real_point_3d name="position*" />
-				<_field_array name="node indices*">
-					<_field_char_integer name="node index*" />
-					<_field_char_integer name="node index*" />
-					<_field_char_integer name="node index*" />
-					<_field_char_integer name="node index*" />
-				</_field_array>
-				<_field_array name="node weights*">
-					<_field_real name="node weight*" />
-					<_field_real name="node weight*" />
-					<_field_real name="node weight*" />
-					<_field_real name="node weight*" />
-				</_field_array>
+				<_field_struct name="point" srcguid="b6c2368c-4a62-7853-0cf4-8298f51e18e2">
+					<_field_real_point_3d name="position*" />
+					<_field_array name="node indices*">
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+						<_field_char_integer name="node index*" />
+					</_field_array>
+					<_field_array name="node weights*">
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+						<_field_real name="node weight*" />
+					</_field_array>
+				</_field_struct>
 				<_field_real_argb_color name="color*" />
 			</_field_block_64>
 			<_field_long_integer name="report key*" />
@@ -260,106 +273,107 @@
 		<item Name="processed*!" />
 		<item Name="has two sided surfaces" />
 	</_field_long_flags>
-	<_field_block_64 name="materials*" max="32" guid="7b10ba44-47a9-cca1-5cd0-00ba73b2b022">
+	<_field_block_64 name="materials*" max="32" srcguid="7b10ba44-47a9-cca1-5cd0-00ba73b2b022" srcName="collision_model_material_block">
 		<_field_string_id name="name^*" />
 	</_field_block_64>
-	<_field_block_64 name="regions*" max="32" guid="a2b3d98b-46ce-4f42-fe39-23a24e4003c3">
+	<_field_block_64 name="regions*" max="32" srcguid="a2b3d98b-46ce-4f42-fe39-23a24e4003c3" srcName="collision_model_region_block">
 		<_field_string_id name="name^*" />
-		<_field_block_64 name="permutations*" max="1023" guid="ab85d1d7-4cd0-6fed-f6d6-469d6d1cee52">
+		<_field_block_64 name="permutations*" max="1023" srcguid="ab85d1d7-4cd0-6fed-f6d6-469d6d1cee52" srcName="collision_model_permutation_block">
 			<_field_string_id name="name^*" />
 			<_field_short_integer name="resourceBspOffset*!" />
 			<_field_short_integer name="resourceBspCount*!" />
-			<_field_block_64 name="bsps*" max="64" guid="036840d2-48c1-5316-4372-7f884fb840b1">
+			<_field_block_64 name="bsps*" max="64" srcguid="036840d2-48c1-5316-4372-7f884fb840b1" srcName="collision_model_bsp_block">
 				<_field_short_integer name="node index*" />
 				<_field_pad name="KXGCEIEI" length="2" />
-				<_field_struct name="bsp*" />
-				<_field_block_64 name="bsp3d nodes*" max="8388608" guid="b5d8fc21-48e7-ff8e-521f-6192a371733e">
-					<_field_int64_integer name="node data designator!" />
-				</_field_block_64>
-				<_field_block_64 name="bsp3d supernodes*" max="2048" guid="abcdc201-4fa9-1012-b40a-40a7bcb41ae0">
-					<_field_real name="plane 0*!" />
-					<_field_real name="plane 1*!" />
-					<_field_real name="plane 2*!" />
-					<_field_real name="plane 3*!" />
-					<_field_real name="plane 4*!" />
-					<_field_real name="plane 5*!" />
-					<_field_real name="plane 6*!" />
-					<_field_real name="plane 7*!" />
-					<_field_real name="plane 8*!" />
-					<_field_real name="plane 9*!" />
-					<_field_real name="plane10*!" />
-					<_field_real name="plane11*!" />
-					<_field_real name="plane12*!" />
-					<_field_real name="plane13*!" />
-					<_field_real name="plane14*!" />
-					<_field_long_integer name="plane dimensions*!" />
-					<_field_long_integer name="child index 0*!" />
-					<_field_long_integer name="child index 1*!" />
-					<_field_long_integer name="child index 2*!" />
-					<_field_long_integer name="child index 3*!" />
-					<_field_long_integer name="child index 4*!" />
-					<_field_long_integer name="child index 5*!" />
-					<_field_long_integer name="child index 6*!" />
-					<_field_long_integer name="child index 7*!" />
-					<_field_long_integer name="child index 8*!" />
-					<_field_long_integer name="child index 9*!" />
-					<_field_long_integer name="child index10*!" />
-					<_field_long_integer name="child index11*!" />
-					<_field_long_integer name="child index12*!" />
-					<_field_long_integer name="child index13*!" />
-					<_field_long_integer name="child index14*!" />
-					<_field_long_integer name="child index15*!" />
-				</_field_block_64>
-				<_field_block_64 name="planes*" max="536870911" guid="5d188a8d-4e0d-719c-daa6-1580eb42e322">
-					<_field_real_plane_3d name="plane*" />
-				</_field_block_64>
-				<_field_block_64 name="leaves*" max="8388608" guid="a5fd8ee3-4ecc-9a64-fbf2-eb9ca10c0345">
-					<_field_byte_flags name="flags*">
-						<item Name="contains double-sided surfaces" />
-					</_field_byte_flags>
-					<_field_pad name="pad" length="1" />
-					<_field_word_integer name="bsp2d reference count*" />
-					<_field_dword_integer name="first bsp2d reference*" />
-				</_field_block_64>
-				<_field_block_64 name="bsp2d references*" max="196608" guid="591e809e-445f-8c38-6fde-89b8ff74543b">
-					<_field_short_integer name="plane*" />
-					<_field_short_integer name="bsp2d node*" />
-				</_field_block_64>
-				<_field_block_64 name="bsp2d nodes*" max="32767" guid="6cd60c8c-4124-c73b-8c40-39b3bed36a96">
-					<_field_real_plane_2d name="plane*" />
-					<_field_short_integer name="left child*" />
-					<_field_short_integer name="right child*" />
-				</_field_block_64>
-				<_field_block_64 name="surfaces*" max="32767" guid="7ab81935-4b88-010a-80de-12ab3991cd85">
-					<_field_word_integer name="plane index*" />
-					<_field_word_integer name="first edge*" />
-					<_field_short_integer name="material*" />
-					<_field_byte_flags name="flags*">
-						<item Name="two sided" />
-						<item Name="invisible" />
-						<item Name="climbable" />
-						<item Name="invalid" />
-						<item Name="conveyor" />
-						<item Name="slip" />
-						<item Name="plane negated" />
-					</_field_byte_flags>
-					<_field_byte_integer name="best plane calculation vertex index *!" />
-				</_field_block_64>
-				<_field_block_64 name="edges*" max="65535" guid="b51da635-4400-ec53-338c-b581fdcadcd1">
-					<_field_word_integer name="start vertex*" />
-					<_field_word_integer name="end vertex*" />
-					<_field_word_integer name="forward edge*" />
-					<_field_word_integer name="reverse edge*" />
-					<_field_word_integer name="left surface*" />
-					<_field_word_integer name="right surface*" />
-				</_field_block_64>
-				<_field_block_64 name="vertices*" max="131072" guid="6c3f6a60-4c6a-1fce-65e2-898f602f6de5">
-					<_field_real_point_3d name="point*" />
-					<_field_word_integer name="first edge*" />
-					<_field_short_integer name="sink*!" />
-				</_field_block_64>
+				<_field_struct name="bsp*" srcguid="130d16e9-4a1e-a468-ad58-19a9eca7da3b">
+					<_field_block_64 name="bsp3d nodes*" max="8388608" srcguid="b5d8fc21-48e7-ff8e-521f-6192a371733e" srcName="bsp3d_nodes_block">
+						<_field_int64_integer name="node data designator!" />
+					</_field_block_64>
+					<_field_block_64 name="bsp3d supernodes*" max="2048" srcguid="abcdc201-4fa9-1012-b40a-40a7bcb41ae0" srcName="bsp3d_kd_supdernodes_block">
+						<_field_real name="plane 0*!" />
+						<_field_real name="plane 1*!" />
+						<_field_real name="plane 2*!" />
+						<_field_real name="plane 3*!" />
+						<_field_real name="plane 4*!" />
+						<_field_real name="plane 5*!" />
+						<_field_real name="plane 6*!" />
+						<_field_real name="plane 7*!" />
+						<_field_real name="plane 8*!" />
+						<_field_real name="plane 9*!" />
+						<_field_real name="plane10*!" />
+						<_field_real name="plane11*!" />
+						<_field_real name="plane12*!" />
+						<_field_real name="plane13*!" />
+						<_field_real name="plane14*!" />
+						<_field_long_integer name="plane dimensions*!" />
+						<_field_long_integer name="child index 0*!" />
+						<_field_long_integer name="child index 1*!" />
+						<_field_long_integer name="child index 2*!" />
+						<_field_long_integer name="child index 3*!" />
+						<_field_long_integer name="child index 4*!" />
+						<_field_long_integer name="child index 5*!" />
+						<_field_long_integer name="child index 6*!" />
+						<_field_long_integer name="child index 7*!" />
+						<_field_long_integer name="child index 8*!" />
+						<_field_long_integer name="child index 9*!" />
+						<_field_long_integer name="child index10*!" />
+						<_field_long_integer name="child index11*!" />
+						<_field_long_integer name="child index12*!" />
+						<_field_long_integer name="child index13*!" />
+						<_field_long_integer name="child index14*!" />
+						<_field_long_integer name="child index15*!" />
+					</_field_block_64>
+					<_field_block_64 name="planes*" max="536870911" srcguid="5d188a8d-4e0d-719c-daa6-1580eb42e322" srcName="planes_block">
+						<_field_real_plane_3d name="plane*" />
+					</_field_block_64>
+					<_field_block_64 name="leaves*" max="8388608" srcguid="a5fd8ee3-4ecc-9a64-fbf2-eb9ca10c0345" srcName="leaves_block">
+						<_field_byte_flags name="flags*">
+							<item Name="contains double-sided surfaces" />
+						</_field_byte_flags>
+						<_field_pad name="pad" length="1" />
+						<_field_word_integer name="bsp2d reference count*" />
+						<_field_dword_integer name="first bsp2d reference*" />
+					</_field_block_64>
+					<_field_block_64 name="bsp2d references*" max="196608" srcguid="591e809e-445f-8c38-6fde-89b8ff74543b" srcName="bsp2d_references_block">
+						<_field_short_integer name="plane*" />
+						<_field_short_integer name="bsp2d node*" />
+					</_field_block_64>
+					<_field_block_64 name="bsp2d nodes*" max="32767" srcguid="6cd60c8c-4124-c73b-8c40-39b3bed36a96" srcName="bsp2d_nodes_block">
+						<_field_real_plane_2d name="plane*" />
+						<_field_short_integer name="left child*" />
+						<_field_short_integer name="right child*" />
+					</_field_block_64>
+					<_field_block_64 name="surfaces*" max="32767" srcguid="7ab81935-4b88-010a-80de-12ab3991cd85" srcName="surfaces_block">
+						<_field_word_integer name="plane index*" />
+						<_field_word_integer name="first edge*" />
+						<_field_short_integer name="material*" />
+						<_field_byte_flags name="flags*">
+							<item Name="two sided" />
+							<item Name="invisible" />
+							<item Name="climbable" />
+							<item Name="invalid" />
+							<item Name="conveyor" />
+							<item Name="slip" />
+							<item Name="plane negated" />
+						</_field_byte_flags>
+						<_field_byte_integer name="best plane calculation vertex index *!" />
+					</_field_block_64>
+					<_field_block_64 name="edges*" max="65535" srcguid="b51da635-4400-ec53-338c-b581fdcadcd1" srcName="edges_block">
+						<_field_word_integer name="start vertex*" />
+						<_field_word_integer name="end vertex*" />
+						<_field_word_integer name="forward edge*" />
+						<_field_word_integer name="reverse edge*" />
+						<_field_word_integer name="left surface*" />
+						<_field_word_integer name="right surface*" />
+					</_field_block_64>
+					<_field_block_64 name="vertices*" max="131072" srcguid="6c3f6a60-4c6a-1fce-65e2-898f602f6de5" srcName="vertices_block">
+						<_field_real_point_3d name="point*" />
+						<_field_word_integer name="first edge*" />
+						<_field_short_integer name="sink*!" />
+					</_field_block_64>
+				</_field_struct>
 			</_field_block_64>
-			<_field_block_64 name="mopp_codes*" max="32767" guid="ee2bc898-4e98-8ad1-e551-43b676f65c63">
+			<_field_block_64 name="mopp_codes*" max="32767" srcguid="ee2bc898-4e98-8ad1-e551-43b676f65c63" srcName="mopp_code_definition_block">
 				<_field_int64_integer name="field pointer skip!~" />
 				<_field_short_integer name="size*!" />
 				<_field_short_integer name="count~*!" />
@@ -375,7 +389,7 @@
 				<_field_char_integer name="int8 m_buildType*!" />
 				<_field_pad name="pad2" length="7" />
 				<_field_pad name="pad64_01" length="4" />
-				<_field_block_64 name="mopp data block *!" max="16777216" guid="0eab741f-4408-f5d7-e132-5a9d6dfdd412">
+				<_field_block_64 name="mopp data block *!" max="16777216" srcguid="0eab741f-4408-f5d7-e132-5a9d6dfdd412" srcName="mopp_code_data_definition_block">
 					<_field_byte_integer name="mopp data*!" />
 				</_field_block_64>
 				<_field_char_integer name="mopp build type!*#they say it only matters for ps3" />
@@ -383,103 +397,104 @@
 			</_field_block_64>
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="cookie cutters*" max="32" guid="a2b3d98b-46ce-4f42-fe39-23a24e4003c3">
+	<_field_block_64 name="cookie cutters*" max="32" srcguid="a2b3d98b-46ce-4f42-fe39-23a24e4003c3" srcName="collision_model_region_block">
 		<_field_string_id name="name^*" />
-		<_field_block_64 name="permutations*" max="1023" guid="ab85d1d7-4cd0-6fed-f6d6-469d6d1cee52">
+		<_field_block_64 name="permutations*" max="1023" srcguid="ab85d1d7-4cd0-6fed-f6d6-469d6d1cee52" srcName="collision_model_permutation_block">
 			<_field_string_id name="name^*" />
 			<_field_short_integer name="resourceBspOffset*!" />
 			<_field_short_integer name="resourceBspCount*!" />
-			<_field_block_64 name="bsps*" max="64" guid="036840d2-48c1-5316-4372-7f884fb840b1">
+			<_field_block_64 name="bsps*" max="64" srcguid="036840d2-48c1-5316-4372-7f884fb840b1" srcName="collision_model_bsp_block">
 				<_field_short_integer name="node index*" />
 				<_field_pad name="KXGCEIEI" length="2" />
-				<_field_struct name="bsp*" />
-				<_field_block_64 name="bsp3d nodes*" max="8388608" guid="b5d8fc21-48e7-ff8e-521f-6192a371733e">
-					<_field_int64_integer name="node data designator!" />
-				</_field_block_64>
-				<_field_block_64 name="bsp3d supernodes*" max="2048" guid="abcdc201-4fa9-1012-b40a-40a7bcb41ae0">
-					<_field_real name="plane 0*!" />
-					<_field_real name="plane 1*!" />
-					<_field_real name="plane 2*!" />
-					<_field_real name="plane 3*!" />
-					<_field_real name="plane 4*!" />
-					<_field_real name="plane 5*!" />
-					<_field_real name="plane 6*!" />
-					<_field_real name="plane 7*!" />
-					<_field_real name="plane 8*!" />
-					<_field_real name="plane 9*!" />
-					<_field_real name="plane10*!" />
-					<_field_real name="plane11*!" />
-					<_field_real name="plane12*!" />
-					<_field_real name="plane13*!" />
-					<_field_real name="plane14*!" />
-					<_field_long_integer name="plane dimensions*!" />
-					<_field_long_integer name="child index 0*!" />
-					<_field_long_integer name="child index 1*!" />
-					<_field_long_integer name="child index 2*!" />
-					<_field_long_integer name="child index 3*!" />
-					<_field_long_integer name="child index 4*!" />
-					<_field_long_integer name="child index 5*!" />
-					<_field_long_integer name="child index 6*!" />
-					<_field_long_integer name="child index 7*!" />
-					<_field_long_integer name="child index 8*!" />
-					<_field_long_integer name="child index 9*!" />
-					<_field_long_integer name="child index10*!" />
-					<_field_long_integer name="child index11*!" />
-					<_field_long_integer name="child index12*!" />
-					<_field_long_integer name="child index13*!" />
-					<_field_long_integer name="child index14*!" />
-					<_field_long_integer name="child index15*!" />
-				</_field_block_64>
-				<_field_block_64 name="planes*" max="536870911" guid="5d188a8d-4e0d-719c-daa6-1580eb42e322">
-					<_field_real_plane_3d name="plane*" />
-				</_field_block_64>
-				<_field_block_64 name="leaves*" max="8388608" guid="a5fd8ee3-4ecc-9a64-fbf2-eb9ca10c0345">
-					<_field_byte_flags name="flags*">
-						<item Name="contains double-sided surfaces" />
-					</_field_byte_flags>
-					<_field_pad name="pad" length="1" />
-					<_field_word_integer name="bsp2d reference count*" />
-					<_field_dword_integer name="first bsp2d reference*" />
-				</_field_block_64>
-				<_field_block_64 name="bsp2d references*" max="196608" guid="591e809e-445f-8c38-6fde-89b8ff74543b">
-					<_field_short_integer name="plane*" />
-					<_field_short_integer name="bsp2d node*" />
-				</_field_block_64>
-				<_field_block_64 name="bsp2d nodes*" max="32767" guid="6cd60c8c-4124-c73b-8c40-39b3bed36a96">
-					<_field_real_plane_2d name="plane*" />
-					<_field_short_integer name="left child*" />
-					<_field_short_integer name="right child*" />
-				</_field_block_64>
-				<_field_block_64 name="surfaces*" max="32767" guid="7ab81935-4b88-010a-80de-12ab3991cd85">
-					<_field_word_integer name="plane index*" />
-					<_field_word_integer name="first edge*" />
-					<_field_short_integer name="material*" />
-					<_field_byte_flags name="flags*">
-						<item Name="two sided" />
-						<item Name="invisible" />
-						<item Name="climbable" />
-						<item Name="invalid" />
-						<item Name="conveyor" />
-						<item Name="slip" />
-						<item Name="plane negated" />
-					</_field_byte_flags>
-					<_field_byte_integer name="best plane calculation vertex index *!" />
-				</_field_block_64>
-				<_field_block_64 name="edges*" max="65535" guid="b51da635-4400-ec53-338c-b581fdcadcd1">
-					<_field_word_integer name="start vertex*" />
-					<_field_word_integer name="end vertex*" />
-					<_field_word_integer name="forward edge*" />
-					<_field_word_integer name="reverse edge*" />
-					<_field_word_integer name="left surface*" />
-					<_field_word_integer name="right surface*" />
-				</_field_block_64>
-				<_field_block_64 name="vertices*" max="131072" guid="6c3f6a60-4c6a-1fce-65e2-898f602f6de5">
-					<_field_real_point_3d name="point*" />
-					<_field_word_integer name="first edge*" />
-					<_field_short_integer name="sink*!" />
-				</_field_block_64>
+				<_field_struct name="bsp*" srcguid="130d16e9-4a1e-a468-ad58-19a9eca7da3b">
+					<_field_block_64 name="bsp3d nodes*" max="8388608" srcguid="b5d8fc21-48e7-ff8e-521f-6192a371733e" srcName="bsp3d_nodes_block">
+						<_field_int64_integer name="node data designator!" />
+					</_field_block_64>
+					<_field_block_64 name="bsp3d supernodes*" max="2048" srcguid="abcdc201-4fa9-1012-b40a-40a7bcb41ae0" srcName="bsp3d_kd_supdernodes_block">
+						<_field_real name="plane 0*!" />
+						<_field_real name="plane 1*!" />
+						<_field_real name="plane 2*!" />
+						<_field_real name="plane 3*!" />
+						<_field_real name="plane 4*!" />
+						<_field_real name="plane 5*!" />
+						<_field_real name="plane 6*!" />
+						<_field_real name="plane 7*!" />
+						<_field_real name="plane 8*!" />
+						<_field_real name="plane 9*!" />
+						<_field_real name="plane10*!" />
+						<_field_real name="plane11*!" />
+						<_field_real name="plane12*!" />
+						<_field_real name="plane13*!" />
+						<_field_real name="plane14*!" />
+						<_field_long_integer name="plane dimensions*!" />
+						<_field_long_integer name="child index 0*!" />
+						<_field_long_integer name="child index 1*!" />
+						<_field_long_integer name="child index 2*!" />
+						<_field_long_integer name="child index 3*!" />
+						<_field_long_integer name="child index 4*!" />
+						<_field_long_integer name="child index 5*!" />
+						<_field_long_integer name="child index 6*!" />
+						<_field_long_integer name="child index 7*!" />
+						<_field_long_integer name="child index 8*!" />
+						<_field_long_integer name="child index 9*!" />
+						<_field_long_integer name="child index10*!" />
+						<_field_long_integer name="child index11*!" />
+						<_field_long_integer name="child index12*!" />
+						<_field_long_integer name="child index13*!" />
+						<_field_long_integer name="child index14*!" />
+						<_field_long_integer name="child index15*!" />
+					</_field_block_64>
+					<_field_block_64 name="planes*" max="536870911" srcguid="5d188a8d-4e0d-719c-daa6-1580eb42e322" srcName="planes_block">
+						<_field_real_plane_3d name="plane*" />
+					</_field_block_64>
+					<_field_block_64 name="leaves*" max="8388608" srcguid="a5fd8ee3-4ecc-9a64-fbf2-eb9ca10c0345" srcName="leaves_block">
+						<_field_byte_flags name="flags*">
+							<item Name="contains double-sided surfaces" />
+						</_field_byte_flags>
+						<_field_pad name="pad" length="1" />
+						<_field_word_integer name="bsp2d reference count*" />
+						<_field_dword_integer name="first bsp2d reference*" />
+					</_field_block_64>
+					<_field_block_64 name="bsp2d references*" max="196608" srcguid="591e809e-445f-8c38-6fde-89b8ff74543b" srcName="bsp2d_references_block">
+						<_field_short_integer name="plane*" />
+						<_field_short_integer name="bsp2d node*" />
+					</_field_block_64>
+					<_field_block_64 name="bsp2d nodes*" max="32767" srcguid="6cd60c8c-4124-c73b-8c40-39b3bed36a96" srcName="bsp2d_nodes_block">
+						<_field_real_plane_2d name="plane*" />
+						<_field_short_integer name="left child*" />
+						<_field_short_integer name="right child*" />
+					</_field_block_64>
+					<_field_block_64 name="surfaces*" max="32767" srcguid="7ab81935-4b88-010a-80de-12ab3991cd85" srcName="surfaces_block">
+						<_field_word_integer name="plane index*" />
+						<_field_word_integer name="first edge*" />
+						<_field_short_integer name="material*" />
+						<_field_byte_flags name="flags*">
+							<item Name="two sided" />
+							<item Name="invisible" />
+							<item Name="climbable" />
+							<item Name="invalid" />
+							<item Name="conveyor" />
+							<item Name="slip" />
+							<item Name="plane negated" />
+						</_field_byte_flags>
+						<_field_byte_integer name="best plane calculation vertex index *!" />
+					</_field_block_64>
+					<_field_block_64 name="edges*" max="65535" srcguid="b51da635-4400-ec53-338c-b581fdcadcd1" srcName="edges_block">
+						<_field_word_integer name="start vertex*" />
+						<_field_word_integer name="end vertex*" />
+						<_field_word_integer name="forward edge*" />
+						<_field_word_integer name="reverse edge*" />
+						<_field_word_integer name="left surface*" />
+						<_field_word_integer name="right surface*" />
+					</_field_block_64>
+					<_field_block_64 name="vertices*" max="131072" srcguid="6c3f6a60-4c6a-1fce-65e2-898f602f6de5" srcName="vertices_block">
+						<_field_real_point_3d name="point*" />
+						<_field_word_integer name="first edge*" />
+						<_field_short_integer name="sink*!" />
+					</_field_block_64>
+				</_field_struct>
 			</_field_block_64>
-			<_field_block_64 name="mopp_codes*" max="32767" guid="ee2bc898-4e98-8ad1-e551-43b676f65c63">
+			<_field_block_64 name="mopp_codes*" max="32767" srcguid="ee2bc898-4e98-8ad1-e551-43b676f65c63" srcName="mopp_code_definition_block">
 				<_field_int64_integer name="field pointer skip!~" />
 				<_field_short_integer name="size*!" />
 				<_field_short_integer name="count~*!" />
@@ -495,7 +510,7 @@
 				<_field_char_integer name="int8 m_buildType*!" />
 				<_field_pad name="pad2" length="7" />
 				<_field_pad name="pad64_01" length="4" />
-				<_field_block_64 name="mopp data block *!" max="16777216" guid="0eab741f-4408-f5d7-e132-5a9d6dfdd412">
+				<_field_block_64 name="mopp data block *!" max="16777216" srcguid="0eab741f-4408-f5d7-e132-5a9d6dfdd412" srcName="mopp_code_data_definition_block">
 					<_field_byte_integer name="mopp data*!" />
 				</_field_block_64>
 				<_field_char_integer name="mopp build type!*#they say it only matters for ps3" />
@@ -503,8 +518,8 @@
 			</_field_block_64>
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="pathfinding spheres*" max="256" guid="ec25013c-4e7a-a193-bb46-03adb6395c51">
-		<_field_short_block_index name="node*" srcguid="732343d3-4597-041e-868a-1292186a9f94" />
+	<_field_block_64 name="pathfinding spheres*" max="256" srcguid="ec25013c-4e7a-a193-bb46-03adb6395c51" srcName="collision_model_pathfinding_sphere_block">
+		<_field_short_block_index name="node*" targetGuid="732343d3-4597-041e-868a-1292186a9f94" targetName="collision_model_node_block" />
 		<_field_word_flags name="flags">
 			<item Name="remains when open" />
 			<item Name="vehicle only" />
@@ -513,14 +528,14 @@
 		<_field_real_point_3d name="center*" />
 		<_field_real name="radius*" />
 	</_field_block_64>
-	<_field_block_64 name="nodes*" max="255" guid="732343d3-4597-041e-868a-1292186a9f94">
+	<_field_block_64 name="nodes*" max="255" srcguid="732343d3-4597-041e-868a-1292186a9f94" srcName="collision_model_node_block">
 		<_field_string_id name="name^*" />
 		<_field_word_flags name="flags">
 			<item Name="Generate Nav Mesh" />
 		</_field_word_flags>
-		<_field_short_block_index name="parent node*" srcguid="732343d3-4597-041e-868a-1292186a9f94" />
-		<_field_short_block_index name="next sibling node*" srcguid="732343d3-4597-041e-868a-1292186a9f94" />
-		<_field_short_block_index name="first child node*" srcguid="732343d3-4597-041e-868a-1292186a9f94" />
+		<_field_short_block_index name="parent node*" targetGuid="732343d3-4597-041e-868a-1292186a9f94" targetName="collision_model_node_block" />
+		<_field_short_block_index name="next sibling node*" targetGuid="732343d3-4597-041e-868a-1292186a9f94" targetName="collision_model_node_block" />
+		<_field_short_block_index name="first child node*" targetGuid="732343d3-4597-041e-868a-1292186a9f94" targetName="collision_model_node_block" />
 	</_field_block_64>
 	<_field_pageable_resource_64 name="regions resource" />
 	<_field_array name="flags for nodes driving collision geo*!">

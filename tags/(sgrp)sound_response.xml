@@ -1,11 +1,12 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="responses" max="10" guid="fe59d7d1-4910-8b34-f19c-a591a0622b93">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="responses" max="10" srcguid="fe59d7d1-4910-8b34-f19c-a591a0622b93" srcName="sound_response_data_block">
 		<_field_string_id name="name" />
 		<_field_string_id name="channel" />
 		<_field_string_id name="category" />
@@ -20,11 +21,11 @@
 			<item Name="do not track" />
 		</_field_byte_flags>
 		<_field_pad name="SRBQXEK" length="3" />
-		<_field_block_64 name="potential responses" max="10" guid="4eff1491-46fb-3ffd-66ba-b2bcd52ad832">
-			<_field_tag_reference_64 name="sound" />
-			<_field_tag_reference_64 name="music" />
+		<_field_block_64 name="potential responses" max="10" srcguid="4eff1491-46fb-3ffd-66ba-b2bcd52ad832" srcName="sound_response_permutation_block">
+			<_field_tag_reference_64 name="sound" validtags="snd!" />
+			<_field_tag_reference_64 name="music" validtags="musc" />
 		</_field_block_64>
-		<_field_block_64 name="combiners" max="10" guid="79470448-470f-0e27-f3fb-4c9795cac28e">
+		<_field_block_64 name="combiners" max="10" srcguid="79470448-470f-0e27-f3fb-4c9795cac28e" srcName="sound_combine_response_block">
 			<_field_string_id name="name" />
 			<_field_byte_flags name="response behavior">
 				<item Name="cancel queued" />
@@ -32,7 +33,7 @@
 				<item Name="cancel new" />
 			</_field_byte_flags>
 			<_field_pad name="SRBQXEK" length="3" />
-			<_field_tag_reference_64 name="response" />
+			<_field_tag_reference_64 name="response" validtags="sgrp" />
 		</_field_block_64>
 	</_field_block_64>
 	<_field_pad name="pad_tp" length="4" />

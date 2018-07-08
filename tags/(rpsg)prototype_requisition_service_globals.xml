@@ -1,19 +1,20 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="packs" max="512" guid="8787e476-4c3b-7e89-df33-a0a1cce3dfe0">
-		<_field_tag_reference_64 name="pack^" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="packs" max="512" srcguid="8787e476-4c3b-7e89-df33-a0a1cce3dfe0" srcName="prototype_requisition_globals_pack_entry">
+		<_field_tag_reference_64 name="pack^" validtags="rppd" />
 	</_field_block_64>
 	<_field_long_integer name="starting credits" />
 	<_field_long_integer name="starting currency" />
 	<_field_long_integer name="credits to grant on match complete" />
-	<_field_block_64 name="in game terminal category UI data" max="16" guid="e74e3363-4502-0e08-3fcf-7b805523519f">
+	<_field_block_64 name="in game terminal category UI data" max="16" srcguid="e74e3363-4502-0e08-3fcf-7b805523519f" srcName="prototype_requisition_terminal_category_ui_data">
 		<_field_string name="name" />
-		<_field_tag_reference_64 name="icon bitmap" />
+		<_field_tag_reference_64 name="icon bitmap" validtags="bitm" />
 		<_field_long_integer name="icon sprite index" />
 	</_field_block_64>
 	<_field_pad name="pad0" length="4" />

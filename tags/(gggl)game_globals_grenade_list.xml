@@ -1,106 +1,113 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="grenades" max="8" guid="2d626a3a-469a-bbef-0873-16adecdfd9ae">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="grenades" max="8" srcguid="2d626a3a-469a-bbef-0873-16adecdfd9ae" srcName="GameGlobalsGrenadeBlock">
 		<_field_explanation name="UI">Labels needed for UI.</_field_explanation>
 		<_field_string_id name="Display Text StringID" />
 		<_field_string_id name="Description Text StringID" />
 		<_field_string_id name="Help Text StringID" />
 		<_field_explanation name="Maximum Grenade Count (Campaign)">Malleable property specifying the maximum number of grenades on a unit</_field_explanation>
 		<_field_custom name="maximum count (campaign)" />
-		<_field_struct name="maximum count (campaign)" />
-		<_field_short_integer name="Base Value" />
-		<_field_short_integer_bounds name="Value Bounds" />
-		<_field_char_enum name="Combiner">
-			<item Name="sequential#applies the percentages one after another on the base" />
-			<item Name="total percentage#adds up all of the percentages and applies them to the base" />
-			<item Name="addition#adds on all of the modifiers to the base" />
-			<item Name="product#multiplies the values one after another on to the base" />
-		</_field_char_enum>
-		<_field_pad name="padEnd" length="1" />
+		<_field_struct name="maximum count (campaign)" srcguid="78009ab8-4c82-77c3-262a-5081a5c134e4">
+			<_field_short_integer name="Base Value" />
+			<_field_short_integer_bounds name="Value Bounds" />
+			<_field_char_enum name="Combiner">
+				<item Name="sequential#applies the percentages one after another on the base" />
+				<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+				<item Name="addition#adds on all of the modifiers to the base" />
+				<item Name="product#multiplies the values one after another on to the base" />
+			</_field_char_enum>
+			<_field_pad name="padEnd" length="1" />
+		</_field_struct>
 		<_field_explanation name="Initial Grenade Count (Campaign)">Malleable property specifying the maximum number of grenades on a unit</_field_explanation>
 		<_field_custom name="initial count (campaign)" />
-		<_field_struct name="initial count (campaign)" />
-		<_field_short_integer name="Base Value" />
-		<_field_short_integer_bounds name="Value Bounds" />
-		<_field_char_enum name="Combiner">
-			<item Name="sequential#applies the percentages one after another on the base" />
-			<item Name="total percentage#adds up all of the percentages and applies them to the base" />
-			<item Name="addition#adds on all of the modifiers to the base" />
-			<item Name="product#multiplies the values one after another on to the base" />
-		</_field_char_enum>
-		<_field_pad name="padEnd" length="1" />
+		<_field_struct name="initial count (campaign)" srcguid="78009ab8-4c82-77c3-262a-5081a5c134e4">
+			<_field_short_integer name="Base Value" />
+			<_field_short_integer_bounds name="Value Bounds" />
+			<_field_char_enum name="Combiner">
+				<item Name="sequential#applies the percentages one after another on the base" />
+				<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+				<item Name="addition#adds on all of the modifiers to the base" />
+				<item Name="product#multiplies the values one after another on to the base" />
+			</_field_char_enum>
+			<_field_pad name="padEnd" length="1" />
+		</_field_struct>
 		<_field_explanation name="Maximum Grenade Count (Firefight)">Malleable property specifying the maximum number of grenades on a unit</_field_explanation>
 		<_field_custom name="maximum count (firefight)" />
-		<_field_struct name="maximum count (firefight)" />
-		<_field_short_integer name="Base Value" />
-		<_field_short_integer_bounds name="Value Bounds" />
-		<_field_char_enum name="Combiner">
-			<item Name="sequential#applies the percentages one after another on the base" />
-			<item Name="total percentage#adds up all of the percentages and applies them to the base" />
-			<item Name="addition#adds on all of the modifiers to the base" />
-			<item Name="product#multiplies the values one after another on to the base" />
-		</_field_char_enum>
-		<_field_pad name="padEnd" length="1" />
+		<_field_struct name="maximum count (firefight)" srcguid="78009ab8-4c82-77c3-262a-5081a5c134e4">
+			<_field_short_integer name="Base Value" />
+			<_field_short_integer_bounds name="Value Bounds" />
+			<_field_char_enum name="Combiner">
+				<item Name="sequential#applies the percentages one after another on the base" />
+				<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+				<item Name="addition#adds on all of the modifiers to the base" />
+				<item Name="product#multiplies the values one after another on to the base" />
+			</_field_char_enum>
+			<_field_pad name="padEnd" length="1" />
+		</_field_struct>
 		<_field_explanation name="Initial Grenade Count (Firefight)">Malleable property specifying the maximum number of grenades on a unit</_field_explanation>
 		<_field_custom name="initial count (firefight)" />
-		<_field_struct name="initial count (firefight)" />
-		<_field_short_integer name="Base Value" />
-		<_field_short_integer_bounds name="Value Bounds" />
-		<_field_char_enum name="Combiner">
-			<item Name="sequential#applies the percentages one after another on the base" />
-			<item Name="total percentage#adds up all of the percentages and applies them to the base" />
-			<item Name="addition#adds on all of the modifiers to the base" />
-			<item Name="product#multiplies the values one after another on to the base" />
-		</_field_char_enum>
-		<_field_pad name="padEnd" length="1" />
+		<_field_struct name="initial count (firefight)" srcguid="78009ab8-4c82-77c3-262a-5081a5c134e4">
+			<_field_short_integer name="Base Value" />
+			<_field_short_integer_bounds name="Value Bounds" />
+			<_field_char_enum name="Combiner">
+				<item Name="sequential#applies the percentages one after another on the base" />
+				<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+				<item Name="addition#adds on all of the modifiers to the base" />
+				<item Name="product#multiplies the values one after another on to the base" />
+			</_field_char_enum>
+			<_field_pad name="padEnd" length="1" />
+		</_field_struct>
 		<_field_explanation name="Maximum Grenade Count (Multiplayer)">Malleable property specifying the maximum number of grenades on a unit</_field_explanation>
 		<_field_custom name="maximum count (multiplayer)" />
-		<_field_struct name="maximum count (multiplayer)" />
-		<_field_short_integer name="Base Value" />
-		<_field_short_integer_bounds name="Value Bounds" />
-		<_field_char_enum name="Combiner">
-			<item Name="sequential#applies the percentages one after another on the base" />
-			<item Name="total percentage#adds up all of the percentages and applies them to the base" />
-			<item Name="addition#adds on all of the modifiers to the base" />
-			<item Name="product#multiplies the values one after another on to the base" />
-		</_field_char_enum>
-		<_field_pad name="padEnd" length="1" />
+		<_field_struct name="maximum count (multiplayer)" srcguid="78009ab8-4c82-77c3-262a-5081a5c134e4">
+			<_field_short_integer name="Base Value" />
+			<_field_short_integer_bounds name="Value Bounds" />
+			<_field_char_enum name="Combiner">
+				<item Name="sequential#applies the percentages one after another on the base" />
+				<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+				<item Name="addition#adds on all of the modifiers to the base" />
+				<item Name="product#multiplies the values one after another on to the base" />
+			</_field_char_enum>
+			<_field_pad name="padEnd" length="1" />
+		</_field_struct>
 		<_field_explanation name="Initial Grenade Count (Multiplayer)">Malleable property specifying the maximum number of grenades on a unit</_field_explanation>
 		<_field_custom name="initial count (multiplayer)" />
-		<_field_struct name="initial count (multiplayer)" />
-		<_field_short_integer name="Base Value" />
-		<_field_short_integer_bounds name="Value Bounds" />
-		<_field_char_enum name="Combiner">
-			<item Name="sequential#applies the percentages one after another on the base" />
-			<item Name="total percentage#adds up all of the percentages and applies them to the base" />
-			<item Name="addition#adds on all of the modifiers to the base" />
-			<item Name="product#multiplies the values one after another on to the base" />
-		</_field_char_enum>
-		<_field_pad name="padEnd" length="1" />
+		<_field_struct name="initial count (multiplayer)" srcguid="78009ab8-4c82-77c3-262a-5081a5c134e4">
+			<_field_short_integer name="Base Value" />
+			<_field_short_integer_bounds name="Value Bounds" />
+			<_field_char_enum name="Combiner">
+				<item Name="sequential#applies the percentages one after another on the base" />
+				<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+				<item Name="addition#adds on all of the modifiers to the base" />
+				<item Name="product#multiplies the values one after another on to the base" />
+			</_field_char_enum>
+			<_field_pad name="padEnd" length="1" />
+		</_field_struct>
 		<_field_real name="drop percentage (Campaign)" />
 		<_field_real name="drop percentage (Firefight)" />
 		<_field_real name="drop percentage (Multiplayer)" />
-		<_field_tag_reference_64 name="throwing effect" />
-		<_field_tag_reference_64 name="equipment" />
-		<_field_tag_reference_64 name="projectile" />
-		<_field_tag_reference_64 name="equipment (PvE)" />
-		<_field_tag_reference_64 name="projectile (PvE)" />
-		<_field_block_64 name="UI display info" max="1" guid="6bb873fd-472b-52c6-7790-9b90d0074580">
+		<_field_tag_reference_64 name="throwing effect" validtags="effe" />
+		<_field_tag_reference_64 name="equipment" validtags="eqip" />
+		<_field_tag_reference_64 name="projectile" validtags="proj" />
+		<_field_tag_reference_64 name="equipment (PvE)" validtags="eqip" />
+		<_field_tag_reference_64 name="projectile (PvE)" validtags="proj" />
+		<_field_block_64 name="UI display info" max="1" srcguid="6bb873fd-472b-52c6-7790-9b90d0074580" srcName="UIItemInfoBlock">
 			<_field_string_id name="name^#short name for the item" />
 			<_field_string_id name="display name#friendly name for the item" />
 			<_field_string_id name="description#general in-universe item description" />
 			<_field_string_id name="help text#verbose usage info for use during gameplay" />
 			<_field_string_id name="icon string id#legacy, from when we embedded the sprites into the font to get streaming behaviour" />
-			<_field_tag_reference_64 name="sprite#bitmap file representing this item" />
+			<_field_tag_reference_64 name="sprite#bitmap file representing this item" validtags="bitm" />
 			<_field_long_integer name="sprite index#frame inside the item's image strip which shows this item " />
-			<_field_tag_reference_64 name="alt sprite#secondary bitmap file representing this item. for detail images, overlays etc." />
+			<_field_tag_reference_64 name="alt sprite#secondary bitmap file representing this item. for detail images, overlays etc." validtags="bitm" />
 			<_field_long_integer name="alt sprite index#alt sprite's frame" />
-			<_field_tag_reference_64 name="ui vehicle screen reference" />
+			<_field_tag_reference_64 name="ui vehicle screen reference" validtags="wpfs" />
 			<_field_pad name="pad0" length="4" />
 		</_field_block_64>
 	</_field_block_64>

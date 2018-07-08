@@ -1,10 +1,11 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_custom name="Explanation" />
 	<_field_explanation name="Death Program Selection">There are 3 levels of filtering for this.  Certain combinations of the first two levels are either impossible or redundant.  This is because they come from different places in the damage code. I will try to make that clearer here:
 
@@ -26,9 +27,9 @@ The headshot program is good for, well, headshots; the melee program is good for
 
 Inheritance:
 
-Currently there is only one level of inheritance for each of the first two filters.  If the type of death was collision but none of the collision filters match, then it will search through &quot;none&quot; as well.  For the second level, if there is a filter for the weapon type but the velocity gate didn't match, it will search though &quot;the guardians&quot; as well.  The second filtering level looks like it has a lot of opportunity for inheritance relationships, but I didn't want to implement any without getting some input on what those should be.</_field_explanation>
-	<_field_tag_reference_64 name="parent" />
-	<_field_block_64 name="special type" max="7" guid="07a79880-4724-1351-e5a9-5dbfa7aa258c">
+Currently there is only one level of inheritance for each of the first two filters.  If the type of death was collision but none of the collision filters match, then it will search through "none" as well.  For the second level, if there is a filter for the weapon type but the velocity gate didn't match, it will search though "the guardians" as well.  The second filtering level looks like it has a lot of opportunity for inheritance relationships, but I didn't want to implement any without getting some input on what those should be.</_field_explanation>
+	<_field_tag_reference_64 name="parent" validtags="bdpd" />
+	<_field_block_64 name="special type" max="7" srcguid="07a79880-4724-1351-e5a9-5dbfa7aa258c" srcName="death_program_special_block">
 		<_field_long_enum name="special type^">
 			<item Name="none" />
 			<item Name="headshot" />
@@ -38,12 +39,13 @@ Currently there is only one level of inheritance for each of the first two filte
 			<item Name="shoulderbash" />
 			<item Name="groundpound" />
 		</_field_long_enum>
-		<_field_block_64 name="damage type" max="64" guid="2411ca09-4af6-6f03-af79-669082942d01">
+		<_field_block_64 name="damage type" max="64" srcguid="2411ca09-4af6-6f03-af79-669082942d01" srcName="death_program_damage_reporting_block">
 			<_field_explanation name="Triggering Damage Source">Damage must have come from this source to trigger this death program. Leave blank to allow any damage source</_field_explanation>
-			<_field_struct name="damageSource" />
-			<_field_string_id name="Damage Source Name" />
+			<_field_struct name="damageSource" srcguid="c31a245d-433d-ff87-27bb-e58fe63e1849">
+				<_field_string_id name="Damage Source Name" />
+			</_field_struct>
 			<_field_explanation name="Damaged Regions">Only trigger this death programs if one of the following body parts were the ones damaged.  If nothing is present, any body part will trigger this death program</_field_explanation>
-			<_field_block_64 name="damage regions" max="11" guid="82489f88-4420-977a-cc3a-bfbc91a0176c">
+			<_field_block_64 name="damage regions" max="11" srcguid="82489f88-4420-977a-cc3a-bfbc91a0176c" srcName="death_program_damage_region_reporting_block">
 				<_field_char_enum name="Damaged Region#Damaged region of the body">
 					<item Name="gut" />
 					<item Name="chest" />
@@ -58,7 +60,7 @@ Currently there is only one level of inheritance for each of the first two filte
 					<item Name="right foot" />
 				</_field_char_enum>
 			</_field_block_64>
-			<_field_block_64 name="velocity" max="2" guid="500a180d-4ebb-0004-79aa-40b918fdba9e">
+			<_field_block_64 name="velocity" max="2" srcguid="500a180d-4ebb-0004-79aa-40b918fdba9e" srcName="death_program_velocity_gate_block">
 				<_field_real name="minimum velocity:wu/s#this death program will be selected if the biped's velocity is above this number^" />
 				<_field_long_enum name="death program">
 					<item Name="animate then ragdoll" />
@@ -87,15 +89,18 @@ Currently there is only one level of inheritance for each of the first two filte
 				<_field_custom name="Powered-ragdoll" />
 				<_field_real name="Blend duration:Length of time the animation blends into ragdoll, in seconds#At runtime we chose the lesser of this, and the duration of the animation" />
 				<_field_explanation name="Blend functions">Functions defining the strength of the animation over the blend duration.  1.0 means fully driven by animation, 0.0 means pure ragdoll</_field_explanation>
-				<_field_block_64 name="Blend functions" max="127" guid="61405624-4fdc-ea07-ebb4-54899025b332">
+				<_field_block_64 name="Blend functions" max="127" srcguid="61405624-4fdc-ea07-ebb4-54899025b332" srcName="ragdoll_blend_function_block">
 					<_field_string_id name="name^" />
 					<_field_byte_flags name="flags">
 						<item Name="affects translation#The blend function controls translation (you probably want this)" />
 						<item Name="affects orientation#The blend function controls orientation (you probably want this)" />
 					</_field_byte_flags>
 					<_field_pad name="pad_bf" length="3" />
-					<_field_struct name="blend function" />
-					<_field_data_64 name="data" />
+					<_field_struct name="blend function" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+						<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+							<_field_data_64 name="data" />
+						</_field_struct>
+					</_field_struct>
 					<_field_string_id name="ragdoll subgroup#Which ragdoll group (defined in the physics model) this function affects.  If empty, this is a global fallback function." />
 				</_field_block_64>
 			</_field_block_64>

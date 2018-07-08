@@ -1,10 +1,11 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_string_id name="name^#NodeGraph stack name" />
 	<_field_long_enum name="transform method">
 		<item Name="Default 2D" />
@@ -29,13 +30,13 @@
 		<item Name="LoadWhenActive" />
 		<item Name="Preload" />
 	</_field_long_enum>
-	<_field_block_64 name="node graphs" max="32" guid="f2bfb070-4748-5aa8-c7af-c98b8fd861a8">
+	<_field_block_64 name="node graphs" max="32" srcguid="f2bfb070-4748-5aa8-c7af-c98b8fd861a8" srcName="node_graph_definition">
 		<_field_string_id name="name^#NodeGraph name" />
 		<_field_string_id name="initial node" />
-		<_field_block_64 name="nodes" max="128" guid="57c87f0c-43b1-f9b6-5780-93a26a13c4c3">
+		<_field_block_64 name="nodes" max="128" srcguid="57c87f0c-43b1-f9b6-5780-93a26a13c4c3" srcName="node_definition">
 			<_field_string_id name="name^#Node name" />
 			<_field_string_id name="Placement Node name" />
-			<_field_block_64 name="transitions" max="64" guid="232b0ca9-4f18-f1af-1230-5b8e69b42772">
+			<_field_block_64 name="transitions" max="64" srcguid="232b0ca9-4f18-f1af-1230-5b8e69b42772" srcName="transition_definition">
 				<_field_string_id name="event^" />
 				<_field_string_id name="target node" />
 				<_field_string name="out animation name" />
@@ -64,13 +65,13 @@
 				<item Name="FUI" />
 			</_field_long_enum>
 			<_field_tag_reference_64 name="screen reference" validtags="cusc, wpfs, ngst, uiwn, uivn, fuis" />
-			<_field_tag_reference_64 name="fui screen reference" />
+			<_field_tag_reference_64 name="fui screen reference" validtags="fuis" />
 			<_field_long_enum name="loading mode">
 				<item Name="LoadWhenActive" />
 				<item Name="Preload" />
 			</_field_long_enum>
-			<_field_block_64 name="child stacks" max="32" guid="8833880e-45d0-ae1e-504c-fc82ec5c0159">
-				<_field_tag_reference_64 name="child stack reference" />
+			<_field_block_64 name="child stacks" max="32" srcguid="8833880e-45d0-ae1e-504c-fc82ec5c0159" srcName="node_graph_stack_reference_definition">
+				<_field_tag_reference_64 name="child stack reference" validtags="ngst" />
 			</_field_block_64>
 			<_field_long_flags name="state flags">
 				<item Name="Allow Input Fall Through" />

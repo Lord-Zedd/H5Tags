@@ -1,58 +1,66 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_struct name="data" />
-	<_field_struct name="common ability parameters" />
-	<_field_long_flags name="flags">
-		<item Name="Use 3rd Person Camera When Active" />
-		<item Name="Hide Reticle When Active" />
-		<item Name="Is Motion Tracked (By Enemies) When Active" />
-		<item Name="One-Shot Activation Effect#Effect kills itself rather than being explicitly killed when the ability deactivates" />
-		<item Name="Can be activated when weapon state is relaxed" />
-		<item Name="Does Not Appear In Extended Motion Tracker Range" />
-	</_field_long_flags>
-	<_field_real_fraction name="activation energy cost#amount of energy required to activate the ability" />
-	<_field_real name="active energy consumption:energy/second#amount of energy consumed continuously while the ability is active" />
-	<_field_tag_reference_64 name="activation effect#effects triggered when player activates ability" />
-	<_field_long_flags name="flags">
-		<item Name="Toggle stabilizer off if activated with ADS active" />
-		<item Name="Must land again after activating" />
-		<item Name="Auto activate only if already in the air" />
-	</_field_long_flags>
-	<_field_real name="minimum height above floor#set to negative value to disable as 0 is used in the tag post-process to set a default" />
-	<_field_real name="activation deceleration:[0.01,+inf] wu/s per sec#Rate at which the player decelerates after activating the stabilizer" />
-	<_field_real name="stall duration:[0.01,+inf] seconds#Duration that the player remains completely stalled in mid air before starting to fall again" />
-	<_field_real name="time limit:seconds#Max time Stabilizer can remain active for a single burst.  Set to 0.0 if you want infinite." />
-	<_field_custom name="malleable time limit::seconds#Max time stabilizer can remain active for a single burst. Set to 0.0 if you want infinite. Ensure that the activation effect can persist for this duration." />
-	<_field_struct name="malleable time limit::seconds#Max time stabilizer can remain active for a single burst. Set to 0.0 if you want infinite. Ensure that the activation effect can persist for this duration." />
-	<_field_real name="Base Value" />
-	<_field_real_bounds name="Value Bounds" />
-	<_field_char_enum name="Combiner">
-		<item Name="sequential#applies the percentages one after another on the base" />
-		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
-		<item Name="addition#adds on all of the modifiers to the base" />
-		<item Name="product#multiplies the values one after another on to the base" />
-	</_field_char_enum>
-	<_field_pad name="padEnd" length="3" />
-	<_field_real name="cooldown:seconds#How much time must pass after deactivation before you can activate again." />
-	<_field_real name="time scale#Time scale applied to velocity after stall duration" />
-	<_field_custom name="malleable time scale#Time scale applied to velocity after stall duration" />
-	<_field_struct name="malleable time scale#Time scale applied to velocity after stall duration" />
-	<_field_real name="Base Value" />
-	<_field_real_bounds name="Value Bounds" />
-	<_field_char_enum name="Combiner">
-		<item Name="sequential#applies the percentages one after another on the base" />
-		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
-		<item Name="addition#adds on all of the modifiers to the base" />
-		<item Name="product#multiplies the values one after another on to the base" />
-	</_field_char_enum>
-	<_field_pad name="padEnd" length="3" />
-	<_field_real name="max horizontal speed:wu/s [0,+inf]#max horizontal speed while stabilizer is active" />
-	<_field_struct name="vertical speed boost at exit:wu/s#adds this on to the player vertical velocity, based on normalized time spent stabilizing" />
-	<_field_data_64 name="data" />
-	<_field_tag_reference_64 name="rumble" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_struct name="data" srcguid="6e6506a6-45d5-6d23-5d7e-fa8e5babfafb">
+		<_field_struct name="common ability parameters" srcguid="a0b1eff4-483c-d954-d47d-f188cdebb4f0">
+			<_field_long_flags name="flags">
+				<item Name="Use 3rd Person Camera When Active" />
+				<item Name="Hide Reticle When Active" />
+				<item Name="Is Motion Tracked (By Enemies) When Active" />
+				<item Name="One-Shot Activation Effect#Effect kills itself rather than being explicitly killed when the ability deactivates" />
+				<item Name="Can be activated when weapon state is relaxed" />
+				<item Name="Does Not Appear In Extended Motion Tracker Range" />
+			</_field_long_flags>
+			<_field_real_fraction name="activation energy cost#amount of energy required to activate the ability" />
+			<_field_real name="active energy consumption:energy/second#amount of energy consumed continuously while the ability is active" />
+			<_field_tag_reference_64 name="activation effect#effects triggered when player activates ability" validtags="effe" />
+		</_field_struct>
+		<_field_long_flags name="flags">
+			<item Name="Toggle stabilizer off if activated with ADS active" />
+			<item Name="Must land again after activating" />
+			<item Name="Auto activate only if already in the air" />
+		</_field_long_flags>
+		<_field_real name="minimum height above floor#set to negative value to disable as 0 is used in the tag post-process to set a default" />
+		<_field_real name="activation deceleration:[0.01,+inf] wu/s per sec#Rate at which the player decelerates after activating the stabilizer" />
+		<_field_real name="stall duration:[0.01,+inf] seconds#Duration that the player remains completely stalled in mid air before starting to fall again" />
+		<_field_real name="time limit:seconds#Max time Stabilizer can remain active for a single burst.  Set to 0.0 if you want infinite." />
+		<_field_custom name="malleable time limit::seconds#Max time stabilizer can remain active for a single burst. Set to 0.0 if you want infinite. Ensure that the activation effect can persist for this duration." />
+		<_field_struct name="malleable time limit::seconds#Max time stabilizer can remain active for a single burst. Set to 0.0 if you want infinite. Ensure that the activation effect can persist for this duration." srcguid="f8d8b4a1-40e6-db63-bb8c-ea978b2eae63">
+			<_field_real name="Base Value" />
+			<_field_real_bounds name="Value Bounds" />
+			<_field_char_enum name="Combiner">
+				<item Name="sequential#applies the percentages one after another on the base" />
+				<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+				<item Name="addition#adds on all of the modifiers to the base" />
+				<item Name="product#multiplies the values one after another on to the base" />
+			</_field_char_enum>
+			<_field_pad name="padEnd" length="3" />
+		</_field_struct>
+		<_field_real name="cooldown:seconds#How much time must pass after deactivation before you can activate again." />
+		<_field_real name="time scale#Time scale applied to velocity after stall duration" />
+		<_field_custom name="malleable time scale#Time scale applied to velocity after stall duration" />
+		<_field_struct name="malleable time scale#Time scale applied to velocity after stall duration" srcguid="f8d8b4a1-40e6-db63-bb8c-ea978b2eae63">
+			<_field_real name="Base Value" />
+			<_field_real_bounds name="Value Bounds" />
+			<_field_char_enum name="Combiner">
+				<item Name="sequential#applies the percentages one after another on the base" />
+				<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+				<item Name="addition#adds on all of the modifiers to the base" />
+				<item Name="product#multiplies the values one after another on to the base" />
+			</_field_char_enum>
+			<_field_pad name="padEnd" length="3" />
+		</_field_struct>
+		<_field_real name="max horizontal speed:wu/s [0,+inf]#max horizontal speed while stabilizer is active" />
+		<_field_struct name="vertical speed boost at exit:wu/s#adds this on to the player vertical velocity, based on normalized time spent stabilizing" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+			<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
+		<_field_tag_reference_64 name="rumble" validtags="rmbl" />
+	</_field_struct>
 </plugin>

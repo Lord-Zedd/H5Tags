@@ -1,15 +1,16 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_long_flags name="flags">
 		<item Name="Use Environment Acoustics" />
 	</_field_long_flags>
-	<_field_block_64 name="Scenario sound bank list" max="52" guid="0ce98746-473b-d3da-6762-d2ae37dd8acd">
-		<_field_tag_reference_64 name="Sound bank" />
+	<_field_block_64 name="Scenario sound bank list" max="52" srcguid="0ce98746-473b-d3da-6762-d2ae37dd8acd" srcName="soundBankLoadBlock">
+		<_field_tag_reference_64 name="Sound bank" validtags="sbnk" />
 	</_field_block_64>
 	<_field_string_id name="Inside reverb name#This reverb will be used for inside areas when the listener is outside." />
 	<_field_long_integer name="Inside reverb hash ID!" />
@@ -18,7 +19,7 @@
 	<_field_real name="enemy rtpc distance#max distance an enemy can be to be counted in our enemy-related rtpcs" />
 	<_field_real name="kill count frequency time period:seconds#the amount of time to consider a kill relevant for the kill count frequency" />
 	<_field_real name="combat intensity RTPCs timer#number of seconds between each time the combat intensity RTPCs are set" />
-	<_field_block_64 name="State Groups#State groups we care enough about to have saved and loaded, as well as inherited during campaign player-teleportation" max="256" guid="35da4a68-4dc0-4148-8431-8dbc75986ffc">
-		<_field_tag_reference_64 name="State-group reference" />
+	<_field_block_64 name="State Groups#State groups we care enough about to have saved and loaded, as well as inherited during campaign player-teleportation" max="256" srcguid="35da4a68-4dc0-4148-8431-8dbc75986ffc" srcName="g_stateGroupReferenceBlock">
+		<_field_tag_reference_64 name="State-group reference" validtags="ssgp" />
 	</_field_block_64>
 </plugin>

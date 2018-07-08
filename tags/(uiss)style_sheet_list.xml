@@ -1,11 +1,12 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="style sheet languages" max="17" guid="b9a0f180-4d66-c79a-301e-e6ae4fcc3d3f">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="style sheet languages" max="17" srcguid="b9a0f180-4d66-c79a-301e-e6ae4fcc3d3f" srcName="UserInterfaceStyleSheetLanguagesBlock">
 		<_field_long_enum name="language^">
 			<item Name="english" />
 			<item Name="japanese" />
@@ -25,55 +26,55 @@
 			<item Name="dutch" />
 			<item Name="norwegian" />
 		</_field_long_enum>
-		<_field_block_64 name="font style sheets" max="64" guid="b11128e6-4537-6821-6032-e9a80ff1694e">
+		<_field_block_64 name="font style sheets" max="64" srcguid="b11128e6-4537-6821-6032-e9a80ff1694e" srcName="UserInterfaceStyleSheetsFontBlock">
 			<_field_string_id name="style sheet name^" />
-			<_field_block_64 name="font id" max="1" guid="5be81ba7-4680-1800-4cb7-5ea6bd9f924e">
+			<_field_block_64 name="font id" max="1" srcguid="5be81ba7-4680-1800-4cb7-5ea6bd9f924e" srcName="UserInterfaceStyleSheetFontIdBlock">
 				<_field_long_enum name="font id">
 					<item Name="terminal font" />
 					<item Name="subtitle font" />
 				</_field_long_enum>
 			</_field_block_64>
-			<_field_block_64 name="text case" max="1" guid="b05f2549-4259-82bb-c0d0-198fb1626f51">
+			<_field_block_64 name="text case" max="1" srcguid="b05f2549-4259-82bb-c0d0-198fb1626f51" srcName="UserInterfaceStyleSheetTextCaseBlock">
 				<_field_long_enum name="text case">
 					<item Name="normal" />
 					<item Name="uppercase" />
 					<item Name="lowercase" />
 				</_field_long_enum>
 			</_field_block_64>
-			<_field_block_64 name="justification" max="1" guid="7a8dc166-43a1-65d6-9962-73b0f02ddaed">
+			<_field_block_64 name="justification" max="1" srcguid="7a8dc166-43a1-65d6-9962-73b0f02ddaed" srcName="UserInterfaceStyleSheetJustificationBlock">
 				<_field_long_enum name="justification">
 					<item Name="left" />
 					<item Name="right" />
 					<item Name="center" />
 				</_field_long_enum>
 			</_field_block_64>
-			<_field_block_64 name="alignment" max="1" guid="4b81a801-44f2-5bcb-ff1a-ce859cb8b252">
+			<_field_block_64 name="alignment" max="1" srcguid="4b81a801-44f2-5bcb-ff1a-ce859cb8b252" srcName="UserInterfaceStyleSheetAlignmentBlock">
 				<_field_long_enum name="alignment">
 					<item Name="top" />
 					<item Name="bottom" />
 					<item Name="center" />
 				</_field_long_enum>
 			</_field_block_64>
-			<_field_block_64 name="scale" max="1" guid="c5f63a73-4ab9-d27a-4c92-fa9842c924ed">
+			<_field_block_64 name="scale" max="1" srcguid="c5f63a73-4ab9-d27a-4c92-fa9842c924ed" srcName="UserInterfaceStyleSheetScaleBlock">
 				<_field_real name="value" />
 			</_field_block_64>
-			<_field_block_64 name="fixed height" max="1" guid="84c93cac-4ccc-83cd-e357-8c990bbc18bf">
+			<_field_block_64 name="fixed height" max="1" srcguid="84c93cac-4ccc-83cd-e357-8c990bbc18bf" srcName="UserInterfaceStyleSheetFixedHeightBlock">
 				<_field_real name="height" />
 			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="visual style sheets" max="64" guid="47874fb6-457c-2a7b-1afe-faac8099ccbc">
+		<_field_block_64 name="visual style sheets" max="64" srcguid="47874fb6-457c-2a7b-1afe-faac8099ccbc" srcName="UserInterfaceStyleSheetsVisualBlock">
 			<_field_string_id name="style sheet name^" />
-			<_field_block_64 name="drop shadow style" max="1" guid="d10ed3b2-4a22-6c5d-007b-4685ec2f6a71">
+			<_field_block_64 name="drop shadow style" max="1" srcguid="d10ed3b2-4a22-6c5d-007b-4685ec2f6a71" srcName="UserInterfaceStyleSheetDropShadowStyleBlock">
 				<_field_long_enum name="drop shadow style">
 					<item Name="none" />
 					<item Name="drop" />
 					<item Name="outline" />
 				</_field_long_enum>
 			</_field_block_64>
-			<_field_block_64 name="text color" max="1" guid="5faf93b6-43a6-5af9-be5c-65a7e71439f3">
+			<_field_block_64 name="text color" max="1" srcguid="5faf93b6-43a6-5af9-be5c-65a7e71439f3" srcName="UserInterfaceStyleSheetColorBlock">
 				<_field_real_argb_color name="color" />
 			</_field_block_64>
-			<_field_block_64 name="drop shadow color" max="1" guid="5faf93b6-43a6-5af9-be5c-65a7e71439f3">
+			<_field_block_64 name="drop shadow color" max="1" srcguid="5faf93b6-43a6-5af9-be5c-65a7e71439f3" srcName="UserInterfaceStyleSheetColorBlock">
 				<_field_real_argb_color name="color" />
 			</_field_block_64>
 			<_field_string_id name="gradient name" />
@@ -81,7 +82,7 @@
 			<_field_string_id name="outer glow name" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="gradients" max="32" guid="1ac5df38-4b1c-6ea6-88ed-35aa428f1d79">
+	<_field_block_64 name="gradients" max="32" srcguid="1ac5df38-4b1c-6ea6-88ed-35aa428f1d79" srcName="UserInterfaceStyleSheetGradientBlock">
 		<_field_string_id name="gradient name^" />
 		<_field_real_argb_color name="color1" />
 		<_field_real_argb_color name="color2" />
@@ -98,7 +99,7 @@
 			<item Name="square" />
 		</_field_long_enum>
 	</_field_block_64>
-	<_field_block_64 name="dropshadows" max="32" guid="da87e841-40a3-04af-21c8-3aa1c4408ea2">
+	<_field_block_64 name="dropshadows" max="32" srcguid="da87e841-40a3-04af-21c8-3aa1c4408ea2" srcName="UserInterfaceStyleSheetDropshadowBlock">
 		<_field_string_id name="dropshadow name^" />
 		<_field_real_argb_color name="color" />
 		<_field_real name="angle" />
@@ -106,7 +107,7 @@
 		<_field_real name="spread" />
 		<_field_real name="size" />
 	</_field_block_64>
-	<_field_block_64 name="outer glows" max="32" guid="c337c467-4346-110e-d1ec-3a8c05669d9d">
+	<_field_block_64 name="outer glows" max="32" srcguid="c337c467-4346-110e-d1ec-3a8c05669d9d" srcName="UserInterfaceStyleSheetOuterGlowBlock">
 		<_field_string_id name="outer glow name^" />
 		<_field_real_argb_color name="color" />
 		<_field_real name="spread" />

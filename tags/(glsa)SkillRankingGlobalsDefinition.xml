@@ -1,15 +1,16 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_long_integer name="number of games to qualify for CSR" />
-	<_field_block_64 name="skill ranking globals" max="10" guid="84e6fb38-47ba-8f71-0088-67805c6d0210">
+	<_field_block_64 name="skill ranking globals" max="10" srcguid="84e6fb38-47ba-8f71-0088-67805c6d0210" srcName="skill_ranking_globals_block">
 		<_field_string_id name="display_name^" />
 		<_field_long_integer name="icon_index" />
-		<_field_block_64 name="tier" max="10" guid="4c1dfa8f-42aa-204e-1b85-9bada5e2677c">
+		<_field_block_64 name="tier" max="10" srcguid="4c1dfa8f-42aa-204e-1b85-9bada5e2677c" srcName="skill_rank_tier_block">
 			<_field_string_id name="display_name #total points needed to reach this rank" />
 			<_field_long_integer name="beginning_points" />
 			<_field_pad name="pad" length="4" />

@@ -1,58 +1,60 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_struct name="static data" />
-	<_field_block_64 name="columns" max="128" guid="1fc0b041-4409-cfb9-0693-b2bed14c8905">
-		<_field_string_id name="name^" />
-		<_field_short_enum name="type">
-			<item Name="boolean" />
-			<item Name="long" />
-			<item Name="real" />
-			<item Name="string" />
-			<item Name="component" />
-			<item Name="tag reference" />
-			<item Name="string id" />
-			<item Name="argb color" />
-			<item Name="emblem info" />
-		</_field_short_enum>
-		<_field_pad name="pad0" length="2" />
-	</_field_block_64>
-	<_field_block_64 name="rows" max="256" guid="b1a7ec45-439e-bc3d-a4f1-d9a6af5709a3">
-		<_field_block_64 name="long properties" max="8192" guid="63dd2829-4d14-d1f1-5279-3896fc1fcc8f">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_struct name="static data" srcguid="2618e512-442b-8ff9-b2ff-939f1f12b890">
+		<_field_block_64 name="columns" max="128" srcguid="1fc0b041-4409-cfb9-0693-b2bed14c8905" srcName="static_data_column">
 			<_field_string_id name="name^" />
-			<_field_long_integer name="value" />
+			<_field_short_enum name="type">
+				<item Name="boolean" />
+				<item Name="long" />
+				<item Name="real" />
+				<item Name="string" />
+				<item Name="component" />
+				<item Name="tag reference" />
+				<item Name="string id" />
+				<item Name="argb color" />
+				<item Name="emblem info" />
+			</_field_short_enum>
+			<_field_pad name="pad0" length="2" />
 		</_field_block_64>
-		<_field_block_64 name="real properties" max="8192" guid="758da8a4-4090-5912-6254-fba1693c45d2">
-			<_field_string_id name="name^" />
-			<_field_real name="value" />
+		<_field_block_64 name="rows" max="256" srcguid="b1a7ec45-439e-bc3d-a4f1-d9a6af5709a3" srcName="static_data_row">
+			<_field_block_64 name="long properties" max="8192" srcguid="63dd2829-4d14-d1f1-5279-3896fc1fcc8f" srcName="property_long_value">
+				<_field_string_id name="name^" />
+				<_field_long_integer name="value" />
+			</_field_block_64>
+			<_field_block_64 name="real properties" max="8192" srcguid="758da8a4-4090-5912-6254-fba1693c45d2" srcName="property_real_value">
+				<_field_string_id name="name^" />
+				<_field_real name="value" />
+			</_field_block_64>
+			<_field_block_64 name="string_id properties" max="8192" srcguid="63caf970-4ea9-0faf-2cb1-feb315007ca4" srcName="property_string_id_value">
+				<_field_string_id name="name^" />
+				<_field_string_id name="value" />
+			</_field_block_64>
+			<_field_block_64 name="component ptr properties" max="8192" srcguid="b824c8c9-44af-9fe4-0e33-aaa4b60e0b97" srcName="propertyComponentPtrValue">
+				<_field_string_id name="name^" />
+				<_field_string_id name="value" />
+				<_field_byte_flags name="flags">
+					<item Name="source is in external system" />
+				</_field_byte_flags>
+				<_field_pad name="pad0" length="3" />
+			</_field_block_64>
+			<_field_block_64 name="tag reference properties" max="8192" srcguid="caa80a14-45b5-9b12-f540-3aa52e4ca4ff" srcName="property_tag_reference_value">
+				<_field_string_id name="name^" />
+				<_field_tag_reference_64 name="value" />
+			</_field_block_64>
+			<_field_block_64 name="string properties" max="8192" srcguid="9b80dcd3-4f46-d0f8-4360-7aafda9d5497" srcName="property_text_value">
+				<_field_string_id name="name^" />
+				<_field_long_string name="value" />
+			</_field_block_64>
+			<_field_block_64 name="argb color properties" max="8192" srcguid="a86fc89b-4bac-478a-446b-ed97b89a09c3" srcName="property_argb_color_value">
+				<_field_string_id name="name^" />
+				<_field_real_argb_color name="value" />
+			</_field_block_64>
 		</_field_block_64>
-		<_field_block_64 name="string_id properties" max="8192" guid="63caf970-4ea9-0faf-2cb1-feb315007ca4">
-			<_field_string_id name="name^" />
-			<_field_string_id name="value" />
-		</_field_block_64>
-		<_field_block_64 name="component ptr properties" max="8192" guid="b824c8c9-44af-9fe4-0e33-aaa4b60e0b97">
-			<_field_string_id name="name^" />
-			<_field_string_id name="value" />
-			<_field_byte_flags name="flags">
-				<item Name="source is in external system" />
-			</_field_byte_flags>
-			<_field_pad name="pad0" length="3" />
-		</_field_block_64>
-		<_field_block_64 name="tag reference properties" max="8192" guid="caa80a14-45b5-9b12-f540-3aa52e4ca4ff">
-			<_field_string_id name="name^" />
-			<_field_tag_reference_64 name="value" />
-		</_field_block_64>
-		<_field_block_64 name="string properties" max="8192" guid="9b80dcd3-4f46-d0f8-4360-7aafda9d5497">
-			<_field_string_id name="name^" />
-			<_field_long_string name="value" />
-		</_field_block_64>
-		<_field_block_64 name="argb color properties" max="8192" guid="a86fc89b-4bac-478a-446b-ed97b89a09c3">
-			<_field_string_id name="name^" />
-			<_field_real_argb_color name="value" />
-		</_field_block_64>
-	</_field_block_64>
+	</_field_struct>
 </plugin>

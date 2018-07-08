@@ -1,11 +1,12 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="@player information" max="3" guid="45af4745-477d-4d24-2c70-05a2e7ebcae5">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="@player information" max="3" srcguid="45af4745-477d-4d24-2c70-05a2e7ebcae5" srcName="player_information_block">
 		<_field_real name="walking speed:world units per second" />
 		<_field_real name="run forward:world units per second" />
 		<_field_real name="run backward:world units per second" />
@@ -22,14 +23,17 @@
 		<_field_real name="airborne acceleration:world units per second squared" />
 		<_field_real name="weapon ready anim scaler" />
 		<_field_real_point_3d name="grenade origin" />
-		<_field_struct name="grenade aiming#determines the distance along the aiming vector to orient the grenade based on the camera pitch" />
-		<_field_data_64 name="data" />
+		<_field_struct name="grenade aiming#determines the distance along the aiming vector to orient the grenade based on the camera pitch" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+			<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
 		<_field_real_bounds name="first person idle time:seconds" />
 		<_field_real_fraction name="first person skip fraction:[0,1]" />
 		<_field_tag_reference_64 name="coop countdown sound" validtags="snd!" />
 		<_field_tag_reference_64 name="coop respawn sound" validtags="snd!" />
-		<_field_tag_reference_64 name="coop respawn effect" />
-		<_field_tag_reference_64 name="hologram death effect" />
+		<_field_tag_reference_64 name="coop respawn effect" validtags="effe" />
+		<_field_tag_reference_64 name="hologram death effect" validtags="effe" />
 		<_field_long_integer name="binoculars zoom count" />
 		<_field_real_bounds name="binoculars zoom range" />
 		<_field_tag_reference_64 name="night vision on{flashlight on}" validtags="snd!" />
@@ -40,7 +44,7 @@
 		<_field_real name="fire team sandbox range" />
 		<_field_real name="fire team cone angle: in degrees" />
 	</_field_block_64>
-	<_field_block_64 name="@player camera" max="1" guid="4c73792c-41f6-c467-44aa-4a8d794cbb50">
+	<_field_block_64 name="@player camera" max="1" srcguid="4c73792c-41f6-c467-44aa-4a8d794cbb50" srcName="CameraGlobalsBlockDefinition">
 		<_field_explanation name="Pitch values">How fast the first person camera rotates up and down based on the sensitivity preference</_field_explanation>
 		<_field_array name="pitch values">
 			<_field_real name="Angular velocity#degrees per second" />
@@ -95,40 +99,40 @@
 			<_field_real name="Thrust" />
 		</_field_array>
 	</_field_block_64>
-	<_field_block_64 name="@player representation" max="3" guid="4f35e23a-43d1-facb-26d7-c690b796c449">
+	<_field_block_64 name="@player representation" max="3" srcguid="4f35e23a-43d1-facb-26d7-c690b796c449" srcName="player_representation_block">
 		<_field_byte_flags name="flags">
 			<item Name="can use health packs" />
 		</_field_byte_flags>
 		<_field_pad name="pad" length="3" />
-		<_field_tag_reference_64 name="hud screen reference" />
-		<_field_tag_reference_64 name="first person hands model" />
+		<_field_tag_reference_64 name="hud screen reference" validtags="cusc" />
+		<_field_tag_reference_64 name="first person hands model" validtags="hlmt" />
 		<_field_string_id name="first person multiplayer hands variant" />
-		<_field_tag_reference_64 name="first person body model" />
+		<_field_tag_reference_64 name="first person body model" validtags="hlmt" />
 		<_field_string_id name="first person multiplayer body variant" />
-		<_field_block_64 name="hidden fpBody regions" max="32" guid="b6c7f81f-4d11-2d74-8fb3-a99cc52bf350">
+		<_field_block_64 name="hidden fpBody regions" max="32" srcguid="b6c7f81f-4d11-2d74-8fb3-a99cc52bf350" srcName="firstPersonpHiddenBodyRegionsBlock">
 			<_field_string_id name="hidden region^" />
 			<_field_byte_flags name="flags">
 				<item Name="visible in ICS" />
 			</_field_byte_flags>
 			<_field_pad name="pad" length="3" />
 		</_field_block_64>
-		<_field_tag_reference_64 name="third person unit" />
+		<_field_tag_reference_64 name="third person unit" validtags="unit" />
 		<_field_string_id name="third person variant" />
 		<_field_tag_reference_64 name="binoculars zoom in sound" validtags="snd!" />
 		<_field_tag_reference_64 name="binoculars zoom out sounds" validtags="snd!" />
-		<_field_long_block_index name="player information" srcguid="45af4745-477d-4d24-2c70-05a2e7ebcae5" />
-		<_field_block_64 name="Coop teams#The visual representation for the coop fireteams in campaign" max="3" guid="b17a8ec3-1a80-b7ab-14ca-66bbf54bf982">
+		<_field_long_block_index name="player information" targetGuid="45af4745-477d-4d24-2c70-05a2e7ebcae5" targetName="player_information_block" />
+		<_field_block_64 name="Coop teams#The visual representation for the coop fireteams in campaign" max="3" srcguid="b17a8ec3-1a80-b7ab-14ca-66bbf54bf982" srcName="CoopTeamRepresentationBlock">
 			<_field_long_enum name="Fireteam type">
 				<item Name="Chief (Blue team)" />
 				<item Name="Locke (Osiris Team)" />
 				<item Name="Chief (cracked visor and blue team)" />
 			</_field_long_enum>
-			<_field_block_64 name="Coop player representation#The visual representation a character in the fireteam" max="4" guid="1a65f858-1d94-bd46-df48-b6e81d52a380">
-				<_field_tag_reference_64 name="character first person hands model" />
+			<_field_block_64 name="Coop player representation#The visual representation a character in the fireteam" max="4" srcguid="1a65f858-1d94-bd46-df48-b6e81d52a380" srcName="CoopCharacterRepresentationBlock">
+				<_field_tag_reference_64 name="character first person hands model" validtags="hlmt" />
 				<_field_string_id name="character first person hands variant name" />
-				<_field_tag_reference_64 name="character first person body (legs) model" />
+				<_field_tag_reference_64 name="character first person body (legs) model" validtags="hlmt" />
 				<_field_string_id name="character first person body (legs) variant name" />
-				<_field_tag_reference_64 name="character third person unit" />
+				<_field_tag_reference_64 name="character third person unit" validtags="unit" />
 				<_field_string_id name="character third person unit variant name" />
 				<_field_char_enum name="character avatar name">
 					<item Name="None" />
@@ -142,7 +146,7 @@
 					<item Name="Vale" />
 				</_field_char_enum>
 				<_field_pad name="pad" length="3" />
-				<_field_block_64 name="hidden regions override#Applied to the first person body (legs) model. If this is left empty, will use the global hidden fpBody regions defined in playerglobals instead." max="32" guid="b6c7f81f-4d11-2d74-8fb3-a99cc52bf350">
+				<_field_block_64 name="hidden regions override#Applied to the first person body (legs) model. If this is left empty, will use the global hidden fpBody regions defined in playerglobals instead." max="32" srcguid="b6c7f81f-4d11-2d74-8fb3-a99cc52bf350" srcName="firstPersonpHiddenBodyRegionsBlock">
 					<_field_string_id name="hidden region^" />
 					<_field_byte_flags name="flags">
 						<item Name="visible in ICS" />
@@ -152,8 +156,8 @@
 			</_field_block_64>
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="default player traits" max="1" guid="aecdfa4e-47fd-7541-81e7-99aa907f53f6">
-		<_field_block_64 name="vitality traits" max="1" guid="8f23b52b-4650-7e56-74d2-6ebde86fa6d5">
+	<_field_block_64 name="default player traits" max="1" srcguid="aecdfa4e-47fd-7541-81e7-99aa907f53f6" srcName="game_engine_player_traits_block">
+		<_field_block_64 name="vitality traits" max="1" srcguid="8f23b52b-4650-7e56-74d2-6ebde86fa6d5" srcName="player_traits_vitality_block">
 			<_field_long_flags name="should apply trait">
 				<item Name="damage resistance" />
 				<item Name="shield multiplier" />
@@ -169,7 +173,7 @@
 				<item Name="wheelman armor vehicle emp disabled time modifier" />
 				<item Name="fall damage multiplier" />
 			</_field_long_flags>
-			<_field_explanation name="damage resistance">Any damage taken is divided by this number.  If you put -1, that means &quot;invulnerable&quot;.</_field_explanation>
+			<_field_explanation name="damage resistance">Any damage taken is divided by this number.  If you put -1, that means "invulnerable".</_field_explanation>
 			<_field_real name="damage resistance" />
 			<_field_real name="shield multiplier" />
 			<_field_real name="body multiplier" />
@@ -210,7 +214,7 @@
 			</_field_char_enum>
 			<_field_pad name="pad" length="3" />
 		</_field_block_64>
-		<_field_block_64 name="weapon traits" max="1" guid="b29d76d0-4289-3a95-9dd0-81ab6107a9c0">
+		<_field_block_64 name="weapon traits" max="1" srcguid="b29d76d0-4289-3a95-9dd0-81ab6107a9c0" srcName="player_traits_weapons_block">
 			<_field_long_flags name="should apply trait">
 				<item Name="damage multiplier" />
 				<item Name="melee damage multiplier" />
@@ -261,8 +265,8 @@
 				<item Name="true" />
 			</_field_char_enum>
 			<_field_pad name="pad0" length="3" />
-			<_field_block_64 name="initial grenade count" max="16" guid="5819a7ec-4fc4-6525-f005-c197a4decad8">
-				<_field_tag_reference_64 name="grenade reference" />
+			<_field_block_64 name="initial grenade count" max="16" srcguid="5819a7ec-4fc4-6525-f005-c197a4decad8" srcName="grenade_block">
+				<_field_tag_reference_64 name="grenade reference" validtags="obje" />
 				<_field_char_integer name="count" />
 				<_field_pad name="pad0" length="3" />
 			</_field_block_64>
@@ -322,7 +326,7 @@
 			<_field_string_id name="initial tactical package" />
 			<_field_string_id name="initial support upgrade" />
 		</_field_block_64>
-		<_field_block_64 name="movement traits" max="1" guid="4f62673d-46f6-6d61-4d68-a6a3b367c138">
+		<_field_block_64 name="movement traits" max="1" srcguid="4f62673d-46f6-6d61-4d68-a6a3b367c138" srcName="player_traits_movement_block">
 			<_field_long_flags name="should apply trait">
 				<item Name="speed" />
 				<item Name="gravity multiplier" />
@@ -387,7 +391,7 @@
 			</_field_char_enum>
 			<_field_pad name="grue" length="3" />
 		</_field_block_64>
-		<_field_block_64 name="appearance traits" max="1" guid="3f915812-41dc-ea75-a641-bca001fc1ce8">
+		<_field_block_64 name="appearance traits" max="1" srcguid="3f915812-41dc-ea75-a641-bca001fc1ce8" srcName="player_traits_appearance_block">
 			<_field_char_enum name="active camo">
 				<item Name="unchanged" />
 				<item Name="off" />
@@ -419,7 +423,7 @@
 			<_field_string_id name="death effect" />
 			<_field_string_id name="attached effect" />
 		</_field_block_64>
-		<_field_block_64 name="sensor traits" max="1" guid="e4c40b0c-4b60-e067-7133-10aaaa5dfe9b">
+		<_field_block_64 name="sensor traits" max="1" srcguid="e4c40b0c-4b60-e067-7133-10aaaa5dfe9b" srcName="player_traits_sensors_block">
 			<_field_long_flags name="should apply trait">
 				<item Name="motion tracker range" />
 			</_field_long_flags>
@@ -464,71 +468,78 @@
 			<_field_pad name="pad" length="1" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_struct name="player malleable properties" />
-	<_field_custom name="motion tracker normal range#distance at which objects appear on the motion tracker" />
-	<_field_struct name="motion tracker normal range#distance at which objects appear on the motion tracker" />
-	<_field_real name="Base Value" />
-	<_field_real_bounds name="Value Bounds" />
-	<_field_char_enum name="Combiner">
-		<item Name="sequential#applies the percentages one after another on the base" />
-		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
-		<item Name="addition#adds on all of the modifiers to the base" />
-		<item Name="product#multiplies the values one after another on to the base" />
-	</_field_char_enum>
-	<_field_pad name="padEnd" length="3" />
-	<_field_custom name="motion tracker extended range#distance at which objects appear on the motion tracker" />
-	<_field_struct name="motion tracker extended range#distance at which objects appear on the motion tracker" />
-	<_field_real name="Base Value" />
-	<_field_real_bounds name="Value Bounds" />
-	<_field_char_enum name="Combiner">
-		<item Name="sequential#applies the percentages one after another on the base" />
-		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
-		<item Name="addition#adds on all of the modifiers to the base" />
-		<item Name="product#multiplies the values one after another on to the base" />
-	</_field_char_enum>
-	<_field_pad name="padEnd" length="3" />
-	<_field_custom name="motion tracker vehicle range#distance at which objects appear on the motion tracker" />
-	<_field_struct name="motion tracker vehicle range#distance at which objects appear on the motion tracker" />
-	<_field_real name="Base Value" />
-	<_field_real_bounds name="Value Bounds" />
-	<_field_char_enum name="Combiner">
-		<item Name="sequential#applies the percentages one after another on the base" />
-		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
-		<item Name="addition#adds on all of the modifiers to the base" />
-		<item Name="product#multiplies the values one after another on to the base" />
-	</_field_char_enum>
-	<_field_pad name="padEnd" length="3" />
-	<_field_custom name="motion tracker threshold speed (friendly):world units per second#speed above which friendly/neutral objects appear on the player's motion tracker" />
-	<_field_struct name="motion tracker threshold speed (friendly):world units per second#speed above which friendly/neutral objects appear on the player's motion tracker" />
-	<_field_real name="Base Value" />
-	<_field_real_bounds name="Value Bounds" />
-	<_field_char_enum name="Combiner">
-		<item Name="sequential#applies the percentages one after another on the base" />
-		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
-		<item Name="addition#adds on all of the modifiers to the base" />
-		<item Name="product#multiplies the values one after another on to the base" />
-	</_field_char_enum>
-	<_field_pad name="padEnd" length="3" />
-	<_field_custom name="motion tracker threshold speed (enemy):world units per second#speed above which enemy objects appear on the player's motion tracker" />
-	<_field_struct name="motion tracker threshold speed (enemy):world units per second#speed above which enemy objects appear on the player's motion tracker" />
-	<_field_real name="Base Value" />
-	<_field_real_bounds name="Value Bounds" />
-	<_field_char_enum name="Combiner">
-		<item Name="sequential#applies the percentages one after another on the base" />
-		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
-		<item Name="addition#adds on all of the modifiers to the base" />
-		<item Name="product#multiplies the values one after another on to the base" />
-	</_field_char_enum>
-	<_field_pad name="padEnd" length="3" />
-	<_field_custom name="motion tracker visibility scalar#scales how fast this player will appear to be moving to other motion trackers (does not scale the actual speed)" />
-	<_field_struct name="motion tracker visibility scalar#scales how fast this player will appear to be moving to other motion trackers (does not scale the actual speed)" />
-	<_field_real name="Base Value" />
-	<_field_real_bounds name="Value Bounds" />
-	<_field_char_enum name="Combiner">
-		<item Name="sequential#applies the percentages one after another on the base" />
-		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
-		<item Name="addition#adds on all of the modifiers to the base" />
-		<item Name="product#multiplies the values one after another on to the base" />
-	</_field_char_enum>
-	<_field_pad name="padEnd" length="3" />
+	<_field_struct name="player malleable properties" srcguid="8fd75840-4ad6-57b7-c63f-f199c38ecbd6">
+		<_field_custom name="motion tracker normal range#distance at which objects appear on the motion tracker" />
+		<_field_struct name="motion tracker normal range#distance at which objects appear on the motion tracker" srcguid="f8d8b4a1-40e6-db63-bb8c-ea978b2eae63">
+			<_field_real name="Base Value" />
+			<_field_real_bounds name="Value Bounds" />
+			<_field_char_enum name="Combiner">
+				<item Name="sequential#applies the percentages one after another on the base" />
+				<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+				<item Name="addition#adds on all of the modifiers to the base" />
+				<item Name="product#multiplies the values one after another on to the base" />
+			</_field_char_enum>
+			<_field_pad name="padEnd" length="3" />
+		</_field_struct>
+		<_field_custom name="motion tracker extended range#distance at which objects appear on the motion tracker" />
+		<_field_struct name="motion tracker extended range#distance at which objects appear on the motion tracker" srcguid="f8d8b4a1-40e6-db63-bb8c-ea978b2eae63">
+			<_field_real name="Base Value" />
+			<_field_real_bounds name="Value Bounds" />
+			<_field_char_enum name="Combiner">
+				<item Name="sequential#applies the percentages one after another on the base" />
+				<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+				<item Name="addition#adds on all of the modifiers to the base" />
+				<item Name="product#multiplies the values one after another on to the base" />
+			</_field_char_enum>
+			<_field_pad name="padEnd" length="3" />
+		</_field_struct>
+		<_field_custom name="motion tracker vehicle range#distance at which objects appear on the motion tracker" />
+		<_field_struct name="motion tracker vehicle range#distance at which objects appear on the motion tracker" srcguid="f8d8b4a1-40e6-db63-bb8c-ea978b2eae63">
+			<_field_real name="Base Value" />
+			<_field_real_bounds name="Value Bounds" />
+			<_field_char_enum name="Combiner">
+				<item Name="sequential#applies the percentages one after another on the base" />
+				<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+				<item Name="addition#adds on all of the modifiers to the base" />
+				<item Name="product#multiplies the values one after another on to the base" />
+			</_field_char_enum>
+			<_field_pad name="padEnd" length="3" />
+		</_field_struct>
+		<_field_custom name="motion tracker threshold speed (friendly):world units per second#speed above which friendly/neutral objects appear on the player's motion tracker" />
+		<_field_struct name="motion tracker threshold speed (friendly):world units per second#speed above which friendly/neutral objects appear on the player's motion tracker" srcguid="f8d8b4a1-40e6-db63-bb8c-ea978b2eae63">
+			<_field_real name="Base Value" />
+			<_field_real_bounds name="Value Bounds" />
+			<_field_char_enum name="Combiner">
+				<item Name="sequential#applies the percentages one after another on the base" />
+				<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+				<item Name="addition#adds on all of the modifiers to the base" />
+				<item Name="product#multiplies the values one after another on to the base" />
+			</_field_char_enum>
+			<_field_pad name="padEnd" length="3" />
+		</_field_struct>
+		<_field_custom name="motion tracker threshold speed (enemy):world units per second#speed above which enemy objects appear on the player's motion tracker" />
+		<_field_struct name="motion tracker threshold speed (enemy):world units per second#speed above which enemy objects appear on the player's motion tracker" srcguid="f8d8b4a1-40e6-db63-bb8c-ea978b2eae63">
+			<_field_real name="Base Value" />
+			<_field_real_bounds name="Value Bounds" />
+			<_field_char_enum name="Combiner">
+				<item Name="sequential#applies the percentages one after another on the base" />
+				<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+				<item Name="addition#adds on all of the modifiers to the base" />
+				<item Name="product#multiplies the values one after another on to the base" />
+			</_field_char_enum>
+			<_field_pad name="padEnd" length="3" />
+		</_field_struct>
+		<_field_custom name="motion tracker visibility scalar#scales how fast this player will appear to be moving to other motion trackers (does not scale the actual speed)" />
+		<_field_struct name="motion tracker visibility scalar#scales how fast this player will appear to be moving to other motion trackers (does not scale the actual speed)" srcguid="f8d8b4a1-40e6-db63-bb8c-ea978b2eae63">
+			<_field_real name="Base Value" />
+			<_field_real_bounds name="Value Bounds" />
+			<_field_char_enum name="Combiner">
+				<item Name="sequential#applies the percentages one after another on the base" />
+				<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+				<item Name="addition#adds on all of the modifiers to the base" />
+				<item Name="product#multiplies the values one after another on to the base" />
+			</_field_char_enum>
+			<_field_pad name="padEnd" length="3" />
+		</_field_struct>
+	</_field_struct>
 </plugin>

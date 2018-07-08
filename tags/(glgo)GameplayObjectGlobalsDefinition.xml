@@ -1,62 +1,84 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="Hologram Lighting" max="1" guid="8e264b3b-4745-9fd1-8ed7-bc83ac73bb9f">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="Hologram Lighting" max="1" srcguid="8e264b3b-4745-9fd1-8ed7-bc83ac73bb9f" srcName="hologramLightingGlobalsBlock">
 		<_field_custom name="HOLOGRAM FUNCTIONS" />
 		<_field_string_id name="Intensity" />
 		<_field_custom name="KEY LIGHT FUNCTIONS" />
-		<_field_struct name="Key Light Functions" />
-		<_field_string_id name="Intensity" />
-		<_field_string_id name="Forward" />
-		<_field_string_id name="Right" />
-		<_field_string_id name="Up" />
+		<_field_struct name="Key Light Functions" srcguid="8a259276-42a4-aa55-52b4-2789b1be500a">
+			<_field_string_id name="Intensity" />
+			<_field_string_id name="Forward" />
+			<_field_string_id name="Right" />
+			<_field_string_id name="Up" />
+		</_field_struct>
 		<_field_custom name="FILL LIGHT FUNCTIONS" />
-		<_field_struct name="Fill Light Functions" />
-		<_field_string_id name="Intensity" />
-		<_field_string_id name="Forward" />
-		<_field_string_id name="Right" />
-		<_field_string_id name="Up" />
+		<_field_struct name="Fill Light Functions" srcguid="8a259276-42a4-aa55-52b4-2789b1be500a">
+			<_field_string_id name="Intensity" />
+			<_field_string_id name="Forward" />
+			<_field_string_id name="Right" />
+			<_field_string_id name="Up" />
+		</_field_struct>
 		<_field_custom name="RIM LIGHT FUNCTIONS" />
-		<_field_struct name="Rim Light Functions" />
-		<_field_string_id name="Intensity" />
-		<_field_string_id name="Forward" />
-		<_field_string_id name="Right" />
-		<_field_string_id name="Up" />
+		<_field_struct name="Rim Light Functions" srcguid="8a259276-42a4-aa55-52b4-2789b1be500a">
+			<_field_string_id name="Intensity" />
+			<_field_string_id name="Forward" />
+			<_field_string_id name="Right" />
+			<_field_string_id name="Up" />
+		</_field_struct>
 	</_field_block_64>
-	<_field_block_64 name="active camo" max="1" guid="4034ff5e-4c2d-39d8-fba4-6c91bc83790c">
+	<_field_block_64 name="active camo" max="1" srcguid="4034ff5e-4c2d-39d8-fba4-6c91bc83790c" srcName="active_camo_globals_block">
 		<_field_real name="biped speed reference:wu/s#for bipeds, the speed at which you are on the far right of the 'speed to max camo' graph" />
 		<_field_real name="active camo ground vertical speed scalar#0 means no vertical speed is used for active camo reduction, and 1 means it is fully used while on the ground" />
 		<_field_real name="active camo airborne vertical speed scalar#0 means no vertical speed is used for active camo reduction, and 1 means it is fully used while airborne" />
 		<_field_real name="vehicle speed reference:wu/s#for vehicles, the speed at which you are on the far right of the 'speed to max camo' graph" />
 		<_field_real_fraction name="camo value for game name#minimum active camo percentage at which a player's game name will start becoming visible" />
-		<_field_struct name="camo value to distortion" />
-		<_field_data_64 name="data" />
-		<_field_struct name="camo value to transparency#maps active-camo percentage to alpha for THIRD PERSON rendering" />
-		<_field_data_64 name="data" />
-		<_field_struct name="camo value to fp transparency#maps active-camo percentage to alpha for FIRST PERSON rendering" />
-		<_field_data_64 name="data" />
-		<_field_struct name="camo distortion texture strength" />
-		<_field_data_64 name="data" />
+		<_field_struct name="camo value to distortion" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+			<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
+		<_field_struct name="camo value to transparency#maps active-camo percentage to alpha for THIRD PERSON rendering" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+			<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
+		<_field_struct name="camo value to fp transparency#maps active-camo percentage to alpha for FIRST PERSON rendering" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+			<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
+		<_field_struct name="camo distortion texture strength" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+			<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
 		<_field_real_vector_2d name="camo distortion scale" />
 		<_field_real_vector_2d name="camo distortion translate speed" />
-		<_field_tag_reference_64 name="camo distortion texture" />
+		<_field_tag_reference_64 name="camo distortion texture" validtags="bitm" />
 		<_field_real name="camo depth bias max distance#This is used to deal with ugly rendering artifacts when camo is not fully on" />
-		<_field_struct name="camo depth bias function#This is used to deal with ugly rendering artifacts when camo is not fully on" />
-		<_field_data_64 name="data" />
-		<_field_block_64 name="camo levels" max="5" guid="e283deaa-46ff-d17b-69f6-028077e386f1">
+		<_field_struct name="camo depth bias function#This is used to deal with ugly rendering artifacts when camo is not fully on" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+			<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
+		<_field_block_64 name="camo levels" max="5" srcguid="e283deaa-46ff-d17b-69f6-028077e386f1" srcName="active_camo_level_definition_block">
 			<_field_real name="grenade throw penalty:0..1!*#reduces camo value by this much when throwing a grenade" />
 			<_field_real name="melee penalty:0..1!*#reduces camo by this much when meleeing" />
 			<_field_real name="minimum dinged value!*#when taking damage or doing other actions that reduce camo, we will never drop below this value" />
 			<_field_real name="interpolation time:s!*#time it takes to interpolate from 0.0 to 1.0" />
-			<_field_struct name="speed to maximum camo" />
-			<_field_data_64 name="data" />
+			<_field_struct name="speed to maximum camo" srcguid="72cb9289-481e-0276-51a3-6794187c6df5">
+				<_field_struct name="function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+					<_field_data_64 name="data" />
+				</_field_struct>
+			</_field_struct>
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="shield boost" max="1" guid="c8a4d40e-49e4-830f-7122-96907c8fdc1f">
+	<_field_block_64 name="shield boost" max="1" srcguid="c8a4d40e-49e4-830f-7122-96907c8fdc1f" srcName="shield_boost_block">
 		<_field_explanation name="shield boosting">This feature was implemented for the engineer character in atlas. Shield dynamics overrides for when shields are being 'boosted' by an external source</_field_explanation>
 		<_field_real name="shield boost decay#amount of shield-boost to decay per second" />
 		<_field_real name="shield boost recharge time#time to recharge full shields when getting boosted" />

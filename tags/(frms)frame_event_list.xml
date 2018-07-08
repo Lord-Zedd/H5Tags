@@ -1,10 +1,11 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_explanation name="IMPORTANT TAG NOTES">1) DO NOT XSYNC THIS TAG DIRECTLY.  Due to the nature of how this tag is processed, it is never
 loaded in-game.  Instead, xsync the parent model_animation_graph tag.  You can do this without
 checking out the parent model_animation_graph; just find the tag in question in Bonobo, right-click it
@@ -27,9 +28,9 @@ must be deleted from both the model_animation_graph tag AND the frame_event_list
 	  model_animation_graph on the xbox (or cache file), so no additional runtime memory or processing 
 	  time should be required.
 </_field_explanation>
-	<_field_block_64 name="sound references|ABCDCC" max="4096" guid="44ff5ad9-4fbf-62ba-29db-b48b1d39cdca">
+	<_field_block_64 name="sound references|ABCDCC" max="4096" srcguid="44ff5ad9-4fbf-62ba-29db-b48b1d39cdca" srcName="SoundEventReferenceSetBlock">
 		<_field_string_id name="name^#Give this group of references a name." />
-		<_field_block_64 name="sounds|ABCDCC" max="256" guid="3b0b92f2-4628-0ed0-6eb7-dba1273aa9a8">
+		<_field_block_64 name="sounds|ABCDCC" max="256" srcguid="3b0b92f2-4628-0ed0-6eb7-dba1273aa9a8" srcName="SoundEventReferenceBlock">
 			<_field_tag_reference_64 name="sound^" validtags="snd!" />
 			<_field_word_flags name="flags">
 				<item Name="allow on player" />
@@ -45,13 +46,13 @@ must be deleted from both the model_animation_graph tag AND the frame_event_list
 				<item Name="model_index_required" />
 				<item Name="weapon_index_required" />
 			</_field_word_flags>
-			<_field_tag_reference_64 name="model#optional. only allow this event when used on this model" />
+			<_field_tag_reference_64 name="model#optional. only allow this event when used on this model" validtags="hlmt" />
 			<_field_string_id name="model variant#optional. only allow this event when used on this model variant" />
-			<_field_tag_reference_64 name="weapon#optional. only allow this event when this weapon is in use" />
+			<_field_tag_reference_64 name="weapon#optional. only allow this event when this weapon is in use" validtags="weap" />
 			<_field_string_id name="weapon variant#optional. only allow this event when this weapon variant is in use" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="dialogue references|ABCDCC" max="4096" guid="7e2418a6-b504-153a-1286-e9a6dab50c97">
+	<_field_block_64 name="dialogue references|ABCDCC" max="4096" srcguid="7e2418a6-b504-153a-1286-e9a6dab50c97" srcName="animation_graph_dialogue_reference_block">
 		<_field_string_id name="vocalization name^" />
 		<_field_char_enum name="play restriction">
 			<item Name="Unrestricted" />
@@ -60,10 +61,10 @@ must be deleted from both the model_animation_graph tag AND the frame_event_list
 		</_field_char_enum>
 		<_field_pad name="paddingForCharSizeEnum" length="3" />
 	</_field_block_64>
-	<_field_block_64 name="effect references|ABCDCC" max="4096" guid="bdb82602-4e87-dc34-6195-91a9c7c8e0fa">
+	<_field_block_64 name="effect references|ABCDCC" max="4096" srcguid="bdb82602-4e87-dc34-6195-91a9c7c8e0fa" srcName="EffectEventReferenceSetBlock">
 		<_field_string_id name="name^#Give this group of references a name" />
-		<_field_block_64 name="effects|ABCDCC" max="256" guid="4d6a825d-4388-ca1c-9356-c0b45df6ddd3">
-			<_field_tag_reference_64 name="effect^" />
+		<_field_block_64 name="effects|ABCDCC" max="256" srcguid="4d6a825d-4388-ca1c-9356-c0b45df6ddd3" srcName="EffectEventReferenceBlock">
+			<_field_tag_reference_64 name="effect^" validtags="effe" />
 			<_field_word_flags name="flags">
 				<item Name="allow on player" />
 				<item Name="left arm only" />
@@ -78,16 +79,16 @@ must be deleted from both the model_animation_graph tag AND the frame_event_list
 				<item Name="model_index_required" />
 				<item Name="weapon_index_required" />
 			</_field_word_flags>
-			<_field_tag_reference_64 name="model#optional. only allow this event when used on this model" />
+			<_field_tag_reference_64 name="model#optional. only allow this event when used on this model" validtags="hlmt" />
 			<_field_string_id name="model variant#optional. only allow this event when used on this model variant" />
-			<_field_tag_reference_64 name="weapon#optional. only allow this event when this weapon is in use" />
+			<_field_tag_reference_64 name="weapon#optional. only allow this event when this weapon is in use" validtags="hlmt" />
 			<_field_string_id name="weapon variant#optional. only allow this event when this weapon variant is in use" />
 		</_field_block_64>
 	</_field_block_64>
-	<_field_block_64 name="frame events|ABCDCC" max="8192" guid="2aa3ba59-4a1f-a001-dd04-ef8d57905d74">
+	<_field_block_64 name="frame events|ABCDCC" max="8192" srcguid="2aa3ba59-4a1f-a001-dd04-ef8d57905d74" srcName="import_animation_event_block">
 		<_field_string_id name="animation name^*!" />
 		<_field_long_integer name="animation frame count^*!" />
-		<_field_block_64 name="animation events" max="512" guid="ab6ddd39-421b-ffc7-2cfa-b9bc5922a5cb">
+		<_field_block_64 name="animation events" max="512" srcguid="ab6ddd39-421b-ffc7-2cfa-b9bc5922a5cb" srcName="import_frame_event_block">
 			<_field_string_id name="event name*" />
 			<_field_string_id name="animation name!*" />
 			<_field_short_integer name="frame" />
@@ -129,23 +130,23 @@ must be deleted from both the model_animation_graph tag AND the frame_event_list
 			<_field_pad name="pad" length="2" />
 			<_field_long_integer name="unique ID*!#(Do not change this)" />
 		</_field_block_64>
-		<_field_block_64 name="sound events" max="512" guid="a93991cb-4eba-ed06-0b68-1b9126da3db2">
-			<_field_short_block_index name="frame event" srcguid="ab6ddd39-421b-ffc7-2cfa-b9bc5922a5cb" />
+		<_field_block_64 name="sound events" max="512" srcguid="a93991cb-4eba-ed06-0b68-1b9126da3db2" srcName="animation_sound_event_block_extended">
+			<_field_short_block_index name="frame event" targetGuid="ab6ddd39-421b-ffc7-2cfa-b9bc5922a5cb" targetName="import_frame_event_block" />
 			<_field_pad name="pad" length="2" />
-			<_field_short_block_index name="sound" srcguid="44ff5ad9-4fbf-62ba-29db-b48b1d39cdca" />
+			<_field_short_block_index name="sound" targetGuid="44ff5ad9-4fbf-62ba-29db-b48b1d39cdca" targetName="SoundEventReferenceSetBlock" />
 			<_field_short_integer name="frame offset#If a frame event is set, this number is relative to frame event, otherwise it's absolute." />
 			<_field_string_id name="marker name" />
 		</_field_block_64>
-		<_field_block_64 name="effect events" max="512" guid="8ed7d41d-4055-73cf-0d95-52a1b5109c9c">
-			<_field_short_block_index name="frame event" srcguid="ab6ddd39-421b-ffc7-2cfa-b9bc5922a5cb" />
+		<_field_block_64 name="effect events" max="512" srcguid="8ed7d41d-4055-73cf-0d95-52a1b5109c9c" srcName="animation_effects_event_block_extended">
+			<_field_short_block_index name="frame event" targetGuid="ab6ddd39-421b-ffc7-2cfa-b9bc5922a5cb" targetName="import_frame_event_block" />
 			<_field_pad name="pad" length="2" />
-			<_field_short_block_index name="effect" srcguid="bdb82602-4e87-dc34-6195-91a9c7c8e0fa" />
+			<_field_short_block_index name="effect" targetGuid="bdb82602-4e87-dc34-6195-91a9c7c8e0fa" targetName="EffectEventReferenceSetBlock" />
 			<_field_short_integer name="frame offset#If a frame event is set, this number is relative to frame event, otherwise it's absolute." />
 			<_field_string_id name="marker name" />
 		</_field_block_64>
-		<_field_block_64 name="dialogue events" max="512" guid="649b1755-4cbc-2913-1468-f0bc325e4f62">
-			<_field_short_block_index name="frame event" srcguid="ab6ddd39-421b-ffc7-2cfa-b9bc5922a5cb" />
-			<_field_short_block_index name="dialogue reference" srcguid="7e2418a6-b504-153a-1286-e9a6dab50c97" />
+		<_field_block_64 name="dialogue events" max="512" srcguid="649b1755-4cbc-2913-1468-f0bc325e4f62" srcName="animation_dialogue_event_block_extended">
+			<_field_short_block_index name="frame event" targetGuid="ab6ddd39-421b-ffc7-2cfa-b9bc5922a5cb" targetName="import_frame_event_block" />
+			<_field_short_block_index name="dialogue reference" targetGuid="7e2418a6-b504-153a-1286-e9a6dab50c97" targetName="animation_graph_dialogue_reference_block" />
 			<_field_short_integer name="frame offset#If a frame event is set, this number is relative to frame event, otherwise it's absolute." />
 			<_field_pad name="pad" length="2" />
 		</_field_block_64>

@@ -1,125 +1,134 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_struct name="data" />
-	<_field_struct name="common ability parameters" />
-	<_field_long_flags name="flags">
-		<item Name="Use 3rd Person Camera When Active" />
-		<item Name="Hide Reticle When Active" />
-		<item Name="Is Motion Tracked (By Enemies) When Active" />
-		<item Name="One-Shot Activation Effect#Effect kills itself rather than being explicitly killed when the ability deactivates" />
-		<item Name="Can be activated when weapon state is relaxed" />
-		<item Name="Does Not Appear In Extended Motion Tracker Range" />
-	</_field_long_flags>
-	<_field_real_fraction name="activation energy cost#amount of energy required to activate the ability" />
-	<_field_real name="active energy consumption:energy/second#amount of energy consumed continuously while the ability is active" />
-	<_field_tag_reference_64 name="activation effect#effects triggered when player activates ability" />
-	<_field_long_flags name="shoulder bash flags">
-		<item Name="Lock Gaze" />
-		<item Name="Custom Sprint Anim When Ready" />
-		<item Name="Evading Breaks Aim Assist" />
-		<item Name="Disable Soft Contacts" />
-	</_field_long_flags>
-	<_field_real_fraction name="sprint speed fraction threshold#shoulder bash can only be activated once sprint speed fraction clears this threshold" />
-	<_field_real name="bash speed:world units per second#speed at which the character moves during the shoulder bash" />
-	<_field_real name="target speed scalar#multiplier on top of 'bash speed' if the player has a target" />
-	<_field_real name="bash duration:seconds[0.01,+inf]#duration that the bash will last" />
-	<_field_real name="bash duration with target:seconds[0.01,+inf]#duration that the bash will last if the player has a target" />
-	<_field_custom name="target range scalar#scales the range at which aim assist picks up a target and puts an additional scale on how fast we bash towards a target" />
-	<_field_struct name="target range scalar#scales the range at which aim assist picks up a target and puts an additional scale on how fast we bash towards a target" />
-	<_field_real name="Base Value" />
-	<_field_real_bounds name="Value Bounds" />
-	<_field_char_enum name="Combiner">
-		<item Name="sequential#applies the percentages one after another on the base" />
-		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
-		<item Name="addition#adds on all of the modifiers to the base" />
-		<item Name="product#multiplies the values one after another on to the base" />
-	</_field_char_enum>
-	<_field_pad name="padEnd" length="3" />
-	<_field_real name="yaw speed scale#scale applied to player's look yaw speed while shoulder bashing" />
-	<_field_real name="pitch speed scale#scale applied to player's look pitch speed while shoulder bashing" />
-	<_field_real name="off the ground tolerance#height above which airborne mode should be used (bash direction flattened)" />
-	<_field_real name="hit sphere offset x:wu#how much in front of the character the hit sphere should be placed" />
-	<_field_real name="hit sphere offset z:wu#how high the hit sphere should be placed relative to the character origin" />
-	<_field_real name="hit sphere radius:wu" />
-	<_field_real name="hit sphere start point offset:wu#how far back from the sphere position to start the moving sphere hit test (should be positive, default = 0.25)" />
-	<_field_real name="surface adhesion velocity:wu/s#used to stop the character from launching off ramps (default = 0.5)" />
-	<_field_real name="surface adhesion airborne time limit:seconds#continue to try applying the adhesion velocity for this long after leaving the ground (default = 0.1)" />
-	<_field_angle name="maximum shoulder bash assist angular velocity:degrees/second#maximum angular velocity that can be introduced by the shoulder bash assist system" />
-	<_field_angle name="assist pitch angle min:degrees#how much below the bash plane you are allowed to deviate" />
-	<_field_angle name="assist pitch angle max:degrees#how much above the bash plane you are allowed to deviate" />
-	<_field_angle name="contact angle threshold for damage:degrees#contact normal for objects hit during bash must be within this angle of bash direction in order for damage to be applied to the object" />
-	<_field_real name="contact ignore offset#ignore contacts that are below this offset (in z) above the characters' origin" />
-	<_field_angle name="bash direction pitch offset for damage:degrees#The pitch offset from bash direction to force an upwards lift" />
-	<_field_custom name="knockback scalar#scales knockback (instantaneous acceleration) effects caused by shoulder bash" />
-	<_field_struct name="knockback scalar#scales knockback (instantaneous acceleration) effects caused by shoulder bash" />
-	<_field_real name="Base Value" />
-	<_field_real_bounds name="Value Bounds" />
-	<_field_char_enum name="Combiner">
-		<item Name="sequential#applies the percentages one after another on the base" />
-		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
-		<item Name="addition#adds on all of the modifiers to the base" />
-		<item Name="product#multiplies the values one after another on to the base" />
-	</_field_char_enum>
-	<_field_pad name="padEnd" length="3" />
-	<_field_explanation name="camera tilt pitch function">Use this curve to define how the camera pitch tilts when the character shoulder bashes. The x axis measures time from the beginning of the bash to the end. Y axis is angle (in degrees) that the camera is pitched in the direction of the bash.</_field_explanation>
-	<_field_struct name="camera tilt pitch function" />
-	<_field_data_64 name="data" />
-	<_field_explanation name="camera forward offset function">Use this curve to define how the camera is offset forward when the character shoulder bashes. The x axis measures time from the beginning of the bash to the end. Y axis is distance (in wu) that the camera is offset in the direction of the bash. NOTE: This is necessary because the character's body tilts forward during the shoulder bash. It should be used to match the camera position to that tilt, not to exaggerate the feeling of motion.</_field_explanation>
-	<_field_struct name="camera forward offset function" />
-	<_field_data_64 name="data" />
-	<_field_explanation name="camera FOV delta function">Use this curve to define how the camera FOV changes when the character shoulder bashes. The x axis measures time from the beginning of the bash to the end. Y axis is the amount (in degrees) that the FOV is modified at the given time. Negative numbers shrink the FOV, positive numbers grow it.</_field_explanation>
-	<_field_struct name="camera FOV delta function" />
-	<_field_data_64 name="data" />
-	<_field_tag_reference_64 name="bash damage effect#damage applied to the thing that gets shoulder bashed" />
-	<_field_tag_reference_64 name="bash clang damage effect#damage applied to the thing that gets shoulder bashed" />
-	<_field_tag_reference_64 name="bash effect#created on the thing that gets shoulder bashed" />
-	<_field_tag_reference_64 name="bash response damage effect#applied to character that performed the bash to generate rumble and other such effects" />
-	<_field_tag_reference_64 name="bash response effect#created on the character performed the bash" />
-	<_field_custom name="damage scalar#scales the damage multiplier on damage events caused by shoulder bash" />
-	<_field_struct name="damage scalar#scales the damage multiplier on damage events caused by shoulder bash" />
-	<_field_real name="Base Value" />
-	<_field_real_bounds name="Value Bounds" />
-	<_field_char_enum name="Combiner">
-		<item Name="sequential#applies the percentages one after another on the base" />
-		<item Name="total percentage#adds up all of the percentages and applies them to the base" />
-		<item Name="addition#adds on all of the modifiers to the base" />
-		<item Name="product#multiplies the values one after another on to the base" />
-	</_field_char_enum>
-	<_field_pad name="padEnd" length="3" />
-	<_field_string_id name="shoulder bash animation#the animation played when the shoulder bash is triggered" />
-	<_field_string_id name="shoulder bash success follow-through#animation played when the character bashes an object that it can damage" />
-	<_field_real name="shoulder bash success follow-through duration#how long to play the animation (assumes it has loop markers)" />
-	<_field_real name="shoulder bash success follow-through FP camera restore time#relative to end of duration above" />
-	<_field_string_id name="shoulder bash success rebound#animation played when the character bashes an object that it can damage and rebounds" />
-	<_field_real name="shoulder bash success rebound duration#how long to play the animation (assumes it has loop markers)" />
-	<_field_real name="shoulder bash success rebound FP camera restore time#relative to end of duration above" />
-	<_field_real name="shoulder bash success rebound speed duration:seconds" />
-	<_field_real name="shoulder bash success rebound speed:wu/s" />
-	<_field_explanation name="no rebound surfaces">materials listed here will prevent the rebound from occurring.</_field_explanation>
-	<_field_block_64 name="no rebound materials" max="64" guid="d2679d1f-40b2-5b59-deb3-dfad436edf1c">
-		<_field_string_id name="material name" />
-	</_field_block_64>
-	<_field_string_id name="shoulder bash miss follow-through#animation played when the character hits nothing)" />
-	<_field_real name="shoulder bash miss follow-through FP camera restore time" />
-	<_field_real_fraction name="shoulder bash miss follow-through early out fraction#once the animation is more than this percentage through allow an early exit if the player is trying to move" />
-	<_field_explanation name="Aim Assist" />
-	<_field_angle name="auto aim angle:degrees#the maximum angle that auto aim works at full strength" />
-	<_field_real name="auto aim range:world units#the maximum distance that auto aim works at full strength" />
-	<_field_real name="auto aim falloff range:world units#at what point the auto aim starts falling off" />
-	<_field_real name="auto aim near falloff range:world units#at what point the auto aim reaches full power" />
-	<_field_explanation name="AI Response" />
-	<_field_short_enum name="bash AI sound level#intensity of AI sound notification">
-		<item Name="silent#ai will not respond to this sound" />
-		<item Name="quiet" />
-		<item Name="medium" />
-		<item Name="shout" />
-		<item Name="loud#ai can hear this sound at any range" />
-	</_field_short_enum>
-	<_field_pad name="pad0" length="2" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_struct name="data" srcguid="34d50ddb-459f-b790-4483-9eb7c3ea85b5">
+		<_field_struct name="common ability parameters" srcguid="a0b1eff4-483c-d954-d47d-f188cdebb4f0">
+			<_field_long_flags name="flags">
+				<item Name="Use 3rd Person Camera When Active" />
+				<item Name="Hide Reticle When Active" />
+				<item Name="Is Motion Tracked (By Enemies) When Active" />
+				<item Name="One-Shot Activation Effect#Effect kills itself rather than being explicitly killed when the ability deactivates" />
+				<item Name="Can be activated when weapon state is relaxed" />
+				<item Name="Does Not Appear In Extended Motion Tracker Range" />
+			</_field_long_flags>
+			<_field_real_fraction name="activation energy cost#amount of energy required to activate the ability" />
+			<_field_real name="active energy consumption:energy/second#amount of energy consumed continuously while the ability is active" />
+			<_field_tag_reference_64 name="activation effect#effects triggered when player activates ability" validtags="effe" />
+		</_field_struct>
+		<_field_long_flags name="shoulder bash flags">
+			<item Name="Lock Gaze" />
+			<item Name="Custom Sprint Anim When Ready" />
+			<item Name="Evading Breaks Aim Assist" />
+			<item Name="Disable Soft Contacts" />
+		</_field_long_flags>
+		<_field_real_fraction name="sprint speed fraction threshold#shoulder bash can only be activated once sprint speed fraction clears this threshold" />
+		<_field_real name="bash speed:world units per second#speed at which the character moves during the shoulder bash" />
+		<_field_real name="target speed scalar#multiplier on top of 'bash speed' if the player has a target" />
+		<_field_real name="bash duration:seconds[0.01,+inf]#duration that the bash will last" />
+		<_field_real name="bash duration with target:seconds[0.01,+inf]#duration that the bash will last if the player has a target" />
+		<_field_custom name="target range scalar#scales the range at which aim assist picks up a target and puts an additional scale on how fast we bash towards a target" />
+		<_field_struct name="target range scalar#scales the range at which aim assist picks up a target and puts an additional scale on how fast we bash towards a target" srcguid="f8d8b4a1-40e6-db63-bb8c-ea978b2eae63">
+			<_field_real name="Base Value" />
+			<_field_real_bounds name="Value Bounds" />
+			<_field_char_enum name="Combiner">
+				<item Name="sequential#applies the percentages one after another on the base" />
+				<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+				<item Name="addition#adds on all of the modifiers to the base" />
+				<item Name="product#multiplies the values one after another on to the base" />
+			</_field_char_enum>
+			<_field_pad name="padEnd" length="3" />
+		</_field_struct>
+		<_field_real name="yaw speed scale#scale applied to player's look yaw speed while shoulder bashing" />
+		<_field_real name="pitch speed scale#scale applied to player's look pitch speed while shoulder bashing" />
+		<_field_real name="off the ground tolerance#height above which airborne mode should be used (bash direction flattened)" />
+		<_field_real name="hit sphere offset x:wu#how much in front of the character the hit sphere should be placed" />
+		<_field_real name="hit sphere offset z:wu#how high the hit sphere should be placed relative to the character origin" />
+		<_field_real name="hit sphere radius:wu" />
+		<_field_real name="hit sphere start point offset:wu#how far back from the sphere position to start the moving sphere hit test (should be positive, default = 0.25)" />
+		<_field_real name="surface adhesion velocity:wu/s#used to stop the character from launching off ramps (default = 0.5)" />
+		<_field_real name="surface adhesion airborne time limit:seconds#continue to try applying the adhesion velocity for this long after leaving the ground (default = 0.1)" />
+		<_field_angle name="maximum shoulder bash assist angular velocity:degrees/second#maximum angular velocity that can be introduced by the shoulder bash assist system" />
+		<_field_angle name="assist pitch angle min:degrees#how much below the bash plane you are allowed to deviate" />
+		<_field_angle name="assist pitch angle max:degrees#how much above the bash plane you are allowed to deviate" />
+		<_field_angle name="contact angle threshold for damage:degrees#contact normal for objects hit during bash must be within this angle of bash direction in order for damage to be applied to the object" />
+		<_field_real name="contact ignore offset#ignore contacts that are below this offset (in z) above the characters' origin" />
+		<_field_angle name="bash direction pitch offset for damage:degrees#The pitch offset from bash direction to force an upwards lift" />
+		<_field_custom name="knockback scalar#scales knockback (instantaneous acceleration) effects caused by shoulder bash" />
+		<_field_struct name="knockback scalar#scales knockback (instantaneous acceleration) effects caused by shoulder bash" srcguid="f8d8b4a1-40e6-db63-bb8c-ea978b2eae63">
+			<_field_real name="Base Value" />
+			<_field_real_bounds name="Value Bounds" />
+			<_field_char_enum name="Combiner">
+				<item Name="sequential#applies the percentages one after another on the base" />
+				<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+				<item Name="addition#adds on all of the modifiers to the base" />
+				<item Name="product#multiplies the values one after another on to the base" />
+			</_field_char_enum>
+			<_field_pad name="padEnd" length="3" />
+		</_field_struct>
+		<_field_explanation name="camera tilt pitch function">Use this curve to define how the camera pitch tilts when the character shoulder bashes. The x axis measures time from the beginning of the bash to the end. Y axis is angle (in degrees) that the camera is pitched in the direction of the bash.</_field_explanation>
+		<_field_struct name="camera tilt pitch function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+		<_field_explanation name="camera forward offset function">Use this curve to define how the camera is offset forward when the character shoulder bashes. The x axis measures time from the beginning of the bash to the end. Y axis is distance (in wu) that the camera is offset in the direction of the bash. NOTE: This is necessary because the character's body tilts forward during the shoulder bash. It should be used to match the camera position to that tilt, not to exaggerate the feeling of motion.</_field_explanation>
+		<_field_struct name="camera forward offset function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+		<_field_explanation name="camera FOV delta function">Use this curve to define how the camera FOV changes when the character shoulder bashes. The x axis measures time from the beginning of the bash to the end. Y axis is the amount (in degrees) that the FOV is modified at the given time. Negative numbers shrink the FOV, positive numbers grow it.</_field_explanation>
+		<_field_struct name="camera FOV delta function" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+			<_field_data_64 name="data" />
+		</_field_struct>
+		<_field_tag_reference_64 name="bash damage effect#damage applied to the thing that gets shoulder bashed" validtags="jpt!" />
+		<_field_tag_reference_64 name="bash clang damage effect#damage applied to the thing that gets shoulder bashed" validtags="jpt!" />
+		<_field_tag_reference_64 name="bash effect#created on the thing that gets shoulder bashed" validtags="effe" />
+		<_field_tag_reference_64 name="bash response damage effect#applied to character that performed the bash to generate rumble and other such effects" validtags="jpt!" />
+		<_field_tag_reference_64 name="bash response effect#created on the character performed the bash" validtags="effe" />
+		<_field_custom name="damage scalar#scales the damage multiplier on damage events caused by shoulder bash" />
+		<_field_struct name="damage scalar#scales the damage multiplier on damage events caused by shoulder bash" srcguid="f8d8b4a1-40e6-db63-bb8c-ea978b2eae63">
+			<_field_real name="Base Value" />
+			<_field_real_bounds name="Value Bounds" />
+			<_field_char_enum name="Combiner">
+				<item Name="sequential#applies the percentages one after another on the base" />
+				<item Name="total percentage#adds up all of the percentages and applies them to the base" />
+				<item Name="addition#adds on all of the modifiers to the base" />
+				<item Name="product#multiplies the values one after another on to the base" />
+			</_field_char_enum>
+			<_field_pad name="padEnd" length="3" />
+		</_field_struct>
+		<_field_string_id name="shoulder bash animation#the animation played when the shoulder bash is triggered" />
+		<_field_string_id name="shoulder bash success follow-through#animation played when the character bashes an object that it can damage" />
+		<_field_real name="shoulder bash success follow-through duration#how long to play the animation (assumes it has loop markers)" />
+		<_field_real name="shoulder bash success follow-through FP camera restore time#relative to end of duration above" />
+		<_field_string_id name="shoulder bash success rebound#animation played when the character bashes an object that it can damage and rebounds" />
+		<_field_real name="shoulder bash success rebound duration#how long to play the animation (assumes it has loop markers)" />
+		<_field_real name="shoulder bash success rebound FP camera restore time#relative to end of duration above" />
+		<_field_real name="shoulder bash success rebound speed duration:seconds" />
+		<_field_real name="shoulder bash success rebound speed:wu/s" />
+		<_field_explanation name="no rebound surfaces">materials listed here will prevent the rebound from occurring.</_field_explanation>
+		<_field_block_64 name="no rebound materials" max="64" srcguid="d2679d1f-40b2-5b59-deb3-dfad436edf1c" srcName="StringIdBlock">
+			<_field_string_id name="material name" />
+		</_field_block_64>
+		<_field_string_id name="shoulder bash miss follow-through#animation played when the character hits nothing)" />
+		<_field_real name="shoulder bash miss follow-through FP camera restore time" />
+		<_field_real_fraction name="shoulder bash miss follow-through early out fraction#once the animation is more than this percentage through allow an early exit if the player is trying to move" />
+		<_field_explanation name="Aim Assist" />
+		<_field_angle name="auto aim angle:degrees#the maximum angle that auto aim works at full strength" />
+		<_field_real name="auto aim range:world units#the maximum distance that auto aim works at full strength" />
+		<_field_real name="auto aim falloff range:world units#at what point the auto aim starts falling off" />
+		<_field_real name="auto aim near falloff range:world units#at what point the auto aim reaches full power" />
+		<_field_explanation name="AI Response" />
+		<_field_short_enum name="bash AI sound level#intensity of AI sound notification">
+			<item Name="silent#ai will not respond to this sound" />
+			<item Name="quiet" />
+			<item Name="medium" />
+			<item Name="shout" />
+			<item Name="loud#ai can hear this sound at any range" />
+		</_field_short_enum>
+		<_field_pad name="pad0" length="2" />
+	</_field_struct>
 	<_field_pad name="pad" length="4" />
 </plugin>

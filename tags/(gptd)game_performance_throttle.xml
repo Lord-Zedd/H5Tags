@@ -1,20 +1,23 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="entries" max="32" guid="7195a903-49a5-69be-5e30-cdc5dc8f8657">
-		<_field_struct name="filter" />
-		<_field_long_integer name="minimum player count" />
-		<_field_struct name="profile" />
-		<_field_long_integer name="maximum havok proxy count" />
-		<_field_long_integer name="maximum impact count" />
-		<_field_long_integer name="vehicle suspension update frequency" />
-		<_field_long_integer name="Actor LOD, AI actors to update fully each frame" />
-		<_field_long_integer name="Actor LOD, Number of frames to tick LODed AI" />
-		<_field_long_integer name="Actor LOD, Number of concurrent LOD actors to tick" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="entries" max="32" srcguid="7195a903-49a5-69be-5e30-cdc5dc8f8657" srcName="game_performance_throttle_entries_block">
+		<_field_struct name="filter" srcguid="aaa4cf05-4959-0843-920d-c3c00e07ab12">
+			<_field_long_integer name="minimum player count" />
+		</_field_struct>
+		<_field_struct name="profile" srcguid="a9a4cf05-4959-8843-920d-c3b00e07ab16">
+			<_field_long_integer name="maximum havok proxy count" />
+			<_field_long_integer name="maximum impact count" />
+			<_field_long_integer name="vehicle suspension update frequency" />
+			<_field_long_integer name="Actor LOD, AI actors to update fully each frame" />
+			<_field_long_integer name="Actor LOD, Number of frames to tick LODed AI" />
+			<_field_long_integer name="Actor LOD, Number of concurrent LOD actors to tick" />
+		</_field_struct>
 	</_field_block_64>
 	<_field_pad name="pad_tp" length="4" />
 </plugin>

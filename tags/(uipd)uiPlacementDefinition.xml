@@ -1,44 +1,46 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_struct name="static data" />
-	<_field_string_id name="name^" />
-	<_field_tag_reference_64 name="nodegraph stack reference" />
-	<_field_long_flags name="flags">
-		<item Name="instantiate automatically" />
-	</_field_long_flags>
-	<_field_explanation name="Transform settings">Settings for the position of the nodegraph</_field_explanation>
-	<_field_real_point_3d name="translation" />
-	<_field_real_quaternion name="rotation" />
-	<_field_real name="scale" />
-	<_field_real_point_3d name="worldPosition" />
-	<_field_real_quaternion name="worldRotation" />
-	<_field_block_64 name="default2d" max="1" guid="f417607b-4812-093e-1f77-93b3b9f0f8e0">
-		<_field_pad name="pad0" length="1" />
-	</_field_block_64>
-	<_field_block_64 name="objectMarker3d" max="1" guid="9a134f97-40d4-5dac-cdf0-b7bba209d8d9">
-		<_field_string_id name="object name" />
-		<_field_string_id name="marker name" />
-	</_field_block_64>
-	<_field_block_64 name="structureBSPMarker" max="1" guid="d008b1a7-4498-567a-8362-88ad2f07b244">
-		<_field_string name="marker name" />
-	</_field_block_64>
-	<_field_block_64 name="cameraOrientedStructureBSPMarker" max="1" guid="d74d3fba-49a4-3ec4-980d-75a64bb60877">
-		<_field_string name="marker name" />
-	</_field_block_64>
-	<_field_explanation name="Projection settings">Settings for the projection and camera used to see the nodegraph</_field_explanation>
-	<_field_block_64 name="default 2d" max="1" guid="5c9430b9-4922-9290-8a6c-12baa65bc402">
-		<_field_pad name="pad0" length="1" />
-	</_field_block_64>
-	<_field_block_64 name="playerView" max="1" guid="8bfb2c45-42bb-01bf-f62c-f0b1599a4677">
-		<_field_pad name="pad0" length="1" />
-	</_field_block_64>
-	<_field_explanation name="Interaction settings">Settings for interacting with the nodegraph</_field_explanation>
-	<_field_block_64 name="Infinity console" max="1" guid="d4dbac21-4fcb-01b6-c3c7-30998e786307">
-		<_field_real name="distance (metres)" />
-	</_field_block_64>
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_struct name="static data" srcguid="887b37a0-4321-d6d9-e431-11b7d18197e6">
+		<_field_string_id name="name^" />
+		<_field_tag_reference_64 name="nodegraph stack reference" validtags="ngst" />
+		<_field_long_flags name="flags">
+			<item Name="instantiate automatically" />
+		</_field_long_flags>
+		<_field_explanation name="Transform settings">Settings for the position of the nodegraph</_field_explanation>
+		<_field_real_point_3d name="translation" />
+		<_field_real_quaternion name="rotation" />
+		<_field_real name="scale" />
+		<_field_real_point_3d name="worldPosition" />
+		<_field_real_quaternion name="worldRotation" />
+		<_field_block_64 name="default2d" max="1" srcguid="f417607b-4812-093e-1f77-93b3b9f0f8e0" srcName="Default2dTransformMethodDefinition">
+			<_field_pad name="pad0" length="1" />
+		</_field_block_64>
+		<_field_block_64 name="objectMarker3d" max="1" srcguid="9a134f97-40d4-5dac-cdf0-b7bba209d8d9" srcName="ObjectMarker3dTransformMethodDefinition">
+			<_field_string_id name="object name" />
+			<_field_string_id name="marker name" />
+		</_field_block_64>
+		<_field_block_64 name="structureBSPMarker" max="1" srcguid="d008b1a7-4498-567a-8362-88ad2f07b244" srcName="StructureBSPMarkerTransformMethodDefinition">
+			<_field_string name="marker name" />
+		</_field_block_64>
+		<_field_block_64 name="cameraOrientedStructureBSPMarker" max="1" srcguid="d74d3fba-49a4-3ec4-980d-75a64bb60877" srcName="CameraOrientedStructureBSPMarkerTransformMethodDefinition">
+			<_field_string name="marker name" />
+		</_field_block_64>
+		<_field_explanation name="Projection settings">Settings for the projection and camera used to see the nodegraph</_field_explanation>
+		<_field_block_64 name="default 2d" max="1" srcguid="5c9430b9-4922-9290-8a6c-12baa65bc402" srcName="Default2dProjectionMethodDefinition">
+			<_field_pad name="pad0" length="1" />
+		</_field_block_64>
+		<_field_block_64 name="playerView" max="1" srcguid="8bfb2c45-42bb-01bf-f62c-f0b1599a4677" srcName="PlayerViewProjectionMethodDefinition">
+			<_field_pad name="pad0" length="1" />
+		</_field_block_64>
+		<_field_explanation name="Interaction settings">Settings for interacting with the nodegraph</_field_explanation>
+		<_field_block_64 name="Infinity console" max="1" srcguid="d4dbac21-4fcb-01b6-c3c7-30998e786307" srcName="InfinityConsoleInteractionMethodDefinition">
+			<_field_real name="distance (metres)" />
+		</_field_block_64>
+	</_field_struct>
 </plugin>

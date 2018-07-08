@@ -1,74 +1,83 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_custom name="Depth Fog" />
 	<_field_custom name="Master Depth Fog Start" />
-	<_field_explanation name="Start Bias">Fog start offset for all &quot;depth fog.&quot; Positive value that moves fog starting point forward 
+	<_field_explanation name="Start Bias">Fog start offset for all "depth fog." Positive value that moves fog starting point forward 
 along camera view direction (into the screen).</_field_explanation>
 	<_field_real name="distance bias:world units#positive means into the screen" />
 	<_field_custom name="Depth Sky Fog" />
-	<_field_struct name="sky fog" />
-	<_field_long_flags name="flags">
-		<item Name="Enabled" />
-		<item Name="Camera-relative" />
-	</_field_long_flags>
-	<_field_real name="base height:world units" />
-	<_field_real name="fog height:world units" />
-	<_field_real name="fog thickness [0.0 to 1.0]" />
-	<_field_real name="fog falloff end{max fog distance}" />
-	<_field_real_rgb_color name="fog color" />
-	<_field_real name="fog color intensity#scales color up or down to allow for HDR values" />
-	<_field_block_64 name="Function" max="1" guid="d1f9d529-d3e1-9b06-3c79-09d550af3136">
-		<_field_data_64 name="data" />
-	</_field_block_64>
+	<_field_struct name="sky fog" srcguid="d82ab115-4999-0924-49a1-7c854849f224">
+		<_field_long_flags name="flags">
+			<item Name="Enabled" />
+			<item Name="Camera-relative" />
+		</_field_long_flags>
+		<_field_real name="base height:world units" />
+		<_field_real name="fog height:world units" />
+		<_field_real name="fog thickness [0.0 to 1.0]" />
+		<_field_real name="fog falloff end{max fog distance}" />
+		<_field_real_rgb_color name="fog color" />
+		<_field_real name="fog color intensity#scales color up or down to allow for HDR values" />
+		<_field_block_64 name="Function" max="1" srcguid="d1f9d529-d3e1-9b06-3c79-09d550af3136" srcName="soloFogFunctionBlock">
+			<_field_struct name="mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_block_64>
+	</_field_struct>
 	<_field_custom name="Depth Ground Fog" />
-	<_field_struct name="ground fog" />
-	<_field_long_flags name="flags">
-		<item Name="Enabled" />
-		<item Name="Camera-relative" />
-	</_field_long_flags>
-	<_field_real name="base height:world units" />
-	<_field_real name="fog height:world units" />
-	<_field_real name="fog thickness [0.0 to 1.0]" />
-	<_field_real name="fog falloff end{max fog distance}" />
-	<_field_real_rgb_color name="fog color" />
-	<_field_real name="fog color intensity#scales color up or down to allow for HDR values" />
-	<_field_block_64 name="Function" max="1" guid="d1f9d529-d3e1-9b06-3c79-09d550af3136">
-		<_field_data_64 name="data" />
-	</_field_block_64>
+	<_field_struct name="ground fog" srcguid="d82ab115-4999-0924-49a1-7c854849f224">
+		<_field_long_flags name="flags">
+			<item Name="Enabled" />
+			<item Name="Camera-relative" />
+		</_field_long_flags>
+		<_field_real name="base height:world units" />
+		<_field_real name="fog height:world units" />
+		<_field_real name="fog thickness [0.0 to 1.0]" />
+		<_field_real name="fog falloff end{max fog distance}" />
+		<_field_real_rgb_color name="fog color" />
+		<_field_real name="fog color intensity#scales color up or down to allow for HDR values" />
+		<_field_block_64 name="Function" max="1" srcguid="d1f9d529-d3e1-9b06-3c79-09d550af3136" srcName="soloFogFunctionBlock">
+			<_field_struct name="mapping" srcguid="5a14a98f-4484-53fa-d468-10809e45f10a">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_block_64>
+	</_field_struct>
 	<_field_custom name="Depth Ceiling Fog" />
-	<_field_struct name="ceiling fog" />
-	<_field_long_flags name="flags">
-		<item Name="Enabled" />
-	</_field_long_flags>
-	<_field_real name="base height:world units" />
-	<_field_real name="fog height:world units" />
-	<_field_real name="fog thickness [0.0 to 1.0]" />
-	<_field_real name="fog falloff end{max fog distance}" />
-	<_field_real_rgb_color name="fog color" />
-	<_field_real name="fog color intensity#scales color up or down to allow for HDR values" />
+	<_field_struct name="ceiling fog" srcguid="d82ab116-499a-0924-49a1-7c854849f224">
+		<_field_long_flags name="flags">
+			<item Name="Enabled" />
+		</_field_long_flags>
+		<_field_real name="base height:world units" />
+		<_field_real name="fog height:world units" />
+		<_field_real name="fog thickness [0.0 to 1.0]" />
+		<_field_real name="fog falloff end{max fog distance}" />
+		<_field_real_rgb_color name="fog color" />
+		<_field_real name="fog color intensity#scales color up or down to allow for HDR values" />
+	</_field_struct>
 	<_field_custom name="Fog Light" />
-	<_field_struct name="fog light" />
-	<_field_long_flags name="flags">
-		<item Name="Enabled" />
-		<item Name="Use sun direction for fog light" />
-	</_field_long_flags>
-	<_field_real name="pitch angle [-90 to 90]:degree" />
-	<_field_real name="yaw angle [0 to 360]:degree" />
-	<_field_real name="angular radius [0 to 180]:degree" />
-	<_field_real_rgb_color name="tint color" />
-	<_field_real name="tint color intensity" />
-	<_field_real name="angular falloff steepness" />
-	<_field_real name="distance falloff steepness" />
-	<_field_real name="nearby cutoff percentage" />
+	<_field_struct name="fog light" srcguid="2ea4f209-43db-23eb-5a12-cf96da6c717f">
+		<_field_long_flags name="flags">
+			<item Name="Enabled" />
+			<item Name="Use sun direction for fog light" />
+		</_field_long_flags>
+		<_field_real name="pitch angle [-90 to 90]:degree" />
+		<_field_real name="yaw angle [0 to 360]:degree" />
+		<_field_real name="angular radius [0 to 180]:degree" />
+		<_field_real_rgb_color name="tint color" />
+		<_field_real name="tint color intensity" />
+		<_field_real name="angular falloff steepness" />
+		<_field_real name="distance falloff steepness" />
+		<_field_real name="nearby cutoff percentage" />
+	</_field_struct>
 	<_field_explanation name="### CAUTION ###">Non-blending globals are currently still read from the .atmosphere_globals tag.
 We will remove this tag and switch to using this block in the very near future</_field_explanation>
-	<_field_struct name="fog globals" />
-	<_field_explanation name="Volume Texture Fog Non-blending Parameters">NOTE: The parameters below do not interpolate across lighting volumes. If you do not fade out
+	<_field_struct name="fog globals" srcguid="3ebf8817-4916-c94c-d390-c9b316f63970">
+		<_field_explanation name="Volume Texture Fog Non-blending Parameters">NOTE: The parameters below do not interpolate across lighting volumes. If you do not fade out
 the volume texture fog to 0, and do not transition from 0 to a new value in a different lighting
 volume but rather simply specify a different value directly, you will see a pop
 
@@ -85,23 +94,27 @@ Disable Texture Rotation..When checked, fog texture will not rotate, i.e. fog's 
 wind strength across distance..Multiplies the wind strength based upon distance from player
 
 </_field_explanation>
-	<_field_tag_reference_64 name="Fog Bitmap" />
-	<_field_real name="Texture repeat rate" />
-	<_field_real name="Distance between sheets" />
-	<_field_real name="Depth fade factor" />
-	<_field_real name="Transparent sort distance" />
-	<_field_char_enum name="Transparent sort layer">
-		<item Name="invalid" />
-		<item Name="pre-pass" />
-		<item Name="normal" />
-		<item Name="post-pass" />
-	</_field_char_enum>
-	<_field_byte_flags name="Flags">
-		<item Name="Disable Texture Rotation" />
-	</_field_byte_flags>
-	<_field_pad name="UNdfdfdSED" length="2" />
-	<_field_struct name="wind strength across distance" />
-	<_field_data_64 name="data" />
+		<_field_tag_reference_64 name="Fog Bitmap" validtags="bitm" />
+		<_field_real name="Texture repeat rate" />
+		<_field_real name="Distance between sheets" />
+		<_field_real name="Depth fade factor" />
+		<_field_real name="Transparent sort distance" />
+		<_field_char_enum name="Transparent sort layer">
+			<item Name="invalid" />
+			<item Name="pre-pass" />
+			<item Name="normal" />
+			<item Name="post-pass" />
+		</_field_char_enum>
+		<_field_byte_flags name="Flags">
+			<item Name="Disable Texture Rotation" />
+		</_field_byte_flags>
+		<_field_pad name="UNdfdfdSED" length="2" />
+		<_field_struct name="wind strength across distance" srcguid="384eba00-4534-2aa9-43d0-11ad26ef234a">
+			<_field_struct name="function" srcguid="9019aba5-4a1a-4c5a-34f0-1aadada1fd11">
+				<_field_data_64 name="data" />
+			</_field_struct>
+		</_field_struct>
+	</_field_struct>
 	<_field_explanation name="Volume Texture Fog Per-Cluster Parameters">Sheet density.............Intensity scaling factor applied to all sheets
 Full intensity height.....Height above 0 below which fog should be at full intensity
 Half intensity height.....Height at which fog should be attenuated to half intensity
@@ -120,28 +133,29 @@ Wind......................Direction and intensity of fog motion due to wind
 	<_field_real_vector_3d name="Wind direction" />
 	<_field_real name="Reference plane height" />
 	<_field_custom name="Crepuscular Rays" />
-	<_field_struct name="crepuscular ray" />
-	<_field_long_flags name="flags">
-		<item Name="Enabled" />
-		<item Name="Use sun direction for crepuscular rays" />
-		<item Name="Use world space position for the source of crepuscular rays" />
-	</_field_long_flags>
-	<_field_real name="pitch angle [-90 to 90]:degree" />
-	<_field_real name="yaw angle [0 to 360]:degree" />
-	<_field_real name="angular radius [0 to 180]:degree" />
-	<_field_real_point_3d name="source position" />
-	<_field_real_rgb_color name="light shaft tint color" />
-	<_field_real name="light shaft intensity" />
-	<_field_real name="saturation" />
-	<_field_real name="time variation scale [0 to 1]" />
-	<_field_real name="light shaft decay rate" />
-	<_field_real name="maximum screen distance" />
-	<_field_real name="sample density" />
-	<_field_real name="minimum caster distance" />
-	<_field_pad name="PAD" length="4" />
+	<_field_struct name="crepuscular ray" srcguid="14a1e18f-4aa8-6b3f-a85b-e9b60026b1fd">
+		<_field_long_flags name="flags">
+			<item Name="Enabled" />
+			<item Name="Use sun direction for crepuscular rays" />
+			<item Name="Use world space position for the source of crepuscular rays" />
+		</_field_long_flags>
+		<_field_real name="pitch angle [-90 to 90]:degree" />
+		<_field_real name="yaw angle [0 to 360]:degree" />
+		<_field_real name="angular radius [0 to 180]:degree" />
+		<_field_real_point_3d name="source position" />
+		<_field_real_rgb_color name="light shaft tint color" />
+		<_field_real name="light shaft intensity" />
+		<_field_real name="saturation" />
+		<_field_real name="time variation scale [0 to 1]" />
+		<_field_real name="light shaft decay rate" />
+		<_field_real name="maximum screen distance" />
+		<_field_real name="sample density" />
+		<_field_real name="minimum caster distance" />
+		<_field_pad name="PAD" length="4" />
+	</_field_struct>
 	<_field_explanation name="Weather effect">Effect tag to create nearby raindrops, snowflakes, etc.
 Particle systems from this effect will follow the camera and wrap seamlessly as you turn or move.
 
 </_field_explanation>
-	<_field_tag_reference_64 name="Weather effect" />
+	<_field_tag_reference_64 name="Weather effect" validtags="effe" />
 </plugin>

@@ -1,11 +1,12 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="default custom loadouts" max="5" guid="5c0c246c-4baa-3267-0dc6-959cd607567f">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="default custom loadouts" max="5" srcguid="5c0c246c-4baa-3267-0dc6-959cd607567f" srcName="custom_loadout_defaults_block">
 		<_field_string_id name="loadout name^" />
 		<_field_string_id name="initial primary weapon#name of an element from global starting weapons block. Other values:
 (empty) - unchanged
@@ -17,8 +18,8 @@ random - use random item from valid starting weapons" />
 		<_field_string_id name="initial secondary weapon#see above" />
 		<_field_string_id name="initial secondary weapon variant name" />
 		<_field_string_id name="initial equipment#see above" />
-		<_field_block_64 name="initial grenade count" max="16" guid="5819a7ec-4fc4-6525-f005-c197a4decad8">
-			<_field_tag_reference_64 name="grenade reference" />
+		<_field_block_64 name="initial grenade count" max="16" srcguid="5819a7ec-4fc4-6525-f005-c197a4decad8" srcName="grenade_block">
+			<_field_tag_reference_64 name="grenade reference" validtags="obje" />
 			<_field_char_integer name="count" />
 			<_field_pad name="pad0" length="3" />
 		</_field_block_64>

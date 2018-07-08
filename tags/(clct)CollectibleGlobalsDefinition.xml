@@ -1,11 +1,12 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="skulls" max="128" guid="53aa40f3-41d4-2a0b-8d73-f3aff7784d50">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="skulls" max="128" srcguid="53aa40f3-41d4-2a0b-8d73-f3aff7784d50" srcName="CollectibleBlock">
 		<_field_char_enum name="collectible race">
 			<item Name="Forerunner" />
 			<item Name="Human" />
@@ -36,7 +37,7 @@
 		<_field_char_integer name="game variant index#the index for this collectible in GameOptions" />
 		<_field_pad name="pad[3]" length="3" />
 	</_field_block_64>
-	<_field_block_64 name="audio logs" max="128" guid="53aa40f3-41d4-2a0b-8d73-f3aff7784d50">
+	<_field_block_64 name="audio logs" max="128" srcguid="53aa40f3-41d4-2a0b-8d73-f3aff7784d50" srcName="CollectibleBlock">
 		<_field_char_enum name="collectible race">
 			<item Name="Forerunner" />
 			<item Name="Human" />

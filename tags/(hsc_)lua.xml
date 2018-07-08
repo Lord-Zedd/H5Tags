@@ -1,18 +1,20 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_struct name="source file" />
-	<_field_data_64 name="source*" />
-	<_field_block_64 name="references*" max="1024" guid="d5081a5a-49b0-aaae-215c-dda38b1a4c98">
-		<_field_tag_reference_64 name="reference*^" />
-	</_field_block_64>
-	<_field_block_64 name="name hashes*" max="1024" guid="74746212-4042-bb67-4741-c0befe85efc6">
-		<_field_int64_integer name="hash*" />
-	</_field_block_64>
-	<_field_tag_reference_64 name="prototype script*" />
-	<_field_pad name="pad" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_struct name="source file" srcguid="cb061583-4130-078c-c3da-1da23213725c">
+		<_field_data_64 name="source*" />
+		<_field_block_64 name="references*" max="1024" srcguid="d5081a5a-49b0-aaae-215c-dda38b1a4c98" srcName="hs_references_block">
+			<_field_tag_reference_64 name="reference*^" />
+		</_field_block_64>
+		<_field_block_64 name="name hashes*" max="1024" srcguid="74746212-4042-bb67-4741-c0befe85efc6" srcName="hs_name_hashes_block">
+			<_field_int64_integer name="hash*" />
+		</_field_block_64>
+		<_field_tag_reference_64 name="prototype script*" validtags="hsc*" />
+		<_field_pad name="pad" length="4" />
+	</_field_struct>
 </plugin>

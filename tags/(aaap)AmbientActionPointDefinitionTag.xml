@@ -1,17 +1,18 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="Ambient Info# The ambient info for this ambient action" max="512" guid="2e60a80b-48ae-effe-61ea-10ac1906a20c">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="Ambient Info# The ambient info for this ambient action" max="512" srcguid="2e60a80b-48ae-effe-61ea-10ac1906a20c" srcName="ambient_action_block">
 		<_field_real name="Time playing animation:seconds" />
 		<_field_real name="Cooldown time:seconds" />
 		<_field_string_id name="composition name" />
-		<_field_tag_reference_64 name="composition definition" />
+		<_field_tag_reference_64 name="composition definition" validtags="comp" />
 		<_field_real name="Max distance agents will consider this opp from:wu" />
-		<_field_block_64 name="Ambient meta labels" max="32" guid="7a236d95-4b5b-6697-5b69-1494408a3af4">
+		<_field_block_64 name="Ambient meta labels" max="32" srcguid="7a236d95-4b5b-6697-5b69-1494408a3af4" srcName="object_designer_metadata_block">
 			<_field_string_id name="meta label^" />
 		</_field_block_64>
 	</_field_block_64>

@@ -1,10 +1,11 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
 	<_field_explanation name="SIMULATION INTERPOLATION">This tag defines interpolation that will be used to smooth the motion of objects in distributed multiplayer games.  In bandwidth-constrained multiplayer games (i.e. most games), we will receive only one or two updates per second for faraway objects.  Even near objects may frequently be dropped to &lt;5 updates per second, especially crates, garbage bits, and similar less important elements of the simulation.  Between updates, each peer predicts the motion of each object.  These predictions are often wrong (by anything from an inch to dozens of feet).  The simulation interpolation system is responsible for correcting these mispredictions in as aesthetically pleasing a way as possible, without harming the integrity of the game.  The details of the technical implementation are beyond the scope of this explanation, but various configuration parameters are exposed here.  
 
 The tooltips for each configuration parameter should be helpful.  Please see daldridge w/ questions or bugs.</_field_explanation>
@@ -17,108 +18,120 @@ The tooltips for each configuration parameter should be helpful.  Please see dal
 	<_field_real name="position_warp_threshold_xy:WU#Separated for bipeds, for whom z discrepancies are more permissible because of jumping. If you don't want a special lower XY threshold, just set this to a very high number." />
 	<_field_real name="rotation_warp_threshold:degrees#Threshold of rotation error beyond which we will warp instead of interpolating.  Set this to 180.0 if you don't want to warp based on rotational deviation (may be important for objects that often spin very fast, e.g. grenades or garbage bits)." />
 	<_field_custom name="Position while controlled" />
-	<_field_struct name="position_while_controlled#All speeds in here are WU/s" />
-	<_field_explanation name="SINGLE DOMAIN INTERPOLATION">Note that if either the position or rotation discrepancy thresholds above which we use blending are exceeded, we will blend in both domains (because blending is more accurate and once we blend in either domain, we are forced to warp the physics representation of the object, which is the main downside of blending.  Therefore, the second domain is essentially &quot;free&quot; after we pay for the first w/ a physics warp.
+	<_field_struct name="position_while_controlled#All speeds in here are WU/s" srcguid="e844485c-42a7-7825-0a65-52b8c7a1c83e">
+		<_field_explanation name="SINGLE DOMAIN INTERPOLATION">Note that if either the position or rotation discrepancy thresholds above which we use blending are exceeded, we will blend in both domains (because blending is more accurate and once we blend in either domain, we are forced to warp the physics representation of the object, which is the main downside of blending.  Therefore, the second domain is essentially "free" after we pay for the first w/ a physics warp.
 
 Note also that this discrepancy threshold is either WU or degrees, depending on context.  Check your context!</_field_explanation>
-	<_field_real name="discrepancy_threshold_above_which_we_use_blending:WU or degrees#Below this threshold we use velocity bumps." />
-	<_field_real name="coming_to_rest_speed:WU/s or degrees/s#When our velocity is below this threshold, we will consider using a blend to minimize at-rest error." />
-	<_field_real name="coming_to_rest_maximum_ignorable_error:WU or degrees#We will use a blend when our speed is below the coming_to_rest_speed and our error is greater than this." />
-	<_field_custom name="Velocity bumps" />
-	<_field_struct name="velocity bumps" />
-	<_field_explanation name="SINGLE DOMAIN VELOCITY BUMPS">Velocity bumps are used for small mis-predictions because they are more visually pleasing than straight blending. However, they are less accurate, less consistent, and harder to tune.</_field_explanation>
-	<_field_real name="velocity_scale#Fraction of delta that becomes the velocity bump" />
-	<_field_real name="velocity_min:WU or degrees per second#Minimum size of any given velocity bump" />
-	<_field_real name="velocity_max:WU or degrees per second#Maximum size of any given velocity bump" />
-	<_field_explanation name="Velocity Bump Suppression">We suppress velocity bumps when the object is &quot;close enough&quot; to encourage objects to come to rest. Both of the below conditions must be satisfied to suppress velocity bumps.</_field_explanation>
-	<_field_real name="velocity_difference_ignore_threshold:WU or degrees per second#The new velocity must differ from the old velocity by less than this to allow suppression." />
-	<_field_real name="velocity_difference_absolute_ignore_threshold:WU or degrees#The new position/rotation must differ from the old position/rotation by less than this to allow suppression." />
-	<_field_custom name="Blending" />
-	<_field_struct name="blending" />
-	<_field_explanation name="SINGLE DOMAIN BLENDING CONFIGURATION">Whether these speeds are linear or angular depends on the context - check context before modifying.</_field_explanation>
-	<_field_real name="min_object_speed:WU or degrees per second#Approximate minimum speed for this object (either controlled or uncontrolled)." />
-	<_field_real name="max_object_speed:WU or degrees per second#Approximate maximum speed for this object (either controlled or uncontrolled)." />
-	<_field_real name="fraction_at_min_object_speed#Fraction of misprediction error consumed each tick if object is traveling at or below min_object_speed.  Linterp is executed at intermediate object speeds." />
-	<_field_real name="fraction_at_max_object_speed#Fraction of misprediction error consumed each tick if object is traveling at or above max_object_speed.  Linterp is executed at intermediate object speeds." />
-	<_field_real name="min_speed_at_min_object_speed:WU or degrees per second#Minimum misprediction error consumption speed if object is at or below min_object_speed.  Linterp is executed at intermediate object speeds." />
-	<_field_real name="min_speed_at_max_object_speed:WU or degrees per second#Minimum misprediction error consumption speed if object is at or above max_object_speed. Linterp is executed at intermediate object speeds." />
+		<_field_real name="discrepancy_threshold_above_which_we_use_blending:WU or degrees#Below this threshold we use velocity bumps." />
+		<_field_real name="coming_to_rest_speed:WU/s or degrees/s#When our velocity is below this threshold, we will consider using a blend to minimize at-rest error." />
+		<_field_real name="coming_to_rest_maximum_ignorable_error:WU or degrees#We will use a blend when our speed is below the coming_to_rest_speed and our error is greater than this." />
+		<_field_custom name="Velocity bumps" />
+		<_field_struct name="velocity bumps" srcguid="e01ed32b-4923-4ac4-d013-82a32b729885">
+			<_field_explanation name="SINGLE DOMAIN VELOCITY BUMPS">Velocity bumps are used for small mis-predictions because they are more visually pleasing than straight blending. However, they are less accurate, less consistent, and harder to tune.</_field_explanation>
+			<_field_real name="velocity_scale#Fraction of delta that becomes the velocity bump" />
+			<_field_real name="velocity_min:WU or degrees per second#Minimum size of any given velocity bump" />
+			<_field_real name="velocity_max:WU or degrees per second#Maximum size of any given velocity bump" />
+			<_field_explanation name="Velocity Bump Suppression">We suppress velocity bumps when the object is "close enough" to encourage objects to come to rest. Both of the below conditions must be satisfied to suppress velocity bumps.</_field_explanation>
+			<_field_real name="velocity_difference_ignore_threshold:WU or degrees per second#The new velocity must differ from the old velocity by less than this to allow suppression." />
+			<_field_real name="velocity_difference_absolute_ignore_threshold:WU or degrees#The new position/rotation must differ from the old position/rotation by less than this to allow suppression." />
+		</_field_struct>
+		<_field_custom name="Blending" />
+		<_field_struct name="blending" srcguid="47e921d4-4ebe-65ab-41ef-718ab1104422">
+			<_field_explanation name="SINGLE DOMAIN BLENDING CONFIGURATION">Whether these speeds are linear or angular depends on the context - check context before modifying.</_field_explanation>
+			<_field_real name="min_object_speed:WU or degrees per second#Approximate minimum speed for this object (either controlled or uncontrolled)." />
+			<_field_real name="max_object_speed:WU or degrees per second#Approximate maximum speed for this object (either controlled or uncontrolled)." />
+			<_field_real name="fraction_at_min_object_speed#Fraction of misprediction error consumed each tick if object is traveling at or below min_object_speed.  Linterp is executed at intermediate object speeds." />
+			<_field_real name="fraction_at_max_object_speed#Fraction of misprediction error consumed each tick if object is traveling at or above max_object_speed.  Linterp is executed at intermediate object speeds." />
+			<_field_real name="min_speed_at_min_object_speed:WU or degrees per second#Minimum misprediction error consumption speed if object is at or below min_object_speed.  Linterp is executed at intermediate object speeds." />
+			<_field_real name="min_speed_at_max_object_speed:WU or degrees per second#Minimum misprediction error consumption speed if object is at or above max_object_speed. Linterp is executed at intermediate object speeds." />
+		</_field_struct>
+	</_field_struct>
 	<_field_custom name="Rotation while controlled" />
-	<_field_struct name="rotation_while_controlled#All speeds in here are degrees/s" />
-	<_field_explanation name="SINGLE DOMAIN INTERPOLATION">Note that if either the position or rotation discrepancy thresholds above which we use blending are exceeded, we will blend in both domains (because blending is more accurate and once we blend in either domain, we are forced to warp the physics representation of the object, which is the main downside of blending.  Therefore, the second domain is essentially &quot;free&quot; after we pay for the first w/ a physics warp.
+	<_field_struct name="rotation_while_controlled#All speeds in here are degrees/s" srcguid="e844485c-42a7-7825-0a65-52b8c7a1c83e">
+		<_field_explanation name="SINGLE DOMAIN INTERPOLATION">Note that if either the position or rotation discrepancy thresholds above which we use blending are exceeded, we will blend in both domains (because blending is more accurate and once we blend in either domain, we are forced to warp the physics representation of the object, which is the main downside of blending.  Therefore, the second domain is essentially "free" after we pay for the first w/ a physics warp.
 
 Note also that this discrepancy threshold is either WU or degrees, depending on context.  Check your context!</_field_explanation>
-	<_field_real name="discrepancy_threshold_above_which_we_use_blending:WU or degrees#Below this threshold we use velocity bumps." />
-	<_field_real name="coming_to_rest_speed:WU/s or degrees/s#When our velocity is below this threshold, we will consider using a blend to minimize at-rest error." />
-	<_field_real name="coming_to_rest_maximum_ignorable_error:WU or degrees#We will use a blend when our speed is below the coming_to_rest_speed and our error is greater than this." />
-	<_field_custom name="Velocity bumps" />
-	<_field_struct name="velocity bumps" />
-	<_field_explanation name="SINGLE DOMAIN VELOCITY BUMPS">Velocity bumps are used for small mis-predictions because they are more visually pleasing than straight blending. However, they are less accurate, less consistent, and harder to tune.</_field_explanation>
-	<_field_real name="velocity_scale#Fraction of delta that becomes the velocity bump" />
-	<_field_real name="velocity_min:WU or degrees per second#Minimum size of any given velocity bump" />
-	<_field_real name="velocity_max:WU or degrees per second#Maximum size of any given velocity bump" />
-	<_field_explanation name="Velocity Bump Suppression">We suppress velocity bumps when the object is &quot;close enough&quot; to encourage objects to come to rest. Both of the below conditions must be satisfied to suppress velocity bumps.</_field_explanation>
-	<_field_real name="velocity_difference_ignore_threshold:WU or degrees per second#The new velocity must differ from the old velocity by less than this to allow suppression." />
-	<_field_real name="velocity_difference_absolute_ignore_threshold:WU or degrees#The new position/rotation must differ from the old position/rotation by less than this to allow suppression." />
-	<_field_custom name="Blending" />
-	<_field_struct name="blending" />
-	<_field_explanation name="SINGLE DOMAIN BLENDING CONFIGURATION">Whether these speeds are linear or angular depends on the context - check context before modifying.</_field_explanation>
-	<_field_real name="min_object_speed:WU or degrees per second#Approximate minimum speed for this object (either controlled or uncontrolled)." />
-	<_field_real name="max_object_speed:WU or degrees per second#Approximate maximum speed for this object (either controlled or uncontrolled)." />
-	<_field_real name="fraction_at_min_object_speed#Fraction of misprediction error consumed each tick if object is traveling at or below min_object_speed.  Linterp is executed at intermediate object speeds." />
-	<_field_real name="fraction_at_max_object_speed#Fraction of misprediction error consumed each tick if object is traveling at or above max_object_speed.  Linterp is executed at intermediate object speeds." />
-	<_field_real name="min_speed_at_min_object_speed:WU or degrees per second#Minimum misprediction error consumption speed if object is at or below min_object_speed.  Linterp is executed at intermediate object speeds." />
-	<_field_real name="min_speed_at_max_object_speed:WU or degrees per second#Minimum misprediction error consumption speed if object is at or above max_object_speed. Linterp is executed at intermediate object speeds." />
+		<_field_real name="discrepancy_threshold_above_which_we_use_blending:WU or degrees#Below this threshold we use velocity bumps." />
+		<_field_real name="coming_to_rest_speed:WU/s or degrees/s#When our velocity is below this threshold, we will consider using a blend to minimize at-rest error." />
+		<_field_real name="coming_to_rest_maximum_ignorable_error:WU or degrees#We will use a blend when our speed is below the coming_to_rest_speed and our error is greater than this." />
+		<_field_custom name="Velocity bumps" />
+		<_field_struct name="velocity bumps" srcguid="e01ed32b-4923-4ac4-d013-82a32b729885">
+			<_field_explanation name="SINGLE DOMAIN VELOCITY BUMPS">Velocity bumps are used for small mis-predictions because they are more visually pleasing than straight blending. However, they are less accurate, less consistent, and harder to tune.</_field_explanation>
+			<_field_real name="velocity_scale#Fraction of delta that becomes the velocity bump" />
+			<_field_real name="velocity_min:WU or degrees per second#Minimum size of any given velocity bump" />
+			<_field_real name="velocity_max:WU or degrees per second#Maximum size of any given velocity bump" />
+			<_field_explanation name="Velocity Bump Suppression">We suppress velocity bumps when the object is "close enough" to encourage objects to come to rest. Both of the below conditions must be satisfied to suppress velocity bumps.</_field_explanation>
+			<_field_real name="velocity_difference_ignore_threshold:WU or degrees per second#The new velocity must differ from the old velocity by less than this to allow suppression." />
+			<_field_real name="velocity_difference_absolute_ignore_threshold:WU or degrees#The new position/rotation must differ from the old position/rotation by less than this to allow suppression." />
+		</_field_struct>
+		<_field_custom name="Blending" />
+		<_field_struct name="blending" srcguid="47e921d4-4ebe-65ab-41ef-718ab1104422">
+			<_field_explanation name="SINGLE DOMAIN BLENDING CONFIGURATION">Whether these speeds are linear or angular depends on the context - check context before modifying.</_field_explanation>
+			<_field_real name="min_object_speed:WU or degrees per second#Approximate minimum speed for this object (either controlled or uncontrolled)." />
+			<_field_real name="max_object_speed:WU or degrees per second#Approximate maximum speed for this object (either controlled or uncontrolled)." />
+			<_field_real name="fraction_at_min_object_speed#Fraction of misprediction error consumed each tick if object is traveling at or below min_object_speed.  Linterp is executed at intermediate object speeds." />
+			<_field_real name="fraction_at_max_object_speed#Fraction of misprediction error consumed each tick if object is traveling at or above max_object_speed.  Linterp is executed at intermediate object speeds." />
+			<_field_real name="min_speed_at_min_object_speed:WU or degrees per second#Minimum misprediction error consumption speed if object is at or below min_object_speed.  Linterp is executed at intermediate object speeds." />
+			<_field_real name="min_speed_at_max_object_speed:WU or degrees per second#Minimum misprediction error consumption speed if object is at or above max_object_speed. Linterp is executed at intermediate object speeds." />
+		</_field_struct>
+	</_field_struct>
 	<_field_custom name="Position while not controlled" />
-	<_field_struct name="position_while_uncontrolled#All speeds in here are WU/s" />
-	<_field_explanation name="SINGLE DOMAIN INTERPOLATION">Note that if either the position or rotation discrepancy thresholds above which we use blending are exceeded, we will blend in both domains (because blending is more accurate and once we blend in either domain, we are forced to warp the physics representation of the object, which is the main downside of blending.  Therefore, the second domain is essentially &quot;free&quot; after we pay for the first w/ a physics warp.
+	<_field_struct name="position_while_uncontrolled#All speeds in here are WU/s" srcguid="e844485c-42a7-7825-0a65-52b8c7a1c83e">
+		<_field_explanation name="SINGLE DOMAIN INTERPOLATION">Note that if either the position or rotation discrepancy thresholds above which we use blending are exceeded, we will blend in both domains (because blending is more accurate and once we blend in either domain, we are forced to warp the physics representation of the object, which is the main downside of blending.  Therefore, the second domain is essentially "free" after we pay for the first w/ a physics warp.
 
 Note also that this discrepancy threshold is either WU or degrees, depending on context.  Check your context!</_field_explanation>
-	<_field_real name="discrepancy_threshold_above_which_we_use_blending:WU or degrees#Below this threshold we use velocity bumps." />
-	<_field_real name="coming_to_rest_speed:WU/s or degrees/s#When our velocity is below this threshold, we will consider using a blend to minimize at-rest error." />
-	<_field_real name="coming_to_rest_maximum_ignorable_error:WU or degrees#We will use a blend when our speed is below the coming_to_rest_speed and our error is greater than this." />
-	<_field_custom name="Velocity bumps" />
-	<_field_struct name="velocity bumps" />
-	<_field_explanation name="SINGLE DOMAIN VELOCITY BUMPS">Velocity bumps are used for small mis-predictions because they are more visually pleasing than straight blending. However, they are less accurate, less consistent, and harder to tune.</_field_explanation>
-	<_field_real name="velocity_scale#Fraction of delta that becomes the velocity bump" />
-	<_field_real name="velocity_min:WU or degrees per second#Minimum size of any given velocity bump" />
-	<_field_real name="velocity_max:WU or degrees per second#Maximum size of any given velocity bump" />
-	<_field_explanation name="Velocity Bump Suppression">We suppress velocity bumps when the object is &quot;close enough&quot; to encourage objects to come to rest. Both of the below conditions must be satisfied to suppress velocity bumps.</_field_explanation>
-	<_field_real name="velocity_difference_ignore_threshold:WU or degrees per second#The new velocity must differ from the old velocity by less than this to allow suppression." />
-	<_field_real name="velocity_difference_absolute_ignore_threshold:WU or degrees#The new position/rotation must differ from the old position/rotation by less than this to allow suppression." />
-	<_field_custom name="Blending" />
-	<_field_struct name="blending" />
-	<_field_explanation name="SINGLE DOMAIN BLENDING CONFIGURATION">Whether these speeds are linear or angular depends on the context - check context before modifying.</_field_explanation>
-	<_field_real name="min_object_speed:WU or degrees per second#Approximate minimum speed for this object (either controlled or uncontrolled)." />
-	<_field_real name="max_object_speed:WU or degrees per second#Approximate maximum speed for this object (either controlled or uncontrolled)." />
-	<_field_real name="fraction_at_min_object_speed#Fraction of misprediction error consumed each tick if object is traveling at or below min_object_speed.  Linterp is executed at intermediate object speeds." />
-	<_field_real name="fraction_at_max_object_speed#Fraction of misprediction error consumed each tick if object is traveling at or above max_object_speed.  Linterp is executed at intermediate object speeds." />
-	<_field_real name="min_speed_at_min_object_speed:WU or degrees per second#Minimum misprediction error consumption speed if object is at or below min_object_speed.  Linterp is executed at intermediate object speeds." />
-	<_field_real name="min_speed_at_max_object_speed:WU or degrees per second#Minimum misprediction error consumption speed if object is at or above max_object_speed. Linterp is executed at intermediate object speeds." />
+		<_field_real name="discrepancy_threshold_above_which_we_use_blending:WU or degrees#Below this threshold we use velocity bumps." />
+		<_field_real name="coming_to_rest_speed:WU/s or degrees/s#When our velocity is below this threshold, we will consider using a blend to minimize at-rest error." />
+		<_field_real name="coming_to_rest_maximum_ignorable_error:WU or degrees#We will use a blend when our speed is below the coming_to_rest_speed and our error is greater than this." />
+		<_field_custom name="Velocity bumps" />
+		<_field_struct name="velocity bumps" srcguid="e01ed32b-4923-4ac4-d013-82a32b729885">
+			<_field_explanation name="SINGLE DOMAIN VELOCITY BUMPS">Velocity bumps are used for small mis-predictions because they are more visually pleasing than straight blending. However, they are less accurate, less consistent, and harder to tune.</_field_explanation>
+			<_field_real name="velocity_scale#Fraction of delta that becomes the velocity bump" />
+			<_field_real name="velocity_min:WU or degrees per second#Minimum size of any given velocity bump" />
+			<_field_real name="velocity_max:WU or degrees per second#Maximum size of any given velocity bump" />
+			<_field_explanation name="Velocity Bump Suppression">We suppress velocity bumps when the object is "close enough" to encourage objects to come to rest. Both of the below conditions must be satisfied to suppress velocity bumps.</_field_explanation>
+			<_field_real name="velocity_difference_ignore_threshold:WU or degrees per second#The new velocity must differ from the old velocity by less than this to allow suppression." />
+			<_field_real name="velocity_difference_absolute_ignore_threshold:WU or degrees#The new position/rotation must differ from the old position/rotation by less than this to allow suppression." />
+		</_field_struct>
+		<_field_custom name="Blending" />
+		<_field_struct name="blending" srcguid="47e921d4-4ebe-65ab-41ef-718ab1104422">
+			<_field_explanation name="SINGLE DOMAIN BLENDING CONFIGURATION">Whether these speeds are linear or angular depends on the context - check context before modifying.</_field_explanation>
+			<_field_real name="min_object_speed:WU or degrees per second#Approximate minimum speed for this object (either controlled or uncontrolled)." />
+			<_field_real name="max_object_speed:WU or degrees per second#Approximate maximum speed for this object (either controlled or uncontrolled)." />
+			<_field_real name="fraction_at_min_object_speed#Fraction of misprediction error consumed each tick if object is traveling at or below min_object_speed.  Linterp is executed at intermediate object speeds." />
+			<_field_real name="fraction_at_max_object_speed#Fraction of misprediction error consumed each tick if object is traveling at or above max_object_speed.  Linterp is executed at intermediate object speeds." />
+			<_field_real name="min_speed_at_min_object_speed:WU or degrees per second#Minimum misprediction error consumption speed if object is at or below min_object_speed.  Linterp is executed at intermediate object speeds." />
+			<_field_real name="min_speed_at_max_object_speed:WU or degrees per second#Minimum misprediction error consumption speed if object is at or above max_object_speed. Linterp is executed at intermediate object speeds." />
+		</_field_struct>
+	</_field_struct>
 	<_field_custom name="Rotation while not controlled" />
-	<_field_struct name="rotation_while_uncontrolled#All speeds in here are degrees/s" />
-	<_field_explanation name="SINGLE DOMAIN INTERPOLATION">Note that if either the position or rotation discrepancy thresholds above which we use blending are exceeded, we will blend in both domains (because blending is more accurate and once we blend in either domain, we are forced to warp the physics representation of the object, which is the main downside of blending.  Therefore, the second domain is essentially &quot;free&quot; after we pay for the first w/ a physics warp.
+	<_field_struct name="rotation_while_uncontrolled#All speeds in here are degrees/s" srcguid="e844485c-42a7-7825-0a65-52b8c7a1c83e">
+		<_field_explanation name="SINGLE DOMAIN INTERPOLATION">Note that if either the position or rotation discrepancy thresholds above which we use blending are exceeded, we will blend in both domains (because blending is more accurate and once we blend in either domain, we are forced to warp the physics representation of the object, which is the main downside of blending.  Therefore, the second domain is essentially "free" after we pay for the first w/ a physics warp.
 
 Note also that this discrepancy threshold is either WU or degrees, depending on context.  Check your context!</_field_explanation>
-	<_field_real name="discrepancy_threshold_above_which_we_use_blending:WU or degrees#Below this threshold we use velocity bumps." />
-	<_field_real name="coming_to_rest_speed:WU/s or degrees/s#When our velocity is below this threshold, we will consider using a blend to minimize at-rest error." />
-	<_field_real name="coming_to_rest_maximum_ignorable_error:WU or degrees#We will use a blend when our speed is below the coming_to_rest_speed and our error is greater than this." />
-	<_field_custom name="Velocity bumps" />
-	<_field_struct name="velocity bumps" />
-	<_field_explanation name="SINGLE DOMAIN VELOCITY BUMPS">Velocity bumps are used for small mis-predictions because they are more visually pleasing than straight blending. However, they are less accurate, less consistent, and harder to tune.</_field_explanation>
-	<_field_real name="velocity_scale#Fraction of delta that becomes the velocity bump" />
-	<_field_real name="velocity_min:WU or degrees per second#Minimum size of any given velocity bump" />
-	<_field_real name="velocity_max:WU or degrees per second#Maximum size of any given velocity bump" />
-	<_field_explanation name="Velocity Bump Suppression">We suppress velocity bumps when the object is &quot;close enough&quot; to encourage objects to come to rest. Both of the below conditions must be satisfied to suppress velocity bumps.</_field_explanation>
-	<_field_real name="velocity_difference_ignore_threshold:WU or degrees per second#The new velocity must differ from the old velocity by less than this to allow suppression." />
-	<_field_real name="velocity_difference_absolute_ignore_threshold:WU or degrees#The new position/rotation must differ from the old position/rotation by less than this to allow suppression." />
-	<_field_custom name="Blending" />
-	<_field_struct name="blending" />
-	<_field_explanation name="SINGLE DOMAIN BLENDING CONFIGURATION">Whether these speeds are linear or angular depends on the context - check context before modifying.</_field_explanation>
-	<_field_real name="min_object_speed:WU or degrees per second#Approximate minimum speed for this object (either controlled or uncontrolled)." />
-	<_field_real name="max_object_speed:WU or degrees per second#Approximate maximum speed for this object (either controlled or uncontrolled)." />
-	<_field_real name="fraction_at_min_object_speed#Fraction of misprediction error consumed each tick if object is traveling at or below min_object_speed.  Linterp is executed at intermediate object speeds." />
-	<_field_real name="fraction_at_max_object_speed#Fraction of misprediction error consumed each tick if object is traveling at or above max_object_speed.  Linterp is executed at intermediate object speeds." />
-	<_field_real name="min_speed_at_min_object_speed:WU or degrees per second#Minimum misprediction error consumption speed if object is at or below min_object_speed.  Linterp is executed at intermediate object speeds." />
-	<_field_real name="min_speed_at_max_object_speed:WU or degrees per second#Minimum misprediction error consumption speed if object is at or above max_object_speed. Linterp is executed at intermediate object speeds." />
+		<_field_real name="discrepancy_threshold_above_which_we_use_blending:WU or degrees#Below this threshold we use velocity bumps." />
+		<_field_real name="coming_to_rest_speed:WU/s or degrees/s#When our velocity is below this threshold, we will consider using a blend to minimize at-rest error." />
+		<_field_real name="coming_to_rest_maximum_ignorable_error:WU or degrees#We will use a blend when our speed is below the coming_to_rest_speed and our error is greater than this." />
+		<_field_custom name="Velocity bumps" />
+		<_field_struct name="velocity bumps" srcguid="e01ed32b-4923-4ac4-d013-82a32b729885">
+			<_field_explanation name="SINGLE DOMAIN VELOCITY BUMPS">Velocity bumps are used for small mis-predictions because they are more visually pleasing than straight blending. However, they are less accurate, less consistent, and harder to tune.</_field_explanation>
+			<_field_real name="velocity_scale#Fraction of delta that becomes the velocity bump" />
+			<_field_real name="velocity_min:WU or degrees per second#Minimum size of any given velocity bump" />
+			<_field_real name="velocity_max:WU or degrees per second#Maximum size of any given velocity bump" />
+			<_field_explanation name="Velocity Bump Suppression">We suppress velocity bumps when the object is "close enough" to encourage objects to come to rest. Both of the below conditions must be satisfied to suppress velocity bumps.</_field_explanation>
+			<_field_real name="velocity_difference_ignore_threshold:WU or degrees per second#The new velocity must differ from the old velocity by less than this to allow suppression." />
+			<_field_real name="velocity_difference_absolute_ignore_threshold:WU or degrees#The new position/rotation must differ from the old position/rotation by less than this to allow suppression." />
+		</_field_struct>
+		<_field_custom name="Blending" />
+		<_field_struct name="blending" srcguid="47e921d4-4ebe-65ab-41ef-718ab1104422">
+			<_field_explanation name="SINGLE DOMAIN BLENDING CONFIGURATION">Whether these speeds are linear or angular depends on the context - check context before modifying.</_field_explanation>
+			<_field_real name="min_object_speed:WU or degrees per second#Approximate minimum speed for this object (either controlled or uncontrolled)." />
+			<_field_real name="max_object_speed:WU or degrees per second#Approximate maximum speed for this object (either controlled or uncontrolled)." />
+			<_field_real name="fraction_at_min_object_speed#Fraction of misprediction error consumed each tick if object is traveling at or below min_object_speed.  Linterp is executed at intermediate object speeds." />
+			<_field_real name="fraction_at_max_object_speed#Fraction of misprediction error consumed each tick if object is traveling at or above max_object_speed.  Linterp is executed at intermediate object speeds." />
+			<_field_real name="min_speed_at_min_object_speed:WU or degrees per second#Minimum misprediction error consumption speed if object is at or below min_object_speed.  Linterp is executed at intermediate object speeds." />
+			<_field_real name="min_speed_at_max_object_speed:WU or degrees per second#Minimum misprediction error consumption speed if object is at or above max_object_speed. Linterp is executed at intermediate object speeds." />
+		</_field_struct>
+	</_field_struct>
 	<_field_pad name="pad_tp" length="4" />
 </plugin>

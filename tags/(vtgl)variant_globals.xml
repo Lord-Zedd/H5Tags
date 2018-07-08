@@ -1,16 +1,17 @@
-<!--This is a mockup plugin because I like the format but dealing with offsets and stuff sounds annoying atm -->
+<!-- This is a mockup plugin with original field names and such -->
 <!-- Made by Zedd lol -->
 <plugin>
 	<_field_int64_integer name="vtable space*~!" />
-	<_field_struct name="internal struct" />
-	<_field_long_integer name="global tag ID!" />
-	<_field_pad name="local tag handle!~" length="4" />
-	<_field_block_64 name="map_variants" max="1024" guid="ea0ab182-4e89-d785-5d77-158e5d20b4c9">
+	<_field_struct name="internal struct" srcguid="151d0146-479c-181f-3970-ec869043bc33">
+		<_field_long_integer name="global tag ID!" />
+		<_field_pad name="local tag handle!~" length="4" />
+	</_field_struct>
+	<_field_block_64 name="map_variants" max="1024" srcguid="ea0ab182-4e89-d785-5d77-158e5d20b4c9" srcName="single_variant_block">
 		<_field_data_64 name="metadata" />
 		<_field_data_64 name="full_data" />
 		<_field_long_string name="filename^" />
 	</_field_block_64>
-	<_field_block_64 name="game_variants" max="1024" guid="ea0ab182-4e89-d785-5d77-158e5d20b4c9">
+	<_field_block_64 name="game_variants" max="1024" srcguid="ea0ab182-4e89-d785-5d77-158e5d20b4c9" srcName="single_variant_block">
 		<_field_data_64 name="metadata" />
 		<_field_data_64 name="full_data" />
 		<_field_long_string name="filename^" />
